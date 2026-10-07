@@ -1,0 +1,220 @@
+---
+// Hero.astro — Hero Section Cinema-Grade (Método MANA 3.0)
+// Conforme diretrizes: Impeccable (Craft Floor) & UI/UX Pro Max (Studio Persuade)
+---
+
+<section class="relative min-h-[92vh] flex flex-col items-center justify-center pt-28 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden bg-slate-950 text-slate-100">
+  <!-- Grid Arquitetural Sutil de Fundo -->
+  <div class="absolute inset-0 bg-[linear-gradient(to_right,#1e293b15_1px,transparent_1px),linear-gradient(to_bottom,#1e293b15_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_40%,#000_70%,transparent_100%)] pointer-events-none"></div>
+
+  <!-- Iluminação Focal Pontual (Spotlight) -->
+  <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-emerald-500/10 blur-[120px] rounded-full pointer-events-none"></div>
+
+  <div class="max-w-5xl mx-auto text-center relative z-10">
+    <!-- Status / Método Pill -->
+    <div class="hero-badge inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-emerald-500/20 bg-slate-900/80 text-xs font-semibold text-emerald-400 mb-8 backdrop-blur shadow-sm">
+      <span class="relative flex h-2 w-2">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+      </span>
+      <span>LEXI Alpha • Método MANA 3.0</span>
+    </div>
+
+    <!-- Headline de Alto Impacto Editorial -->
+    <h1 class="hero-headline text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.08] mb-8 max-w-4xl mx-auto">
+      Sua fala em inglês desbloqueada em 6 a 8 meses.
+    </h1>
+
+    <!-- Subheadline Convincente -->
+    <p class="hero-sub text-base sm:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed mb-10 font-normal">
+      O método que transforma reflexo oral em automaticidade natural. Sem gramática, sem tradução mental.
+    </p>
+
+    <!-- Slot do Vídeo VSL / Prévia Interativa -->
+    <div
+      id="vsl-trigger"
+      class="hero-vsl relative w-full max-w-3xl mx-auto aspect-video rounded-2xl border border-slate-800 bg-slate-900/90 shadow-2xl overflow-hidden mb-10 flex items-center justify-center group cursor-pointer ring-1 ring-white/5 transition-all hover:border-emerald-500/40"
+    >
+      <!-- Background sutil com vinheta -->
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/50 to-slate-950/80 group-hover:opacity-80 transition-opacity"></div>
+
+      <!-- Play Button Design Studio -->
+      <div class="relative z-10 flex flex-col items-center gap-4 text-center px-6">
+        <div class="w-18 h-18 sm:w-20 sm:h-20 rounded-full bg-emerald-500 text-emerald-950 flex items-center justify-center shadow-xl shadow-emerald-500/30 group-hover:scale-105 active:scale-95 transition-all duration-200">
+          <svg class="w-8 h-8 translate-x-0.5 fill-current" viewBox="0 0 24 24">
+            <path d="M8 5v14l11-7z" />
+          </svg>
+        </div>
+        <div>
+          <span class="text-xs uppercase tracking-widest text-emerald-400 font-bold block mb-1">Vídeo Explicativo • 3 Minutos</span>
+          <h2 class="text-lg sm:text-xl font-bold text-white tracking-tight">A Causa Secreta do Travamento no Inglês (e como desligá-la)</h2>
+        </div>
+      </div>
+
+      <!-- Linha de base refinada -->
+      <div class="absolute inset-x-0 bottom-0 h-0.5 bg-gradient-to-r from-transparent via-emerald-500/60 to-transparent"></div>
+    </div>
+
+    <!-- Controles de Conversão Primários -->
+    <div class="hero-cta flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto mb-6">
+      <a
+        href="#quiz"
+        class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl text-base font-bold bg-emerald-500 hover:bg-emerald-400 text-emerald-950 transition-all shadow-lg shadow-emerald-500/20 active:scale-98"
+      >
+        <span>Fazer Diagnóstico Gratuito</span>
+        <svg class="w-4 h-4 stroke-current fill-none stroke-2" viewBox="0 0 24 24">
+          <path d="M5 12h14M12 5l7 7-7 7" />
+        </svg>
+      </a>
+      <a
+        href="#portais"
+        class="w-full sm:w-auto inline-flex items-center justify-center px-6 py-4 rounded-xl text-base font-medium text-slate-300 hover:text-white border border-slate-800 hover:border-slate-700 bg-slate-900/60 transition-colors"
+      >
+        Conhecer os 5 Portais
+      </a>
+    </div>
+
+    <!-- Trust Markers -->
+    <div class="flex items-center justify-center gap-6 text-xs text-slate-400 font-medium">
+      <div class="flex items-center gap-1.5">
+        <svg class="w-4 h-4 text-emerald-400 stroke-current fill-none stroke-2" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10" />
+          <path d="M12 6v6l4 2" />
+        </svg>
+        <span>3 minutos</span>
+      </div>
+      <span class="text-slate-700">•</span>
+      <div class="flex items-center gap-1.5">
+        <svg class="w-4 h-4 text-emerald-400 stroke-current fill-none stroke-2" viewBox="0 0 24 24">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+        </svg>
+        <span>Sem cadastro prévio</span>
+      </div>
+      <span class="text-slate-700">•</span>
+      <div class="flex items-center gap-1.5">
+        <svg class="w-4 h-4 text-emerald-400 stroke-current fill-none stroke-2" viewBox="0 0 24 24">
+          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+          <polyline points="22 4 12 14.01 9 11.01" />
+        </svg>
+        <span>Resultado imediato</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal da VSL Cinematográfica -->
+  <dialog id="vsl-modal" class="m-auto backdrop:bg-slate-950/90 backdrop:backdrop-blur-md rounded-2xl bg-slate-950 border border-slate-800 text-slate-100 p-6 sm:p-8 max-w-2xl w-[92%] shadow-2xl ring-1 ring-white/10">
+    <div class="flex items-center justify-between border-b border-slate-800 pb-3 mb-5">
+      <div class="flex items-center gap-2.5">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span class="font-bold text-xs uppercase tracking-wider text-emerald-400">VSL Cinematográfica • MANA 3.0</span>
+      </div>
+      <button id="close-vsl-modal" class="text-slate-400 hover:text-white p-1 transition-colors" aria-label="Fechar">
+        <svg class="w-5 h-5 stroke-current fill-none stroke-2" viewBox="0 0 24 24">
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Container do Apresentador de Cenas -->
+    <div class="aspect-video rounded-xl bg-slate-900 border border-slate-800 p-6 flex flex-col justify-center items-center text-center relative overflow-hidden">
+      <div id="vsl-slide-content" class="space-y-4 max-w-lg transition-all duration-300">
+        <span class="text-xs text-emerald-400 font-bold uppercase tracking-widest block">O Gancho</span>
+        <h3 class="text-xl sm:text-2xl font-bold text-white leading-tight">
+          "A SUA BOCA NÃO FALA PORQUE O SEU CÉREBRO AINDA ESTÁ TRADUZINDO."
+        </h3>
+        <p class="text-xs sm:text-sm text-slate-300">
+          Você sabe o que quer dizer. Mas na hora H começa o engarrafamento mental de regras gramaticais.
+        </p>
+      </div>
+
+      <!-- Controles de Navegação de Cenas -->
+      <div class="absolute bottom-3 inset-x-6 flex items-center justify-between text-xs">
+        <button id="vsl-prev" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition-colors">Anterior</button>
+        <span id="vsl-scene-counter" class="font-semibold text-emerald-400">Cena 1 de 5</span>
+        <button id="vsl-next" class="px-3 py-1.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-emerald-950 font-bold transition-colors">Próxima →</button>
+      </div>
+    </div>
+
+    <div class="mt-4 flex items-center justify-between text-xs">
+      <span class="text-slate-400">Voz Neural Investigativa</span>
+      <a href="#quiz" onclick="document.getElementById('vsl-modal').close()" class="font-bold text-emerald-400 hover:text-emerald-300 transition-colors">
+        Pular para o Diagnóstico →
+      </a>
+    </div>
+  </dialog>
+</section>
+
+<script>
+  const modal = document.getElementById('vsl-modal') as HTMLDialogElement | null;
+  const trigger = document.getElementById('vsl-trigger');
+  const closeBtn = document.getElementById('close-vsl-modal');
+  const prevBtn = document.getElementById('vsl-prev');
+  const nextBtn = document.getElementById('vsl-next');
+  const slideContent = document.getElementById('vsl-slide-content');
+  const sceneCounter = document.getElementById('vsl-scene-counter');
+
+  const scenes = [
+    {
+      label: "O Gancho",
+      title: '"A SUA BOCA NÃO FALA PORQUE O SEU CÉREBRO AINDA ESTÁ TRADUZINDO."',
+      desc: "Você sabe o que quer dizer. Mas na hora H começa o engarrafamento mental de regras gramaticais."
+    },
+    {
+      label: "O Inimigo Oculto",
+      title: "O MODELO DO ALUNO ETERNO",
+      desc: "Franquias tradicionais lucram quando você demora 5 anos. Eles ensinam sobre a língua, não a falar a língua."
+    },
+    {
+      label: "A Revelação",
+      title: "O CÉREBRO APRENDE POR BLOCOS, NÃO POR REGRAS",
+      desc: "Nativos não pensam em gramática. Eles disparam chunks lexicais pré-montados com tempo de reação abaixo de 4 segundos."
+    },
+    {
+      label: "A Solução MANA 3.0",
+      title: "A LEXI ALPHA & 7 TUTORES DE IA",
+      desc: "5 Portais finitos com IA nativa que aplica Recasting Natural — corrigindo seu inglês como uma mãe ensina uma criança, sem caneta vermelha."
+    },
+    {
+      label: "A Chamada para Ação",
+      title: "FAÇA SEU DIAGNÓSTICO GRATUITO AGORA",
+      desc: "Descubra seu Rank CEFR real em 3 minutos e acesse os chunks do Portal 1 hoje mesmo."
+    }
+  ];
+
+  let currentScene = 0;
+
+  function updateScene(idx: number) {
+    if (!slideContent || !sceneCounter) return;
+    currentScene = idx;
+    const s = scenes[currentScene];
+    slideContent.innerHTML = `
+      <span class="text-xs text-emerald-400 font-bold uppercase tracking-widest block">${s.label}</span>
+      <h3 class="text-xl sm:text-2xl font-bold text-white leading-tight">${s.title}</h3>
+      <p class="text-xs sm:text-sm text-slate-300">${s.desc}</p>
+    `;
+    sceneCounter.textContent = `Cena ${currentScene + 1} de ${scenes.length}`;
+  }
+
+  trigger?.addEventListener('click', () => {
+    modal?.showModal();
+    updateScene(0);
+  });
+
+  closeBtn?.addEventListener('click', () => {
+    modal?.close();
+  });
+
+  prevBtn?.addEventListener('click', () => {
+    if (currentScene > 0) updateScene(currentScene - 1);
+  });
+
+  nextBtn?.addEventListener('click', () => {
+    if (currentScene < scenes.length - 1) {
+      updateScene(currentScene + 1);
+    } else {
+      modal?.close();
+      window.location.hash = 'quiz';
+    }
+  });
+</script>

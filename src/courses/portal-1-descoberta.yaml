@@ -1,0 +1,69 @@
+id: portal-1-descoberta
+title: "Portal 1: A Descoberta dos Chunks"
+description: "Desbloqueie os primeiros 50 chunks essenciais para destravar a fala imediata sem tradução mental."
+version: "1.0.0"
+target_level: "A1-A2"
+units:
+  - id: unit-01-survival-chunks
+    title: "Unidade 1: Chunks de Sobrevivência & Saudações Naturais"
+    level: A1
+    order: 1
+    xp_reward: 35
+    crowns_available: 3
+    exercises:
+      - id: ex_01_matching_survival
+        type: matching
+        instruction: "Associe cada chunk ao seu sentido natural em conversas reais:"
+        pairs:
+          - prompt: "How's it going?"
+            target: "Como vão as coisas? / E aí, tudo bem?"
+          - prompt: "Take your time"
+            target: "Sem pressa / No seu tempo"
+          - prompt: "I got it"
+            target: "Entendi perfeitamente / Deixa comigo"
+          - prompt: "Never mind"
+            target: "Deixa pra lá / Esquece"
+
+      - id: ex_02_sentence_natural_order
+        type: sentence_builder
+        instruction: "Monte o pedido natural e educado (sem tradução literal):"
+        target_sentence: "I would like a cup of coffee"
+        tokens: ["I", "would", "like", "a", "cup", "of", "coffee"]
+        distractors: ["want", "please", "to"]
+        recast_feedback: "Excelente! Em conversação real, 'I would like' soa natural e polido, substituindo 'I want'."
+
+      - id: ex_03_fill_in_confidence
+        type: fill_in
+        instruction: "Complete a frase de conforto com o chunk correto:"
+        sentence: "Don't worry about the deadline, ___."
+        missing: "take your time"
+        hints: ["No seu tempo", "Sem pressa"]
+
+      - id: ex_04_listening_greetings
+        type: listening
+        instruction: "Ouça a pronúncia conectada e escolha o chunk exato:"
+        options:
+          - text: "How's it going?"
+            correct: true
+          - text: "How is it go?"
+            correct: false
+          - text: "House is going?"
+            correct: false
+
+  - id: unit-02-daily-momentum
+    title: "Unidade 2: Conectores de Fluência"
+    level: A2
+    order: 2
+    xp_reward: 40
+    crowns_available: 3
+    exercises:
+      - id: ex_05_matching_connectors
+        type: matching
+        instruction: "Conecte os chunks que mantêm o ritmo da conversa:"
+        pairs:
+          - prompt: "As far as I know"
+            target: "Até onde eu sei"
+          - prompt: "By the way"
+            target: "Por falar nisso / A propósito"
+          - prompt: "To be honest"
+            target: "Pra ser sincero"

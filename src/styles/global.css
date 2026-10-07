@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    /* MANA Design System - Sentry-inspired */
+    --color-primary: #6a5fc1;
+    --color-primary-dark: #1f1633;
+    --color-primary-darker: #150f23;
+    --color-accent: #c2ef4e;
+    --color-surface: #ffffff;
+    --color-text: #ffffff;
+    --color-text-muted: #cfcfdb;
+    --color-border: #e5e7eb;
+    --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  html {
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+    background-color: var(--color-primary-dark);
+    color: var(--color-text);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: var(--color-primary);
+    color: var(--color-surface);
+  }
+
+  /* Custom dark scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-primary-darker);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #362d59;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-primary);
+  }
+}

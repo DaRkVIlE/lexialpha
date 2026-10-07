@@ -1,0 +1,44 @@
+{
+  "name": "landing",
+  "type": "module",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "cap": "cap",
+    "cap:sync": "astro build && cap sync",
+    "design:lint": "impeccable detect src",
+    "lint": "eslint src/practice --ext .js,.ts",
+    "lint:fix": "eslint src/practice --ext .js,.ts --fix"
+  },
+  "dependencies": {
+    "@capacitor/core": "^7.0.1",
+    "@tailwindcss/vite": "^4.3.3",
+    "astro": "^7.3.5",
+    "canvas-confetti": "^1.9.4",
+    "gsap": "^3.15.0",
+    "howler": "^2.2.4",
+    "phaser": "^4.2.1",
+    "tailwindcss": "^4.3.3",
+    "ts-fsrs": "^5.4.2",
+    "yaml": "^2.9.1"
+  },
+  "allowScripts": {
+    "esbuild": true
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^7.0.1",
+    "@types/canvas-confetti": "^1.9.0",
+    "@types/howler": "^2.2.13",
+    "@typescript-eslint/eslint-plugin": "^8.71.1",
+    "@typescript-eslint/parser": "^8.71.1",
+    "eslint": "^10.12.0",
+    "eslint-plugin-astro": "^3.2.1",
+    "impeccable": "^4.1.0"
+  }
+}
