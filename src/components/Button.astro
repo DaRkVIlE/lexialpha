@@ -1,0 +1,49 @@
+---
+// Button Atom — Supabase Style Component
+// Design System: Gabe's-design-system.md (Supabase inspired)
+// Pill-shaped primary (9999px), crisp contrast, subtle hover
+
+const {
+  variant = 'primary',
+  size = 'md',
+  disabled = false,
+  type = 'button',
+  href,
+  class: className = '',
+  ariaLabel,
+  ariaDescribedBy
+} = Astro.props;
+
+const baseStyles = "font-medium transition-all duration-200 cursor-pointer inline-flex items-center justify-center rounded-full text-center";
+
+const variantStyles = {
+  primary: "bg-[#3ecf8e] text-[#0f0f0f] font-bold hover:bg-[#34b27b] shadow-[0_1px_2px_rgba(0,0,0,0.4)] focus:ring-2 focus:ring-[#3ecf8e] focus:ring-offset-2 focus:ring-offset-[#0f0f0f]",
+  secondary: "bg-[#171717] text-[#fafafa] border border-[#2e2e2e] hover:border-[#393939] hover:bg-[#1f1f1f] focus:ring-2 focus:ring-[#3ecf8e]",
+  accent: "bg-[#3ecf8e] text-[#0f0f0f] font-bold hover:bg-[#34b27b] shadow-[0_1px_2px_rgba(0,0,0,0.4)] focus:ring-2 focus:ring-[#3ecf8e]",
+  outline: "bg-transparent text-[#fafafa] border border-[#363636] hover:border-[#3ecf8e] hover:text-[#3ecf8e]",
+  ghost: "bg-transparent text-[#898989] hover:text-[#fafafa] hover:bg-[#1a1a1a]"
+};
+
+const sizeStyles = {
+  sm: "px-4 py-2 text-xs",
+  md: "px-6 py-2.5 text-sm",
+  lg: "px-8 py-3.5 text-base"
+};
+
+const disabledStyles = disabled ? "opacity-50 cursor-not-allowed pointer-events-none" : "";
+
+const combinedStyles = `${baseStyles} ${variantStyles[variant] || variantStyles.primary} ${sizeStyles[size] || sizeStyles.md} ${disabledStyles} ${className}`;
+
+const Tag = href ? 'a' : 'button';
+---
+
+<Tag
+  class={combinedStyles}
+  disabled={disabled}
+  type={type}
+  href={href}
+  aria-label={ariaLabel}
+  aria-describedby={ariaDescribedBy}
+>
+  <slot />
+</Tag>

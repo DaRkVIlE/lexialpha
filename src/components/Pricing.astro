@@ -1,0 +1,95 @@
+---
+// Pricing.astro — Oferta Turma Alpha — Gabe's English
+// Formato: Mensalidade de entrada R$ 197/mês • 10 vagas • Sem contratos abusivos
+---
+
+<section id="pricing" class="py-24 px-4 sm:px-6 lg:px-8 bg-background relative">
+  <div class="max-w-4xl mx-auto">
+    <!-- Header -->
+    <div class="text-center mb-12">
+      <span class="inline-block px-3 py-1 rounded-full bg-accent/10 border border-accent/30 text-accent text-xs font-bold uppercase tracking-widest mb-4">
+        Apenas 10 Vagas na Turma Alpha
+      </span>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground leading-tight mb-4">
+        Aulas com o Professor Gabe + IA Diária
+      </h2>
+      <p class="text-foreground-muted text-base sm:text-lg max-w-2xl mx-auto">
+        Um modelo direto e acessível para você começar a falar inglês imediatamente, sem contratos de longo prazo e sem burocracia.
+      </p>
+    </div>
+
+    <!-- Single Offer Card -->
+    <div class="relative max-w-2xl mx-auto">
+      <!-- Glow -->
+      <div class="absolute -inset-0.5 bg-gradient-to-r from-primary/30 to-accent/30 rounded-3xl blur-md opacity-60"></div>
+
+      <div class="relative bg-card rounded-3xl border-2 border-accent/40 p-8 sm:p-12 shadow-2xl">
+        <!-- Badge -->
+        <div class="absolute -top-4 left-1/2 -translate-x-1/2 px-5 py-1.5 bg-accent text-on-accent rounded-full text-xs sm:text-sm font-bold shadow-lg whitespace-nowrap">
+          ⚡ Turma Alpha Exclusiva
+        </div>
+
+        <!-- Price -->
+        <div class="text-center mb-8 pt-2">
+          <p class="text-foreground-muted text-xs uppercase tracking-wider mb-2 font-semibold">Mensalidade de Entrada</p>
+          <div class="flex items-baseline justify-center gap-1 mb-2">
+            <span class="text-2xl font-bold text-foreground">R$</span>
+            <span class="text-5xl sm:text-6xl font-black text-accent tracking-tight">197</span>
+            <span class="text-foreground-muted text-lg font-medium">/mês</span>
+          </div>
+          <p class="text-foreground-muted text-xs sm:text-sm">
+            Sem taxa de matrícula &bull; Sem fidelidade de 1 ano &bull; Cancele quando quiser
+          </p>
+        </div>
+
+        <!-- O que está incluso -->
+        <div class="mb-8 pt-4 border-t border-border">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-foreground-muted mb-4">O Que Está Incluso:</h4>
+          <ul class="space-y-3.5">
+            {[
+              "2 sessões semanais rápidas de alinhamento e destravamento com o Gabe",
+              "1 sessão semanal estendida focada em conversação plena e situações reais",
+              "Acesso 24/7 à IA Lexi Alpha no celular para treinar fala e áudio todos os dias",
+              "Treinador de repetição espaçada e frases prontas (chunks) sem limites",
+              "Acompanhamento direto e suporte pelo WhatsApp pessoal do professor",
+              "Diagnóstico contínuo dos seus gargalos de fala para guiar os encontros",
+              "Garantia incondicional de 30 dias: risco zero para você testar"
+            ].map((item) => (
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-accent mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                </svg>
+                <span class="text-sm sm:text-base text-foreground font-medium">{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- CTA -->
+        <a
+          href="https://wa.me/5511967239791?text=Oi%20Gabe!%20Quero%20garantir%20minha%20vaga%20na%20Turma%20Alpha%20por%20R$%20197/m%C3%AAs%20%F0%9F%9A%80"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="block w-full py-4 text-center rounded-xl bg-accent text-on-accent font-bold text-lg hover:bg-accent-hover active:scale-95 transition-all shadow-lg"
+        >
+          Garantir Minha Vaga no WhatsApp &rarr;
+        </a>
+
+        <!-- Garantia micro-copy -->
+        <div class="mt-5 flex items-center justify-center gap-2 text-foreground-muted text-xs text-center">
+          <svg class="w-4 h-4 text-primary shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+          </svg>
+          <span>Garantia de 30 dias. Se sentir que o método não é para você, devolvo 100% via Pix.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Vagas counter -->
+    <div class="mt-8 text-center">
+      <p class="text-foreground-muted text-sm">
+        <strong class="text-accent">Apenas 10 alunos</strong> para garantir atenção pessoal individualizada. Quando fechar, encerramos as inscrições.
+      </p>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,16 @@
+---
+// Card Atom — Supabase Style Card Component
+// Design System: Gabe's-design-system.md (Supabase inspired)
+// Surface: #141414 / #171717, Border: #242424 / #2e2e2e, Radius: 16px
+
+const { elevated = false, class: className = '' } = Astro.props;
+
+const baseStyles = "transition-all duration-200 rounded-2xl border text-foreground";
+const cardStyles = elevated 
+  ? `${baseStyles} bg-[#171717] border-[#2e2e2e] hover:border-[#393939] p-6 sm:p-7 shadow-[0_4px_20px_rgba(0,0,0,0.5)] ${className}`
+  : `${baseStyles} bg-[#141414] border-[#242424] hover:border-[#2e2e2e] p-6 sm:p-7 ${className}`;
+---
+
+<div class={cardStyles}>
+  <slot />
+</div>

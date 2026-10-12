@@ -1,52 +1,54 @@
 ---
-// MontanhaB2.astro — A Trilha Finitiva dos 5 Portais da Montanha B2
-// Padrão Impeccable (Craft Floor) — Linha de Progressão com SVGs Consistentes
+// MontanhaB2.astro — Os 5 Estágios Práticos da Sua Fala
+// Foco: Clareza sem jargões herméticos, sem prazos mentirosos de meses
+import Card from './Card.astro';
 ---
 
-<section id="portais" class="relative py-28 px-4 sm:px-6 lg:px-8 bg-slate-950 text-slate-100">
+<section id="metodo-estagios" class="relative py-24 px-4 sm:px-6 lg:px-8 bg-background text-foreground">
   <div class="max-w-5xl mx-auto relative z-10">
     <!-- Cabeçalho -->
-    <div class="text-center max-w-3xl mx-auto mb-20">
-      <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white mb-4">
-        A Montanha B2: Um mapa finito de 2.500 Chunks
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-semibold uppercase tracking-wider mb-4">
+        <span>Sua Progressão Real</span>
+      </div>
+      <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-foreground mb-4">
+        Os 5 Estágios da Sua Fala: O Que Você Realmente Consegue Fazer
       </h2>
-      <p class="text-base sm:text-lg text-slate-300">
-        Estruturados nativamente na LEXI Alpha. Aqui não existe "estudar para sempre". São 5 Portais rigorosamente calibrados para levar você da paralisia à autonomia executiva completa em 6 a 8 meses.
+      <p class="text-base sm:text-lg text-foreground-muted">
+        Esqueça notas de provas e jargões teóricos. Aqui sua evolução é medida pelo que você é capaz de falar na vida real, acompanhado de perto nas nossas aulas.
       </p>
     </div>
 
-    <!-- Lista dos 5 Portais em Timeline Conectada -->
-    <div class="relative space-y-6 before:absolute before:inset-0 before:left-8 sm:before:left-12 before:w-0.5 before:bg-slate-800 before:hidden sm:before:block">
-      <!-- Portal 1 -->
-      <div class="portal-card relative rounded-2xl border border-slate-800 bg-slate-900/70 p-6 sm:p-8 hover:border-emerald-500/40 transition-all flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 group">
+    <!-- Lista dos 5 Estágios em Timeline Conectada -->
+    <div class="relative space-y-6 before:absolute before:inset-0 before:left-8 sm:before:left-12 before:w-0.5 before:bg-border before:hidden sm:before:block">
+      <!-- Estágio 1 -->
+      <Card elevated class="hover:border-emerald-500/40 transition-all flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 group">
         <div class="flex items-start gap-5">
-          <div class="w-14 h-14 rounded-2xl bg-emerald-950/80 border border-emerald-500/30 text-emerald-400 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform shadow-inner">
-            <!-- SVG Ícone: Fala Diária / Descongelamento -->
+          <div class="w-14 h-14 rounded-2xl bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform shadow-inner">
             <svg class="w-7 h-7 stroke-current fill-none stroke-2" viewBox="0 0 24 24">
               <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
             </svg>
           </div>
           <div>
             <div class="flex items-center gap-2.5 mb-1.5 flex-wrap">
-              <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Portal 1 • A1 → A2</span>
-              <span class="text-xs px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-300 border border-slate-700 font-medium">350 Chunks</span>
+              <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Estágio 1</span>
+              <span class="text-xs px-2.5 py-0.5 rounded-full bg-background-elevated text-foreground-muted border border-border font-medium">Descongelamento</span>
             </div>
-            <h3 class="text-xl font-bold text-white mb-1">O Descongelamento</h3>
-            <p class="text-sm text-slate-400 max-w-xl leading-relaxed">
-              Guardião: <strong class="text-slate-200">Jordan</strong> (Amigo de NY). Eliminação imediata do medo de errar, pedidos em restaurantes, rotinas e conversas do dia a dia americano com suporte contínuo.
+            <h3 class="text-xl font-bold text-foreground mb-1">Perder o Medo de Falar</h3>
+            <p class="text-sm text-foreground-muted max-w-xl leading-relaxed">
+              Eliminação da paralisia mental. Você aprende a fazer pedidos em restaurantes, responder saudações, falar sobre sua rotina e destravar as primeiras frases completas sem hesitação.
             </p>
           </div>
         </div>
-        <div class="text-xs font-bold text-emerald-400 px-4 py-2 rounded-xl bg-emerald-950/40 border border-emerald-500/30 shrink-0">
-          Rank E ➔ Rank D
+        <div class="text-xs font-bold text-emerald-400 px-4 py-2 rounded-xl bg-emerald-500/10 border border-emerald-500/20 shrink-0">
+          Início Seguro
         </div>
-      </div>
+      </Card>
 
-      <!-- Portal 2 -->
-      <div class="portal-card relative rounded-2xl border border-slate-800 bg-slate-900/70 p-6 sm:p-8 hover:border-teal-500/40 transition-all flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 group">
+      <!-- Estágio 2 -->
+      <Card elevated class="hover:border-primary/40 transition-all flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 group">
         <div class="flex items-start gap-5">
-          <div class="w-14 h-14 rounded-2xl bg-teal-950/80 border border-teal-500/30 text-teal-400 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform shadow-inner">
-            <!-- SVG Ícone: Viagens / BICS -->
+          <div class="w-14 h-14 rounded-2xl bg-primary/20 border border-primary/30 text-primary flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform shadow-inner">
             <svg class="w-7 h-7 stroke-current fill-none stroke-2" viewBox="0 0 24 24">
               <circle cx="12" cy="12" r="10" />
               <line x1="2" y1="12" x2="22" y2="12" />
@@ -55,25 +57,24 @@
           </div>
           <div>
             <div class="flex items-center gap-2.5 mb-1.5 flex-wrap">
-              <span class="text-xs font-bold uppercase tracking-wider text-teal-400">Portal 2 • A2 → B1</span>
-              <span class="text-xs px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-300 border border-slate-700 font-medium">+650 Chunks (1.000 total)</span>
+              <span class="text-xs font-bold uppercase tracking-wider text-primary">Estágio 2</span>
+              <span class="text-xs px-2.5 py-0.5 rounded-full bg-background-elevated text-foreground-muted border border-border font-medium">Autonomia em Viagens</span>
             </div>
-            <h3 class="text-xl font-bold text-white mb-1">O Motor do BICS</h3>
-            <p class="text-sm text-slate-400 max-w-xl leading-relaxed">
-              Guardião: <strong class="text-slate-200">Miles</strong> (World Explorer). Autonomia de viagem, conexões em aeroportos, histórias no passado e resolução de imprevistos sem recorrer a aplicativos de tradução.
+            <h3 class="text-xl font-bold text-foreground mb-1">Se Virar no Mundo Real</h3>
+            <p class="text-sm text-foreground-muted max-w-xl leading-relaxed">
+              Resolução de imprevistos em aeroportos, hotéis, compras e transporte no exterior. Você consegue contar acontecimentos simples sem precisar abrir o tradutor no celular a cada minuto.
             </p>
           </div>
         </div>
-        <div class="text-xs font-bold text-teal-400 px-4 py-2 rounded-xl bg-teal-950/40 border border-teal-500/30 shrink-0">
-          Rank D ➔ Rank C
+        <div class="text-xs font-bold text-primary px-4 py-2 rounded-xl bg-primary/10 border border-primary/20 shrink-0">
+          Autonomia Básica
         </div>
-      </div>
+      </Card>
 
-      <!-- Portal 3 -->
-      <div class="portal-card relative rounded-2xl border border-slate-800 bg-slate-900/70 p-6 sm:p-8 hover:border-cyan-500/40 transition-all flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 group">
+      <!-- Estágio 3 -->
+      <Card elevated class="hover:border-accent/40 transition-all flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 group">
         <div class="flex items-start gap-5">
-          <div class="w-14 h-14 rounded-2xl bg-cyan-950/80 border border-cyan-500/30 text-cyan-400 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform shadow-inner">
-            <!-- SVG Ícone: Tecnologia / Agilidade Mental -->
+          <div class="w-14 h-14 rounded-2xl bg-accent/20 border border-accent/30 text-accent flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform shadow-inner">
             <svg class="w-7 h-7 stroke-current fill-none stroke-2" viewBox="0 0 24 24">
               <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
               <line x1="8" y1="21" x2="16" y2="21" />
@@ -82,25 +83,24 @@
           </div>
           <div>
             <div class="flex items-center gap-2.5 mb-1.5 flex-wrap">
-              <span class="text-xs font-bold uppercase tracking-wider text-cyan-400">Portal 3 • B1 Intermediário</span>
-              <span class="text-xs px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-300 border border-slate-700 font-medium">+500 Chunks (1.500 total)</span>
+              <span class="text-xs font-bold uppercase tracking-wider text-accent">Estágio 3</span>
+              <span class="text-xs px-2.5 py-0.5 rounded-full bg-background-elevated text-foreground-muted border border-border font-medium">Conversação Cotidiana</span>
             </div>
-            <h3 class="text-xl font-bold text-white mb-1">A Ponte da Fluência</h3>
-            <p class="text-sm text-slate-400 max-w-xl leading-relaxed">
-              Guardião: <strong class="text-slate-200">Zack</strong> (Dev da Califórnia). Linguagem natural de tecnologia, humor, gírias profissionais, reuniões de daily e argumentação ágil sem hesitação.
+            <h3 class="text-xl font-bold text-foreground mb-1">Manter um Diálogo Natural</h3>
+            <p class="text-sm text-foreground-muted max-w-xl leading-relaxed">
+              Bate-papo descontraído sobre trabalho, tecnologia, interesses e opiniões. Você deixa de usar sempre as mesmas 5 palavras e ganha repertório para se expressar com flexibilidade.
             </p>
           </div>
         </div>
-        <div class="text-xs font-bold text-cyan-400 px-4 py-2 rounded-xl bg-cyan-950/40 border border-cyan-500/30 shrink-0">
-          Rank C ➔ Rank B
+        <div class="text-xs font-bold text-accent px-4 py-2 rounded-xl bg-accent/10 border border-accent/20 shrink-0">
+          Fluência Social
         </div>
-      </div>
+      </Card>
 
-      <!-- Portal 4 -->
-      <div class="portal-card relative rounded-2xl border border-slate-800 bg-slate-900/70 p-6 sm:p-8 hover:border-amber-500/40 transition-all flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 group">
+      <!-- Estágio 4 -->
+      <Card elevated class="hover:border-purple-400/40 transition-all flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 group">
         <div class="flex items-start gap-5">
-          <div class="w-14 h-14 rounded-2xl bg-amber-950/80 border border-amber-500/30 text-amber-400 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform shadow-inner">
-            <!-- SVG Ícone: Negócios / CALP Executivo -->
+          <div class="w-14 h-14 rounded-2xl bg-purple-500/20 border border-purple-500/30 text-purple-400 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform shadow-inner">
             <svg class="w-7 h-7 stroke-current fill-none stroke-2" viewBox="0 0 24 24">
               <path d="M20 7h-4v-2a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2H4a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z" />
               <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
@@ -108,44 +108,43 @@
           </div>
           <div>
             <div class="flex items-center gap-2.5 mb-1.5 flex-wrap">
-              <span class="text-xs font-bold uppercase tracking-wider text-amber-400">Portal 4 • B1 → B2</span>
-              <span class="text-xs px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-300 border border-slate-700 font-medium">+500 Chunks (2.000 total)</span>
+              <span class="text-xs font-bold uppercase tracking-wider text-purple-400">Estágio 4</span>
+              <span class="text-xs px-2.5 py-0.5 rounded-full bg-background-elevated text-foreground-muted border border-border font-medium">Profissional & Carreira</span>
             </div>
-            <h3 class="text-xl font-bold text-white mb-1">O CALP Executivo</h3>
-            <p class="text-sm text-slate-400 max-w-xl leading-relaxed">
-              Guardiã: <strong class="text-slate-200">Alexandra</strong> (Executive Coach de Londres). Negociações de alto impacto, apresentações para investidores, relatórios executivos e persuasão refinada.
+            <h3 class="text-xl font-bold text-foreground mb-1">Reuniões e Apresentações</h3>
+            <p class="text-sm text-foreground-muted max-w-xl leading-relaxed">
+              Segurança para participar de reuniões em inglês, explicar ideias técnicas, defender pontos de vista e interagir com colegas internacionais sem suar frio.
             </p>
           </div>
         </div>
-        <div class="text-xs font-bold text-amber-400 px-4 py-2 rounded-xl bg-amber-950/40 border border-amber-500/30 shrink-0">
-          Rank B ➔ Rank A
+        <div class="text-xs font-bold text-purple-400 px-4 py-2 rounded-xl bg-purple-500/10 border border-purple-500/20 shrink-0">
+          Confiança no Trabalho
         </div>
-      </div>
+      </Card>
 
-      <!-- Portal 5 -->
-      <div class="portal-card relative rounded-2xl border border-slate-800 bg-slate-900/70 p-6 sm:p-8 hover:border-purple-500/40 transition-all flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 group">
+      <!-- Estágio 5 -->
+      <Card elevated class="hover:border-pink-500/40 transition-all flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 group">
         <div class="flex items-start gap-5">
-          <div class="w-14 h-14 rounded-2xl bg-purple-950/80 border border-purple-500/30 text-purple-400 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform shadow-inner">
-            <!-- SVG Ícone: Cume B2 / Maestria -->
+          <div class="w-14 h-14 rounded-2xl bg-pink-500/20 border border-pink-500/30 text-pink-400 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform shadow-inner">
             <svg class="w-7 h-7 stroke-current fill-none stroke-2" viewBox="0 0 24 24">
               <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
             </svg>
           </div>
           <div>
             <div class="flex items-center gap-2.5 mb-1.5 flex-wrap">
-              <span class="text-xs font-bold uppercase tracking-wider text-purple-400">Portal 5 • B2 Avançado</span>
-              <span class="text-xs px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-300 border border-slate-700 font-medium">+500 Chunks (2.500 total)</span>
+              <span class="text-xs font-bold uppercase tracking-wider text-pink-400">Estágio 5</span>
+              <span class="text-xs px-2.5 py-0.5 rounded-full bg-background-elevated text-foreground-muted border border-border font-medium">Autonomia Plena</span>
             </div>
-            <h3 class="text-xl font-bold text-white mb-1">O Cume da B2</h3>
-            <p class="text-sm text-slate-400 max-w-xl leading-relaxed">
-              Guardião: <strong class="text-slate-200">Hayes</strong> (Mestre Acadêmico de Oxford). Debates complexos, improvisação profunda, nuances culturais e preparação para a Boss Raid ao vivo com Gabe Ferreira.
+            <h3 class="text-xl font-bold text-foreground mb-1">Expressão Espontânea e Conexão</h3>
+            <p class="text-sm text-foreground-muted max-w-xl leading-relaxed">
+              Improvisação, humor e segurança absoluta ao conversar sobre qualquer assunto em tempo real, testado e lapidado diretamente nas sessões ao vivo com o professor Gabriel Lima.
             </p>
           </div>
         </div>
-        <div class="text-xs font-bold text-purple-400 px-4 py-2 rounded-xl bg-purple-950/40 border border-purple-500/30 shrink-0">
-          Rank A ➔ Rank S (Fluência B2)
+        <div class="text-xs font-bold text-pink-400 px-4 py-2 rounded-xl bg-pink-500/10 border border-pink-500/20 shrink-0">
+          Autonomia Real
         </div>
-      </div>
+      </Card>
     </div>
   </div>
 </section>

@@ -1,183 +1,174 @@
 ---
-// QuizSection.astro — Diagnóstico de Nivelamento Reflexo Gamificado
-// Padrão Impeccable — Zero emojis, seletores táteis com letras (A, B, C, D) e confetes
+// QuizSection.astro — Diagnóstico de Nivelamento de Fala
+// Design System: Supabase Dark (Gabe's-design-system.md)
+// Redirecionamento 100% fluido para o WhatsApp com diagnóstico preenchido
 ---
 
-<section id="quiz" class="relative py-28 px-4 sm:px-6 lg:px-8 bg-slate-900/60 border-t border-slate-800 text-slate-100 overflow-hidden">
+<section id="quiz" class="relative py-24 px-4 sm:px-6 lg:px-8 bg-background border-t border-border text-foreground overflow-hidden">
   <div class="max-w-3xl mx-auto relative z-10">
     <!-- Cabeçalho -->
     <div class="text-center mb-12">
-      <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white mb-3">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-semibold uppercase tracking-wider mb-4">
+        <span>Diagnóstico Rápido</span>
+      </div>
+      <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-foreground mb-3">
         Descubra seu nível de fala em 3 minutos
       </h2>
-      <p class="text-base text-slate-300">
-        3 perguntas rápidas para identificar seu Portal ideal na LEXI Alpha.
+      <p class="text-base text-foreground-muted">
+        3 perguntas simples para identificar onde está o seu travamento e qual o seu ponto de partida na Turma Alpha.
       </p>
     </div>
 
     <!-- Container do Quiz Interativo -->
-    <div id="quiz-container" class="rounded-3xl border border-slate-800 bg-slate-950 p-6 sm:p-10 shadow-2xl relative overflow-hidden ring-1 ring-white/5">
-      <!-- Barra de Progresso Minimalista -->
-      <div class="w-full bg-slate-800 h-1.5 rounded-full mb-8 overflow-hidden">
-        <div id="progress-bar" class="h-full bg-emerald-500 w-1/3 transition-all duration-300"></div>
+    <div id="quiz-container" class="rounded-3xl border border-border bg-card p-6 sm:p-10 shadow-2xl relative overflow-hidden">
+      <!-- Barra de Progresso -->
+      <div class="w-full bg-[#1f1f1f] h-1.5 rounded-full mb-8 overflow-hidden">
+        <div id="progress-bar" class="h-full bg-primary w-1/3 transition-all duration-300"></div>
       </div>
 
       <!-- Passo 1: O Travamento Emocional -->
       <div id="step-1" class="quiz-step">
-        <span class="text-xs font-bold text-emerald-400 uppercase tracking-wider mb-2 block">Etapa 1 de 3 • O Travamento</span>
-        <h3 class="text-xl sm:text-2xl font-bold text-white mb-6">
+        <span class="text-xs font-bold text-primary uppercase tracking-wider mb-2 block">Etapa 1 de 3 • O Travamento</span>
+        <h3 class="text-xl sm:text-2xl font-bold text-foreground mb-6">
           O que acontece no seu cérebro quando um estrangeiro fala com você de surpresa?
         </h3>
         <div class="space-y-3">
-          <button data-level="P1" class="quiz-option w-full text-left p-4 rounded-xl border border-slate-800 bg-slate-900/70 hover:border-emerald-500/50 hover:bg-emerald-950/20 transition-all font-medium text-sm sm:text-base flex items-center justify-between group">
+          <button data-level="P1" class="quiz-option w-full text-left p-4 rounded-xl border border-border bg-[#171717] hover:border-primary/50 hover:bg-[#1c1c1c] transition-all font-medium text-sm sm:text-base flex items-center justify-between group cursor-pointer">
             <span class="flex items-center gap-3">
-              <span class="w-6 h-6 rounded-md bg-slate-800 text-emerald-400 text-xs font-bold flex items-center justify-center shrink-0 group-hover:bg-emerald-500 group-hover:text-emerald-950 transition-colors">A</span>
-              <span class="text-slate-200">Meu cérebro congela completamente. Tento montar a frase em português antes.</span>
+              <span class="w-6 h-6 rounded-md bg-[#242424] text-primary text-xs font-bold flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-black transition-colors">A</span>
+              <span class="text-foreground">Meu cérebro congela. Tento traduzir palavra por palavra do português antes de falar.</span>
             </span>
-            <span class="text-slate-600 group-hover:text-emerald-400 text-sm font-bold">→</span>
+            <span class="text-foreground-muted group-hover:text-primary text-sm font-bold">→</span>
           </button>
-          <button data-level="P2" class="quiz-option w-full text-left p-4 rounded-xl border border-slate-800 bg-slate-900/70 hover:border-emerald-500/50 hover:bg-emerald-950/20 transition-all font-medium text-sm sm:text-base flex items-center justify-between group">
+          <button data-level="P2" class="quiz-option w-full text-left p-4 rounded-xl border border-border bg-[#171717] hover:border-primary/50 hover:bg-[#1c1c1c] transition-all font-medium text-sm sm:text-base flex items-center justify-between group cursor-pointer">
             <span class="flex items-center gap-3">
-              <span class="w-6 h-6 rounded-md bg-slate-800 text-emerald-400 text-xs font-bold flex items-center justify-center shrink-0 group-hover:bg-emerald-500 group-hover:text-emerald-950 transition-colors">B</span>
-              <span class="text-slate-200">Eu entendo quase tudo o que ouço, mas me faltam palavras simples na hora de responder.</span>
+              <span class="w-6 h-6 rounded-md bg-[#242424] text-primary text-xs font-bold flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-black transition-colors">B</span>
+              <span class="text-foreground">Eu entendo quase tudo o que ouço, mas me faltam palavras simples na hora de responder.</span>
             </span>
-            <span class="text-slate-600 group-hover:text-emerald-400 text-sm font-bold">→</span>
+            <span class="text-foreground-muted group-hover:text-primary text-sm font-bold">→</span>
           </button>
-          <button data-level="P3" class="quiz-option w-full text-left p-4 rounded-xl border border-slate-800 bg-slate-900/70 hover:border-emerald-500/50 hover:bg-emerald-950/20 transition-all font-medium text-sm sm:text-base flex items-center justify-between group">
+          <button data-level="P3" class="quiz-option w-full text-left p-4 rounded-xl border border-border bg-[#171717] hover:border-primary/50 hover:bg-[#1c1c1c] transition-all font-medium text-sm sm:text-base flex items-center justify-between group cursor-pointer">
             <span class="flex items-center gap-3">
-              <span class="w-6 h-6 rounded-md bg-slate-800 text-emerald-400 text-xs font-bold flex items-center justify-center shrink-0 group-hover:bg-emerald-500 group-hover:text-emerald-950 transition-colors">C</span>
-              <span class="text-slate-200">Eu consigo bater papo, mas falo sempre com as mesmas 20 palavras repetidas.</span>
+              <span class="w-6 h-6 rounded-md bg-[#242424] text-primary text-xs font-bold flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-black transition-colors">C</span>
+              <span class="text-foreground">Eu consigo bater papo, mas falo sempre com as mesmas 20 palavras repetidas.</span>
             </span>
-            <span class="text-slate-600 group-hover:text-emerald-400 text-sm font-bold">→</span>
+            <span class="text-foreground-muted group-hover:text-primary text-sm font-bold">→</span>
           </button>
-          <button data-level="P4" class="quiz-option w-full text-left p-4 rounded-xl border border-slate-800 bg-slate-900/70 hover:border-emerald-500/50 hover:bg-emerald-950/20 transition-all font-medium text-sm sm:text-base flex items-center justify-between group">
+          <button data-level="P4" class="quiz-option w-full text-left p-4 rounded-xl border border-border bg-[#171717] hover:border-primary/50 hover:bg-[#1c1c1c] transition-all font-medium text-sm sm:text-base flex items-center justify-between group cursor-pointer">
             <span class="flex items-center gap-3">
-              <span class="w-6 h-6 rounded-md bg-slate-800 text-emerald-400 text-xs font-bold flex items-center justify-center shrink-0 group-hover:bg-emerald-500 group-hover:text-emerald-950 transition-colors">D</span>
-              <span class="text-slate-200">Travo apenas em reuniões sérias de trabalho e negociações com chefes gringos.</span>
+              <span class="w-6 h-6 rounded-md bg-[#242424] text-primary text-xs font-bold flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-black transition-colors">D</span>
+              <span class="text-foreground">Travo apenas em reuniões sérias de trabalho e conversas mais formais.</span>
             </span>
-            <span class="text-slate-600 group-hover:text-emerald-400 text-sm font-bold">→</span>
+            <span class="text-foreground-muted group-hover:text-primary text-sm font-bold">→</span>
           </button>
         </div>
       </div>
 
-      <!-- Passo 2: Cenário de Reflexo -->
+      <!-- Passo 2: Cenário Real -->
       <div id="step-2" class="quiz-step hidden">
-        <span class="text-xs font-bold text-emerald-400 uppercase tracking-wider mb-2 block">Etapa 2 de 3 • Cenário de Reflexo</span>
-        <h3 class="text-xl sm:text-2xl font-bold text-white mb-2">
-          Você entra num café em Manhattan e o barista pergunta:
+        <span class="text-xs font-bold text-primary uppercase tracking-wider mb-2 block">Etapa 2 de 3 • Cenário do Dia a Dia</span>
+        <h3 class="text-xl sm:text-2xl font-bold text-foreground mb-2">
+          Você entra num café no exterior e o barista pergunta:
         </h3>
-        <p class="text-emerald-400 italic mb-6 text-sm font-semibold">"Hey there, what can I get started for you today?"</p>
+        <p class="text-primary italic mb-6 text-sm font-semibold">"Hey there, what can I get started for you today?"</p>
         <div class="space-y-3">
-          <button data-level="P1" class="quiz-option w-full text-left p-4 rounded-xl border border-slate-800 bg-slate-900/70 hover:border-emerald-500/50 hover:bg-emerald-950/20 transition-all font-medium text-sm sm:text-base flex items-center justify-between group">
+          <button data-level="P1" class="quiz-option w-full text-left p-4 rounded-xl border border-border bg-[#171717] hover:border-primary/50 hover:bg-[#1c1c1c] transition-all font-medium text-sm sm:text-base flex items-center justify-between group cursor-pointer">
             <span class="flex items-center gap-3">
-              <span class="w-6 h-6 rounded-md bg-slate-800 text-emerald-400 text-xs font-bold flex items-center justify-center shrink-0 group-hover:bg-emerald-500 group-hover:text-emerald-950 transition-colors">A</span>
-              <span class="text-slate-200">"Coffee, please." (Aponto o dedo com medo de falar errado)</span>
+              <span class="w-6 h-6 rounded-md bg-[#242424] text-primary text-xs font-bold flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-black transition-colors">A</span>
+              <span class="text-foreground">"Coffee, please." (Aponto para o cardápio com receio de pronunciar errado)</span>
             </span>
-            <span class="text-slate-600 group-hover:text-emerald-400 text-sm font-bold">→</span>
+            <span class="text-foreground-muted group-hover:text-primary text-sm font-bold">→</span>
           </button>
-          <button data-level="P2" class="quiz-option w-full text-left p-4 rounded-xl border border-slate-800 bg-slate-900/70 hover:border-emerald-500/50 hover:bg-emerald-950/20 transition-all font-medium text-sm sm:text-base flex items-center justify-between group">
+          <button data-level="P2" class="quiz-option w-full text-left p-4 rounded-xl border border-border bg-[#171717] hover:border-primary/50 hover:bg-[#1c1c1c] transition-all font-medium text-sm sm:text-base flex items-center justify-between group cursor-pointer">
             <span class="flex items-center gap-3">
-              <span class="w-6 h-6 rounded-md bg-slate-800 text-emerald-400 text-xs font-bold flex items-center justify-center shrink-0 group-hover:bg-emerald-500 group-hover:text-emerald-950 transition-colors">B</span>
-              <span class="text-slate-200">"I want a large latte with oat milk, and where is the restroom?"</span>
+              <span class="w-6 h-6 rounded-md bg-[#242424] text-primary text-xs font-bold flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-black transition-colors">B</span>
+              <span class="text-foreground">"I want a coffee, and where is the restroom?" (Consigo pedir, mas fico tenso)</span>
             </span>
-            <span class="text-slate-600 group-hover:text-emerald-400 text-sm font-bold">→</span>
+            <span class="text-foreground-muted group-hover:text-primary text-sm font-bold">→</span>
           </button>
-          <button data-level="P3" class="quiz-option w-full text-left p-4 rounded-xl border border-slate-800 bg-slate-900/70 hover:border-emerald-500/50 hover:bg-emerald-950/20 transition-all font-medium text-sm sm:text-base flex items-center justify-between group">
+          <button data-level="P3" class="quiz-option w-full text-left p-4 rounded-xl border border-border bg-[#171717] hover:border-primary/50 hover:bg-[#1c1c1c] transition-all font-medium text-sm sm:text-base flex items-center justify-between group cursor-pointer">
             <span class="flex items-center gap-3">
-              <span class="w-6 h-6 rounded-md bg-slate-800 text-emerald-400 text-xs font-bold flex items-center justify-center shrink-0 group-hover:bg-emerald-500 group-hover:text-emerald-950 transition-colors">C</span>
-              <span class="text-slate-200">"Could I get an iced Americano to go, please? By the way, is the Wi-Fi open?"</span>
+              <span class="w-6 h-6 rounded-md bg-[#242424] text-primary text-xs font-bold flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-black transition-colors">C</span>
+              <span class="text-foreground">"Could I get an iced Americano to go, please? By the way, is the Wi-Fi open?"</span>
             </span>
-            <span class="text-slate-600 group-hover:text-emerald-400 text-sm font-bold">→</span>
+            <span class="text-foreground-muted group-hover:text-primary text-sm font-bold">→</span>
           </button>
-          <button data-level="P4" class="quiz-option w-full text-left p-4 rounded-xl border border-slate-800 bg-slate-900/70 hover:border-emerald-500/50 hover:bg-emerald-950/20 transition-all font-medium text-sm sm:text-base flex items-center justify-between group">
+          <button data-level="P4" class="quiz-option w-full text-left p-4 rounded-xl border border-border bg-[#171717] hover:border-primary/50 hover:bg-[#1c1c1c] transition-all font-medium text-sm sm:text-base flex items-center justify-between group cursor-pointer">
             <span class="flex items-center gap-3">
-              <span class="w-6 h-6 rounded-md bg-slate-800 text-emerald-400 text-xs font-bold flex items-center justify-center shrink-0 group-hover:bg-emerald-500 group-hover:text-emerald-950 transition-colors">D</span>
-              <span class="text-slate-200">Peço perfeitamente e ainda faço um comentário sobre o clima de NY sem pensar em português.</span>
+              <span class="w-6 h-6 rounded-md bg-[#242424] text-primary text-xs font-bold flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-black transition-colors">D</span>
+              <span class="text-foreground">Peço com naturalidade e ainda puxo um comentário leve sem pensar em português.</span>
             </span>
-            <span class="text-slate-600 group-hover:text-emerald-400 text-sm font-bold">→</span>
+            <span class="text-foreground-muted group-hover:text-primary text-sm font-bold">→</span>
           </button>
         </div>
       </div>
 
       <!-- Passo 3: O Objetivo -->
       <div id="step-3" class="quiz-step hidden">
-        <span class="text-xs font-bold text-emerald-400 uppercase tracking-wider mb-2 block">Etapa 3 de 3 • Sua Meta</span>
-        <h3 class="text-xl sm:text-2xl font-bold text-white mb-6">
-          Qual é o destravamento que transformaria sua vida nos próximos 6 a 8 meses?
+        <span class="text-xs font-bold text-primary uppercase tracking-wider mb-2 block">Etapa 3 de 3 • Seu Objetivo Principal</span>
+        <h3 class="text-xl sm:text-2xl font-bold text-foreground mb-6">
+          Qual destravamento mais transformaria a sua vida hoje?
         </h3>
         <div class="space-y-3">
-          <button data-level="P1" class="quiz-option w-full text-left p-4 rounded-xl border border-slate-800 bg-slate-900/70 hover:border-emerald-500/50 hover:bg-emerald-950/20 transition-all font-medium text-sm sm:text-base flex items-center justify-between group">
+          <button data-level="P1" class="quiz-option w-full text-left p-4 rounded-xl border border-border bg-[#171717] hover:border-primary/50 hover:bg-[#1c1c1c] transition-all font-medium text-sm sm:text-base flex items-center justify-between group cursor-pointer">
             <span class="flex items-center gap-3">
-              <span class="w-6 h-6 rounded-md bg-slate-800 text-emerald-400 text-xs font-bold flex items-center justify-center shrink-0 group-hover:bg-emerald-500 group-hover:text-emerald-950 transition-colors">A</span>
-              <span class="text-slate-200">Parar de sentir vergonha e conseguir falar frases simples sem gaguejar.</span>
+              <span class="w-6 h-6 rounded-md bg-[#242424] text-primary text-xs font-bold flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-black transition-colors">A</span>
+              <span class="text-foreground">Parar de sentir vergonha e conseguir falar frases simples sem gaguejar.</span>
             </span>
-            <span class="text-slate-600 group-hover:text-emerald-400 text-sm font-bold">→</span>
+            <span class="text-foreground-muted group-hover:text-primary text-sm font-bold">→</span>
           </button>
-          <button data-level="P2" class="quiz-option w-full text-left p-4 rounded-xl border border-slate-800 bg-slate-900/70 hover:border-emerald-500/50 hover:bg-emerald-950/20 transition-all font-medium text-sm sm:text-base flex items-center justify-between group">
+          <button data-level="P2" class="quiz-option w-full text-left p-4 rounded-xl border border-border bg-[#171717] hover:border-primary/50 hover:bg-[#1c1c1c] transition-all font-medium text-sm sm:text-base flex items-center justify-between group cursor-pointer">
             <span class="flex items-center gap-3">
-              <span class="w-6 h-6 rounded-md bg-slate-800 text-emerald-400 text-xs font-bold flex items-center justify-center shrink-0 group-hover:bg-emerald-500 group-hover:text-emerald-950 transition-colors">B</span>
-              <span class="text-slate-200">Viajar pelo mundo sem depender de ninguém e sem passar perrengue.</span>
+              <span class="w-6 h-6 rounded-md bg-[#242424] text-primary text-xs font-bold flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-black transition-colors">B</span>
+              <span class="text-foreground">Viajar pelo mundo sem depender de ninguém e sem passar aperto.</span>
             </span>
-            <span class="text-slate-600 group-hover:text-emerald-400 text-sm font-bold">→</span>
+            <span class="text-foreground-muted group-hover:text-primary text-sm font-bold">→</span>
           </button>
-          <button data-level="P3" class="quiz-option w-full text-left p-4 rounded-xl border border-slate-800 bg-slate-900/70 hover:border-emerald-500/50 hover:bg-emerald-950/20 transition-all font-medium text-sm sm:text-base flex items-center justify-between group">
+          <button data-level="P3" class="quiz-option w-full text-left p-4 rounded-xl border border-border bg-[#171717] hover:border-primary/50 hover:bg-[#1c1c1c] transition-all font-medium text-sm sm:text-base flex items-center justify-between group cursor-pointer">
             <span class="flex items-center gap-3">
-              <span class="w-6 h-6 rounded-md bg-slate-800 text-emerald-400 text-xs font-bold flex items-center justify-center shrink-0 group-hover:bg-emerald-500 group-hover:text-emerald-950 transition-colors">C</span>
-              <span class="text-slate-200">Trabalhar remotamente para empresas dos EUA e ganhar em dólar.</span>
+              <span class="w-6 h-6 rounded-md bg-[#242424] text-primary text-xs font-bold flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-black transition-colors">C</span>
+              <span class="text-foreground">Trabalhar com clientes internacionais ou empresas que exigem inglês.</span>
             </span>
-            <span class="text-slate-600 group-hover:text-emerald-400 text-sm font-bold">→</span>
+            <span class="text-foreground-muted group-hover:text-primary text-sm font-bold">→</span>
           </button>
-          <button data-level="P4" class="quiz-option w-full text-left p-4 rounded-xl border border-slate-800 bg-slate-900/70 hover:border-emerald-500/50 hover:bg-emerald-950/20 transition-all font-medium text-sm sm:text-base flex items-center justify-between group">
+          <button data-level="P4" class="quiz-option w-full text-left p-4 rounded-xl border border-border bg-[#171717] hover:border-primary/50 hover:bg-[#1c1c1c] transition-all font-medium text-sm sm:text-base flex items-center justify-between group cursor-pointer">
             <span class="flex items-center gap-3">
-              <span class="w-6 h-6 rounded-md bg-slate-800 text-emerald-400 text-xs font-bold flex items-center justify-center shrink-0 group-hover:bg-emerald-500 group-hover:text-emerald-950 transition-colors">D</span>
-              <span class="text-slate-200">Liderar reuniões internacionais de alto nível com autoridade e elegância.</span>
+              <span class="w-6 h-6 rounded-md bg-[#242424] text-primary text-xs font-bold flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-black transition-colors">D</span>
+              <span class="text-foreground">Participar de reuniões de trabalho com autoridade, sem travar nem hesitar.</span>
             </span>
-            <span class="text-slate-600 group-hover:text-emerald-400 text-sm font-bold">→</span>
+            <span class="text-foreground-muted group-hover:text-primary text-sm font-bold">→</span>
           </button>
         </div>
       </div>
 
       <!-- Resultado do Quiz -->
       <div id="quiz-result" class="hidden text-center py-6">
-        <div class="w-16 h-16 rounded-2xl bg-emerald-950 border border-emerald-500/40 text-emerald-400 flex items-center justify-center mx-auto mb-4 text-2xl shadow-lg shadow-emerald-500/20">
+        <div class="w-16 h-16 rounded-full bg-primary/15 border border-primary/30 text-primary flex items-center justify-center mx-auto mb-4 text-2xl shadow-lg">
           <svg class="w-8 h-8 stroke-current fill-none stroke-2" viewBox="0 0 24 24">
-            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            <polyline points="20 6 9 17 4 12"></polyline>
           </svg>
         </div>
-        <span class="text-xs uppercase tracking-widest text-emerald-400 font-bold block mb-1">Seu Portal Inicial</span>
-        <h3 id="result-title" class="text-2xl sm:text-3xl font-extrabold text-white mb-2">Portal 1: O Descongelamento</h3>
-        <p id="result-rank" class="text-xs font-bold text-slate-400 mb-4 uppercase tracking-wider">Nível: A1 → A2</p>
-        <p id="result-desc" class="text-sm text-slate-300 max-w-lg mx-auto mb-8 leading-relaxed">
-          Seu ponto de partida ideal é este Portal. Você vai destravar os primeiros 350 chunks com o guardião Jordan (NY) em conversas do dia a dia.
+        <span class="text-xs uppercase tracking-widest text-primary font-bold block mb-1">Diagnóstico Concluído</span>
+        <h3 id="result-title" class="text-2xl sm:text-3xl font-extrabold text-foreground mb-2">Estágio 1: Descongelamento</h3>
+        <p id="result-rank" class="text-xs font-bold text-foreground-muted mb-4 uppercase tracking-wider">Ponto de Partida</p>
+        <p id="result-desc" class="text-sm text-foreground-muted max-w-lg mx-auto mb-8 leading-relaxed">
+          Identificamos seu ponto de partida. Você vai destravar a fala espontânea com o professor Gabe e treinar diariamente na IA Lexi Alpha.
         </p>
-
-        <!-- Badge: Chat Ilimitado -->
-        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-purple-950/50 border border-purple-500/30 text-xs font-semibold text-purple-300 mb-6">
-          <svg class="w-3.5 h-3.5 stroke-current fill-none stroke-2" viewBox="0 0 24 24">
-            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-          </svg>
-          <span>Chat Ilimitado na Turma Alpha</span>
-        </div>
 
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
-            id="result-cta"
-            href="https://aida.experiasolutions.com.br"
+            id="result-whatsapp-btn"
+            href="https://wa.me/5511967239791"
             target="_blank"
             rel="noopener noreferrer"
-            class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-base font-bold bg-emerald-500 hover:bg-emerald-400 text-emerald-950 transition-all shadow-xl shadow-emerald-500/20"
+            class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full text-base font-bold bg-primary hover:bg-primary-hover text-black transition-all shadow-xl shadow-primary/20 cursor-pointer"
           >
-            <span id="cta-text">Conversar com Jordan Agora →</span>
+            <span id="cta-text">Enviar Diagnóstico para o Gabe no WhatsApp &rarr;</span>
           </a>
           <button
-            id="view-map-btn"
-            class="w-full sm:w-auto px-6 py-4 rounded-xl text-sm font-medium text-slate-400 hover:text-white border border-slate-800 transition-colors"
-          >
-            Ver o Mapa da Montanha
-          </button>
-          <button
-            onclick="resetQuiz()"
-            class="w-full sm:w-auto px-6 py-4 rounded-xl text-sm font-medium text-slate-500 hover:text-slate-300 transition-colors"
+            id="reset-quiz-btn"
+            type="button"
+            class="w-full sm:w-auto px-6 py-4 rounded-full text-sm font-medium text-foreground-muted hover:text-foreground border border-border hover:border-[#363636] transition-colors cursor-pointer"
           >
             Refazer Teste
           </button>
@@ -194,34 +185,26 @@
   let currentStep = 0;
   const answers: string[] = [];
 
-  const resultsData: Record<string, { title: string; rank: string; desc: string; guardian: string; ctaText: string }> = {
+  const resultsData: Record<string, { title: string; rank: string; desc: string }> = {
     P1: {
-      title: "Portal 1: O Descongelamento",
-      rank: "Rank E ➔ Rank D (A1 → A2)",
-      desc: "Seu cérebro trava na hora de puxar palavras simples porque ainda processa em português. Seu guardião imediato é Jordan (Amigo de NY) com 350 Chunks de desinibição.",
-      guardian: "Jordan",
-      ctaText: "Conversar com Jordan Agora →"
+      title: "Estágio 1: Descongelamento e Início Seguro",
+      rank: "Foco: Perder o medo e destravar a primeira fala",
+      desc: "Seu cérebro trava ao tentar puxar palavras porque você ainda tenta traduzir do português. O acompanhamento com o Gabe e a prática diária de 15 min na IA Lexi Alpha vão eliminar esse medo em poucos dias."
     },
     P2: {
-      title: "Portal 2: O Motor do BICS",
-      rank: "Rank D ➔ Rank C (A2 → B1)",
-      desc: "Você entende muito bem, mas falta vocabulário ativo e reflexo imediato. Seu guardião é Miles para dominar os 650 Chunks de viagens e imprevistos sem tradutor.",
-      guardian: "Miles",
-      ctaText: "Conversar com Miles Agora →"
+      title: "Estágio 2: Autonomia para Viagens e Cotidiano",
+      rank: "Foco: Conseguir se virar no mundo real sem tradutor",
+      desc: "Você já entende bastante, mas falta agilidade no reflexo oral. Com as sessões de conversação ao vivo com o Gabe e o treino de frases prontas na IA, você ganha autonomia real."
     },
     P3: {
-      title: "Portal 3: A Ponte da Fluência",
-      rank: "Rank C ➔ Rank B (B1 Intermediário)",
-      desc: "Você já se comunica, mas com vocabulário limitado e medo de julgamento em reuniões. Seu guardião é Zack para dominar gírias ágeis, tech English e expressividade.",
-      guardian: "Zack",
-      ctaText: "Conversar com Zack Agora →"
+      title: "Estágio 3: Fluência Social e Conversação Ampla",
+      rank: "Foco: Bate-papo natural sem repetir sempre as mesmas palavras",
+      desc: "Você consegue se comunicar, mas sente que seu vocabulário é limitado. A Turma Alpha vai expandir seu repertório com expressões naturais e simulações com o Gabe."
     },
     P4: {
-      title: "Portal 4: O CALP Executivo",
-      rank: "Rank B ➔ Rank A (B1 → B2)",
-      desc: "Você busca sofisticação profissional e negociação de alto impacto. Sua guardiã é Alexandra (Londres) com 500 Chunks corporativos e persuasão refinada.",
-      guardian: "Alexandra",
-      ctaText: "Conversar com Alexandra Agora →"
+      title: "Estágio 4: Confiança Profissional e de Trabalho",
+      rank: "Foco: Segurança em reuniões e conversas internacionais",
+      desc: "Você precisa de clareza e autoridade ao falar sobre negócios e carreira. As sessões focadas e o treino com a IA vão te preparar para reuniões reais sem hesitação."
     }
   };
 
@@ -249,7 +232,7 @@
         if (resultDiv) resultDiv.classList.remove('hidden');
         if (progressBar) progressBar.style.width = '100%';
 
-        // Calcular maioria ou usar última resposta
+        // Calcular maioria
         const counts: Record<string, number> = {};
         answers.forEach(a => { counts[a] = (counts[a] || 0) + 1; });
         const topLevel = Object.keys(counts).reduce((a, b) => counts[a] > counts[b] ? a : b, 'P1');
@@ -258,50 +241,49 @@
         const titleEl = document.getElementById('result-title');
         const rankEl = document.getElementById('result-rank');
         const descEl = document.getElementById('result-desc');
-        const ctaTextEl = document.getElementById('cta-text');
+        const whatsappBtn = document.getElementById('result-whatsapp-btn') as HTMLAnchorElement | null;
 
         if (titleEl) titleEl.textContent = r.title;
         if (rankEl) rankEl.textContent = r.rank;
         if (descEl) descEl.textContent = r.desc;
-        if (ctaTextEl) ctaTextEl.textContent = r.ctaText;
 
-        // Salvar resultado no localStorage para o S-Curve Map usar
-        localStorage.setItem('lexiquest_quiz_result', JSON.stringify({ topLevel }));
-
-        // Adicionar event listener para o botão "Ver o Mapa"
-        const viewMapBtn = document.getElementById('view-map-btn');
-        if (viewMapBtn) {
-          viewMapBtn.addEventListener('click', () => {
-            const lexiquestSection = document.getElementById('lexiquest-demo');
-            if (lexiquestSection) {
-              lexiquestSection.scrollIntoView({ behavior: 'smooth' });
-            }
-          });
+        // Configurar link do WhatsApp preenchido perfeitamente
+        if (whatsappBtn) {
+          const message = `Oi Gabe! Fiz o diagnóstico na página e meu resultado deu: ${r.title} (${r.rank}). Quero entender como participar da Turma Alpha por R$ 197/mês 🚀`;
+          whatsappBtn.href = `https://wa.me/5511967239791?text=${encodeURIComponent(message)}`;
         }
 
-        // Disparo de celebração
+        // Salvar localmente
+        try {
+          localStorage.setItem('lexi_quiz_result', JSON.stringify({ topLevel, ...r }));
+        } catch {}
+
+        // Confetes de celebração
         try {
           confetti({
-            particleCount: 80,
+            particleCount: 70,
             spread: 60,
             origin: { y: 0.6 },
-            colors: ['#10b981', '#14b8a6', '#f59e0b']
+            colors: ['#3ecf8e', '#00c573', '#10b981']
           });
         } catch { /* Fail-safe */ }
       }
     });
   });
 
-  (window as any).resetQuiz = function() {
-    currentStep = 0;
-    answers.length = 0;
-    steps.forEach((s, idx) => {
-      const el = document.getElementById(s);
-      if (el) el.classList.toggle('hidden', idx !== 0);
+  const resetBtn = document.getElementById('reset-quiz-btn');
+  if (resetBtn) {
+    resetBtn.addEventListener('click', () => {
+      currentStep = 0;
+      answers.length = 0;
+      steps.forEach((s, idx) => {
+        const el = document.getElementById(s);
+        if (el) el.classList.toggle('hidden', idx !== 0);
+      });
+      const resultDiv = document.getElementById('quiz-result');
+      if (resultDiv) resultDiv.classList.add('hidden');
+      const progressBar = document.getElementById('progress-bar');
+      if (progressBar) progressBar.style.width = '33%';
     });
-    const resultDiv = document.getElementById('quiz-result');
-    if (resultDiv) resultDiv.classList.add('hidden');
-    const progressBar = document.getElementById('progress-bar');
-    if (progressBar) progressBar.style.width = '33%';
-  };
+  }
 </script>

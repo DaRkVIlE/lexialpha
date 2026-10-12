@@ -2,44 +2,68 @@
 
 @layer base {
   :root {
-    /* MANA Design System - Sentry-inspired */
-    --color-primary: #6a5fc1;
-    --color-primary-dark: #1f1633;
-    --color-primary-darker: #150f23;
-    --color-accent: #c2ef4e;
-    --color-surface: #ffffff;
-    --color-text: #ffffff;
-    --color-text-muted: #cfcfdb;
-    --color-border: #e5e7eb;
-    --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    /* Design System: Supabase Developer Aesthetic (Gabe's-design-system.md) */
+    --color-background: #0f0f0f;
+    --color-background-elevated: #171717;
+    --color-card: #141414;
+    --color-card-border: #242424;
+    --color-foreground: #fafafa;
+    --color-foreground-muted: #898989;
+    --color-foreground-subtle: #b4b4b4;
+    --color-border: #242424;
+    --color-border-dark: #2e2e2e;
+    --color-border-mid: #363636;
+    --color-border-light: #393939;
+
+    /* Supabase Emerald Green Accent Scale */
+    --color-primary: #3ecf8e;
+    --color-primary-hover: #34b27b;
+    --color-accent: #00c573;
+    --color-accent-hover: #00a862;
+    --color-accent-dim: rgba(62, 207, 142, 0.15);
+    --color-accent-border: rgba(62, 207, 142, 0.3);
+
+    /* Radius & Layout */
+    --radius-pill: 9999px;
+    --radius-card: 16px;
+    --radius-input: 8px;
+
+    /* Typography */
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-mono: 'Source Code Pro', 'Menlo', monospace;
   }
 
   html {
     font-family: var(--font-sans);
     scroll-behavior: smooth;
-    background-color: var(--color-primary-dark);
-    color: var(--color-text);
+    background-color: var(--color-background);
+    color: var(--color-foreground);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
-  ::selection {
-    background-color: var(--color-primary);
-    color: var(--color-surface);
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
   }
 
-  /* Custom dark scrollbar */
+  ::selection {
+    background-color: var(--color-primary);
+    color: #0f0f0f;
+  }
+
+  /* Custom dark scrollbar inspired by Supabase / code editors */
   ::-webkit-scrollbar {
-    width: 8px;
+    width: 6px;
   }
   ::-webkit-scrollbar-track {
-    background: var(--color-primary-darker);
+    background: #0f0f0f;
   }
   ::-webkit-scrollbar-thumb {
-    background: #362d59;
-    border-radius: 4px;
+    background: #242424;
+    border-radius: 9999px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: var(--color-primary);
+    background: #363636;
   }
 }

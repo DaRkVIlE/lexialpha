@@ -1,0 +1,108 @@
+{
+  "storyId": "STORY-LP-CONSOLIDATION",
+  "title": "Consolidação da Landing Page Lexi Alpha — Meta-Metodologia & Supabase Design System",
+  "version": "1.0.0",
+  "gatheredBy": "@pm (Morgan / KAIROS NOESIS)",
+  "createdAt": "2026-10-12T12:18:00Z",
+  "sources": [
+    "C:/Users/Usuario/Documents/Haha²/LEXI/lexi-landing-esboco.canvas",
+    "C:/Users/Usuario/Documents/Haha²/LEXI/Benchmarking de metodologias de inglês e meta-metodologia da Lexi.md",
+    "C:/Users/Usuario/Documents/My KAIROS/Gabe's English Classes/Gabe's-design-system.md",
+    "Diretrizes Editoriais do Operador Gabe (2026-10-12)"
+  ],
+  "functionalRequirements": [
+    {
+      "id": "FR-01",
+      "category": "Hero Section",
+      "description": "Apresentar a proposta de valor central: 'Você não estuda para falar. Você fala para aprender', destacando o professor Gabriel Lima (Gabe) como instrutor direto somado à IA autoral complementar Lexi Alpha, sem promessas mágicas de tempo.",
+      "priority": "P0"
+    },
+    {
+      "id": "FR-02",
+      "category": "Problem / Agitation",
+      "description": "Denunciar o modelo de negócio do 'Aluno Eterno' das escolas tradicionais, posicionando transparência radical (estilo Mairo Vergara) de que o foco é ensinar inglês de verdade e não vender cursos.",
+      "priority": "P0"
+    },
+    {
+      "id": "FR-03",
+      "category": "Mechanism",
+      "description": "Apresentar o mecanismo da meta-metodologia: Chunks práticos + Feedback em camadas (recast, prompt de autocorreção e explicação sucinta) + Ciclo FSRS de repetição com tempo de reação (<4s).",
+      "priority": "P0"
+    },
+    {
+      "id": "FR-04",
+      "category": "Quiz Interativo (3 min)",
+      "description": "Fornecer diagnóstico de nivelamento reflexo em 3 etapas com botões táteis (A, B, C, D), cálculo do estágio de fala, confetes de celebração e botão com deep link para WhatsApp do Gabe com o diagnóstico preenchido.",
+      "priority": "P0"
+    },
+    {
+      "id": "FR-05",
+      "category": "Progresso de Fala",
+      "description": "Demonstrar a evolução do aluno em 5 Estágios Práticos (Descongelamento, Autonomia em Viagens, Conversação Cotidiana, Segurança no Trabalho, Autonomia Plena), sem prazos irreais de meses.",
+      "priority": "P0"
+    },
+    {
+      "id": "FR-06",
+      "category": "Rotina do Aluno",
+      "description": "Explicar a rotina híbrida: 3 encontros semanais com o professor Gabe (2 rápidos de ajuste + 1 estendido de conversação plena) somados a no mínimo 15 minutos diários de prática autônoma com a IA Lexi Alpha no celular.",
+      "priority": "P0"
+    },
+    {
+      "id": "FR-07",
+      "category": "Autoridade & Quem é o Gabe",
+      "description": "Seção dedicada ao professor Gabriel Lima (Gabe), sua abordagem humana de mentoria, presença ativa no grupo e papel de aprovação dos estágios de fala.",
+      "priority": "P1"
+    },
+    {
+      "id": "FR-08",
+      "category": "Oferta Turma Alpha",
+      "description": "Oferta clara e acessível: R$ 197 por mês, limitado a 10 vagas, sem taxa de matrícula, sem contrato de fidelidade de 1 ano e com garantia incondicional de 30 dias (devolução 100% via Pix).",
+      "priority": "P0"
+    },
+    {
+      "id": "FR-09",
+      "category": "FAQ Transparente",
+      "description": "FAQ em <details> nativo respondendo objeções reais sem jargões: 'Prometem fluência em meses?', 'A IA substitui o professor?', 'Como funciona a rotina?', 'Posso cancelar quando quiser?'.",
+      "priority": "P0"
+    },
+    {
+      "id": "FR-10",
+      "category": "Conversão & CTA Final",
+      "description": "CTA fixo/final direcionando para o WhatsApp oficial (+55 11 96723-9791) com mensagem pré-preenchida para os 10 leads da Turma Alpha.",
+      "priority": "P0"
+    }
+  ],
+  "nonFunctionalRequirements": [
+    {
+      "id": "NFR-01",
+      "category": "Performance",
+      "target": "LCP < 1.0s no mobile, build estático com Astro 5, zero FOUC, bundle < 35KB.",
+      "priority": "P0"
+    },
+    {
+      "id": "NFR-02",
+      "category": "Design System",
+      "target": "Aderência estrita ao Design System Supabase Dark: backgrounds #0f0f0f e #171717, bordas #242424/#2e2e2e, acentos #3ecf8e e #00c573, pill buttons (radius 9999px) e cards de 16px.",
+      "priority": "P0"
+    },
+    {
+      "id": "NFR-03",
+      "category": "Acessibilidade",
+      "target": "Conformidade WCAG 2.2 AA (contraste texto/fundo >= 4.5:1, navegação por teclado, aria-labels nos botões interativos).",
+      "priority": "P1"
+    },
+    {
+      "id": "NFR-04",
+      "category": "Motion",
+      "target": "Microinterações elegantes via GSAP ScrollTrigger com suporte a prefers-reduced-motion.",
+      "priority": "P1"
+    }
+  ],
+  "constraints": [
+    "C-01: Proibido qualquer promessa de fluência em X meses ou prazos artificiais (Cambridge: 500-600h).",
+    "C-02: Proibido usar nomes antigos ou alucinações (ex: 'Gabriel Ferreira', 'Método Montanha criado após frustrar alunos').",
+    "C-03: Manter foco 100% em LEXI Alpha (LexiQuest permanece em icebox estratégico).",
+    "C-04: Conversão estritamente consultiva via WhatsApp do Gabe (sem gateway de checkout automático na Turma Alpha).",
+    "C-05: Conformidade LGPD com aviso claro sobre dados e consentimento para contato."
+  ]
+}

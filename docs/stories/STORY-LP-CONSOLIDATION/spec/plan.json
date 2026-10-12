@@ -1,0 +1,58 @@
+{
+  "storyId": "STORY-LP-CONSOLIDATION",
+  "plannedBy": "@architect (Aria / KAIROS NOESIS)",
+  "plannedAt": "2026-10-12T12:20:00Z",
+  "status": "READY_FOR_DEPLOYMENT",
+  "executionSummary": {
+    "totalComponents": 10,
+    "buildStatus": "PASSING (1.17s)",
+    "qaVerdict": "APPROVED (4.94/5)"
+  },
+  "phases": [
+    {
+      "phase": 1,
+      "name": "Design Tokens & Foundation",
+      "status": "COMPLETED",
+      "deliverables": [
+        "landing/src/styles/global.css (Tokens Supabase Dark)",
+        "landing/src/components/Button.astro (Pill button 9999px)",
+        "landing/src/components/Card.astro (Surface #141414, Border #242424)"
+      ]
+    },
+    {
+      "phase": 2,
+      "name": "Core Storytelling & Copywriting",
+      "status": "COMPLETED",
+      "deliverables": [
+        "landing/src/components/Hero.astro (Gabriel Lima + IA Lexi Alpha)",
+        "landing/src/components/Problem.astro (Desmonte do Aluno Eterno)",
+        "landing/src/components/Solution.astro (Mentoria Humana + Tecnologia Autoral)",
+        "landing/src/components/MontanhaB2.astro (5 Estágios Práticos da Fala)",
+        "landing/src/components/LexiAlphaFeatures.astro (Rotina 3x/sem + mín. 15m IA)",
+        "landing/src/components/SocialProof.astro (Krashen, Lyster & Saito, FSRS-6)"
+      ]
+    },
+    {
+      "phase": 3,
+      "name": "Conversion Engine & Funnel",
+      "status": "COMPLETED",
+      "deliverables": [
+        "landing/src/components/QuizSection.astro (Diagnóstico 3 min + WhatsApp deep link)",
+        "landing/src/components/Pricing.astro (R$ 197/mês, 10 vagas, 30 dias garantia)",
+        "landing/src/components/Faq.astro (FAQ transparente estilo Mairo Vergara)",
+        "landing/src/components/FinalCTA.astro (Chamada final WhatsApp)",
+        "landing/src/components/Footer.astro (Identidade institucional)"
+      ]
+    },
+    {
+      "phase": 4,
+      "name": "Orchestration & Verification",
+      "status": "COMPLETED",
+      "deliverables": [
+        "landing/src/pages/index.astro (Fluxo de 10 seções sem atalhos)",
+        "Build verification (npm run build: 0 errors, 1.17s)",
+        "Purga de arquivos legados (AlunoEterno.astro, LexiQuest.astro removidos)"
+      ]
+    }
+  ]
+}

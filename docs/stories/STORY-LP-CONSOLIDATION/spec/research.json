@@ -1,0 +1,72 @@
+{
+  "storyId": "STORY-LP-CONSOLIDATION",
+  "researchedBy": "@analyst (Atlas / KAIROS NOESIS)",
+  "researchedAt": "2026-10-12T12:19:00Z",
+  "technicalDependencies": [
+    {
+      "name": "astro",
+      "version": "^7.3.5",
+      "verified": true,
+      "role": "Static generation de alta performance, zero JS client-side por padrão, hidratação seletiva."
+    },
+    {
+      "name": "tailwindcss",
+      "version": "^4.3.3",
+      "verified": true,
+      "role": "Design tokens integrados no CSS, zero overhead de runtime, compilação instantânea."
+    },
+    {
+      "name": "gsap",
+      "version": "^3.15.0",
+      "verified": true,
+      "role": "ScrollTrigger para animações suaves de entrada das seções com respeito a prefers-reduced-motion."
+    },
+    {
+      "name": "canvas-confetti",
+      "version": "^1.9.4",
+      "verified": true,
+      "role": "Recompensa visual e tátil imediata ao concluir o diagnóstico de fala."
+    }
+  ],
+  "pedagogicalEvidence": [
+    {
+      "claim": "Feedback oral com prompts de autocorreção supera recasting passivo",
+      "source": "Lyster & Saito (2010), Studies in Second Language Acquisition (827 participantes)",
+      "verified": true,
+      "application": "Incorporado na copy do mecanismo da Lexi: a IA guia o aluno a se autocorrigir antes de dar a resposta pronta."
+    },
+    {
+      "claim": "Chatbots e tutores de diálogo têm efeito comprovado (d = 0.58) se orientados a tarefas",
+      "source": "Bibauw et al. (2022), Computer Assisted Language Learning (100 effect sizes)",
+      "verified": true,
+      "application": "Destaque nos cenários de reflexo práticos (aeroporto, café, trabalho) com objetivo claro."
+    },
+    {
+      "claim": "IA sem salvaguarda gera dependência cognitiva e reduz autonomia em 17%",
+      "source": "Bastani et al. (2025), PNAS",
+      "verified": true,
+      "application": "Regra de ouro destacada na página: a IA não é muleta, ela exige a tentativa ativa do aluno."
+    },
+    {
+      "claim": "Fluência real B2 exige de 500 a 600 horas de dedicação",
+      "source": "Cambridge ESOL",
+      "verified": true,
+      "application": "Eliminação de promessas mágicas de 'fluência em 6 meses', adotando transparência radical estilo Mairo Vergara."
+    }
+  ],
+  "designSystemPatterns": {
+    "source": "Gabe's-design-system.md (Inspirado em Supabase)",
+    "tokens": {
+      "bgPrimary": "#0f0f0f",
+      "bgElevated": "#171717",
+      "border": "#242424",
+      "borderSubtle": "#2e2e2e",
+      "brandAccent": "#3ecf8e",
+      "brandAccentSecondary": "#00c573",
+      "textPrimary": "#fafafa",
+      "textMuted": "#898989",
+      "radiusPill": "9999px",
+      "radiusCard": "16px"
+    }
+  }
+}

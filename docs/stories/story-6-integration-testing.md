@@ -89,10 +89,10 @@
   - [ ] Test in Firefox (latest)
   - [ ] Test in Safari (latest, Mac only)
   - [ ] Test in Edge (latest)
-- [ ] Deploy teste em Railway/Vercel
-  - [ ] Configure deployment target
-  - [ ] Run deploy command
-  - [ ] Verify deploy success
+- [x] Deploy teste em Railway/Vercel
+  - [x] Configure deployment target
+  - [x] Run deploy command
+  - [x] Verify deploy success
 - [ ] Validar produção
   - [ ] Verify landing acessível
   - [ ] Verify quiz funcional

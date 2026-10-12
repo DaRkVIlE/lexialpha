@@ -1,63 +1,101 @@
 ---
-// Faq.astro — Perguntas Frequentes
+// Faq.astro — Perguntas Frequentes Gabe's English
+// Posicionamento: Transparência radical (estilo Mairo Vergara), sem falsas promessas, explicando aulas com Gabe + IA
 ---
 
-<section class="relative py-24 px-4 sm:px-6 lg:px-8 bg-slate-950 text-slate-100 border-t border-slate-800">
+<section id="faq" class="py-24 px-4 sm:px-6 lg:px-8 bg-background-elevated">
   <div class="max-w-4xl mx-auto">
-    <!-- Cabeçalho -->
+    <!-- Header -->
     <div class="text-center mb-16">
-      <span class="text-xs uppercase tracking-widest text-emerald-400 font-bold block mb-2">Tire Suas Dúvidas</span>
-      <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white mb-3">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-semibold uppercase tracking-wider mb-4">
+        <span>Tire Suas Dúvidas</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground leading-tight mb-4">
         Perguntas Frequentes
       </h2>
-      <p class="text-sm sm:text-base text-slate-400">
-        Tudo o que você precisa saber sobre a LEXI Alpha e o Método MANA 3.0.
+      <p class="text-foreground-muted text-base sm:text-lg max-w-2xl mx-auto">
+        Respostas sinceras sobre a metodologia, a rotina e o acompanhamento na Turma Alpha.
       </p>
     </div>
 
-    <!-- Lista de Perguntas (Acordeões) -->
-    <div class="space-y-6">
-      <div class="faq-card rounded-2xl border border-slate-800 bg-slate-900/60 p-6 sm:p-8">
-        <h3 class="text-lg font-bold text-white mb-2">O que é a Plataforma LEXI Alpha?</h3>
-        <p class="text-slate-300 text-sm leading-relaxed">
-          É a nossa plataforma proprietária de aceleração oral. Ela reúne em um único ambiente moderno a trilha dos 5 Portais da Montanha B2 (2.500 Chunks), o Treinador de Reflexo FSRS-6, o Construtor Tátil de Frases e um motor nativo de gamificação sem anúncios nem distrações.
-        </p>
-      </div>
+    <div class="space-y-4">
+      <!-- FAQ 1: Promessas de fluência -->
+      <details class="bg-card rounded-2xl border border-border overflow-hidden group">
+        <summary class="px-6 py-5 cursor-pointer font-bold text-foreground hover:text-primary transition-colors flex items-center justify-between text-base sm:text-lg">
+          Vocês prometem "fluência em 3 ou 6 meses"?
+          <svg class="w-5 h-5 text-foreground-muted group-open:rotate-180 transition-transform shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </summary>
+        <div class="px-6 pb-6 text-foreground-muted text-sm sm:text-base leading-relaxed border-t border-border/50 pt-4">
+          <strong>Não. E desconfie de quem fizer essa promessa.</strong> Nosso objetivo é te ensinar inglês de verdade, não vender ilusões. Cada aluno tem um histórico diferente, medos diferentes e uma rotina particular. O que nós garantimos são as ferramentas certas: a mentoria próxima do professor Gabe, encontros regulares de conversação e uma IA autoral para você praticar todos os dias sem vergonha de errar.
+        </div>
+      </details>
 
-      <div class="faq-card rounded-2xl border border-slate-800 bg-slate-900/60 p-6 sm:p-8">
-        <h3 class="text-lg font-bold text-white mb-2">Preciso instalar ferramentas complexas ou softwares pesados?</h3>
-        <p class="text-slate-300 text-sm leading-relaxed">
-          Absolutamente não. Nada de plataformas acadêmicas antigas, instalações complicadas ou burocracia. A LEXI Alpha roda direto no seu navegador e no seu celular. Basta fazer login e começar a praticar.
-        </p>
-      </div>
+      <!-- FAQ 2: Como funcionam as aulas com o Gabe -->
+      <details class="bg-card rounded-2xl border border-border overflow-hidden group">
+        <summary class="px-6 py-5 cursor-pointer font-bold text-foreground hover:text-primary transition-colors flex items-center justify-between text-base sm:text-lg">
+          Como funcionam os encontros com o professor Gabe?
+          <svg class="w-5 h-5 text-foreground-muted group-open:rotate-180 transition-transform shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </summary>
+        <div class="px-6 pb-6 text-foreground-muted text-sm sm:text-base leading-relaxed border-t border-border/50 pt-4">
+          Na Turma Alpha temos 3 momentos semanais: <strong>2 sessões rápidas</strong> de acompanhamento e ajustes práticos para garantir que você não trave, e <strong>1 sessão estendida</strong> dedicada integralmente à conversação guiada, dinâmicas reais e simulação de situações do cotidiano (viagens, trabalho, entrevistas). O professor Gabriel Lima conduz os encontros diretamente com a turma.
+        </div>
+      </details>
 
-      <div class="faq-card rounded-2xl border border-slate-800 bg-slate-900/60 p-6 sm:p-8">
-        <h3 class="text-lg font-bold text-white mb-2">Como funcionam os Guardiões de IA e o Companion Extra?</h3>
-        <p class="text-slate-300 text-sm leading-relaxed">
-          Dentro da LEXI Alpha você treina com 7 personas nativas calibradas para cada nível da Montanha B2 (Jordan, Miles, Zack, Alexandra, Hayes e AIDA Tutora), todas utilizando <strong class="text-emerald-400 font-semibold">Recasting Natural</strong> sem caneta vermelha. Como bônus complementar da Turma Alpha, você também recebe o Companion de Bolso 24/7 para conversação móvel rápida a qualquer hora.
-        </p>
-      </div>
+      <!-- FAQ 3: IA substitui o professor? -->
+      <details class="bg-card rounded-2xl border border-border overflow-hidden group">
+        <summary class="px-6 py-5 cursor-pointer font-bold text-foreground hover:text-primary transition-colors flex items-center justify-between text-base sm:text-lg">
+          A inteligência artificial substitui as aulas com o professor?
+          <svg class="w-5 h-5 text-foreground-muted group-open:rotate-180 transition-transform shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </summary>
+        <div class="px-6 pb-6 text-foreground-muted text-sm sm:text-base leading-relaxed border-t border-border/50 pt-4">
+          De forma alguma. A IA <strong>Lexi Alpha</strong> é uma tecnologia complementar de autoria própria. Ela foi criada para resolver o maior problema do aprendizado de idiomas: o vácuo de vários dias sem praticar entre uma aula e outra. Você usa a IA no celular para treinar sua fala e escuta diariamente; o professor usa as aulas para aparar as arestas, trazer contexto cultural e destravar a sua confiança.
+        </div>
+      </details>
 
-      <div class="faq-card rounded-2xl border border-slate-800 bg-slate-900/60 p-6 sm:p-8">
-        <h3 class="text-lg font-bold text-white mb-2">Vou ter que decorar regras de gramática?</h3>
-        <p class="text-slate-300 text-sm leading-relaxed">
-          Não. O método MANA trabalha com blocos pré-moldados (chunks). Você aprende a usar as frases completas como um nativo, sem pensar em regras analíticas antes de falar.
-        </p>
-      </div>
+      <!-- FAQ 4: 15 minutos diários -->
+      <details class="bg-card rounded-2xl border border-border overflow-hidden group">
+        <summary class="px-6 py-5 cursor-pointer font-bold text-foreground hover:text-primary transition-colors flex items-center justify-between text-base sm:text-lg">
+          Preciso estudar exatamente 15 minutos por dia?
+          <svg class="w-5 h-5 text-foreground-muted group-open:rotate-180 transition-transform shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </summary>
+        <div class="px-6 pb-6 text-foreground-muted text-sm sm:text-base leading-relaxed border-t border-border/50 pt-4">
+          <strong>15 minutos é o mínimo recomendado</strong> para manter a consistência e fixar a memória de longo prazo. É o tempo ideal para quem tem rotina corrida. Porém, se você tiver mais tempo disponível e quiser conversar por 30 minutos ou 1 hora, a IA está à sua disposição 24h por dia, sem nenhum limite ou cobrança adicional.
+        </div>
+      </details>
 
-      <div class="faq-card rounded-2xl border border-slate-800 bg-slate-900/60 p-6 sm:p-8">
-        <h3 class="text-lg font-bold text-white mb-2">E se eu tiver muita vergonha de falar errado?</h3>
-        <p class="text-slate-300 text-sm leading-relaxed">
-          Esse é o maior diferencial do ecossistema. Os tutores de inteligência artificial não têm julgamento, não se cansam e nunca apontam seus erros de forma punitiva. Eles respondem naturalmente modelando a pronúncia e a estrutura correta, e seu cérebro adquire o padrão por absorção orgânica.
-        </p>
-      </div>
+      <!-- FAQ 5: Preço e cancelamento -->
+      <details class="bg-card rounded-2xl border border-border overflow-hidden group">
+        <summary class="px-6 py-5 cursor-pointer font-bold text-foreground hover:text-primary transition-colors flex items-center justify-between text-base sm:text-lg">
+          Como funciona a mensalidade de R$ 197 e o cancelamento?
+          <svg class="w-5 h-5 text-foreground-muted group-open:rotate-180 transition-transform shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </summary>
+        <div class="px-6 pb-6 text-foreground-muted text-sm sm:text-base leading-relaxed border-t border-border/50 pt-4">
+          A mensalidade de entrada é de <strong>R$ 197 por mês</strong> para os 10 primeiros alunos da Turma Alpha. Não cobramos taxa de matrícula e não exigimos fidelidade de 12 meses. Você pode cancelar quando quiser sem multas. Além disso, se nas primeiras semanas você sentir que o método não é para você, basta pedir o reembolso e devolvemos 100% via Pix.
+        </div>
+      </details>
 
-      <div class="faq-card rounded-2xl border border-slate-800 bg-slate-900/60 p-6 sm:p-8">
-        <h3 class="text-lg font-bold text-white mb-2">Quanto tempo dura a preparação até o nível B2 e como funciona a garantia?</h3>
-        <p class="text-slate-300 text-sm leading-relaxed">
-          Praticando 15 a 20 minutos por dia, o aluno típico completa a Montanha B2 em 6 a 8 meses. Além disso, você tem nossa <strong class="text-emerald-400 font-semibold">Garantia Incondicional de 30 Dias</strong>: se você não sentir que seu reflexo de fala acelerou visivelmente, devolvemos 100% do seu investimento.
-        </p>
-      </div>
+      <!-- FAQ 6: Teste Grátis -->
+      <details class="bg-card rounded-2xl border border-border overflow-hidden group">
+        <summary class="px-6 py-5 cursor-pointer font-bold text-foreground hover:text-primary transition-colors flex items-center justify-between text-base sm:text-lg">
+          Posso fazer um teste antes de me inscrever?
+          <svg class="w-5 h-5 text-foreground-muted group-open:rotate-180 transition-transform shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </summary>
+        <div class="px-6 pb-6 text-foreground-muted text-sm sm:text-base leading-relaxed border-t border-border/50 pt-4">
+          Sim! Você pode responder ao nosso <strong>Diagnóstico de Fala de 3 minutos</strong> aqui na página. Você entenderá exatamente qual o seu estágio atual de travamento e como o método se aplica a você antes de dar o próximo passo.
+        </div>
+      </details>
     </div>
   </div>
 </section>

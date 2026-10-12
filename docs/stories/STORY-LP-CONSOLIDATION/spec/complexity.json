@@ -1,0 +1,39 @@
+{
+  "storyId": "STORY-LP-CONSOLIDATION",
+  "assessedBy": "@architect (Aria / KAIROS NOESIS)",
+  "assessedAt": "2026-10-12T12:18:30Z",
+  "dimensions": {
+    "scope": {
+      "score": 3,
+      "rationale": "Landing page de 10 seções ricas, cobrindo copy integral, componentes Astro atômicos e arquitetura orientada à conversação."
+    },
+    "integration": {
+      "score": 2,
+      "rationale": "Integração cliente com localStorage, cálculo de estágio de fala do Quiz e geração de URL scheme do WhatsApp."
+    },
+    "infrastructure": {
+      "score": 2,
+      "rationale": "Stack estático existente (Astro 5 + Tailwind v4 + GSAP), com compilação ultra-rápida (1.17s) e zero dependência de banco em runtime."
+    },
+    "knowledge": {
+      "score": 3,
+      "rationale": "Tradução de evidências linguísticas avançadas (Lyster & Saito 2010, Krashen, FSRS-6) em proposições de valor claras para o público leigo."
+    },
+    "risk": {
+      "score": 3,
+      "rationale": "A landing é a ferramenta primária de fechamento dos primeiros R$ 2.000 - R$ 5.000 da Turma Alpha; a copy precisa ser cirúrgica e livre de ruídos."
+    }
+  },
+  "totalScore": 13,
+  "maxPossibleScore": 25,
+  "result": "STANDARD",
+  "pipelinePhases": [
+    "gather",
+    "assess",
+    "research",
+    "spec",
+    "critique",
+    "plan"
+  ],
+  "estimatedImplementationHours": 3
+}
