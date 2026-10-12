@@ -1,131 +1,99 @@
 ---
-// LexiAlphaFeatures.astro — Como Funciona a Experiência Lexi Alpha
-// Foco: Aulas com o Gabe + Prática Diária (mínimo 15 min) + Tecnologia Autoral
+// src/components/LexiAlphaFeatures.astro
+// Rotina de Aprendizado: Encontros 1 a 1 com Gabe + Tutor Hiper-Personalizado no LibreChat
+// Zero travessões, foco na personalização única por aluno
+import Card from './Card.astro';
 ---
 
-<section id="aulas-ia" class="py-24 px-4 sm:px-6 lg:px-8 bg-background relative">
-  <div class="max-w-6xl mx-auto">
-    <!-- Header -->
-    <div class="text-center max-w-3xl mx-auto mb-16">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 border border-accent/20 text-accent text-xs font-semibold uppercase tracking-wider mb-4">
-        <span>Estrutura Completa</span>
-      </div>
-      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground leading-[1.15] mb-6">
-        Como Funciona a Sua Rotina na Turma Alpha
-      </h2>
-      <p class="text-foreground-muted text-base sm:text-lg leading-relaxed">
-        Uma rotina leve e sustentável, feita para quem tem vida corrida e não pode perder horas em deslocamento ou tarefas cansativas.
-      </p>
+<section id="aulas-ia" class="py-24 px-4 sm:px-8 max-w-6xl mx-auto border-t border-[#242424]">
+  <div class="max-w-3xl mx-auto text-center space-y-4 mb-16">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#171717] border border-[#242424] text-xs font-mono text-[#3ecf8e]">
+      Rotina Sem Fricção
     </div>
+    <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#fafafa] tracking-tight text-balance">
+      A simbiose perfeita entre mentor humano e inteligência artificial
+    </h2>
+    <p class="text-base sm:text-lg text-[#898989] leading-relaxed">
+      Você não depende apenas de um professor uma vez por semana e nem fica sozinho com um aplicativo genérico. 
+      Nossa rotina combina acompanhamento individual com um parceiro de IA parametrizado exclusivamente para você.
+    </p>
+  </div>
 
-    <!-- Grid de 6 Recursos -->
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <!-- Feature 1: Aulas com o Professor -->
-      <div class="bg-card rounded-2xl border border-border p-6 shadow-sm hover:border-primary/50 transition-all flex flex-col justify-between">
-        <div>
-          <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-5 text-primary">
-            <svg class="w-6 h-6 stroke-current fill-none stroke-2" viewBox="0 0 24 24">
-              <path d="M15 10l5 5-5 5"></path>
-              <path d="M4 4v7a4 4 0 0 0 4 4h12"></path>
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold text-foreground mb-2">Aulas Ao Vivo com o Gabe</h3>
-          <p class="text-foreground-muted text-sm leading-relaxed">
-            2 encontros semanais rápidos de alinhamento individual/em grupo para manter a chama acesa + 1 encontro estendido focado exclusivamente em bate-papo, dinâmicas e simulação de situações reais.
-          </p>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+    <!-- Coluna 1: Acompanhamento Humano 1 a 1 com Gabriel -->
+    <Card class="p-8 sm:p-10 space-y-6 flex flex-col justify-between border-[#242424] hover:border-[#3ecf8e]/30 transition-colors">
+      <div class="space-y-5">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-mono uppercase px-3 py-1 rounded-full bg-[#3ecf8e]/10 text-[#3ecf8e] border border-[#3ecf8e]/20 font-bold">
+            Mentor Humano
+          </span>
+          <span class="text-xs font-mono text-[#898989]">Ao Vivo</span>
         </div>
-        <span class="mt-4 text-xs font-semibold text-primary">Presença & Mentoria Humana</span>
+
+        <h3 class="text-2xl font-bold text-[#fafafa]">Encontros 1 a 1 com Gabriel Lima</h3>
+        <p class="text-sm text-[#898989] leading-relaxed">
+          Toda semana nós nos reunimos em sessões exclusivamente individuais. 
+          Enquanto cursos tradicionais te colocam em salas com 10 a 15 pessoas disputando atenção, aqui o tempo é 100% seu.
+        </p>
+
+        <ul class="space-y-3.5 text-sm text-[#898989]">
+          <li class="flex items-start gap-3">
+            <span class="text-[#3ecf8e] font-bold">&check;</span>
+            <span><strong>2 encontros rápidos de alinhamento:</strong> foco cirúrgico no destravamento de dúvidas e ajuste da rota semanal.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-[#3ecf8e] font-bold">&check;</span>
+            <span><strong>1 encontro estendido de conversação plena:</strong> imersão profunda em diálogos reais, simulações e improviso espontâneo.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-[#3ecf8e] font-bold">&check;</span>
+            <span><strong>Dinâmicas em grupo apenas pontuais:</strong> interações coletivas acontecem somente em momentos específicos e opcionais.</span>
+          </li>
+        </ul>
       </div>
 
-      <!-- Feature 2: Mínimo 15 minutos diários -->
-      <div class="bg-card rounded-2xl border border-border p-6 shadow-sm hover:border-accent/50 transition-all flex flex-col justify-between">
-        <div>
-          <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-5 text-accent">
-            <svg class="w-6 h-6 stroke-current fill-none stroke-2" viewBox="0 0 24 24">
-              <circle cx="12" cy="12" r="10"></circle>
-              <polyline points="12 6 12 12 16 14"></polyline>
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold text-foreground mb-2">Mínimo de 15 Minutos por Dia</h3>
-          <p class="text-foreground-muted text-sm leading-relaxed">
-            15 minutos diários é o piso ideal para consolidar a memória sem sobrecarregar sua rotina. Se tiver mais tempo e quiser conversar mais, a IA está disponível sem nenhum limite.
-          </p>
+      <div class="pt-6 border-t border-[#242424] flex items-center justify-between text-xs font-mono text-[#898989]">
+        <span>Formato: Chamada de vídeo individual</span>
+        <span class="text-[#3ecf8e]">Foco: Segurança e fala fluida</span>
+      </div>
+    </Card>
+
+    <!-- Coluna 2: Tutor Hiper-Personalizado no LibreChat -->
+    <Card class="p-8 sm:p-10 space-y-6 flex flex-col justify-between border-[#242424] hover:border-[#3ecf8e]/30 transition-colors">
+      <div class="space-y-5">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-mono uppercase px-3 py-1 rounded-full bg-[#3ecf8e]/10 text-[#3ecf8e] border border-[#3ecf8e]/20 font-bold">
+            Tecnologia Exclusiva
+          </span>
+          <span class="text-xs font-mono text-[#898989]">Plataforma LibreChat</span>
         </div>
-        <span class="mt-4 text-xs font-semibold text-accent">Consistência sem cansaço</span>
+
+        <h3 class="text-2xl font-bold text-[#fafafa]">Seu Tutor Único de IA no LibreChat</h3>
+        <p class="text-sm text-[#898989] leading-relaxed">
+          O tutor Lexi Alpha não é um chatbot padronizado para todo mundo. 
+          Ele é parametrizado com base no seu perfil: seus objetivos, sua profissão, seus gostos pessoais e suas travas específicas de pronúncia.
+        </p>
+
+        <ul class="space-y-3.5 text-sm text-[#898989]">
+          <li class="flex items-start gap-3">
+            <span class="text-[#3ecf8e] font-bold">&check;</span>
+            <span><strong>Hiper-personalização por aluno:</strong> conversas sobre os temas que você realmente vive no seu cotidiano e trabalho.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-[#3ecf8e] font-bold">&check;</span>
+            <span><strong>Mínimo de 15 minutos por dia:</strong> você pratica áudio e texto quando quiser, sem precisar agendar com antecedência.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-[#3ecf8e] font-bold">&check;</span>
+            <span><strong>Ambiente seguro para errar:</strong> você treina sem qualquer julgamento ou vergonha até o som sair perfeito.</span>
+          </li>
+        </ul>
       </div>
 
-      <!-- Feature 3: Prática por Áudio e Voz -->
-      <div class="bg-card rounded-2xl border border-border p-6 shadow-sm hover:border-emerald-500/50 transition-all flex flex-col justify-between">
-        <div>
-          <div class="w-12 h-12 bg-emerald-500/10 rounded-xl flex items-center justify-center mb-5 text-emerald-400">
-            <svg class="w-6 h-6 stroke-current fill-none stroke-2" viewBox="0 0 24 24">
-              <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
-              <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
-              <line x1="12" y1="19" x2="12" y2="23"></line>
-              <line x1="8" y1="23" x2="16" y2="23"></line>
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold text-foreground mb-2">Treino de Fala e Escuta Real</h3>
-          <p class="text-foreground-muted text-sm leading-relaxed">
-            Envie áudios e receba respostas faladas em velocidade natural. Você perde o receio de errar a pronúncia praticando em um ambiente seguro e privado.
-          </p>
-        </div>
-        <span class="mt-4 text-xs font-semibold text-emerald-400">Sem julgamentos</span>
+      <div class="pt-6 border-t border-[#242424] flex items-center justify-between text-xs font-mono text-[#898989]">
+        <span>Acesso: Plataforma web dedicada</span>
+        <span class="text-[#3ecf8e]">Disponibilidade: 24 horas por dia</span>
       </div>
-
-      <!-- Feature 4: Correção Contextual -->
-      <div class="bg-card rounded-2xl border border-border p-6 shadow-sm hover:border-primary/50 transition-all flex flex-col justify-between">
-        <div>
-          <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-5 text-primary">
-            <svg class="w-6 h-6 stroke-current fill-none stroke-2" viewBox="0 0 24 24">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-              <polyline points="14 2 14 8 20 8"></polyline>
-              <line x1="16" y1="13" x2="8" y2="13"></line>
-              <line x1="16" y1="17" x2="8" y2="17"></line>
-              <polyline points="10 9 9 9 8 9"></polyline>
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold text-foreground mb-2">Frases Prontas para Usar (Chunks)</h3>
-          <p class="text-foreground-muted text-sm leading-relaxed">
-            Você internaliza combinações de palavras que os nativos realmente usam, aprendendo a pensar diretamente em inglês em vez de montar quebra-cabeças mentais traduzindo do português.
-          </p>
-        </div>
-        <span class="mt-4 text-xs font-semibold text-primary">Adeus tradução mental</span>
-      </div>
-
-      <!-- Feature 5: Ponte Pedagógica Gabe + IA -->
-      <div class="bg-card rounded-2xl border border-border p-6 shadow-sm hover:border-accent/50 transition-all flex flex-col justify-between">
-        <div>
-          <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-5 text-accent">
-            <svg class="w-6 h-6 stroke-current fill-none stroke-2" viewBox="0 0 24 24">
-              <circle cx="12" cy="12" r="3"></circle>
-              <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold text-foreground mb-2">Diagnóstico Contínuo de Gargalos</h3>
-          <p class="text-foreground-muted text-sm leading-relaxed">
-            Como a IA foi desenvolvida por mim, eu acompanho os pontos onde você mais hesita para direcionar os nossos encontros ao vivo exatamente naquilo que vai destravar a sua fala.
-          </p>
-        </div>
-        <span class="mt-4 text-xs font-semibold text-accent">Aulas 100% sob medida</span>
-      </div>
-
-      <!-- Feature 6: Praticidade Mobile -->
-      <div class="bg-card rounded-2xl border border-border p-6 shadow-sm hover:border-emerald-500/50 transition-all flex flex-col justify-between">
-        <div>
-          <div class="w-12 h-12 bg-emerald-500/10 rounded-xl flex items-center justify-center mb-5 text-emerald-400">
-            <svg class="w-6 h-6 stroke-current fill-none stroke-2" viewBox="0 0 24 24">
-              <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
-              <line x1="12" y1="18" x2="12.01" y2="18"></line>
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold text-foreground mb-2">No Seu Celular, Onde Você Estiver</h3>
-          <p class="text-foreground-muted text-sm leading-relaxed">
-            Acesso descomplicado direto pelo celular, sem necessidade de instalar aplicativos pesados ou sentar em frente ao computador para cumprir tarefas artificiais.
-          </p>
-        </div>
-        <span class="mt-4 text-xs font-semibold text-emerald-400">Prático e acessível</span>
-      </div>
-    </div>
+    </Card>
   </div>
 </section>

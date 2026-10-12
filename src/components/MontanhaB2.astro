@@ -1,150 +1,183 @@
 ---
-// MontanhaB2.astro — Os 5 Estágios Práticos da Sua Fala
-// Foco: Clareza sem jargões herméticos, sem prazos mentirosos de meses
+// src/components/MontanhaB2.astro
+// Abas Interativas dos 5 Estágios da Fala: CEFR + Cambridge Guided Learning Hours
+// Como o método de Gabe atua em cada nível. Zero travessões.
 import Card from './Card.astro';
+
+const stages = [
+  {
+    id: 'stage-a1',
+    level: 'A1',
+    name: 'Descongelamento Inicial',
+    hours: '90 a 100 horas guiadas (Estudo Cambridge)',
+    trap: 'Tenta traduzir palavra por palavra do português e paralisa por medo de errar a regra gramatical.',
+    solution: 'Injeção de Chunks Fixos de Sobrevivência. Você não conjuga verbos; memoriza blocos sonoros prontos e já produz fala real no primeiro dia com a Lexi.',
+    outcome: 'Consegue se apresentar, pedir informações básicas e entender instruções simples sem pânico.'
+  },
+  {
+    id: 'stage-a2',
+    level: 'A2',
+    name: 'Autonomia Cotidiana',
+    hours: '180 a 200 horas guiadas (Estudo Cambridge)',
+    trap: 'Vocabulário solto sem conexão estrutural. Pausas longas e desconfortáveis entre as palavras.',
+    solution: 'Imersão Diária Guiada de 15 minutos no LibreChat. O tutor alimenta situações de rotina com input ligeiramente acima do seu nível (i+1), expandindo seu repertório sem caneta vermelha.',
+    outcome: 'Descreve tarefas do trabalho, fala sobre acontecimentos do seu dia e entende o contexto de áudios comuns.'
+  },
+  {
+    id: 'stage-b1',
+    level: 'B1',
+    name: 'Conversação Fluida',
+    hours: '350 a 400 horas guiadas (Estudo Cambridge)',
+    trap: 'O famoso platô intermediário: você entende quase tudo o que ouve e lê, mas na hora de falar sob pressão a mente dá um branco.',
+    solution: 'Encontros Individuais 1 a 1 com Gabriel Lima. Trabalhamos diretamente nas suas travas emocionais de improviso, forçando raciocínio direto em inglês com feedback natural em camadas.',
+    outcome: 'Participa de reuniões sem roteiro prévio, expressa opiniões pessoais e lida com imprevistos sem recorrer ao português.'
+  },
+  {
+    id: 'stage-b2',
+    level: 'B2',
+    name: 'Domínio Executivo',
+    hours: '500 a 600 horas guiadas (Estudo Cambridge)',
+    trap: 'Dificuldade em lidar com jargões profissionais, argumentos técnicos complexos ou conversas rápidas com múltiplos nativos.',
+    solution: 'Tutor de IA Hiper-Personalizado para a Sua Carreira. Calibramos a Lexi Alpha para simular negociações, entrevistas e cenários reais da sua área de atuação profissional.',
+    outcome: 'Fluência profissional sólida, capacidade de persuasão, liderança de discussões e compreensão de nuances culturais.'
+  },
+  {
+    id: 'stage-c1',
+    level: 'C1',
+    name: 'Autonomia Plena',
+    hours: '700 a 800 horas guiadas (Estudo Cambridge)',
+    trap: 'Falta de naturalidade em expressões idiomáticas sutis e metáforas avançadas da língua.',
+    solution: 'Consolidação de Pensamento Instintivo. O inglês passa a ser um segundo canal primário de pensamento no seu cérebro, com esforço cognitivo próximo de zero.',
+    outcome: 'Comunicação precisa, flexível e totalmente espontânea em qualquer esfera profissional ou social.'
+  }
+];
 ---
 
-<section id="metodo-estagios" class="relative py-24 px-4 sm:px-6 lg:px-8 bg-background text-foreground">
-  <div class="max-w-5xl mx-auto relative z-10">
-    <!-- Cabeçalho -->
-    <div class="text-center max-w-3xl mx-auto mb-16">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-semibold uppercase tracking-wider mb-4">
-        <span>Sua Progressão Real</span>
-      </div>
-      <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-foreground mb-4">
-        Os 5 Estágios da Sua Fala: O Que Você Realmente Consegue Fazer
-      </h2>
-      <p class="text-base sm:text-lg text-foreground-muted">
-        Esqueça notas de provas e jargões teóricos. Aqui sua evolução é medida pelo que você é capaz de falar na vida real, acompanhado de perto nas nossas aulas.
-      </p>
+<section id="estagios" class="py-24 px-4 sm:px-8 max-w-6xl mx-auto border-t border-[#242424]">
+  <div class="max-w-3xl mx-auto text-center space-y-4 mb-16">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#171717] border border-[#242424] text-xs font-mono text-[#3ecf8e]">
+      Mapeamento Quantitativo
+    </div>
+    <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#fafafa] tracking-tight text-balance">
+      Os 5 estágios práticos da fala
+    </h2>
+    <p class="text-base sm:text-lg text-[#898989] leading-relaxed">
+      A escala internacional de proficiência (CEFR) cruzada com a média de horas de estudo guiado de Cambridge English, e a forma exata como atuamos para acelerar cada etapa.
+    </p>
+  </div>
+
+  <!-- Componente Interativo com Tabs (Supabase Style) -->
+  <div class="max-w-4xl mx-auto space-y-8" id="cefr-tab-container">
+    <!-- Barra de Navegação das Abas -->
+    <div class="flex items-center justify-start sm:justify-center gap-2 overflow-x-auto pb-2 scrollbar-none">
+      {stages.map((stage, index) => (
+        <button
+          type="button"
+          data-stage-target={stage.id}
+          class={`stage-tab-btn px-4 py-2.5 rounded-full text-xs font-mono font-semibold transition-all cursor-pointer whitespace-nowrap border ${
+            index === 0
+              ? 'bg-[#3ecf8e] text-[#0f0f0f] border-[#3ecf8e] shadow-md shadow-[#3ecf8e]/20'
+              : 'bg-[#141414] text-[#898989] border-[#242424] hover:text-[#fafafa] hover:border-[#333333]'
+          }`}
+        >
+          <span class="font-bold mr-1.5">{stage.level}</span> {stage.name}
+        </button>
+      ))}
     </div>
 
-    <!-- Lista dos 5 Estágios em Timeline Conectada -->
-    <div class="relative space-y-6 before:absolute before:inset-0 before:left-8 sm:before:left-12 before:w-0.5 before:bg-border before:hidden sm:before:block">
-      <!-- Estágio 1 -->
-      <Card elevated class="hover:border-emerald-500/40 transition-all flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 group">
-        <div class="flex items-start gap-5">
-          <div class="w-14 h-14 rounded-2xl bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform shadow-inner">
-            <svg class="w-7 h-7 stroke-current fill-none stroke-2" viewBox="0 0 24 24">
-              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-            </svg>
-          </div>
-          <div>
-            <div class="flex items-center gap-2.5 mb-1.5 flex-wrap">
-              <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Estágio 1</span>
-              <span class="text-xs px-2.5 py-0.5 rounded-full bg-background-elevated text-foreground-muted border border-border font-medium">Descongelamento</span>
+    <!-- Conteúdo dos Estágios -->
+    <div class="relative">
+      {stages.map((stage, index) => (
+        <div
+          id={stage.id}
+          class={`stage-pane transition-all duration-300 ${index === 0 ? 'block' : 'hidden'}`}
+        >
+          <Card class="p-8 sm:p-10 space-y-8 border-[#242424] bg-[#141414] relative overflow-hidden">
+            <!-- Cabeçalho do Estágio -->
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-[#242424]">
+              <div class="flex items-center gap-3">
+                <span class="w-12 h-12 rounded-2xl bg-[#3ecf8e]/10 text-[#3ecf8e] font-black text-xl flex items-center justify-center font-mono border border-[#3ecf8e]/20">
+                  {stage.level}
+                </span>
+                <div>
+                  <h3 class="text-2xl font-bold text-[#fafafa]">{stage.name}</h3>
+                  <p class="text-xs font-mono text-[#898989] mt-0.5">{stage.hours}</p>
+                </div>
+              </div>
+              <span class="inline-flex self-start sm:self-auto text-xs font-mono px-3 py-1 rounded-full bg-[#171717] text-[#898989] border border-[#242424]">
+                Referência Cambridge English
+              </span>
             </div>
-            <h3 class="text-xl font-bold text-foreground mb-1">Perder o Medo de Falar</h3>
-            <p class="text-sm text-foreground-muted max-w-xl leading-relaxed">
-              Eliminação da paralisia mental. Você aprende a fazer pedidos em restaurantes, responder saudações, falar sobre sua rotina e destravar as primeiras frases completas sem hesitação.
-            </p>
-          </div>
-        </div>
-        <div class="text-xs font-bold text-emerald-400 px-4 py-2 rounded-xl bg-emerald-500/10 border border-emerald-500/20 shrink-0">
-          Início Seguro
-        </div>
-      </Card>
 
-      <!-- Estágio 2 -->
-      <Card elevated class="hover:border-primary/40 transition-all flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 group">
-        <div class="flex items-start gap-5">
-          <div class="w-14 h-14 rounded-2xl bg-primary/20 border border-primary/30 text-primary flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform shadow-inner">
-            <svg class="w-7 h-7 stroke-current fill-none stroke-2" viewBox="0 0 24 24">
-              <circle cx="12" cy="12" r="10" />
-              <line x1="2" y1="12" x2="22" y2="12" />
-              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-            </svg>
-          </div>
-          <div>
-            <div class="flex items-center gap-2.5 mb-1.5 flex-wrap">
-              <span class="text-xs font-bold uppercase tracking-wider text-primary">Estágio 2</span>
-              <span class="text-xs px-2.5 py-0.5 rounded-full bg-background-elevated text-foreground-muted border border-border font-medium">Autonomia em Viagens</span>
-            </div>
-            <h3 class="text-xl font-bold text-foreground mb-1">Se Virar no Mundo Real</h3>
-            <p class="text-sm text-foreground-muted max-w-xl leading-relaxed">
-              Resolução de imprevistos em aeroportos, hotéis, compras e transporte no exterior. Você consegue contar acontecimentos simples sem precisar abrir o tradutor no celular a cada minuto.
-            </p>
-          </div>
-        </div>
-        <div class="text-xs font-bold text-primary px-4 py-2 rounded-xl bg-primary/10 border border-primary/20 shrink-0">
-          Autonomia Básica
-        </div>
-      </Card>
+            <!-- Grade de Diagnóstico vs Solução -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <!-- Onde o Aluno Trava -->
+              <div class="p-5 rounded-2xl bg-[#0f0f0f] border border-red-500/15 space-y-2.5">
+                <div class="flex items-center gap-2 text-red-400 text-xs font-mono font-bold uppercase tracking-wider">
+                  <span class="w-1.5 h-1.5 rounded-full bg-red-400"></span>
+                  Onde você trava no método comum
+                </div>
+                <p class="text-sm text-[#898989] leading-relaxed">
+                  {stage.trap}
+                </p>
+              </div>
 
-      <!-- Estágio 3 -->
-      <Card elevated class="hover:border-accent/40 transition-all flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 group">
-        <div class="flex items-start gap-5">
-          <div class="w-14 h-14 rounded-2xl bg-accent/20 border border-accent/30 text-accent flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform shadow-inner">
-            <svg class="w-7 h-7 stroke-current fill-none stroke-2" viewBox="0 0 24 24">
-              <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
-              <line x1="8" y1="21" x2="16" y2="21" />
-              <line x1="12" y1="17" x2="12" y2="21" />
-            </svg>
-          </div>
-          <div>
-            <div class="flex items-center gap-2.5 mb-1.5 flex-wrap">
-              <span class="text-xs font-bold uppercase tracking-wider text-accent">Estágio 3</span>
-              <span class="text-xs px-2.5 py-0.5 rounded-full bg-background-elevated text-foreground-muted border border-border font-medium">Conversação Cotidiana</span>
+              <!-- Como o Método de Gabe Atua -->
+              <div class="p-5 rounded-2xl bg-[#0f0f0f] border border-[#3ecf8e]/20 space-y-2.5">
+                <div class="flex items-center gap-2 text-[#3ecf8e] text-xs font-mono font-bold uppercase tracking-wider">
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#3ecf8e]"></span>
+                  Como nosso método acelera
+                </div>
+                <p class="text-sm text-[#fafafa] leading-relaxed">
+                  {stage.solution}
+                </p>
+              </div>
             </div>
-            <h3 class="text-xl font-bold text-foreground mb-1">Manter um Diálogo Natural</h3>
-            <p class="text-sm text-foreground-muted max-w-xl leading-relaxed">
-              Bate-papo descontraído sobre trabalho, tecnologia, interesses e opiniões. Você deixa de usar sempre as mesmas 5 palavras e ganha repertório para se expressar com flexibilidade.
-            </p>
-          </div>
-        </div>
-        <div class="text-xs font-bold text-accent px-4 py-2 rounded-xl bg-accent/10 border border-accent/20 shrink-0">
-          Fluência Social
-        </div>
-      </Card>
 
-      <!-- Estágio 4 -->
-      <Card elevated class="hover:border-purple-400/40 transition-all flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 group">
-        <div class="flex items-start gap-5">
-          <div class="w-14 h-14 rounded-2xl bg-purple-500/20 border border-purple-500/30 text-purple-400 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform shadow-inner">
-            <svg class="w-7 h-7 stroke-current fill-none stroke-2" viewBox="0 0 24 24">
-              <path d="M20 7h-4v-2a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2H4a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z" />
-              <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
-            </svg>
-          </div>
-          <div>
-            <div class="flex items-center gap-2.5 mb-1.5 flex-wrap">
-              <span class="text-xs font-bold uppercase tracking-wider text-purple-400">Estágio 4</span>
-              <span class="text-xs px-2.5 py-0.5 rounded-full bg-background-elevated text-foreground-muted border border-border font-medium">Profissional & Carreira</span>
+            <!-- Conquista do Nível -->
+            <div class="p-4 rounded-xl bg-[#171717] border border-[#242424] flex items-start sm:items-center gap-3 text-xs text-[#898989]">
+              <span class="text-[#3ecf8e] font-bold text-sm shrink-0">&check;</span>
+              <span>
+                <strong class="text-[#fafafa]">Habilidade consolidada:</strong> {stage.outcome}
+              </span>
             </div>
-            <h3 class="text-xl font-bold text-foreground mb-1">Reuniões e Apresentações</h3>
-            <p class="text-sm text-foreground-muted max-w-xl leading-relaxed">
-              Segurança para participar de reuniões em inglês, explicar ideias técnicas, defender pontos de vista e interagir com colegas internacionais sem suar frio.
-            </p>
-          </div>
+          </Card>
         </div>
-        <div class="text-xs font-bold text-purple-400 px-4 py-2 rounded-xl bg-purple-500/10 border border-purple-500/20 shrink-0">
-          Confiança no Trabalho
-        </div>
-      </Card>
-
-      <!-- Estágio 5 -->
-      <Card elevated class="hover:border-pink-500/40 transition-all flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 group">
-        <div class="flex items-start gap-5">
-          <div class="w-14 h-14 rounded-2xl bg-pink-500/20 border border-pink-500/30 text-pink-400 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform shadow-inner">
-            <svg class="w-7 h-7 stroke-current fill-none stroke-2" viewBox="0 0 24 24">
-              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-            </svg>
-          </div>
-          <div>
-            <div class="flex items-center gap-2.5 mb-1.5 flex-wrap">
-              <span class="text-xs font-bold uppercase tracking-wider text-pink-400">Estágio 5</span>
-              <span class="text-xs px-2.5 py-0.5 rounded-full bg-background-elevated text-foreground-muted border border-border font-medium">Autonomia Plena</span>
-            </div>
-            <h3 class="text-xl font-bold text-foreground mb-1">Expressão Espontânea e Conexão</h3>
-            <p class="text-sm text-foreground-muted max-w-xl leading-relaxed">
-              Improvisação, humor e segurança absoluta ao conversar sobre qualquer assunto em tempo real, testado e lapidado diretamente nas sessões ao vivo com o professor Gabriel Lima.
-            </p>
-          </div>
-        </div>
-        <div class="text-xs font-bold text-pink-400 px-4 py-2 rounded-xl bg-pink-500/10 border border-pink-500/20 shrink-0">
-          Autonomia Real
-        </div>
-      </Card>
+      ))}
     </div>
   </div>
 </section>
+
+<!-- Script Inline Leve para Troca Fluida de Abas (Zero dependências extras) -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const tabButtons = document.querySelectorAll('.stage-tab-btn');
+    const panes = document.querySelectorAll('.stage-pane');
+
+    tabButtons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const targetId = btn.getAttribute('data-stage-target');
+
+        // Atualiza botões
+        tabButtons.forEach((b) => {
+          b.classList.remove('bg-[#3ecf8e]', 'text-[#0f0f0f]', 'border-[#3ecf8e]', 'shadow-md', 'shadow-[#3ecf8e]/20');
+          b.classList.add('bg-[#141414]', 'text-[#898989]', 'border-[#242424]');
+        });
+
+        btn.classList.remove('bg-[#141414]', 'text-[#898989]', 'border-[#242424]');
+        btn.classList.add('bg-[#3ecf8e]', 'text-[#0f0f0f]', 'border-[#3ecf8e]', 'shadow-md', 'shadow-[#3ecf8e]/20');
+
+        // Atualiza painéis
+        panes.forEach((pane) => {
+          if (pane.id === targetId) {
+            pane.classList.remove('hidden');
+            pane.classList.add('block');
+          } else {
+            pane.classList.remove('block');
+            pane.classList.add('hidden');
+          }
+        });
+      });
+    });
+  });
+</script>

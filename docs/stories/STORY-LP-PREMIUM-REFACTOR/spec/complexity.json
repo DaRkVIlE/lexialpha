@@ -1,0 +1,24 @@
+{
+  "storyId": "STORY-LP-PREMIUM-REFACTOR",
+  "result": "STANDARD",
+  "totalScore": 12,
+  "maxScore": 25,
+  "breakdown": {
+    "scope": 3,
+    "integration": 2,
+    "infrastructure": 1,
+    "knowledge": 3,
+    "risk": 3
+  },
+  "rationale": "Refatoração profunda da experiência visual do Astro, criação de novos componentes tabbed/bento, remoção de quiz e alinhamento conceitual sem quebrar compilação estática.",
+  "requiredPhases": [
+    "gather",
+    "assess",
+    "research",
+    "spec",
+    "critique",
+    "plan",
+    "develop",
+    "review"
+  ]
+}

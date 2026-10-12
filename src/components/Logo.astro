@@ -1,0 +1,37 @@
+---
+// src/components/Logo.astro
+// Monograma tipográfico técnico GE com onda sonora vetorial
+interface Props {
+  class?: string;
+  showBadge?: boolean;
+}
+
+const { class: className = '', showBadge = true } = Astro.props;
+---
+
+<div class={`inline-flex items-center gap-3 select-none ${className}`}>
+  <!-- Símbolo Vetorial GE + Frequência de Voz -->
+  <div class="relative flex items-center justify-center w-9 h-9 rounded-xl bg-[#171717] border border-[#242424] shadow-inner group">
+    <svg class="w-5 h-5 text-[#3ecf8e] transition-transform duration-300 group-hover:scale-105" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Letra G geométrica moderna -->
+      <path d="M12 8H8C5.79086 8 4 9.79086 4 12V20C4 22.2091 5.79086 24 8 24H12C14.2091 24 16 22.2091 16 20V16H10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <!-- Barras verticais da onda sonora integradas ao E -->
+      <path d="M20 8V24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M24 11V21" stroke="#fafafa" stroke-width="2" stroke-linecap="round"/>
+      <path d="M28 13V19" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+    </svg>
+    <div class="absolute -bottom-0.5 inset-x-2 h-px bg-gradient-to-r from-transparent via-[#3ecf8e]/50 to-transparent"></div>
+  </div>
+
+  <!-- Naming -->
+  <div class="flex items-center gap-2.5">
+    <span class="text-[#fafafa] font-bold text-lg tracking-tight hover:text-[#3ecf8e] transition-colors">
+      Gabe's English
+    </span>
+    {showBadge && (
+      <span class="text-[10px] uppercase font-mono font-semibold px-2 py-0.5 rounded-full bg-[#3ecf8e]/10 text-[#3ecf8e] border border-[#3ecf8e]/25">
+        Alpha
+      </span>
+    )}
+  </div>
+</div>

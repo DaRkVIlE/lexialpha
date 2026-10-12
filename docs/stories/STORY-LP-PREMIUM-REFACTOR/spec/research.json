@@ -1,0 +1,18 @@
+{
+  "storyId": "STORY-LP-PREMIUM-REFACTOR",
+  "dependencies": [
+    {
+      "name": "Cambridge English Guided Learning Hours",
+      "findings": "Cambridge Assessment English estipula aproximadamente: A1: 90-100h; A2: 180-200h; B1: 350-400h; B2: 500-600h; C1: 700-800h de estudo guiado cumulativo. No método tradicional, 80% desse tempo é desperdiçado em regras gramaticais passivas que não viram automatismo de fala."
+    },
+    {
+      "name": "Awesome Design Systems: Linear & Vercel Bento Patterns",
+      "findings": "Padrão Bento Grid com bordas sutis #242424, cantos arredondados (16px), gradientes radiais suaves e abas interativas com botões pill transmitem autoridade de produto de tecnologia sofisticado sem poluição visual."
+    },
+    {
+      "name": "Psicologia da Não-Interrupção (BICS / Cummins & Krashen)",
+      "findings": "Adultos travam na fala quando monitoram ativamente a gramática. A personalização individual da IA no LibreChat permite que cada aluno pratique em seu ritmo e universo sem ansiedade de julgamento social."
+    }
+  ],
+  "unverifiedClaims": []
+}

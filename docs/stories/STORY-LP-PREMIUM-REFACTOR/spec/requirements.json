@@ -1,0 +1,64 @@
+{
+  "storyId": "STORY-LP-PREMIUM-REFACTOR",
+  "title": "Refatoração Premium da Landing Page Gabe's English com Bento Grid, CEFR Cambridge Hours e Identidade Técnica",
+  "author": "@pm",
+  "objective": "Elevar a Landing Page oficial para um padrão visual e conceitual de altíssimo valor (estilo Linear/Vercel/Supabase), erradicar watermarks de IA, aprofundar a fundamentação pedagógica com dados quantitativos de Cambridge English e posicionar o modelo 1 a 1 com Gabe e tutor hiper-personalizado no LibreChat.",
+  "decisions": {
+    "logo": "Monograma tipográfico técnico GE com onda sonora/frequência de voz vetorial em SVG",
+    "heroCta": "Conhecer o método na prática → com scroll suave até #metodo",
+    "motionStyle": "Bento Grid interativo com Tabs (Supabase/Vercel style) e transições fluidas GSAP",
+    "pricingPosition": "Preço removido do Header e Hero; concentrado na seção de Pricing",
+    "aiPlatform": "LibreChat como plataforma exclusiva do tutor; zero menções a WhatsApp bot na LP",
+    "sessionFormat": "Encontros de alinhamento 100% individuais 1 a 1 com Gabe",
+    "quiz": "Removido da LP pública; reservado para o onboarding da Turma Alpha"
+  },
+  "functionalRequirements": [
+    {
+      "id": "FR-1",
+      "title": "Nova Identidade Visual & Logo Vetorial",
+      "description": "Componente Logo.astro exibindo monograma GE integrado a linhas de frequência sonora com cores do Design System Supabase Dark (#3ecf8e acento, #fafafa)."
+    },
+    {
+      "id": "FR-2",
+      "title": "Hero Section Limpa e Focada em Autoridade",
+      "description": "Remoção de microcopy de preços e badges prematuros de parcelamento. Headline poderosa sobre aprender falando, Gabe presente, CTA primário 'Conhecer o método na prática →' rolando para #metodo."
+    },
+    {
+      "id": "FR-3",
+      "title": "Bento Grid da Metodologia & Por Que Funciona",
+      "description": "Seção explicativa aprofundada e convincente demonstrando os 4 pilares da aquisição natural: Chunks de Sobrevivência, Input Compreensível (i+1), Prática Sem Tradução Mental e Refinamento Natural sem caneta vermelha."
+    },
+    {
+      "id": "FR-4",
+      "title": "Tabs Interativas dos 5 Estágios da Fala (CEFR + Cambridge Hours)",
+      "description": "Componente interativo com tabs para navegar entre os níveis A1 (90-100h), A2 (180-200h), B1 (350-400h), B2 (500-600h) e C1 (700-800h), demonstrando quantitativamente onde o aluno trava no modelo tradicional e como o método de Gabe atua e acelera cada fase."
+    },
+    {
+      "id": "FR-5",
+      "title": "Destaque do Parceiro de IA Hiper-Personalizado no LibreChat",
+      "description": "Evidenciar que o tutor conversacional no LibreChat não é genérico: cada aluno possui um modelo parametrizado para sua rotina, profissão, gostos e travas individuais."
+    },
+    {
+      "id": "FR-6",
+      "title": "Encontros 1 a 1 de Alinhamento com Gabe",
+      "description": "Reafirmar que os encontros semanais são estritamente individuais para garantir foco total nas travas fonéticas e comunicativas de cada aluno."
+    },
+    {
+      "id": "FR-7",
+      "title": "Remoção do Quiz e Simplificação do Fluxo",
+      "description": "Expurgo do QuizSection da página pública, direcionando o fluxo de interesse diretamente para a aplicação/conversa de alinhamento individual."
+    }
+  ],
+  "nonFunctionalRequirements": [
+    {
+      "id": "NFR-1",
+      "title": "Erradicação Estrita de Watermarks de IA",
+      "description": "Zero travessões emprositados ('—') em toda a copy, tags e microcopy. Uso de pontuação natural humana."
+    },
+    {
+      "id": "NFR-2",
+      "title": "Design e Motion de Alto Padrão (Awesome DS)",
+      "description": "Bordas sutis #242424, cards #141414 com hover glow esmeralda, tipografia Inter e Source Code Pro, suporte mobile 100% fluido."
+    }
+  ]
+}

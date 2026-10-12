@@ -3,10 +3,10 @@
 // Design System: Supabase Dark (Gabe's-design-system.md)
 // Story: Turma Alpha Launch — Professor Gabe + IA Complementar Lexi Alpha
 import '../styles/global.css';
+import Logo from '../components/Logo.astro';
 import Hero from '../components/Hero.astro';
 import Problem from '../components/Problem.astro';
 import Solution from '../components/Solution.astro';
-import QuizSection from '../components/QuizSection.astro';
 import MontanhaB2 from '../components/MontanhaB2.astro';
 import LexiAlphaFeatures from '../components/LexiAlphaFeatures.astro';
 import SocialProof from '../components/SocialProof.astro';
@@ -25,12 +25,12 @@ import Footer from '../components/Footer.astro';
     <title>Gabe's English • Aulas com o Professor + IA Lexi Alpha</title>
     <meta
       name="description"
-      content="Aulas de conversação direta com o professor Gabriel Lima (Gabe) + IA conversacional autoral Lexi Alpha para treino diário de 15 min. Sem falsas promessas de fluência rápida. Apenas 10 vagas por R$ 197/mês."
+      content="Aulas de conversação direta e individual com o professor Gabriel Lima (Gabe) + IA conversacional autoral Lexi Alpha para treino diário de 15 min. Sem falsas promessas de fluência rápida. Apenas 10 vagas por R$ 197/mês."
     />
 
     <!-- Google Fonts: Inter (Interface) & Source Code Pro (Labels) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Code+Pro:wght@500;600&display=swap"
       rel="stylesheet"
@@ -47,16 +47,13 @@ import Footer from '../components/Footer.astro';
   <body class="min-h-screen flex flex-col font-sans bg-[#0f0f0f] text-[#fafafa] selection:bg-[#3ecf8e] selection:text-[#0f0f0f]">
     <!-- Barra Superior Fixa (Supabase Style) -->
     <header class="fixed top-0 inset-x-0 z-50 bg-[#0f0f0f]/90 backdrop-blur-md border-b border-[#242424] px-4 sm:px-8 py-3.5 flex items-center justify-between">
-      <div class="flex items-center gap-3">
-        <span class="text-[#fafafa] font-black text-xl tracking-wider">Gabe's English</span>
-        <span class="text-[10px] px-2.5 py-0.5 rounded-full bg-[#3ecf8e]/15 text-[#3ecf8e] border border-[#3ecf8e]/30 font-bold uppercase tracking-wider">
-          Turma Alpha
-        </span>
-      </div>
+      <a href="#" class="flex items-center gap-2 hover:opacity-95 transition-opacity" aria-label="Gabe's English Home">
+        <Logo size="sm" showBadge={true} />
+      </a>
 
       <nav class="hidden md:flex items-center gap-8 text-sm text-[#898989] font-medium">
         <a href="#metodo" class="hover:text-[#3ecf8e] transition-colors">Como Funciona</a>
-        <a href="#quiz" class="hover:text-[#3ecf8e] transition-colors">Diagnóstico (3 min)</a>
+        <a href="#estagios" class="hover:text-[#3ecf8e] transition-colors">Estágios da Fala</a>
         <a href="#aulas-ia" class="hover:text-[#3ecf8e] transition-colors">Rotina & IA</a>
         <a href="#pricing" class="hover:text-[#3ecf8e] transition-colors">Turma Alpha</a>
         <a href="#faq" class="hover:text-[#3ecf8e] transition-colors">Dúvidas</a>
@@ -67,7 +64,7 @@ import Footer from '../components/Footer.astro';
           href="#pricing"
           class="px-5 py-2 rounded-full bg-[#3ecf8e] text-[#0f0f0f] text-xs sm:text-sm font-bold transition-all hover:bg-[#34b27b] active:scale-95 shadow-sm"
         >
-          Garantir Vaga &bull; R$ 197
+          Conhecer Turma Alpha
         </a>
       </div>
     </header>
@@ -76,7 +73,6 @@ import Footer from '../components/Footer.astro';
       <Hero />
       <Problem />
       <Solution />
-      <QuizSection />
       <MontanhaB2 />
       <LexiAlphaFeatures />
       <SocialProof />

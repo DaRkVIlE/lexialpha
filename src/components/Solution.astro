@@ -1,91 +1,117 @@
 ---
-// Solution.astro — Solution Section Gabe's English
-// O Diferencial: Professor Gabe Presente + IA Autoral Lexi Alpha 24/7
+// src/components/Solution.astro
+// Bento Grid Interativo da Metodologia: Como e Por Que Funciona
+// Padrão visual Supabase / Linear (Awesome Design Systems). Zero travessões.
+import Card from './Card.astro';
 ---
 
-<section id="metodo" class="py-24 px-4 sm:px-6 lg:px-8 bg-background-elevated relative">
-  <div class="max-w-6xl mx-auto">
-    <!-- Header -->
-    <div class="text-center max-w-3xl mx-auto mb-16">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-semibold uppercase tracking-wider mb-4">
-        <span>O Diferencial da Turma Alpha</span>
-      </div>
-      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground leading-[1.15] mb-6">
-        A Mentoria de um Professor de Verdade com a Potência da IA no Seu Bolso
-      </h2>
-      <p class="text-foreground-muted text-base sm:text-lg leading-relaxed">
-        Enquanto outros professores dependem de apostilas em PDF e plataformas genéricas de terceiros, criamos nossa própria tecnologia para que você nunca fique sozinho entre uma aula e outra.
-      </p>
+<section id="metodo" class="py-24 px-4 sm:px-8 max-w-6xl mx-auto border-t border-[#242424]">
+  <div class="max-w-3xl mx-auto text-center space-y-4 mb-16">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#171717] border border-[#242424] text-xs font-mono text-[#3ecf8e]">
+      Fundamentação Científica & Prática
     </div>
+    <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#fafafa] tracking-tight text-balance">
+      Como a metodologia funciona na prática
+    </h2>
+    <p class="text-base sm:text-lg text-[#898989] leading-relaxed">
+      A união exata entre neurociência da aquisição de linguagem, mentoria humana individual e prática diária assistida por inteligência artificial.
+    </p>
+  </div>
 
-    <!-- 3 Pilares da Metodologia -->
-    <div class="grid md:grid-cols-3 gap-8">
-      <!-- Pilar 1: Aulas com o Gabe -->
-      <div class="bg-card rounded-2xl border border-border p-7 shadow-sm hover:border-primary/40 transition-all flex flex-col justify-between">
-        <div>
-          <div class="w-12 h-12 bg-primary/15 rounded-xl flex items-center justify-center mb-6 text-primary border border-primary/20">
-            <svg class="w-6 h-6 stroke-current fill-none stroke-2" viewBox="0 0 24 24">
-              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-              <circle cx="9" cy="7" r="4"></circle>
-              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold text-foreground mb-3">Encontros Diretos com o Gabe</h3>
-          <p class="text-foreground-muted text-sm sm:text-base leading-relaxed mb-4">
-            Na Turma Alpha, você tem acompanhamento próximo: <strong>2 sessões rápidas de destravamento</strong> durante a semana para tirar dúvidas e manter o ritmo, e <strong>1 sessão estendida focada em conversação plena</strong> e cenários reais.
-          </p>
+  <!-- Bento Grid de 5 Blocos (Supabase / Linear Style) -->
+  <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+    <!-- Bloco 1 (Destaque Principal - Col 8): A Teoria do Insumo Compreensível (Krashen) -->
+    <Card class="md:col-span-8 p-8 relative overflow-hidden flex flex-col justify-between group hover:border-[#3ecf8e]/40 transition-colors">
+      <div class="space-y-4 relative z-10">
+        <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-[#3ecf8e]/10 text-[#3ecf8e] text-xs font-mono font-semibold">
+          Pilar Central: Stephen Krashen
         </div>
-        <div class="pt-4 border-t border-border/60 text-xs font-semibold text-primary">
-          Atendimento personalizado • Grupo reduzido
-        </div>
+        <h3 class="text-2xl sm:text-3xl font-bold text-[#fafafa] tracking-tight">
+          Você não aprende regras para falar. Você fala o que compreende no contexto.
+        </h3>
+        <p class="text-sm sm:text-base text-[#898989] leading-relaxed">
+          O cérebro adulto não automatiza a fala resolvendo exercícios de preencher lacunas. 
+          A aquisição real acontece quando você é exposto a situações reais com compreensão guiada (o princípio do input i+1). 
+          Em vez de aprender o que é "Present Perfect", você vive diálogos onde a estrutura é usada de forma natural até virar instinto.
+        </p>
       </div>
 
-      <!-- Pilar 2: IA Lexi Alpha 24/7 -->
-      <div class="bg-card rounded-2xl border border-border p-7 shadow-sm hover:border-accent/40 transition-all flex flex-col justify-between">
-        <div>
-          <div class="w-12 h-12 bg-accent/15 rounded-xl flex items-center justify-center mb-6 text-accent border border-accent/20">
-            <svg class="w-6 h-6 stroke-current fill-none stroke-2" viewBox="0 0 24 24">
-              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold text-foreground mb-3">IA Autoral para Treino Diário</h3>
-          <p class="text-foreground-muted text-sm sm:text-base leading-relaxed mb-4">
-            Nossa inteligência artificial de conversação foi desenvolvida para ser o seu parceiro de treino diário no WhatsApp e no navegador. Você conversa por voz ou texto a qualquer hora do dia sem medo de julgamentos.
-          </p>
+      <div class="mt-8 pt-6 border-t border-[#242424] grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-mono text-[#898989]">
+        <div class="flex items-center gap-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-[#3ecf8e]"></span>
+          <span>Zero listas mecânicas de vocabulário</span>
         </div>
-        <div class="pt-4 border-t border-border/60 text-xs font-semibold text-accent">
-          Disponível 24h por dia • Prática no seu ritmo
+        <div class="flex items-center gap-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-[#3ecf8e]"></span>
+          <span>Associação direta: ideia para som</span>
         </div>
       </div>
+      <!-- Glow sutil no canto do card -->
+      <div class="absolute -right-16 -bottom-16 w-64 h-64 bg-[#3ecf8e]/5 rounded-full blur-3xl pointer-events-none"></div>
+    </Card>
 
-      <!-- Pilar 3: Correção Sem Julgamento -->
-      <div class="bg-card rounded-2xl border border-border p-7 shadow-sm hover:border-emerald-500/40 transition-all flex flex-col justify-between">
-        <div>
-          <div class="w-12 h-12 bg-emerald-500/15 rounded-xl flex items-center justify-center mb-6 text-emerald-400 border border-emerald-500/20">
-            <svg class="w-6 h-6 stroke-current fill-none stroke-2" viewBox="0 0 24 24">
-              <polyline points="20 6 9 17 4 12"></polyline>
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold text-foreground mb-3">Feedback Natural Imediato</h3>
-          <p class="text-foreground-muted text-sm sm:text-base leading-relaxed mb-4">
-            Em vez de interromper você com termos gramaticais complicados, o sistema demonstra na prática como um nativo expressaria aquela mesma ideia, fixando blocos reais de linguagem (chunks) na sua memória.
-          </p>
+    <!-- Bloco 2 (Col 4): O Poder dos Chunks de Fala -->
+    <Card class="md:col-span-4 p-8 flex flex-col justify-between hover:border-[#3ecf8e]/30 transition-colors">
+      <div class="space-y-4">
+        <div class="w-10 h-10 rounded-xl bg-[#171717] border border-[#242424] flex items-center justify-center text-[#3ecf8e] font-bold">
+          🧩
         </div>
-        <div class="pt-4 border-t border-border/60 text-xs font-semibold text-emerald-400">
-          Aquisição natural • Sem caneta vermelha
-        </div>
+        <h3 class="text-xl font-bold text-[#fafafa]">Blocos de Fala (Chunks)</h3>
+        <p class="text-sm text-[#898989] leading-relaxed">
+          Nativos não montam frases palavra por palavra. Eles disparam blocos prontos como "Take your time", "How come?" ou "I was wondering if...". Você treina blocos inteiros para responder sem hesitar.
+        </p>
       </div>
-    </div>
+      <div class="mt-6 p-3 rounded-lg bg-[#0f0f0f] border border-[#242424] text-xs font-mono text-[#3ecf8e]">
+        Velocidade de resposta: menos de 3 segundos
+      </div>
+    </Card>
 
-    <!-- Banner de Compromisso -->
-    <div class="mt-16 p-8 rounded-2xl bg-card border border-border text-center max-w-4xl mx-auto">
-      <h4 class="text-lg sm:text-xl font-bold text-foreground mb-2">
-        A combinação ideal: A mentoria humana que te guia + A ferramenta prática que te dá constância.
-      </h4>
-      <p class="text-foreground-muted text-sm sm:text-base max-w-2xl mx-auto">
-        Com 15 minutos diários no celular e os nossos encontros semanais, você constrói o reflexo espontâneo que anos de cursinho tradicional não conseguiram destravar.
-      </p>
-    </div>
+    <!-- Bloco 3 (Col 4): Alinhamento Individual 1 a 1 com Gabe -->
+    <Card class="md:col-span-4 p-8 flex flex-col justify-between hover:border-[#3ecf8e]/30 transition-colors">
+      <div class="space-y-4">
+        <div class="w-10 h-10 rounded-xl bg-[#171717] border border-[#242424] flex items-center justify-center text-[#3ecf8e] font-bold">
+          🎙️
+        </div>
+        <h3 class="text-xl font-bold text-[#fafafa]">Encontros 1 a 1 com Gabe</h3>
+        <p class="text-sm text-[#898989] leading-relaxed">
+          Toda semana você senta comigo individualmente. Nada de turmas grandes onde você fala 2 minutos e fica calado o resto da aula. O tempo ao vivo é 100% focado no seu destravamento de pronúncia e raciocínio.
+        </p>
+      </div>
+      <div class="mt-6 p-3 rounded-lg bg-[#0f0f0f] border border-[#242424] text-xs font-mono text-[#898989]">
+        Sessões individuais de alinhamento prático
+      </div>
+    </Card>
+
+    <!-- Bloco 4 (Col 4): O Tutor de IA no LibreChat -->
+    <Card class="md:col-span-4 p-8 flex flex-col justify-between hover:border-[#3ecf8e]/30 transition-colors">
+      <div class="space-y-4">
+        <div class="w-10 h-10 rounded-xl bg-[#171717] border border-[#242424] flex items-center justify-center text-[#3ecf8e] font-bold">
+          ⚡
+        </div>
+        <h3 class="text-xl font-bold text-[#fafafa]">Tutor no LibreChat 24/7</h3>
+        <p class="text-sm text-[#898989] leading-relaxed">
+          Entre as aulas, você acessa a Lexi Alpha na plataforma web dedicada do LibreChat. Você pratica áudio e texto todo dia, no horário que quiser, com um parceiro paciente que nunca se cansa de te ouvir.
+        </p>
+      </div>
+      <div class="mt-6 p-3 rounded-lg bg-[#0f0f0f] border border-[#242424] text-xs font-mono text-[#3ecf8e]">
+        Mínimo de 15 min diários no seu próprio ritmo
+      </div>
+    </Card>
+
+    <!-- Bloco 5 (Col 4): Feedback sem Caneta Vermelha (Lyster & Saito) -->
+    <Card class="md:col-span-4 p-8 flex flex-col justify-between hover:border-[#3ecf8e]/30 transition-colors">
+      <div class="space-y-4">
+        <div class="w-10 h-10 rounded-xl bg-[#171717] border border-[#242424] flex items-center justify-center text-[#3ecf8e] font-bold">
+          🛡️
+        </div>
+        <h3 class="text-xl font-bold text-[#fafafa]">Sem Caneta Vermelha</h3>
+        <p class="text-sm text-[#898989] leading-relaxed">
+          Correção gramatical explícita gera bloqueio imediato no cérebro. Aqui usamos Recasting Natural: a resposta do professor e da IA devolve a forma correta organicamente dentro da conversa, sem interromper seu raciocínio.
+        </p>
+      </div>
+      <div class="mt-6 p-3 rounded-lg bg-[#0f0f0f] border border-[#242424] text-xs font-mono text-[#898989]">
+        Autocorreção intuitiva e sem vergonha
+      </div>
+    </Card>
   </div>
 </section>

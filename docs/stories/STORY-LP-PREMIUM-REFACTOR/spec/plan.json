@@ -1,0 +1,60 @@
+{
+  "storyId": "STORY-LP-PREMIUM-REFACTOR",
+  "planTitle": "Plano de Implementação da Refatoração Premium",
+  "steps": [
+    {
+      "step": 1,
+      "name": "Criação do componente Logo.astro (Monograma GE + Onda Sonora em SVG)",
+      "file": "src/components/Logo.astro",
+      "assignee": "@dev"
+    },
+    {
+      "step": 2,
+      "name": "Refatoração de Header e Hero (limpeza de preços, CTA para #metodo, inserção da Logo)",
+      "file": "src/components/Hero.astro",
+      "assignee": "@dev"
+    },
+    {
+      "step": 3,
+      "name": "Refatoração da Problem Section (erradicação de travessões, tom convincente anti-ilusão)",
+      "file": "src/components/Problem.astro",
+      "assignee": "@dev"
+    },
+    {
+      "step": 4,
+      "name": "Implementação do Bento Grid de Metodologia em Solution.astro",
+      "file": "src/components/Solution.astro",
+      "assignee": "@dev"
+    },
+    {
+      "step": 5,
+      "name": "Implementação das Tabs Interativas CEFR + Cambridge Hours em MontanhaB2.astro",
+      "file": "src/components/MontanhaB2.astro",
+      "assignee": "@dev"
+    },
+    {
+      "step": 6,
+      "name": "Refatoração de LexiAlphaFeatures.astro (LibreChat exclusivo + tutor hiper-personalizado + alinhamento 1:1)",
+      "file": "src/components/LexiAlphaFeatures.astro",
+      "assignee": "@dev"
+    },
+    {
+      "step": 7,
+      "name": "Refatoração de SocialProof, Pricing, Faq, FinalCTA e Footer (zero travessões, foco individual)",
+      "file": "src/components/Pricing.astro",
+      "assignee": "@dev"
+    },
+    {
+      "step": 8,
+      "name": "Atualização de index.astro (remoção do quiz público, orquestração e scroll)",
+      "file": "src/pages/index.astro",
+      "assignee": "@dev"
+    },
+    {
+      "step": 9,
+      "name": "Build estático & QA Audit final de conformidade",
+      "file": "dist/index.html",
+      "assignee": "@qa"
+    }
+  ]
+}

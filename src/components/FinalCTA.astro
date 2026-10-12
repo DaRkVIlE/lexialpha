@@ -1,15 +1,16 @@
 ---
-// FinalCTA.astro — Final CTA Turma Alpha — Gabe's English
-// Posicionamento: 10 Vagas, R$ 197/mês, acompanhamento direto com o Gabe + IA Lexi Alpha
+// src/components/FinalCTA.astro
+// Final CTA Turma Alpha: 10 Vagas, R$ 197/mês, acompanhamento individual com Gabe + LibreChat
+// Zero travessões
 import Button from './Button.astro';
 ---
 
 <section class="py-24 px-4 sm:px-6 lg:px-8 bg-background border-t border-border relative overflow-hidden">
   <div class="max-w-3xl mx-auto text-center relative z-10">
-    <!-- Badge de Urgência -->
-    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-primary/20 bg-background-elevated text-xs font-semibold text-primary mb-6">
-      <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-      <span>Apenas 10 Vagas • Turma Alpha</span>
+    <!-- Badge de Atenção Individual -->
+    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#3ecf8e]/20 bg-[#171717] text-xs font-semibold text-[#3ecf8e] mb-6">
+      <span class="w-2 h-2 rounded-full bg-[#3ecf8e] animate-pulse"></span>
+      <span>Apenas 10 Vagas &bull; Turma Alpha</span>
     </div>
 
     <!-- Headline -->
@@ -17,35 +18,35 @@ import Button from './Button.astro';
       Pronto para começar a falar de verdade?
     </h2>
     <p class="text-foreground-muted text-base sm:text-lg mb-10 max-w-xl mx-auto leading-relaxed">
-      Como acompanho pessoalmente os áudios e conduzo as sessões de cada aluno, a Turma Alpha é estritamente limitada a 10 pessoas. Sem promessas falsas de fluência mágica — apenas método e dedicação.
+      Como conduzo pessoalmente as sessões individuais de cada aluno, a Turma Alpha é estritamente limitada a 10 pessoas. Sem promessas falsas de fluência mágica: apenas método, consistência e dedicação.
     </p>
 
     <!-- Comparação Rápida -->
     <div class="grid sm:grid-cols-2 gap-6 text-left mb-10 max-w-2xl mx-auto">
       <div class="bg-card border border-border rounded-2xl p-6">
         <h3 class="font-bold text-foreground mb-3 flex items-center gap-2 text-sm sm:text-base">
-          <span class="text-red-400">✕</span> Continuar no modelo tradicional
+          <span class="text-red-400">&times;</span> Continuar no modelo tradicional
         </h3>
         <ul class="space-y-2.5 text-xs sm:text-sm text-foreground-muted">
-          <li>• Congelar quando alguém fala em inglês</li>
-          <li>• Pagar mensalidades caras por anos sem falar</li>
-          <li>• Fazer joguinhos de pontos sem conversa real</li>
-          <li>• Prometer todo ano que "agora vai"</li>
+          <li>&bull; Congelar quando alguém fala em inglês</li>
+          <li>&bull; Pagar mensalidades caras por anos sem falar</li>
+          <li>&bull; Fazer exercícios de gramática sem conversa real</li>
+          <li>&bull; Prometer todo ano que "agora vai"</li>
         </ul>
       </div>
 
-      <div class="bg-card border border-primary/40 rounded-2xl p-6 relative">
-        <div class="absolute -top-3 right-4 px-2.5 py-0.5 rounded-full bg-primary text-black text-[10px] font-black uppercase tracking-wider">
+      <div class="bg-card border border-[#3ecf8e]/40 rounded-2xl p-6 relative">
+        <div class="absolute -top-3 right-4 px-2.5 py-0.5 rounded-full bg-[#3ecf8e] text-black text-[10px] font-black uppercase tracking-wider">
           Turma Alpha
         </div>
         <h3 class="font-bold text-foreground mb-3 flex items-center gap-2 text-sm sm:text-base">
-          <span class="text-primary">✓</span> Aulas com Gabe + Lexi Alpha
+          <span class="text-[#3ecf8e]">&check;</span> Aulas 1 a 1 com Gabe + LibreChat
         </h3>
         <ul class="space-y-2.5 text-xs sm:text-sm text-foreground-muted">
-          <li>• 3 encontros semanais com o professor</li>
-          <li>• IA no celular para treinar fala 24/7 (mín. 15m)</li>
-          <li>• R$ 197/mês sem contratos longos</li>
-          <li>• Garantia incondicional de 30 dias</li>
+          <li>&bull; Encontros individuais semanais com o professor</li>
+          <li>&bull; Tutor único de IA no LibreChat 24/7 (mínimo 15m)</li>
+          <li>&bull; R$ 197 por mês sem fidelidade de longo prazo</li>
+          <li>&bull; Garantia incondicional de 30 dias via Pix</li>
         </ul>
       </div>
     </div>
@@ -62,7 +63,7 @@ import Button from './Button.astro';
     </div>
 
     <p class="text-foreground-muted text-xs">
-      Apenas 10 vagas disponíveis • Início imediato • R$ 197/mês
+      Apenas 10 vagas disponíveis &bull; Início imediato &bull; R$ 197/mês
     </p>
   </div>
 </section>
