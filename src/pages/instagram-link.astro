@@ -1,0 +1,144 @@
+---
+import '../styles/global.css';
+
+const landingUrl = "https://mana-landing-production.up.railway.app";
+const whatsappNumber = "5511967239791";
+---
+
+<!doctype html>
+<html lang="pt-BR" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>LEXI Alpha • Links</title>
+    <meta
+      name="description"
+      content="Links rápidos para LEXI Alpha - Método de Aquisição Natural com IA e Mentoria Real"
+    />
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="LEXI Alpha • Links" />
+    <meta
+      property="og:description"
+      content="Links rápidos para LEXI Alpha - Método de Aquisição Natural com IA e Mentoria Real"
+    />
+    <meta property="og:type" content="website" />
+  </head>
+  <body class="min-h-screen flex flex-col font-sans bg-[#0f172a] text-[#f8fafc]">
+    <section class="container">
+      <div class="header">
+        <h1>LEXI Alpha</h1>
+        <p>Destrave seu inglês sem gramática escolar</p>
+      </div>
+
+      <div class="links">
+        <a href={`${landingUrl}?utm_source=instagram&utm_medium=profile_link&utm_campaign=lexi_alpha_organic`} class="card">
+          <span class="icon">🎯</span>
+          <h3>Fazer Diagnóstico Gratuito</h3>
+          <p>Descubra seu nível em 5 minutos</p>
+        </a>
+
+        <a href={`${landingUrl}#como-funciona?utm_source=instagram&utm_medium=profile_link`} class="card">
+          <span class="icon">🚀</span>
+          <h3>Como Funciona</h3>
+          <p>Conheça o método de aquisição natural</p>
+        </a>
+
+        <a href={`${landingUrl}#oferta?utm_source=instagram&utm_medium=profile_link`} class="card">
+          <span class="icon">💰</span>
+          <h3>Ver Oferta</h3>
+          <p>Turma Alpha - 10 vagas</p>
+        </a>
+
+        <a href={`https://wa.me/${whatsappNumber}?utm_source=instagram&utm_medium=profile_link`} class="card">
+          <span class="icon">💬</span>
+          <h3>Falar no WhatsApp</h3>
+          <p>Tire suas dúvidas agora</p>
+        </a>
+      </div>
+    </section>
+  </body>
+</html>
+
+<style>
+  :root {
+    --color-primary: #0f172a;
+    --color-accent: #34d399;
+    --color-secondary: #9333ea;
+    --color-tertiary: #fbbf24;
+  }
+
+  .container {
+    background: var(--color-primary);
+    min-height: 100vh;
+    padding: 2rem 1rem;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  .header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .header h1 {
+    color: var(--color-accent);
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+  }
+
+  .header p {
+    color: #f8fafc;
+    font-size: 1rem;
+  }
+
+  .links {
+    max-width: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(52, 211, 153, 0.2);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-decoration: none;
+    transition: all 200ms ease;
+    display: block;
+  }
+
+  .card:hover {
+    background: rgba(52, 211, 153, 0.1);
+    transform: translateY(-2px);
+  }
+
+  .icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .card h3 {
+    color: #f8fafc;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+  }
+
+  .card p {
+    color: #94a3b8;
+    font-size: 0.9rem;
+  }
+</style>

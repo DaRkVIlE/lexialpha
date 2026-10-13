@@ -5,12 +5,12 @@
 import Card from './Card.astro';
 ---
 
-<section id="problema" class="py-24 px-4 sm:px-8 max-w-6xl mx-auto border-t border-[#242424]">
+<section id="problema" class="py-24 px-4 sm:px-8 max-w-6xl mx-auto border-t border-[#242424] relative">
   <div class="max-w-3xl mx-auto text-center space-y-4 mb-16">
-    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#171717] border border-[#242424] text-xs font-mono text-[#3ecf8e]">
+    <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full badge-glow text-xs font-mono text-[#3ecf8e]">
       Transparência Radical
     </div>
-    <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#fafafa] tracking-tight text-balance">
+    <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-balance text-gradient-title">
       Por que você estuda há anos e ainda trava na hora de falar?
     </h2>
     <p class="text-base sm:text-lg text-[#898989] leading-relaxed">
@@ -20,63 +20,82 @@ import Card from './Card.astro';
 
   <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
     <!-- Card 1: A Armadilha das Escolas Tradicionais -->
-    <Card class="p-8 space-y-6 flex flex-col justify-between border-red-500/10 hover:border-red-500/25 transition-colors">
-      <div class="space-y-4">
-        <div class="w-10 h-10 rounded-xl bg-red-500/10 text-red-400 flex items-center justify-center font-bold text-lg">
-          &times;
+    <div class="p-8 sm:p-10 rounded-3xl glass-panel space-y-6 flex flex-col justify-between border-red-500/15 hover:border-red-500/30 transition-all duration-300">
+      <div class="space-y-5">
+        <div class="flex items-center justify-between">
+          <div class="w-10 h-10 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 flex items-center justify-center">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </div>
+          <span class="text-xs font-mono uppercase tracking-wider text-red-400/80 px-2.5 py-1 rounded-full bg-red-500/10">Modelo Quebrado</span>
         </div>
+
         <h3 class="text-2xl font-bold text-[#fafafa]">O Modelo do Aluno Eterno</h3>
         <p class="text-[#898989] leading-relaxed text-sm">
           Grandes redes de idiomas lucram com a sua permanência lenta. Elas te colocam para preencher livros de gramática, decorar regras de tempos verbais e traduzir frases soltas no caderno.
         </p>
-        <ul class="space-y-3 text-sm text-[#898989] pt-2">
-          <li class="flex items-start gap-2.5">
-            <span class="text-red-400 font-bold mt-0.5">&bull;</span>
+
+        <ul class="space-y-3.5 text-sm text-[#898989] pt-1">
+          <li class="flex items-start gap-3">
+            <span class="text-red-400 shrink-0 font-bold mt-0.5">&bull;</span>
             <span>Você aprende a analisar o idioma como matéria de prova escolar, não como reflexo motor.</span>
           </li>
-          <li class="flex items-start gap-2.5">
-            <span class="text-red-400 font-bold mt-0.5">&bull;</span>
+          <li class="flex items-start gap-3">
+            <span class="text-red-400 shrink-0 font-bold mt-0.5">&bull;</span>
             <span>Cria o vício da tradução mental: seu cérebro tenta montar a frase em português antes de falar.</span>
           </li>
-          <li class="flex items-start gap-2.5">
-            <span class="text-red-400 font-bold mt-0.5">&bull;</span>
+          <li class="flex items-start gap-3">
+            <span class="text-red-400 shrink-0 font-bold mt-0.5">&bull;</span>
             <span>Promessas mirabolantes de fluência em 3 ou 6 meses que só geram frustração e sensação de fracasso.</span>
           </li>
         </ul>
       </div>
-      <div class="p-4 rounded-xl bg-[#0f0f0f] border border-[#242424] text-xs font-mono text-red-400/90">
+
+      <div class="p-4 rounded-2xl bg-[#0f0f0f] border border-[#242424] text-xs font-mono text-red-400/90">
         Resultado: Anos pagando mensalidade e o mesmo bloqueio na primeira reunião ou viagem.
       </div>
-    </Card>
+    </div>
 
     <!-- Card 2: A Abordagem Prática de Gabe -->
-    <Card class="p-8 space-y-6 flex flex-col justify-between border-[#3ecf8e]/20 hover:border-[#3ecf8e]/40 transition-colors">
-      <div class="space-y-4">
-        <div class="w-10 h-10 rounded-xl bg-[#3ecf8e]/10 text-[#3ecf8e] flex items-center justify-center font-bold text-lg">
-          &check;
+    <div class="p-8 sm:p-10 rounded-3xl glass-panel space-y-6 flex flex-col justify-between border-[#3ecf8e]/30 hover:border-[#3ecf8e]/60 shadow-xl shadow-[#3ecf8e]/5 transition-all duration-300 relative overflow-hidden">
+      <!-- Glow Corner sutil -->
+      <div class="absolute -top-20 -right-20 w-44 h-44 bg-[#3ecf8e]/10 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="space-y-5 relative z-10">
+        <div class="flex items-center justify-between">
+          <div class="w-10 h-10 rounded-xl bg-[#3ecf8e]/10 border border-[#3ecf8e]/25 text-[#3ecf8e] flex items-center justify-center">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+          <span class="text-xs font-mono uppercase tracking-wider text-[#3ecf8e] px-2.5 py-1 rounded-full bg-[#3ecf8e]/10 border border-[#3ecf8e]/20">Método Gabriel Lima</span>
         </div>
+
         <h3 class="text-2xl font-bold text-[#fafafa]">Aquisição Natural de Fala</h3>
         <p class="text-[#898989] leading-relaxed text-sm">
           Você não aprendeu português decorando sujeito e predicado antes de começar a falar. Você ouviu blocos inteiros, repetiu sem medo de errar e refinou com o uso diário.
         </p>
-        <ul class="space-y-3 text-sm text-[#898989] pt-2">
-          <li class="flex items-start gap-2.5">
-            <span class="text-[#3ecf8e] font-bold mt-0.5">&bull;</span>
+
+        <ul class="space-y-3.5 text-sm text-[#898989] pt-1">
+          <li class="flex items-start gap-3">
+            <span class="text-[#3ecf8e] shrink-0 font-bold mt-0.5">&bull;</span>
             <span>Absorção direta de expressões completas (chunks) que saem de forma automática da sua boca.</span>
           </li>
-          <li class="flex items-start gap-2.5">
-            <span class="text-[#3ecf8e] font-bold mt-0.5">&bull;</span>
+          <li class="flex items-start gap-3">
+            <span class="text-[#3ecf8e] shrink-0 font-bold mt-0.5">&bull;</span>
             <span>Treino diário de 15 minutos com IA no Portal Lexi Alpha para errar sem vergonha e destravar a língua.</span>
           </li>
-          <li class="flex items-start gap-2.5">
-            <span class="text-[#3ecf8e] font-bold mt-0.5">&bull;</span>
+          <li class="flex items-start gap-3">
+            <span class="text-[#3ecf8e] shrink-0 font-bold mt-0.5">&bull;</span>
             <span>Sessões individuais 1 a 1 comigo toda semana para lapidar conversações reais e destravar o improviso.</span>
           </li>
         </ul>
       </div>
-      <div class="p-4 rounded-xl bg-[#0f0f0f] border border-[#242424] text-xs font-mono text-[#3ecf8e]">
+
+      <div class="p-4 rounded-2xl bg-[#0f0f0f] border border-[#3ecf8e]/20 text-xs font-mono text-[#3ecf8e] relative z-10">
         Resultado: Você pensa em inglês e fala com naturalidade, sem traduzir mentalmente.
       </div>
-    </Card>
+    </div>
   </div>
 </section>

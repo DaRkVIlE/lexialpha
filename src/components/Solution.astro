@@ -5,12 +5,12 @@
 import Card from './Card.astro';
 ---
 
-<section id="metodo" class="py-24 px-4 sm:px-8 max-w-6xl mx-auto border-t border-[#242424]">
+<section id="metodo" class="py-24 px-4 sm:px-8 max-w-6xl mx-auto border-t border-[#242424] relative">
   <div class="max-w-3xl mx-auto text-center space-y-4 mb-16">
-    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#171717] border border-[#242424] text-xs font-mono text-[#3ecf8e]">
-      Fundamentação Científica & Prática
+    <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full badge-glow text-xs font-mono text-[#3ecf8e]">
+      Fundamentação Prática & Linguística
     </div>
-    <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#fafafa] tracking-tight text-balance">
+    <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-balance text-gradient-title">
       Como a metodologia funciona na prática
     </h2>
     <p class="text-base sm:text-lg text-[#898989] leading-relaxed">
@@ -18,13 +18,16 @@ import Card from './Card.astro';
     </p>
   </div>
 
-  <!-- Bento Grid de 5 Blocos (Supabase / Linear Style) -->
+  <!-- Bento Grid de 5 Blocos (Datamind / Linear Style) -->
   <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
     <!-- Bloco 1 (Destaque Principal - Col 8): A Teoria do Insumo Compreensível (Krashen) -->
-    <Card class="md:col-span-8 p-8 relative overflow-hidden flex flex-col justify-between group hover:border-[#3ecf8e]/40 transition-colors">
+    <div class="md:col-span-8 p-8 sm:p-10 rounded-3xl glass-panel glass-panel-hover relative overflow-hidden flex flex-col justify-between group">
+      <!-- Fundo Textural Sutil -->
+      <div class="absolute inset-0 bg-cover bg-center opacity-15 pointer-events-none -z-10" style="background-image: url('/assets/feature-sky.webp'); filter: hue-rotate(85deg) saturate(1.3);"></div>
+      
       <div class="space-y-4 relative z-10">
-        <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-[#3ecf8e]/10 text-[#3ecf8e] text-xs font-mono font-semibold">
-          Pilar Central: Stephen Krashen
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#3ecf8e]/10 text-[#3ecf8e] text-xs font-mono font-semibold border border-[#3ecf8e]/20">
+          Princípio Central &bull; Aquisição Natural (i+1)
         </div>
         <h3 class="text-2xl sm:text-3xl font-bold text-[#fafafa] tracking-tight">
           Você não aprende regras para falar. Você fala o que compreende no contexto.
@@ -36,25 +39,25 @@ import Card from './Card.astro';
         </p>
       </div>
 
-      <div class="mt-8 pt-6 border-t border-[#242424] grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-mono text-[#898989]">
-        <div class="flex items-center gap-2">
-          <span class="w-1.5 h-1.5 rounded-full bg-[#3ecf8e]"></span>
+      <div class="mt-8 pt-6 border-t border-[#242424] grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-mono text-[#898989] relative z-10">
+        <div class="flex items-center gap-2.5">
+          <span class="w-2 h-2 rounded-full bg-[#3ecf8e]"></span>
           <span>Zero listas mecânicas de vocabulário</span>
         </div>
-        <div class="flex items-center gap-2">
-          <span class="w-1.5 h-1.5 rounded-full bg-[#3ecf8e]"></span>
-          <span>Associação direta: ideia para som</span>
+        <div class="flex items-center gap-2.5">
+          <span class="w-2 h-2 rounded-full bg-[#3ecf8e]"></span>
+          <span>Associação direta: ideia &rarr; fala automática</span>
         </div>
       </div>
       <!-- Glow sutil no canto do card -->
-      <div class="absolute -right-16 -bottom-16 w-64 h-64 bg-[#3ecf8e]/5 rounded-full blur-3xl pointer-events-none"></div>
-    </Card>
+      <div class="absolute -right-16 -bottom-16 w-64 h-64 bg-[#3ecf8e]/10 rounded-full blur-3xl pointer-events-none"></div>
+    </div>
 
     <!-- Bloco 2 (Col 4): O Poder dos Chunks de Fala -->
-    <Card class="md:col-span-4 p-8 flex flex-col justify-between hover:border-[#3ecf8e]/30 transition-colors">
+    <div class="md:col-span-4 p-8 rounded-3xl glass-panel glass-panel-hover flex flex-col justify-between">
       <div class="space-y-4">
-        <div class="w-10 h-10 rounded-xl bg-[#171717] border border-[#242424] flex items-center justify-center text-[#3ecf8e]">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div class="w-12 h-12 rounded-2xl bg-[#171717] border border-[#242424] flex items-center justify-center text-[#3ecf8e]">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
           </svg>
         </div>
@@ -63,16 +66,17 @@ import Card from './Card.astro';
           Nativos não montam frases palavra por palavra. Eles disparam blocos prontos como "Take your time", "How come?" ou "I was wondering if...". Você treina blocos inteiros para responder sem hesitar.
         </p>
       </div>
-      <div class="mt-6 p-3 rounded-lg bg-[#0f0f0f] border border-[#242424] text-xs font-mono text-[#3ecf8e]">
-        Velocidade de resposta: menos de 3 segundos
+      <div class="mt-6 p-3.5 rounded-xl bg-[#0f0f0f] border border-[#242424] text-xs font-mono text-[#3ecf8e] flex items-center justify-between">
+        <span>Latência de resposta:</span>
+        <strong class="font-bold">&lt; 3 segundos</strong>
       </div>
-    </Card>
+    </div>
 
     <!-- Bloco 3 (Col 4): Alinhamento Individual 1 a 1 com Gabe -->
-    <Card class="md:col-span-4 p-8 flex flex-col justify-between hover:border-[#3ecf8e]/30 transition-colors">
+    <div class="md:col-span-4 p-8 rounded-3xl glass-panel glass-panel-hover flex flex-col justify-between">
       <div class="space-y-4">
-        <div class="w-10 h-10 rounded-xl bg-[#171717] border border-[#242424] flex items-center justify-center text-[#3ecf8e]">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div class="w-12 h-12 rounded-2xl bg-[#171717] border border-[#242424] flex items-center justify-center text-[#3ecf8e]">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
           </svg>
         </div>
@@ -81,16 +85,16 @@ import Card from './Card.astro';
           Toda semana você senta comigo individualmente. Nada de turmas grandes onde você fala 2 minutos e fica calado o resto da aula. O tempo ao vivo é 100% focado no seu destravamento de pronúncia e raciocínio.
         </p>
       </div>
-      <div class="mt-6 p-3 rounded-lg bg-[#0f0f0f] border border-[#242424] text-xs font-mono text-[#898989]">
+      <div class="mt-6 p-3.5 rounded-xl bg-[#0f0f0f] border border-[#242424] text-xs font-mono text-[#898989]">
         Sessões individuais de alinhamento prático
       </div>
-    </Card>
+    </div>
 
-    <!-- Bloco 4 (Col 4): O Tutor de IA no Portal Lexi Alpha -->
-    <Card class="md:col-span-4 p-8 flex flex-col justify-between hover:border-[#3ecf8e]/30 transition-colors">
+    <!-- Bloco 4 (Col 4): O Tutor no Portal Lexi Alpha -->
+    <div class="md:col-span-4 p-8 rounded-3xl glass-panel glass-panel-hover flex flex-col justify-between">
       <div class="space-y-4">
-        <div class="w-10 h-10 rounded-xl bg-[#171717] border border-[#242424] flex items-center justify-center text-[#3ecf8e]">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div class="w-12 h-12 rounded-2xl bg-[#171717] border border-[#242424] flex items-center justify-center text-[#3ecf8e]">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
           </svg>
         </div>
@@ -99,16 +103,16 @@ import Card from './Card.astro';
           Entre as aulas, você acessa a Lexi Alpha na plataforma web dedicada. Você pratica áudio e texto todo dia, no horário que quiser, com um parceiro paciente que nunca se cansa de te ouvir.
         </p>
       </div>
-      <div class="mt-6 p-3 rounded-lg bg-[#0f0f0f] border border-[#242424] text-xs font-mono text-[#3ecf8e]">
+      <div class="mt-6 p-3.5 rounded-xl bg-[#0f0f0f] border border-[#242424] text-xs font-mono text-[#3ecf8e]">
         Mínimo de 15 min diários no seu próprio ritmo
       </div>
-    </Card>
+    </div>
 
     <!-- Bloco 5 (Col 4): Feedback sem Caneta Vermelha -->
-    <Card class="md:col-span-4 p-8 flex flex-col justify-between hover:border-[#3ecf8e]/30 transition-colors">
+    <div class="md:col-span-4 p-8 rounded-3xl glass-panel glass-panel-hover flex flex-col justify-between">
       <div class="space-y-4">
-        <div class="w-10 h-10 rounded-xl bg-[#171717] border border-[#242424] flex items-center justify-center text-[#3ecf8e]">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div class="w-12 h-12 rounded-2xl bg-[#171717] border border-[#242424] flex items-center justify-center text-[#3ecf8e]">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
           </svg>
         </div>
@@ -117,9 +121,9 @@ import Card from './Card.astro';
           Correção gramatical explícita gera bloqueio imediato no cérebro. Aqui usamos Recasting Natural: a resposta do professor e da IA devolve a forma correta organicamente dentro da conversa, sem interromper seu raciocínio.
         </p>
       </div>
-      <div class="mt-6 p-3 rounded-lg bg-[#0f0f0f] border border-[#242424] text-xs font-mono text-[#898989]">
+      <div class="mt-6 p-3.5 rounded-xl bg-[#0f0f0f] border border-[#242424] text-xs font-mono text-[#898989]">
         Autocorreção intuitiva e sem vergonha
       </div>
-    </Card>
+    </div>
   </div>
 </section>

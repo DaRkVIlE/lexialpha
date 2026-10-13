@@ -1,27 +1,29 @@
 ---
 // src/components/Footer.astro
-// Rodapé Institucional com Logo e Navegação sem Travessões
+// Rodapé Institucional no estilo Datamind / Crysiam sem travessões
 import Logo from './Logo.astro';
 ---
 
-<footer class="py-12 px-4 sm:px-6 lg:px-8 bg-[#0f0f0f] border-t border-[#242424] text-[#898989] text-xs">
+<footer class="py-14 px-4 sm:px-6 lg:px-8 bg-[#0a0a0a] border-t border-[#242424] text-[#898989] text-xs relative overflow-hidden">
   <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-    <div class="flex items-center gap-3">
+    <div class="flex flex-col sm:flex-row items-center gap-3 text-center sm:text-left">
       <Logo showBadge={false} />
-      <span class="text-[#363636]">|</span>
-      <span>Aulas 1 a 1 com Gabriel Lima + Tutor Lexi Alpha</span>
+      <span class="hidden sm:inline text-[#262626]">|</span>
+      <span class="text-[#a1a1aa] font-medium">Aulas 1 a 1 com Gabriel Lima + Tutor Lexi Alpha</span>
     </div>
 
-    <div class="flex items-center gap-6 text-[#898989]">
+    <div class="flex flex-wrap items-center justify-center gap-6 text-[#898989] text-xs font-medium">
       <a href="#metodo" class="hover:text-[#3ecf8e] transition-colors">Metodologia</a>
       <a href="#estagios" class="hover:text-[#3ecf8e] transition-colors">Estágios da Fala</a>
       <a href="#aulas-ia" class="hover:text-[#3ecf8e] transition-colors">Rotina & IA</a>
       <a href="#pricing" class="hover:text-[#3ecf8e] transition-colors">Turma Alpha</a>
+      <a href="#faq" class="hover:text-[#3ecf8e] transition-colors">Dúvidas</a>
       <a href="https://wa.me/5511967239791" target="_blank" rel="noopener noreferrer" class="hover:text-[#3ecf8e] transition-colors">WhatsApp</a>
     </div>
 
-    <div>
-      &copy; {new Date().getFullYear()} Gabriel Lima. Todos os direitos reservados.
+    <div class="text-[#71717a] text-center sm:text-right">
+      &copy; {new Date().getFullYear()} Gabriel Lima &bull; Todos os direitos reservados.
     </div>
   </div>
 </footer>
+

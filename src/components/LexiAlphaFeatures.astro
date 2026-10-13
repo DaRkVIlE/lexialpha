@@ -5,13 +5,13 @@
 import Card from './Card.astro';
 ---
 
-<section id="aulas-ia" class="py-24 px-4 sm:px-8 max-w-6xl mx-auto border-t border-[#242424]">
+<section id="aulas-ia" class="py-24 px-4 sm:px-8 max-w-6xl mx-auto border-t border-[#242424] relative">
   <div class="max-w-3xl mx-auto text-center space-y-4 mb-16">
-    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#171717] border border-[#242424] text-xs font-mono text-[#3ecf8e]">
+    <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full badge-glow text-xs font-mono text-[#3ecf8e]">
       Rotina Sem Fricção
     </div>
-    <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#fafafa] tracking-tight text-balance">
-      A simbiose perfeita entre mentor humano e inteligência artificial
+    <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-balance text-gradient-title">
+      O Equilíbrio Perfeito Entre Conexão Humana e IA
     </h2>
     <p class="text-base sm:text-lg text-[#898989] leading-relaxed">
       Você não depende apenas de um professor uma vez por semana e nem fica sozinho com um aplicativo genérico. 
@@ -21,13 +21,13 @@ import Card from './Card.astro';
 
   <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
     <!-- Coluna 1: Acompanhamento Humano 1 a 1 com Gabriel -->
-    <Card class="p-8 sm:p-10 space-y-6 flex flex-col justify-between border-[#242424] hover:border-[#3ecf8e]/30 transition-colors">
-      <div class="space-y-5">
+    <div class="p-8 sm:p-10 rounded-3xl glass-panel glass-panel-hover space-y-6 flex flex-col justify-between border-[#242424] relative overflow-hidden">
+      <div class="space-y-5 relative z-10">
         <div class="flex items-center justify-between">
-          <span class="text-xs font-mono uppercase px-3 py-1 rounded-full bg-[#3ecf8e]/10 text-[#3ecf8e] border border-[#3ecf8e]/20 font-bold">
+          <span class="text-xs font-mono uppercase px-3.5 py-1.5 rounded-full bg-[#3ecf8e]/10 text-[#3ecf8e] border border-[#3ecf8e]/25 font-bold">
             Mentor Humano
           </span>
-          <span class="text-xs font-mono text-[#898989]">Ao Vivo</span>
+          <span class="text-xs font-mono text-[#898989]">Ao Vivo &bull; 1 a 1</span>
         </div>
 
         <h3 class="text-2xl font-bold text-[#fafafa]">Encontros 1 a 1 com Gabriel Lima</h3>
@@ -36,36 +36,45 @@ import Card from './Card.astro';
           Enquanto cursos tradicionais te colocam em salas com 10 a 15 pessoas disputando atenção, aqui o tempo é 100% seu.
         </p>
 
-        <ul class="space-y-3.5 text-sm text-[#898989]">
+        <ul class="space-y-3.5 text-sm text-[#898989] pt-1">
           <li class="flex items-start gap-3">
-            <span class="text-[#3ecf8e] font-bold">&check;</span>
+            <svg class="w-4 h-4 text-[#3ecf8e] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+            </svg>
             <span><strong>2 encontros rápidos de alinhamento:</strong> foco cirúrgico no destravamento de dúvidas e ajuste da rota semanal.</span>
           </li>
           <li class="flex items-start gap-3">
-            <span class="text-[#3ecf8e] font-bold">&check;</span>
+            <svg class="w-4 h-4 text-[#3ecf8e] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+            </svg>
             <span><strong>1 encontro estendido de conversação plena:</strong> imersão profunda em diálogos reais, simulações e improviso espontâneo.</span>
           </li>
           <li class="flex items-start gap-3">
-            <span class="text-[#3ecf8e] font-bold">&check;</span>
+            <svg class="w-4 h-4 text-[#3ecf8e] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+            </svg>
             <span><strong>Dinâmicas em grupo apenas pontuais:</strong> interações coletivas acontecem somente em momentos específicos e opcionais.</span>
           </li>
         </ul>
       </div>
 
-      <div class="pt-6 border-t border-[#242424] flex items-center justify-between text-xs font-mono text-[#898989]">
+      <div class="pt-6 border-t border-[#242424] flex items-center justify-between text-xs font-mono text-[#898989] relative z-10">
         <span>Formato: Chamada de vídeo individual</span>
         <span class="text-[#3ecf8e]">Foco: Segurança e fala fluida</span>
       </div>
-    </Card>
+    </div>
 
     <!-- Coluna 2: Tutor Hiper-Personalizado no Portal Lexi Alpha -->
-    <Card class="p-8 sm:p-10 space-y-6 flex flex-col justify-between border-[#242424] hover:border-[#3ecf8e]/30 transition-colors">
-      <div class="space-y-5">
+    <div class="p-8 sm:p-10 rounded-3xl glass-panel glass-panel-hover space-y-6 flex flex-col justify-between border-[#242424] relative overflow-hidden">
+      <!-- Glow texture sutil -->
+      <div class="absolute -bottom-16 -right-16 w-52 h-52 bg-[#3ecf8e]/10 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="space-y-5 relative z-10">
         <div class="flex items-center justify-between">
-          <span class="text-xs font-mono uppercase px-3 py-1 rounded-full bg-[#3ecf8e]/10 text-[#3ecf8e] border border-[#3ecf8e]/20 font-bold">
+          <span class="text-xs font-mono uppercase px-3.5 py-1.5 rounded-full bg-[#3ecf8e]/10 text-[#3ecf8e] border border-[#3ecf8e]/25 font-bold">
             Tecnologia Exclusiva
           </span>
-          <span class="text-xs font-mono text-[#898989]">Ambiente Web Exclusivo</span>
+          <span class="text-xs font-mono text-[#898989]">Portal Web Dedicado</span>
         </div>
 
         <h3 class="text-2xl font-bold text-[#fafafa]">Seu Tutor Único no Portal Lexi Alpha</h3>
@@ -74,26 +83,32 @@ import Card from './Card.astro';
           Ele é parametrizado com base no seu perfil: seus objetivos, sua profissão, seus gostos pessoais e suas travas específicas de pronúncia.
         </p>
 
-        <ul class="space-y-3.5 text-sm text-[#898989]">
+        <ul class="space-y-3.5 text-sm text-[#898989] pt-1">
           <li class="flex items-start gap-3">
-            <span class="text-[#3ecf8e] font-bold">&check;</span>
+            <svg class="w-4 h-4 text-[#3ecf8e] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+            </svg>
             <span><strong>Hiper-personalização por aluno:</strong> conversas sobre os temas que você realmente vive no seu cotidiano e trabalho.</span>
           </li>
           <li class="flex items-start gap-3">
-            <span class="text-[#3ecf8e] font-bold">&check;</span>
+            <svg class="w-4 h-4 text-[#3ecf8e] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+            </svg>
             <span><strong>Mínimo de 15 minutos por dia:</strong> você pratica áudio e texto quando quiser, sem precisar agendar com antecedência.</span>
           </li>
           <li class="flex items-start gap-3">
-            <span class="text-[#3ecf8e] font-bold">&check;</span>
+            <svg class="w-4 h-4 text-[#3ecf8e] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+            </svg>
             <span><strong>Ambiente seguro para errar:</strong> você treina sem qualquer julgamento ou vergonha até o som sair perfeito.</span>
           </li>
         </ul>
       </div>
 
-      <div class="pt-6 border-t border-[#242424] flex items-center justify-between text-xs font-mono text-[#898989]">
+      <div class="pt-6 border-t border-[#242424] flex items-center justify-between text-xs font-mono text-[#898989] relative z-10">
         <span>Acesso: Plataforma web dedicada</span>
         <span class="text-[#3ecf8e]">Disponibilidade: 24 horas por dia</span>
       </div>
-    </Card>
+    </div>
   </div>
 </section>

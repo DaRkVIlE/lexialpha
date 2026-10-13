@@ -1,68 +1,118 @@
 ---
 // src/components/FinalCTA.astro
 // Final CTA Turma Alpha: 10 Vagas, R$ 197/mês, acompanhamento individual com Gabe + Portal Lexi Alpha
-// Zero travessões
-import Button from './Button.astro';
+// Zero travessões, zero emojis, padrão visual Datamind / Crysiam
 ---
 
-<section class="py-24 px-4 sm:px-6 lg:px-8 bg-background border-t border-border relative overflow-hidden">
-  <div class="max-w-3xl mx-auto text-center relative z-10">
-    <!-- Badge de Atenção Individual -->
-    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#3ecf8e]/20 bg-[#171717] text-xs font-semibold text-[#3ecf8e] mb-6">
+<section class="py-24 px-4 sm:px-6 lg:px-8 bg-background border-t border-[#242424] relative overflow-hidden">
+  <!-- Glows de Fundo no estilo Crysiam / Datamind -->
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[350px] bg-[#3ecf8e]/10 rounded-full blur-[140px] pointer-events-none"></div>
+
+  <div class="max-w-4xl mx-auto text-center relative z-10">
+    <!-- Badge de Vagas Limitadas -->
+    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full badge-glow mb-6">
       <span class="w-2 h-2 rounded-full bg-[#3ecf8e] animate-pulse"></span>
-      <span>Apenas 10 Vagas &bull; Turma Alpha</span>
+      <span class="text-xs font-semibold text-[#3ecf8e] font-mono tracking-wide">Apenas 10 Vagas &bull; Turma Alpha</span>
     </div>
 
     <!-- Headline -->
-    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground leading-[1.15] mb-5">
+    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gradient-title leading-[1.15] mb-5 tracking-tight">
       Pronto para começar a falar de verdade?
     </h2>
-    <p class="text-foreground-muted text-base sm:text-lg mb-10 max-w-xl mx-auto leading-relaxed">
-      Como conduzo pessoalmente as sessões individuais de cada aluno, a Turma Alpha é estritamente limitada a 10 pessoas. Sem promessas falsas de fluência mágica: apenas método, consistência e dedicação.
+    <p class="text-[#898989] text-base sm:text-lg mb-12 max-w-2xl mx-auto leading-relaxed">
+      Como conduzo pessoalmente as sessões individuais de cada aluno, a Turma Alpha é estritamente limitada a 10 pessoas. Sem promessas vazias de fluência instantânea: apenas método, consistência diária e dedicação real.
     </p>
 
-    <!-- Comparação Rápida -->
-    <div class="grid sm:grid-cols-2 gap-6 text-left mb-10 max-w-2xl mx-auto">
-      <div class="bg-card border border-border rounded-2xl p-6">
-        <h3 class="font-bold text-foreground mb-3 flex items-center gap-2 text-sm sm:text-base">
-          <span class="text-red-400">&times;</span> Continuar no modelo tradicional
-        </h3>
-        <ul class="space-y-2.5 text-xs sm:text-sm text-foreground-muted">
-          <li>&bull; Congelar quando alguém fala em inglês</li>
-          <li>&bull; Pagar mensalidades caras por anos sem falar</li>
-          <li>&bull; Fazer exercícios de gramática sem conversa real</li>
-          <li>&bull; Prometer todo ano que "agora vai"</li>
+    <!-- Comparação Rápida em Cards Glass-Panel -->
+    <div class="grid sm:grid-cols-2 gap-6 text-left mb-12 max-w-3xl mx-auto">
+      <!-- Card Modelo Tradicional -->
+      <div class="glass-panel border border-red-500/20 rounded-2xl p-6 sm:p-7 relative overflow-hidden">
+        <div class="flex items-center gap-2 mb-4">
+          <div class="w-6 h-6 rounded-full bg-red-500/10 border border-red-500/20 flex items-center justify-center text-red-400 text-xs font-bold">
+            &times;
+          </div>
+          <h3 class="font-bold text-[#fafafa] text-sm sm:text-base tracking-tight">
+            Modelo Tradicional
+          </h3>
+        </div>
+        <ul class="space-y-3 text-xs sm:text-sm text-[#898989]">
+          <li class="flex items-start gap-2.5">
+            <span class="text-red-400 mt-0.5 shrink-0">&times;</span>
+            <span>Travar e congelar quando alguém fala com você em inglês</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="text-red-400 mt-0.5 shrink-0">&times;</span>
+            <span>Mensalidades caras por anos sem produzir uma conversa fluida</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="text-red-400 mt-0.5 shrink-0">&times;</span>
+            <span>Exercícios mecânicos de gramática sem contexto real de fala</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="text-red-400 mt-0.5 shrink-0">&times;</span>
+            <span>Prometer no início de todo ano que "agora vai" e desistir</span>
+          </li>
         </ul>
       </div>
 
-      <div class="bg-card border border-[#3ecf8e]/40 rounded-2xl p-6 relative">
-        <div class="absolute -top-3 right-4 px-2.5 py-0.5 rounded-full bg-[#3ecf8e] text-black text-[10px] font-black uppercase tracking-wider">
+      <!-- Card Turma Alpha -->
+      <div class="glass-panel border border-[#3ecf8e]/40 rounded-2xl p-6 sm:p-7 relative overflow-hidden shadow-xl shadow-[#3ecf8e]/5">
+        <div class="absolute -top-3 right-5 px-3 py-0.5 rounded-full bg-[#3ecf8e] text-[#0f0f0f] text-[10px] font-black uppercase tracking-wider shadow-sm">
           Turma Alpha
         </div>
-        <h3 class="font-bold text-foreground mb-3 flex items-center gap-2 text-sm sm:text-base">
-          <span class="text-[#3ecf8e]">&check;</span> Aulas 1 a 1 com Gabe + Portal Lexi Alpha
-        </h3>
-        <ul class="space-y-2.5 text-xs sm:text-sm text-foreground-muted">
-          <li>&bull; Encontros individuais semanais com o professor</li>
-          <li>&bull; Tutor único de IA no Portal Web 24/7 (mínimo 15m)</li>
-          <li>&bull; R$ 197 por mês sem fidelidade de longo prazo</li>
-          <li>&bull; Garantia incondicional de 30 dias via Pix</li>
+        <div class="flex items-center gap-2 mb-4">
+          <div class="w-6 h-6 rounded-full bg-[#3ecf8e]/15 border border-[#3ecf8e]/30 flex items-center justify-center text-[#3ecf8e] text-xs font-bold">
+            &check;
+          </div>
+          <h3 class="font-bold text-[#fafafa] text-sm sm:text-base tracking-tight">
+            Método Gabe + Lexi Alpha
+          </h3>
+        </div>
+        <ul class="space-y-3 text-xs sm:text-sm text-[#fafafa]">
+          <li class="flex items-start gap-2.5">
+            <svg class="w-4 h-4 text-[#3ecf8e] mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+            </svg>
+            <span class="text-[#d4d4d8]">Encontros individuais semanais ao vivo com o Gabe</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <svg class="w-4 h-4 text-[#3ecf8e] mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+            </svg>
+            <span class="text-[#d4d4d8]">Tutor dedicado no Portal Lexi Alpha 24/7 (mínimo 15 min)</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <svg class="w-4 h-4 text-[#3ecf8e] mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+            </svg>
+            <span class="text-[#d4d4d8]">R$ 197 por mês sem fidelidade ou contratos anuais</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <svg class="w-4 h-4 text-[#3ecf8e] mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+            </svg>
+            <span class="text-[#d4d4d8]">Garantia incondicional de 30 dias com devolução via Pix</span>
+          </li>
         </ul>
       </div>
     </div>
 
-    <!-- CTA Final -->
-    <div class="max-w-md mx-auto mb-4">
-      <Button
-        variant="primary"
-        size="lg"
-        href="https://wa.me/5511967239791?text=Oi%20Gabe!%20Quero%20garantir%20minha%20vaga%20na%20Turma%20Alpha%20por%20R$%20197/m%C3%AAs%20%F0%9F%9A%80"
+    <!-- CTA Final Button -->
+    <div class="max-w-md mx-auto mb-5">
+      <a
+        href="https://wa.me/5511967239791?text=Oi%20Gabe!%20Quero%20garantir%20minha%20vaga%20na%20Turma%20Alpha%20por%20R$%20197/m%C3%AAs"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center justify-center w-full py-4 px-8 rounded-2xl bg-[#3ecf8e] text-[#0f0f0f] font-bold text-base sm:text-lg hover:bg-[#34b27b] active:scale-95 transition-all shadow-xl shadow-[#3ecf8e]/25 group"
       >
-        Garantir Minha Vaga no WhatsApp &rarr;
-      </Button>
+        <span>Garantir Minha Vaga no WhatsApp</span>
+        <svg class="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+        </svg>
+      </a>
     </div>
 
-    <p class="text-foreground-muted text-xs">
+    <p class="text-[#898989] text-xs">
       Apenas 10 vagas disponíveis &bull; Início imediato &bull; R$ 197/mês
     </p>
   </div>
