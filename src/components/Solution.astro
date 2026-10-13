@@ -1,129 +1,158 @@
 ---
-// src/components/Solution.astro
-// Bento Grid Interativo da Metodologia: Como e Por Que Funciona
-// Padrão visual Supabase / Linear (Awesome Design Systems). Zero travessões.
-import Card from './Card.astro';
+// src/components/Solution.astro — Bento Grid com SVG Mocks Animados
+// Dois pilares: Mentor Humano (waveform) + Portal Lexi Alpha (chat bubbles) + card resultado
 ---
 
-<section id="metodo" class="py-24 px-4 sm:px-8 max-w-6xl mx-auto border-t border-[#242424] relative">
-  <div class="max-w-3xl mx-auto text-center space-y-4 mb-16">
-    <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full badge-glow text-xs font-mono text-[#3ecf8e]">
-      Fundamentação Prática & Linguística
-    </div>
-    <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-balance text-gradient-title">
-      Como a metodologia funciona na prática
-    </h2>
-    <p class="text-base sm:text-lg text-[#898989] leading-relaxed">
-      A união exata entre neurociência da aquisição de linguagem, mentoria humana individual e prática diária assistida por inteligência artificial.
-    </p>
-  </div>
+<section id="metodo" class="py-32 px-4 sm:px-8 relative border-t border-[#1a1a1a]">
+  <div class="max-w-6xl mx-auto">
 
-  <!-- Bento Grid de 5 Blocos (Datamind / Linear Style) -->
-  <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
-    <!-- Bloco 1 (Destaque Principal - Col 8): A Teoria do Insumo Compreensível (Krashen) -->
-    <div class="md:col-span-8 p-8 sm:p-10 rounded-3xl glass-panel glass-panel-hover relative overflow-hidden flex flex-col justify-between group">
-      <!-- Fundo Textural Sutil -->
-      <div class="absolute inset-0 bg-cover bg-center opacity-15 pointer-events-none -z-10" style="background-image: url('/assets/feature-sky.webp'); filter: hue-rotate(85deg) saturate(1.3);"></div>
-      
-      <div class="space-y-4 relative z-10">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#3ecf8e]/10 text-[#3ecf8e] text-xs font-mono font-semibold border border-[#3ecf8e]/20">
-          Princípio Central &bull; Aquisição Natural (i+1)
-        </div>
-        <h3 class="text-2xl sm:text-3xl font-bold text-[#fafafa] tracking-tight">
-          Você não aprende regras para falar. Você fala o que compreende no contexto.
-        </h3>
-        <p class="text-sm sm:text-base text-[#898989] leading-relaxed">
-          O cérebro adulto não automatiza a fala resolvendo exercícios de preencher lacunas. 
-          A aquisição real acontece quando você é exposto a situações reais com compreensão guiada (o princípio do input i+1). 
-          Em vez de aprender o que é "Present Perfect", você vive diálogos onde a estrutura é usada de forma natural até virar instinto.
-        </p>
-      </div>
-
-      <div class="mt-8 pt-6 border-t border-[#242424] grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-mono text-[#898989] relative z-10">
-        <div class="flex items-center gap-2.5">
-          <span class="w-2 h-2 rounded-full bg-[#3ecf8e]"></span>
-          <span>Zero listas mecânicas de vocabulário</span>
-        </div>
-        <div class="flex items-center gap-2.5">
-          <span class="w-2 h-2 rounded-full bg-[#3ecf8e]"></span>
-          <span>Associação direta: ideia &rarr; fala automática</span>
-        </div>
-      </div>
-      <!-- Glow sutil no canto do card -->
-      <div class="absolute -right-16 -bottom-16 w-64 h-64 bg-[#3ecf8e]/10 rounded-full blur-3xl pointer-events-none"></div>
+    <!-- Header -->
+    <div class="mb-16" data-anim="fade-up">
+      <span class="text-xs font-mono text-[#3ecf8e] uppercase tracking-[0.2em]">Como Funciona</span>
+      <h2 class="font-editorial text-5xl sm:text-6xl font-light tracking-tight mt-4 text-[#fafafa] leading-[1.05] max-w-2xl">
+        Dois pilares.<br />Uma transformação real.
+      </h2>
+      <p class="text-[#898989] text-base mt-4 max-w-xl leading-relaxed">
+        Não é app gamificado. Não é curso em grupo. É uma combinação cirúrgica de contato humano e IA personalizada.
+      </p>
     </div>
 
-    <!-- Bloco 2 (Col 4): O Poder dos Chunks de Fala -->
-    <div class="md:col-span-4 p-8 rounded-3xl glass-panel glass-panel-hover flex flex-col justify-between">
-      <div class="space-y-4">
-        <div class="w-12 h-12 rounded-2xl bg-[#171717] border border-[#242424] flex items-center justify-center text-[#3ecf8e]">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+    <!-- Bento Grid -->
+    <div class="grid md:grid-cols-2 gap-4">
+
+      <!-- Card 1 GRANDE: Mentor Humano ao Vivo -->
+      <div
+        class="rounded-3xl bg-[#111111] border border-[#1e1e1e] p-8 sm:p-10 flex flex-col justify-between min-h-[480px] relative overflow-hidden group hover:border-[#2a2a2a] transition-all duration-500"
+        data-anim="fade-up"
+      >
+        <!-- Glow corner -->
+        <div class="absolute -top-20 -left-20 w-56 h-56 bg-[#3ecf8e]/6 rounded-full blur-3xl pointer-events-none group-hover:bg-[#3ecf8e]/10 transition-all duration-700"></div>
+
+        <!-- SVG Waveform Visual -->
+        <div class="relative mb-8 flex items-end gap-[3px] h-16">
+          <svg viewBox="0 0 240 60" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full" preserveAspectRatio="none">
+            <!-- 30 barras de waveform com alturas variadas -->
+            {[18,28,42,36,24,52,38,20,44,30,56,40,22,48,34,58,26,46,32,54,28,42,36,50,24,44,38,20,30,16].map((h, i) => (
+              <rect
+                x={i * 8 + 1}
+                y={(60 - h) / 2}
+                width="5"
+                height={h}
+                rx="2.5"
+                fill="#3ecf8e"
+                opacity={0.3 + (i % 5) * 0.1}
+                class="wave-bar"
+                style={`animation-delay: ${i * 0.06}s;`}
+              />
+            ))}
           </svg>
         </div>
-        <h3 class="text-xl font-bold text-[#fafafa]">Blocos de Fala (Chunks)</h3>
-        <p class="text-sm text-[#898989] leading-relaxed">
-          Nativos não montam frases palavra por palavra. Eles disparam blocos prontos como "Take your time", "How come?" ou "I was wondering if...". Você treina blocos inteiros para responder sem hesitar.
-        </p>
-      </div>
-      <div class="mt-6 p-3.5 rounded-xl bg-[#0f0f0f] border border-[#242424] text-xs font-mono text-[#3ecf8e] flex items-center justify-between">
-        <span>Latência de resposta:</span>
-        <strong class="font-bold">&lt; 3 segundos</strong>
-      </div>
-    </div>
 
-    <!-- Bloco 3 (Col 4): Alinhamento Individual 1 a 1 com Gabe -->
-    <div class="md:col-span-4 p-8 rounded-3xl glass-panel glass-panel-hover flex flex-col justify-between">
-      <div class="space-y-4">
-        <div class="w-12 h-12 rounded-2xl bg-[#171717] border border-[#242424] flex items-center justify-center text-[#3ecf8e]">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
-          </svg>
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-xs font-mono text-[#3ecf8e] uppercase tracking-wider px-2.5 py-1 rounded-full bg-[#3ecf8e]/10 border border-[#3ecf8e]/20">Pilar 01</span>
+          </div>
+          <h3 class="text-2xl sm:text-3xl font-bold text-[#fafafa] mb-3">Mentor Humano ao Vivo</h3>
+          <p class="text-[#898989] text-sm leading-relaxed mb-6">
+            Toda semana nós nos reunimos em sessões exclusivamente individuais. Dois encontros rápidos de alinhamento e uma sessão estendida de conversação plena. O tempo é 100% seu.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-[11px] font-mono text-[#898989] px-3 py-1 rounded-full border border-[#242424]">2x Sessões Rápidas</span>
+            <span class="text-[11px] font-mono text-[#898989] px-3 py-1 rounded-full border border-[#242424]">1x Sessão Estendida</span>
+            <span class="text-[11px] font-mono text-[#898989] px-3 py-1 rounded-full border border-[#242424]">100% Individual</span>
+          </div>
         </div>
-        <h3 class="text-xl font-bold text-[#fafafa]">Encontros 1 a 1 com Gabe</h3>
-        <p class="text-sm text-[#898989] leading-relaxed">
-          Toda semana você senta comigo individualmente. Nada de turmas grandes onde você fala 2 minutos e fica calado o resto da aula. O tempo ao vivo é 100% focado no seu destravamento de pronúncia e raciocínio.
-        </p>
       </div>
-      <div class="mt-6 p-3.5 rounded-xl bg-[#0f0f0f] border border-[#242424] text-xs font-mono text-[#898989]">
-        Sessões individuais de alinhamento prático
-      </div>
-    </div>
 
-    <!-- Bloco 4 (Col 4): O Tutor no Portal Lexi Alpha -->
-    <div class="md:col-span-4 p-8 rounded-3xl glass-panel glass-panel-hover flex flex-col justify-between">
-      <div class="space-y-4">
-        <div class="w-12 h-12 rounded-2xl bg-[#171717] border border-[#242424] flex items-center justify-center text-[#3ecf8e]">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-          </svg>
-        </div>
-        <h3 class="text-xl font-bold text-[#fafafa]">Tutor no Portal Lexi Alpha 24/7</h3>
-        <p class="text-sm text-[#898989] leading-relaxed">
-          Entre as aulas, você acessa a Lexi Alpha na plataforma web dedicada. Você pratica áudio e texto todo dia, no horário que quiser, com um parceiro paciente que nunca se cansa de te ouvir.
-        </p>
-      </div>
-      <div class="mt-6 p-3.5 rounded-xl bg-[#0f0f0f] border border-[#242424] text-xs font-mono text-[#3ecf8e]">
-        Mínimo de 15 min diários no seu próprio ritmo
-      </div>
-    </div>
+      <!-- Coluna direita: 2 cards empilhados -->
+      <div class="flex flex-col gap-4">
 
-    <!-- Bloco 5 (Col 4): Feedback sem Caneta Vermelha -->
-    <div class="md:col-span-4 p-8 rounded-3xl glass-panel glass-panel-hover flex flex-col justify-between">
-      <div class="space-y-4">
-        <div class="w-12 h-12 rounded-2xl bg-[#171717] border border-[#242424] flex items-center justify-center text-[#3ecf8e]">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-          </svg>
+        <!-- Card 2: Portal Lexi Alpha com Chat Mock -->
+        <div
+          class="rounded-3xl bg-[#111111] border border-[#1e1e1e] p-8 relative overflow-hidden group hover:border-[#2a2a2a] transition-all duration-500 flex-1"
+          data-anim="fade-up"
+        >
+          <!-- Chat Mock Visual -->
+          <div class="mb-6 space-y-2.5">
+            <!-- Bolha IA -->
+            <div class="flex items-end gap-2.5">
+              <div class="w-6 h-6 rounded-full bg-[#3ecf8e]/20 border border-[#3ecf8e]/30 flex items-center justify-center shrink-0">
+                <svg class="w-3 h-3 text-[#3ecf8e]" fill="currentColor" viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="5"/>
+                </svg>
+              </div>
+              <div class="max-w-[75%] bg-[#1a1a1a] border border-[#242424] rounded-2xl rounded-bl-none px-3.5 py-2.5">
+                <p class="text-xs text-[#d4d4d8] leading-relaxed">Hey! Ready to practice? Tell me about your weekend.</p>
+              </div>
+            </div>
+            <!-- Bolha User -->
+            <div class="flex justify-end">
+              <div class="max-w-[70%] bg-[#1e2a24] border border-[#3ecf8e]/20 rounded-2xl rounded-br-none px-3.5 py-2.5">
+                <p class="text-xs text-[#a7f3d0] leading-relaxed">I went to my friend's house. We watched a movie.</p>
+              </div>
+            </div>
+            <!-- Bolha IA -->
+            <div class="flex items-end gap-2.5">
+              <div class="w-6 h-6 rounded-full bg-[#3ecf8e]/20 border border-[#3ecf8e]/30 flex items-center justify-center shrink-0">
+                <svg class="w-3 h-3 text-[#3ecf8e]" fill="currentColor" viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="5"/>
+                </svg>
+              </div>
+              <div class="max-w-[75%] bg-[#1a1a1a] border border-[#242424] rounded-2xl rounded-bl-none px-3.5 py-2.5">
+                <p class="text-xs text-[#d4d4d8] leading-relaxed">Perfect. Natural and confident. <span class="text-[#3ecf8e]">Now tell me what movie.</span> <span class="typing-cursor text-[#3ecf8e]">|</span></p>
+              </div>
+            </div>
+          </div>
+
+          <span class="text-xs font-mono text-[#3ecf8e] uppercase tracking-wider">Pilar 02</span>
+          <h3 class="text-xl font-bold text-[#fafafa] mt-2 mb-2">Portal Lexi Alpha 24/7</h3>
+          <p class="text-[#898989] text-sm leading-relaxed">
+            Seu parceiro de IA exclusivo, parametrizado para os seus objetivos, sua profissão e suas travas. Disponível a qualquer hora para treino de áudio e texto.
+          </p>
         </div>
-        <h3 class="text-xl font-bold text-[#fafafa]">Sem Caneta Vermelha</h3>
-        <p class="text-sm text-[#898989] leading-relaxed">
-          Correção gramatical explícita gera bloqueio imediato no cérebro. Aqui usamos Recasting Natural: a resposta do professor e da IA devolve a forma correta organicamente dentro da conversa, sem interromper seu raciocínio.
-        </p>
-      </div>
-      <div class="mt-6 p-3.5 rounded-xl bg-[#0f0f0f] border border-[#242424] text-xs font-mono text-[#898989]">
-        Autocorreção intuitiva e sem vergonha
+
+        <!-- Card 3: Resultado / Sem Promessas -->
+        <div
+          class="rounded-3xl bg-gradient-to-br from-[#3ecf8e]/8 via-[#141414] to-[#0f0f0f] border border-[#3ecf8e]/20 p-8 relative overflow-hidden hover:border-[#3ecf8e]/40 transition-all duration-500"
+          data-anim="fade-up"
+        >
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 rounded-2xl bg-[#3ecf8e]/10 border border-[#3ecf8e]/25 flex items-center justify-center shrink-0">
+              <svg class="w-5 h-5 text-[#3ecf8e]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-[#fafafa] mb-2">Sem Promessas de Fluência Rápida</h3>
+              <p class="text-[#898989] text-sm leading-relaxed">
+                Não existe fluência em 3 meses. Existe método, consistência e dedicação. O que prometemos é que você começa a falar de verdade na primeira semana.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
+
+<script is:inline>
+(function () {
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function ready(fn) {
+    if (document.readyState !== 'loading') fn(); else document.addEventListener('DOMContentLoaded', fn);
+  }
+  ready(function () {
+    var gsap = window.gsap;
+    var ST = window.ScrollTrigger;
+    if (!gsap || !ST || reduced) return;
+    gsap.from('#metodo [data-anim="fade-up"]', {
+      y: 50,
+      opacity: 0,
+      duration: 0.9,
+      stagger: 0.12,
+      ease: 'power3.out',
+      scrollTrigger: { trigger: '#metodo', start: 'top 70%' }
+    });
+  });
+})();
+</script>

@@ -2,7 +2,6 @@
 
 @layer base {
   :root {
-    /* Design System: Supabase Developer Aesthetic (Gabe's-design-system.md) */
     --color-background: #0f0f0f;
     --color-background-elevated: #171717;
     --color-card: #141414;
@@ -15,7 +14,6 @@
     --color-border-mid: #363636;
     --color-border-light: #393939;
 
-    /* Supabase Emerald Green Accent Scale */
     --color-primary: #3ecf8e;
     --color-primary-hover: #34b27b;
     --color-accent: #00c573;
@@ -23,13 +21,12 @@
     --color-accent-dim: rgba(62, 207, 142, 0.15);
     --color-accent-border: rgba(62, 207, 142, 0.3);
 
-    /* Radius & Layout */
     --radius-pill: 9999px;
     --radius-card: 16px;
     --radius-input: 8px;
 
-    /* Typography */
     --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-editorial: 'Cormorant Garamond', 'Georgia', serif;
     --font-mono: 'Source Code Pro', 'Menlo', monospace;
   }
 
@@ -52,23 +49,20 @@
     color: #0f0f0f;
   }
 
-  /* Custom dark scrollbar inspired by Supabase / code editors */
-  ::-webkit-scrollbar {
-    width: 6px;
-  }
-  ::-webkit-scrollbar-track {
-    background: #0f0f0f;
-  }
-  ::-webkit-scrollbar-thumb {
-    background: #242424;
-    border-radius: 9999px;
-  }
-  ::-webkit-scrollbar-thumb:hover {
-    background: #363636;
-  }
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: #0f0f0f; }
+  ::-webkit-scrollbar-thumb { background: #242424; border-radius: 9999px; }
+  ::-webkit-scrollbar-thumb:hover { background: #363636; }
 }
 
-/* Utilitários Visuais de Alto Padrão (Inspirados em Datamind & Crysiam) */
+/* ─── Tipografia Editorial (Cormorant) ────────────────────── */
+.font-editorial {
+  font-family: var(--font-editorial);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+}
+
+/* ─── Glass Panels ────────────────────────────────────────── */
 .glass-panel {
   background: rgba(20, 20, 20, 0.75);
   backdrop-filter: blur(16px);
@@ -85,20 +79,124 @@
   transform: translateY(-2px);
 }
 
+/* ─── Text Gradients ─────────────────────────────────────── */
 .text-gradient-title {
   background: linear-gradient(180deg, #FFFFFF 0%, #D4D4D8 50%, #A1A1AA 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .text-gradient-emerald {
   background: linear-gradient(135deg, #3ECF8E 0%, #22c55e 50%, #16a34a 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
+/* ─── Badge Glow ─────────────────────────────────────────── */
 .badge-glow {
   background: rgba(23, 23, 23, 0.8);
   border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
+}
+
+/* ─── Reveal System (SplitType / line-by-line) ───────────── */
+.reveal-line {
+  overflow: hidden;
+  display: block;
+}
+
+/* ─── Scroll-driven animation base states ───────────────── */
+[data-anim="fade-up"] {
+  opacity: 0;
+  transform: translateY(48px);
+}
+[data-anim="fade-in"] {
+  opacity: 0;
+}
+[data-anim="scale-in"] {
+  opacity: 0;
+  transform: scale(0.94);
+}
+
+/* ─── Line Decorative ────────────────────────────────────── */
+.line-decor {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #3ecf8e 50%, transparent);
+  transform: scaleX(0);
+  transform-origin: left center;
+}
+
+/* ─── Dot Grid Background ───────────────────────────────── */
+.dot-grid-bg {
+  background-image: radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* ─── Counter ────────────────────────────────────────────── */
+.counter-value {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}
+
+/* ─── Waveform Animation ─────────────────────────────────── */
+@keyframes waveBar {
+  0%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(0.25); }
+}
+
+.wave-bar {
+  transform-origin: center;
+  animation: waveBar 1.4s ease-in-out infinite;
+}
+
+/* ─── Scroll Indicator ───────────────────────────────────── */
+@keyframes scrollPulse {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(10px); opacity: 0; }
+}
+
+.scroll-dot {
+  animation: scrollPulse 1.6s ease-in-out infinite;
+}
+
+/* ─── Chat Typing Cursor ─────────────────────────────────── */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+.typing-cursor {
+  animation: blink 1s step-end infinite;
+}
+
+/* ─── Hover button slide text (Datamind style) ───────────── */
+.btn-slide {
+  position: relative;
+  overflow: hidden;
+}
+.btn-slide .btn-text-top,
+.btn-slide .btn-text-bottom {
+  display: block;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-slide .btn-text-bottom {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(100%);
+}
+.btn-slide:hover .btn-text-top { transform: translateY(-100%); }
+.btn-slide:hover .btn-text-bottom { transform: translateY(0); }
+
+/* ─── Noise Texture Overlay ──────────────────────────────── */
+.noise-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  opacity: 0.03;
 }

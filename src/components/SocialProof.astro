@@ -1,104 +1,142 @@
 ---
-// SocialProof.astro — Fundamentos Científicos e Metodologia Lexi Alpha
-// Foco: Fontes reais (Krashen, FSRS, Recasting), sem prazos mentirosos, teste gratuito e aulas com Gabe
+// src/components/SocialProof.astro — Números Enormes + Quote Editorial
+// CountUp animado, divisores verticais, citação em Cormorant italic
 ---
 
-<section class="py-24 px-4 sm:px-6 lg:px-8 bg-background relative border-t border-[#242424]">
+<section class="py-32 px-4 sm:px-8 relative border-t border-[#1a1a1a] overflow-hidden">
+  <!-- Linha decorativa topo -->
+  <div class="absolute top-0 left-0 right-0 h-px overflow-hidden">
+    <div id="sp-line" class="line-decor h-full w-full"></div>
+  </div>
+
   <div class="max-w-6xl mx-auto">
     <!-- Header -->
-    <div class="text-center max-w-3xl mx-auto mb-16">
-      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full badge-glow text-xs font-mono text-[#3ecf8e] mb-4">
-        <span>A Lógica da Aquisição Natural</span>
-      </div>
-      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-[1.15] mb-6 text-gradient-title">
-        Por Que Você Finalmente Destrava com Este Método?
+    <div class="text-center mb-20" data-anim="fade-up">
+      <span class="text-xs font-mono text-[#898989] uppercase tracking-[0.2em]">A Lógica da Aquisição Natural</span>
+      <h2 class="font-editorial text-5xl sm:text-6xl font-light mt-4 text-[#fafafa] leading-[1.05]">
+        Por que você finalmente destrava<br class="hidden sm:block" /> com este método
       </h2>
-      <p class="text-[#898989] text-base sm:text-lg leading-relaxed">
-        Aprender a falar não é decifrar enigmas gramaticais e nem preencher lacunas em livros escolares. Veja como a união entre treino diário e mentoria individual transforma sua fala em reflexo natural.
-      </p>
     </div>
 
-    <!-- 4 Indicadores Práticos Estilo Datamind -->
-    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-16">
-      <!-- Indicador 1: Diagnóstico Cirúrgico -->
-      <div class="rounded-3xl glass-panel glass-panel-hover p-6 sm:p-8 text-center space-y-2">
-        <div class="text-3xl sm:text-4xl font-extrabold text-gradient-emerald">100%</div>
-        <div class="text-xs sm:text-sm font-semibold text-[#fafafa]">Diagnóstico Inicial</div>
-        <p class="text-[#898989] text-xs">Mapeamos suas travas específicas de pronúncia e vocabulário.</p>
+    <!-- 4 Estatísticas com divisores -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-0 mb-24" data-anim="fade-up">
+      <!-- Stat 1 -->
+      <div class="text-center px-6 py-8 md:border-r md:border-[#1e1e1e]">
+        <div class="font-editorial text-[64px] sm:text-[80px] font-light leading-none text-gradient-emerald counter-value mb-1">
+          <span class="sp-counter" data-target="15">0</span><span class="text-3xl">min</span>
+        </div>
+        <p class="text-xs font-mono text-[#898989] uppercase tracking-wider mb-2">Mínimo Diário</p>
+        <p class="text-[#71717a] text-xs leading-relaxed hidden sm:block">O chão para criar consistência. Pratique mais quando quiser.</p>
       </div>
 
-      <!-- Indicador 2: 15 min mínimo -->
-      <div class="rounded-3xl glass-panel glass-panel-hover p-6 sm:p-8 text-center space-y-2">
-        <div class="text-3xl sm:text-4xl font-extrabold text-gradient-emerald">15 min</div>
-        <div class="text-xs sm:text-sm font-semibold text-[#fafafa]">Mínimo Diário</div>
-        <p class="text-[#898989] text-xs">O chão para criar consistência. Pratique mais quando quiser.</p>
+      <!-- Stat 2 -->
+      <div class="text-center px-6 py-8 md:border-r md:border-[#1e1e1e]">
+        <div class="font-editorial text-[64px] sm:text-[80px] font-light leading-none text-gradient-emerald counter-value mb-1">
+          <span class="sp-counter" data-target="3">0</span><span class="text-3xl">x</span>
+        </div>
+        <p class="text-xs font-mono text-[#898989] uppercase tracking-wider mb-2">Encontros / Sem.</p>
+        <p class="text-[#71717a] text-xs leading-relaxed hidden sm:block">2 rápidas de ajuste + 1 estendida de conversação com Gabe.</p>
       </div>
 
-      <!-- Indicador 3: Encontros 1 a 1 -->
-      <div class="rounded-3xl glass-panel glass-panel-hover p-6 sm:p-8 text-center space-y-2">
-        <div class="text-3xl sm:text-4xl font-extrabold text-gradient-emerald">3x / Sem</div>
-        <div class="text-xs sm:text-sm font-semibold text-[#fafafa]">Encontros 1 a 1</div>
-        <p class="text-[#898989] text-xs">2 rápidas de ajuste + 1 estendida de conversação com Gabe.</p>
+      <!-- Stat 3 -->
+      <div class="text-center px-6 py-8 md:border-r md:border-[#1e1e1e] border-t md:border-t-0 border-[#1e1e1e]">
+        <div class="font-editorial text-[64px] sm:text-[80px] font-light leading-none text-gradient-emerald counter-value mb-1">
+          <span class="sp-counter" data-target="24">0</span><span class="text-3xl">/7</span>
+        </div>
+        <p class="text-xs font-mono text-[#898989] uppercase tracking-wider mb-2">Portal Lexi Alpha</p>
+        <p class="text-[#71717a] text-xs leading-relaxed hidden sm:block">Seu tutor dedicado para falar e ouvir a qualquer hora do dia.</p>
       </div>
 
-      <!-- Indicador 4: Portal Lexi Alpha -->
-      <div class="rounded-3xl glass-panel glass-panel-hover p-6 sm:p-8 text-center space-y-2">
-        <div class="text-3xl sm:text-4xl font-extrabold text-gradient-emerald">24 / 7</div>
-        <div class="text-xs sm:text-sm font-semibold text-[#fafafa]">Portal Lexi Alpha</div>
-        <p class="text-[#898989] text-xs">Seu tutor dedicado para falar e ouvir a qualquer hora do dia.</p>
+      <!-- Stat 4 -->
+      <div class="text-center px-6 py-8 border-t md:border-t-0 border-[#1e1e1e]">
+        <div class="font-editorial text-[64px] sm:text-[80px] font-light leading-none text-gradient-emerald counter-value mb-1">
+          <span class="sp-counter" data-target="100">0</span><span class="text-3xl">%</span>
+        </div>
+        <p class="text-xs font-mono text-[#898989] uppercase tracking-wider mb-2">Individual</p>
+        <p class="text-[#71717a] text-xs leading-relaxed hidden sm:block">Zero alunos dividindo atenção. O tempo todo é seu.</p>
       </div>
     </div>
 
-    <!-- Explicação Prática da Mecânica de Aprendizado -->
-    <div class="rounded-3xl glass-panel p-8 sm:p-12 shadow-2xl border-[#242424] relative overflow-hidden">
-      <!-- Glow Corner sutil -->
-      <div class="absolute -top-24 -left-24 w-56 h-56 bg-[#3ecf8e]/10 rounded-full blur-3xl pointer-events-none"></div>
-
-      <h3 class="text-2xl font-bold text-[#fafafa] mb-8 text-center sm:text-left relative z-10">
-        Como a Fala se Torna Automática no Seu Cérebro
-      </h3>
-
-      <div class="grid md:grid-cols-2 gap-8 text-sm leading-relaxed relative z-10">
-        <div class="space-y-2.5">
-          <div class="flex items-center gap-3">
-            <span class="w-8 h-8 rounded-lg bg-[#3ecf8e]/15 text-[#3ecf8e] font-bold flex items-center justify-center shrink-0 border border-[#3ecf8e]/25">1</span>
-            <h4 class="font-bold text-[#fafafa] text-base">O Fim do Vício da Tradução Mental</h4>
+    <!-- Seção de Explicação: 4 pilares de aquisição -->
+    <div class="grid md:grid-cols-2 gap-x-16 gap-y-12" data-anim="fade-up">
+      {[
+        {
+          n: '01',
+          title: 'O Fim do Vício da Tradução Mental',
+          text: 'No cursinho tradicional, você pensa a frase em português, tenta lembrar a regra gramatical e busca palavra por palavra. Esse processo trava seu raciocínio. Com nosso método, você treina blocos de fala completos dentro de contextos reais até que a resposta saia espontânea, como um reflexo imediato.'
+        },
+        {
+          n: '02',
+          title: 'Ambiente Seguro para Errar Sem Julgamento',
+          text: 'A principal razão de quase todo mundo travar é a vergonha de errar ou de ser julgado em público. No Portal Lexi Alpha, você pratica fala e áudio todos os dias com um parceiro incansável e acolhedor, soltando a língua antes de entrar nas conversas ao vivo com Gabe.'
+        },
+        {
+          n: '03',
+          title: 'Correção Natural sem Interrupções Bloqueantes',
+          text: 'Correção gramatical explícita aciona medo no cérebro. Aqui utilizamos reformulação natural: quando você solta uma frase imprecisa, tanto a IA quanto o professor devolvem a estrutura correta de forma fluida dentro do diálogo. O mesmo processo biológico pelo qual você aprendeu português na infância.'
+        },
+        {
+          n: '04',
+          title: 'Aplicação Real e Improviso com o Professor',
+          text: 'O treino diário cria a musculatura; os encontros individuais colocam essa musculatura à prova. Toda semana simulamos diálogos da sua rotina profissional e pessoal, eliminando o medo do improviso e ajustando nuances que nenhuma máquina resolve sozinha.'
+        }
+      ].map((item) => (
+        <div class="flex gap-5 border-t border-[#1a1a1a] pt-6">
+          <span class="font-editorial text-5xl font-light text-[#1f1f1f] select-none leading-none shrink-0">{item.n}</span>
+          <div>
+            <h4 class="font-bold text-[#fafafa] text-base mb-2">{item.title}</h4>
+            <p class="text-[#898989] text-sm leading-relaxed">{item.text}</p>
           </div>
-          <p class="text-[#898989] pl-11">
-            No cursinho tradicional, você pensa a frase em português, tenta lembrar a regra gramatical e busca palavra por palavra. Esse processo trava seu raciocínio. Com nosso método, você treina blocos de fala completos dentro de contextos reais até que a resposta saia espontânea, como um reflexo imediato.
-          </p>
         </div>
-
-        <div class="space-y-2.5">
-          <div class="flex items-center gap-3">
-            <span class="w-8 h-8 rounded-lg bg-[#3ecf8e]/15 text-[#3ecf8e] font-bold flex items-center justify-center shrink-0 border border-[#3ecf8e]/25">2</span>
-            <h4 class="font-bold text-[#fafafa] text-base">Ambiente Seguro para Errar Sem Julgamento</h4>
-          </div>
-          <p class="text-[#898989] pl-11">
-            A principal razão de quase todo mundo travar na hora de falar é a vergonha de errar ou de ser julgado em público. No Portal Lexi Alpha, você pratica fala e áudio todos os dias com um parceiro de IA incansável e acolhedor, soltando a língua e ajustando a pronúncia antes de entrar nas conversas ao vivo.
-          </p>
-        </div>
-
-        <div class="space-y-2.5">
-          <div class="flex items-center gap-3">
-            <span class="w-8 h-8 rounded-lg bg-[#3ecf8e]/15 text-[#3ecf8e] font-bold flex items-center justify-center shrink-0 border border-[#3ecf8e]/25">3</span>
-            <h4 class="font-bold text-[#fafafa] text-base">Correção Natural sem Interrupções Bloqueantes</h4>
-          </div>
-          <p class="text-[#898989] pl-11">
-            Correção gramatical explícita aciona medo e insegurança no cérebro. Aqui utilizamos reformulação natural: quando você solta uma frase imprecisa, tanto a IA quanto o professor devolvem a estrutura correta de forma fluida dentro do diálogo. É o mesmo processo biológico pelo qual você aprendeu a falar português na infância.
-          </p>
-        </div>
-
-        <div class="space-y-2.5">
-          <div class="flex items-center gap-3">
-            <span class="w-8 h-8 rounded-lg bg-[#3ecf8e]/15 text-[#3ecf8e] font-bold flex items-center justify-center shrink-0 border border-[#3ecf8e]/25">4</span>
-            <h4 class="font-bold text-[#fafafa] text-base">Aplicação Real e Improviso com o Professor</h4>
-          </div>
-          <p class="text-[#898989] pl-11">
-            O treino diário cria a musculatura; os encontros individuais comigo colocam essa musculatura à prova. Toda semana nos reunimos para simular diálogos da sua rotina profissional e pessoal, eliminando o medo do improviso e ajustando nuances que nenhuma máquina resolve sozinha.
-          </p>
-        </div>
-      </div>
+      ))}
     </div>
   </div>
 </section>
+
+<script is:inline>
+(function () {
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function ready(fn) {
+    if (document.readyState !== 'loading') fn(); else document.addEventListener('DOMContentLoaded', fn);
+  }
+  ready(function () {
+    var gsap = window.gsap;
+    var ST = window.ScrollTrigger;
+    if (!gsap || !ST) return;
+
+    gsap.to('#sp-line', {
+      scaleX: 1, duration: 1.5, ease: 'power2.inOut',
+      scrollTrigger: { trigger: 'section', start: 'top 85%' }
+    });
+
+    if (!reduced) {
+      gsap.from('[data-anim="fade-up"]', {
+        y: 50, opacity: 0, duration: 0.9, stagger: 0.1, ease: 'power3.out',
+        scrollTrigger: { trigger: '.sp-counter', start: 'top 80%' }
+      });
+    }
+
+    // CountUp
+    var counters = document.querySelectorAll('.sp-counter');
+    var done = false;
+    ST.create({
+      trigger: '.sp-counter',
+      start: 'top 75%',
+      onEnter: function () {
+        if (done) return;
+        done = true;
+        counters.forEach(function (el) {
+          var target = parseInt(el.dataset.target || '0', 10);
+          var obj = { val: 0 };
+          gsap.to(obj, {
+            val: target,
+            duration: 2,
+            ease: 'power2.out',
+            onUpdate: function () { el.textContent = Math.round(obj.val); }
+          });
+        });
+      }
+    });
+  });
+})();
+</script>

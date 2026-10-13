@@ -1,102 +1,138 @@
 ---
-// src/components/Faq.astro
-// Perguntas Frequentes Gabe's English
-// Posicionamento: Transparência radical, encontros individuais 1:1, Portal Lexi e zero travessões
+// src/components/Faq.astro — Redesign Editorial Datamind Style
+// Perguntas Frequentes Gabe's English • Transparência radical, zero cards, divisores lineares
+// Tipografia Cormorant e acordeão fluído com GSAP/CSS grid-template-rows
+
+const faqs = [
+  {
+    q: 'Vocês prometem "fluência em 3 ou 6 meses"?',
+    a: 'Não. E desconfie de quem fizer essa promessa. Nosso objetivo é te ensinar inglês de verdade, não vender ilusões. Cada aluno tem um histórico diferente, medos particulares e uma rotina própria. O que garantimos são as ferramentas certas: a mentoria individual do professor Gabe, encontros regulares de conversação e uma IA autoral hiper-personalizada no Portal Lexi Alpha para você praticar todos os dias sem vergonha de errar.'
+  },
+  {
+    q: 'Como funcionam os encontros com o professor Gabe?',
+    a: 'Na Turma Alpha temos acompanhamento estritamente individual (1 a 1): 2 sessões rápidas de acompanhamento e ajustes práticos para garantir que você não trave, e 1 sessão estendida dedicada integralmente à conversação guiada, simulações de situações reais de trabalho e improviso. Dinâmicas em grupo acontecem apenas em momentos pontuais e opcionais.'
+  },
+  {
+    q: 'A inteligência artificial substitui as aulas com o professor?',
+    a: 'De forma alguma. A IA Lexi Alpha é uma tecnologia complementar de autoria própria acessada através do nosso portal web exclusivo. Ela foi criada para resolver o maior problema do aprendizado de idiomas: o vácuo de vários dias sem praticar entre uma aula e outra. Você usa a IA diariamente para treinar sua fala e escuta; o professor usa as sessões individuais para aparar as arestas, trazer contexto e destravar a sua segurança.'
+  },
+  {
+    q: 'Preciso estudar exatamente 15 minutos por dia?',
+    a: '15 minutos é o mínimo recomendado para manter a consistência e fixar os blocos de fala na memória de longo prazo. É o tempo ideal para quem tem rotina corrida. Porém, se você tiver mais tempo disponível e quiser conversar por 30 minutos ou 1 hora, seu tutor de IA está à sua disposição 24h por dia, sem nenhum limite ou cobrança adicional.'
+  },
+  {
+    q: 'Como funciona a mensalidade de R$ 197 e o cancelamento?',
+    a: 'A mensalidade de entrada é de R$ 197 por mês para os 10 primeiros alunos da Turma Alpha. Não cobramos taxa de matrícula e não exigimos fidelidade de 12 meses. Você pode cancelar quando quiser sem multas. Além disso, você conta com a garantia incondicional de 30 dias: se não gostar, devolvemos 100% via Pix.'
+  },
+  {
+    q: 'Posso conversar com o professor antes de me inscrever?',
+    a: 'Com certeza! Você pode clicar no botão de WhatsApp e falar diretamente comigo. Nós alinhamos seus objetivos, tiramos todas as dúvidas e validamos se a Turma Alpha é o formato ideal para o seu momento antes de qualquer decisão.'
+  }
+];
 ---
 
-<section id="faq" class="py-24 px-4 sm:px-6 lg:px-8 bg-background relative border-t border-[#242424]">
-  <div class="max-w-4xl mx-auto">
-    <!-- Header -->
-    <div class="text-center mb-16">
-      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full badge-glow text-[#3ecf8e] text-xs font-mono font-semibold uppercase tracking-wider mb-4">
-        <span>Tire Suas Dúvidas</span>
-      </div>
-      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight mb-4 text-gradient-title">
-        Perguntas Frequentes
+<section id="faq" class="py-32 px-4 sm:px-8 relative border-t border-[#1a1a1a] overflow-hidden">
+  <div class="max-w-4xl mx-auto relative z-10">
+    <!-- Header Editorial -->
+    <div class="mb-20 max-w-2xl" data-anim="fade-up">
+      <span class="text-xs font-mono text-[#898989] uppercase tracking-[0.2em]">Tire Suas Dúvidas</span>
+      <h2 class="font-editorial text-5xl sm:text-6xl md:text-7xl font-light tracking-tight leading-[1.02] mt-4 text-[#fafafa]">
+        Perguntas Frequentes.<br />
+        <span class="font-editorial italic text-gradient-emerald">Transparência radical.</span>
       </h2>
-      <p class="text-[#898989] text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
+      <p class="text-base sm:text-lg text-[#898989] leading-relaxed mt-6">
         Respostas sinceras sobre a metodologia, a rotina individual e o acompanhamento na Turma Alpha.
       </p>
     </div>
 
-    <div class="space-y-4">
-      <!-- FAQ 1: Promessas de fluência -->
-      <details class="glass-panel rounded-2xl border border-[#242424] overflow-hidden group hover:border-[#3ecf8e]/30 transition-colors">
-        <summary class="px-6 py-5 cursor-pointer font-bold text-[#fafafa] hover:text-[#3ecf8e] transition-colors flex items-center justify-between text-base sm:text-lg">
-          Vocês prometem "fluência em 3 ou 6 meses"?
-          <svg class="w-5 h-5 text-[#898989] group-open:rotate-180 transition-transform shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-          </svg>
-        </summary>
-        <div class="px-6 pb-6 text-[#898989] text-sm sm:text-base leading-relaxed border-t border-[#242424]/60 pt-4">
-          <strong class="text-[#fafafa]">Não. E desconfie de quem fizer essa promessa.</strong> Nosso objetivo é te ensinar inglês de verdade, não vender ilusões. Cada aluno tem um histórico diferente, medos particulares e uma rotina própria. O que garantimos são as ferramentas certas: a mentoria individual do professor Gabe, encontros regulares de conversação e uma IA autoral hiper-personalizada no Portal Lexi Alpha para você praticar todos os dias sem vergonha de errar.
-        </div>
-      </details>
+    <!-- Accordion List Editorial Linear (sem cards pesados) -->
+    <div class="border-b border-[#1f1f1f]" data-anim="fade-up">
+      {faqs.map((faq, index) => (
+        <div class="faq-item border-t border-[#1f1f1f] group">
+          <button
+            type="button"
+            class="faq-trigger w-full py-7 text-left flex items-start justify-between gap-6 cursor-pointer select-none transition-colors"
+            aria-expanded="false"
+          >
+            <div class="flex items-start gap-5">
+              <span class="text-xs font-mono text-[#898989] mt-1 shrink-0">
+                {String(index + 1).padStart(2, '0')}
+              </span>
+              <span class="text-lg sm:text-xl font-medium text-[#fafafa] group-hover:text-[#3ecf8e] transition-colors leading-snug">
+                {faq.q}
+              </span>
+            </div>
 
-      <!-- FAQ 2: Como funcionam as aulas com o Gabe -->
-      <details class="glass-panel rounded-2xl border border-[#242424] overflow-hidden group hover:border-[#3ecf8e]/30 transition-colors">
-        <summary class="px-6 py-5 cursor-pointer font-bold text-[#fafafa] hover:text-[#3ecf8e] transition-colors flex items-center justify-between text-base sm:text-lg">
-          Como funcionam os encontros com o professor Gabe?
-          <svg class="w-5 h-5 text-[#898989] group-open:rotate-180 transition-transform shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-          </svg>
-        </summary>
-        <div class="px-6 pb-6 text-[#898989] text-sm sm:text-base leading-relaxed border-t border-[#242424]/60 pt-4">
-          Na Turma Alpha temos acompanhamento estritamente individual (1 a 1): <strong class="text-[#fafafa]">2 sessões rápidas</strong> de acompanhamento e ajustes práticos para garantir que você não trave, e <strong class="text-[#fafafa]">1 sessão estendida</strong> dedicada integralmente à conversação guiada, simulações de situações reais de trabalho e improviso. Dinâmicas em grupo acontecem apenas em momentos pontuais e opcionais.
-        </div>
-      </details>
+            <!-- Icone Plus / Cross rotativo -->
+            <div class="w-8 h-8 rounded-full border border-[#2e2e2e] flex items-center justify-center shrink-0 group-hover:border-[#3ecf8e]/50 transition-all text-[#898989] group-hover:text-[#3ecf8e]">
+              <svg class="faq-icon w-3.5 h-3.5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4" />
+              </svg>
+            </div>
+          </button>
 
-      <!-- FAQ 3: IA substitui o professor? -->
-      <details class="glass-panel rounded-2xl border border-[#242424] overflow-hidden group hover:border-[#3ecf8e]/30 transition-colors">
-        <summary class="px-6 py-5 cursor-pointer font-bold text-[#fafafa] hover:text-[#3ecf8e] transition-colors flex items-center justify-between text-base sm:text-lg">
-          A inteligência artificial substitui as aulas com o professor?
-          <svg class="w-5 h-5 text-[#898989] group-open:rotate-180 transition-transform shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-          </svg>
-        </summary>
-        <div class="px-6 pb-6 text-[#898989] text-sm sm:text-base leading-relaxed border-t border-[#242424]/60 pt-4">
-          De forma alguma. A IA <strong class="text-[#fafafa]">Lexi Alpha</strong> é uma tecnologia complementar de autoria própria acessada através do nosso portal web exclusivo. Ela foi criada para resolver o maior problema do aprendizado de idiomas: o vácuo de vários dias sem praticar entre uma aula e outra. Você usa a IA diariamente para treinar sua fala e escuta; o professor usa as sessões individuais para aparar as arestas, trazer contexto e destravar a sua segurança.
+          <!-- Painel colapsável com transição suave -->
+          <div class="faq-content grid grid-rows-[0fr] transition-all duration-300 ease-out">
+            <div class="overflow-hidden">
+              <div class="pl-10 pr-4 pb-8 text-[#898989] text-base leading-relaxed">
+                {faq.a}
+              </div>
+            </div>
+          </div>
         </div>
-      </details>
-
-      <!-- FAQ 4: 15 minutos diários -->
-      <details class="glass-panel rounded-2xl border border-[#242424] overflow-hidden group hover:border-[#3ecf8e]/30 transition-colors">
-        <summary class="px-6 py-5 cursor-pointer font-bold text-[#fafafa] hover:text-[#3ecf8e] transition-colors flex items-center justify-between text-base sm:text-lg">
-          Preciso estudar exatamente 15 minutos por dia?
-          <svg class="w-5 h-5 text-[#898989] group-open:rotate-180 transition-transform shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-          </svg>
-        </summary>
-        <div class="px-6 pb-6 text-[#898989] text-sm sm:text-base leading-relaxed border-t border-[#242424]/60 pt-4">
-          <strong class="text-[#fafafa]">15 minutos é o mínimo recomendado</strong> para manter a consistência e fixar os blocos de fala na memória de longo prazo. É o tempo ideal para quem tem rotina corrida. Porém, se você tiver mais tempo disponível e quiser conversar por 30 minutos ou 1 hora, seu tutor de IA está à sua disposição 24h por dia, sem nenhum limite ou cobrança adicional.
-        </div>
-      </details>
-
-      <!-- FAQ 5: Preço e cancelamento -->
-      <details class="glass-panel rounded-2xl border border-[#242424] overflow-hidden group hover:border-[#3ecf8e]/30 transition-colors">
-        <summary class="px-6 py-5 cursor-pointer font-bold text-[#fafafa] hover:text-[#3ecf8e] transition-colors flex items-center justify-between text-base sm:text-lg">
-          Como funciona a mensalidade de R$ 197 e o cancelamento?
-          <svg class="w-5 h-5 text-[#898989] group-open:rotate-180 transition-transform shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-          </svg>
-        </summary>
-        <div class="px-6 pb-6 text-[#898989] text-sm sm:text-base leading-relaxed border-t border-[#242424]/60 pt-4">
-          A mensalidade de entrada é de <strong class="text-[#fafafa]">R$ 197 por mês</strong> para os 10 primeiros alunos da Turma Alpha. Não cobramos taxa de matrícula e não exigimos fidelidade de 12 meses. Você pode cancelar quando quiser sem multas. Além disso, você conta com a garantia incondicional de 30 dias: se não gostar, devolvemos 100% via Pix.
-        </div>
-      </details>
-
-      <!-- FAQ 6: Como tirar dúvidas antes -->
-      <details class="glass-panel rounded-2xl border border-[#242424] overflow-hidden group hover:border-[#3ecf8e]/30 transition-colors">
-        <summary class="px-6 py-5 cursor-pointer font-bold text-[#fafafa] hover:text-[#3ecf8e] transition-colors flex items-center justify-between text-base sm:text-lg">
-          Posso conversar com o professor antes de me inscrever?
-          <svg class="w-5 h-5 text-[#898989] group-open:rotate-180 transition-transform shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-          </svg>
-        </summary>
-        <div class="px-6 pb-6 text-[#898989] text-sm sm:text-base leading-relaxed border-t border-[#242424]/60 pt-4">
-          Com certeza! Você pode clicar no botão de WhatsApp e falar diretamente comigo. Nós alinhamos seus objetivos, tiramos todas as dúvidas e validamos se a Turma Alpha é o formato ideal para o seu momento antes de qualquer decisão.
-        </div>
-      </details>
+      ))}
     </div>
   </div>
 </section>
+
+<!-- Script Inline para Acordeão Editorial Fluído -->
+<script is:inline>
+  (function initEditorialFaq() {
+    function setup() {
+      const items = document.querySelectorAll('.faq-item');
+      if (!items.length) return;
+
+      items.forEach((item) => {
+        const trigger = item.querySelector('.faq-trigger');
+        const content = item.querySelector('.faq-content');
+        const icon = item.querySelector('.faq-icon');
+
+        if (!trigger || !content) return;
+
+        trigger.addEventListener('click', () => {
+          const isOpen = trigger.getAttribute('aria-expanded') === 'true';
+
+          // Opcional: fechar outros itens para modo exclusivo
+          items.forEach((other) => {
+            if (other !== item) {
+              const otherTrigger = other.querySelector('.faq-trigger');
+              const otherContent = other.querySelector('.faq-content');
+              const otherIcon = other.querySelector('.faq-icon');
+              if (otherTrigger) otherTrigger.setAttribute('aria-expanded', 'false');
+              if (otherContent) otherContent.classList.replace('grid-rows-[1fr]', 'grid-rows-[0fr]');
+              if (otherIcon) otherIcon.style.transform = 'rotate(0deg)';
+            }
+          });
+
+          if (isOpen) {
+            trigger.setAttribute('aria-expanded', 'false');
+            content.classList.remove('grid-rows-[1fr]');
+            content.classList.add('grid-rows-[0fr]');
+            if (icon) icon.style.transform = 'rotate(0deg)';
+          } else {
+            trigger.setAttribute('aria-expanded', 'true');
+            content.classList.remove('grid-rows-[0fr]');
+            content.classList.add('grid-rows-[1fr]');
+            if (icon) icon.style.transform = 'rotate(45deg)';
+          }
+        });
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', setup);
+    } else {
+      setup();
+    }
+  })();
+</script>

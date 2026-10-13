@@ -1,15 +1,14 @@
 ---
-// src/components/MontanhaB2.astro
-// Abas Interativas dos 5 Estágios da Fala: CEFR + Cambridge Guided Learning Hours
-// Como o método de Gabe atua em cada nível. Zero travessões.
-import Card from './Card.astro';
+// src/components/MontanhaB2.astro — Redesign Editorial Datamind Style
+// Abas Interativas dos 6 Estágios da Fala: CEFR + Cambridge Guided Learning Hours
+// Transições suaves com GSAP, tipografia editorial Cormorant e split layout sem cards pesados.
 
 const stages = [
   {
     id: 'stage-a1',
     level: 'A1',
     name: 'Descongelamento Inicial',
-    hours: '90 a 100 horas guiadas (Estudo Cambridge)',
+    hours: '90 a 100 horas guiadas (Cambridge)',
     trap: 'Tenta traduzir palavra por palavra do português e paralisa por medo de errar a regra gramatical.',
     solution: 'Injeção de Chunks Fixos de Sobrevivência. Você não conjuga verbos; memoriza blocos sonoros prontos e já produz fala real no primeiro dia com a Lexi.',
     outcome: 'Consegue se apresentar, pedir informações básicas e entender instruções simples sem pânico.'
@@ -18,7 +17,7 @@ const stages = [
     id: 'stage-a2',
     level: 'A2',
     name: 'Autonomia Cotidiana',
-    hours: '180 a 200 horas guiadas (Estudo Cambridge)',
+    hours: '180 a 200 horas guiadas (Cambridge)',
     trap: 'Vocabulário solto sem conexão estrutural. Pausas longas e desconfortáveis entre as palavras.',
     solution: 'Imersão Diária Guiada de 15 minutos no Portal Lexi Alpha. O tutor alimenta situações de rotina com input ligeiramente acima do seu nível (i+1), expandindo seu repertório sem caneta vermelha.',
     outcome: 'Descreve tarefas do trabalho, fala sobre acontecimentos do seu dia e entende o contexto de áudios comuns.'
@@ -27,7 +26,7 @@ const stages = [
     id: 'stage-b1',
     level: 'B1',
     name: 'Conversação Fluida',
-    hours: '350 a 400 horas guiadas (Estudo Cambridge)',
+    hours: '350 a 400 horas guiadas (Cambridge)',
     trap: 'O famoso platô intermediário: você entende quase tudo o que ouve e lê, mas na hora de falar sob pressão a mente dá um branco.',
     solution: 'Encontros Individuais 1 a 1 com Gabriel Lima. Trabalhamos diretamente nas suas travas emocionais de improviso, forçando raciocínio direto em inglês com feedback natural em camadas.',
     outcome: 'Participa de reuniões sem roteiro prévio, expressa opiniões pessoais e lida com imprevistos sem recorrer ao português.'
@@ -36,7 +35,7 @@ const stages = [
     id: 'stage-b2',
     level: 'B2',
     name: 'Domínio Executivo',
-    hours: '500 a 600 horas guiadas (Estudo Cambridge)',
+    hours: '500 a 600 horas guiadas (Cambridge)',
     trap: 'Dificuldade em lidar com jargões profissionais, argumentos técnicos complexos ou conversas rápidas com múltiplos nativos.',
     solution: 'Tutor de IA Hiper-Personalizado para a Sua Carreira. Calibramos a Lexi Alpha para simular negociações, entrevistas e cenários reais da sua área de atuação profissional.',
     outcome: 'Fluência profissional sólida, capacidade de persuasão, liderança de discussões e compreensão de nuances culturais.'
@@ -45,7 +44,7 @@ const stages = [
     id: 'stage-c1',
     level: 'C1',
     name: 'Autonomia Plena',
-    hours: '700 a 800 horas guiadas (Estudo Cambridge)',
+    hours: '700 a 800 horas guiadas (Cambridge)',
     trap: 'Falta de naturalidade em expressões idiomáticas sutis e metáforas avançadas da língua.',
     solution: 'Consolidação de Pensamento Instintivo. O inglês passa a ser um segundo canal primário de pensamento no seu cérebro, com esforço cognitivo próximo de zero.',
     outcome: 'Comunicação precisa, flexível e totalmente espontânea em qualquer esfera profissional ou social.'
@@ -54,7 +53,7 @@ const stages = [
     id: 'stage-c2',
     level: 'C2',
     name: 'Maestria Nativa Plena',
-    hours: '1.000 a 1.200 horas guiadas (Estudo Cambridge)',
+    hours: '1.000 a 1.200 horas guiadas (Cambridge)',
     trap: 'Sensação de estagnação após anos de estudo, com dificuldade em nuances diplomáticas e oratória de alto impacto.',
     solution: 'Imersão Dialética e Refinamento Executivo. Treino avançado de debates de alto calibre, oratória e liderança global sem qualquer atrito linguístico.',
     outcome: 'Comunicação indistinguível de um falante nativo culto, com domínio absoluto de tom, sutileza e persuasão.'
@@ -62,140 +61,172 @@ const stages = [
 ];
 ---
 
-<section id="estagios" class="py-24 px-4 sm:px-8 max-w-6xl mx-auto border-t border-[#242424] relative">
-  <div class="max-w-3xl mx-auto text-center space-y-4 mb-16">
-    <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full badge-glow text-xs font-mono text-[#3ecf8e]">
-      Mapeamento Quantitativo
-    </div>
-    <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-balance text-gradient-title">
-      Os 6 estágios práticos da fala (A1 a C2)
-    </h2>
-    <p class="text-base sm:text-lg text-[#898989] leading-relaxed">
-      A escala internacional de proficiência (CEFR) cruzada com a média de horas de estudo guiado de Cambridge English, e a forma exata como atuamos para acelerar cada etapa.
-    </p>
-  </div>
+<section id="estagios" class="py-32 px-4 sm:px-8 relative border-t border-[#1a1a1a] overflow-hidden">
+  <!-- Glow atmosférico -->
+  <div class="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[350px] bg-[#3ecf8e]/5 rounded-full blur-[180px] pointer-events-none"></div>
 
-  <!-- Componente Interativo com Tabs (Estilo Datamind) -->
-  <div class="max-w-4xl mx-auto space-y-8" id="cefr-tab-container">
-    <!-- Barra de Navegação das Abas Flutuante -->
-    <div class="flex items-center justify-start sm:justify-center gap-2 p-2 rounded-full glass-panel overflow-x-auto pb-2 sm:pb-2 scrollbar-none" id="cefr-tab-buttons-bar">
-      {stages.map((stage, index) => (
-        <button
-          type="button"
-          data-stage-target={stage.id}
-          class={`stage-tab-btn px-4 py-2 rounded-full text-xs font-mono font-semibold transition-all duration-200 cursor-pointer whitespace-nowrap border ${
-            index === 0
-              ? 'bg-[#3ecf8e] text-[#0f0f0f] border-[#3ecf8e] shadow-md shadow-[#3ecf8e]/25 active-tab font-bold'
-              : 'bg-transparent text-[#898989] border-transparent hover:text-[#fafafa] hover:bg-[#1a1a1a]'
-          }`}
-        >
-          <span class="font-bold mr-1.5">{stage.level}</span> {stage.name}
-        </button>
-      ))}
+  <div class="max-w-6xl mx-auto relative z-10">
+    <!-- Header Editorial -->
+    <div class="mb-20 max-w-3xl" data-anim="fade-up">
+      <span class="text-xs font-mono text-[#898989] uppercase tracking-[0.2em]">Mapeamento Quantitativo</span>
+      <h2 class="font-editorial text-5xl sm:text-6xl md:text-7xl font-light tracking-tight leading-[1.02] mt-4 text-[#fafafa]">
+        Os 6 estágios práticos da fala.<br />
+        <span class="font-editorial italic text-gradient-emerald">De A1 ao domínio nativo C2.</span>
+      </h2>
+      <p class="text-base sm:text-lg text-[#898989] leading-relaxed mt-6">
+        A escala internacional de proficiência (CEFR) cruzada com a média de horas de estudo guiado de Cambridge English, e a forma exata como atuamos para acelerar cada etapa.
+      </p>
     </div>
 
-    <!-- Conteúdo dos Estágios -->
-    <div class="relative">
-      {stages.map((stage, index) => (
-        <div
-          id={stage.id}
-          class={`stage-pane transition-all duration-300 ${index === 0 ? 'block' : 'hidden'}`}
-        >
-          <div class="p-8 sm:p-10 space-y-8 rounded-3xl glass-panel border-[#3ecf8e]/25 shadow-2xl relative overflow-hidden">
-            <!-- Glow Interior -->
-            <div class="absolute -top-24 -right-24 w-52 h-52 bg-[#3ecf8e]/10 rounded-full blur-3xl pointer-events-none"></div>
+    <!-- Container das Abas -->
+    <div class="space-y-10" id="cefr-container" data-anim="fade-up">
+      <!-- Barra de Abas Editorial -->
+      <div class="flex items-center gap-2 p-1.5 rounded-full bg-[#121212] border border-[#242424] overflow-x-auto scrollbar-none max-w-fit mx-auto sm:mx-0">
+        {stages.map((stage, index) => (
+          <button
+            type="button"
+            data-stage-target={stage.id}
+            class={`stage-tab-btn px-5 py-2.5 rounded-full text-xs font-mono transition-all duration-300 cursor-pointer whitespace-nowrap flex items-center gap-2 ${
+              index === 0
+                ? 'bg-[#3ecf8e] text-[#0f0f0f] font-bold shadow-md shadow-[#3ecf8e]/20 active-tab'
+                : 'text-[#898989] hover:text-[#fafafa] hover:bg-[#1a1a1a]'
+            }`}
+          >
+            <span class="font-bold tracking-wider">{stage.level}</span>
+            <span class="opacity-75 hidden sm:inline">{stage.name}</span>
+          </button>
+        ))}
+      </div>
 
-            <!-- Cabeçalho do Estágio -->
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-[#242424] relative z-10">
-              <div class="flex items-center gap-3.5">
-                <span class="w-12 h-12 rounded-2xl bg-[#3ecf8e]/10 text-[#3ecf8e] font-black text-xl flex items-center justify-center font-mono border border-[#3ecf8e]/30 shadow-sm shadow-[#3ecf8e]/10">
-                  {stage.level}
-                </span>
-                <div>
-                  <h3 class="text-2xl font-bold text-[#fafafa]">{stage.name}</h3>
-                  <p class="text-xs font-mono text-[#898989] mt-0.5">{stage.hours}</p>
+      <!-- Área de Conteúdo do Estágio Ativo -->
+      <div class="relative min-h-[380px]">
+        {stages.map((stage, index) => (
+          <div
+            id={stage.id}
+            class={`stage-pane ${index === 0 ? 'block' : 'hidden'} transition-all`}
+            style={index === 0 ? 'opacity: 1;' : 'opacity: 0;'}
+          >
+            <div class="rounded-3xl bg-[#141414]/90 border border-[#242424] p-8 sm:p-12 relative overflow-hidden backdrop-blur-sm">
+              <!-- Topo do Estágio -->
+              <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 border-b border-[#1f1f1f]">
+                <div class="flex items-baseline gap-6">
+                  <div class="font-editorial text-7xl sm:text-8xl font-light text-gradient-emerald leading-none select-none">
+                    {stage.level}
+                  </div>
+                  <div>
+                    <h3 class="text-2xl sm:text-3xl font-bold text-[#fafafa] tracking-tight">{stage.name}</h3>
+                    <p class="text-xs font-mono text-[#898989] uppercase tracking-wider mt-1">{stage.hours}</p>
+                  </div>
                 </div>
-              </div>
-              <span class="inline-flex self-start sm:self-auto text-xs font-mono px-3.5 py-1.5 rounded-full badge-glow text-[#898989]">
-                Referência Cambridge English
-              </span>
-            </div>
 
-            <!-- Grade de Diagnóstico vs Solução -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 relative z-10">
-              <!-- Onde o Aluno Trava -->
-              <div class="p-6 rounded-2xl bg-[#0f0f0f] border border-red-500/15 space-y-3">
-                <div class="flex items-center gap-2 text-red-400 text-xs font-mono font-bold uppercase tracking-wider">
-                  <span class="w-1.5 h-1.5 rounded-full bg-red-400"></span>
-                  Onde você trava no método comum
-                </div>
-                <p class="text-sm text-[#898989] leading-relaxed">
-                  {stage.trap}
-                </p>
-              </div>
-
-              <!-- Como o Método de Gabe Atua -->
-              <div class="p-6 rounded-2xl bg-[#0f0f0f] border border-[#3ecf8e]/25 space-y-3">
-                <div class="flex items-center gap-2 text-[#3ecf8e] text-xs font-mono font-bold uppercase tracking-wider">
+                <div class="flex items-center gap-2 text-xs font-mono text-[#3ecf8e] px-4 py-1.5 rounded-full bg-[#3ecf8e]/10 border border-[#3ecf8e]/20 self-start md:self-auto">
                   <span class="w-1.5 h-1.5 rounded-full bg-[#3ecf8e]"></span>
-                  Como nosso método acelera
+                  <span>Referência Oficial Cambridge</span>
                 </div>
-                <p class="text-sm text-[#fafafa] leading-relaxed">
-                  {stage.solution}
-                </p>
               </div>
-            </div>
 
-            <!-- Conquista do Nível -->
-            <div class="p-4 rounded-xl bg-[#0f0f0f] border border-[#242424] flex items-start sm:items-center gap-3 text-xs text-[#898989] relative z-10">
-              <svg class="w-4 h-4 text-[#3ecf8e] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
-              </svg>
-              <span>
-                <strong class="text-[#fafafa]">Habilidade consolidada:</strong> {stage.outcome}
-              </span>
+              <!-- Split Grid: Diagnóstico vs Solução -->
+              <div class="grid md:grid-cols-2 gap-10 md:divide-x md:divide-[#1f1f1f] pt-8">
+                <!-- Coluna 1: Onde Trava -->
+                <div class="md:pr-8 space-y-4">
+                  <div class="flex items-center gap-2 text-xs font-mono text-red-400 uppercase tracking-wider">
+                    <span class="w-1.5 h-1.5 rounded-full bg-red-400"></span>
+                    <span>Onde você trava no método comum</span>
+                  </div>
+                  <p class="text-[#898989] text-base leading-relaxed">
+                    {stage.trap}
+                  </p>
+                </div>
+
+                <!-- Coluna 2: Como Nosso Método Acelera -->
+                <div class="md:pl-8 space-y-4">
+                  <div class="flex items-center gap-2 text-xs font-mono text-[#3ecf8e] uppercase tracking-wider">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#3ecf8e]"></span>
+                    <span>Como nosso método acelera</span>
+                  </div>
+                  <p class="text-[#fafafa] text-base leading-relaxed font-medium">
+                    {stage.solution}
+                  </p>
+                </div>
+              </div>
+
+              <!-- Barra Inferior: Conquista Consolidada -->
+              <div class="mt-8 pt-6 border-t border-[#1f1f1f] flex items-center gap-3 text-xs sm:text-sm text-[#898989]">
+                <div class="w-5 h-5 rounded-full bg-[#3ecf8e]/15 flex items-center justify-center shrink-0 text-[#3ecf8e]">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <span>
+                  <strong class="text-[#fafafa] font-semibold">Habilidade consolidada:</strong> {stage.outcome}
+                </span>
+              </div>
             </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   </div>
 </section>
 
-<!-- Script Inline Imediato e Resiliente para Troca de Abas -->
+<!-- Script Inline GSAP para Transição Fluida das Abas -->
 <script is:inline>
-  (function initCefrTabs() {
+  (function initCefrEditorialTabs() {
     function setup() {
       const buttons = document.querySelectorAll('.stage-tab-btn');
       const panes = document.querySelectorAll('.stage-pane');
       if (!buttons.length || !panes.length) return;
 
+      let currentTargetId = 'stage-a1';
+
       buttons.forEach((btn) => {
-        btn.onclick = function (e) {
-          if (e) e.preventDefault();
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
           const targetId = btn.getAttribute('data-stage-target');
+          if (targetId === currentTargetId) return;
 
-          // Reset all buttons
+          // Atualizar estilo visual dos botões
           buttons.forEach((b) => {
-            b.classList.remove('bg-[#3ecf8e]', 'text-[#0f0f0f]', 'border-[#3ecf8e]', 'shadow-md', 'shadow-[#3ecf8e]/20', 'active-tab');
-            b.classList.add('bg-[#141414]', 'text-[#898989]', 'border-[#242424]');
+            b.classList.remove('bg-[#3ecf8e]', 'text-[#0f0f0f]', 'font-bold', 'shadow-md', 'shadow-[#3ecf8e]/20', 'active-tab');
+            b.classList.add('text-[#898989]');
           });
 
-          // Activate clicked button
-          btn.classList.remove('bg-[#141414]', 'text-[#898989]', 'border-[#242424]');
-          btn.classList.add('bg-[#3ecf8e]', 'text-[#0f0f0f]', 'border-[#3ecf8e]', 'shadow-md', 'shadow-[#3ecf8e]/20', 'active-tab');
+          btn.classList.remove('text-[#898989]');
+          btn.classList.add('bg-[#3ecf8e]', 'text-[#0f0f0f]', 'font-bold', 'shadow-md', 'shadow-[#3ecf8e]/20', 'active-tab');
 
-          // Show targeted pane
-          panes.forEach((pane) => {
-            if (pane.id === targetId) {
-              pane.classList.remove('hidden');
-              pane.classList.add('block');
-            } else {
-              pane.classList.remove('block');
-              pane.classList.add('hidden');
-            }
-          });
-        };
+          const currentPane = document.getElementById(currentTargetId);
+          const nextPane = document.getElementById(targetId);
+
+          if (window.gsap && currentPane && nextPane) {
+            // Animação de saída da aba atual
+            window.gsap.to(currentPane, {
+              opacity: 0,
+              y: -8,
+              duration: 0.2,
+              ease: 'power2.in',
+              onComplete: () => {
+                currentPane.classList.add('hidden');
+                currentPane.classList.remove('block');
+
+                // Animação de entrada da nova aba
+                nextPane.classList.remove('hidden');
+                nextPane.classList.add('block');
+                window.gsap.fromTo(nextPane,
+                  { opacity: 0, y: 12 },
+                  { opacity: 1, y: 0, duration: 0.35, ease: 'power2.out' }
+                );
+              }
+            });
+          } else if (currentPane && nextPane) {
+            currentPane.classList.add('hidden');
+            currentPane.classList.remove('block');
+            nextPane.classList.remove('hidden');
+            nextPane.classList.add('block');
+            nextPane.style.opacity = '1';
+          }
+
+          currentTargetId = targetId;
+        });
       });
     }
 
