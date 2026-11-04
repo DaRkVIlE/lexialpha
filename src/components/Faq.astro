@@ -1,45 +1,43 @@
 ---
-// src/components/Faq.astro — Redesign Moderno Datamind Style
-// Perguntas Frequentes LexiQuest • Respostas diretas, badges temáticos e acordeão fluido
-// Tipografia Moderna Sem Serifa, micro-animações no toggle e foco em escaneabilidade.
+// src/components/Faq.astro — Perguntas Frequentes LexiQuest
 
 const faqs = [
   {
     category: 'Metodologia',
-    q: 'Voces prometem fluencia em 3 ou 6 meses?',
-    a: 'Nao. E desconfie de quem fizer essa promessa. Cada aluno tem um historico diferente, medos particulares e uma rotina propria. O que temos e um metodo real: mentoria individual com o Gabe, encontros regulares de conversacao e o PlayApp SPARK Alpha para pratica diaria. Sem atalhos, sem promessa vazia.'
+    q: 'Vocês prometem fluência em 3 ou 6 meses?',
+    a: 'Não. E desconfie de quem fizer essa promessa. Cada aluno tem um histórico diferente, medos particulares e uma rotina própria. O que temos é um método real: mentoria individual com o Gabe, encontros regulares de conversação e o PlayApp SPARK Alpha para prática diária. Sem atalhos, sem promessa vazia.'
   },
   {
     category: 'Formato 1 a 1',
     q: 'Como funcionam os encontros com o professor Gabe?',
-    a: 'Na Turma Alpha o acompanhamento e estritamente individual: 2 sessoes rapidas de alinhamento por semana e 1 sessao estendida dedicada a conversacao guiada e situacoes reais de trabalho. Nenhum grupo dividindo atencao.'
+    a: 'Na Turma Alpha o acompanhamento é estritamente individual: 2 sessões rápidas de alinhamento por semana e 1 sessão estendida dedicada à conversação guiada e situações reais de trabalho. Nenhum grupo dividindo atenção.'
   },
   {
     category: 'IA Complementar',
-    q: 'A inteligencia artificial substitui as aulas com o professor?',
-    a: 'Nao. O PlayApp SPARK Alpha resolve o problema do vazio entre uma aula e outra: voce pratica todos os dias com missoes guiadas, chunks reais e prompts prontos. O Gabe usa as sessoes individuais para ajustar o que a IA nao resolve, como improviso, pressao e nuances de tom.'
+    q: 'A inteligência artificial substitui as aulas com o professor?',
+    a: 'Não. O PlayApp SPARK Alpha resolve o problema do vazio entre uma aula e outra: você pratica todos os dias com missões guiadas, chunks reais e prompts prontos para usar em qualquer IA de sua preferência. O Gabe usa as sessões individuais para ajustar o que a IA não resolve, como improviso, pressão e nuances de tom.'
   },
   {
-    category: 'Rotina Minima',
+    category: 'Rotina Mínima',
     q: 'Preciso estudar exatamente 15 minutos por dia?',
-    a: '15 minutos e o minimo recomendado para manter a consistencia e fixar os blocos de fala. E o suficiente para quem tem rotina corrida. Se tiver mais tempo disponivel, o tutor de IA esta disponivel 24h, sem limite ou cobranca adicional.'
+    a: '15 minutos é o mínimo recomendado para manter a consistência e fixar os blocos de fala. É o suficiente para quem tem rotina corrida. Se tiver mais tempo disponível, o tutor de IA está disponível 24h, sem limite ou cobrança adicional.'
   },
   {
     category: 'Investimento e Risco',
     q: 'Como funciona a mensalidade de R$ 197 e o cancelamento?',
-    a: 'A mensalidade de entrada e de R$ 197 por mes para os 10 primeiros alunos da Turma Alpha. Sem taxa de matricula, sem fidelidade de 12 meses. Voce cancela quando quiser, sem multa. Garantia de 30 dias: se nao gostar, devolvemos 100% via Pix.'
+    a: 'A mensalidade de entrada é de R$ 197 por mês para os 10 primeiros alunos da Turma Alpha. Sem taxa de matrícula, sem fidelidade de 12 meses. Você cancela quando quiser, sem multa. Garantia de 30 dias: se não gostar, devolvemos 100% via Pix.'
   },
   {
     category: 'Acolhimento',
     q: 'Posso conversar com o professor antes de me inscrever?',
-    a: 'Pode. Clique no botao de WhatsApp e fale diretamente com o Gabe. A gente alinha seus objetivos, tira as duvidas e verifica se a Turma Alpha faz sentido pro seu momento antes de qualquer decisao.'
+    a: 'Pode. Clique no botão de WhatsApp e fale diretamente com o Gabe. A gente alinha seus objetivos, tira as dúvidas e verifica se a Turma Alpha faz sentido pro seu momento antes de qualquer decisão.'
   }
 ];
 ---
 
 <section id="faq" class="py-32 px-4 sm:px-8 relative border-t border-[#1a1a1a] overflow-hidden">
   <div class="max-w-4xl mx-auto relative z-10">
-    <!-- Header Moderno -->
+    <!-- Header -->
     <div class="mb-16 max-w-2xl" data-anim="fade-up">
       <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full badge-glow mb-4">
         <span class="w-1.5 h-1.5 rounded-full bg-[#3ecf8e] micro-pulse"></span>
@@ -75,7 +73,7 @@ const faqs = [
               </div>
             </div>
 
-            <!-- Icone Plus / Cross rotativo -->
+            <!-- Ícone Plus / Cross rotativo -->
             <div class="icon-box text-[#898989] group-hover:text-[#3ecf8e] group-hover:border-[#3ecf8e]/40 shrink-0 mt-1">
               <svg class="faq-icon w-3.5 h-3.5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4" />
@@ -97,7 +95,6 @@ const faqs = [
   </div>
 </section>
 
-<!-- Script Inline para Acordeão Fluído -->
 <script is:inline>
   (function initModernFaq() {
     function setup() {

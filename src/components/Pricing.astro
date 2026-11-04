@@ -1,7 +1,6 @@
 ---
-// src/components/Pricing.astro — Redesign Moderno Datamind Style
-// Oferta Turma Alpha: Mensalidade de entrada R$ 197/mês • 10 vagas • Sem fidelidade
-// Tipografia Moderna Sem Serifa, micro-parallax sutil e benefícios categorizados.
+// src/components/Pricing.astro — Oferta Turma Alpha
+// Mensalidade de entrada R$ 197/mês • 10 vagas • Sem fidelidade
 ---
 
 <section id="pricing" class="py-32 px-4 sm:px-8 relative border-t border-[#1a1a1a] overflow-hidden">
@@ -9,7 +8,7 @@
   <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-[#3ecf8e]/6 rounded-full blur-[200px] pointer-events-none"></div>
 
   <div class="max-w-5xl mx-auto relative z-10">
-    <!-- Header Moderno -->
+    <!-- Header -->
     <div class="text-center mb-16 max-w-3xl mx-auto" data-anim="fade-up">
       <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full badge-glow mb-4">
         <span class="w-1.5 h-1.5 rounded-full bg-[#3ecf8e] micro-pulse"></span>
@@ -20,11 +19,11 @@
         <span class="text-gradient-emerald">+ SPARK Alpha todo dia.</span>
       </h2>
       <p class="text-base sm:text-lg text-[#898989] leading-relaxed mt-5 max-w-2xl mx-auto">
-        Sem contratos anuais, sem taxa de matricula. Comece quando quiser, cancele quando quiser.
+        Sem contratos anuais, sem taxa de matrícula. Comece quando quiser, cancele quando quiser.
       </p>
     </div>
 
-    <!-- Card de Oferta Estilo Datamind com Micro-Parallax -->
+    <!-- Card de Oferta com Micro-Parallax -->
     <div id="pricing-card-wrapper" class="max-w-2xl mx-auto" data-anim="fade-up">
       <div
         id="pricing-card"
@@ -41,7 +40,7 @@
           </span>
         </div>
 
-        <!-- Preço Moderno de Alto Impacto -->
+        <!-- Preço -->
         <div class="py-10 text-center">
           <p class="text-xs font-mono text-[#898989] uppercase tracking-widest mb-3 font-semibold">Mensalidade de Entrada</p>
           <div class="flex items-baseline justify-center gap-2">
@@ -54,7 +53,7 @@
           </p>
         </div>
 
-        <!-- Lista de Benefícios com Topic Badges -->
+        <!-- Lista de Benefícios -->
         <div class="pt-6 border-t border-[#1f1f1f] mb-10">
           <h3 class="text-xs font-mono uppercase tracking-widest text-[#898989] mb-5 font-semibold">O Que Está Incluso:</h3>
           <ul class="space-y-3.5">
@@ -69,11 +68,11 @@
               },
               {
                 tag: 'SPARK Alpha',
-                text: 'Acesso 24/7 ao PlayApp SPARK Alpha para pratica diaria com missoes guiadas e chunks reais'
+                text: 'Acesso 24/7 ao PlayApp SPARK Alpha para prática diária autônoma com missões guiadas e chunks reais'
               },
               {
                 tag: 'Diagnóstico',
-                text: 'Diagnóstico contínuo das suas travas reais para guiar os encontros'
+                text: 'Diagnóstico contínuo das suas travas reais para guiar os encontros e calibrar o tutor'
               },
               {
                 tag: 'WhatsApp Direto',
@@ -99,7 +98,7 @@
           </ul>
         </div>
 
-        <!-- CTA Principal Slide Button -->
+        <!-- CTA Principal -->
         <a
           href="https://wa.me/5511967239791?text=Oi%20Gabe!%20Quero%20garantir%20minha%20vaga%20na%20Turma%20Alpha%20por%20R$%20197/m%C3%AAs"
           target="_blank"
@@ -129,7 +128,6 @@
   </div>
 </section>
 
-<!-- Micro-interação 3D tilt no card -->
 <script is:inline>
   (function initPricingTilt() {
     const card = document.getElementById('pricing-card');

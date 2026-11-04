@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; font-src https://fonts.gstatic.com; style-src 'self' https://fonts.googleapis.com 'sha256-KqClm0OamolhJXTgImZvUX2Lls73HZT1O79NqxwX8X4='; script-src 'self' 'sha256-sTukEPtJ8ERPJz2wBPfB9NpWY+VAJMD10aGz1VXRZJU='; connect-src 'self' https://moodle-bridge-production.up.railway.app; img-src 'self' data:;">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; font-src https://fonts.gstatic.com; style-src 'self' https://fonts.googleapis.com 'sha256-29zftf23dbGNQlzsVw9UQEbXhIp/X6o8b/K1uLmr+hA='; script-src 'self' 'sha256-tiXwqR/8OLfPowX/13LWETasfmyZ9C+hRdFwL+aK5x4='; connect-src 'self' https://moodle-bridge-production.up.railway.app; img-src 'self' data:;">
 <title>PlayApp SPARK Alpha · 7 Dias para Destravar</title>
 <meta name="description" content="PlayApp interativo do Playbook SPARK Alpha pelo Professor Gabe. 7 dias para parar de traduzir e começar a falar.">
 <meta name="theme-color" content="#0e0e11">
@@ -293,6 +293,547 @@ a:hover {
 }
 /* ==== END: src/base.css ==== */
 
+/* ==== MOD: src/components.css ==== */
+/* src/components.css - Estilos Visuais dos Componentes A-K do PlayApp SPARK */
+
+/* Botões */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  border-radius: var(--radius-card);
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background-color 0.15s ease, transform 0.1s ease, border-color 0.15s ease;
+  min-height: 48px;
+  min-width: 44px;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-primary {
+  background-color: var(--green);
+  color: #0b0b0d;
+}
+
+.btn-primary:hover {
+  filter: brightness(1.08);
+}
+
+.btn-secondary {
+  background-color: var(--card2);
+  color: var(--text);
+  border-color: var(--line2);
+}
+
+.btn-secondary:hover {
+  background-color: var(--line);
+}
+
+.btn-alert {
+  background-color: var(--alert);
+  color: #ffffff;
+}
+
+.btn-ghost {
+  background-color: transparent;
+  color: var(--text2);
+}
+
+.btn-ghost:hover {
+  color: var(--text);
+}
+
+.btn-sm {
+  padding: 6px 12px;
+  font-size: 13px;
+  min-height: 36px;
+  border-radius: 8px;
+}
+
+.btn-outline-success {
+  background: transparent;
+  border-color: var(--green);
+  color: var(--green);
+}
+
+.btn-outline-warning {
+  background: transparent;
+  border-color: var(--rank-brasa);
+  color: var(--rank-brasa);
+}
+
+.btn-outline-alert {
+  background: transparent;
+  border-color: var(--alert);
+  color: var(--alert);
+}
+
+/* Cards */
+.card {
+  background-color: var(--card);
+  border: 1px solid var(--line2);
+  border-radius: var(--radius-card);
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: var(--shadow);
+}
+
+.card-highlight {
+  border-color: var(--gborder);
+  background-color: var(--card2);
+}
+
+.card-dashed {
+  border: 1px dashed var(--line3);
+  background-color: transparent;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.card-title {
+  margin: 0;
+  font-size: 18px;
+}
+
+/* Hero Banner (Suporta Imagens Nano Banana com Gradiente WCAG AA) */
+.hero-banner {
+  border-radius: var(--radius-photo);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 32px 20px 24px;
+  margin-bottom: 24px;
+  border: 1px solid var(--line2);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.hero-day-badge {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--green);
+  background: rgba(0, 0, 0, 0.4);
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: 1px solid var(--gborder);
+}
+
+.hero-title {
+  color: #ffffff;
+  margin-bottom: 8px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+.hero-subtitle {
+  color: #e5e5ea;
+  font-size: 15px;
+  margin: 0;
+  line-height: 1.4;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+
+/* Chunks Cards & Leitner */
+.chunk-card {
+  background-color: var(--card);
+  border: 1px solid var(--line2);
+  border-radius: var(--radius-card);
+  padding: 16px;
+  margin-bottom: 12px;
+}
+
+.chunk-card.stage-3 {
+  border-color: var(--gborder);
+}
+
+.chunk-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.chunk-phrase-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.chunk-phrase {
+  font-size: 17px;
+  color: var(--text);
+}
+
+.btn-audio {
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 8px;
+  min-width: 44px;
+  min-height: 44px;
+  border-radius: 50%;
+}
+
+.chunk-translation {
+  font-size: 14px;
+  color: var(--text2);
+  margin: 0 0 4px 0;
+}
+
+.chunk-example {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0;
+  font-style: italic;
+}
+
+.chunk-review-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+
+/* Checklist Items */
+.checklist-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 8px;
+  background-color: var(--card2);
+  margin-bottom: 8px;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.checklist-item:hover {
+  border-color: var(--line2);
+}
+
+.checklist-item.checked {
+  background-color: var(--gsoft);
+  border-color: var(--gborder);
+}
+
+.check-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  border: 2px solid var(--line3);
+  border-radius: 6px;
+  background-color: var(--bg);
+  color: var(--green);
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.checklist-item.checked .check-box {
+  border-color: var(--green);
+  background-color: var(--green);
+  color: #0b0b0d;
+}
+
+.check-label {
+  font-size: 15px;
+  line-height: 1.4;
+  color: var(--text);
+}
+
+.checklist-item.checked .check-label {
+  color: var(--text2);
+}
+
+/* Escalas 1 a 5 */
+.scale-group {
+  margin-bottom: 16px;
+  background: var(--card2);
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.scale-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.scale-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.scale-btn {
+  flex: 1;
+  height: 44px;
+  border: 1px solid var(--line3);
+  background: var(--card);
+  color: var(--text);
+  font-size: 16px;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.scale-btn.on {
+  background: var(--green);
+  color: #0b0b0d;
+  border-color: var(--green);
+}
+
+/* Timer Bar */
+.timer-container {
+  margin: 16px 0;
+}
+
+.timer-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.timer-track {
+  height: 10px;
+  background-color: var(--line2);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.timer-bar {
+  height: 100%;
+  transition: width 0.1s linear, background-color 0.2s ease;
+}
+
+.timer-green { background-color: var(--green); }
+.timer-yellow { background-color: var(--rank-faisca); }
+.timer-red { background-color: var(--alert); }
+
+/* Badges e Pílulas */
+.badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: var(--radius-pill);
+  font-size: 11px;
+  font-family: var(--font-mono);
+  font-weight: 600;
+}
+
+.badge-stage.stage-3 {
+  background-color: var(--gsoft);
+  color: var(--green);
+}
+
+.badge-stage.stage-2 {
+  background-color: rgba(249, 115, 22, 0.1);
+  color: var(--rank-brasa);
+}
+
+.badge-stage.stage-1 {
+  background-color: var(--alerts);
+  color: var(--alert);
+}
+
+.streak-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: var(--radius-pill);
+  background-color: var(--card2);
+  border: 1px solid var(--line2);
+}
+
+.streak-pill.streak-active {
+  border-color: var(--gborder);
+}
+
+.streak-pill.streak-atRisk {
+  border-color: var(--rank-brasa);
+}
+
+.rank-badge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 8px;
+  background-color: var(--card2);
+  border: 1px solid var(--line2);
+}
+
+/* Modal */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  z-index: 1000;
+}
+
+.modal-dialog {
+  background-color: var(--card);
+  border: 1px solid var(--line3);
+  border-radius: var(--radius-card);
+  max-width: 500px;
+  width: 100%;
+  padding: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.btn-close {
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  font-size: 20px;
+  cursor: pointer;
+  min-width: 44px;
+  min-height: 44px;
+}
+/* ==== END: src/components.css ==== */
+
+/* ==== MOD: src/print.css ==== */
+/* src/print.css - Folha de Estilos para Impressão A4 Limpa e Otimizada */
+
+@media print {
+  @page {
+    margin: 1.5cm;
+    size: A4 portrait;
+  }
+
+  *, *::before, *::after {
+    background: transparent !important;
+    color: #111111 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #111111 !important;
+    font-size: 11pt;
+    line-height: 1.4;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Ocultar elementos interativos na impressão */
+  header.hero-banner,
+  .nav-bar,
+  .btn,
+  .btn-audio,
+  .btn-copy,
+  .header-actions,
+  .print-controls,
+  .screen-only {
+    display: none !important;
+  }
+
+  /* Exibir elementos exclusivos de impressão */
+  .print-only {
+    display: block !important;
+  }
+
+  /* Estrutura de cartões e tabelas na impressão */
+  .card, .print-card {
+    border: 1px solid #cccccc !important;
+    border-radius: 4px;
+    padding: 12pt;
+    margin-bottom: 12pt;
+    page-break-inside: avoid;
+  }
+
+  h1, h2, h3, h4 {
+    page-break-after: avoid;
+    color: #000000 !important;
+    font-weight: 700;
+  }
+
+  h1 { font-size: 18pt; margin-bottom: 6pt; }
+  h2 { font-size: 14pt; margin-bottom: 4pt; }
+  h3 { font-size: 12pt; margin-bottom: 4pt; }
+
+  /* Tabela de Chunks para Impressão */
+  .print-chunks-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10pt 0;
+  }
+
+  .print-chunks-table th,
+  .print-chunks-table td {
+    border: 1px solid #dddddd;
+    padding: 6pt 8pt;
+    text-align: left;
+    font-size: 9pt;
+  }
+
+  .print-chunks-table th {
+    background: #f4f4f4 !important;
+    font-weight: bold;
+  }
+
+  .print-chunks-table .phrase-cell {
+    font-family: monospace;
+    font-weight: 700;
+  }
+
+  /* Gráfico de Radar */
+  .radar-container svg {
+    max-width: 240px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
+  /* Rodapé do documento impresso */
+  .print-footer {
+    border-top: 1px solid #999999;
+    padding-top: 6pt;
+    margin-top: 15pt;
+    font-size: 8pt;
+    color: #666666 !important;
+    text-align: center;
+  }
+}
+/* ==== END: src/print.css ==== */
+
 </style>
 </head>
 <body>
@@ -349,6 +890,7 @@ const INITIAL_STATE = Object.freeze({
     theme: 'dark'
   }),
   test: Object.freeze({
+    started: false,
     completed: false,
     score: null,
     band: null,
@@ -1422,6 +1964,7 @@ function update(state = INITIAL_STATE, msg = {}, env = {}) {
       const nextState = {
         ...current,
         test: {
+          started: true,
           completed: false,
           score: null,
           band: null,
@@ -1483,9 +2026,11 @@ function update(state = INITIAL_STATE, msg = {}, env = {}) {
 
     case 'COMPLETE_SETUP_ITEM': {
       const itemKey = p.key; // toolChosen, pinnedChat, scheduleSet, policyChecked
+      const currentVal = Boolean(current.setup?.[itemKey]);
+      const nextVal = p.value !== undefined ? Boolean(p.value) : !currentVal;
       const setup = {
         ...(current.setup || {}),
-        [itemKey]: true
+        [itemKey]: nextVal
       };
       return {
         state: { ...current, setup },
@@ -1562,6 +2107,8 @@ function update(state = INITIAL_STATE, msg = {}, env = {}) {
       const dayData = { ...(days[dayNum] || {}) };
 
       dayData.status = 'fechado';
+      dayData.completed = true;
+      dayData.completedAt = nowIso;
       dayData.fechadoEm = nowIso;
       days[dayNum] = dayData;
 
@@ -2274,6 +2821,3311 @@ const DIAG_POOL_B = Object.freeze([
   })
 ]);
 /* ==== END: src/content/diag.js ==== */
+
+/* ==== MOD: src/store/store.js ==== */
+// src/store/store.js - Persistência LocalStorage, Migração e Resiliência
+const STORAGE_KEY = 'SPARK_ALPHA_V3';
+
+/**
+ * Carrega e migra o estado persistido do localStorage.
+ * Retorna INITIAL_STATE se não houver dados ou se houver corrupção.
+ * @param {Storage} [storage=typeof window !== 'undefined' ? window.localStorage : null]
+ * @returns {object} Estado validado e migrado
+ */
+function loadState(storage = (typeof window !== 'undefined' ? window.localStorage : null)) {
+  if (!storage) return { ...INITIAL_STATE };
+
+  try {
+    const raw = storage.getItem(STORAGE_KEY);
+    if (!raw) return { ...INITIAL_STATE };
+    const parsed = JSON.parse(raw);
+    return migrate(parsed);
+  } catch (err) {
+    console.warn('[PlayApp] Falha ao carregar estado do localStorage, restaurando padrão:', err);
+    return { ...INITIAL_STATE };
+  }
+}
+
+/**
+ * Persiste o estado no localStorage de forma resiliente contra estouro de cota.
+ * @param {object} state
+ * @param {Storage} [storage=typeof window !== 'undefined' ? window.localStorage : null]
+ * @returns {boolean} Sucesso da gravação
+ */
+function saveState(state, storage = (typeof window !== 'undefined' ? window.localStorage : null)) {
+  if (!storage || !state) return false;
+
+  try {
+    const serialized = JSON.stringify(state);
+    storage.setItem(STORAGE_KEY, serialized);
+    return true;
+  } catch (err) {
+    console.error('[PlayApp] Erro ao persistir estado no localStorage:', err);
+    return false;
+  }
+}
+
+/**
+ * Limpa o armazenamento e retorna o estado canônico inicial.
+ * @param {Storage} [storage=typeof window !== 'undefined' ? window.localStorage : null]
+ * @returns {object} INITIAL_STATE
+ */
+function resetStoredState(storage = (typeof window !== 'undefined' ? window.localStorage : null)) {
+  if (storage) {
+    try {
+      storage.removeItem(STORAGE_KEY);
+    } catch (err) {
+      console.warn('[PlayApp] Erro ao remover chave do storage:', err);
+    }
+  }
+  return { ...INITIAL_STATE };
+}
+
+/**
+ * Exporta o estado atual como uma string JSON formatada.
+ * @param {object} state
+ * @returns {string}
+ */
+function exportStateJson(state) {
+  return JSON.stringify(state || INITIAL_STATE, null, 2);
+}
+
+/**
+ * Importa e migra dados a partir de uma string JSON.
+ * @param {string} jsonStr
+ * @returns {{ success: boolean, state?: object, error?: string }}
+ */
+function importStateJson(jsonStr) {
+  if (!jsonStr || typeof jsonStr !== 'string') {
+    return { success: false, error: 'Conteúdo JSON inválido' };
+  }
+
+  try {
+    const parsed = JSON.parse(jsonStr);
+    const migrated = migrate(parsed);
+    return { success: true, state: migrated };
+  } catch (err) {
+    return { success: false, error: 'Erro de sintaxe no JSON importado' };
+  }
+}
+/* ==== END: src/store/store.js ==== */
+
+/* ==== MOD: src/store/outbox.js ==== */
+// src/store/outbox.js - Despachante da Fila Offline de Leads (Railway moodle-bridge)
+const LEAD_CAPTURE_ENDPOINT = 'https://moodle-bridge-production.up.railway.app/api/lead-capture';
+
+/**
+ * Despacha itens pendentes da fila outbox para o backend Railway.
+ * Suporta injeção de fetchFn para testes limpos e offline.
+ *
+ * @param {object} state - Estado atual contendo state.outbox
+ * @param {Function} [fetchFn=typeof fetch !== 'undefined' ? fetch : null]
+ * @param {string} [nowIso=new Date().toISOString()]
+ * @returns {Promise<{ state: object, sentCount: number, failedCount: number }>}
+ */
+async function processOutbox(state, fetchFn = (typeof fetch !== 'undefined' ? fetch : null), nowIso = new Date().toISOString()) {
+  if (!state?.outbox || !Array.isArray(state.outbox) || state.outbox.length === 0) {
+    return { state, sentCount: 0, failedCount: 0 };
+  }
+
+  if (!fetchFn) {
+    return { state, sentCount: 0, failedCount: 0 };
+  }
+
+  let sentCount = 0;
+  let failedCount = 0;
+
+  const nextOutbox = [...state.outbox];
+
+  for (let i = 0; i < nextOutbox.length; i++) {
+    const item = nextOutbox[i];
+    if (item.status === 'sent') continue;
+    if (item.status === 'failed' && item.attempts >= 5) continue;
+
+    // Inicia envio
+    nextOutbox[i] = transitionOutboxItem(item, 'START_SEND', { nowIso });
+
+    try {
+      const response = await fetchFn(LEAD_CAPTURE_ENDPOINT, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(item.payload || {})
+      });
+
+      if (response && response.ok) {
+        let responseId = null;
+        try {
+          const json = await response.json();
+          responseId = json?.leadId || json?.id || null;
+        } catch {
+          // Resposta sem corpo JSON legível
+        }
+        nextOutbox[i] = transitionOutboxItem(nextOutbox[i], 'SEND_SUCCESS', {
+          nowIso,
+          responseId
+        });
+        sentCount++;
+      } else {
+        const statusText = response ? `HTTP ${response.status}` : 'Falha na resposta';
+        nextOutbox[i] = transitionOutboxItem(nextOutbox[i], 'SEND_FAIL', {
+          nowIso,
+          error: statusText
+        });
+        failedCount++;
+      }
+    } catch (err) {
+      nextOutbox[i] = transitionOutboxItem(nextOutbox[i], 'SEND_FAIL', {
+        nowIso,
+        error: err?.message || 'Erro de rede'
+      });
+      failedCount++;
+    }
+  }
+
+  const nextState = {
+    ...state,
+    outbox: nextOutbox
+  };
+
+  return {
+    state: nextState,
+    sentCount,
+    failedCount
+  };
+}
+/* ==== END: src/store/outbox.js ==== */
+
+/* ==== MOD: src/fx/fx.js ==== */
+// src/fx/fx.js - Executor Central de Efeitos Impuros
+
+
+/**
+ * Executa uma lista de efeitos retornados pelo redutor puro update().
+ * @param {Array<{ type: string, payload?: any }>} fxList
+ * @param {object} [ctx] - Contexto de injeção opcional
+ */
+function executeEffects(fxList = [], ctx = {}) {
+  if (!Array.isArray(fxList) || fxList.length === 0) return;
+
+  for (const eff of fxList) {
+    if (!eff || !eff.type) continue;
+
+    switch (eff.type) {
+      case 'SAY_TEXT':
+        say(eff.payload?.text, eff.payload?.rate);
+        break;
+
+      case 'PLAY_SFX':
+        if (eff.payload?.sfx === 'success') {
+          playSuccessChime();
+        } else if (eff.payload?.sfx === 'tick') {
+          playTick();
+        }
+        break;
+
+      case 'TRIGGER_CELEBRATION':
+        playSuccessChime();
+        if (typeof ctx.onCelebration === 'function') {
+          ctx.onCelebration(eff.payload);
+        }
+        break;
+
+      case 'ANNOUNCE_SR':
+        if (typeof document !== 'undefined') {
+          const sr = document.getElementById('sr-announcer');
+          if (sr && eff.payload?.message) {
+            sr.textContent = eff.payload.message;
+          }
+        }
+        break;
+
+      case 'NAVIGATE':
+        if (typeof window !== 'undefined' && eff.payload?.route) {
+          window.location.hash = eff.payload.route;
+        }
+        break;
+
+      default:
+        break;
+    }
+  }
+}
+/* ==== END: src/fx/fx.js ==== */
+
+/* ==== MOD: src/fx/say.js ==== */
+// src/fx/say.js - Síntese de Voz em Inglês Nativo (Web Speech API) com Fallback Gracioso
+
+/**
+ * Pronuncia uma frase em inglês norte-americano (en-US).
+ * Se o navegador não suportar síntese de áudio, falha graciosamente sem travar a interface.
+ *
+ * @param {string} text - Texto a ser falado em inglês
+ * @param {number} [rate=0.95] - Velocidade da fala
+ * @returns {boolean} Se a síntese foi iniciada com sucesso
+ */
+function say(text, rate = 0.95) {
+  if (typeof window === 'undefined' || !window.speechSynthesis) {
+    return false;
+  }
+
+  try {
+    window.speechSynthesis.cancel(); // Cancela falas anteriores em fila
+
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = 'en-US';
+    utterance.rate = rate;
+
+    // Tenta selecionar voz nativa do Google ou do sistema
+    const voices = window.speechSynthesis.getVoices();
+    const usVoice = voices.find(v => v.lang === 'en-US' && (v.name.includes('Google') || v.name.includes('Natural') || v.name.includes('Samantha')));
+    if (usVoice) {
+      utterance.voice = usVoice;
+    }
+
+    window.speechSynthesis.speak(utterance);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+/**
+ * Alias canônico para say()
+ */
+const sayText = say;
+/* ==== END: src/fx/say.js ==== */
+
+/* ==== MOD: src/fx/sfx.js ==== */
+// src/fx/sfx.js - Efeitos Sonoros Sintetizados via Web Audio API Pura (Zero arquivos externos)
+
+let audioCtx = null;
+
+function getAudioContext() {
+  if (typeof window === 'undefined') return null;
+  const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+  if (!AudioContextClass) return null;
+  if (!audioCtx) {
+    audioCtx = new AudioContextClass();
+  }
+  if (audioCtx.state === 'suspended') {
+    audioCtx.resume();
+  }
+  return audioCtx;
+}
+
+/**
+ * Toca um acorde de celebração e sucesso.
+ */
+function playSuccessChime() {
+  const ctx = getAudioContext();
+  if (!ctx) return false;
+
+  try {
+    const now = ctx.currentTime;
+    const notes = [523.25, 659.25, 783.99, 1046.50]; // Acorde Dó Maior (C5, E5, G5, C6)
+
+    notes.forEach((freq, idx) => {
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(freq, now + (idx * 0.08));
+
+      gain.gain.setValueAtTime(0.001, now + (idx * 0.08));
+      gain.gain.exponentialRampToValueAtTime(0.15, now + (idx * 0.08) + 0.02);
+      gain.gain.exponentialRampToValueAtTime(0.0001, now + (idx * 0.08) + 0.4);
+
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+
+      osc.start(now + (idx * 0.08));
+      osc.stop(now + (idx * 0.08) + 0.45);
+    });
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+/**
+ * Toca um bipe curto de cronômetro / contagem regressiva.
+ */
+function playTick() {
+  const ctx = getAudioContext();
+  if (!ctx) return false;
+
+  try {
+    const now = ctx.currentTime;
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+
+    osc.type = 'triangle';
+    osc.frequency.setValueAtTime(880, now); // Nota Lá (A5)
+
+    gain.gain.setValueAtTime(0.05, now);
+    gain.gain.exponentialRampToValueAtTime(0.001, now + 0.05);
+
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+
+    osc.start(now);
+    osc.stop(now + 0.06);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+/**
+ * Despacha efeito sonoro pelo tipo ('success' | 'tick').
+ * @param {string} type
+ * @returns {boolean}
+ */
+function playSfx(type = 'success') {
+  if (type === 'tick') return playTick();
+  return playSuccessChime();
+}
+/* ==== END: src/fx/sfx.js ==== */
+
+/* ==== MOD: src/fx/timer.js ==== */
+// src/fx/timer.js - Controlador de Cronômetro de Alta Precisão
+
+let timerInterval = null;
+
+/**
+ * Inicia cronômetro regressivo com callback de atualização e término.
+ * @param {number} durationMs - Duração em milissegundos
+ * @param {(remainingMs: number) => void} onTick - Callback a cada tick
+ * @param {() => void} onComplete - Callback de conclusão
+ * @returns {() => void} Função de cancelamento
+ */
+function startCountdown(durationMs, onTick, onComplete) {
+  cancelCountdown();
+
+  if (typeof window === 'undefined') {
+    return cancelCountdown;
+  }
+
+  const startTime = Date.now(); // Note: inside fx controller (impure boundary)
+  const endTime = startTime + durationMs;
+
+  timerInterval = window.setInterval(() => {
+    const now = Date.now();
+    const remaining = Math.max(0, endTime - now);
+
+    if (typeof onTick === 'function') {
+      onTick(remaining);
+    }
+
+    if (remaining <= 0) {
+      cancelCountdown();
+      if (typeof onComplete === 'function') {
+        onComplete();
+      }
+    }
+  }, 50);
+
+  return cancelCountdown;
+}
+
+/**
+ * Cancela o cronômetro ativo.
+ */
+function cancelCountdown() {
+  if (timerInterval !== null && typeof window !== 'undefined') {
+    window.clearInterval(timerInterval);
+    timerInterval = null;
+  }
+}
+/* ==== END: src/fx/timer.js ==== */
+
+/* ==== MOD: src/art/radar.js ==== */
+// src/art/radar.js - Gráfico de Radar SVG Procedural (Comparação Dia 1 vs Dia 7 e Laudo)
+
+/**
+ * Converte coordenadas polares (raio e ângulo em graus) para cartesianas (x, y).
+ */
+function polarToCartesian(centerX, centerY, radius, angleInDegrees) {
+  const angleInRadians = ((angleInDegrees - 90) * Math.PI) / 180.0;
+  return {
+    x: centerX + radius * Math.cos(angleInRadians),
+    y: centerY + radius * Math.sin(angleInRadians)
+  };
+}
+
+/**
+ * Gera string SVG pura de gráfico de radar triangular (3 eixos: Fluência, Automaticidade, Resiliência).
+ *
+ * @param {object} props
+ * @param {{ fluencia: number, automaticidade: number, resiliencia: number }} [props.scoresD1] - Notas 1 a 5 do Dia 1
+ * @param {{ fluencia: number, automaticidade: number, resiliencia: number }} [props.scoresD7] - Notas 1 a 5 do Dia 7
+ * @param {number} [props.size=300] - Largura e altura em pixels
+ * @returns {string} Markup SVG completo
+ */
+function renderRadarSvg({ scoresD1 = null, scoresD7 = null, size = 300 }) {
+  const center = size / 2;
+  const maxRadius = (size / 2) * 0.72;
+
+  // Ângulos dos 3 eixos (120° entre si): 0° (topo), 120° (inferior direito), 240° (inferior esquerdo)
+  const angles = [0, 120, 240];
+  const labels = ['Fluência', 'Automaticidade', 'Resiliência'];
+
+  // 1. Círculos de grade (níveis 1 a 5)
+  const gridRings = [];
+  for (let lvl = 1; lvl <= 5; lvl++) {
+    const r = (maxRadius / 5) * lvl;
+    gridRings.push(`<circle cx="${center}" cy="${center}" r="${r.toFixed(1)}" fill="none" stroke="var(--line2, #30303b)" stroke-width="1" stroke-dasharray="${lvl < 5 ? '2,2' : 'none'}" />`);
+  }
+
+  // 2. Linhas dos 3 eixos e rótulos
+  const axisLines = [];
+  const axisLabels = [];
+  angles.forEach((deg, idx) => {
+    const end = polarToCartesian(center, center, maxRadius, deg);
+    axisLines.push(`<line x1="${center}" y1="${center}" x2="${end.x.toFixed(1)}" y2="${end.y.toFixed(1)}" stroke="var(--line3, #3d3d4b)" stroke-width="1.5" />`);
+
+    const labelPos = polarToCartesian(center, center, maxRadius + 22, deg);
+    const anchor = deg === 0 ? 'middle' : (deg === 120 ? 'start' : 'end');
+    axisLabels.push(`<text x="${labelPos.x.toFixed(1)}" y="${labelPos.y.toFixed(1)}" font-family="var(--font-mono, monospace)" font-size="11" font-weight="600" fill="var(--text2, #b8b8c6)" text-anchor="${anchor}">${labels[idx]}</text>`);
+  });
+
+  // Função para calcular pontos de um polígono a partir das notas
+  function getPolygonPoints(scores) {
+    if (!scores) return null;
+    const vals = [
+      Math.max(1, Math.min(5, scores.fluencia || 1)),
+      Math.max(1, Math.min(5, scores.automaticidade || 1)),
+      Math.max(1, Math.min(5, scores.resiliencia || 1))
+    ];
+    return angles.map((deg, idx) => {
+      const r = (maxRadius / 5) * vals[idx];
+      const pt = polarToCartesian(center, center, r, deg);
+      return `${pt.x.toFixed(1)},${pt.y.toFixed(1)}`;
+    }).join(' ');
+  }
+
+  // Polígono Dia 1 (Alerta / Laranja sutil)
+  let d1Markup = '';
+  const ptsD1 = getPolygonPoints(scoresD1);
+  if (ptsD1) {
+    d1Markup = `<polygon points="${ptsD1}" fill="rgba(249, 115, 22, 0.2)" stroke="#f97316" stroke-width="2" stroke-dasharray="4,2" />`;
+  }
+
+  // Polígono Dia 7 (Verde SPARK vibrante)
+  let d7Markup = '';
+  const ptsD7 = getPolygonPoints(scoresD7);
+  if (ptsD7) {
+    d7Markup = `<polygon points="${ptsD7}" fill="rgba(62, 207, 142, 0.35)" stroke="#3ecf8e" stroke-width="2.5" />`;
+  }
+
+  return `
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${size} ${size}" width="${size}" height="${size}" class="radar-chart" role="img" aria-label="Gráfico de radar dos três pilares neurais: Fluência, Automaticidade e Resiliência">
+      ${gridRings.join('\n')}
+      ${axisLines.join('\n')}
+      ${d1Markup}
+      ${d7Markup}
+      ${axisLabels.join('\n')}
+    </svg>
+  `.trim();
+}
+/* ==== END: src/art/radar.js ==== */
+
+/* ==== MOD: src/art/icons.js ==== */
+// src/art/icons.js - Ícones SVG Puros Inline (Zero bibliotecas externas)
+const ICONS = Object.freeze({
+  spark: `<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L14.4 9.6L22 12L14.4 14.4L12 22L9.6 14.4L2 12L9.6 9.6L12 2Z"/></svg>`,
+  fire: `<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 23C7.58 23 4 19.42 4 15C4 11.5 6.5 8 9 5C9 8 11 9 12 9C13 7 13.5 4 12 1C17 4 20 9 20 15C20 19.42 16.42 23 12 23Z"/></svg>`,
+  shield: `<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V5L12 1Z"/></svg>`,
+  volume: `<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3 9V15H7L12 20V4L7 9H3ZM16.5 12C16.5 10.23 15.48 8.71 14 7.97V16.02C15.48 15.29 16.5 13.77 16.5 12ZM14 3.23V5.29C16.89 6.15 19 8.83 19 12C19 15.17 16.89 17.85 14 18.71V20.77C18.01 19.86 21 16.28 21 12C21 7.72 18.01 4.14 14 3.23Z"/></svg>`,
+  check: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>`,
+  lock: `<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18 8H17V6C17 3.24 14.76 1 12 1C9.24 1 7 3.24 7 6V8H6C4.9 8 4 8.9 4 10V20C4 21.1 4.9 22 6 22H18C19.1 22 20 21.1 20 20V10C20 8.9 19.1 8H18ZM9 6C9 4.34 10.34 3 12 3C13.66 3 15 4.34 15 6V8H9V6Z"/></svg>`,
+  clock: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>`
+});
+/* ==== END: src/art/icons.js ==== */
+
+/* ==== MOD: src/ui/esc.js ==== */
+// src/ui/esc.js - Sanitização estrita contra Cross-Site Scripting (XSS)
+
+/**
+ * Escapa caracteres HTML perigosos em strings interpoladas.
+ * Trata estritamente: & < > " ' e crase `
+ *
+ * @param {any} val - Valor a escapar
+ * @returns {string} String higienizada
+ */
+function esc(val) {
+  if (val === null || val === undefined) {
+    return '';
+  }
+  const str = String(val);
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;')
+    .replace(/`/g, '&#96;');
+}
+/* ==== END: src/ui/esc.js ==== */
+
+/* ==== MOD: src/ui/h.js ==== */
+// src/ui/h.js - Helper funcional para geração de markup HTML
+
+/**
+ * Constrói string HTML a partir de tag, atributos e filhos.
+ * @param {string} tag - Nome da tag (ex: 'div', 'button')
+ * @param {Record<string, any>} attrs - Atributos HTML
+ * @param {string|string[]} [children] - Conteúdo interno já seguro
+ * @returns {string} String HTML formatada
+ */
+function h(tag, attrs = {}, children = '') {
+  const attrList = [];
+  for (const [key, val] of Object.entries(attrs)) {
+    if (val === false || val === null || val === undefined) continue;
+    if (val === true) {
+      attrList.push(key);
+    } else {
+      attrList.push(`${key}="${esc(val)}"`);
+    }
+  }
+
+  const attrStr = attrList.length > 0 ? ` ${attrList.join(' ')}` : '';
+  const inner = Array.isArray(children) ? children.join('') : String(children);
+
+  const voidTags = ['img', 'input', 'br', 'hr', 'meta', 'link'];
+  if (voidTags.includes(tag.toLowerCase()) && !inner) {
+    return `<${tag}${attrStr}>`;
+  }
+
+  return `<${tag}${attrStr}>${inner}</${tag}>`;
+}
+/* ==== END: src/ui/h.js ==== */
+
+/* ==== MOD: src/ui/morph.js ==== */
+// src/ui/morph.js - Reconciliação DOM limpa com preservação de foco (Único módulo com innerHTML permitido por L09)
+
+/**
+ * Reconcilia o conteúdo HTML do elemento alvo preservando o foco e a rolagem.
+ * @param {HTMLElement|string} target - Elemento DOM ou seletor
+ * @param {string} newHtml - Nova string HTML a injetar
+ */
+function morph(target, newHtml) {
+  if (typeof document === 'undefined') {
+    // Ambiente Node.js (testes unitários)
+    return;
+  }
+
+  const el = typeof target === 'string' ? document.querySelector(target) : target;
+  if (!el) return;
+
+  // Salva elemento focado atual se houver
+  const active = document.activeElement;
+  let focusSelector = null;
+  let cursorStart = null;
+  let cursorEnd = null;
+
+  if (active && el.contains(active)) {
+    if (active.id) {
+      focusSelector = `#${active.id}`;
+    } else if (active.getAttribute('data-act')) {
+      focusSelector = `[data-act="${active.getAttribute('data-act')}"]`;
+    } else if (active.getAttribute('name')) {
+      focusSelector = `[name="${active.getAttribute('name')}"]`;
+    }
+
+    if (typeof active.selectionStart === 'number') {
+      cursorStart = active.selectionStart;
+      cursorEnd = active.selectionEnd;
+    }
+  }
+
+  // Atualização atômica do nó
+  el.innerHTML = newHtml;
+
+  // Restaura foco e cursor se o elemento ainda existir
+  if (focusSelector) {
+    const toFocus = el.querySelector(focusSelector);
+    if (toFocus) {
+      toFocus.focus();
+      if (cursorStart !== null && typeof toFocus.setSelectionRange === 'function') {
+        toFocus.setSelectionRange(cursorStart, cursorEnd);
+      }
+    }
+  }
+}
+/* ==== END: src/ui/morph.js ==== */
+
+/* ==== MOD: src/ui/comp.js ==== */
+// src/ui/comp.js - Biblioteca de Componentes Puros (Funções puras que retornam strings HTML)
+
+
+/**
+ * Renderiza botão de ação acessível com data-act.
+ * @param {object} props
+ * @returns {string} HTML
+ */
+function renderButton({ text, act, variant = 'primary', disabled = false, icon = '', extraClass = '', type = 'button', ariaLabel = '' }) {
+  const dis = disabled ? 'disabled aria-disabled="true"' : '';
+  const aLabel = ariaLabel ? `aria-label="${esc(ariaLabel)}"` : '';
+  const iconMarkup = icon ? `<span class="btn-icon" aria-hidden="true">${icon}</span> ` : '';
+  return `<button type="${esc(type)}" class="btn btn-${esc(variant)} ${esc(extraClass)}" data-act="${esc(act)}" ${dis} ${aLabel}>${iconMarkup}<span class="btn-text">${esc(text)}</span></button>`;
+}
+
+/**
+ * Renderiza container de Card com bordas do Design System.
+ * @param {object} props
+ * @returns {string} HTML
+ */
+function renderCard({ title = '', badge = '', content = '', variant = 'normal', extraClass = '' }) {
+  const badgeMarkup = badge ? `<span class="badge ${esc(variant)}">${esc(badge)}</span>` : '';
+  const titleMarkup = title ? `<div class="card-header"><h3 class="card-title">${esc(title)}</h3>${badgeMarkup}</div>` : '';
+  return `<div class="card card-${esc(variant)} ${esc(extraClass)}">${titleMarkup}<div class="card-body">${content}</div></div>`;
+}
+
+/**
+ * Renderiza faixa visual (Hero Banner).
+ * Suporta imagens personalizadas geradas pelo Nano Banana ou gradiente procedural fallback.
+ * @param {object} props
+ * @returns {string} HTML
+ */
+function renderHeroBanner({ dayNum, title, subtitle, imageUrl = null, imageSrc = null, tag = 'SPARK ALPHA' }) {
+  const finalUrl = imageUrl || imageSrc;
+  const bgStyle = finalUrl
+    ? `background-image: linear-gradient(180deg, rgba(14, 14, 17, 0.4) 0%, rgba(14, 14, 17, 0.95) 100%), url('${esc(finalUrl)}');`
+    : `background-image: linear-gradient(135deg, rgba(26, 158, 107, 0.18) 0%, rgba(14, 14, 17, 0.95) 100%);`;
+
+  const dayBadge = dayNum ? `<span class="hero-day-badge">DIA ${esc(dayNum)}</span>` : '';
+
+  return `
+    <header class="hero-banner" style="${bgStyle}">
+      <div class="hero-content">
+        <div class="hero-top">
+          <span class="label g">${esc(tag)}</span>
+          ${dayBadge}
+        </div>
+        <h1 class="hero-title">${esc(title)}</h1>
+        <p class="hero-subtitle">${esc(subtitle)}</p>
+      </div>
+    </header>
+  `;
+}
+
+/**
+ * Renderiza card de Chunk com áudio e botões de repetição Leitner.
+ * @param {object} props
+ * @returns {string} HTML
+ */
+function renderChunkCard({ chunk, state = {}, showReviewControls = false }) {
+  const stage = state.stage || 0;
+  const top = state.top || 0;
+
+  let stageLabel = 'Não praticado';
+  let stageClass = 'stage-0';
+  if (stage === 1) { stageLabel = 'Caixa 1 (1 dia)'; stageClass = 'stage-1'; }
+  else if (stage === 2) { stageLabel = 'Caixa 2 (3 dias)'; stageClass = 'stage-2'; }
+  else if (stage === 3) { stageLabel = 'Caixa 3 (Dominado)'; stageClass = 'stage-3'; }
+
+  const reviewControls = showReviewControls ? `
+    <div class="chunk-review-actions" role="group" aria-label="Avalie sua facilidade de fala">
+      <button type="button" class="btn btn-sm btn-outline-alert" data-act="review_chunk" data-id="${esc(chunk.id)}" data-rating="travou">Travou</button>
+      <button type="button" class="btn btn-sm btn-outline-warning" data-act="review_chunk" data-id="${esc(chunk.id)}" data-rating="esforco">Com esforço</button>
+      <button type="button" class="btn btn-sm btn-outline-success" data-act="review_chunk" data-id="${esc(chunk.id)}" data-rating="natural">Natural</button>
+    </div>
+  ` : '';
+
+  return `
+    <article class="chunk-card ${stageClass}">
+      <div class="chunk-header">
+        <span class="label">${esc(chunk.category)}</span>
+        <span class="badge badge-stage ${stageClass}">${esc(stageLabel)}</span>
+      </div>
+      <div class="chunk-main">
+        <div class="chunk-phrase-row">
+          <strong class="chunk-phrase mono">${esc(chunk.phrase)}</strong>
+          <button type="button" class="btn-audio" data-act="play_audio" data-text="${esc(chunk.example || chunk.phrase)}" aria-label="Ouvir pronúncia em inglês">
+            🔊
+          </button>
+        </div>
+        <p class="chunk-translation">${esc(chunk.translation)}</p>
+        ${chunk.example ? `<p class="chunk-example mono">"${esc(chunk.example)}"</p>` : ''}
+      </div>
+      ${reviewControls}
+    </article>
+  `;
+}
+
+/**
+ * Renderiza badge de Rank com cor e pontuação.
+ * @param {object} props
+ * @returns {string} HTML
+ */
+function renderRankBadge({ rank, xp = 0 }) {
+  const r = (rank || 'faísca').toLowerCase();
+  return `
+    <div class="rank-badge rank-${esc(r)}">
+      <span class="rank-icon">⚡</span>
+      <div class="rank-info">
+        <span class="label">RANK ATUAL</span>
+        <strong class="rank-name">${esc(r.toUpperCase())} (${esc(xp)} XP)</strong>
+      </div>
+    </div>
+  `;
+}
+
+/**
+ * Renderiza pílula de ofensiva com indicador de proteção de escudo.
+ * @param {object} props
+ * @returns {string} HTML
+ */
+function renderStreakPill({ count = 0, status = 'active', shieldAvailable = true }) {
+  const shieldIcon = shieldAvailable ? '🛡️' : '⚪';
+  return `
+    <div class="streak-pill streak-${esc(status)}" aria-label="Ofensiva de ${esc(count)} dias">
+      <span class="streak-fire" aria-hidden="true">🔥</span>
+      <strong class="streak-count">${esc(count)}d</strong>
+      <span class="streak-shield" title="Escudo de proteção">${shieldIcon}</span>
+    </div>
+  `;
+}
+
+/**
+ * Renderiza item de checklist clicável com suporte a teclado.
+ * @param {object} props
+ * @returns {string} HTML
+ */
+function renderChecklistItem({ checked = false, label = '', act = 'toggle_mission_item', index = 0 }) {
+  const checkAttr = checked ? 'checked aria-checked="true"' : 'aria-checked="false"';
+  const checkIcon = checked ? '✓' : '';
+  const itemClass = checked ? 'checklist-item checked' : 'checklist-item';
+
+  return `
+    <div class="${itemClass}" data-act="${esc(act)}" data-index="${esc(index)}" role="checkbox" ${checkAttr} tabindex="0">
+      <span class="check-box" aria-hidden="true">${checkIcon}</span>
+      <span class="check-label">${esc(label)}</span>
+    </div>
+  `;
+}
+
+/**
+ * Renderiza grupo de escala de autoavaliação (1 a 5).
+ * @param {object} props
+ * @returns {string} HTML
+ */
+function renderScaleGroup({ key, label, value = null, min = 1, max = 5 }) {
+  const buttons = [];
+  for (let i = min; i <= max; i++) {
+    const isSelected = value === i;
+    const activeClass = isSelected ? 'scale-btn on' : 'scale-btn';
+    const ariaPress = isSelected ? 'aria-pressed="true"' : 'aria-pressed="false"';
+    buttons.push(`<button type="button" class="${activeClass}" data-act="set_day_note" data-key="${esc(key)}" data-val="${i}" ${ariaPress}>${i}</button>`);
+  }
+
+  return `
+    <div class="scale-group" role="group" aria-label="${esc(label)}">
+      <div class="scale-header">
+        <span class="scale-label">${esc(label)}</span>
+        <span class="scale-current mono">${value !== null ? `${value}/${max}` : 'Não avaliado'}</span>
+      </div>
+      <div class="scale-buttons">${buttons.join('')}</div>
+    </div>
+  `;
+}
+
+/**
+ * Renderiza barra de cronômetro com transição de cores.
+ * @param {object} props
+ * @returns {string} HTML
+ */
+function renderTimerBar({ remainingMs, totalMs = 4000, label = '' }) {
+  const safeRem = Math.max(0, remainingMs);
+  const percent = Math.min(100, Math.max(0, (safeRem / totalMs) * 100));
+
+  let colorClass = 'timer-green';
+  if (percent < 30) {
+    colorClass = 'timer-red';
+  } else if (percent < 60) {
+    colorClass = 'timer-yellow';
+  }
+
+  const secs = (safeRem / 1000).toFixed(1);
+
+  return `
+    <div class="timer-container" role="timer" aria-live="polite" aria-label="${esc(label)}: ${secs} segundos">
+      <div class="timer-header">
+        <span class="label">${esc(label)}</span>
+        <strong class="timer-digits mono">${secs}s</strong>
+      </div>
+      <div class="timer-track">
+        <div class="timer-bar ${colorClass}" style="width: ${percent}%;"></div>
+      </div>
+    </div>
+  `;
+}
+/* ==== END: src/ui/comp.js ==== */
+
+/* ==== MOD: src/ui/modal.js ==== */
+// src/ui/modal.js - Container Modal Acessível (WCAG AA)
+
+/**
+ * Renderiza modal dialog acessível.
+ * @param {object} props
+ * @returns {string} HTML
+ */
+function renderModal({ id, title, content, actions = '', isOpen = false }) {
+  if (!isOpen) return '';
+
+  return `
+    <div id="${esc(id)}" class="modal-backdrop" role="presentation" data-act="close_modal">
+      <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="${esc(id)}-title">
+        <div class="modal-header">
+          <h2 id="${esc(id)}-title" class="modal-title">${esc(title)}</h2>
+          <button type="button" class="btn-close" data-act="close_modal" aria-label="Fechar modal">✕</button>
+        </div>
+        <div class="modal-body">
+          ${content}
+        </div>
+        ${actions ? `<div class="modal-actions">${actions}</div>` : ''}
+      </div>
+    </div>
+  `;
+}
+/* ==== END: src/ui/modal.js ==== */
+
+/* ==== MOD: src/views/capa.js ==== */
+// src/views/capa.js - Vista da Capa do PlayApp SPARK
+
+
+
+/**
+ * Determina qual é o dia ativo para o CTA da capa.
+ * @param {object} state
+ * @returns {number}
+ */
+function getActiveDay(state) {
+  if (!state?.days) return 1;
+  for (let i = 1; i <= 7; i++) {
+    if (!state.days[i]?.completed) {
+      return i;
+    }
+  }
+  return 7;
+}
+
+/**
+ * Renderiza a visualização da Capa.
+ * @param {object} state
+ * @returns {string}
+ */
+function renderCapaView(state) {
+  const activeDay = getActiveDay(state);
+  const isStarted = Boolean(state?.test?.completed || state?.days?.[1]?.completed);
+  const isAllCompleted = Boolean(state?.days?.[7]?.completed);
+
+  let ctaHref = ROUTES.DIAGNOSTICO;
+  let ctaLabel = 'Fazer Diagnóstico (3 min)';
+  let ctaSub = 'Descubra sua velocidade de resposta antes de começar.';
+
+  if (isAllCompleted) {
+    ctaHref = ROUTES.LAUDO;
+    ctaLabel = 'Ver Meu Laudo & Resultado';
+    ctaSub = 'Parabéns! Você completou os 7 dias da jornada.';
+  } else if (isStarted) {
+    ctaHref = `#/dia/${activeDay}`;
+    ctaLabel = `Continuar no Dia ${activeDay}`;
+    ctaSub = `Você está no Dia ${activeDay} de 7. Mantenha sua ofensiva!`;
+  }
+
+  const heroHtml = renderHeroBanner({
+    tag: 'SPARK ALPHA · PLAYBOOK OFICIAL',
+    title: '7 dias para parar de traduzir e começar a falar',
+    subtitle: 'Um sistema diário de prática, feedback e accountability para destravar sua fala em inglês.',
+    badge: '10 Vagas Turma Alpha'
+  });
+
+  return `
+    <div class="view view-capa">
+      ${heroHtml}
+
+      <section class="card cta-card-hero">
+        <div class="cta-balloon">
+          <span class="balloon-speaker">Exemplo de Chunk</span>
+          <p class="balloon-text">“Can I get a flat white, please?”</p>
+        </div>
+
+        <div class="cta-actions">
+          <a href="${esc(ctaHref)}" class="btn btn-primary btn-lg" data-act="NAVIGATE" data-param="${esc(ctaHref)}">
+            ${esc(ctaLabel)}
+          </a>
+          <p class="text-muted text-sm">${esc(ctaSub)}</p>
+        </div>
+
+        <div class="author-pill">
+          <span class="author-avatar" aria-hidden="true">GL</span>
+          <div class="author-info">
+            <strong>Gabriel Lima</strong>
+            <span>Professor de Inglês & Criador do Método SPARK</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="grid-numbers" aria-label="Destaques do PlayApp">
+        <a href="${ROUTES.TRILHA}" class="number-card" data-act="NAVIGATE" data-param="${ROUTES.TRILHA}">
+          <span class="number-val">7</span>
+          <span class="number-label">Dias de Missões</span>
+          <span class="number-desc">Prática guiada passo a passo</span>
+        </a>
+
+        <a href="${ROUTES.METODO}" class="number-card" data-act="NAVIGATE" data-param="${ROUTES.METODO}">
+          <span class="number-val">4</span>
+          <span class="number-label">Pilares SPARK</span>
+          <span class="number-desc">Neurociência sem decoreba</span>
+        </a>
+
+        <a href="${ROUTES.CHUNKS}" class="number-card" data-act="NAVIGATE" data-param="${ROUTES.CHUNKS}">
+          <span class="number-val">10</span>
+          <span class="number-label">Chunks Raid Kit</span>
+          <span class="number-desc">Blocos prontos para falar</span>
+        </a>
+
+        <a href="${ROUTES.PROMPTS}" class="number-card" data-act="NAVIGATE" data-param="${ROUTES.PROMPTS}">
+          <span class="number-val">3</span>
+          <span class="number-label">Prompts de IA</span>
+          <span class="number-desc">Prontos para copiar e treinar</span>
+        </a>
+      </section>
+
+      <section class="card honest-notice-card">
+        <h3>Aviso Honesto</h3>
+        <p>
+          Este playbook não promete fluência instantânea nem fórmulas mágicas.
+          Ele mede sua velocidade real de resposta e treina seu cérebro para substituir a tradução mental por blocos automáticos de linguagem.
+        </p>
+        <div class="card-footer-links">
+          <a href="${ROUTES.MAPA}" class="link-subtle" data-act="NAVIGATE" data-param="${ROUTES.MAPA}">
+            Ver sumário completo e guia de uso →
+          </a>
+        </div>
+      </section>
+    </div>
+  `;
+}
+/* ==== END: src/views/capa.js ==== */
+
+/* ==== MOD: src/views/mapa.js ==== */
+// src/views/mapa.js - Sumário, Guia de Uso e O Problema
+
+
+
+/**
+ * Renderiza a visualização do Mapa, Sumário e Capítulo O Problema.
+ * @param {object} state
+ * @returns {string}
+ */
+function renderMapaView(state) {
+  const heroHtml = renderHeroBanner({
+    tag: 'GUIA DE NAVEGAÇÃO & SUMÁRIO',
+    title: 'Como usar este PlayApp',
+    subtitle: 'Orientação direta para extrair o máximo do método em 15 a 30 minutos diários.'
+  });
+
+  return `
+    <div class="view view-mapa">
+      ${heroHtml}
+
+      <section class="card how-to-use-card">
+        <h3>As 3 Regras de Uso</h3>
+        <ul class="clean-list">
+          <li class="bullet-item">
+            <span class="bullet-num">1</span>
+            <div>
+              <strong>Um dia por vez · 15 a 30 minutos</strong>
+              <p>Não pule etapas nem tente fazer tudo num único fim de semana. A consolidação neural depende do sono e da repetição espaçada.</p>
+            </div>
+          </li>
+          <li class="bullet-item">
+            <span class="bullet-num">2</span>
+            <div>
+              <strong>Marque cada checklist ao fechar a missão</strong>
+              <p>A autoavaliação honesta gera os dados do seu laudo e calibra os pontos onde o Gabe pode te mentorar.</p>
+            </div>
+          </li>
+          <li class="bullet-item">
+            <span class="bullet-num">3</span>
+            <div>
+              <strong>Meça duas vezes · Dia 1 e, de novo, Dia 7</strong>
+              <p>O teste inicial revela seu ponto de partida; o teste final comprova a velocidade ganha após a trilha de chunks.</p>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section class="card problem-card" id="problema">
+        <span class="badge badge-warning">Capítulo 1</span>
+        <h2>O Problema: Você estuda, mas trava ao falar</h2>
+        <p class="lead-text">
+          Você sabe a gramática. Entende boa parte do que lê e escuta. Mesmo assim, na hora de responder em inglês, você traduz na cabeça, perde o tempo da conversa e desiste da frase.
+        </p>
+
+        <div class="grid-problem-points">
+          <div class="problem-box">
+            <h4>1. Tradutor Mental</h4>
+            <p>Pensar em português e tentar montar a estrutura gramatical em tempo real consome toda a sua memória de trabalho.</p>
+          </div>
+          <div class="problem-box">
+            <h4>2. Palavras Soltas</h4>
+            <p>Aprender listas de vocabulário descontextualizadas força você a colar palavras que nativos nunca usam juntas.</p>
+          </div>
+          <div class="problem-box">
+            <h4>3. Medo do Erro</h4>
+            <p>Sem um ambiente seguro de recasting (correção natural embutida no fluxo), o cérebro prefere o silêncio à exposição.</p>
+          </div>
+        </div>
+
+        <div class="action-highlight">
+          <p><strong>A Solução:</strong> Substituir a tradução mental por blocos automáticos de linguagem (Chunks) acionados sob repetição espaçada.</p>
+          <a href="${ROUTES.METODO}" class="btn btn-secondary" data-act="NAVIGATE" data-param="${ROUTES.METODO}">
+            Conhecer o Método SPARK →
+          </a>
+        </div>
+      </section>
+
+      <section class="card summary-card">
+        <h3>Sumário do PlayApp · Toque para ir direto</h3>
+        <nav class="summary-nav" aria-label="Sumário Geral">
+          <a href="${ROUTES.CAPA}" class="summary-item" data-act="NAVIGATE" data-param="${ROUTES.CAPA}">
+            <span class="summary-code">01</span>
+            <span class="summary-title">Capa</span>
+            <span class="summary-sub">Início e promessa</span>
+          </a>
+          <a href="${ROUTES.METODO}" class="summary-item" data-act="NAVIGATE" data-param="${ROUTES.METODO}">
+            <span class="summary-code">02</span>
+            <span class="summary-title">O Método SPARK</span>
+            <span class="summary-sub">Os 4 pilares neurocientíficos</span>
+          </a>
+          <a href="${ROUTES.DIAGNOSTICO}" class="summary-item" data-act="NAVIGATE" data-param="${ROUTES.DIAGNOSTICO}">
+            <span class="summary-code">03</span>
+            <span class="summary-title">Diagnóstico Cirúrgico</span>
+            <span class="summary-sub">Teste de velocidade sub-4s</span>
+          </a>
+          <a href="${ROUTES.SETUP}" class="summary-item" data-act="NAVIGATE" data-param="${ROUTES.SETUP}">
+            <span class="summary-code">04</span>
+            <span class="summary-title">Setup Inicial</span>
+            <span class="summary-sub">Preparação da IA e ambiente</span>
+          </a>
+          <a href="${ROUTES.TRILHA}" class="summary-item" data-act="NAVIGATE" data-param="${ROUTES.TRILHA}">
+            <span class="summary-code">05</span>
+            <span class="summary-title">Trilha dos 7 Dias</span>
+            <span class="summary-sub">As 7 missões diárias</span>
+          </a>
+          <a href="${ROUTES.CHUNKS}" class="summary-item" data-act="NAVIGATE" data-param="${ROUTES.CHUNKS}">
+            <span class="summary-code">06</span>
+            <span class="summary-title">Raid Kit de Chunks</span>
+            <span class="summary-sub">Deck Leitner de 10 blocos</span>
+          </a>
+          <a href="${ROUTES.ARENA}" class="summary-item" data-act="NAVIGATE" data-param="${ROUTES.ARENA}">
+            <span class="summary-code">07</span>
+            <span class="summary-title">Arena Boss Raid</span>
+            <span class="summary-sub">Desafio de pressão do Dia 7</span>
+          </a>
+          <a href="${ROUTES.PROMPTS}" class="summary-item" data-act="NAVIGATE" data-param="${ROUTES.PROMPTS}">
+            <span class="summary-code">08</span>
+            <span class="summary-title">Prompts Prontos</span>
+            <span class="summary-sub">Modelos de IA para copiar</span>
+          </a>
+          <a href="${ROUTES.LAUDO}" class="summary-item" data-act="NAVIGATE" data-param="${ROUTES.LAUDO}">
+            <span class="summary-code">09</span>
+            <span class="summary-title">Laudo de Fluência</span>
+            <span class="summary-sub">Radar de competências</span>
+          </a>
+          <a href="${ROUTES.ALPHA}" class="summary-item" data-act="NAVIGATE" data-param="${ROUTES.ALPHA}">
+            <span class="summary-code">10</span>
+            <span class="summary-title">Turma Alpha</span>
+            <span class="summary-sub">10 Vagas fundadoras com Gabe</span>
+          </a>
+        </nav>
+      </section>
+    </div>
+  `;
+}
+/* ==== END: src/views/mapa.js ==== */
+
+/* ==== MOD: src/views/metodo.js ==== */
+// src/views/metodo.js - Vista do Método SPARK e seus Pilares
+
+
+
+/**
+ * Renderiza a visualização do Método SPARK.
+ * @param {object} state
+ * @returns {string}
+ */
+function renderMetodoView(state) {
+  const heroHtml = renderHeroBanner({
+    tag: 'FUNDAMENTAÇÃO & NEUROCIÊNCIA',
+    title: 'O Método SPARK',
+    subtitle: 'A metodologia criada pelo Professor Gabriel Lima para substituir a tradução mental por blocos automáticos de fala.'
+  });
+
+  return `
+    <div class="view view-metodo">
+      ${heroHtml}
+
+      <section class="card pillars-card">
+        <h3>Os 5 Pilares do SPARK</h3>
+        <p class="text-muted">No PlayApp você pratica os 4 primeiros sozinho. O quinto é o que a Turma Alpha adiciona.</p>
+
+        <div class="pillars-list">
+          <div class="pillar-row">
+            <span class="pillar-badge pillar-s">S</span>
+            <div class="pillar-details">
+              <strong>Spaced Practice (Prática Espaçada)</strong>
+              <p>As mesmas frases e estruturas retornam em intervalos calibrados (1, 3 e 7 dias) para transferência da memória de trabalho para a memória de longo prazo.</p>
+              <span class="badge badge-neutral">Você faz aqui no PlayApp</span>
+            </div>
+          </div>
+
+          <div class="pillar-row">
+            <span class="pillar-badge pillar-p">P</span>
+            <div class="pillar-details">
+              <strong>Productive Output (Produção Ativa)</strong>
+              <p>Você é forçado a tentar falar a resposta antes de receber o modelo pronto. O esforço de recuperação é onde a sinapse se fortalece.</p>
+              <span class="badge badge-neutral">Você faz aqui no PlayApp</span>
+            </div>
+          </div>
+
+          <div class="pillar-row">
+            <span class="pillar-badge pillar-a">A</span>
+            <div class="pillar-details">
+              <strong>Adaptive Recasting (Modelagem Sem Julgamento)</strong>
+              <p>A IA devolve a sua fala corrigida naturalmente dentro do fluxo da conversa, sem interromper você com explicações gramaticais travadas.</p>
+              <span class="badge badge-neutral">Você faz aqui no PlayApp</span>
+            </div>
+          </div>
+
+          <div class="pillar-row">
+            <span class="pillar-badge pillar-r">R</span>
+            <div class="pillar-details">
+              <strong>Real-world Simulation (Simulação Real)</strong>
+              <p>Você treina em cenários com pressão de tempo e imprevistos súbitos (como na vida real), desenvolvendo resiliência comunicativa.</p>
+              <span class="badge badge-neutral">Você faz aqui no PlayApp</span>
+            </div>
+          </div>
+
+          <div class="pillar-row pillar-exclusive">
+            <span class="pillar-badge pillar-k">K</span>
+            <div class="pillar-details">
+              <strong>Key Human Accountability (Validação Humana)</strong>
+              <p>O Professor Gabriel Lima analisa seu dossiê, ouve seus áudios gravados e calibra o próximo portal da sua fala.</p>
+              <span class="badge badge-primary">Exclusivo na Turma Alpha</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card daily-cycle-card">
+        <h3>O Ciclo Diário de 15 Minutos</h3>
+        <ol class="step-list">
+          <li><strong>1. Receber a missão:</strong> Abra o dia na trilha e leia o contexto situacional.</li>
+          <li><strong>2. Praticar o cenário:</strong> Cole o prompt calibrado no seu chat de IA favorito.</li>
+          <li><strong>3. Responder em voz alta:</strong> Fale pelo microfone, sem digitar ou ensaiar antes.</li>
+          <li><strong>4. Ouvir o recast:</strong> Preste atenção em como a IA refinou sua frase.</li>
+          <li><strong>5. Fixar os chunks:</strong> Revise as cartas no seu Raid Kit Leitner.</li>
+          <li><strong>6. Registrar o fechamento:</strong> Marque seu checklist e atribua sua autoavaliação sincera.</li>
+        </ol>
+      </section>
+
+      <section class="card actions-card">
+        <h3>Pronto para testar na prática?</h3>
+        <div class="actions-group">
+          <a href="${ROUTES.TRILHA}" class="btn btn-primary" data-act="NAVIGATE" data-param="${ROUTES.TRILHA}">
+            Abrir a Trilha dos 7 Dias
+          </a>
+          <a href="${ROUTES.CHUNKS}" class="btn btn-ghost" data-act="NAVIGATE" data-param="${ROUTES.CHUNKS}">
+            Explorar o Raid Kit de Chunks
+          </a>
+        </div>
+      </section>
+    </div>
+  `;
+}
+/* ==== END: src/views/metodo.js ==== */
+
+/* ==== MOD: src/views/diagnostico.js ==== */
+// src/views/diagnostico.js - Vista do Diagnóstico Cirúrgico de Fala (Fluxo de 5 passos)
+
+
+
+
+
+const BAND_METADATA = Object.freeze({
+  'autônomo': {
+    label: 'Fluente Natural (Autônomo)',
+    description: 'Você responde com chunks automáticos e baixo delay mental.'
+  },
+  'descongelando': {
+    label: 'Em Transição (Descongelando)',
+    description: 'Você conhece os blocos, mas ainda hesita e traduz sob pressão.'
+  },
+  'bloqueado': {
+    label: 'Trava Mental (Bloqueado)',
+    description: 'Forte dependência de tradução mental palavra por palavra.'
+  }
+});
+
+/**
+ * Renderiza a visualização do Diagnóstico Cirúrgico.
+ * Suporta os 3 estados: Instruções preparatórias, Rodadas ativas com cronômetro, e Laudo preliminar.
+ * @param {object} state
+ * @returns {string}
+ */
+function renderDiagnosticoView(state) {
+  const isCompleted = Boolean(state?.test?.completed);
+  const isStarted = Boolean(state?.test?.started);
+
+  // 1. Estado: Concluído (Laudo do Diagnóstico)
+  if (isCompleted) {
+    const score = state?.test?.score ?? 0;
+    const band = state?.test?.band || bandOf(score);
+    const bandMeta = BAND_METADATA[band] || BAND_METADATA.bloqueado;
+    const bottleneck = bottleneckOf(band);
+
+    const heroHtml = renderHeroBanner({
+      tag: 'DIAGNÓSTICO CONCLUÍDO',
+      title: 'Seu Laudo de Velocidade',
+      subtitle: 'Medição cirúrgica da sua resposta sob pressão de tempo.'
+    });
+
+    return `
+      <div class="view view-diagnostico view-diag-result">
+        ${heroHtml}
+
+        <section class="card diag-score-card">
+          <div class="score-display">
+            <span class="score-number">${esc(String(score))}</span>
+            <span class="score-max">/ 100</span>
+          </div>
+
+          <div class="band-tag-wrapper">
+            <span class="badge badge-primary badge-lg">${esc(bandMeta.label)}</span>
+          </div>
+
+          <p class="band-description">${esc(bandMeta.description)}</p>
+        </section>
+
+        <section class="card diag-bottleneck-card">
+          <h3>Gargalo Identificado</h3>
+          <p class="bottleneck-text">${esc(bottleneck)}</p>
+
+          <div class="method-application-box">
+            <h4>Como o Método SPARK atua aqui:</h4>
+            <ul class="clean-list">
+              <li><strong>Raid Kit de Chunks:</strong> Fixa blocos pré-fabricados para eliminar o delay do tradutor mental.</li>
+              <li><strong>Prática Espaçada (1, 3 e 7 dias):</strong> Garante que os chunks subam para a automaticidade permanente.</li>
+              <li><strong>Adaptive Recasting:</strong> Corrige suas frases no fluxo natural, sem travar seu raciocínio.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="card diag-actions-card">
+          <a href="${ROUTES.SETUP}" class="btn btn-primary btn-lg" data-act="NAVIGATE" data-param="${ROUTES.SETUP}">
+            Configurar Setup & Iniciar Trilha →
+          </a>
+          <button type="button" class="btn btn-ghost" data-act="START_DIAGNOSTIC">
+            Refazer Diagnóstico
+          </button>
+        </section>
+      </div>
+    `;
+  }
+
+  // 2. Estado: Em Andamento (Rodadas 1 a 3)
+  if (isStarted) {
+    const pool = state?.test?.form === 'B' ? DIAG_POOL_B : DIAG_POOL_A;
+    const answers = state?.test?.answers || [];
+    const currentIdx = Math.min(answers.length, pool.length - 1);
+    const q = pool[currentIdx];
+    const roundNumber = currentIdx + 1;
+
+    const timerHtml = renderTimerBar(4000, 4000);
+
+    return `
+      <div class="view view-diagnostico view-diag-active">
+        <header class="diag-header">
+          <span class="text-mono text-muted">RODADA ${roundNumber} DE ${pool.length}</span>
+          <h2>O que você falaria na vida real?</h2>
+        </header>
+
+        <section class="card diag-active-card">
+          <div class="situation-box">
+            <span class="badge badge-neutral">Situação</span>
+            <p class="situation-desc">${esc(q.situation)}</p>
+          </div>
+
+          <div class="audio-trigger-wrapper">
+            <button type="button" class="btn btn-secondary btn-audio" data-act="SAY_TEXT" data-param="${esc(q.audioPhrase)}">
+              <span aria-hidden="true">🔊</span> Ouvir Contexto em Inglês
+            </button>
+          </div>
+
+          <div class="timer-wrapper" aria-label="Tempo restante">
+            ${timerHtml}
+          </div>
+
+          <div class="choices-group" role="group" aria-label="Opções de resposta">
+            ${q.options.map((opt) => `
+              <button type="button" class="btn btn-choice" data-act="SUBMIT_ANSWER" data-param='{"type":"${esc(opt.type)}","ms":4000}'>
+                ${esc(opt.text)}
+              </button>
+            `).join('')}
+          </div>
+        </section>
+      </div>
+    `;
+  }
+
+  // 3. Estado: Inicial (Instruções e Preparação)
+  const heroHtml = renderHeroBanner({
+    tag: 'TESTE DE VELOCIDADE · 3 MIN',
+    title: 'Diagnóstico Cirúrgico de Fala',
+    subtitle: 'Descubra se você fala por blocos prontos ou se fica refém da tradução mental.'
+  });
+
+  return `
+    <div class="view view-diagnostico view-diag-intro">
+      ${heroHtml}
+
+      <section class="card diag-intro-card">
+        <h3>Como funciona o teste</h3>
+        <ul class="clean-list">
+          <li class="bullet-item">
+            <span class="bullet-num">1</span>
+            <div>
+              <strong>3 situações reais em áudio</strong>
+              <p>Você ouvirá frases autênticas do cotidiano em inglês gravadas ou sintetizadas nativamente.</p>
+            </div>
+          </li>
+          <li class="bullet-item">
+            <span class="bullet-num">2</span>
+            <div>
+              <strong>Janela rápida de 4 segundos</strong>
+              <p>Na vida real ninguém espera você traduzir gramática na cabeça. O teste mede sua velocidade reflexa.</p>
+            </div>
+          </li>
+          <li class="bullet-item">
+            <span class="bullet-num">3</span>
+            <div>
+              <strong>Sem julgamento ou nota punitiva</strong>
+              <p>O teste gera a foto exata do seu ponto de partida para calibrar seus 7 dias na trilha.</p>
+            </div>
+          </li>
+        </ul>
+
+        <div class="intro-action">
+          <button type="button" class="btn btn-primary btn-lg" data-act="START_DIAGNOSTIC">
+            Iniciar Diagnóstico (3 min)
+          </button>
+        </div>
+      </section>
+    </div>
+  `;
+}
+/* ==== END: src/views/diagnostico.js ==== */
+
+/* ==== MOD: src/views/setup.js ==== */
+// src/views/setup.js - Vista do Setup Inicial de 4 passos
+
+
+
+
+/**
+ * Renderiza a visualização do Setup Inicial.
+ * @param {object} state
+ * @returns {string}
+ */
+function renderSetupView(state) {
+  const setupState = state?.setup || {};
+  const isCompleted = Boolean(setupState.completed);
+
+  // Conta quantos itens foram marcados
+  let doneCount = 0;
+  for (const item of SETUP_CHECKLIST) {
+    if (setupState[item.id]) {
+      doneCount++;
+    }
+  }
+
+  const allChecked = doneCount === SETUP_CHECKLIST.length;
+
+  const heroHtml = renderHeroBanner({
+    tag: 'PREPARAÇÃO DO AMBIENTE · 5 MIN',
+    title: 'Antes de Começar: Setup',
+    subtitle: 'Configure seu chat de IA e sua rotina diária para garantir que sua prática aconteça sem atrito.'
+  });
+
+  return `
+    <div class="view view-setup">
+      ${heroHtml}
+
+      <section class="card setup-progress-card">
+        <div class="setup-progress-header">
+          <h3>Checklist de Preparação</h3>
+          <span class="badge ${allChecked ? 'badge-primary' : 'badge-neutral'}">
+            ${doneCount} de ${SETUP_CHECKLIST.length} concluídos
+          </span>
+        </div>
+        <p class="text-muted">
+          Marque cada item abaixo conforme configura no seu celular ou computador.
+        </p>
+
+        <div class="setup-list" role="group" aria-label="Passos do Setup">
+          ${SETUP_CHECKLIST.map((item) => {
+            const isDone = Boolean(setupState[item.id]);
+            return `
+              <button type="button"
+                class="setup-item-btn ${isDone ? 'is-completed' : ''}"
+                role="checkbox"
+                aria-checked="${isDone ? 'true' : 'false'}"
+                data-act="COMPLETE_SETUP_ITEM"
+                data-param='{"key":"${esc(item.id)}"}'>
+                <span class="custom-check-box ${isDone ? 'checked' : ''}" aria-hidden="true">
+                  ${isDone ? '✓' : ''}
+                </span>
+                <div class="setup-text">
+                  <strong class="setup-title">${esc(item.title)}</strong>
+                  <p class="setup-desc">${esc(item.desc)}</p>
+                </div>
+              </button>
+            `;
+          }).join('')}
+        </div>
+      </section>
+
+      <section class="card setup-action-card">
+        ${isCompleted ? `
+          <div class="setup-completed-banner">
+            <span class="badge badge-primary badge-lg">Setup Concluído (+15 XP)</span>
+            <p>Seu ambiente de treino está calibrado e pronto para a prática.</p>
+          </div>
+          <a href="${ROUTES.TRILHA}" class="btn btn-primary btn-lg" data-act="NAVIGATE" data-param="${ROUTES.TRILHA}">
+            Continuar para o Dia 1 da Trilha →
+          </a>
+        ` : `
+          ${allChecked ? `
+            <button type="button" class="btn btn-primary btn-lg" data-act="FINISH_SETUP">
+              Concluir Setup & Ganhar 15 XP →
+            </button>
+          ` : `
+            <button type="button" class="btn btn-primary btn-lg" disabled aria-disabled="true">
+              Marque os ${SETUP_CHECKLIST.length - doneCount} itens restantes para avançar
+            </button>
+          `}
+          <p class="text-muted text-sm text-center">
+            Ao concluir você ganha 15 XP e destrava o Dia 1 da sua trilha.
+          </p>
+        `}
+      </section>
+    </div>
+  `;
+}
+/* ==== END: src/views/setup.js ==== */
+
+/* ==== MOD: src/views/trilha.js ==== */
+// src/views/trilha.js - Vista da Trilha dos 7 Dias com nós e status de bloqueio
+const DAYS_LIST = Object.freeze([D1, D2, D3, D4, D5, D6, D7]);
+
+/**
+ * Renderiza a visualização da Trilha dos 7 Dias.
+ * @param {object} state
+ * @returns {string}
+ */
+function renderTrilhaView(state) {
+  const streak = state?.streak || { count: 0, best: 0, shieldAvailable: true };
+  const xp = state?.xp || { total: 0, rank: 'faísca' };
+
+  let completedCount = 0;
+  for (let i = 1; i <= 7; i++) {
+    if (state?.days?.[i]?.completed) completedCount++;
+  }
+
+  const heroHtml = renderHeroBanner({
+    tag: 'JORNADA OFICIAL · 7 DIAS',
+    title: 'Trilha SPARK Alpha',
+    subtitle: 'Um sistema progressivo de 15 a 30 minutos diários para substituir a tradução mental por fala automática.'
+  });
+
+  return `
+    <div class="view view-trilha">
+      ${heroHtml}
+
+      <section class="card streak-bar-card">
+        <div class="streak-header">
+          <div class="streak-item">
+            <span class="streak-icon" aria-hidden="true">🔥</span>
+            <div>
+              <strong>${esc(String(streak.count))} dias</strong>
+              <span class="text-xs text-muted">Ofensiva Atual</span>
+            </div>
+          </div>
+
+          <div class="streak-item">
+            <span class="streak-icon" aria-hidden="true">🛡️</span>
+            <div>
+              <strong>${streak.shieldAvailable ? 'Disponível' : 'Usado'}</strong>
+              <span class="text-xs text-muted">Escudo de Streak</span>
+            </div>
+          </div>
+
+          <div class="streak-item">
+            <span class="streak-icon" aria-hidden="true">⚡</span>
+            <div>
+              <strong>${completedCount} / 7</strong>
+              <span class="text-xs text-muted">Dias Fechados</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="trail-nodes" aria-label="Nós dos 7 Dias">
+        ${DAYS_LIST.map((day) => {
+          const isUnlocked = canAccessDay(state, day.num);
+          const isCompleted = Boolean(state?.days?.[day.num]?.completed);
+          const isCurrent = isUnlocked && !isCompleted;
+
+          let statusBadge = `<span class="badge badge-neutral">🔒 Bloqueado</span>`;
+          let cardClass = 'trail-node is-locked';
+          let href = '#';
+          let ariaAttr = 'aria-disabled="true"';
+
+          if (isCompleted) {
+            statusBadge = `<span class="badge badge-success">✓ Fechado (+50 XP)</span>`;
+            cardClass = 'trail-node is-completed';
+            href = `#/dia/${day.num}`;
+            ariaAttr = '';
+          } else if (isCurrent) {
+            statusBadge = `<span class="badge badge-primary">★ Dia Aberto</span>`;
+            cardClass = 'trail-node is-active';
+            href = `#/dia/${day.num}`;
+            ariaAttr = '';
+          }
+
+          return `
+            <article class="card ${cardClass}" id="node-dia-${day.num}">
+              <div class="node-left">
+                <span class="node-bignum">0${day.num}</span>
+                <span class="node-time text-muted text-xs">${esc(day.timeEstimate)}</span>
+              </div>
+
+              <div class="node-center">
+                <div class="node-meta">
+                  <span class="badge badge-neutral text-xs">Pilar: ${esc(day.pillar)}</span>
+                  ${statusBadge}
+                </div>
+                <h4 class="node-title">${esc(day.title)}</h4>
+                <p class="node-subtitle text-muted text-sm">${esc(day.subtitle)}</p>
+              </div>
+
+              <div class="node-right">
+                ${isUnlocked ? `
+                  <a href="${esc(href)}" class="btn ${isCurrent ? 'btn-primary' : 'btn-secondary'}" data-act="NAVIGATE" data-param="${esc(href)}">
+                    ${isCompleted ? 'Revisar' : 'Praticar'} →
+                  </a>
+                ` : `
+                  <button type="button" class="btn btn-ghost" disabled>
+                    Bloqueado
+                  </button>
+                `}
+              </div>
+            </article>
+          `;
+        }).join('')}
+      </section>
+
+      <section class="card trail-footer-card">
+        <h3>Pronto para o teste final?</h3>
+        <p>No Dia 7, a Trilha culmina na Arena Boss Raid com pressão de tempo de 60 segundos.</p>
+        <a href="${ROUTES.ARENA}" class="btn btn-ghost" data-act="NAVIGATE" data-param="${ROUTES.ARENA}">
+          Ver Mini-Arena Boss Raid →
+        </a>
+      </section>
+    </div>
+  `;
+}
+/* ==== END: src/views/trilha.js ==== */
+
+/* ==== MOD: src/views/dia.js ==== */
+// src/views/dia.js - Vista dos 7 Dias com Anatomia Completa de 10 Blocos
+const DAYS_BY_NUM = Object.freeze({
+  1: D1, 2: D2, 3: D3, 4: D4, 5: D5, 6: D6, 7: D7
+});
+
+/**
+ * Renderiza a visualização anatômica de um dia da jornada SPARK (1 a 7).
+ * @param {object} state
+ * @param {{ num?: number|string, imageSrc?: string }} [props={}]
+ * @returns {string}
+ */
+function renderDiaView(state, props = {}) {
+  const dayNum = Number(props.num || 1);
+  const day = DAYS_BY_NUM[dayNum] || D1;
+  const dayData = state?.days?.[dayNum] || {};
+  const isCompleted = Boolean(dayData.completed);
+  const editable = isDayEditable(state, dayNum);
+
+  const missionsState = Array.isArray(dayData.missions) ? dayData.missions : [];
+  const notesState = dayData.notes || {};
+
+  const heroHtml = renderHeroBanner({
+    tag: `DIA ${day.num} DE 7 · ${day.timeEstimate}`,
+    title: day.title,
+    subtitle: day.subtitle,
+    badge: `Pilares: ${day.pillar}`,
+    imageSrc: props.imageSrc || day.imageSrc || null
+  });
+
+  const nextDayNum = dayNum < 7 ? dayNum + 1 : null;
+  const nextDay = nextDayNum ? DAYS_BY_NUM[nextDayNum] : null;
+
+  return `
+    <div class="view view-dia view-dia-${day.num}">
+      ${heroHtml}
+
+      ${day.warning ? `
+        <div class="card warning-card">
+          <span class="warning-icon" aria-hidden="true">⚠️</span>
+          <p class="text-sm">${esc(day.warning)}</p>
+        </div>
+      ` : ''}
+
+      ${day.blind ? `
+        <div class="card blind-indicator-card">
+          <span class="badge badge-warning">MODO BLIND</span>
+          <p class="text-sm">Prática sem lista visível. Confie nos chunks que seu cérebro já absorveu.</p>
+        </div>
+      ` : ''}
+
+      <!-- Bloco 3: Missão do Dia (Checklist) -->
+      <section class="card day-missions-card">
+        <h3>Missão do Dia</h3>
+        <p class="text-muted text-sm">Marque cada etapa conforme você executa no seu chat de IA:</p>
+
+        <div class="missions-checklist" role="group" aria-label="Checklist da Missão">
+          ${day.missions.map((missionText, idx) => {
+            const isDone = Boolean(missionsState[idx]);
+            return `
+              <button type="button"
+                class="mission-check-btn ${isDone ? 'is-done' : ''}"
+                role="checkbox"
+                aria-checked="${isDone ? 'true' : 'false'}"
+                data-act="TOGGLE_MISSION_ITEM"
+                data-param='{"num":${day.num},"index":${idx}}'>
+                <span class="custom-check-box ${isDone ? 'checked' : ''}" aria-hidden="true">
+                  ${isDone ? '✓' : ''}
+                </span>
+                <span class="mission-text">${esc(missionText)}</span>
+              </button>
+            `;
+          }).join('')}
+        </div>
+      </section>
+
+      <!-- Bloco 4 & 5: Prompt do Dia -->
+      <section class="card day-prompt-card">
+        <div class="prompt-header-bar">
+          <h3>Peça à IA (Prompt do Dia)</h3>
+          <span class="badge badge-neutral text-xs">Pronto para colar</span>
+        </div>
+
+        <div class="prompt-box">
+          <pre class="prompt-text"><code>${esc(day.askPrompt)}</code></pre>
+        </div>
+
+        <div class="prompt-action-bar">
+          <button type="button" class="btn btn-secondary btn-copy" data-act="COPY_PROMPT" data-param='{"num":${day.num}}'>
+            <span class="icon-copy" aria-hidden="true">📋</span> Copiar Prompt do Dia (+5 XP)
+          </button>
+        </div>
+      </section>
+
+      <!-- Bloco 6: Por que funciona -->
+      <section class="card why-it-works-card">
+        <h4>Por que funciona</h4>
+        <p class="why-text text-muted">${esc(day.whyItWorks)}</p>
+      </section>
+
+      <!-- Bloco 7: Autoavaliação e Notas -->
+      ${day.recordFields && day.recordFields.length > 0 ? `
+        <section class="card day-scales-card">
+          <h3>Sua Autoavaliação Honesta</h3>
+          <p class="text-muted text-sm">Dê uma nota de 1 a 5 para cada competência:</p>
+
+          <div class="scales-wrapper">
+            ${day.recordFields.map((field) => `
+              <div class="scale-row-item">
+                ${renderScaleGroup({ key: field.key, label: field.label, value: notesState[field.key] || 0 })}
+              </div>
+            `).join('')}
+          </div>
+        </section>
+      ` : ''}
+
+      <!-- Bloco 8: Fechamento do Dia -->
+      <section class="card day-closure-card">
+        <h3>Fechamento do Dia</h3>
+        <p class="text-muted text-sm">Confirme o registro para carimbar o dia na sua ofensiva:</p>
+
+        <div class="closure-checks" role="group" aria-label="Etapas de Fechamento">
+          <button type="button"
+            class="closure-check-btn ${notesState.notedOnCard ? 'is-done' : ''}"
+            role="checkbox"
+            aria-checked="${notesState.notedOnCard ? 'true' : 'false'}"
+            data-act="SET_DAY_NOTE"
+            data-param='{"num":${day.num},"key":"notedOnCard","value":${!notesState.notedOnCard}}'>
+            <span class="custom-check-box ${notesState.notedOnCard ? 'checked' : ''}" aria-hidden="true">
+              ${notesState.notedOnCard ? '✓' : ''}
+            </span>
+            <span>Anotei no card</span>
+          </button>
+
+          <button type="button"
+            class="closure-check-btn ${notesState.savedEvidence ? 'is-done' : ''}"
+            role="checkbox"
+            aria-checked="${notesState.savedEvidence ? 'true' : 'false'}"
+            data-act="SET_DAY_NOTE"
+            data-param='{"num":${day.num},"key":"savedEvidence","value":${!notesState.savedEvidence}}'>
+            <span class="custom-check-box ${notesState.savedEvidence ? 'checked' : ''}" aria-hidden="true">
+              ${notesState.savedEvidence ? '✓' : ''}
+            </span>
+            <span>Salvei áudio ou texto</span>
+          </button>
+          <span class="text-xs text-muted support-note">
+            Salve no seu chat ou no seu aparelho. O PlayApp não guarda áudio.
+          </span>
+        </div>
+
+        <div class="flow-feedback-group">
+          <label class="flow-label">Hoje foi:</label>
+          <div class="btn-group-segmented" role="group" aria-label="Sensação de fluência de hoje">
+            ${['travei', 'ok', 'fluiu'].map((flowOpt) => {
+              const isSelected = notesState.flow === flowOpt;
+              return `
+                <button type="button"
+                  class="btn-segment ${isSelected ? 'active' : ''}"
+                  data-act="SET_DAY_NOTE"
+                  data-param='{"num":${day.num},"key":"flow","value":"${flowOpt}"}'>
+                  ${flowOpt.toUpperCase()}
+                </button>
+              `;
+            }).join('')}
+          </div>
+        </div>
+      </section>
+
+      <!-- Bloco 9: Botão de Ação de Conclusão -->
+      <section class="card day-action-card">
+        ${isCompleted ? `
+          <div class="day-completed-banner">
+            <span class="badge badge-success badge-lg">✓ Dia ${day.num} Concluído (+50 XP)</span>
+            ${!editable ? '<p class="text-xs text-muted">Janela de 24h expirada. Dia em modo leitura.</p>' : ''}
+          </div>
+          ${nextDay ? `
+            <a href="#/dia/${nextDay.num}" class="btn btn-primary btn-lg" data-act="NAVIGATE" data-param="#/dia/${nextDay.num}">
+              Continuar para o Dia ${nextDay.num} →
+            </a>
+          ` : `
+            <a href="${ROUTES.LAUDO}" class="btn btn-primary btn-lg" data-act="NAVIGATE" data-param="${ROUTES.LAUDO}">
+              Ver Laudo Final de Fluência →
+            </a>
+          `}
+        ` : `
+          <button type="button" class="btn btn-primary btn-lg" data-act="CLOSE_DAY" data-param='{"num":${day.num}}'>
+            Fechar o Dia ${day.num} (+50 XP)
+          </button>
+        `}
+      </section>
+
+      <!-- Bloco 10: Amanhã -->
+      ${nextDay ? `
+        <footer class="card next-day-preview-card">
+          <span class="text-xs text-muted text-mono">AMANHÃ</span>
+          <h4>Dia ${nextDay.num} · ${esc(nextDay.title)}</h4>
+          <p class="text-sm text-muted">${esc(nextDay.subtitle)}</p>
+        </footer>
+      ` : `
+        <footer class="card next-day-preview-card">
+          <span class="text-xs text-muted text-mono">DEPOIS DO DIA 7</span>
+          <h4>Raid Kit de Chunks & Turma Alpha</h4>
+          <p class="text-sm text-muted">Consolide seus 10 chunks e candidate-se a uma das 10 vagas fundadoras do Professor Gabe.</p>
+        </footer>
+      `}
+    </div>
+  `;
+}
+/* ==== END: src/views/dia.js ==== */
+
+/* ==== MOD: src/views/chunks.js ==== */
+// src/views/chunks.js - Vista do Raid Kit de 10 Chunks com Caixas Leitner
+
+
+
+
+
+/**
+ * Renderiza a visualização do Raid Kit de Chunks.
+ * @param {object} state
+ * @returns {string}
+ */
+function renderChunksView(state) {
+  const chunksState = state?.chunks || {};
+  const totalXp = computeChunkXp(chunksState);
+
+  // Contagem por estágio Leitner
+  let stage0 = 0;
+  let stage1 = 0;
+  let stage2 = 0;
+  let stage3 = 0;
+
+  for (const ch of CHUNKS) {
+    const s = chunksState[ch.id]?.stage || 0;
+    if (s === 3) stage3++;
+    else if (s === 2) stage2++;
+    else if (s === 1) stage1++;
+    else stage0++;
+  }
+
+  const heroHtml = renderHeroBanner({
+    tag: 'MATERIAL DE USO CONTÍNUO · RAID KIT',
+    title: 'Raid Kit: 10 Chunks Essenciais',
+    subtitle: 'Os blocos pré-fabricados para você pedir, trocar, checar e reagir a imprevistos sem recorrer ao tradutor mental.'
+  });
+
+  return `
+    <div class="view view-chunks">
+      ${heroHtml}
+
+      <section class="card leitner-summary-card">
+        <div class="leitner-header">
+          <h3>Evolução no Deck Leitner</h3>
+          <span class="badge badge-primary">${totalXp} / 200 XP Máx</span>
+        </div>
+        <p class="text-muted text-sm">
+          A cada revisão espaçada bem-sucedida, o chunk sobe de caixa (+4 XP no Estágio 1, +10 XP no Estágio 2, +20 XP no Estágio 3).
+        </p>
+
+        <div class="grid-leitner-boxes">
+          <div class="leitner-box box-0">
+            <span class="box-count">${stage0}</span>
+            <span class="box-label">A Iniciar</span>
+            <span class="box-interval">Estágio 0</span>
+          </div>
+
+          <div class="leitner-box box-1">
+            <span class="box-count">${stage1}</span>
+            <span class="box-label">Caixa 1</span>
+            <span class="box-interval">Revisão: 1 dia (+4 XP)</span>
+          </div>
+
+          <div class="leitner-box box-2">
+            <span class="box-count">${stage2}</span>
+            <span class="box-label">Caixa 2</span>
+            <span class="box-interval">Revisão: 3 dias (+10 XP)</span>
+          </div>
+
+          <div class="leitner-box box-3">
+            <span class="box-count">${stage3}</span>
+            <span class="box-label">Caixa 3 (Dominado)</span>
+            <span class="box-interval">Revisão: 7 dias (+20 XP)</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="chunks-deck-section" aria-label="Deck dos 10 Chunks">
+        <div class="deck-cards-list">
+          ${CHUNKS.map((chunk) => {
+            const cardState = chunksState[chunk.id] || {};
+            return renderChunkCard({
+              chunk,
+              state: cardState,
+              showReviewControls: true
+            });
+          }).join('')}
+        </div>
+      </section>
+
+      <section class="card print-sheet-card">
+        <div class="print-callout">
+          <div>
+            <h4>Prefere praticar no papel?</h4>
+            <p class="text-sm text-muted">
+              Você pode imprimir uma folha A4 limpa e recortável com os 10 chunks e seus cenários para deixar colada no seu monitor ou mesa.
+            </p>
+          </div>
+          <a href="${ROUTES.IMPRIMIR}" class="btn btn-secondary" data-act="NAVIGATE" data-param="${ROUTES.IMPRIMIR}">
+            Versão para Impressão →
+          </a>
+        </div>
+      </section>
+    </div>
+  `;
+}
+/* ==== END: src/views/chunks.js ==== */
+
+/* ==== MOD: src/views/arena.js ==== */
+// src/views/arena.js - Vista da Mini-Arena Boss Raid do Dia 7 (60s sob pressão)
+
+
+
+
+
+/**
+ * Renderiza a visualização da Arena Boss Raid.
+ * @param {object} state
+ * @returns {string}
+ */
+function renderArenaView(state) {
+  const isUnlocked = canAccessArena(state);
+  const isCompleted = Boolean(state?.arena?.completed);
+
+  // 1. Estado: Bloqueado (Antes da conclusão do Dia 6)
+  if (!isUnlocked) {
+    const heroLockedHtml = renderHeroBanner({
+      tag: 'DESAFIO DE PRESSÃO · DIA 7',
+      title: 'Arena Boss Raid',
+      subtitle: 'Simulação de fala sob pressão com tempo cronometrado e imprevisto surpresa.'
+    });
+
+    return `
+      <div class="view view-arena view-arena-locked">
+        ${heroLockedHtml}
+
+        <section class="card arena-locked-card text-center">
+          <span class="lock-icon" aria-hidden="true" style="font-size: 3rem;">🔒</span>
+          <h3>Arena Bloqueada</h3>
+          <p class="text-muted">
+            A Mini-Arena é o clímax da jornada no Dia 7. Complete os Dias 1 a 6 na sua Trilha para desbloquear esta simulação com áudio nativo e imprevisto.
+          </p>
+          <div class="card-actions" style="margin-top: 1.5rem;">
+            <a href="${ROUTES.TRILHA}" class="btn btn-primary" data-act="NAVIGATE" data-param="${ROUTES.TRILHA}">
+              Voltar para a Trilha dos 7 Dias →
+            </a>
+          </div>
+        </section>
+      </div>
+    `;
+  }
+
+  // 2. Estado: Concluído
+  if (isCompleted) {
+    const heroCompletedHtml = renderHeroBanner({
+      tag: 'BOSS RAID CONCLUÍDA · +60 XP',
+      title: 'Vitória na Mini-Arena!',
+      subtitle: 'Você manteve o fluxo de fala por 60 segundos sob pressão de imprevisto.'
+    });
+
+    return `
+      <div class="view view-arena view-arena-completed">
+        ${heroCompletedHtml}
+
+        <section class="card arena-victory-card text-center">
+          <span class="victory-trophy" aria-hidden="true" style="font-size: 3.5rem;">🏆</span>
+          <h2>Parabéns pelo Desafio!</h2>
+          <span class="badge badge-primary badge-lg">+60 XP Adicionados ao Perfil</span>
+          <p class="lead-text" style="margin-top: 1rem;">
+            Seu cérebro foi exposto à pressão real de um imprevisto em inglês sem recorrer ao tradutor mental.
+          </p>
+
+          <div class="alpha-boss-note card" style="margin: 1.5rem 0; text-align: left;">
+            <span class="badge badge-warning">Aviso Honesto</span>
+            <p class="text-sm">
+              Esta foi uma mini-simulação autônoma. No método SPARK completo, a <strong>Boss Raid Oficial</strong> é realizada em áudio direto com o <strong>Professor Gabriel Lima</strong> para validação humana de aprovação de Portal.
+            </p>
+          </div>
+
+          <div class="arena-victory-actions">
+            <a href="${ROUTES.LAUDO}" class="btn btn-primary btn-lg" data-act="NAVIGATE" data-param="${ROUTES.LAUDO}">
+              Ver Meu Laudo de Fluência Final →
+            </a>
+            <a href="${ROUTES.ALPHA}" class="btn btn-secondary" data-act="NAVIGATE" data-param="${ROUTES.ALPHA}">
+              Candidatar-se à Turma Alpha com Gabe →
+            </a>
+          </div>
+        </section>
+      </div>
+    `;
+  }
+
+  // 3. Estado: Aberto para Jogar
+  const event = ARENA_UNEXPECTED_EVENTS[0];
+  const timerHtml = renderTimerBar(60, ARENA_CONFIG.timeLimitSeconds);
+
+  const heroPlayHtml = renderHeroBanner({
+    tag: 'SIMULAÇÃO SOB PRESSÃO · 60 SEGUNDOS',
+    title: ARENA_CONFIG.scenarioTitle,
+    subtitle: ARENA_CONFIG.scenarioContext
+  });
+
+  return `
+    <div class="view view-arena view-arena-active">
+      ${heroPlayHtml}
+
+      <section class="card arena-mission-card">
+        <div class="arena-timer-header">
+          <span class="badge badge-warning">Cronômetro Ativo: 60s</span>
+          <span class="text-xs text-muted">Responda em voz alta</span>
+        </div>
+
+        <div class="timer-container" style="margin: 1rem 0;">
+          ${timerHtml}
+        </div>
+
+        <div class="barista-dialog-box card" style="background: var(--bg-surface-elevated, #1a1a22); margin-bottom: 1rem;">
+          <span class="speaker-tag text-xs text-primary">Barista (Joe's Coffee NYC):</span>
+          <p class="dialog-phrase" style="font-size: 1.15rem; font-weight: 600;">
+            “${esc(ARENA_CONFIG.openingLine)}”
+          </p>
+          <button type="button" class="btn btn-secondary btn-sm" data-act="SAY_TEXT" data-param="${esc(ARENA_CONFIG.openingLine)}">
+            <span aria-hidden="true">🔊</span> Ouvir Barista
+          </button>
+        </div>
+
+        <div class="surprise-event-box card" style="border-left: 4px solid var(--accent-warning, #f59e0b);">
+          <span class="badge badge-warning">Imprevisto Súbito!</span>
+          <h4>${esc(event.title)}</h4>
+          <p class="event-phrase">“${esc(event.baristaVoice)}”</p>
+          <button type="button" class="btn btn-secondary btn-sm" data-act="SAY_TEXT" data-param="${esc(event.baristaVoice)}">
+            <span aria-hidden="true">🔊</span> Ouvir Imprevisto
+          </button>
+
+          <div class="suggested-chunks-box" style="margin-top: 1rem;">
+            <span class="text-xs text-muted">Chunks recomendados para responder:</span>
+            <ul class="clean-list" style="margin-top: 0.5rem;">
+              ${event.suggestedResponses.map((resp) => `
+                <li class="bullet-item" style="font-family: monospace; font-size: 0.9rem;">
+                  ✓ ${esc(resp)}
+                </li>
+              `).join('')}
+            </ul>
+          </div>
+        </div>
+
+        <div class="arena-action-footer text-center" style="margin-top: 1.5rem;">
+          <button type="button" class="btn btn-primary btn-lg" data-act="FINISH_ARENA" data-param='{"score":100}'>
+            Completar Desafio (+60 XP)
+          </button>
+          <p class="text-xs text-muted" style="margin-top: 0.5rem;">
+            Toque ao finalizar a fala em voz alta para registrar sua vitória.
+          </p>
+        </div>
+      </section>
+    </div>
+  `;
+}
+/* ==== END: src/views/arena.js ==== */
+
+/* ==== MOD: src/views/prompts.js ==== */
+// src/views/prompts.js - Vista dos Prompts Prontos para IA
+
+
+
+
+/**
+ * Renderiza a visualização dos Prompts Prontos.
+ * @param {object} state
+ * @returns {string}
+ */
+function renderPromptsView(state) {
+  const userLevel = state?.profile?.level || 'intermediário';
+
+  const heroHtml = renderHeroBanner({
+    tag: 'MATERIAL DE APOIO CONTÍNUO',
+    title: 'Prompts Prontos para IA',
+    subtitle: 'Modelos testados para transformar qualquer chat de IA em um parceiro de conversa implacável e acolhedor.'
+  });
+
+  return `
+    <div class="view view-prompts">
+      ${heroHtml}
+
+      <section class="card prompts-guide-card">
+        <h3>Como usar estes prompts</h3>
+        <p>
+          Abra o aplicativo da sua IA favorita (ChatGPT, Claude ou Gemini) no celular ou navegador.
+          Copie o prompt base e cole no início da conversa. Depois, use os prompts situacionais conforme as missões dos 7 dias.
+        </p>
+      </section>
+
+      <section class="prompts-list" aria-label="Lista de Prompts">
+        ${PROMPTS.map((pr) => {
+          const filled = renderPrompt(pr.template, {
+            nivel: userLevel,
+            cenario: 'um pedido em cafeteria com imprevisto'
+          });
+
+          return `
+            <article class="card prompt-card" id="prompt-${esc(pr.id)}">
+              <header class="prompt-header">
+                <div>
+                  <h4 class="prompt-title">${esc(pr.title)}</h4>
+                  <span class="prompt-subtitle text-muted">${esc(pr.subtitle)}</span>
+                </div>
+                <span class="badge badge-neutral">${esc(pr.whenToUse)}</span>
+              </header>
+
+              <div class="prompt-box">
+                <pre class="prompt-text"><code>${esc(filled)}</code></pre>
+              </div>
+
+              <div class="prompt-footer">
+                <button type="button" class="btn btn-secondary btn-copy" data-act="COPY_TEXT" data-param="${esc(filled)}">
+                  <span class="icon-copy" aria-hidden="true">📋</span> Copiar Prompt
+                </button>
+                <span class="text-sm text-muted">Toque para copiar e colar no seu chat</span>
+              </div>
+            </article>
+          `;
+        }).join('')}
+      </section>
+
+      <section class="card prompts-cta-card">
+        <h3>Pronto para treinar?</h3>
+        <a href="${ROUTES.TRILHA}" class="btn btn-primary" data-act="NAVIGATE" data-param="${ROUTES.TRILHA}">
+          Ir para a Trilha dos 7 Dias →
+        </a>
+      </section>
+    </div>
+  `;
+}
+/* ==== END: src/views/prompts.js ==== */
+
+/* ==== MOD: src/views/laudo.js ==== */
+// src/views/laudo.js - Vista do Laudo de Fluência e Gráfico de Radar
+
+
+
+
+
+
+
+/**
+ * Renderiza a visualização do Laudo de Fluência Oral.
+ * @param {object} state
+ * @returns {string}
+ */
+function renderLaudoView(state) {
+  const d1Notes = state?.days?.[1]?.notes || {};
+  const d7Notes = state?.days?.[7]?.notes || {};
+
+  const scoresD1 = {
+    fluencia: Number(d1Notes.fluencia) || 2,
+    automaticidade: Number(d1Notes.automaticidade) || 2,
+    resiliencia: Number(d1Notes.resiliencia) || 2
+  };
+
+  const hasD7 = Boolean(state?.days?.[7]?.completed);
+  const scoresD7 = hasD7 ? {
+    fluencia: Number(d7Notes.fluencia) || 4,
+    automaticidade: Number(d7Notes.automaticidade) || 4,
+    resiliencia: Number(d7Notes.resiliencia) || 4
+  } : null;
+
+  const radarHtml = renderRadarSvg({ scoresD1, scoresD7, size: 300 });
+
+  const diagScore = state?.test?.score ?? 0;
+  const diagBand = state?.test?.band || bandOf(diagScore);
+  const diagBottleneck = bottleneckOf(diagBand);
+
+  const chunksState = state?.chunks || {};
+  let masteredChunksCount = 0;
+  for (const c of Object.values(chunksState)) {
+    if (c.top === 3 || c.stage === 3) masteredChunksCount++;
+  }
+
+  const dossierText = formatDossier(state);
+
+  const heroHtml = renderHeroBanner({
+    tag: 'RESULTADO & EVOLUÇÃO ORAL',
+    title: 'Laudo de Fluência SPARK',
+    subtitle: 'Análise multidimensional das suas competências de fala com comparação antes e depois.'
+  });
+
+  return `
+    <div class="view view-laudo">
+      ${heroHtml}
+
+      <section class="card radar-chart-card text-center">
+        <h3>Radar de Competências Orais</h3>
+        <p class="text-sm text-muted">
+          ${hasD7 ? 'Comparativo: Linha tracejada (Dia 1) vs Área preenchida (Dia 7)' : 'Ponto de partida medido no Dia 1 (complete o Dia 7 para ver a evolução final)'}
+        </p>
+
+        <div class="radar-container" style="display: flex; justify-content: center; margin: 1.5rem 0;">
+          ${radarHtml}
+        </div>
+
+        <div class="radar-legend" style="display: flex; justify-content: center; gap: 1.5rem; font-size: 0.85rem;">
+          <span style="color: var(--text3, #8a8a99);">◽ Dia 1 (Partida)</span>
+          ${hasD7 ? '<span style="color: var(--accent-primary, #10b981); font-weight: 600;">◾ Dia 7 (Resultado)</span>' : ''}
+        </div>
+      </section>
+
+      <section class="card diagnostic-summary-card">
+        <h3>Diagnóstico & Gargalo Neural</h3>
+        <div class="grid-stats" style="margin-top: 1rem;">
+          <div class="stat-box">
+            <span class="stat-label">Velocidade Oral</span>
+            <span class="stat-val text-primary">${esc(String(diagScore))}/100</span>
+            <span class="stat-sub">Faixa: ${esc(diagBand.toUpperCase())}</span>
+          </div>
+
+          <div class="stat-box">
+            <span class="stat-label">Chunks Dominados</span>
+            <span class="stat-val text-success">${masteredChunksCount} / 10</span>
+            <span class="stat-sub">Caixa 3 (Leitner)</span>
+          </div>
+        </div>
+
+        <div class="bottleneck-box card" style="margin-top: 1rem; background: var(--bg-surface-elevated, #1a1a22);">
+          <strong>Gargalo Identificado:</strong>
+          <p class="text-sm" style="margin-top: 0.25rem;">${esc(diagBottleneck)}</p>
+        </div>
+      </section>
+
+      <section class="card dossier-preview-card">
+        <div class="dossier-header-bar">
+          <h3>Dossiê para o Professor Gabe</h3>
+          <span class="badge badge-neutral text-xs">Transparência Ética</span>
+        </div>
+        <p class="text-sm text-muted">
+          Este é o resumo honesto e verificado dos seus dados que será enviado ao Professor Gabe para avaliação na Turma Alpha:
+        </p>
+
+        <pre class="dossier-text" style="background: var(--bg-surface-elevated, #1a1a22); padding: 1rem; border-radius: 6px; font-family: monospace; font-size: 0.82rem; overflow-x: auto;"><code>${esc(dossierText)}</code></pre>
+      </section>
+
+      <section class="card laudo-actions-card text-center">
+        <h3>Próximo Passo: Mentoria com Gabe</h3>
+        <p class="text-sm text-muted">
+          Garanta uma das 10 vagas fundadoras da Turma Alpha para aprovação oficial do seu próximo Portal.
+        </p>
+        <div class="btn-group-stacked" style="display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1rem; max-width: 400px; margin-left: auto; margin-right: auto;">
+          <a href="${ROUTES.ALPHA}" class="btn btn-primary btn-lg" data-act="NAVIGATE" data-param="${ROUTES.ALPHA}">
+            Candidatar-se à Turma Alpha →
+          </a>
+          <a href="${ROUTES.IMPRIMIR}" class="btn btn-secondary" data-act="NAVIGATE" data-param="${ROUTES.IMPRIMIR}">
+            Imprimir Laudo A4
+          </a>
+          <a href="${ROUTES.TRILHA}" class="btn btn-ghost" data-act="NAVIGATE" data-param="${ROUTES.TRILHA}">
+            Voltar para a Trilha
+          </a>
+        </div>
+      </section>
+    </div>
+  `;
+}
+/* ==== END: src/views/laudo.js ==== */
+
+/* ==== MOD: src/views/alpha.js ==== */
+// src/views/alpha.js - Vista da Turma Alpha, Formulário de Lead e Conversão WhatsApp
+const GABE_PHONE = '5511967239791';
+
+/**
+ * Renderiza a visualização da Turma Alpha e captura ética de Lead.
+ * @param {object} state
+ * @returns {string}
+ */
+function renderAlphaView(state) {
+  const profileName = state?.profile?.name || '';
+  const profilePhone = state?.profile?.phone || '';
+  const dossierText = formatDossier(state);
+  const waUrl = `https://wa.me/${GABE_PHONE}?text=${encodeURIComponent(dossierText)}`;
+
+  const heroHtml = renderHeroBanner({
+    tag: 'TURMA FUNDADORA · 10 VAGAS EXCLUSIVAS',
+    title: 'Acesso Antecipado: SPARK Alpha',
+    subtitle: 'Prática diária com IA combinada com a mentoria humana direta do Professor Gabriel Lima.',
+    badge: 'R$ 197 / mês · Sem fidelidade'
+  });
+
+  return `
+    <div class="view view-alpha">
+      ${heroHtml}
+
+      <section class="card alpha-comparison-card">
+        <h3>Do Playbook à Turma Alpha</h3>
+        <p class="text-sm text-muted">
+          No PlayApp gratuito você exercita <strong>S + P + A + R</strong> de forma autônoma.
+          A Turma Alpha adiciona o pilar <strong>K (Key Human Accountability)</strong>.
+        </p>
+
+        <div class="table-responsive" style="margin-top: 1rem;">
+          <table class="comparison-table" style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+            <thead>
+              <tr style="border-bottom: 2px solid var(--line2, #30303b);">
+                <th style="text-align: left; padding: 0.5rem;">Recurso</th>
+                <th style="text-align: center; padding: 0.5rem;">PlayApp Gratuito</th>
+                <th style="text-align: center; padding: 0.5rem; color: var(--accent-primary, #10b981);">Turma Alpha</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid var(--line1, #24242e);">
+                <td style="padding: 0.5rem;">Treino diário com IA e prompts</td>
+                <td style="text-align: center; padding: 0.5rem;">✓ Sim</td>
+                <td style="text-align: center; padding: 0.5rem; font-weight: bold;">✓ Sim</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--line1, #24242e);">
+                <td style="padding: 0.5rem;">Deck Leitner de 10 Chunks</td>
+                <td style="text-align: center; padding: 0.5rem;">✓ Sim</td>
+                <td style="text-align: center; padding: 0.5rem; font-weight: bold;">✓ Sim (+ expansão)</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--line1, #24242e);">
+                <td style="padding: 0.5rem;">Boss Raids e simulações</td>
+                <td style="text-align: center; padding: 0.5rem;">Apenas mini</td>
+                <td style="text-align: center; padding: 0.5rem; font-weight: bold; color: var(--accent-primary, #10b981);">Oficiais em áudio</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--line1, #24242e);">
+                <td style="padding: 0.5rem;">Feedback humano e aprovação de Portal</td>
+                <td style="text-align: center; padding: 0.5rem;">—</td>
+                <td style="text-align: center; padding: 0.5rem; font-weight: bold; color: var(--accent-primary, #10b981);">Direto com o Gabe</td>
+              </tr>
+              <tr>
+                <td style="padding: 0.5rem;">Comunidade de 10 fundadores</td>
+                <td style="text-align: center; padding: 0.5rem;">—</td>
+                <td style="text-align: center; padding: 0.5rem; font-weight: bold; color: var(--accent-primary, #10b981);">Grupo exclusivo</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="card alpha-form-card">
+        <h3>Candidatura para a Turma Fundadora</h3>
+        <p class="text-sm text-muted">
+          Preencha seus dados para enviar seu dossiê de treino ao Professor Gabe e solicitar uma das 10 vagas:
+        </p>
+
+        <form class="lead-form" data-act="SUBMIT_LEAD_FORM" style="margin-top: 1rem; display: flex; flex-direction: column; gap: 1rem;">
+          <div class="form-group">
+            <label for="lead-name" class="form-label">Seu Nome Completo:</label>
+            <input type="text" id="lead-name" name="name" class="form-input" value="${esc(profileName)}" placeholder="Ex: Gabriel Lima" required data-bind="leadName" />
+          </div>
+
+          <div class="form-group">
+            <label for="lead-phone" class="form-label">Seu WhatsApp (com DDD):</label>
+            <input type="tel" id="lead-phone" name="phone" class="form-input" value="${esc(profilePhone)}" placeholder="Ex: (11) 96723-9791" required data-bind="leadPhone" />
+          </div>
+
+          <div class="form-group">
+            <label for="lead-notes" class="form-label">Por que você quer destravar sua fala agora? (Opcional):</label>
+            <textarea id="lead-notes" name="notes" class="form-textarea" rows="2" placeholder="Ex: Preciso falar em reuniões com clientes internacionais..." data-bind="leadNotes"></textarea>
+          </div>
+
+          <div class="form-group form-consent-group" style="margin-top: 0.5rem;">
+            <label class="checkbox-container" for="lead-lgpd" style="display: flex; gap: 0.75rem; align-items: flex-start; cursor: pointer;">
+              <input type="checkbox" id="lead-lgpd" name="lgpdConsent" required data-bind="leadLgpd" style="margin-top: 0.2rem;" />
+              <span class="text-xs" style="color: var(--text2, #b8b8c6); line-height: 1.4;">
+                ${esc(LGPD_COPY.consentLabel)}
+              </span>
+            </label>
+          </div>
+
+          <div class="privacy-note card" style="background: var(--bg-surface-elevated, #1a1a22); padding: 0.75rem; font-size: 0.78rem; color: var(--text3, #8a8a99);">
+            🔒 ${esc(LGPD_COPY.privacySummary)}
+          </div>
+
+          <div class="form-submit-wrapper" style="margin-top: 0.5rem;">
+            <button type="button" class="btn btn-primary btn-lg btn-block" data-act="SUBMIT_LEAD" style="width: 100%;">
+              Enviar Candidatura para a Turma Alpha
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <section class="card alpha-direct-wa-card text-center">
+        <h4>Prefere falar no WhatsApp agora mesmo?</h4>
+        <p class="text-sm text-muted">
+          Você pode abrir uma conversa direta com o Professor Gabe enviando seu dossiê de treino já formatado:
+        </p>
+
+        <div style="margin-top: 1rem;">
+          <a href="${esc(waUrl)}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-lg" style="background: #25d366; color: #ffffff; border-color: #25d366;">
+            <span aria-hidden="true">💬</span> Abrir WhatsApp do Professor Gabe
+          </a>
+        </div>
+      </section>
+    </div>
+  `;
+}
+/* ==== END: src/views/alpha.js ==== */
+
+/* ==== MOD: src/views/imprimir.js ==== */
+// src/views/imprimir.js - Vista da Folha de Impressão A4 (Laudo e Raid Kit)
+
+
+
+
+
+/**
+ * Renderiza a visualização da Folha de Impressão A4.
+ * @param {object} state
+ * @returns {string}
+ */
+function renderImprimirView(state) {
+  const d1Notes = state?.days?.[1]?.notes || {};
+  const d7Notes = state?.days?.[7]?.notes || {};
+
+  const scoresD1 = {
+    fluencia: Number(d1Notes.fluencia) || 2,
+    automaticidade: Number(d1Notes.automaticidade) || 2,
+    resiliencia: Number(d1Notes.resiliencia) || 2
+  };
+
+  const scoresD7 = state?.days?.[7]?.completed ? {
+    fluencia: Number(d7Notes.fluencia) || 4,
+    automaticidade: Number(d7Notes.automaticidade) || 4,
+    resiliencia: Number(d7Notes.resiliencia) || 4
+  } : null;
+
+  const radarHtml = renderRadarSvg({ scoresD1, scoresD7, size: 240 });
+  const profileName = state?.profile?.name || 'Aluno SPARK';
+  const diagScore = state?.test?.score !== null ? `${state.test.score}/100` : 'N/A';
+
+  return `
+    <div class="view view-imprimir">
+      <!-- Controles de Tela (Ocultos na Impressão) -->
+      <section class="screen-only card print-controls-card text-center" style="margin-bottom: 1.5rem;">
+        <h3>Folha de Impressão A4</h3>
+        <p class="text-sm text-muted">
+          Use esta página para imprimir seu laudo e o Raid Kit dos 10 Chunks ou salvar em formato PDF.
+        </p>
+        <div class="print-actions" style="display: flex; justify-content: center; gap: 1rem; margin-top: 1rem;">
+          <button type="button" class="btn btn-primary" data-act="PRINT">
+            🖨️ Imprimir / Salvar PDF
+          </button>
+          <a href="${ROUTES.LAUDO}" class="btn btn-secondary" data-act="NAVIGATE" data-param="${ROUTES.LAUDO}">
+            ← Voltar ao Laudo
+          </a>
+        </div>
+      </section>
+
+      <!-- Folha A4 Formatada para Impressão -->
+      <article class="print-document">
+        <header class="print-header" style="border-bottom: 2px solid #333; padding-bottom: 8pt; margin-bottom: 12pt;">
+          <h1 style="margin: 0; font-size: 18pt;">SPARK Alpha · Laudo de Fluência & Raid Kit</h1>
+          <p style="margin: 3pt 0 0; font-size: 9pt; color: #555;">
+            Professor Gabriel Lima · Playbook dos 7 Dias para Parar de Traduzir e Começar a Falar
+          </p>
+          <div style="display: flex; justify-content: space-between; margin-top: 6pt; font-size: 9pt;">
+            <span><strong>Aluno:</strong> ${esc(profileName)}</span>
+            <span><strong>Diagnóstico Oral:</strong> ${esc(diagScore)}</span>
+            <span><strong>Data:</strong> ${new Date().toLocaleDateString('pt-BR')}</span>
+          </div>
+        </header>
+
+        <section class="print-radar-section card" style="page-break-inside: avoid; text-align: center;">
+          <h2 style="font-size: 13pt; margin-top: 0;">Radar de Competências Orais</h2>
+          <div class="radar-container">
+            ${radarHtml}
+          </div>
+        </section>
+
+        <section class="print-chunks-section card" style="page-break-inside: avoid; margin-top: 12pt;">
+          <h2 style="font-size: 13pt; margin-top: 0;">Raid Kit: Os 10 Chunks Essenciais</h2>
+          <table class="print-chunks-table">
+            <thead>
+              <tr>
+                <th style="width: 25%;">Chunk</th>
+                <th style="width: 30%;">Tradução / Função</th>
+                <th style="width: 45%;">Exemplo de Uso em Fala</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${CHUNKS.map((c) => `
+                <tr>
+                  <td class="phrase-cell">${esc(c.phrase)}</td>
+                  <td>${esc(c.translation)}</td>
+                  <td style="font-family: monospace;">"${esc(c.example)}"</td>
+                </tr>
+              `).join('')}
+            </tbody>
+          </table>
+        </section>
+
+        <section class="print-prompts-section card" style="page-break-inside: avoid; margin-top: 12pt;">
+          <h2 style="font-size: 13pt; margin-top: 0;">Prompts de Treino Rápido</h2>
+          <div style="font-size: 9pt;">
+            ${PROMPTS.map((p) => `
+              <div style="margin-bottom: 6pt;">
+                <strong>${esc(p.title)}:</strong>
+                <span style="font-family: monospace; color: #333;">${esc(p.template)}</span>
+              </div>
+            `).join('')}
+          </div>
+        </section>
+
+        <footer class="print-footer">
+          <p>
+            SPARK Alpha © Gabriel Lima. Contato WhatsApp: +55 (11) 96723-9791.
+          </p>
+        </footer>
+      </article>
+    </div>
+  `;
+}
+/* ==== END: src/views/imprimir.js ==== */
+
+/* ==== MOD: src/views/conta.js ==== */
+// src/views/conta.js - Vista da Conta, Progresso e Gerenciamento de Estado
+
+
+
+
+
+/**
+ * Renderiza a visualização da Conta do Aluno.
+ * @param {object} state
+ * @returns {string}
+ */
+function renderContaView(state) {
+  const profile = state?.profile || {};
+  const xp = state?.xp || { total: 0, rank: 'faísca' };
+  const streak = state?.streak || { count: 0, best: 0, shieldAvailable: true };
+  const unlockedAchIds = new Set(state?.achievements || []);
+
+  let completedDaysCount = 0;
+  for (let i = 1; i <= 7; i++) {
+    if (state?.days?.[i]?.completed) {
+      completedDaysCount++;
+    }
+  }
+
+  const diagScore = state?.test?.completed && state?.test?.score !== null
+    ? `${state.test.score}/100`
+    : 'Pendente';
+
+  const heroHtml = renderHeroBanner({
+    tag: 'PERFIL & GERENCIAMENTO DE DADOS',
+    title: 'Sua Jornada SPARK',
+    subtitle: 'Acompanhe seus dados de prática, conquistas desbloqueadas e controle total do seu progresso.'
+  });
+
+  return `
+    <div class="view view-conta">
+      ${heroHtml}
+
+      <section class="card profile-stats-card">
+        <h3>Estatísticas Atuais</h3>
+        <div class="grid-stats">
+          <div class="stat-box">
+            <span class="stat-label">Total de XP</span>
+            <span class="stat-val text-primary">${esc(String(xp.total))} XP</span>
+            <span class="stat-sub">Rank: ${esc(xp.rank.toUpperCase())}</span>
+          </div>
+
+          <div class="stat-box">
+            <span class="stat-label">Ofensiva Atual</span>
+            <span class="stat-val text-warning">${esc(String(streak.count))} dias</span>
+            <span class="stat-sub">Recorde: ${esc(String(streak.best))} dias</span>
+          </div>
+
+          <div class="stat-box">
+            <span class="stat-label">Dias Concluídos</span>
+            <span class="stat-val">${completedDaysCount} / 7</span>
+            <span class="stat-sub">Missões fechadas</span>
+          </div>
+
+          <div class="stat-box">
+            <span class="stat-label">Diagnóstico</span>
+            <span class="stat-val">${esc(diagScore)}</span>
+            <span class="stat-sub">Velocidade oral</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="card achievements-card">
+        <h3>Suas Conquistas</h3>
+        <div class="achievements-grid">
+          ${ACHIEVEMENTS.map((ach) => {
+            const isUnlocked = unlockedAchIds.has(ach.id);
+            return `
+              <div class="ach-badge-card ${isUnlocked ? 'is-unlocked' : 'is-locked'}">
+                <span class="ach-icon" aria-hidden="true">${isUnlocked ? '🏆' : '🔒'}</span>
+                <div class="ach-info">
+                  <strong>${esc(ach.title)}</strong>
+                  <p class="text-sm text-muted">${esc(ach.desc)}</p>
+                  <span class="ach-points">+${ach.points} XP</span>
+                </div>
+              </div>
+            `;
+          }).join('')}
+        </div>
+      </section>
+
+      <section class="card data-privacy-card">
+        <h3>Privacidade & Armazenamento Local</h3>
+        <p>
+          O PlayApp SPARK funciona 100% no seu navegador através do armazenamento local (localStorage).
+          Nenhum dado pessoal ou áudio de prática é transmitido a terceiros sem a sua autorização explícita.
+        </p>
+
+        <div class="data-actions-group">
+          <button type="button" class="btn btn-secondary" data-act="EXPORT_STATE">
+            Exportar Backup dos Dados (JSON)
+          </button>
+
+          <button type="button" class="btn btn-danger-outline" data-act="RESET_STATE">
+            Reiniciar PlayApp do Zero
+          </button>
+        </div>
+        <p class="text-muted text-xs">
+          Atenção: Ao reiniciar, todo o progresso dos 7 dias e XP acumulados serão restaurados ao padrão inicial.
+        </p>
+      </section>
+
+      <section class="card alpha-shortcut-card">
+        <h3>Quer a validação direta do Professor Gabe?</h3>
+        <p>A Turma Alpha conta com apenas 10 vagas fundadoras e inclui mentoria humana de perto.</p>
+        <a href="${ROUTES.ALPHA}" class="btn btn-primary" data-act="NAVIGATE" data-param="${ROUTES.ALPHA}">
+          Conhecer a Turma Alpha →
+        </a>
+      </section>
+    </div>
+  `;
+}
+/* ==== END: src/views/conta.js ==== */
+
+/* ==== MOD: src/router/routes.js ==== */
+// src/router/routes.js - Sistema canônico de rotas e hashing do PlayApp SPARK
+
+/**
+ * Títulos canônicos de cada rota para acessibilidade e tag <title>.
+ */
+const ROUTE_TITLES = Object.freeze({
+  [ROUTES.CAPA]: 'PlayApp SPARK · Início',
+  [ROUTES.MAPA]: 'PlayApp SPARK · Mapa do Método',
+  [ROUTES.METODO]: 'PlayApp SPARK · O Método SPARK',
+  [ROUTES.DIAGNOSTICO]: 'PlayApp SPARK · Diagnóstico Cirúrgico',
+  [ROUTES.SETUP]: 'PlayApp SPARK · Setup Inicial',
+  [ROUTES.TRILHA]: 'PlayApp SPARK · Trilha dos 7 Dias',
+  [ROUTES.DIA]: 'PlayApp SPARK · Dia {num}',
+  [ROUTES.CHUNKS]: 'PlayApp SPARK · Raid Kit (Chunks)',
+  [ROUTES.ARENA]: 'PlayApp SPARK · Arena Boss Raid',
+  [ROUTES.PROMPTS]: 'PlayApp SPARK · Prompts de Treino',
+  [ROUTES.LAUDO]: 'PlayApp SPARK · Laudo de Fluência',
+  [ROUTES.ALPHA]: 'PlayApp SPARK · Turma Alpha',
+  [ROUTES.IMPRIMIR]: 'PlayApp SPARK · Laudo para Impressão',
+  [ROUTES.CONTA]: 'PlayApp SPARK · Ajustes da Conta'
+});
+
+/**
+ * Normaliza uma string de hash para o formato canônico #/caminho.
+ * @param {string} rawHash
+ * @returns {string}
+ */
+function normalizeHash(rawHash) {
+  if (!rawHash || typeof rawHash !== 'string') return '#/';
+  let clean = rawHash.trim();
+  if (!clean || clean === '#') return '#/';
+  if (!clean.startsWith('#')) clean = '#' + clean;
+  // Transforma #dia/1 em #/dia/1
+  if (clean.length > 1 && clean[1] !== '/') {
+    clean = '#/' + clean.slice(1);
+  }
+  return clean;
+}
+
+/**
+ * Analisa e extrai parâmetros e query string de um hash de URL.
+ * @param {string} rawHash
+ * @returns {{
+ *   pattern: string,
+ *   routeKey: string,
+ *   path: string,
+ *   params: Record<string, any>,
+ *   query: Record<string, string>,
+ *   isExplore: boolean,
+ *   title: string
+ * }}
+ */
+function parseRoute(rawHash) {
+  const normalized = normalizeHash(rawHash);
+  const [pathPart, queryPart] = normalized.split('?');
+
+  const query = {};
+  if (queryPart) {
+    const pairs = queryPart.split('&');
+    for (const pair of pairs) {
+      if (!pair) continue;
+      const [k, v] = pair.split('=');
+      query[decodeURIComponent(k)] = v ? decodeURIComponent(v) : '';
+    }
+  }
+
+  const isExplore = query.explore === '1';
+
+  // Casamento de rota dinâmica: #/dia/:num
+  const diaMatch = /^#\/dia\/([1-7])$/.exec(pathPart);
+  if (diaMatch) {
+    const num = parseInt(diaMatch[1], 10);
+    const title = ROUTE_TITLES[ROUTES.DIA].replace('{num}', String(num));
+    return {
+      pattern: ROUTES.DIA,
+      routeKey: 'DIA',
+      path: pathPart,
+      params: { num },
+      query,
+      isExplore,
+      title
+    };
+  }
+
+  // Casamento de rotas estáticas
+  for (const [key, pattern] of Object.entries(ROUTES)) {
+    if (pattern === pathPart) {
+      return {
+        pattern,
+        routeKey: key,
+        path: pathPart,
+        params: {},
+        query,
+        isExplore,
+        title: ROUTE_TITLES[pattern] || 'PlayApp SPARK'
+      };
+    }
+  }
+
+  // Rota não reconhecida -> Fallback para CAPA (#/)
+  return {
+    pattern: ROUTES.CAPA,
+    routeKey: 'CAPA',
+    path: '#/',
+    params: {},
+    query,
+    isExplore,
+    title: ROUTE_TITLES[ROUTES.CAPA]
+  };
+}
+
+/**
+ * Constrói uma URL hash a partir do padrão ou chave e parâmetros.
+ * @param {string} patternOrKey
+ * @param {Record<string, any>} [params={}]
+ * @param {Record<string, string>} [query={}]
+ * @returns {string}
+ */
+function buildRoute(patternOrKey, params = {}, query = {}) {
+  let pattern = ROUTES[patternOrKey] || patternOrKey;
+  if (pattern === ROUTES.DIA && params.num) {
+    pattern = `#/dia/${params.num}`;
+  }
+
+  const queryKeys = Object.keys(query);
+  if (queryKeys.length > 0) {
+    const qStr = queryKeys
+      .map(k => `${encodeURIComponent(k)}=${encodeURIComponent(query[k])}`)
+      .join('&');
+    return `${pattern}?${qStr}`;
+  }
+
+  return pattern;
+}
+/* ==== END: src/router/routes.js ==== */
+
+/* ==== MOD: src/router/guards.js ==== */
+// src/router/guards.js - Guardas de acesso, destravamento e modo exploração
+
+/**
+ * 24 horas em milissegundos para a janela de edição pós-conclusão.
+ */
+const EDIT_WINDOW_MS = 24 * 60 * 60 * 1000;
+
+/**
+ * Verifica se um dia específico da trilha pode ser acessado pelo aluno.
+ * Regra: Dia 1 sempre aberto. Dias 2..7 requerem que o dia anterior esteja concluído.
+ * Modo exploração (?explore=1) destrava todos os dias.
+ * @param {object} state
+ * @param {number|string} dayNum
+ * @param {boolean} [isExplore=false]
+ * @returns {boolean}
+ */
+function canAccessDay(state, dayNum, isExplore = false) {
+  const num = Number(dayNum);
+  if (num < 1 || num > 7) return false;
+  if (isExplore) return true;
+  if (num === 1) return true;
+
+  const prevDay = state?.days?.[num - 1];
+  return Boolean(prevDay && prevDay.completed);
+}
+
+/**
+ * Verifica se a Arena Boss Raid pode ser acessada.
+ * Regra: Destravada se o Dia 6 foi concluído (Dia 7 pronto para raid) ou modo exploração ativo.
+ * @param {object} state
+ * @param {boolean} [isExplore=false]
+ * @returns {boolean}
+ */
+function canAccessArena(state, isExplore = false) {
+  if (isExplore) return true;
+  const day6 = state?.days?.[6];
+  return Boolean(day6 && day6.completed);
+}
+
+/**
+ * Verifica se um dia já concluído ainda está na janela de 24h para edição.
+ * Se já passou de 24h da conclusão, o dia permanece apenas em modo leitura.
+ * @param {object} state
+ * @param {number|string} dayNum
+ * @param {number} [now=Date.now()]
+ * @returns {boolean}
+ */
+function isDayEditable(state, dayNum, now = Date.now()) {
+  const num = Number(dayNum);
+  const dayData = state?.days?.[num];
+  if (!dayData || !dayData.completed) return true;
+  if (!dayData.completedAt) return true;
+
+  const completedTime = typeof dayData.completedAt === 'string'
+    ? new Date(dayData.completedAt).getTime()
+    : Number(dayData.completedAt);
+
+  if (Number.isNaN(completedTime)) return true;
+
+  return (now - completedTime) <= EDIT_WINDOW_MS;
+}
+
+/**
+ * Avalia se o estado atual permite navegação para a rota requisitada.
+ * Se negada, retorna rota de redirecionamento e justificativa.
+ * @param {{
+ *   pattern: string,
+ *   params: Record<string, any>,
+ *   isExplore: boolean
+ * }} parsedRoute
+ * @param {object} state
+ * @param {number} [now=Date.now()]
+ * @returns {{ allowed: boolean, redirect?: string, reason?: string }}
+ */
+function guardRoute(parsedRoute, state, now = Date.now()) {
+  if (!parsedRoute) return { allowed: true };
+
+  // Guarda para rota do Dia
+  if (parsedRoute.pattern === ROUTES.DIA) {
+    const dayNum = parsedRoute.params?.num;
+    if (!canAccessDay(state, dayNum, parsedRoute.isExplore)) {
+      return {
+        allowed: false,
+        redirect: ROUTES.TRILHA,
+        reason: `O Dia ${dayNum} está bloqueado até que o Dia ${dayNum - 1} seja concluído.`
+      };
+    }
+  }
+
+  // Guarda para a Arena Boss Raid
+  if (parsedRoute.pattern === ROUTES.ARENA) {
+    if (!canAccessArena(state, parsedRoute.isExplore)) {
+      return {
+        allowed: false,
+        redirect: ROUTES.TRILHA,
+        reason: 'A Arena Boss Raid está bloqueada. Complete os Dias 1 a 6 para destravar o boss.'
+      };
+    }
+  }
+
+  return { allowed: true };
+}
+/* ==== END: src/router/guards.js ==== */
+
+/* ==== MOD: src/router/boot.js ==== */
+// src/router/boot.js - Inicializador da Aplicação no Navegador, Roteamento e Delegação de Eventos
+
+
+
+
+
+
+
+
+
+
+
+
+// Views
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+ * Estado em memória do cliente ativo
+ */
+let appState = null;
+
+/**
+ * Renderiza a visualização correspondente ao padrão de rota.
+ * @param {object} parsedRoute
+ * @param {object} state
+ * @returns {string}
+ */
+function resolveViewHtml(parsedRoute, state) {
+  switch (parsedRoute.pattern) {
+    case ROUTES.CAPA:
+      return renderCapaView(state);
+    case ROUTES.MAPA:
+      return renderMapaView(state);
+    case ROUTES.METODO:
+      return renderMetodoView(state);
+    case ROUTES.DIAGNOSTICO:
+      return renderDiagnosticoView(state);
+    case ROUTES.SETUP:
+      return renderSetupView(state);
+    case ROUTES.TRILHA:
+      return renderTrilhaView(state);
+    case ROUTES.DIA:
+      return renderDiaView(state, { num: parsedRoute.params?.num });
+    case ROUTES.CHUNKS:
+      return renderChunksView(state);
+    case ROUTES.ARENA:
+      return renderArenaView(state);
+    case ROUTES.PROMPTS:
+      return renderPromptsView(state);
+    case ROUTES.LAUDO:
+      return renderLaudoView(state);
+    case ROUTES.ALPHA:
+      return renderAlphaView(state);
+    case ROUTES.IMPRIMIR:
+      return renderImprimirView(state);
+    case ROUTES.CONTA:
+      return renderContaView(state);
+    default:
+      return renderCapaView(state);
+  }
+}
+
+/**
+ * Renderiza a barra inferior canônica com 5 destinos.
+ * @param {string} currentPattern
+ * @returns {string}
+ */
+function renderBottomNav(currentPattern) {
+  const items = [
+    { pattern: ROUTES.TRILHA, label: 'Trilha', icon: '🗺️' },
+    { pattern: ROUTES.CHUNKS, label: 'Chunks', icon: '🃏' },
+    { pattern: ROUTES.PROMPTS, label: 'Prompts', icon: '💬' },
+    { pattern: ROUTES.LAUDO, label: 'Laudo', icon: '📊' },
+    { pattern: ROUTES.CONTA, label: 'Conta', icon: '⚙️' }
+  ];
+
+  return items.map((it) => {
+    const isActive = it.pattern === currentPattern;
+    const activeClass = isActive ? 'on' : '';
+    const ariaAttr = isActive ? 'aria-current="page"' : '';
+    return `
+      <a href="${esc(it.pattern)}" class="${activeClass}" ${ariaAttr} data-act="NAVIGATE" data-param="${esc(it.pattern)}">
+        <span class="nav-icon" aria-hidden="true">${it.icon}</span>
+        <span>${esc(it.label)}</span>
+      </a>
+    `;
+  }).join('');
+}
+
+/**
+ * Renderiza o cabeçalho superior do PlayApp com streak e XP.
+ * @param {object} state
+ * @returns {string}
+ */
+function renderSiteHeader(state) {
+  const streakCount = state?.streak?.count || 0;
+  const xpTotal = state?.xp?.total || 0;
+  const rank = (state?.xp?.rank || 'faísca').toUpperCase();
+
+  return `
+    <div class="header-inner" style="display: flex; justify-content: space-between; align-items: center; max-width: 720px; margin: 0 auto; padding: 0.5rem 1rem;">
+      <a href="${ROUTES.CAPA}" class="brand-link" style="text-decoration: none; font-weight: 800; font-size: 1rem; color: var(--text, #f0f0f5);">
+        ⚡ SPARK
+      </a>
+      <div class="header-stats" style="display: flex; gap: 0.75rem; align-items: center; font-family: monospace; font-size: 0.85rem;">
+        <span class="badge badge-warning" title="Ofensiva diária">🔥 ${streakCount}d</span>
+        <span class="badge badge-primary" title="XP Acumulado">⚡ ${xpTotal} XP</span>
+      </div>
+    </div>
+  `;
+}
+
+/**
+ * Executa efeitos impuros gerados pelo redutor.
+ * @param {Array<{ type: string, payload?: any }>} fxList
+ */
+function executeEffects(fxList = []) {
+  if (!Array.isArray(fxList) || fxList.length === 0) return;
+
+  for (const eff of fxList) {
+    switch (eff.type) {
+      case 'SAY_TEXT':
+        sayText(eff.payload);
+        break;
+      case 'PLAY_SFX':
+        playSfx(eff.payload);
+        break;
+      case 'TRIGGER_CELEBRATION':
+        playSfx('success');
+        showToast('Parabéns! Conquista registrada.');
+        break;
+      case 'NAVIGATE':
+        if (typeof window !== 'undefined' && eff.payload) {
+          window.location.hash = eff.payload;
+        }
+        break;
+      case 'DISPATCH_OUTBOX':
+        if (typeof window !== 'undefined' && window.navigator?.onLine) {
+          processOutbox(appState).then((res) => {
+            if (res.sentCount > 0) {
+              appState = res.state;
+              saveState(appState);
+            }
+          });
+        }
+        break;
+      default:
+        break;
+    }
+  }
+}
+
+/**
+ * Exibe notificação temporária toast.
+ * @param {string} msg
+ */
+function showToast(msg) {
+  if (typeof document === 'undefined') return;
+  const t = document.getElementById('toast');
+  if (!t) return;
+  t.textContent = msg;
+  t.removeAttribute('hidden');
+  setTimeout(() => {
+    t.setAttribute('hidden', '');
+  }, 2500);
+}
+
+/**
+ * Ponto de entrada do ciclo de roteamento e renderização no navegador.
+ */
+function renderCurrentRoute() {
+  if (typeof window === 'undefined' || typeof document === 'undefined') return;
+
+  if (!appState) {
+    appState = loadState();
+  }
+
+  const parsed = parseRoute(window.location.hash);
+  const guard = guardRoute(parsed, appState);
+
+  if (!guard.allowed && guard.redirect) {
+    window.location.hash = guard.redirect;
+    if (guard.reason) {
+      showToast(guard.reason);
+    }
+    return;
+  }
+
+  // Atualiza título do documento
+  document.title = parsed.title;
+
+  const appEl = document.getElementById('app');
+  const navEl = document.getElementById('nav');
+  const headerEl = document.getElementById('header');
+
+  const isPrint = parsed.pattern === ROUTES.IMPRIMIR;
+
+  // Renderiza a view principal no container #app com morphing sem perda de foco
+  if (appEl) {
+    const viewHtml = resolveViewHtml(parsed, appState);
+    morph(appEl, viewHtml);
+  }
+
+  // Renderiza ou oculta a barra inferior
+  if (navEl) {
+    if (isPrint) {
+      navEl.setAttribute('hidden', '');
+    } else {
+      navEl.removeAttribute('hidden');
+      morph(navEl, renderBottomNav(parsed.pattern));
+    }
+  }
+
+  // Renderiza ou oculta o cabeçalho
+  if (headerEl) {
+    if (isPrint) {
+      headerEl.setAttribute('hidden', '');
+    } else {
+      headerEl.removeAttribute('hidden');
+      morph(headerEl, renderSiteHeader(appState));
+    }
+  }
+
+  // Rola suavemente para o topo na troca de tela
+  window.scrollTo(0, 0);
+}
+
+/**
+ * Despachante global de ações do PlayApp.
+ * @param {{ type: string, payload?: any }} action
+ */
+function dispatch(action) {
+  if (!action || !action.type) return;
+
+  const nowMs = Date.now();
+  const nowIso = new Date(nowMs).toISOString();
+  const studyDayStr = studyDay(nowMs);
+
+  const env = { nowMs, nowIso, studyDay: studyDayStr };
+  const res = update(appState, action, env);
+
+  appState = res.state;
+  saveState(appState);
+  executeEffects(res.fx);
+
+  // Re-renderiza a tela atual
+  renderCurrentRoute();
+}
+
+/**
+ * Inicializador da aplicação no ambiente do navegador.
+ */
+function boot() {
+  if (typeof window === 'undefined' || typeof document === 'undefined') return;
+
+  appState = loadState();
+
+  // Escuta mudanças de hash de URL
+  window.addEventListener('hashchange', renderCurrentRoute);
+
+  // Escuta retorno de conexão online para descarregar outbox
+  window.addEventListener('online', () => {
+    processOutbox(appState).then((res) => {
+      if (res.sentCount > 0) {
+        appState = res.state;
+        saveState(appState);
+        renderCurrentRoute();
+      }
+    });
+  });
+
+  // Delegação global de cliques para data-act
+  document.body.addEventListener('click', (e) => {
+    const target = e.target.closest('[data-act]');
+    if (!target) return;
+
+    const act = target.getAttribute('data-act');
+    const paramRaw = target.getAttribute('data-param');
+    let param = paramRaw;
+
+    if (paramRaw && (paramRaw.startsWith('{') || paramRaw.startsWith('['))) {
+      try {
+        param = JSON.parse(paramRaw);
+      } catch {
+        // Mantém como string se não for JSON válido
+      }
+    }
+
+    // Ações especiais de UI
+    if (act === 'NAVIGATE' && typeof param === 'string') {
+      window.location.hash = param;
+      return;
+    }
+
+    if (act === 'PRINT') {
+      window.print();
+      return;
+    }
+
+    if (act === 'COPY_TEXT' || act === 'COPY_PROMPT') {
+      const textToCopy = typeof param === 'string' ? param : (param?.text || '');
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(textToCopy).then(() => {
+          showToast('Prompt copiado para a área de transferência!');
+        });
+      }
+      if (act === 'COPY_PROMPT') {
+        dispatch({ type: 'COPY_PROMPT', payload: param });
+      }
+      return;
+    }
+
+    if (act === 'EXPORT_STATE') {
+      const json = exportStateJson(appState);
+      const blob = new Blob([json], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'spark-alpha-backup.json';
+      a.click();
+      URL.revokeObjectURL(url);
+      showToast('Backup exportado com sucesso!');
+      return;
+    }
+
+    if (act === 'RESET_STATE') {
+      if (window.confirm('Tem certeza de que deseja reiniciar o PlayApp? Todo o progresso e XP serão apagados.')) {
+        appState = resetStoredState();
+        renderCurrentRoute();
+        showToast('PlayApp reiniciado ao estado inicial.');
+      }
+      return;
+    }
+
+    if (act === 'SUBMIT_LEAD') {
+      const form = document.querySelector('.lead-form');
+      if (form) {
+        const nameInput = form.querySelector('[name="name"]');
+        const phoneInput = form.querySelector('[name="phone"]');
+        const lgpdInput = form.querySelector('[name="lgpdConsent"]');
+
+        const formValues = {
+          name: nameInput ? nameInput.value : '',
+          whatsapp: phoneInput ? phoneInput.value : '',
+          lgpdConsent: lgpdInput ? lgpdInput.checked : false,
+          submittedAt: new Date().toISOString()
+        };
+
+        const validated = buildLeadPayload(appState, formValues);
+        if (!validated.valid) {
+          showToast(`Atenção: ${validated.errors[0]}`);
+          return;
+        }
+
+        dispatch({ type: 'SUBMIT_LEAD', payload: validated.payload });
+        showToast('Candidatura enviada! Entraremos em contato via WhatsApp.');
+        return;
+      }
+    }
+
+    // Despacho padrão para o redutor
+    dispatch({ type: act, payload: param });
+  });
+
+  // Render inicial
+  renderCurrentRoute();
+}
+
+// Disparo automático quando carregado em navegador
+if (typeof window !== 'undefined' && typeof document !== 'undefined') {
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', boot);
+  } else {
+    boot();
+  }
+}
+/* ==== END: src/router/boot.js ==== */
 
 
 })();

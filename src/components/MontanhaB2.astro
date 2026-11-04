@@ -1,6 +1,6 @@
 ---
-// src/components/MontanhaB2.astro — Estagios da Fala com SVG Mountain Visual
-// Montanha SVG animada com 6 zonas interativas CEFR + tabs de conteudo
+// src/components/MontanhaB2.astro — Estágios da Fala com SVG Mountain Visual
+// Montanha SVG animada com 6 zonas interativas CEFR + tabs de conteúdo
 
 const stages = [
   {
@@ -8,72 +8,72 @@ const stages = [
     level: 'A1',
     name: 'Descongelamento Inicial',
     hours: '90 a 100 horas guiadas (Cambridge)',
-    trapBadge: 'Traducao Palavra por Palavra',
-    trap: 'Tenta traduzir palavra por palavra do portugues e paralisa por medo de errar a regra gramatical.',
-    solutionBadge: 'Chunks de Sobrevivencia',
-    solution: 'Voce treina blocos de fala prontos, com frases que saem sem precisar conjuga-las. Producao real desde o primeiro dia com a Lexi Alpha.',
-    outcome: 'Consegue se apresentar, pedir informacoes basicas e entender instrucoes simples sem panico.'
+    trapBadge: 'Tradução Palavra por Palavra',
+    trap: 'Tenta traduzir palavra por palavra do português e paralisa por medo de errar a regra gramatical.',
+    solutionBadge: 'Chunks de Sobrevivência',
+    solution: 'Você treina blocos de fala prontos, com frases que saem sem precisar conjugá-las. Produção real desde o primeiro dia com a Lexi Alpha.',
+    outcome: 'Consegue se apresentar, pedir informações básicas e entender instruções simples sem pânico.'
   },
   {
     id: 'stage-a2',
     level: 'A2',
     name: 'Autonomia Cotidiana',
     hours: '180 a 200 horas guiadas (Cambridge)',
-    trapBadge: 'Pausas Longas e Hesitacao',
-    trap: 'Vocabulario solto sem conexao estrutural. Pausas longas e desconfortaveis entre as palavras.',
-    solutionBadge: 'Micro-dose Diaria 15min',
-    solution: '15 minutos por dia no PlayApp SPARK Alpha. Situacoes de rotina reais, levemente acima do seu nivel atual. Voce expande sem sentir que esta estudando.',
-    outcome: 'Descreve tarefas do trabalho, fala sobre acontecimentos do dia e entende o contexto de audios comuns.'
+    trapBadge: 'Pausas Longas e Hesitação',
+    trap: 'Vocabulário solto sem conexão estrutural. Pausas longas e desconfortáveis entre as palavras.',
+    solutionBadge: 'Microdose Diária 15min',
+    solution: '15 minutos por dia no PlayApp SPARK Alpha. Situações de rotina reais, levemente acima do seu nível atual. Você expande sem sentir que está estudando.',
+    outcome: 'Descreve tarefas do trabalho, fala sobre acontecimentos do dia e entende o contexto de áudios comuns.'
   },
   {
     id: 'stage-b1',
     level: 'B1',
-    name: 'Conversacao Fluida',
+    name: 'Conversação Fluida',
     hours: '350 a 400 horas guiadas (Cambridge)',
-    trapBadge: 'Plato Intermediario',
-    trap: 'O famoso plato intermediario: voce entende quase tudo que ouve e le, mas na hora de falar sob pressao a mente da um branco.',
-    solutionBadge: 'Sessoes 1 a 1 de Improviso',
-    solution: 'Encontros individuais 1 a 1 com Gabriel Lima. Trabalhamos diretamente nas suas travas emocionais de improviso, forcando raciocinio direto em ingles com feedback natural em camadas.',
-    outcome: 'Participa de reunioes sem roteiro previo, expressa opinioes pessoais e lida com imprevistos sem recorrer ao portugues.'
+    trapBadge: 'Platô Intermediário',
+    trap: 'O famoso platô intermediário: você entende quase tudo que ouve e lê, mas na hora de falar sob pressão a mente dá um branco.',
+    solutionBadge: 'Sessões 1 a 1 de Improviso',
+    solution: 'Encontros individuais 1 a 1 com Gabriel Lima. Trabalhamos diretamente nas suas travas emocionais de improviso, forçando raciocínio direto em inglês com feedback natural em camadas.',
+    outcome: 'Participa de reuniões sem roteiro prévio, expressa opiniões pessoais e lida com imprevistos sem recorrer ao português.'
   },
   {
     id: 'stage-b2',
     level: 'B2',
-    name: 'Dominio Executivo',
+    name: 'Domínio Executivo',
     hours: '500 a 600 horas guiadas (Cambridge)',
-    trapBadge: 'Jargoes e Negociacoes',
-    trap: 'Dificuldade em lidar com jargoes profissionais, argumentos tecnicos complexos ou conversas rapidas com multiplos nativos.',
+    trapBadge: 'Jargões e Negociações',
+    trap: 'Dificuldade em lidar com jargões profissionais, argumentos técnicos complexos ou conversas rápidas com múltiplos nativos.',
     solutionBadge: 'Tutor Calibrado por Carreira',
-    solution: 'O tutor Lexi Alpha calibrado para a sua area. Simulacoes de negociacoes, entrevistas e situacoes reais do seu trabalho, toda semana.',
-    outcome: 'Fluencia profissional solida, capacidade de persuasao, lideranca de discussoes e compreensao de nuances culturais.'
+    solution: 'O tutor Lexi Alpha calibrado para a sua área. Simulações de negociações, entrevistas e situações reais do seu trabalho, toda semana.',
+    outcome: 'Fluência profissional sólida, capacidade de persuasão, liderança de discussões e compreensão de nuances culturais.'
   },
   {
     id: 'stage-c1',
     level: 'C1',
     name: 'Autonomia Plena',
     hours: '700 a 800 horas guiadas (Cambridge)',
-    trapBadge: 'Nuances e Metaforas',
-    trap: 'Falta de naturalidade em expressoes idiomaticas sutis e metaforas avancadas da lingua.',
+    trapBadge: 'Nuances e Metáforas',
+    trap: 'Falta de naturalidade em expressões idiomáticas sutis e metáforas avançadas da língua.',
     solutionBadge: 'Pensamento Instintivo',
-    solution: 'Consolidacao do pensamento direto em ingles. A lingua passa a ser um segundo canal natural de raciocinio, com esforco cognitivo proximo de zero.',
-    outcome: 'Comunicacao precisa, flexivel e totalmente espontanea em qualquer esfera profissional ou social.'
+    solution: 'Consolidação do pensamento direto em inglês. A língua passa a ser um segundo canal natural de raciocínio, com esforço cognitivo próximo de zero.',
+    outcome: 'Comunicação precisa, flexível e totalmente espontânea em qualquer esfera profissional ou social.'
   },
   {
     id: 'stage-c2',
     level: 'C2',
     name: 'Maestria Nativa Plena',
     hours: '1.000 a 1.200 horas guiadas (Cambridge)',
-    trapBadge: 'Estagnacao Avancada',
-    trap: 'Sensacao de estagnacao apos anos de estudo, com dificuldade em nuances diplomaticas e oratoria de alto impacto.',
-    solutionBadge: 'Dominio e Oratoria',
-    solution: 'Treino avancado de debates, oratoria e lideranca global. O ingles deixa de ser algo que voce usa e vira algo que voce habita.',
-    outcome: 'Comunicacao indistinguivel de um falante nativo culto, com dominio absoluto de tom, sutileza e persuasao.'
+    trapBadge: 'Estagnação Avançada',
+    trap: 'Sensação de estagnação após anos de estudo, com dificuldade em nuances diplomáticas e oratória de alto impacto.',
+    solutionBadge: 'Domínio e Oratória',
+    solution: 'Treino avançado de debates, oratória e liderança global. O inglês deixa de ser algo que você usa e vira algo que você habita.',
+    outcome: 'Comunicação indistinguível de um falante nativo culto, com domínio absoluto de tom, sutileza e persuasão.'
   }
 ];
 ---
 
 <section id="estagios" class="py-32 px-4 sm:px-8 relative border-t border-[#1a1a1a] overflow-hidden">
-  <!-- Glow atmosferico -->
+  <!-- Glow atmosférico -->
   <div class="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[350px] bg-[#3ecf8e]/5 rounded-full blur-[180px] pointer-events-none"></div>
 
   <div class="max-w-6xl mx-auto relative z-10">
@@ -85,17 +85,17 @@ const stages = [
       </div>
       <h2 class="font-sans font-extrabold text-4xl sm:text-5xl md:text-6xl tracking-tight leading-[1.05] mt-2 text-[#fafafa]">
         A jornada da fala em 6 etapas.<br />
-        <span class="text-gradient-emerald">De onde voce esta ao C2 nativo.</span>
+        <span class="text-gradient-emerald">De onde você está ao C2 nativo.</span>
       </h2>
       <p class="text-base sm:text-lg text-[#898989] leading-relaxed mt-5">
-        A escala internacional de proficiencia (CEFR) cruzada com a media de horas de estudo guiado de Cambridge English, e a forma exata como aceleramos cada etapa.
+        A escala internacional de proficiência (CEFR) cruzada com a média de horas de estudo guiado de Cambridge English, e a forma exata como aceleramos cada etapa.
       </p>
     </div>
 
     <!-- Layout: Mountain + Tabs -->
     <div class="flex flex-col lg:flex-row gap-10 lg:gap-14 items-start">
 
-      <!-- Mountain SVG Visual (oculta no mobile) -->
+      <!-- Mountain SVG Visual (visível em lg+) -->
       <div id="mountain-visual" class="hidden lg:block flex-shrink-0 w-[300px] relative select-none" aria-hidden="true">
         <!-- Tooltip (posicionado por JS) -->
         <div
@@ -130,32 +130,32 @@ const stages = [
           <rect x="0" y="340" width="300" height="62" fill="#1a3028" clip-path="url(#mountain-clip)"
                 class="mountain-zone cursor-pointer hover:brightness-125 transition-all duration-200"
                 data-stage="stage-a1" data-level="A1" data-name="Descongelamento Inicial"
-                data-hours="90 a 100 horas (Cambridge)" data-trap="Traducao palavra por palavra. Paralisa por medo de errar a gramatica." />
+                data-hours="90 a 100 horas (Cambridge)" data-trap="Tradução palavra por palavra. Paralisa por medo de errar a gramática." />
           <!-- A2 -->
           <rect x="0" y="278" width="300" height="64" fill="#1f4035" clip-path="url(#mountain-clip)"
                 class="mountain-zone cursor-pointer hover:brightness-125 transition-all duration-200"
                 data-stage="stage-a2" data-level="A2" data-name="Autonomia Cotidiana"
-                data-hours="180 a 200 horas (Cambridge)" data-trap="Vocabulario solto, pausas longas entre palavras." />
+                data-hours="180 a 200 horas (Cambridge)" data-trap="Vocabulário solto, pausas longas entre palavras." />
           <!-- B1 -->
           <rect x="0" y="210" width="300" height="70" fill="#255048" clip-path="url(#mountain-clip)"
                 class="mountain-zone cursor-pointer hover:brightness-125 transition-all duration-200"
-                data-stage="stage-b1" data-level="B1" data-name="Conversacao Fluida"
-                data-hours="350 a 400 horas (Cambridge)" data-trap="Plato intermediario: entende mas trava ao falar sob pressao." />
+                data-stage="stage-b1" data-level="B1" data-name="Conversação Fluida"
+                data-hours="350 a 400 horas (Cambridge)" data-trap="Platô intermediário: entende mas trava ao falar sob pressão." />
           <!-- B2 -->
           <rect x="0" y="148" width="300" height="64" fill="#2a6058" clip-path="url(#mountain-clip)"
                 class="mountain-zone cursor-pointer hover:brightness-125 transition-all duration-200"
-                data-stage="stage-b2" data-level="B2" data-name="Dominio Executivo"
-                data-hours="500 a 600 horas (Cambridge)" data-trap="Dificuldade com jargoes e conversas tecnicas rapidas." />
+                data-stage="stage-b2" data-level="B2" data-name="Domínio Executivo"
+                data-hours="500 a 600 horas (Cambridge)" data-trap="Dificuldade com jargões e conversas técnicas rápidas." />
           <!-- C1 -->
           <rect x="0" y="88" width="300" height="62" fill="#2f7068" clip-path="url(#mountain-clip)"
                 class="mountain-zone cursor-pointer hover:brightness-125 transition-all duration-200"
                 data-stage="stage-c1" data-level="C1" data-name="Autonomia Plena"
-                data-hours="700 a 800 horas (Cambridge)" data-trap="Falta de naturalidade em expressoes idiomaticas sutis." />
+                data-hours="700 a 800 horas (Cambridge)" data-trap="Falta de naturalidade em expressões idiomáticas sutis." />
           <!-- C2 peak -->
           <rect x="0" y="16" width="300" height="74" fill="#3ecf8e" fill-opacity="0.7" clip-path="url(#mountain-clip)"
                 class="mountain-zone cursor-pointer hover:brightness-110 transition-all duration-200"
                 data-stage="stage-c2" data-level="C2" data-name="Maestria Nativa Plena"
-                data-hours="1.000 a 1.200 horas (Cambridge)" data-trap="Estagnacao avancada, dificuldade em oratoria de alto impacto." />
+                data-hours="1.000 a 1.200 horas (Cambridge)" data-trap="Estagnação avançada, dificuldade em oratória de alto impacto." />
 
           <!-- Mountain outline -->
           <polygon points="150,18 290,400 10,400" stroke="#3ecf8e" stroke-opacity="0.25" stroke-width="1.5" fill="none" />
@@ -205,7 +205,7 @@ const stages = [
           ))}
         </div>
 
-        <!-- Conteudo das Abas -->
+        <!-- Conteúdo das Abas -->
         <div class="relative min-h-[380px]">
           {stages.map((stage, index) => (
             <div
@@ -214,7 +214,7 @@ const stages = [
               style={index === 0 ? 'opacity: 1;' : 'opacity: 0;'}
             >
               <div class="rounded-3xl bg-[#141414]/95 border border-[#242424] p-6 sm:p-10 relative overflow-hidden backdrop-blur-sm shadow-2xl">
-                <!-- Topo do Estagio -->
+                <!-- Topo do Estágio -->
                 <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-8 border-b border-[#1f1f1f]">
                   <div class="flex items-center gap-5 sm:gap-6">
                     <div class="font-sans font-black text-6xl sm:text-7xl md:text-8xl tracking-tighter text-gradient-emerald leading-none select-none">
@@ -228,13 +228,13 @@ const stages = [
 
                   <div class="flex items-center gap-2 text-xs font-mono text-[#3ecf8e] px-4 py-1.5 rounded-full bg-[#3ecf8e]/10 border border-[#3ecf8e]/20 self-start md:self-auto">
                     <span class="w-1.5 h-1.5 rounded-full bg-[#3ecf8e] micro-pulse"></span>
-                    <span>Referencia Oficial Cambridge</span>
+                    <span>Referência Oficial Cambridge</span>
                   </div>
                 </div>
 
-                <!-- Split Grid: Friccao vs Aceleracao -->
+                <!-- Split Grid: Fricção vs Aceleração -->
                 <div class="grid md:grid-cols-2 gap-6 pt-8">
-                  <!-- Card 1: Ponto de Friccao -->
+                  <!-- Card 1: Ponto de Fricção -->
                   <div class="topic-card-danger topic-card p-6 rounded-2xl bg-[#111111] border border-[#242424]">
                     <div class="flex items-center justify-between gap-3 mb-4">
                       <div class="flex items-center gap-3">
@@ -243,17 +243,17 @@ const stages = [
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
                           </svg>
                         </div>
-                        <span class="text-xs font-mono text-red-400 uppercase tracking-wider font-semibold">Ponto de Friccao</span>
+                        <span class="text-xs font-mono text-red-400 uppercase tracking-wider font-semibold">Ponto de Fricção</span>
                       </div>
                       <span class="topic-badge text-red-400 border-red-500/20 bg-red-500/10">{stage.trapBadge}</span>
                     </div>
-                    <h4 class="text-sm font-semibold text-[#fafafa] mb-2">Onde voce trava no metodo comum:</h4>
+                    <h4 class="text-sm font-semibold text-[#fafafa] mb-2">Onde você trava no método comum:</h4>
                     <p class="text-[#898989] text-sm leading-relaxed">
                       {stage.trap}
                     </p>
                   </div>
 
-                  <!-- Card 2: Aceleracao Ativa -->
+                  <!-- Card 2: Aceleração Ativa -->
                   <div class="topic-card p-6 rounded-2xl bg-[#111111] border border-[#242424]">
                     <div class="flex items-center justify-between gap-3 mb-4">
                       <div class="flex items-center gap-3">
@@ -262,11 +262,11 @@ const stages = [
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
                           </svg>
                         </div>
-                        <span class="text-xs font-mono text-[#3ecf8e] uppercase tracking-wider font-semibold">Aceleracao Ativa</span>
+                        <span class="text-xs font-mono text-[#3ecf8e] uppercase tracking-wider font-semibold">Aceleração Ativa</span>
                       </div>
                       <span class="topic-badge text-[#3ecf8e] border-[#3ecf8e]/20 bg-[#3ecf8e]/10">{stage.solutionBadge}</span>
                     </div>
-                    <h4 class="text-sm font-semibold text-[#fafafa] mb-2">Como o metodo acelera:</h4>
+                    <h4 class="text-sm font-semibold text-[#fafafa] mb-2">Como o método acelera:</h4>
                     <p class="text-[#d4d4d8] text-sm leading-relaxed font-medium">
                       {stage.solution}
                     </p>
@@ -397,13 +397,12 @@ const stages = [
         });
 
         zone.addEventListener('mouseenter', function (e) {
-          if (tipLevel) tipLevel.textContent = zone.getAttribute('data-level') + ' &bull; ' + zone.getAttribute('data-name');
+          if (tipLevel) tipLevel.textContent = zone.getAttribute('data-level') + ' \u2022 ' + zone.getAttribute('data-name');
           if (tipName) tipName.textContent = zone.getAttribute('data-name');
           if (tipHours) tipHours.textContent = zone.getAttribute('data-hours');
           if (tipTrap) tipTrap.textContent = zone.getAttribute('data-trap');
 
           // Position tooltip vertically near mouse
-          var svgRect = document.getElementById('mountain-svg').getBoundingClientRect();
           var parentRect = document.getElementById('mountain-visual').getBoundingClientRect();
           var relY = e.clientY - parentRect.top;
           tooltip.style.top = Math.max(0, relY - 40) + 'px';

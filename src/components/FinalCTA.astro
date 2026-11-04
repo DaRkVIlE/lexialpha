@@ -18,24 +18,24 @@
 
     <!-- Headline -->
     <h2 class="font-sans font-extrabold text-4xl sm:text-5xl md:text-6xl tracking-tight leading-[1.08] mb-6 text-[#fafafa]" data-anim="fade-up">
-      Pronto para comecar<br /><span class="text-gradient-emerald">a falar de verdade?</span>
+      Pronto para começar<br /><span class="text-gradient-emerald">a falar de verdade?</span>
     </h2>
 
     <p class="text-[#898989] text-base sm:text-lg mb-12 max-w-xl mx-auto leading-relaxed" data-anim="fade-up">
-      Cada aluno na Turma Alpha tem sessoes individuais com o Gabe. Por isso sao apenas 10 vagas. Sem atalhos, sem promessa de fluencia rapida: apenas pratica real, toda semana.
+      Cada aluno na Turma Alpha tem sessões individuais com o Gabe. Por isso são apenas 10 vagas. Sem atalhos, sem promessa de fluência rápida: apenas prática real, toda semana.
     </p>
 
-    <!-- Comparacao -->
+    <!-- Comparação -->
     <div class="grid sm:grid-cols-2 gap-0 sm:divide-x sm:divide-[#1e1e1e] mb-14 max-w-2xl mx-auto text-left" data-anim="fade-up">
       <!-- Modelo Tradicional -->
       <div class="sm:pr-10 pb-8 sm:pb-0">
         <p class="text-xs font-mono text-red-400/70 uppercase tracking-wider mb-4">Modelo Tradicional</p>
         <ul class="space-y-3 text-sm text-[#898989]">
           {[
-            'Travar quando alguem fala com voce em ingles',
+            'Travar quando alguém fala com você em inglês',
             'Anos pagando mensalidade sem falar uma conversa fluida',
-            'Exercicios mecanicos sem contexto real',
-            'Prometer todo inicio de ano que desta vez vai'
+            'Exercícios mecânicos sem contexto real',
+            'Prometer todo início de ano que desta vez vai'
           ].map(item => (
             <li class="flex items-start gap-2.5">
               <span class="text-red-400/60 shrink-0 mt-0.5">&times;</span>
@@ -51,8 +51,8 @@
           {[
             'Encontros individuais semanais ao vivo com o Gabe',
             'Tutor dedicado no PlayApp SPARK Alpha 24/7',
-            'R$ 197/mes sem fidelidade ou contratos anuais',
-            'Garantia incondicional de 30 dias com devolucao via Pix'
+            'R$ 197/mês sem fidelidade ou contratos anuais',
+            'Garantia incondicional de 30 dias com devolução via Pix'
           ].map(item => (
             <li class="flex items-start gap-2.5">
               <svg class="w-4 h-4 text-[#3ecf8e] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -79,7 +79,7 @@
         </svg>
       </a>
       <p class="text-[#71717a] text-xs mt-4 font-mono">
-        Apenas 10 vagas &bull; Inicio imediato &bull; R$ 197/mes
+        Apenas 10 vagas &bull; Início imediato &bull; R$ 197/mês
       </p>
     </div>
   </div>
@@ -96,6 +96,7 @@
     var ST = window.ScrollTrigger;
     if (!gsap || !ST || reduced) return;
     var els = document.querySelectorAll('section:last-of-type [data-anim="fade-up"]');
+    if (!els.length) return;
     gsap.from(els, {
       y: 40, opacity: 0, duration: 0.9, stagger: 0.1, ease: 'power3.out',
       scrollTrigger: { trigger: els[0], start: 'top 80%' }
