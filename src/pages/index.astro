@@ -1,7 +1,7 @@
 ---
-// index.astro — Landing Page Gabe's English
-// Design System: Supabase Dark (Gabe's-design-system.md)
-// Story: Turma Alpha Launch — Professor Gabe + IA Complementar Lexi Alpha
+// index.astro — LexiQuest Landing Page
+// Design System: Supabase Dark
+// Story: Turma Alpha Launch — SPARK Alpha + Lexi Alpha
 import '../styles/global.css';
 import Logo from '../components/Logo.astro';
 import Hero from '../components/Hero.astro';
@@ -12,7 +12,6 @@ import LexiAlphaFeatures from '../components/LexiAlphaFeatures.astro';
 import SocialProof from '../components/SocialProof.astro';
 import Pricing from '../components/Pricing.astro';
 import Faq from '../components/Faq.astro';
-import QuizSection from '../components/QuizSection.astro';
 import FinalCTA from '../components/FinalCTA.astro';
 import Footer from '../components/Footer.astro';
 ---
@@ -23,10 +22,10 @@ import Footer from '../components/Footer.astro';
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>Gabe's English • Aulas com o Professor + IA Lexi Alpha</title>
+    <title>LexiQuest • Destravar sua fala em ingles com o metodo SPARK</title>
     <meta
       name="description"
-      content="Aulas de conversação direta e individual com o professor Gabriel Lima (Gabe) + IA conversacional autoral Lexi Alpha para treino diário de 15 min. Sem falsas promessas de fluência rápida. Apenas 10 vagas por R$ 197/mês."
+      content="Mentoria individual ao vivo com Gabriel Lima e pratica diaria com o PlayApp SPARK Alpha. Metodo real para adultos que estudam ha anos mas ainda travam ao falar. 10 vagas por R$ 197/mes."
     />
 
     <!-- Google Fonts: Inter (Interface & Headings) & Source Code Pro (Labels) -->
@@ -38,26 +37,26 @@ import Footer from '../components/Footer.astro';
     />
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Gabe's English • Aulas com o Professor + IA Lexi Alpha" />
+    <meta property="og:title" content="LexiQuest • Destravar sua fala em ingles com o metodo SPARK" />
     <meta
       property="og:description"
-      content="Aulas de conversação ao vivo com o professor Gabe + IA autoral para treino diário. 10 vagas por R$ 197/mês."
+      content="Mentoria individual ao vivo com Gabriel Lima + PlayApp SPARK Alpha para pratica diaria. 10 vagas por R$ 197/mes."
     />
     <meta property="og:type" content="website" />
   </head>
   <body class="min-h-screen flex flex-col font-sans bg-[#0f0f0f] text-[#fafafa] selection:bg-[#3ecf8e] selection:text-[#0f0f0f]">
     <!-- Barra Superior Fixa (Datamind Glass Style) -->
     <header class="fixed top-0 inset-x-0 z-50 glass-panel border-b border-white/[0.08] px-4 sm:px-8 py-3.5 flex items-center justify-between">
-      <a href="#" class="flex items-center gap-2 hover:opacity-95 transition-opacity" aria-label="Gabe's English Home">
+      <a href="#" class="flex items-center gap-2 hover:opacity-95 transition-opacity" aria-label="LexiQuest Home">
         <Logo size="sm" showBadge={true} />
       </a>
 
       <nav class="hidden md:flex items-center gap-8 text-sm text-[#898989] font-medium">
         <a href="#metodo" class="hover:text-[#3ecf8e] transition-colors">Como Funciona</a>
-        <a href="#estagios" class="hover:text-[#3ecf8e] transition-colors">Estágios da Fala</a>
-        <a href="#aulas-ia" class="hover:text-[#3ecf8e] transition-colors">Rotina & IA</a>
+        <a href="#estagios" class="hover:text-[#3ecf8e] transition-colors">Estagios da Fala</a>
+        <a href="#aulas-ia" class="hover:text-[#3ecf8e] transition-colors">Rotina e IA</a>
         <a href="#pricing" class="hover:text-[#3ecf8e] transition-colors">Turma Alpha</a>
-        <a href="#faq" class="hover:text-[#3ecf8e] transition-colors">Dúvidas</a>
+        <a href="#faq" class="hover:text-[#3ecf8e] transition-colors">Duvidas</a>
       </nav>
 
       <div class="flex items-center gap-3">
@@ -79,7 +78,33 @@ import Footer from '../components/Footer.astro';
       <SocialProof />
       <Pricing />
       <Faq />
-      <QuizSection />
+
+      <!-- PlayApp SPARK Alpha Bridge -->
+      <section id="playapp" class="py-24 px-4 sm:px-8 relative border-t border-[#1a1a1a] overflow-hidden">
+        <div class="absolute inset-0 dot-grid-bg opacity-60 pointer-events-none"></div>
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full badge-glow mb-6">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#3ecf8e] micro-pulse"></span>
+            <span class="text-xs font-mono text-[#3ecf8e] uppercase tracking-[0.2em]">SPARK Alpha · Playbook 7 Dias</span>
+          </div>
+          <h2 class="font-sans font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-tight leading-[1.08] mb-5 text-[#fafafa]">
+            Quer testar o metodo antes<br /><span class="text-gradient-emerald">de qualquer compromisso?</span>
+          </h2>
+          <p class="text-[#898989] text-base sm:text-lg mb-10 max-w-xl mx-auto leading-relaxed">
+            O PlayApp SPARK Alpha guia seus primeiros 7 dias de pratica diaria. Missoes curtas, chunks reais, sem instalacao e sem custo.
+          </p>
+          <a
+            href="/playapp"
+            class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl border border-[#3ecf8e]/40 text-[#3ecf8e] font-bold text-sm hover:bg-[#3ecf8e]/10 active:scale-95 transition-all group"
+          >
+            <span>Acessar o PlayApp SPARK Alpha</span>
+            <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </a>
+        </div>
+      </section>
+
       <FinalCTA />
     </main>
 

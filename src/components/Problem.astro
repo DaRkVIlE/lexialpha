@@ -1,6 +1,5 @@
 ---
-// src/components/Problem.astro — Layout Moderno & Intuitivo: Números de Alto Impacto + Cards Temáticos
-// Inspirado em Datamind: tipografia moderna sem serifa, micro-animações nos cards e divisores limpos.
+// src/components/Problem.astro — Layout Moderno com SVG Visual
 ---
 
 <section id="problema" class="py-32 px-4 sm:px-8 relative overflow-hidden border-t border-[#1a1a1a]">
@@ -10,28 +9,94 @@
   </div>
 
   <div class="max-w-6xl mx-auto">
-    <!-- Header Moderno -->
-    <div class="mb-20 max-w-3xl" data-anim="fade-up">
+    <!-- Header -->
+    <div class="mb-14 max-w-3xl" data-anim="fade-up">
       <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full badge-glow mb-4">
         <span class="w-1.5 h-1.5 rounded-full bg-red-400 micro-pulse"></span>
-        <span class="text-xs font-mono text-[#898989] uppercase tracking-[0.2em]">Transparência Radical</span>
+        <span class="text-xs font-mono text-[#898989] uppercase tracking-[0.2em]">O Problema Real</span>
       </div>
       <h2 class="font-sans font-extrabold text-4xl sm:text-5xl md:text-6xl tracking-tight leading-[1.05] mt-2 text-[#fafafa]">
-        Por que você estuda há anos<br />
+        Por que voce estuda ha anos<br />
         <span class="text-gradient-emerald">e ainda trava na hora de falar?</span>
       </h2>
     </div>
 
-    <!-- Split: dois lados separados por linha vertical -->
+    <!-- SVG Visual: Metodo Tradicional vs SPARK -->
+    <div class="mb-16" data-anim="fade-up" aria-hidden="true">
+      <svg viewBox="0 0 760 110" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-3xl mx-auto opacity-80">
+        <!-- Left side: Metodo Tradicional -->
+        <!-- Brain icon (left) -->
+        <ellipse cx="60" cy="55" rx="22" ry="18" stroke="#ef4444" stroke-opacity="0.5" stroke-width="1.5" fill="#ef4444" fill-opacity="0.06"/>
+        <text x="60" y="59" text-anchor="middle" font-size="10" font-family="monospace" fill="#ef4444" fill-opacity="0.7">PT</text>
+
+        <!-- Loop arrows: hear -> translate -> build -> speak -> (too late) -->
+        <path d="M 85 45 Q 115 25 145 45" stroke="#ef4444" stroke-opacity="0.4" stroke-width="1.2" fill="none" marker-end="url(#arr-red)"/>
+        <path d="M 155 45 Q 185 25 215 45" stroke="#ef4444" stroke-opacity="0.4" stroke-width="1.2" fill="none" marker-end="url(#arr-red)"/>
+        <path d="M 225 45 Q 255 25 285 45" stroke="#ef4444" stroke-opacity="0.4" stroke-width="1.2" fill="none" marker-end="url(#arr-red)"/>
+
+        <!-- Loop nodes -->
+        <circle cx="150" cy="50" r="12" fill="#ef4444" fill-opacity="0.08" stroke="#ef4444" stroke-opacity="0.3" stroke-width="1"/>
+        <text x="150" y="54" text-anchor="middle" font-size="7" font-family="monospace" fill="#ef4444" fill-opacity="0.7">ouvir</text>
+        <circle cx="220" cy="50" r="14" fill="#ef4444" fill-opacity="0.08" stroke="#ef4444" stroke-opacity="0.3" stroke-width="1"/>
+        <text x="220" y="54" text-anchor="middle" font-size="6.5" font-family="monospace" fill="#ef4444" fill-opacity="0.7">traduzir</text>
+        <circle cx="290" cy="50" r="12" fill="#ef4444" fill-opacity="0.08" stroke="#ef4444" stroke-opacity="0.3" stroke-width="1"/>
+        <text x="290" y="54" text-anchor="middle" font-size="7" font-family="monospace" fill="#ef4444" fill-opacity="0.7">montar</text>
+
+        <!-- "tarde demais" label -->
+        <text x="290" y="80" text-anchor="middle" font-size="8" font-family="monospace" fill="#ef4444" fill-opacity="0.5">tarde demais</text>
+        <line x1="290" y1="63" x2="290" y2="72" stroke="#ef4444" stroke-opacity="0.3" stroke-width="1" stroke-dasharray="2 2"/>
+
+        <!-- Left label -->
+        <text x="175" y="98" text-anchor="middle" font-size="9" font-family="monospace" fill="#828294">METODO TRADICIONAL</text>
+
+        <!-- Divider -->
+        <line x1="380" y1="10" x2="380" y2="100" stroke="#26262f" stroke-width="1.5"/>
+
+        <!-- Right side: SPARK -->
+        <!-- Brain icon (right) -->
+        <ellipse cx="470" cy="55" rx="22" ry="18" stroke="#3ecf8e" stroke-opacity="0.6" stroke-width="1.5" fill="#3ecf8e" fill-opacity="0.08"/>
+        <text x="470" y="59" text-anchor="middle" font-size="9" font-family="monospace" fill="#3ecf8e" fill-opacity="0.9">SPARK</text>
+
+        <!-- Direct arrow: think -> speak, no translation -->
+        <path d="M 496 50 Q 540 20 580 50" stroke="#3ecf8e" stroke-opacity="0.6" stroke-width="1.5" fill="none" marker-end="url(#arr-green)"/>
+
+        <!-- Speak node -->
+        <circle cx="590" cy="50" r="22" fill="#3ecf8e" fill-opacity="0.1" stroke="#3ecf8e" stroke-opacity="0.5" stroke-width="1.5"/>
+        <text x="590" y="47" text-anchor="middle" font-size="8" font-family="monospace" fill="#3ecf8e">falar</text>
+        <text x="590" y="58" text-anchor="middle" font-size="7" font-family="monospace" fill="#3ecf8e" fill-opacity="0.7">direto</text>
+
+        <!-- "sem traduzir" label -->
+        <text x="537" y="25" text-anchor="middle" font-size="8" font-family="monospace" fill="#3ecf8e" fill-opacity="0.6">sem traduzir</text>
+
+        <!-- Chunk indicators -->
+        <text x="508" y="80" text-anchor="middle" font-size="7" font-family="monospace" fill="#3ecf8e" fill-opacity="0.5">chunk</text>
+        <text x="540" y="85" text-anchor="middle" font-size="7" font-family="monospace" fill="#3ecf8e" fill-opacity="0.5">pronto</text>
+        <text x="572" y="80" text-anchor="middle" font-size="7" font-family="monospace" fill="#3ecf8e" fill-opacity="0.5">saiu</text>
+
+        <!-- Right label -->
+        <text x="537" y="98" text-anchor="middle" font-size="9" font-family="monospace" fill="#828294">METODO SPARK</text>
+
+        <!-- Arrow markers -->
+        <defs>
+          <marker id="arr-red" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+            <path d="M0,0 L0,6 L6,3 z" fill="#ef4444" fill-opacity="0.4"/>
+          </marker>
+          <marker id="arr-green" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+            <path d="M0,0 L0,6 L6,3 z" fill="#3ecf8e" fill-opacity="0.6"/>
+          </marker>
+        </defs>
+      </svg>
+    </div>
+
+    <!-- Split: dois lados -->
     <div class="grid md:grid-cols-2 md:divide-x md:divide-[#1e1e1e]">
 
-      <!-- Lado Esquerdo: Modelo Quebrado -->
+      <!-- Lado Esquerdo: Modelo Tradicional -->
       <div class="md:pr-14 pb-16 md:pb-0" data-anim="fade-up">
-        <!-- Numeral enorme decorativo -->
         <div class="font-sans font-black text-[clamp(72px,12vw,140px)] leading-none text-[#222222] select-none mb-2 counter-value tracking-tighter" aria-hidden="true">
           <span id="prob-pct">0</span>%
         </div>
-        <p class="text-xs font-mono text-red-400 uppercase tracking-[0.15em] mb-8 font-semibold">dos alunos nunca alcançam o nível B2</p>
+        <p class="text-xs font-mono text-red-400 uppercase tracking-[0.15em] mb-8 font-semibold">chegam ao B2 praticando com o metodo tradicional</p>
 
         <div class="w-10 h-0.5 bg-red-500/40 mb-6"></div>
 
@@ -43,15 +108,14 @@
           </div>
           <div>
             <span class="text-xs font-mono text-red-400 uppercase tracking-wider font-semibold">O Modelo do Aluno Eterno</span>
-            <h3 class="text-lg font-bold text-[#fafafa]">Método Tradicional de Cursinho</h3>
+            <h3 class="text-lg font-bold text-[#fafafa]">Metodo Tradicional de Cursinho</h3>
           </div>
         </div>
 
         <p class="text-[#898989] text-sm leading-relaxed mb-6">
-          Grandes redes lucram com a sua permanência lenta. Elas te colocam para preencher livros de gramática, decorar regras de tempos verbais e traduzir mentalmente no caderno.
+          Grandes redes lucram com a sua permanencia lenta. Elas te colocam para preencher livros de gramatica, decorar regras de tempos verbais e traduzir mentalmente no caderno.
         </p>
 
-        <!-- Tópicos com Representação Visual Intuitiva -->
         <div class="space-y-3.5">
           <div class="topic-card-danger topic-card p-4 rounded-xl bg-[#121212] border border-[#242424] flex items-start gap-3.5">
             <div class="icon-box text-red-400">
@@ -60,9 +124,9 @@
               </svg>
             </div>
             <div class="space-y-1">
-              <span class="topic-badge text-red-400 border-red-500/20 bg-red-500/10">Foco Teórico de Prova</span>
+              <span class="topic-badge text-red-400 border-red-500/20 bg-red-500/10">Foco Teorico de Prova</span>
               <p class="text-xs sm:text-sm text-[#898989] leading-relaxed">
-                Você aprende a analisar a língua como disciplina escolar, não como reflexo motor imediato.
+                Voce aprende a analisar a lingua como disciplina escolar, nao como reflexo motor imediato.
               </p>
             </div>
           </div>
@@ -74,9 +138,9 @@
               </svg>
             </div>
             <div class="space-y-1">
-              <span class="topic-badge text-red-400 border-red-500/20 bg-red-500/10">Tradução Mental Travada</span>
+              <span class="topic-badge text-red-400 border-red-500/20 bg-red-500/10">Traducao Mental Travada</span>
               <p class="text-xs sm:text-sm text-[#898989] leading-relaxed">
-                Cria o vício da tradução interna: o cérebro tenta montar a frase em português antes de emitir a fala.
+                Cria o vicio da traducao interna: o cerebro tenta montar a frase em portugues antes de emitir a fala.
               </p>
             </div>
           </div>
@@ -90,7 +154,7 @@
             <div class="space-y-1">
               <span class="topic-badge text-red-400 border-red-500/20 bg-red-500/10">Falsas Promessas de 3 Meses</span>
               <p class="text-xs sm:text-sm text-[#898989] leading-relaxed">
-                Promessas irreais de fluência mágica que só geram frustração, sensação de fracasso e culpa pessoal.
+                Promessas irreais de fluencia magica que so geram frustracao, sensacao de fracasso e culpa pessoal.
               </p>
             </div>
           </div>
@@ -98,13 +162,12 @@
 
         <div class="mt-8 p-4 rounded-xl bg-[#161010] border border-red-500/20 flex items-center gap-3">
           <div class="w-2 h-2 rounded-full bg-red-400 micro-pulse"></div>
-          <p class="text-xs font-mono text-red-400/90">Resultado: Anos pagando mensalidades altas e o mesmo bloqueio na primeira reunião.</p>
+          <p class="text-xs font-mono text-red-400/90">Resultado: Anos pagando mensalidades altas e o mesmo bloqueio na primeira reuniao.</p>
         </div>
       </div>
 
-      <!-- Lado Direito: Método Gabe -->
+      <!-- Lado Direito: Metodo SPARK -->
       <div class="md:pl-14 pt-16 md:pt-0" data-anim="fade-up">
-        <!-- Numeral enorme decorativo -->
         <div class="font-sans font-black text-[clamp(72px,12vw,140px)] leading-none text-gradient-emerald select-none mb-2 counter-value tracking-tighter" aria-hidden="true">
           <span id="prob-days">0</span>
         </div>
@@ -119,16 +182,15 @@
             </svg>
           </div>
           <div>
-            <span class="text-xs font-mono text-[#3ecf8e] uppercase tracking-wider font-semibold">Aquisição Natural de Fala</span>
-            <h3 class="text-lg font-bold text-[#fafafa]">Método Gabriel Lima + IA Lexi</h3>
+            <span class="text-xs font-mono text-[#3ecf8e] uppercase tracking-wider font-semibold">Aquisicao Natural de Fala</span>
+            <h3 class="text-lg font-bold text-[#fafafa]">Metodo SPARK + Lexi Alpha</h3>
           </div>
         </div>
 
         <p class="text-[#898989] text-sm leading-relaxed mb-6">
-          Você não aprendeu português decorando sujeito e predicado antes de começar a falar. Você absorveu blocos completos, praticou sem medo e refinou com o uso diário guiado.
+          Voce nao aprendeu portugues decorando sujeito e predicado. Voce absorveu blocos completos, praticou sem medo e refinou com o uso. O ingles funciona do mesmo jeito.
         </p>
 
-        <!-- Tópicos com Representação Visual Intuitiva -->
         <div class="space-y-3.5">
           <div class="topic-card p-4 rounded-xl bg-[#121212] border border-[#242424] flex items-start gap-3.5">
             <div class="icon-box text-[#3ecf8e]">
@@ -137,9 +199,9 @@
               </svg>
             </div>
             <div class="space-y-1">
-              <span class="topic-badge text-[#3ecf8e] border-[#3ecf8e]/20 bg-[#3ecf8e]/10">Chunks Automáticos</span>
+              <span class="topic-badge text-[#3ecf8e] border-[#3ecf8e]/20 bg-[#3ecf8e]/10">Chunks Automaticos</span>
               <p class="text-xs sm:text-sm text-[#898989] leading-relaxed">
-                Absorção direta de expressões completas que saem de forma automática e natural da sua boca.
+                Expressoes completas que saem sem traduzir, como acontece na sua lingua materna.
               </p>
             </div>
           </div>
@@ -151,9 +213,9 @@
               </svg>
             </div>
             <div class="space-y-1">
-              <span class="topic-badge text-[#3ecf8e] border-[#3ecf8e]/20 bg-[#3ecf8e]/10">Micro-dose Diária 15min</span>
+              <span class="topic-badge text-[#3ecf8e] border-[#3ecf8e]/20 bg-[#3ecf8e]/10">Micro-dose Diaria 15min</span>
               <p class="text-xs sm:text-sm text-[#898989] leading-relaxed">
-                Treino diário de 15 minutos no Portal Lexi Alpha para errar sem vergonha e destravar a musculatura.
+                15 minutos por dia no PlayApp SPARK Alpha. Pratica real, sem vergonha, no seu ritmo.
               </p>
             </div>
           </div>
@@ -167,7 +229,7 @@
             <div class="space-y-1">
               <span class="topic-badge text-[#3ecf8e] border-[#3ecf8e]/20 bg-[#3ecf8e]/10">Mentoria 1 a 1 Exclusiva</span>
               <p class="text-xs sm:text-sm text-[#898989] leading-relaxed">
-                Sessões individuais semanais comigo para lapidar conversações reais, simular trabalho e destravar o improviso.
+                Encontros semanais ao vivo com o Gabe para simular situacoes reais e ajustar o que a IA nao resolve.
               </p>
             </div>
           </div>
@@ -175,7 +237,7 @@
 
         <div class="mt-8 p-4 rounded-xl bg-[#0c1812] border border-[#3ecf8e]/20 flex items-center gap-3">
           <div class="w-2 h-2 rounded-full bg-[#3ecf8e] micro-pulse"></div>
-          <p class="text-xs font-mono text-[#3ecf8e]">Resultado: Você pensa em inglês e fala com naturalidade, sem traduzir internamente.</p>
+          <p class="text-xs font-mono text-[#3ecf8e]">Resultado: Voce pensa em ingles e fala com naturalidade, sem traduzir internamente.</p>
         </div>
       </div>
     </div>
@@ -194,7 +256,6 @@
     var ST = window.ScrollTrigger;
     if (!gsap || !ST) return;
 
-    // Linha decorativa
     gsap.to('#prob-line', {
       scaleX: 1,
       duration: 1.5,
@@ -202,7 +263,6 @@
       scrollTrigger: { trigger: '#problema', start: 'top 85%' }
     });
 
-    // Fade-up elements
     if (!reduced) {
       gsap.from('[data-anim="fade-up"]', {
         y: 50,
@@ -214,7 +274,6 @@
       });
     }
 
-    // CountUp: 95% e 21 dias
     var pctEl = document.getElementById('prob-pct');
     var daysEl = document.getElementById('prob-days');
     var triggered = false;
@@ -232,9 +291,7 @@
             val: 95,
             duration: 1.8,
             ease: 'power2.out',
-            onUpdate: function () {
-              pctEl.textContent = Math.round(objPct.val);
-            }
+            onUpdate: function () { pctEl.textContent = Math.round(objPct.val); }
           });
         }
 
@@ -244,9 +301,7 @@
             val: 21,
             duration: 1.8,
             ease: 'power2.out',
-            onUpdate: function () {
-              daysEl.textContent = Math.round(objDays.val);
-            }
+            onUpdate: function () { daysEl.textContent = Math.round(objDays.val); }
           });
         }
       }

@@ -1,0 +1,2282 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; font-src https://fonts.gstatic.com; style-src 'self' https://fonts.googleapis.com 'sha256-KqClm0OamolhJXTgImZvUX2Lls73HZT1O79NqxwX8X4='; script-src 'self' 'sha256-sTukEPtJ8ERPJz2wBPfB9NpWY+VAJMD10aGz1VXRZJU='; connect-src 'self' https://moodle-bridge-production.up.railway.app; img-src 'self' data:;">
+<title>PlayApp SPARK Alpha · 7 Dias para Destravar</title>
+<meta name="description" content="PlayApp interativo do Playbook SPARK Alpha pelo Professor Gabe. 7 dias para parar de traduzir e começar a falar.">
+<meta name="theme-color" content="#0e0e11">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+/* ==== MOD: src/tokens.css ==== */
+/* src/tokens.css - Design Tokens do PlayApp SPARK Alpha (Tema Escuro Canônico e Claro Classroom) */
+:root {
+  /* Paleta Base / Superfícies (Tema Escuro Canônico) */
+  --bg: #0e0e11;
+  --bg-external: #0b0b0d;
+  --card: #151519;
+  --card2: #1d1d23;
+  --line: #26262f;
+  --line2: #30303b;
+  --line3: #3d3d4b;
+  --line4: #56566a;
+
+  /* Tipografia & Contraste */
+  --text: #fafafa;
+  --text2: #b8b8c6;
+  --muted: #828294;
+
+  /* Acentos de Marca (Fusão Menta - Q1) */
+  --hero: #1A9E6B;
+  --hero-dark: #12754e;
+  --green: #3ecf8e;
+  --greent: #3ecf8e;
+  --gborder: rgba(62, 207, 142, 0.38);
+  --gsoft: rgba(62, 207, 142, 0.1);
+
+  /* Feedback & Alertas */
+  --alert: #ff8f78;
+  --alertb: rgba(229, 77, 46, 0.5);
+  --alerts: rgba(229, 77, 46, 0.08);
+
+  /* Gamificação / Ranks */
+  --rank-faisca: #f59e0b;
+  --rank-brasa: #f97316;
+  --rank-chama: #ef4444;
+  --rank-fogo: #8b5cf6;
+
+  /* Formas, Raios e Sombras */
+  --radius-card: 12px;
+  --radius-pill: 9999px;
+  --radius-photo: 14px;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.22);
+  --focus-ring: 0 0 0 2px var(--bg), 0 0 0 4px var(--green);
+
+  /* Fontes */
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: 'JetBrains Mono', "Source Code Pro", Menlo, Consolas, monospace;
+
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  color-scheme: dark;
+}
+
+/* Modo Claro Classroom (com contraste AA ajustado conforme §11) */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --bg: #f8f7f3;
+    --bg-external: #ede9e1;
+    --card: #ffffff;
+    --card2: #f2eee6;
+    --line: #e9e5dc;
+    --line2: #ddd7cc;
+    --line3: #cdc6b7;
+    --line4: #8a8372;
+
+    --text: #17171a;
+    --text2: #45454e;
+    --muted: #6a6a76; /* Ajustado para >= 4.5:1 sobre #f8f7f3 */
+
+    --hero: #1A9E6B;
+    --hero-dark: #12754e;
+    --green: #00c573;
+    --greent: #007a47; /* Ajustado para >= 4.5:1 sobre #f8f7f3 */
+    --gborder: rgba(0, 197, 115, 0.45);
+    --gsoft: rgba(0, 197, 115, 0.09);
+
+    --alert: #c2391f;
+    --alertb: rgba(229, 77, 46, 0.5);
+    --alerts: rgba(229, 77, 46, 0.07);
+
+    --shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
+    color-scheme: light;
+  }
+}
+
+:root[data-theme="light"] {
+  --bg: #f8f7f3;
+  --bg-external: #ede9e1;
+  --card: #ffffff;
+  --card2: #f2eee6;
+  --line: #e9e5dc;
+  --line2: #ddd7cc;
+  --line3: #cdc6b7;
+  --line4: #8a8372;
+
+  --text: #17171a;
+  --text2: #45454e;
+  --muted: #6a6a76;
+
+  --hero: #1A9E6B;
+  --hero-dark: #12754e;
+  --green: #00c573;
+  --greent: #007a47;
+  --gborder: rgba(0, 197, 115, 0.45);
+  --gsoft: rgba(0, 197, 115, 0.09);
+
+  --alert: #c2391f;
+  --alertb: rgba(229, 77, 46, 0.5);
+  --alerts: rgba(229, 77, 46, 0.07);
+
+  --shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
+  color-scheme: light;
+}
+/* ==== END: src/tokens.css ==== */
+
+/* ==== MOD: src/base.css ==== */
+/* src/base.css - Reset, Layout Base, Tipografia e Acessibilidade (WCAG AA) */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+main.site-main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 16px 16px calc(140px + env(safe-area-inset-bottom, 0px));
+}
+
+/* Tipografia Editorial */
+h1, h2, h3, h4 {
+  margin: 0 0 12px 0;
+  color: var(--text);
+  font-weight: 600;
+}
+
+h1 {
+  font-size: clamp(28px, 5vw, 36px);
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+}
+
+h2 {
+  font-size: clamp(22px, 4vw, 26px);
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+}
+
+h3 {
+  font-size: 18px;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+p {
+  margin: 0 0 16px 0;
+  color: var(--text2);
+}
+
+strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+a {
+  color: var(--greent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Rótulos Mono e Elementos Decorativos */
+.label {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+.label.g {
+  color: var(--greent);
+  font-weight: 700;
+}
+
+.mono {
+  font-family: var(--font-mono);
+}
+
+.bignum {
+  font-family: var(--font-mono);
+  font-size: 80px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--line3);
+}
+
+/* Acessibilidade & Foco WCAG 2.2 */
+:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+  border-radius: 4px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Barra de Navegação Inferior Mobile-First */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--card);
+  border-top: 1px solid var(--line2);
+  padding: 8px 12px calc(8px + env(safe-area-inset-bottom, 0px));
+  z-index: 100;
+}
+
+.bottom-nav a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 11px;
+  font-family: var(--font-mono);
+  color: var(--muted);
+  min-width: 44px;
+  min-height: 44px;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.bottom-nav a.on, .bottom-nav a[aria-current="page"] {
+  color: var(--greent);
+  font-weight: 700;
+}
+/* ==== END: src/base.css ==== */
+
+</style>
+</head>
+<body>
+<div id="sr-announcer" class="sr-only" aria-live="polite"></div>
+<div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+<header id="header" class="site-header"></header>
+<main id="app" tabindex="-1" class="site-main"></main>
+<div id="fab" class="fab-container"></div>
+<nav id="nav" class="bottom-nav" aria-label="Navegação Principal"></nav>
+<script>
+(() => {
+'use strict';
+
+/* ==== MOD: src/config.js ==== */
+// src/config.js - Configurações congeladas da aplicação PlayApp SPARK Alpha
+const CFG = Object.freeze({
+  productName: 'SPARK Alpha',
+  company: 'Lexiquest',
+  version: '2.0.0',
+  whatsappNumber: '5511967239791',
+  whatsappDisplay: 'Gabe · SPARK Alpha',
+  leadEndpoint: 'https://moodle-bridge-production.up.railway.app/api/lead-capture',
+  price: 'R$ 197',
+  foundingSpots: 10,
+  guaranteeDays: 30,
+  storageKey: 'SPARK_ALPHA_V3',
+  supportHours: Object.freeze({
+    days: 'seg a sex',
+    start: '09:00',
+    end: '20:00'
+  })
+});
+/* ==== END: src/config.js ==== */
+
+/* ==== MOD: src/contracts.js ==== */
+// src/contracts.js - Contratos congelados de Estado v3, Mensagens, Efeitos, Rotas e Schemas
+const STATE_VERSION = 3;
+
+/**
+ * Estado inicial canônico do PlayApp SPARK Alpha (v3).
+ * Todos os campos são congelados para evitar mutação direta.
+ */
+const INITIAL_STATE = Object.freeze({
+  v: STATE_VERSION,
+  profile: Object.freeze({
+    name: null,
+    whatsapp: null,
+    email: null,
+    levelSuggested: null,
+    speedScore: null,
+    registeredAt: null,
+    tool: null,
+    dailyTime: null,
+    theme: 'dark'
+  }),
+  test: Object.freeze({
+    completed: false,
+    score: null,
+    band: null,
+    answers: Object.freeze([])
+  }),
+  setup: Object.freeze({
+    completed: false,
+    completedAt: null,
+    toolChosen: false,
+    pinnedChat: false,
+    scheduleSet: false,
+    policyChecked: false
+  }),
+  streak: Object.freeze({
+    count: 0,
+    best: 0,
+    lastCompletedDate: null,
+    shieldAvailable: true,
+    history: Object.freeze([])
+  }),
+  xp: Object.freeze({
+    total: 0,
+    rank: 'faísca',
+    log: Object.freeze([])
+  }),
+  achievements: Object.freeze([]),
+  days: Object.freeze({}),
+  chunks: Object.freeze({}),
+  arena: Object.freeze({
+    completed: false,
+    score: null,
+    history: Object.freeze([])
+  }),
+  outbox: Object.freeze([])
+});
+
+/**
+ * Catálogo de tipos de mensagens suportadas pelo redutor puro `update()`.
+ */
+const MESSAGE_TYPES = Object.freeze([
+  'START_DIAGNOSTIC',
+  'SUBMIT_ANSWER',
+  'COMPLETE_SETUP_ITEM',
+  'FINISH_SETUP',
+  'OPEN_DAY',
+  'TOGGLE_MISSION_ITEM',
+  'SET_DAY_NOTE',
+  'CLOSE_DAY',
+  'COPY_PROMPT',
+  'LEVEL_UP_CHUNK',
+  'REVIEW_CHUNK',
+  'RECORD_ARENA_ROUND',
+  'FINISH_ARENA',
+  'SUBMIT_LEAD',
+  'DISMISS_OFFLINE_WARNING',
+  'RESET_STATE'
+]);
+
+/**
+ * Catálogo de efeitos impuros orquestrados pelo executor de efeitos `fx()`.
+ */
+const FX_TYPES = Object.freeze([
+  'SAY_TEXT',
+  'PLAY_SFX',
+  'START_TIMER',
+  'CANCEL_TIMER',
+  'DISPATCH_OUTBOX',
+  'TRIGGER_CELEBRATION',
+  'ANNOUNCE_SR',
+  'NAVIGATE'
+]);
+
+/**
+ * Tabela de rotas canônicas e seus padrões de URL hash.
+ */
+const ROUTES = Object.freeze({
+  CAPA: '#/',
+  MAPA: '#/mapa',
+  METODO: '#/metodo',
+  DIAGNOSTICO: '#/diagnostico',
+  SETUP: '#/setup',
+  TRILHA: '#/trilha',
+  DIA: '#/dia/:num',
+  CHUNKS: '#/chunks',
+  ARENA: '#/arena',
+  PROMPTS: '#/prompts',
+  LAUDO: '#/laudo',
+  ALPHA: '#/alpha',
+  IMPRIMIR: '#/imprimir',
+  CONTA: '#/conta'
+});
+
+/**
+ * Validador estrito de conformidade estrutural do Estado v3.
+ * @param {object} s - Estado a ser validado
+ * @returns {{ valid: boolean, errors: string[] }}
+ */
+function validateState(s) {
+  const errors = [];
+  if (!s || typeof s !== 'object') {
+    return { valid: false, errors: ['Estado não é um objeto válido'] };
+  }
+  if (s.v !== STATE_VERSION) {
+    errors.push(`Versão do estado inválida: esperado ${STATE_VERSION}, recebido ${s.v}`);
+  }
+  if (!s.profile || typeof s.profile !== 'object') {
+    errors.push('Campo profile ausente ou inválido');
+  }
+  if (!s.test || typeof s.test !== 'object') {
+    errors.push('Campo test ausente ou inválido');
+  }
+  if (!s.setup || typeof s.setup !== 'object') {
+    errors.push('Campo setup ausente ou inválido');
+  }
+  if (!s.streak || typeof s.streak !== 'object' || typeof s.streak.count !== 'number') {
+    errors.push('Campo streak ausente ou inválido');
+  }
+  if (!s.xp || typeof s.xp !== 'object' || typeof s.xp.total !== 'number') {
+    errors.push('Campo xp ausente ou inválido');
+  }
+  if (!Array.isArray(s.achievements)) {
+    errors.push('Campo achievements deve ser um array');
+  }
+  if (!s.days || typeof s.days !== 'object') {
+    errors.push('Campo days deve ser um objeto');
+  }
+  if (!s.chunks || typeof s.chunks !== 'object') {
+    errors.push('Campo chunks deve ser um objeto');
+  }
+  if (!Array.isArray(s.outbox)) {
+    errors.push('Campo outbox deve ser um array');
+  }
+  return {
+    valid: errors.length === 0,
+    errors
+  };
+}
+
+/**
+ * Validador do Payload de Lead para submissão no backend / WhatsApp.
+ * @param {object} p - Payload de Lead
+ * @returns {{ valid: boolean, errors: string[] }}
+ */
+function validateLeadPayload(p) {
+  const errors = [];
+  if (!p || typeof p !== 'object') {
+    return { valid: false, errors: ['Payload de lead ausente'] };
+  }
+  if (!p.name || typeof p.name !== 'string' || !p.name.trim()) {
+    errors.push('Nome do aluno é obrigatório');
+  }
+  if (!p.whatsapp || typeof p.whatsapp !== 'string' || p.whatsapp.replace(/\D/g, '').length < 10) {
+    errors.push('WhatsApp com DDD válido é obrigatório');
+  }
+  if (p.lgpdConsent !== true) {
+    errors.push('Consentimento LGPD deve ser aceito explicitamente');
+  }
+  return {
+    valid: errors.length === 0,
+    errors
+  };
+}
+/* ==== END: src/contracts.js ==== */
+
+/* ==== MOD: src/core/time.js ==== */
+// src/core/time.js - Funções puras de tempo, fuso horário e virada de ciclo diário (corte às 04:00)
+
+/**
+ * Converte data ISO ou milissegundos para objeto Date determinístico.
+ * @param {string|number|Date} input
+ * @returns {Date}
+ */
+function toDate(input) {
+  if (input instanceof Date) return new Date(input.getTime());
+  if (typeof input === 'number') return new Date(input);
+  if (typeof input === 'string') return new Date(input);
+  return new Date(0);
+}
+
+/**
+ * Retorna a data no fuso de Brasília (UTC-3) como string YYYY-MM-DD considerando o horário de corte.
+ * Por padrão, o corte do dia ocorre às 04:00 da manhã.
+ * Qualquer atividade antes das 04:00 pertence ao dia letivo anterior.
+ *
+ * @param {string|number|Date} input - Data/hora da ação
+ * @param {number} cutHour - Hora de virada do dia (default: 4)
+ * @param {number} tzOffsetHours - Deslocamento de fuso em horas (default: -3 para Brasília)
+ * @returns {string} Data letiva formato "YYYY-MM-DD"
+ */
+function studyDay(input, cutHour = 4, tzOffsetHours = -3) {
+  const d = toDate(input);
+  // Ajusta para o fuso horário alvo adicionando o offset em milissegundos
+  const utcMs = d.getTime() + (d.getTimezoneOffset() * 60000);
+  const targetMs = utcMs + (tzOffsetHours * 3600000);
+  const localDate = new Date(targetMs);
+
+  // Subtrai cutHour horas para deslocar a virada do dia
+  localDate.setHours(localDate.getHours() - cutHour);
+
+  const year = localDate.getFullYear();
+  const month = String(localDate.getMonth() + 1).padStart(2, '0');
+  const day = String(localDate.getDate()).padStart(2, '0');
+
+  return `${year}-${month}-${day}`;
+}
+
+/**
+ * Calcula a diferença em dias inteiros entre duas datas no formato YYYY-MM-DD.
+ * @param {string} dateStrA - "YYYY-MM-DD"
+ * @param {string} dateStrB - "YYYY-MM-DD"
+ * @returns {number} Diferença (B - A) em dias
+ */
+function diffDays(dateStrA, dateStrB) {
+  if (!dateStrA || !dateStrB) return 0;
+  const [y1, m1, d1] = dateStrA.split('-').map(Number);
+  const [y2, m2, d2] = dateStrB.split('-').map(Number);
+
+  const utc1 = Date.UTC(y1, m1 - 1, d1);
+  const utc2 = Date.UTC(y2, m2 - 1, d2);
+
+  const msPerDay = 86400000;
+  return Math.floor((utc2 - utc1) / msPerDay);
+}
+
+/**
+ * Formata minutos para exibição MM:SS
+ * @param {number} totalSeconds
+ * @returns {string} "MM:SS"
+ */
+function formatTimer(totalSeconds) {
+  const s = Math.max(0, Math.floor(totalSeconds));
+  const mins = Math.floor(s / 60);
+  const secs = s % 60;
+  return `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+}
+/* ==== END: src/core/time.js ==== */
+
+/* ==== MOD: src/core/streak.js ==== */
+// src/core/streak.js - Gestão Pura de Ofensiva, Escudo de Proteção e Risco de Quebra
+
+/**
+ * Atualiza o estado da ofensiva quando uma atividade obrigatória é concluída no dia.
+ * @param {object} streakState - { count, best, lastCompletedDate, shieldAvailable, history }
+ * @param {string} currentDayStr - Data do dia letivo atual "YYYY-MM-DD"
+ * @returns {object} Novo estado de ofensiva atualizado
+ */
+function recordStreak(streakState, currentDayStr) {
+  const current = {
+    count: streakState?.count || 0,
+    best: streakState?.best || 0,
+    lastCompletedDate: streakState?.lastCompletedDate || null,
+    shieldAvailable: streakState?.shieldAvailable !== undefined ? Boolean(streakState.shieldAvailable) : true,
+    history: Array.isArray(streakState?.history) ? [...streakState.history] : []
+  };
+
+  if (!current.lastCompletedDate) {
+    // Primeiro dia concluído
+    current.count = 1;
+    current.best = 1;
+    current.lastCompletedDate = currentDayStr;
+    current.history.push(currentDayStr);
+    return current;
+  }
+
+  const diff = diffDays(current.lastCompletedDate, currentDayStr);
+
+  if (diff <= 0) {
+    // Já concluiu no mesmo dia letivo
+    return current;
+  }
+
+  if (diff === 1) {
+    // Dia consecutivo: incrementa ofensiva
+    current.count += 1;
+    current.best = Math.max(current.best, current.count);
+    current.lastCompletedDate = currentDayStr;
+    current.history.push(currentDayStr);
+    return current;
+  }
+
+  if (diff === 2 && current.shieldAvailable) {
+    // Falhou um dia, mas possui escudo protetor ativo!
+    current.shieldAvailable = false;
+    current.count += 1;
+    current.best = Math.max(current.best, current.count);
+    current.lastCompletedDate = currentDayStr;
+    current.history.push(currentDayStr);
+    return current;
+  }
+
+  // Falha de 2+ dias sem escudo: ofensiva reinicia em 1
+  current.count = 1;
+  current.lastCompletedDate = currentDayStr;
+  current.history.push(currentDayStr);
+  return current;
+}
+
+/**
+ * Avalia o status atual da ofensiva frente ao dia de estudo presente.
+ * @param {object} streakState
+ * @param {string} currentDayStr - "YYYY-MM-DD"
+ * @returns {'active'|'atRisk'|'shielded'|'broken'|'none'}
+ */
+function streakStatus(streakState, currentDayStr) {
+  if (!streakState?.lastCompletedDate) {
+    return 'none';
+  }
+
+  const diff = diffDays(streakState.lastCompletedDate, currentDayStr);
+
+  if (diff === 0) {
+    return 'active'; // Concluído hoje
+  }
+
+  if (diff === 1) {
+    return 'atRisk'; // Concluiu ontem, precisa praticar hoje para não perder
+  }
+
+  if (diff === 2 && streakState.shieldAvailable) {
+    return 'shielded'; // Falhou ontem, mas o escudo está pronto para salvar
+  }
+
+  return 'broken'; // Quebrou
+}
+/* ==== END: src/core/streak.js ==== */
+
+/* ==== MOD: src/core/diag.js ==== */
+// src/core/diag.js - Nivelamento Cirúrgico: Cálculo de Pontuação, Faixas e Embaralhamento Determinístico
+const TIMING = Object.freeze({
+  WINDOW: 9000,
+  FAST: 2500,
+  SLOW: 7000
+});
+const QUALITY_SCORES = Object.freeze({
+  chunk: 1.0,
+  literal: 0.55,
+  word: 0.20
+});
+const QUESTION_WEIGHTS = Object.freeze([0.35, 0.35, 0.30]);
+
+/**
+ * Função clamp pura
+ */
+function clamp(val, min, max) {
+  return Math.max(min, Math.min(max, val));
+}
+
+/**
+ * Gerador pseudoaleatório Mulberry32 puro a partir de uma semente inteira.
+ * Retorna uma função que produz números entre 0 e 1 de forma pura e determinística.
+ */
+function createPrng(seed = 12345) {
+  let s = (seed >>> 0) || 1;
+  return function next() {
+    s |= 0;
+    s = (s + 0x6D2B79F5) | 0;
+    let t = Math.imul(s ^ (s >>> 15), 1 | s);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
+/**
+ * Embaralha um array de opções de forma estável usando uma semente.
+ * @param {Array} arr - Array de entrada
+ * @param {number} seed - Semente inteira
+ * @returns {Array} Novo array embaralhado
+ */
+function shuffleOptions(arr, seed = 12345) {
+  const prng = createPrng(seed);
+  const copy = [...arr];
+  for (let i = copy.length - 1; i > 0; i--) {
+    const j = Math.floor(prng() * (i + 1));
+    const temp = copy[i];
+    copy[i] = copy[j];
+    copy[j] = temp;
+  }
+  return copy;
+}
+
+/**
+ * Calcula a pontuação de uma rodada individual (0 a 1).
+ * @param {{ type?: 'chunk'|'literal'|'word', ms?: number, timeout?: boolean }} ans
+ * @param {boolean} extendedTime - Se verdadeiro, dobra as janelas de tempo
+ * @returns {number} Score da rodada (0.0 a 1.0)
+ */
+function scoreRound(ans, extendedTime = false) {
+  if (!ans || ans.timeout) {
+    // Timeout conta como word com velocidade 0
+    return 0.7 * QUALITY_SCORES.word + 0.3 * 0;
+  }
+
+  const mult = extendedTime ? 2 : 1;
+  const fast = TIMING.FAST * mult;
+  const slow = TIMING.SLOW * mult;
+  const windowLimit = TIMING.WINDOW * mult;
+
+  const ms = typeof ans.ms === 'number' ? ans.ms : windowLimit;
+
+  // Se excedeu a janela máxima, trata como timeout/word lenta
+  if (ms > windowLimit) {
+    return 0.7 * QUALITY_SCORES.word + 0.3 * 0;
+  }
+
+  const qType = ans.type && QUALITY_SCORES[ans.type] !== undefined ? ans.type : 'word';
+  const qScore = QUALITY_SCORES[qType];
+
+  const speed = clamp((slow - ms) / (slow - fast), 0, 1);
+
+  return 0.7 * qScore + 0.3 * speed;
+}
+
+/**
+ * Calcula o resultado completo do diagnóstico cirúrgico (3 perguntas).
+ * E-01: Utiliza tolerância 1e-9 contra imprecisão de ponto flutuante, cravando 59 em 3 literais a 4s.
+ * @param {Array<{ type?: string, ms?: number, timeout?: boolean }>} answers
+ * @param {boolean} extendedTime
+ * @returns {{ score: number, band: 'autônomo'|'descongelando'|'bloqueado', bottleneck: string }}
+ */
+function scoreDiag(answers = [], extendedTime = false) {
+  let rawTotal = 0;
+
+  for (let i = 0; i < 3; i++) {
+    const ans = answers[i] || { timeout: true };
+    const weight = QUESTION_WEIGHTS[i] || 0.30;
+    const rScore = scoreRound(ans, extendedTime);
+    rawTotal += rScore * weight;
+  }
+
+  // E-01: Adiciona 1e-9 para neutralizar 58.49999999999999 e garantir Math.round -> 59
+  const score = Math.round(rawTotal * 100 + 1e-9);
+  const band = bandOf(score);
+
+  return {
+    score,
+    band,
+    bottleneck: bottleneckOf(band)
+  };
+}
+
+/**
+ * Determina a faixa de reflexo oral a partir do score final.
+ * @param {number} score
+ * @returns {'autônomo'|'descongelando'|'bloqueado'}
+ */
+function bandOf(score) {
+  if (score >= 75) return 'autônomo';
+  if (score >= 45) return 'descongelando';
+  return 'bloqueado';
+}
+
+/**
+ * Retorna a descrição do gargalo neural/cognitivo para o laudo.
+ * @param {'autônomo'|'descongelando'|'bloqueado'} band
+ * @returns {string}
+ */
+function bottleneckOf(band) {
+  if (band === 'autônomo') {
+    return 'Autonomia consolidada com necessidade de repertório de nuances e imprevistos';
+  }
+  if (band === 'descongelando') {
+    return 'Tradução mental intermitente e hesitação na troca de estruturas';
+  }
+  return 'Congelamento oral, dependência de tradução palavra por palavra e medo de errar';
+}
+/* ==== END: src/core/diag.js ==== */
+
+/* ==== MOD: src/core/migrate.js ==== */
+// src/core/migrate.js - Migração e Reparo Resiliente de Estado (v1/v2 -> v3)
+
+/**
+ * Clona profundamente um objeto puro simples (JSON-safe).
+ */
+function clone(obj) {
+  return JSON.parse(JSON.stringify(obj));
+}
+
+/**
+ * Repara e preenche campos ausentes garantindo conformidade com o schema v3.
+ * Função pura e defensiva: nunca lança exceção.
+ * @param {object} s
+ * @returns {object} Estado reparado e válido
+ */
+function repair(s) {
+  const base = clone(INITIAL_STATE);
+  if (!s || typeof s !== 'object') {
+    return base;
+  }
+
+  const out = {
+    v: STATE_VERSION,
+    profile: {
+      name: s.profile?.name ?? s.perfil?.nome ?? base.profile.name,
+      whatsapp: s.profile?.whatsapp ?? s.perfil?.whatsapp ?? base.profile.whatsapp,
+      email: s.profile?.email ?? s.perfil?.email ?? base.profile.email,
+      levelSuggested: s.profile?.levelSuggested ?? s.perfil?.nivel ?? base.profile.levelSuggested,
+      speedScore: typeof s.profile?.speedScore === 'number' ? s.profile.speedScore : (typeof s.perfil?.speedScore === 'number' ? s.perfil.speedScore : base.profile.speedScore),
+      registeredAt: s.profile?.registeredAt ?? s.createdAt ?? base.profile.registeredAt,
+      tool: s.profile?.tool ?? s.perfil?.ferramenta ?? base.profile.tool,
+      dailyTime: s.profile?.dailyTime ?? s.perfil?.horario ?? base.profile.dailyTime,
+      theme: s.profile?.theme ?? s.perfil?.tema ?? base.profile.theme
+    },
+    test: {
+      completed: Boolean(s.test?.completed ?? s.diagnostico?.concluido),
+      score: typeof s.test?.score === 'number' ? s.test.score : (typeof s.diagnostico?.pontos === 'number' ? s.diagnostico.pontos : base.test.score),
+      band: s.test?.band ?? s.diagnostico?.faixa ?? base.test.band,
+      answers: Array.isArray(s.test?.answers) ? s.test.answers : (Array.isArray(s.diagnostico?.respostas) ? s.diagnostico.respostas : [])
+    },
+    setup: {
+      completed: Boolean(s.setup?.completed ?? s.preparo?.concluidoEm),
+      completedAt: s.setup?.completedAt ?? s.preparo?.concluidoEm ?? base.setup.completedAt,
+      toolChosen: Boolean(s.setup?.toolChosen ?? s.preparo?.ferramentaEscolhida),
+      pinnedChat: Boolean(s.setup?.pinnedChat ?? s.preparo?.conversaFixa),
+      scheduleSet: Boolean(s.setup?.scheduleSet ?? s.preparo?.horarioDefinido),
+      policyChecked: Boolean(s.setup?.policyChecked ?? s.preparo?.politicaConferida)
+    },
+    streak: {
+      count: Math.max(0, Number(s.streak?.count ?? s.ofensiva?.atual ?? 0)),
+      best: Math.max(0, Number(s.streak?.best ?? s.ofensiva?.melhor ?? 0)),
+      lastCompletedDate: s.streak?.lastCompletedDate ?? s.ofensiva?.ultimoDia ?? base.streak.lastCompletedDate,
+      shieldAvailable: s.streak?.shieldAvailable !== undefined ? Boolean(s.streak.shieldAvailable) : (s.ofensiva?.descansoUsadoEm ? false : true),
+      history: Array.isArray(s.streak?.history) ? s.streak.history : []
+    },
+    xp: {
+      total: Math.max(0, Number(s.xp?.total ?? 0)),
+      rank: s.xp?.rank ?? base.xp.rank,
+      log: Array.isArray(s.xp?.log) ? s.xp.log : []
+    },
+    achievements: Array.isArray(s.achievements)
+      ? s.achievements
+      : (Array.isArray(s.selos) ? s.selos.map(item => (typeof item === 'string' ? item : item?.id)).filter(Boolean) : []),
+    days: typeof s.days === 'object' && s.days !== null ? s.days : (typeof s.dias === 'object' && s.dias !== null ? s.dias : {}),
+    chunks: typeof s.chunks === 'object' && s.chunks !== null ? s.chunks : {},
+    arena: {
+      completed: Boolean(s.arena?.completed),
+      score: typeof s.arena?.score === 'number' ? s.arena.score : null,
+      history: Array.isArray(s.arena?.history) ? s.arena.history : []
+    },
+    outbox: Array.isArray(s.outbox) ? s.outbox : []
+  };
+
+  return out;
+}
+
+/**
+ * Migra dados legados (v1, v2 ou desconhecido) para o Estado v3 canônico.
+ * Nunca lança erro, preserva progresso do usuário e garante validade do schema.
+ * @param {any} raw
+ * @returns {object} Estado v3 garantido
+ */
+function migrate(raw) {
+  if (!raw) {
+    return clone(INITIAL_STATE);
+  }
+
+  let parsed = raw;
+  if (typeof raw === 'string') {
+    try {
+      parsed = JSON.parse(raw);
+    } catch {
+      return clone(INITIAL_STATE);
+    }
+  }
+
+  if (typeof parsed !== 'object' || parsed === null) {
+    return clone(INITIAL_STATE);
+  }
+
+  // Se já for v3 e passar na validação estrita, apenas repara possíveis campos opcionais
+  if (parsed.v === STATE_VERSION) {
+    const check = validateState(parsed);
+    if (check.valid) {
+      return parsed;
+    }
+  }
+
+  return repair(parsed);
+}
+/* ==== END: src/core/migrate.js ==== */
+
+/* ==== MOD: src/core/xp.js ==== */
+// src/core/xp.js - Motor de Gamificação, Pontuação XP e Prevenção de Duplicidade (Errata E-02)
+const STAGE_XP = Object.freeze({
+  1: 4,
+  2: 10,
+  3: 20
+});
+const XP_TABLE = Object.freeze({
+  DIAGNOSTIC_COMPLETED: 30,
+  SETUP_COMPLETED: 20,
+  MISSION_ITEM_CHECKED: 5,
+  DAY_CLOSED: 40,
+  PROMPT_COPIED: 5,
+  BOSS_RAID_COMPLETED: 60
+});
+
+/**
+ * Calcula o XP derivado das cartas de Chunks praticadas.
+ * Errata E-02: O valor atribuído por carta é estritamente o do estágio mais alto já alcançado (top),
+ * e NÃO o somatório cumulativo dos estágios 1, 2 e 3.
+ *
+ * @param {Record<string, { top?: number }>} chunksState
+ * @returns {number} XP total dos chunks (máx: 10 * 20 = 200 XP)
+ */
+function computeChunkXp(chunksState = {}) {
+  let total = 0;
+  for (const c of Object.values(chunksState)) {
+    const top = c?.top || 0;
+    total += STAGE_XP[top] || 0;
+  }
+  return total;
+}
+
+/**
+ * Atribui XP ao estado garantindo idempotência estrita via chave única no log.
+ * @param {object} xpState - { total: number, rank: string, log: Array<{ key, points, at }> }
+ * @param {string} key - Chave única do evento (ex: "day_1_close", "ach_first_spark")
+ * @param {number} points - Quantidade de pontos a somar
+ * @param {string} [atIso] - Data ISO do evento
+ * @returns {{ xpState: object, awarded: boolean }}
+ */
+function awardXp(xpState, key, points, atIso = null) {
+  const currentTotal = xpState?.total || 0;
+  const currentLog = Array.isArray(xpState?.log) ? [...xpState.log] : [];
+
+  // Idempotência: Se a chave já existir no log, nunca pontua duas vezes
+  if (currentLog.some(entry => entry.key === key)) {
+    return {
+      xpState: {
+        total: currentTotal,
+        rank: xpState?.rank || rankOf(currentTotal),
+        log: currentLog
+      },
+      awarded: false
+    };
+  }
+
+  const safePoints = Math.max(0, Number(points) || 0);
+  const newTotal = currentTotal + safePoints;
+  const newRank = rankOf(newTotal);
+
+  currentLog.push({
+    key,
+    points: safePoints,
+    at: atIso
+  });
+
+  return {
+    xpState: {
+      total: newTotal,
+      rank: newRank,
+      log: currentLog
+    },
+    awarded: true
+  };
+}
+/* ==== END: src/core/xp.js ==== */
+
+/* ==== MOD: src/core/rank.js ==== */
+// src/core/rank.js - Classificação de Ranks e Limiares de XP
+const RANK_THRESHOLDS = Object.freeze([
+  { rank: 'fogo', minXp: 750 },
+  { rank: 'chama', minXp: 450 },
+  { rank: 'brasa', minXp: 150 },
+  { rank: 'faísca', minXp: 0 }
+]);
+
+/**
+ * Retorna o Rank correspondente ao total de XP acumulado.
+ * @param {number} xpTotal
+ * @returns {'faísca'|'brasa'|'chama'|'fogo'}
+ */
+function rankOf(xpTotal = 0) {
+  const total = Math.max(0, Number(xpTotal) || 0);
+  for (const t of RANK_THRESHOLDS) {
+    if (total >= t.minXp) {
+      return t.rank;
+    }
+  }
+  return 'faísca';
+}
+
+/**
+ * Retorna o progresso percentual até o próximo rank (0 a 100).
+ * @param {number} xpTotal
+ * @returns {{ currentRank: string, nextRank: string|null, currentXp: number, nextMinXp: number|null, percent: number }}
+ */
+function rankProgress(xpTotal = 0) {
+  const current = rankOf(xpTotal);
+  if (current === 'fogo') {
+    return {
+      currentRank: 'fogo',
+      nextRank: null,
+      currentXp: xpTotal,
+      nextMinXp: null,
+      percent: 100
+    };
+  }
+
+  if (current === 'chama') {
+    const range = 750 - 450;
+    const progress = Math.max(0, xpTotal - 450);
+    return {
+      currentRank: 'chama',
+      nextRank: 'fogo',
+      currentXp: xpTotal,
+      nextMinXp: 750,
+      percent: Math.min(100, Math.floor((progress / range) * 100))
+    };
+  }
+
+  if (current === 'brasa') {
+    const range = 450 - 150;
+    const progress = Math.max(0, xpTotal - 150);
+    return {
+      currentRank: 'brasa',
+      nextRank: 'chama',
+      currentXp: xpTotal,
+      nextMinXp: 450,
+      percent: Math.min(100, Math.floor((progress / range) * 100))
+    };
+  }
+
+  // faísca
+  const range = 150;
+  return {
+    currentRank: 'faísca',
+    nextRank: 'brasa',
+    currentXp: xpTotal,
+    nextMinXp: 150,
+    percent: Math.min(100, Math.floor((xpTotal / range) * 100))
+  };
+}
+/* ==== END: src/core/rank.js ==== */
+
+/* ==== MOD: src/core/ach.js ==== */
+// src/core/ach.js - Motor de Conquistas e Verificação de Regras
+
+/**
+ * Avalia o estado e retorna conquistas recém-desbloqueadas.
+ * Função pura e idempotente: nunca adiciona duplicatas à lista existente.
+ *
+ * @param {object} state - Estado v3 do aluno
+ * @returns {{ newlyUnlocked: Array<object>, allUnlockedIds: string[] }}
+ */
+function evaluateAchievements(state) {
+  const currentUnlocked = new Set(Array.isArray(state?.achievements) ? state.achievements : []);
+  const newlyUnlocked = [];
+
+  for (const ach of ACHIEVEMENTS) {
+    if (currentUnlocked.has(ach.id)) {
+      continue;
+    }
+
+    let earned = false;
+
+    if (ach.id === 'first_spark' && state?.test?.completed) {
+      earned = true;
+    } else if (ach.id === 'day1' && state?.days?.['1']?.status === 'fechado') {
+      earned = true;
+    } else if (ach.id === 'streak3' && (state?.streak?.count || 0) >= 3) {
+      earned = true;
+    } else if (ach.id === 'streak7' && (state?.streak?.count || 0) >= 7) {
+      earned = true;
+    } else if (ach.id === 'blind' && (state?.days?.['5']?.status === 'fechado' || state?.days?.['6']?.status === 'fechado')) {
+      earned = true;
+    } else if (ach.id === 'boss' && (state?.days?.['7']?.status === 'fechado' || state?.arena?.completed)) {
+      earned = true;
+    }
+
+    if (earned) {
+      newlyUnlocked.push(ach);
+      currentUnlocked.add(ach.id);
+    }
+  }
+
+  return {
+    newlyUnlocked,
+    allUnlockedIds: Array.from(currentUnlocked)
+  };
+}
+/* ==== END: src/core/ach.js ==== */
+
+/* ==== MOD: src/core/deck.js ==== */
+// src/core/deck.js - Raid Kit: Sistema Leitner de Repetição Espaçada e Gestão de Chunks
+const LEITNER_INTERVALS = Object.freeze({
+  1: 1, // Caixa 1: 1 dia
+  2: 3, // Caixa 2: 3 dias
+  3: 7  // Caixa 3: 7 dias
+});
+
+/**
+ * Adiciona dias a uma data no formato "YYYY-MM-DD" e retorna a nova data string.
+ * @param {string} dateStr - "YYYY-MM-DD"
+ * @param {number} days - Quantidade de dias a somar
+ * @returns {string} "YYYY-MM-DD"
+ */
+function addDays(dateStr, days) {
+  if (!dateStr) return '';
+  const [y, m, d] = dateStr.split('-').map(Number);
+  const date = new Date(Date.UTC(y, m - 1, d + days));
+  const rY = date.getUTCFullYear();
+  const rM = String(date.getUTCMonth() + 1).padStart(2, '0');
+  const rD = String(date.getUTCDate()).padStart(2, '0');
+  return `${rY}-${rM}-${rD}`;
+}
+
+/**
+ * Registra a revisão ou prática de um Chunk segundo o algoritmo Leitner.
+ * Invariante (E-02): O campo `top` (estágio máximo alcançado) NUNCA regride.
+ *
+ * @param {object} chunkState - { stage, top, nextReviewDate, history }
+ * @param {'natural'|'esforco'|'travou'} rating
+ * @param {string} currentDayStr - "YYYY-MM-DD"
+ * @returns {object} Novo estado atualizado do chunk
+ */
+function reviewChunk(chunkState, rating, currentDayStr) {
+  const prevStage = chunkState?.stage || 0;
+  const prevTop = chunkState?.top || 0;
+  const history = Array.isArray(chunkState?.history) ? [...chunkState.history] : [];
+
+  let newStage = 1;
+  let interval = 1;
+
+  if (rating === 'natural') {
+    newStage = Math.min(3, prevStage + 1);
+    interval = LEITNER_INTERVALS[newStage] || 7;
+  } else if (rating === 'esforco') {
+    newStage = Math.max(1, prevStage === 0 ? 1 : prevStage);
+    interval = 2;
+  } else {
+    // 'travou'
+    newStage = 1;
+    interval = LEITNER_INTERVALS[1];
+  }
+
+  // O estágio mais alto (top) nunca regride
+  const newTop = Math.max(prevTop, newStage);
+  const nextReviewDate = addDays(currentDayStr, interval);
+
+  history.push({
+    at: currentDayStr,
+    rating,
+    stage: newStage
+  });
+
+  return {
+    stage: newStage,
+    top: newTop,
+    lastReviewedAt: currentDayStr,
+    nextReviewDate,
+    history
+  };
+}
+
+/**
+ * Retorna os chunks que estão prontos para revisão na data atual.
+ * @param {Record<string, object>} chunksMap - Mapa de id -> chunkState
+ * @param {string} currentDayStr - "YYYY-MM-DD"
+ * @returns {string[]} Lista de IDs de chunks vencidos para revisão
+ */
+function dueChunks(chunksMap = {}, currentDayStr) {
+  const due = [];
+  for (const [id, c] of Object.entries(chunksMap)) {
+    if (!c.nextReviewDate) {
+      due.push(id);
+    } else {
+      const diff = diffDays(c.nextReviewDate, currentDayStr);
+      // Se diff >= 0, a data de revisão já chegou ou passou
+      if (diff >= 0) {
+        due.push(id);
+      }
+    }
+  }
+  return due;
+}
+/* ==== END: src/core/deck.js ==== */
+
+/* ==== MOD: src/core/lead.js ==== */
+// src/core/lead.js - Normalização de Contato, Geração de Dossiê Ético e Payload de Lead
+
+/**
+ * Normaliza um número de telefone brasileiro para o formato internacional com código 55.
+ * Aceita números com ou sem +55, com 10 ou 11 dígitos (DDD + 8 ou 9 dígitos).
+ *
+ * @param {string} phoneRaw
+ * @returns {string|null} Número no formato "55DD9XXXXXXXX" ou null se inválido
+ */
+function normalizeBR(phoneRaw) {
+  if (!phoneRaw || typeof phoneRaw !== 'string') return null;
+
+  let digits = phoneRaw.replace(/\D/g, '');
+
+  // Se já tiver 55 no início e totalizar 12 ou 13 dígitos
+  if (digits.startsWith('55') && (digits.length === 12 || digits.length === 13)) {
+    digits = digits.slice(2);
+  }
+
+  // Número brasileiro válido possui 10 (fixo) ou 11 dígitos (celular com 9)
+  if (digits.length !== 10 && digits.length !== 11) {
+    return null;
+  }
+
+  const ddd = parseInt(digits.slice(0, 2), 10);
+  if (ddd < 11 || ddd > 99) {
+    return null;
+  }
+
+  return `55${digits}`;
+}
+
+/**
+ * Monta o texto legível do dossiê do aluno para envio via WhatsApp para o Professor Gabe.
+ * Função 100% ética e pura: nenhum dado falso ou pontuação inventada.
+ *
+ * @param {object} state - Estado v3 do aluno
+ * @param {object} [extra] - Dados complementares (ex: motivo de interesse)
+ * @returns {string} Mensagem formatada
+ */
+function formatDossier(state, extra = {}) {
+  const profileName = state?.profile?.name || extra.name || '[Nome não informado]';
+  const xp = state?.xp?.total || 0;
+  const rank = (state?.xp?.rank || 'faísca').toUpperCase();
+
+  // Diagnóstico
+  let diagText = 'Não realizado';
+  if (state?.test?.completed && typeof state?.test?.score === 'number') {
+    const bandName = state.test.band ? state.test.band.toUpperCase() : 'N/A';
+    diagText = `${state.test.score}/100 (Faixa: ${bandName})`;
+  }
+
+  // Progresso de Dias
+  const daysMap = state?.days || {};
+  const closedDays = Object.values(daysMap).filter(d => d.status === 'fechado').length;
+
+  // Chunks Dominados (estágio top 3)
+  const chunksMap = state?.chunks || {};
+  const masteredChunks = Object.values(chunksMap).filter(c => c.top === 3).length;
+  const totalChunksPracticed = Object.keys(chunksMap).length;
+
+  const lines = [
+    `*DOSSIÊ DE ENTRADA · SPARK ALPHA*`,
+    `--------------------------------`,
+    `*Aluno:* ${profileName}`,
+    `*Diagnóstico Oral:* ${diagText}`,
+    `*Dias Concluídos:* ${closedDays} de 7`,
+    `*Chunks Dominados:* ${masteredChunks} de 10 (Praticados: ${totalChunksPracticed})`,
+    `*Ofensiva Atual:* ${state?.streak?.count || 0} dias`,
+    `*XP Total:* ${xp} pts (Rank: ${rank})`,
+    `--------------------------------`,
+    `*Objetivo:* Aplicação para uma das 10 vagas fundadoras da Turma Alpha do Gabe.`
+  ];
+
+  if (extra.interest) {
+    lines.push(`*Motivo informado:* ${extra.interest}`);
+  }
+
+  return lines.join('\n');
+}
+
+/**
+ * Constrói e valida o payload oficial de Lead para envio ao moodle-bridge.
+ *
+ * @param {object} state - Estado atual v3
+ * @param {object} form - Dados preenchidos no formulário
+ * @returns {{ valid: boolean, payload?: object, errors?: string[] }}
+ */
+function buildLeadPayload(state, form = {}) {
+  const normalizedPhone = normalizeBR(form.whatsapp);
+  const payload = {
+    name: (form.name || '').trim(),
+    whatsapp: normalizedPhone || '',
+    email: form.email ? form.email.trim() : null,
+    lgpdConsent: form.lgpdConsent === true,
+    diagnosticScore: state?.test?.score ?? null,
+    diagnosticBand: state?.test?.band ?? null,
+    xpTotal: state?.xp?.total ?? 0,
+    rank: state?.xp?.rank ?? 'faísca',
+    daysCompleted: Object.values(state?.days || {}).filter(d => d.status === 'fechado').length,
+    submittedAt: form.submittedAt || null
+  };
+
+  const validation = validateLeadPayload(payload);
+  if (!validation.valid) {
+    return {
+      valid: false,
+      errors: validation.errors
+    };
+  }
+
+  return {
+    valid: true,
+    payload
+  };
+}
+
+/**
+ * Transição de estado da fila de envio offline (Outbox).
+ * Estados possíveis: 'queued' | 'sending' | 'sent' | 'failed'
+ *
+ * @param {object} item - Item na fila do outbox
+ * @param {'START_SEND'|'SEND_SUCCESS'|'SEND_FAIL'} action
+ * @param {object} [eventData]
+ * @returns {object} Novo estado do item
+ */
+function transitionOutboxItem(item, action, eventData = {}) {
+  const current = { ...item };
+
+  if (action === 'START_SEND') {
+    return {
+      ...current,
+      status: 'sending',
+      lastAttemptAt: eventData.nowIso || null
+    };
+  }
+
+  if (action === 'SEND_SUCCESS') {
+    return {
+      ...current,
+      status: 'sent',
+      sentAt: eventData.nowIso || null,
+      responseId: eventData.responseId || null
+    };
+  }
+
+  if (action === 'SEND_FAIL') {
+    const attempts = (current.attempts || 0) + 1;
+    return {
+      ...current,
+      status: 'failed',
+      attempts,
+      lastError: eventData.error || 'Erro de conexão',
+      lastAttemptAt: eventData.nowIso || null
+    };
+  }
+
+  return current;
+}
+/* ==== END: src/core/lead.js ==== */
+
+/* ==== MOD: src/core/update.js ==== */
+// src/core/update.js - Redutor Puro do Ciclo de Vida da Aplicação (Action Reducer & Efeitos)
+
+
+
+
+
+
+
+
+/**
+ * Redutor puro de estado e despachante de efeitos.
+ *
+ * @param {object} state - Estado atual v3 (imutável)
+ * @param {{ type: string, payload?: any }} msg - Ação disparada
+ * @param {{ nowMs: number, nowIso: string, studyDay: string }} env - Dependências determinísticas
+ * @returns {{ state: object, fx: Array<{ type: string, payload?: any }> }}
+ */
+function update(state = INITIAL_STATE, msg = {}, env = {}) {
+  const current = state || INITIAL_STATE;
+  const type = msg?.type;
+  const p = msg?.payload || {};
+
+  const nowIso = env.nowIso || '2026-11-04T12:00:00.000Z';
+  const today = env.studyDay || '2026-11-04';
+
+  const fx = [];
+
+  switch (type) {
+    case 'START_DIAGNOSTIC': {
+      const nextState = {
+        ...current,
+        test: {
+          completed: false,
+          score: null,
+          band: null,
+          answers: []
+        }
+      };
+      return { state: nextState, fx };
+    }
+
+    case 'SUBMIT_ANSWER': {
+      const answers = [...(current.test?.answers || []), p];
+      const completed = answers.length >= 3;
+
+      let score = current.test?.score ?? null;
+      let band = current.test?.band ?? null;
+      let nextXp = { ...(current.xp || { total: 0, rank: 'faísca', log: [] }) };
+
+      if (completed) {
+        const diagResult = scoreDiag(answers, Boolean(p.extendedTime));
+        score = diagResult.score;
+        band = diagResult.band;
+
+        // Atribui XP pelo diagnóstico concluído
+        const xpRes = awardXp(nextXp, 'diag_complete', XP_TABLE.DIAGNOSTIC_COMPLETED, nowIso);
+        nextXp = xpRes.xpState;
+
+        fx.push({
+          type: 'TRIGGER_CELEBRATION',
+          payload: { reason: 'diagnostic_completed', score, band }
+        });
+      }
+
+      const tempState = {
+        ...current,
+        test: {
+          completed,
+          score,
+          band,
+          answers
+        },
+        xp: nextXp
+      };
+
+      // Avalia conquistas (ex: first_spark)
+      const achEval = evaluateAchievements(tempState);
+      let finalXp = nextXp;
+      for (const ach of achEval.newlyUnlocked) {
+        finalXp = awardXp(finalXp, `ach_${ach.id}`, ach.points, nowIso).xpState;
+      }
+
+      const nextState = {
+        ...tempState,
+        xp: finalXp,
+        achievements: achEval.allUnlockedIds
+      };
+
+      return { state: nextState, fx };
+    }
+
+    case 'COMPLETE_SETUP_ITEM': {
+      const itemKey = p.key; // toolChosen, pinnedChat, scheduleSet, policyChecked
+      const setup = {
+        ...(current.setup || {}),
+        [itemKey]: true
+      };
+      return {
+        state: { ...current, setup },
+        fx
+      };
+    }
+
+    case 'FINISH_SETUP': {
+      const setup = {
+        ...(current.setup || {}),
+        completed: true,
+        completedAt: nowIso
+      };
+      const xpRes = awardXp(current.xp, 'setup_complete', XP_TABLE.SETUP_COMPLETED, nowIso);
+      return {
+        state: {
+          ...current,
+          setup,
+          xp: xpRes.xpState
+        },
+        fx
+      };
+    }
+
+    case 'OPEN_DAY': {
+      const dayNum = String(p.num);
+      const days = { ...(current.days || {}) };
+      days[dayNum] = {
+        ...(days[dayNum] || {}),
+        status: 'aberto',
+        abertoEm: nowIso
+      };
+      return {
+        state: { ...current, days },
+        fx
+      };
+    }
+
+    case 'TOGGLE_MISSION_ITEM': {
+      const dayNum = String(p.num);
+      const idx = Number(p.index);
+      const days = { ...(current.days || {}) };
+      const dayData = { ...(days[dayNum] || {}) };
+      const missions = Array.isArray(dayData.missions) ? [...dayData.missions] : [];
+
+      missions[idx] = !missions[idx];
+      dayData.missions = missions;
+      days[dayNum] = dayData;
+
+      return {
+        state: { ...current, days },
+        fx
+      };
+    }
+
+    case 'SET_DAY_NOTE': {
+      const dayNum = String(p.num);
+      const days = { ...(current.days || {}) };
+      const dayData = { ...(days[dayNum] || {}) };
+      const notes = { ...(dayData.notes || {}), [p.key]: p.value };
+
+      dayData.notes = notes;
+      days[dayNum] = dayData;
+
+      return {
+        state: { ...current, days },
+        fx
+      };
+    }
+
+    case 'CLOSE_DAY': {
+      const dayNum = String(p.num);
+      const days = { ...(current.days || {}) };
+      const dayData = { ...(days[dayNum] || {}) };
+
+      dayData.status = 'fechado';
+      dayData.fechadoEm = nowIso;
+      days[dayNum] = dayData;
+
+      // Atualiza ofensiva
+      const nextStreak = recordStreak(current.streak, today);
+
+      // Atribui XP do fechamento
+      let nextXp = awardXp(current.xp, `day_${dayNum}_close`, XP_TABLE.DAY_CLOSED, nowIso).xpState;
+
+      const tempState = {
+        ...current,
+        days,
+        streak: nextStreak,
+        xp: nextXp
+      };
+
+      // Avalia conquistas (day1, streak3, streak7, blind, boss)
+      const achEval = evaluateAchievements(tempState);
+      for (const ach of achEval.newlyUnlocked) {
+        nextXp = awardXp(nextXp, `ach_${ach.id}`, ach.points, nowIso).xpState;
+      }
+
+      fx.push({
+        type: 'TRIGGER_CELEBRATION',
+        payload: { reason: 'day_closed', day: dayNum }
+      });
+
+      return {
+        state: {
+          ...tempState,
+          xp: nextXp,
+          achievements: achEval.allUnlockedIds
+        },
+        fx
+      };
+    }
+
+    case 'COPY_PROMPT': {
+      const dayNum = String(p.num || 'global');
+      const xpRes = awardXp(current.xp, `copy_prompt_d${dayNum}`, XP_TABLE.PROMPT_COPIED, nowIso);
+      return {
+        state: {
+          ...current,
+          xp: xpRes.xpState
+        },
+        fx
+      };
+    }
+
+    case 'LEVEL_UP_CHUNK':
+    case 'REVIEW_CHUNK': {
+      const chunkId = p.id;
+      const rating = p.rating || 'natural';
+      const chunks = { ...(current.chunks || {}) };
+      const chunkData = chunks[chunkId] || {};
+
+      const nextChunk = reviewChunk(chunkData, rating, today);
+      chunks[chunkId] = nextChunk;
+
+      // Recalcula XP total de chunks
+      const chunkXpTotal = computeChunkXp(chunks);
+      // Registra/atualiza o XP de chunks via chave dedicada
+      let nextXp = awardXp(current.xp, 'chunks_mastery', chunkXpTotal, nowIso).xpState;
+      nextXp = {
+        ...nextXp,
+        rank: rankOf(nextXp.total)
+      };
+
+      return {
+        state: {
+          ...current,
+          chunks,
+          xp: nextXp
+        },
+        fx
+      };
+    }
+
+    case 'RECORD_ARENA_ROUND': {
+      const arena = { ...(current.arena || {}) };
+      const history = [...(arena.history || []), { ...p, at: nowIso }];
+      arena.history = history;
+
+      return {
+        state: { ...current, arena },
+        fx
+      };
+    }
+
+    case 'FINISH_ARENA': {
+      const arena = {
+        ...(current.arena || {}),
+        completed: true,
+        completedAt: nowIso,
+        score: p.score || 100
+      };
+
+      let nextXp = awardXp(current.xp, 'arena_boss_victory', XP_TABLE.BOSS_RAID_COMPLETED, nowIso).xpState;
+
+      const tempState = {
+        ...current,
+        arena,
+        xp: nextXp
+      };
+
+      const achEval = evaluateAchievements(tempState);
+      for (const ach of achEval.newlyUnlocked) {
+        nextXp = awardXp(nextXp, `ach_${ach.id}`, ach.points, nowIso).xpState;
+      }
+
+      fx.push({
+        type: 'TRIGGER_CELEBRATION',
+        payload: { reason: 'arena_victory', score: arena.score }
+      });
+
+      return {
+        state: {
+          ...tempState,
+          arena,
+          xp: nextXp,
+          achievements: achEval.allUnlockedIds
+        },
+        fx
+      };
+    }
+
+    case 'SUBMIT_LEAD': {
+      const form = p.form || {};
+      const leadRes = buildLeadPayload(current, form);
+
+      if (!leadRes.valid) {
+        return {
+          state: current,
+          fx: [{ type: 'ANNOUNCE_SR', payload: { message: leadRes.errors.join('. ') } }]
+        };
+      }
+
+      const outboxItem = {
+        id: `lead_${nowIso}`,
+        payload: leadRes.payload,
+        status: 'queued',
+        createdAt: nowIso,
+        attempts: 0
+      };
+
+      const nextOutbox = [...(current.outbox || []), outboxItem];
+
+      fx.push({
+        type: 'DISPATCH_OUTBOX',
+        payload: outboxItem
+      });
+
+      return {
+        state: {
+          ...current,
+          profile: {
+            ...(current.profile || {}),
+            name: leadRes.payload.name,
+            whatsapp: leadRes.payload.whatsapp,
+            email: leadRes.payload.email
+          },
+          outbox: nextOutbox
+        },
+        fx
+      };
+    }
+
+    case 'RESET_STATE': {
+      return {
+        state: JSON.parse(JSON.stringify(INITIAL_STATE)),
+        fx: [{ type: 'TRIGGER_CELEBRATION', payload: { reason: 'reset' } }]
+      };
+    }
+
+    default:
+      return { state: current, fx };
+  }
+}
+/* ==== END: src/core/update.js ==== */
+
+/* ==== MOD: src/content/copy.js ==== */
+// src/content/copy.js - Textos de Suporte, Conquistas, Setup e Termos LGPD
+const SETUP_CHECKLIST = Object.freeze([
+  Object.freeze({
+    id: "toolChosen",
+    title: "1. Ferramenta de IA Escolhida",
+    desc: "Escolha seu chat principal (ChatGPT, Claude, Gemini) e instale o app no celular."
+  }),
+  Object.freeze({
+    id: "pinnedChat",
+    title: "2. Conversa Fixada",
+    desc: "Crie e fixe uma conversa dedicada exclusiva para o treino SPARK."
+  }),
+  Object.freeze({
+    id: "scheduleSet",
+    title: "3. Horário do Dia Definido",
+    desc: "Bloqueie de 15 a 20 minutos na sua agenda diária sempre no mesmo horário."
+  }),
+  Object.freeze({
+    id: "policyChecked",
+    title: "4. Política de Privacidade Conferida",
+    desc: "Confira as configurações de áudio e privacidade na ferramenta de IA escolhida."
+  })
+]);
+const ACHIEVEMENTS = Object.freeze([
+  Object.freeze({
+    id: "first_spark",
+    title: "Primeira Faísca",
+    desc: "Concluiu o Nivelamento Cirúrgico e descobriu seu ponto de partida.",
+    points: 20
+  }),
+  Object.freeze({
+    id: "day1",
+    title: "Partida Real",
+    desc: "Fechou o Dia 1 e gravou as notas de fluência inicial.",
+    points: 20
+  }),
+  Object.freeze({
+    id: "streak3",
+    title: "Embalando",
+    desc: "Manteve 3 dias consecutivos de ofensiva sem quebrar.",
+    points: 30
+  }),
+  Object.freeze({
+    id: "streak7",
+    title: "Fogo Vivo",
+    desc: "Completou os 7 dias completos da jornada SPARK.",
+    points: 50
+  }),
+  Object.freeze({
+    id: "blind",
+    title: "Sem Muletas",
+    desc: "Concluiu um dia blind (sem olhar lista de chunks).",
+    points: 25
+  }),
+  Object.freeze({
+    id: "boss",
+    title: "Vencedor da Mini-Arena",
+    desc: "Enfrentou a pressão de 60 segundos do Dia 7.",
+    points: 50
+  })
+]);
+const RANKS = Object.freeze({
+  faisca: Object.freeze({
+    name: "Faísca",
+    minXp: 0,
+    color: "#f59e0b",
+    desc: "Primeiros blocos de linguagem sendo destravados."
+  }),
+  brasa: Object.freeze({
+    name: "Brasa",
+    minXp: 150,
+    color: "#f97316",
+    desc: "Constância adquirida e redução da tradução mental."
+  }),
+  chama: Object.freeze({
+    name: "Chama",
+    minXp: 450,
+    color: "#ef4444",
+    desc: "Fluência em blocos consolidados e boa reação a imprevistos."
+  }),
+  fogo: Object.freeze({
+    name: "Fogo",
+    minXp: 750,
+    color: "#8b5cf6",
+    desc: "Autonomia comunicativa com chunks automáticos e reflexo rápido."
+  })
+});
+const LGPD_COPY = Object.freeze({
+  consentLabel: "Concordo em compartilhar meu nome, WhatsApp e laudo pedagógico com o Professor Gabe exclusivamente para atendimento e aplicação à Turma Alpha.",
+  privacySummary: "Seus dados ficam salvos localmente neste aparelho. Ao submeter o dossiê, apenas as métricas de estudo e seu contato são transmitidos com segurança para o suporte pedagógico.",
+  termsPlaceholder: "[PREENCHER: Termos de Uso e Política de Privacidade da Turma Fundadora Alpha - Lexiquest]"
+});
+/* ==== END: src/content/copy.js ==== */
+
+/* ==== MOD: src/content/d1.js ==== */
+// src/content/d1.js - Dia 1: Descubra onde você trava
+const D1 = Object.freeze({
+  num: 1,
+  title: "Descubra onde você trava",
+  subtitle: "Medir o ponto de partida. Sem corrigir nada ainda.",
+  timeEstimate: "15–20 min",
+  pillar: "PR",
+  missions: Object.freeze([
+    "Cole o prompt base (pág. 14) na conversa.",
+    "Tarefa 1, familiar: apresente-se e fale do seu trabalho por 2 minutos.",
+    "Tarefa 2, nova: peça um café e reaja a um imprevisto (a IA decide qual).",
+    "Grave o áudio ou salve a transcrição das duas tarefas.",
+    "Dê uma nota de 1 a 5 para você nos três critérios."
+  ]),
+  recordFields: Object.freeze([
+    { type: "scale", key: "fluencia", label: "Fluência (sustentei a fala?)" },
+    { type: "scale", key: "automaticidade", label: "Automaticidade (traduzi na cabeça?)" },
+    { type: "scale", key: "resiliencia", label: "Resiliência (me recuperei do erro?)" }
+  ]),
+  gate: Object.freeze([1, 2]),
+  warning: "Antes de gravar, confira a política de dados da ferramenta (pág. 5).",
+  askPrompt: "Vamos medir meu ponto de partida. Não corrija nada agora. Comece pela Tarefa 1.",
+  whyItWorks: "P Produzir sem ajuda mostra onde você realmente trava. R Uma tarefa nova mede o ponto de partida.",
+  timer: 120,
+  blind: false,
+  boss: false
+});
+/* ==== END: src/content/d1.js ==== */
+
+/* ==== MOD: src/content/d2.js ==== */
+// src/content/d2.js - Dia 2: Pratique chunks, não palavras soltas
+const D2 = Object.freeze({
+  num: 2,
+  title: "Pratique chunks, não palavras soltas",
+  subtitle: "Trocar a tradução palavra por palavra por blocos prontos.",
+  timeEstimate: "15–25 min",
+  pillar: "PA",
+  missions: Object.freeze([
+    "Escolha 5 chunks da pág. 13.",
+    "Peça à IA um cenário de cafeteria e use os 5 chunks na conversa.",
+    "Quando errar, peça para a IA refazer a sua frase certa, sem explicar.",
+    "Anote quais chunks saíram sem pensar e quais travaram."
+  ]),
+  recordFields: Object.freeze([
+    { type: "text", key: "travaram", label: "Chunks que travaram:" }
+  ]),
+  phrase: "Could I get that with…?",
+  askPrompt: "Simule uma cafeteria. Vou usar meus 5 chunks. Refaça minhas frases sem explicar.",
+  whyItWorks: "P Você monta a frase antes de ver a correta. A A IA refaz a frase dentro da conversa.",
+  timer: null,
+  blind: false,
+  boss: false
+});
+/* ==== END: src/content/d2.js ==== */
+
+/* ==== MOD: src/content/d3.js ==== */
+// src/content/d3.js - Dia 3: Faça os chunks voltarem
+const D3 = Object.freeze({
+  num: 3,
+  title: "Faça os chunks voltarem",
+  subtitle: "Repetição espaçada: o mesmo chunk, em contextos diferentes, fixa mais que repetir o mesmo exercício.",
+  timeEstimate: "15–25 min",
+  pillar: "SP",
+  missions: Object.freeze([
+    "Releia os 5 chunks do Dia 2.",
+    "Use cada um em 3 cenários: cafeteria, hotel e reunião de trabalho.",
+    "À noite, refaça só os chunks que travaram de manhã.",
+    "Marque os chunks que saíram sem esforço."
+  ]),
+  recordFields: Object.freeze([
+    { type: "number", key: "sem_esforco", label: "Saíram sem esforço: __ de 5", max: 5 },
+    { type: "text", key: "amanha", label: "Voltam amanhã:" }
+  ]),
+  warning: "Regra: o chunk só conta como seu depois de funcionar em contexto novo. Se travar, volta amanhã.",
+  askPrompt: "Leve estes 5 chunks para hotel e reunião. Uma pergunta por vez.",
+  whyItWorks: "S O mesmo chunk volta em contextos diferentes. P Você produz de novo, sem copiar.",
+  timer: null,
+  blind: false,
+  boss: false
+});
+/* ==== END: src/content/d3.js ==== */
+
+/* ==== MOD: src/content/d4.js ==== */
+// src/content/d4.js - Dia 4: Fale antes de traduzir
+const D4 = Object.freeze({
+  num: 4,
+  title: "Fale antes de traduzir",
+  subtitle: "Reduzir a tradução mental.",
+  timeEstimate: "15–25 min",
+  pillar: "P",
+  missions: Object.freeze([
+    "Combine com a IA: ela faz uma pergunta curta e você responde na hora, sem tradutor.",
+    "Conte “um, dois, três” na cabeça e responda mesmo que imperfeito.",
+    "Se travar, diga “Sorry, I meant…” e tente de novo antes de pedir ajuda.",
+    "Faça 10 trocas e marque quantas saíram sem tradução."
+  ]),
+  recordFields: Object.freeze([
+    { type: "fraction", key: "trocas", label: "Sem tradução: __ de 10", max: 10 }
+  ]),
+  warning: "Imperfeito vale: o objetivo é responder, não acertar.",
+  phrase: "Sorry, I meant…",
+  askPrompt: "Faça uma pergunta curta por vez. Eu respondo na hora, sem tradutor.",
+  whyItWorks: "P Responder em segundos tira o tempo de traduzir.",
+  timer: null,
+  blind: false,
+  boss: false
+});
+/* ==== END: src/content/d4.js ==== */
+
+/* ==== MOD: src/content/d5.js ==== */
+// src/content/d5.js - Dia 5: Teste em situação nova
+const D5 = Object.freeze({
+  num: 5,
+  title: "Teste em situação nova",
+  subtitle: "Transferir: saber o chunk no treino não basta; é preciso usá-lo no inesperado.",
+  timeEstimate: "20–30 min",
+  pillar: "PR",
+  missions: Object.freeze([
+    "Esconda a página 13.",
+    "Cenário novo: peça comida em outra cafeteria, e o item que você quer acabou.",
+    "Sustente a conversa até resolver o pedido.",
+    "Registre se você se recuperou do imprevisto e quantos chunks usou sem olhar."
+  ]),
+  recordFields: Object.freeze([
+    { type: "number", key: "sem_olhar", label: "Chunks sem olhar:", max: 10 },
+    { type: "boolean", key: "recuperei", label: "Recuperei do imprevisto:" }
+  ]),
+  criteria: Object.freeze([
+    "Manteve a conversa",
+    "Usou linguagem funcional, mesmo imperfeita",
+    "Recuperou-se de pelo menos 1 imprevisto"
+  ]),
+  askPrompt: "Outra cafeteria. O item que eu quero acabou. Não me avise antes.",
+  whyItWorks: "R O imprevisto testa o chunk fora do treino. P Você produz sem olhar a lista.",
+  timer: null,
+  blind: true,
+  boss: false
+});
+/* ==== END: src/content/d5.js ==== */
+
+/* ==== MOD: src/content/d6.js ==== */
+// src/content/d6.js - Dia 6: Prática sem ajuda
+const D6 = Object.freeze({
+  num: 6,
+  title: "Prática sem ajuda",
+  subtitle: "Separar o que você consegue sozinho do que depende da IA.",
+  timeEstimate: "15–20 min",
+  pillar: "PR",
+  missions: Object.freeze([
+    "Tarefa de 2 a 3 minutos, sem tradutor, sem sugestão de chunks e sem correção em tempo real.",
+    "Só a IA conduz a situação (por exemplo, check-in num hotel).",
+    "Peça o feedback apenas depois de terminar.",
+    "Anote onde hesitou e o que fez para continuar."
+  ]),
+  recordFields: Object.freeze([
+    { type: "text", key: "hesitei", label: "Onde hesitei:" },
+    { type: "text", key: "continuar", label: "O que fiz para continuar:" }
+  ]),
+  warning: "Não é prova e não pontua contra você. Mostra evidência honesta do que você já faz sozinho.",
+  askPrompt: "Conduza um check-in de hotel. Não corrija nada até eu dizer “fim”.",
+  whyItWorks: "P Sem apoio, a evidência é honesta. R A IA conduz a situação sozinha.",
+  timer: 180,
+  blind: true,
+  boss: false
+});
+/* ==== END: src/content/d6.js ==== */
+
+/* ==== MOD: src/content/d7.js ==== */
+// src/content/d7.js - Dia 7: Mini-simulação e medição
+const D7 = Object.freeze({
+  num: 7,
+  title: "Mini-simulação e medição",
+  subtitle: "Simular pressão e comparar com o Dia 1.",
+  timeEstimate: "25–30 min",
+  pillar: "SR",
+  missions: Object.freeze([
+    "Mini-simulação: pedido de café em Manhattan, com 60 segundos de pressão e um imprevisto.",
+    "Repita as duas tarefas do Dia 1.",
+    "Dê de novo as 3 notas (fluência, automaticidade, resiliência).",
+    "Compare as notas e os chunks que agora saem naturalmente."
+  ]),
+  recordFields: Object.freeze([
+    { type: "scale", key: "fluencia", label: "Fluência (sustentei a fala?)" },
+    { type: "scale", key: "automaticidade", label: "Automaticidade (traduzi na cabeça?)" },
+    { type: "scale", key: "resiliencia", label: "Resiliência (me recuperei do erro?)" }
+  ]),
+  gate: Object.freeze([0, 1]),
+  warning: "Importante: é só uma mini-simulação. A Boss Raid oficial exige 14 dias de prática ativa e a aprovação de um professor. É isso que a Turma Alpha faz.",
+  askPrompt: "Simule um café em Manhattan com 60 segundos de pressão e um imprevisto.",
+  whyItWorks: "S Chunks do começo voltam sob pressão. R Pressão e imprevisto simulam o mundo real.",
+  timer: 60,
+  blind: false,
+  boss: true
+});
+/* ==== END: src/content/d7.js ==== */
+
+/* ==== MOD: src/content/ch.js ==== */
+// src/content/ch.js - Catálogo Oficial dos 10 Chunks do Raid Kit (SPARK Alpha)
+const CHUNKS = Object.freeze([
+  Object.freeze({
+    id: "can-i-get",
+    category: "pedir",
+    phrase: "Can I get…",
+    translation: "Posso pedir / Me vê...",
+    example: "Can I get a coffee, please?",
+    contextTips: Object.freeze(["cafeteria", "restaurante", "balcão"])
+  }),
+  Object.freeze({
+    id: "ill-have",
+    category: "pedir",
+    phrase: "I’ll have…",
+    translation: "Vou querer...",
+    example: "I’ll have the salad, please.",
+    contextTips: Object.freeze(["cafeteria", "jantar", "hotel"])
+  }),
+  Object.freeze({
+    id: "could-i-get-that-with",
+    category: "personalizar",
+    phrase: "Could I get that with…?",
+    translation: "Poderia vir com...?",
+    example: "Could I get that with no sugar?",
+    contextTips: Object.freeze(["cafeteria", "restaurante", "personalização"])
+  }),
+  Object.freeze({
+    id: "swap",
+    category: "trocar",
+    phrase: "Actually, can I swap that for…?",
+    translation: "Na verdade, posso trocar isso por...?",
+    example: "Actually, can I swap that for water?",
+    contextTips: Object.freeze(["imprevisto", "mudança", "pedido"])
+  }),
+  Object.freeze({
+    id: "is-that-possible",
+    category: "checar",
+    phrase: "Is that possible?",
+    translation: "Isso é possível?",
+    example: "Can we sit outside? Is that possible?",
+    contextTips: Object.freeze(["hotel", "reunião", "restaurante"])
+  }),
+  Object.freeze({
+    id: "no-problem",
+    category: "aceitar",
+    phrase: "No problem.",
+    translation: "Sem problemas.",
+    example: "Sure, no problem at all.",
+    contextTips: Object.freeze(["cortesia", "resposta rápida", "trabalho"])
+  }),
+  Object.freeze({
+    id: "that-works",
+    category: "concordar",
+    phrase: "That works for me.",
+    translation: "Por mim está ótimo.",
+    example: "Three o’clock? That works for me.",
+    contextTips: Object.freeze(["reunião", "agendamento", "conversa"])
+  }),
+  Object.freeze({
+    id: "sorry-i-meant",
+    category: "corrigir-se",
+    phrase: "Sorry, I meant…",
+    translation: "Desculpe, eu quis dizer...",
+    example: "Sorry, I meant the sparkling water.",
+    contextTips: Object.freeze(["resiliência", "autocorreção", "fluência"])
+  }),
+  Object.freeze({
+    id: "repeat",
+    category: "pedir repetição",
+    phrase: "Could you repeat that?",
+    translation: "Poderia repetir?",
+    example: "Could you repeat that, please?",
+    contextTips: Object.freeze(["socorro", "áudio rápido", "chamada"])
+  }),
+  Object.freeze({
+    id: "just-to-confirm",
+    category: "confirmar",
+    phrase: "Just to confirm…",
+    translation: "Só para confirmar...",
+    example: "Just to confirm, we meet at four?",
+    contextTips: Object.freeze(["trabalho", "fechamento", "segurança"])
+  })
+]);
+/* ==== END: src/content/ch.js ==== */
+
+/* ==== MOD: src/content/pr.js ==== */
+// src/content/pr.js - Prompts Oficiais de IA do Playbook SPARK Alpha
+const PROMPTS = Object.freeze([
+  Object.freeze({
+    id: "base",
+    title: "Prompt base",
+    subtitle: "Cole no início da conversa",
+    template: "Você vai ser meu parceiro de conversa em inglês. Eu sou [NIVEL]. Regras: faça uma pergunta curta por vez e espere minha resposta. Se eu errar, refaça a minha frase certa dentro da sua resposta, de forma natural, sem explicar a gramática. Não me traduza nada. Só explique se eu errar o mesmo ponto duas vezes, em até 60 palavras e com um exemplo.",
+    whenToUse: "Dia 1 e sempre que abrir uma conversa nova"
+  }),
+  Object.freeze({
+    id: "scenario",
+    title: "Cenário com imprevisto",
+    subtitle: "Use durante o treino",
+    template: "Vamos simular [CENARIO]. Crie um imprevisto no meio da conversa e não me avise antes. Use um inglês natural e curto.",
+    whenToUse: "Dias 1, 2, 3, 5, 6 e 7"
+  }),
+  Object.freeze({
+    id: "closure",
+    title: "Fechamento do dia",
+    subtitle: "Use ao encerrar a sessão",
+    template: "Liste os 5 chunks que eu usei e os 3 em que mais hesitei hoje. Sugira o cenário de amanhã para eles voltarem.",
+    whenToUse: "Todos os dias"
+  })
+]);
+
+/**
+ * Interpola variáveis no texto do prompt (ex: [NIVEL] e [CENARIO]).
+ * @param {string} template
+ * @param {Record<string, string>} vars
+ * @returns {string} Prompt preenchido
+ */
+function renderPrompt(template, vars = {}) {
+  let text = template;
+  for (const [key, val] of Object.entries(vars)) {
+    text = text.replaceAll(`[${key.toUpperCase()}]`, val || '');
+  }
+  return text;
+}
+/* ==== END: src/content/pr.js ==== */
+
+/* ==== MOD: src/content/arena.js ==== */
+// src/content/arena.js - Configurações e Roteiro de Imprevistos da Mini-Arena (Dia 7)
+const ARENA_CONFIG = Object.freeze({
+  timeLimitSeconds: 60,
+  scenarioTitle: "Café em Manhattan",
+  scenarioContext: "Você entra em uma cafeteria movimentada em Manhattan no horário de pico. Tem 60 segundos para fazer seu pedido e reagir a uma surpresa do barista.",
+  openingLine: "Hi there! Welcome to Joe's Coffee. What can I get started for you today?",
+  targetChunks: Object.freeze(["can-i-get", "ill-have", "could-i-get-that-with", "swap", "sorry-i-meant"])
+});
+const ARENA_UNEXPECTED_EVENTS = Object.freeze([
+  Object.freeze({
+    id: "out-of-stock",
+    title: "Ingrediente Esgotado",
+    baristaVoice: "Sorry, we're completely out of oat milk today! Would almond milk or whole milk work for you?",
+    suggestedResponses: Object.freeze([
+      "Actually, can I swap that for almond milk?",
+      "That works for me."
+    ]),
+    status: "[PREENCHER: Confirmação do Professor Gabe]"
+  }),
+  Object.freeze({
+    id: "card-machine-down",
+    title: "Máquina de Cartão Indisponível",
+    baristaVoice: "Our card terminal just lost connection, we can only take cash or Apple Pay right now. Is that okay?",
+    suggestedResponses: Object.freeze([
+      "No problem, I can pay with cash.",
+      "Is that possible to try Apple Pay?"
+    ]),
+    status: "[PREENCHER: Confirmação do Professor Gabe]"
+  }),
+  Object.freeze({
+    id: "wrong-order-handover",
+    title: "Pedido Entregue Diferente",
+    baristaVoice: "Here is your large caramel macchiato with extra whip!",
+    suggestedResponses: Object.freeze([
+      "Sorry, I meant an iced black coffee.",
+      "Just to confirm, is this the black coffee?"
+    ]),
+    status: "[PREENCHER: Confirmação do Professor Gabe]"
+  })
+]);
+/* ==== END: src/content/arena.js ==== */
+
+/* ==== MOD: src/content/diag.js ==== */
+// src/content/diag.js - Banco de Questões do Diagnóstico Oral (Forma A Canônica e Forma B)
+const DIAG_POOL_A = Object.freeze([
+  Object.freeze({
+    id: "q1",
+    audioPhrase: "Can I get a coffee, please?",
+    situation: "Você está no balcão de um café em Nova York e quer pedir um café simples.",
+    options: Object.freeze([
+      Object.freeze({ type: "chunk", text: "Can I get a coffee, please?" }),
+      Object.freeze({ type: "literal", text: "Can I take a coffee, please?" }),
+      Object.freeze({ type: "word", text: "I want coffee please." })
+    ])
+  }),
+  Object.freeze({
+    id: "q2",
+    audioPhrase: "We're ready to take your food order.",
+    situation: "O garçom chega à mesa e pergunta qual será o seu prato. Você escolhe a salada.",
+    options: Object.freeze([
+      Object.freeze({ type: "chunk", text: "I'll have the salad, please." }),
+      Object.freeze({ type: "literal", text: "I will have the salad, please." }),
+      Object.freeze({ type: "word", text: "Me salad please." })
+    ])
+  }),
+  Object.freeze({
+    id: "q3",
+    audioPhrase: "Would you like anything added to your drink?",
+    situation: "Você quer pedir para a bebida vir sem açúcar.",
+    options: Object.freeze([
+      Object.freeze({ type: "chunk", text: "Could I get that with no sugar?" }),
+      Object.freeze({ type: "literal", text: "Can you put without sugar?" }),
+      Object.freeze({ type: "word", text: "No sugar please." })
+    ])
+  })
+]);
+const DIAG_POOL_B = Object.freeze([
+  Object.freeze({
+    id: "q1_b",
+    audioPhrase: "Can I get a glass of water, please?",
+    situation: "Você quer pedir um copo de água no balcão.",
+    options: Object.freeze([
+      Object.freeze({ type: "chunk", text: "Can I get a glass of water, please?" }),
+      Object.freeze({ type: "literal", text: "Can I take one water, please?" }),
+      Object.freeze({ type: "word", text: "Water please." })
+    ]),
+    status: "[PREENCHER: Confirmação do Professor Gabe]"
+  }),
+  Object.freeze({
+    id: "q2_b",
+    audioPhrase: "What would you like for your main course?",
+    situation: "Você decide escolher o sanduíche de frango grelhado.",
+    options: Object.freeze([
+      Object.freeze({ type: "chunk", text: "I'll have the chicken sandwich, please." }),
+      Object.freeze({ type: "literal", text: "I want have chicken sandwich." }),
+      Object.freeze({ type: "word", text: "Chicken sandwich please." })
+    ]),
+    status: "[PREENCHER: Confirmação do Professor Gabe]"
+  }),
+  Object.freeze({
+    id: "q3_b",
+    audioPhrase: "How would you like your salad served?",
+    situation: "Você quer pedir para o molho vir à parte.",
+    options: Object.freeze([
+      Object.freeze({ type: "chunk", text: "Could I get that with dressing on the side?" }),
+      Object.freeze({ type: "literal", text: "Can put sauce separated?" }),
+      Object.freeze({ type: "word", text: "Sauce apart please." })
+    ]),
+    status: "[PREENCHER: Confirmação do Professor Gabe]"
+  })
+]);
+/* ==== END: src/content/diag.js ==== */
+
+
+})();
+</script>
+</body>
+</html>

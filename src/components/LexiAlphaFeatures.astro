@@ -1,52 +1,51 @@
 ---
-// src/components/LexiAlphaFeatures.astro — Split: Tópicos Interativos com Micro-Badges + Chat Mock Visual
-// Sem tipografia serifada indesejada • Representação visual intuitiva para cada benefício
+// src/components/LexiAlphaFeatures.astro — Copy humana sem watermarks de IA
 ---
 
 <section id="aulas-ia" class="py-32 px-4 sm:px-8 relative border-t border-[#1a1a1a]">
   <div class="max-w-6xl mx-auto">
     <div class="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
 
-      <!-- Lado Esquerdo: Texto & Tópicos Intuitivos -->
+      <!-- Lado Esquerdo: Texto & Topicos -->
       <div data-anim="fade-up">
         <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full badge-glow mb-4">
           <span class="w-1.5 h-1.5 rounded-full bg-[#3ecf8e] micro-pulse"></span>
-          <span class="text-xs font-mono text-[#3ecf8e] uppercase tracking-[0.2em]">Rotina Sem Fricção</span>
+          <span class="text-xs font-mono text-[#3ecf8e] uppercase tracking-[0.2em]">Rotina Sem Friccao</span>
         </div>
         <h2 class="font-sans font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-tight mt-2 mb-6 text-[#fafafa] leading-[1.08]">
-          O equilíbrio perfeito entre<br />
-          <span class="text-gradient-emerald">conexão humana e IA</span>
+          Mentor humano e IA.<br />
+          <span class="text-gradient-emerald">Os dois, no lugar certo.</span>
         </h2>
         <p class="text-[#898989] leading-relaxed mb-8 text-base">
-          Você não depende apenas de um professor uma vez por semana e nem fica sozinho com um aplicativo genérico. A combinação certa de acompanhamento individual com IA parametrizada exclusivamente para você.
+          Uma sessao semanal nao e suficiente. Um app generico nao e suficiente. O SPARK combina os dois: pratica diaria autonoma com IA e mentoria ao vivo com o Gabe.
         </p>
 
-        <!-- Feature list com Topic Cards Intuitivos -->
+        <!-- Feature list -->
         <div class="space-y-3.5">
           {[
             {
               badge: 'Mentoria 1 a 1 Individual',
               icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />`,
               title: 'Encontros 1 a 1 com Gabriel Lima',
-              desc: '2 encontros rápidos de alinhamento + 1 sessão estendida de conversação plena por semana. Zero grupos dividindo atenção.'
+              desc: '2 encontros rapidos de alinhamento + 1 sessao estendida de conversacao plena por semana. Zero grupos dividindo atencao.'
             },
             {
-              badge: 'Tutor Parametrizado',
+              badge: 'Tutor Calibrado',
               icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />`,
-              title: 'Tutor Único no Portal Lexi Alpha',
-              desc: 'Não é um chatbot genérico. É parametrizado com base nos seus objetivos, profissão, gostos e travas específicas de pronúncia.'
+              title: 'Tutor Unico no PlayApp SPARK Alpha',
+              desc: 'Calibrado para o seu nivel, profissao e objetivos especificos. A Lexi Alpha conhece suas travas e trabalha nelas, dia apos dia.'
             },
             {
-              badge: 'Micro-dose Diária',
+              badge: 'Micro-dose Diaria',
               icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />`,
-              title: 'Mínimo 15 min por dia',
-              desc: 'O chão mínimo para criar consistência real. Pratique áudio e texto quando quiser, sem precisar agendar com antecedência.'
+              title: 'Minimo 15 min por dia',
+              desc: 'O chao minimo para criar consistencia real. Pratique audio e texto quando quiser, sem precisar agendar com antecedencia.'
             },
             {
               badge: 'Zero Julgamento',
               icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />`,
               title: 'Ambiente seguro para errar',
-              desc: 'Você treina sem qualquer julgamento ou vergonha até o som sair perfeito. Sem notas. Sem comparação com outros alunos.'
+              desc: 'Voce treina sem qualquer julgamento ou vergonha ate o som sair perfeito. Sem notas. Sem comparacao com outros alunos.'
             }
           ].map((feat) => (
             <div class="topic-card p-4 rounded-2xl bg-[#121212] border border-[#242424] flex items-start gap-4">
@@ -67,11 +66,10 @@
 
       <!-- Lado Direito: Mock do Portal -->
       <div class="relative" data-anim="fade-up">
-        <!-- Glow atrás do mock -->
         <div class="absolute -inset-8 bg-[#3ecf8e]/6 rounded-3xl blur-3xl pointer-events-none"></div>
 
         <div class="relative rounded-3xl bg-[#0a0a0a] border border-[#222222] overflow-hidden shadow-2xl">
-          <!-- Titlebar do app -->
+          <!-- Titlebar -->
           <div class="flex items-center justify-between px-5 py-3.5 border-b border-[#1a1a1a]">
             <div class="flex items-center gap-2">
               <div class="w-3 h-3 rounded-full bg-[#1e1e1e]"></div>
@@ -80,7 +78,7 @@
             </div>
             <div class="flex items-center gap-2">
               <div class="w-2 h-2 rounded-full bg-[#3ecf8e] micro-pulse"></div>
-              <span class="text-[11px] font-mono text-[#71717a]">Portal Lexi Alpha &bull; Online</span>
+              <span class="text-[11px] font-mono text-[#71717a]">SPARK Alpha &bull; Online</span>
             </div>
             <div class="w-14"></div>
           </div>
@@ -106,7 +104,7 @@
               </div>
             </div>
 
-            <!-- Mensagem IA 2 (correção natural) -->
+            <!-- Mensagem IA 2 (correcao natural) -->
             <div class="flex items-start gap-3">
               <div class="w-7 h-7 rounded-full bg-[#3ecf8e]/15 border border-[#3ecf8e]/25 flex items-center justify-center shrink-0 mt-0.5">
                 <svg class="w-3.5 h-3.5 text-[#3ecf8e]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -126,10 +124,10 @@
             </div>
           </div>
 
-          <!-- Input área -->
+          <!-- Input area -->
           <div class="px-5 pb-5">
             <div class="flex items-center gap-3 bg-[#141414] border border-[#242424] rounded-2xl px-4 py-3">
-              <span class="text-[11px] text-[#71717a] font-mono flex-1">Diga algo em inglês...</span>
+              <span class="text-[11px] text-[#71717a] font-mono flex-1">Sua vez. Sem pressa.</span>
               <div class="w-7 h-7 rounded-full bg-[#3ecf8e]/15 border border-[#3ecf8e]/25 flex items-center justify-center">
                 <svg class="w-3.5 h-3.5 text-[#3ecf8e]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
