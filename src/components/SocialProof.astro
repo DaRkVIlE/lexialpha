@@ -1,6 +1,6 @@
 ---
-// src/components/SocialProof.astro — Números Enormes + Quote Editorial
-// CountUp animado, divisores verticais, citação em Cormorant italic
+// src/components/SocialProof.astro — Métricas de Alto Impacto + Pilares de Aquisição com Topic Cards
+// Tipografia Moderna Sem Serifa • Micro-animações e representação visual intuitiva
 ---
 
 <section class="py-32 px-4 sm:px-8 relative border-t border-[#1a1a1a] overflow-hidden">
@@ -10,81 +10,112 @@
   </div>
 
   <div class="max-w-6xl mx-auto">
-    <!-- Header -->
+    <!-- Header Moderno -->
     <div class="text-center mb-20" data-anim="fade-up">
-      <span class="text-xs font-mono text-[#898989] uppercase tracking-[0.2em]">A Lógica da Aquisição Natural</span>
-      <h2 class="font-editorial text-5xl sm:text-6xl font-light mt-4 text-[#fafafa] leading-[1.05]">
-        Por que você finalmente destrava<br class="hidden sm:block" /> com este método
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full badge-glow mb-4">
+        <span class="w-1.5 h-1.5 rounded-full bg-[#3ecf8e] micro-pulse"></span>
+        <span class="text-xs font-mono text-[#898989] uppercase tracking-[0.2em]">A Lógica da Aquisição Natural</span>
+      </div>
+      <h2 class="font-sans font-extrabold text-4xl sm:text-5xl md:text-6xl tracking-tight mt-2 text-[#fafafa] leading-[1.08]">
+        Por que você finalmente destrava<br class="hidden sm:block" />
+        <span class="text-gradient-emerald">com este método</span>
       </h2>
     </div>
 
-    <!-- 4 Estatísticas com divisores -->
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-0 mb-24" data-anim="fade-up">
+    <!-- 4 Estatísticas com divisores e tracks visuais -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mb-24" data-anim="fade-up">
       <!-- Stat 1 -->
-      <div class="text-center px-6 py-8 md:border-r md:border-[#1e1e1e]">
-        <div class="font-editorial text-[64px] sm:text-[80px] font-light leading-none text-gradient-emerald counter-value mb-1">
-          <span class="sp-counter" data-target="15">0</span><span class="text-3xl">min</span>
+      <div class="topic-card text-center p-6 sm:p-8 rounded-2xl bg-[#121212] border border-[#242424] flex flex-col justify-between">
+        <div>
+          <div class="font-sans font-black text-5xl sm:text-6xl md:text-7xl leading-none text-gradient-emerald counter-value mb-2 tracking-tight">
+            <span class="sp-counter" data-target="15">0</span><span class="text-2xl sm:text-3xl font-extrabold">min</span>
+          </div>
+          <div class="w-12 h-1 bg-[#3ecf8e]/20 rounded-full mx-auto my-3 overflow-hidden">
+            <div class="h-full bg-[#3ecf8e] w-full rounded-full"></div>
+          </div>
+          <p class="text-xs font-mono text-[#fafafa] uppercase tracking-wider font-semibold mb-1">Mínimo Diário</p>
         </div>
-        <p class="text-xs font-mono text-[#898989] uppercase tracking-wider mb-2">Mínimo Diário</p>
-        <p class="text-[#71717a] text-xs leading-relaxed hidden sm:block">O chão para criar consistência. Pratique mais quando quiser.</p>
+        <p class="text-[#71717a] text-xs leading-relaxed hidden sm:block mt-2">O chão para criar consistência. Pratique mais quando quiser.</p>
       </div>
 
       <!-- Stat 2 -->
-      <div class="text-center px-6 py-8 md:border-r md:border-[#1e1e1e]">
-        <div class="font-editorial text-[64px] sm:text-[80px] font-light leading-none text-gradient-emerald counter-value mb-1">
-          <span class="sp-counter" data-target="3">0</span><span class="text-3xl">x</span>
+      <div class="topic-card text-center p-6 sm:p-8 rounded-2xl bg-[#121212] border border-[#242424] flex flex-col justify-between">
+        <div>
+          <div class="font-sans font-black text-5xl sm:text-6xl md:text-7xl leading-none text-gradient-emerald counter-value mb-2 tracking-tight">
+            <span class="sp-counter" data-target="3">0</span><span class="text-2xl sm:text-3xl font-extrabold">x</span>
+          </div>
+          <div class="w-12 h-1 bg-[#3ecf8e]/20 rounded-full mx-auto my-3 overflow-hidden">
+            <div class="h-full bg-[#3ecf8e] w-full rounded-full"></div>
+          </div>
+          <p class="text-xs font-mono text-[#fafafa] uppercase tracking-wider font-semibold mb-1">Encontros / Sem.</p>
         </div>
-        <p class="text-xs font-mono text-[#898989] uppercase tracking-wider mb-2">Encontros / Sem.</p>
-        <p class="text-[#71717a] text-xs leading-relaxed hidden sm:block">2 rápidas de ajuste + 1 estendida de conversação com Gabe.</p>
+        <p class="text-[#71717a] text-xs leading-relaxed hidden sm:block mt-2">2 rápidas de ajuste + 1 estendida de conversação individual.</p>
       </div>
 
       <!-- Stat 3 -->
-      <div class="text-center px-6 py-8 md:border-r md:border-[#1e1e1e] border-t md:border-t-0 border-[#1e1e1e]">
-        <div class="font-editorial text-[64px] sm:text-[80px] font-light leading-none text-gradient-emerald counter-value mb-1">
-          <span class="sp-counter" data-target="24">0</span><span class="text-3xl">/7</span>
+      <div class="topic-card text-center p-6 sm:p-8 rounded-2xl bg-[#121212] border border-[#242424] flex flex-col justify-between">
+        <div>
+          <div class="font-sans font-black text-5xl sm:text-6xl md:text-7xl leading-none text-gradient-emerald counter-value mb-2 tracking-tight">
+            <span class="sp-counter" data-target="24">0</span><span class="text-2xl sm:text-3xl font-extrabold">/7</span>
+          </div>
+          <div class="w-12 h-1 bg-[#3ecf8e]/20 rounded-full mx-auto my-3 overflow-hidden">
+            <div class="h-full bg-[#3ecf8e] w-full rounded-full"></div>
+          </div>
+          <p class="text-xs font-mono text-[#fafafa] uppercase tracking-wider font-semibold mb-1">Portal Lexi Alpha</p>
         </div>
-        <p class="text-xs font-mono text-[#898989] uppercase tracking-wider mb-2">Portal Lexi Alpha</p>
-        <p class="text-[#71717a] text-xs leading-relaxed hidden sm:block">Seu tutor dedicado para falar e ouvir a qualquer hora do dia.</p>
+        <p class="text-[#71717a] text-xs leading-relaxed hidden sm:block mt-2">Seu tutor dedicado para falar e ouvir a qualquer hora do dia.</p>
       </div>
 
       <!-- Stat 4 -->
-      <div class="text-center px-6 py-8 border-t md:border-t-0 border-[#1e1e1e]">
-        <div class="font-editorial text-[64px] sm:text-[80px] font-light leading-none text-gradient-emerald counter-value mb-1">
-          <span class="sp-counter" data-target="100">0</span><span class="text-3xl">%</span>
+      <div class="topic-card text-center p-6 sm:p-8 rounded-2xl bg-[#121212] border border-[#242424] flex flex-col justify-between">
+        <div>
+          <div class="font-sans font-black text-5xl sm:text-6xl md:text-7xl leading-none text-gradient-emerald counter-value mb-2 tracking-tight">
+            <span class="sp-counter" data-target="100">0</span><span class="text-2xl sm:text-3xl font-extrabold">%</span>
+          </div>
+          <div class="w-12 h-1 bg-[#3ecf8e]/20 rounded-full mx-auto my-3 overflow-hidden">
+            <div class="h-full bg-[#3ecf8e] w-full rounded-full"></div>
+          </div>
+          <p class="text-xs font-mono text-[#fafafa] uppercase tracking-wider font-semibold mb-1">Individual</p>
         </div>
-        <p class="text-xs font-mono text-[#898989] uppercase tracking-wider mb-2">Individual</p>
-        <p class="text-[#71717a] text-xs leading-relaxed hidden sm:block">Zero alunos dividindo atenção. O tempo todo é seu.</p>
+        <p class="text-[#71717a] text-xs leading-relaxed hidden sm:block mt-2">Zero alunos dividindo atenção. O tempo todo é focado em você.</p>
       </div>
     </div>
 
-    <!-- Seção de Explicação: 4 pilares de aquisição -->
-    <div class="grid md:grid-cols-2 gap-x-16 gap-y-12" data-anim="fade-up">
+    <!-- Seção de Explicação: 4 pilares de aquisição estruturados como Topic Cards -->
+    <div class="grid md:grid-cols-2 gap-6" data-anim="fade-up">
       {[
         {
           n: '01',
+          badge: 'Reflexo Motor',
           title: 'O Fim do Vício da Tradução Mental',
           text: 'No cursinho tradicional, você pensa a frase em português, tenta lembrar a regra gramatical e busca palavra por palavra. Esse processo trava seu raciocínio. Com nosso método, você treina blocos de fala completos dentro de contextos reais até que a resposta saia espontânea, como um reflexo imediato.'
         },
         {
           n: '02',
-          title: 'Ambiente Seguro para Errar Sem Julgamento',
+          badge: 'Zero Julgamento',
+          title: 'Ambiente Seguro para Errar Sem Vergonha',
           text: 'A principal razão de quase todo mundo travar é a vergonha de errar ou de ser julgado em público. No Portal Lexi Alpha, você pratica fala e áudio todos os dias com um parceiro incansável e acolhedor, soltando a língua antes de entrar nas conversas ao vivo com Gabe.'
         },
         {
           n: '03',
+          badge: 'Aquisição Biológica',
           title: 'Correção Natural sem Interrupções Bloqueantes',
           text: 'Correção gramatical explícita aciona medo no cérebro. Aqui utilizamos reformulação natural: quando você solta uma frase imprecisa, tanto a IA quanto o professor devolvem a estrutura correta de forma fluida dentro do diálogo. O mesmo processo biológico pelo qual você aprendeu português na infância.'
         },
         {
           n: '04',
+          badge: 'Improviso Real',
           title: 'Aplicação Real e Improviso com o Professor',
           text: 'O treino diário cria a musculatura; os encontros individuais colocam essa musculatura à prova. Toda semana simulamos diálogos da sua rotina profissional e pessoal, eliminando o medo do improviso e ajustando nuances que nenhuma máquina resolve sozinha.'
         }
       ].map((item) => (
-        <div class="flex gap-5 border-t border-[#1a1a1a] pt-6">
-          <span class="font-editorial text-5xl font-light text-[#1f1f1f] select-none leading-none shrink-0">{item.n}</span>
-          <div>
-            <h4 class="font-bold text-[#fafafa] text-base mb-2">{item.title}</h4>
+        <div class="topic-card p-6 sm:p-7 rounded-2xl bg-[#121212] border border-[#242424] flex items-start gap-5">
+          <span class="font-sans font-black text-3xl sm:text-4xl text-gradient-emerald select-none leading-none shrink-0 tracking-tight">{item.n}</span>
+          <div class="space-y-2 flex-1">
+            <div class="flex items-center justify-between gap-2">
+              <h4 class="font-bold text-[#fafafa] text-base tracking-tight">{item.title}</h4>
+              <span class="topic-badge text-[#3ecf8e] border-[#3ecf8e]/20 bg-[#3ecf8e]/10 text-[10px]">{item.badge}</span>
+            </div>
             <p class="text-[#898989] text-sm leading-relaxed">{item.text}</p>
           </div>
         </div>
@@ -111,7 +142,7 @@
 
     if (!reduced) {
       gsap.from('[data-anim="fade-up"]', {
-        y: 50, opacity: 0, duration: 0.9, stagger: 0.1, ease: 'power3.out',
+        y: 40, opacity: 0, duration: 0.85, stagger: 0.1, ease: 'power3.out',
         scrollTrigger: { trigger: '.sp-counter', start: 'top 80%' }
       });
     }
@@ -130,7 +161,7 @@
           var obj = { val: 0 };
           gsap.to(obj, {
             val: target,
-            duration: 2,
+            duration: 1.8,
             ease: 'power2.out',
             onUpdate: function () { el.textContent = Math.round(obj.val); }
           });

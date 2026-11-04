@@ -1,34 +1,38 @@
 ---
-// src/components/Solution.astro — Bento Grid com SVG Mocks Animados
-// Dois pilares: Mentor Humano (waveform) + Portal Lexi Alpha (chat bubbles) + card resultado
+// src/components/Solution.astro — Bento Grid Moderno com Micro-interações
+// Dois pilares: Mentor Humano (waveform SVG) + Portal Lexi Alpha (chat mock) + garantia sem promessas ilusórias
 ---
 
 <section id="metodo" class="py-32 px-4 sm:px-8 relative border-t border-[#1a1a1a]">
   <div class="max-w-6xl mx-auto">
 
-    <!-- Header -->
+    <!-- Header Moderno -->
     <div class="mb-16" data-anim="fade-up">
-      <span class="text-xs font-mono text-[#3ecf8e] uppercase tracking-[0.2em]">Como Funciona</span>
-      <h2 class="font-editorial text-5xl sm:text-6xl font-light tracking-tight mt-4 text-[#fafafa] leading-[1.05] max-w-2xl">
-        Dois pilares.<br />Uma transformação real.
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full badge-glow mb-4">
+        <span class="w-1.5 h-1.5 rounded-full bg-[#3ecf8e] micro-pulse"></span>
+        <span class="text-xs font-mono text-[#3ecf8e] uppercase tracking-[0.2em]">Como Funciona</span>
+      </div>
+      <h2 class="font-sans font-extrabold text-4xl sm:text-5xl md:text-6xl tracking-tight mt-2 text-[#fafafa] leading-[1.05] max-w-2xl">
+        Dois pilares.<br />
+        <span class="text-gradient-emerald">Uma transformação real.</span>
       </h2>
       <p class="text-[#898989] text-base mt-4 max-w-xl leading-relaxed">
-        Não é app gamificado. Não é curso em grupo. É uma combinação cirúrgica de contato humano e IA personalizada.
+        Não é aplicativo genérico. Não é aula em grupo para 15 pessoas. É a combinação exata de mentoria individual com IA interativa de treino diário.
       </p>
     </div>
 
     <!-- Bento Grid -->
-    <div class="grid md:grid-cols-2 gap-4">
+    <div class="grid md:grid-cols-2 gap-5">
 
-      <!-- Card 1 GRANDE: Mentor Humano ao Vivo -->
+      <!-- Card 1: Mentor Humano ao Vivo -->
       <div
-        class="rounded-3xl bg-[#111111] border border-[#1e1e1e] p-8 sm:p-10 flex flex-col justify-between min-h-[480px] relative overflow-hidden group hover:border-[#2a2a2a] transition-all duration-500"
+        class="topic-card rounded-3xl bg-[#111111] border border-[#222222] p-8 sm:p-10 flex flex-col justify-between min-h-[480px] relative overflow-hidden group"
         data-anim="fade-up"
       >
         <!-- Glow corner -->
-        <div class="absolute -top-20 -left-20 w-56 h-56 bg-[#3ecf8e]/6 rounded-full blur-3xl pointer-events-none group-hover:bg-[#3ecf8e]/10 transition-all duration-700"></div>
+        <div class="absolute -top-20 -left-20 w-56 h-56 bg-[#3ecf8e]/8 rounded-full blur-3xl pointer-events-none group-hover:bg-[#3ecf8e]/12 transition-all duration-700"></div>
 
-        <!-- SVG Waveform Visual -->
+        <!-- SVG Waveform Visual com animação -->
         <div class="relative mb-8 flex items-end gap-[3px] h-16">
           <svg viewBox="0 0 240 60" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full" preserveAspectRatio="none">
             <!-- 30 barras de waveform com alturas variadas -->
@@ -40,9 +44,9 @@
                 height={h}
                 rx="2.5"
                 fill="#3ecf8e"
-                opacity={0.3 + (i % 5) * 0.1}
+                opacity={0.35 + (i % 5) * 0.12}
                 class="wave-bar"
-                style={`animation-delay: ${i * 0.06}s;`}
+                style={`animation-delay: ${i * 0.05}s;`}
               />
             ))}
           </svg>
@@ -50,26 +54,26 @@
 
         <div>
           <div class="flex items-center gap-3 mb-4">
-            <span class="text-xs font-mono text-[#3ecf8e] uppercase tracking-wider px-2.5 py-1 rounded-full bg-[#3ecf8e]/10 border border-[#3ecf8e]/20">Pilar 01</span>
+            <span class="topic-badge text-[#3ecf8e] border-[#3ecf8e]/25 bg-[#3ecf8e]/10">Pilar 01 &bull; Acompanhamento Humano</span>
           </div>
-          <h3 class="text-2xl sm:text-3xl font-bold text-[#fafafa] mb-3">Mentor Humano ao Vivo</h3>
+          <h3 class="text-2xl sm:text-3xl font-extrabold text-[#fafafa] mb-3 tracking-tight">Mentor Humano ao Vivo</h3>
           <p class="text-[#898989] text-sm leading-relaxed mb-6">
-            Toda semana nós nos reunimos em sessões exclusivamente individuais. Dois encontros rápidos de alinhamento e uma sessão estendida de conversação plena. O tempo é 100% seu.
+            Toda semana nos reunimos em sessões exclusivamente individuais. Dois encontros rápidos de alinhamento e destravamento, somados a uma sessão estendida de conversação plena. O foco é 100% no seu progresso.
           </p>
           <div class="flex flex-wrap gap-2">
-            <span class="text-[11px] font-mono text-[#898989] px-3 py-1 rounded-full border border-[#242424]">2x Sessões Rápidas</span>
-            <span class="text-[11px] font-mono text-[#898989] px-3 py-1 rounded-full border border-[#242424]">1x Sessão Estendida</span>
-            <span class="text-[11px] font-mono text-[#898989] px-3 py-1 rounded-full border border-[#242424]">100% Individual</span>
+            <span class="topic-badge text-[#d4d4d8] border-[#2e2e2e]">2x Sessões Rápidas</span>
+            <span class="topic-badge text-[#d4d4d8] border-[#2e2e2e]">1x Sessão Estendida</span>
+            <span class="topic-badge text-[#3ecf8e] border-[#3ecf8e]/30 bg-[#3ecf8e]/10">100% Individual</span>
           </div>
         </div>
       </div>
 
       <!-- Coluna direita: 2 cards empilhados -->
-      <div class="flex flex-col gap-4">
+      <div class="flex flex-col gap-5">
 
         <!-- Card 2: Portal Lexi Alpha com Chat Mock -->
         <div
-          class="rounded-3xl bg-[#111111] border border-[#1e1e1e] p-8 relative overflow-hidden group hover:border-[#2a2a2a] transition-all duration-500 flex-1"
+          class="topic-card rounded-3xl bg-[#111111] border border-[#222222] p-7 sm:p-8 relative overflow-hidden group flex-1"
           data-anim="fade-up"
         >
           <!-- Chat Mock Visual -->
@@ -81,14 +85,14 @@
                   <circle cx="12" cy="12" r="5"/>
                 </svg>
               </div>
-              <div class="max-w-[75%] bg-[#1a1a1a] border border-[#242424] rounded-2xl rounded-bl-none px-3.5 py-2.5">
-                <p class="text-xs text-[#d4d4d8] leading-relaxed">Hey! Ready to practice? Tell me about your weekend.</p>
+              <div class="max-w-[78%] bg-[#1a1a1a] border border-[#242424] rounded-2xl rounded-bl-none px-3.5 py-2.5">
+                <p class="text-xs text-[#d4d4d8] leading-relaxed">Hey! Ready to practice? Tell me about your day at work.</p>
               </div>
             </div>
             <!-- Bolha User -->
             <div class="flex justify-end">
-              <div class="max-w-[70%] bg-[#1e2a24] border border-[#3ecf8e]/20 rounded-2xl rounded-br-none px-3.5 py-2.5">
-                <p class="text-xs text-[#a7f3d0] leading-relaxed">I went to my friend's house. We watched a movie.</p>
+              <div class="max-w-[72%] bg-[#1a2820] border border-[#3ecf8e]/25 rounded-2xl rounded-br-none px-3.5 py-2.5">
+                <p class="text-xs text-[#a7f3d0] leading-relaxed">I had two meetings and finished the project report.</p>
               </div>
             </div>
             <!-- Bolha IA -->
@@ -98,34 +102,40 @@
                   <circle cx="12" cy="12" r="5"/>
                 </svg>
               </div>
-              <div class="max-w-[75%] bg-[#1a1a1a] border border-[#242424] rounded-2xl rounded-bl-none px-3.5 py-2.5">
-                <p class="text-xs text-[#d4d4d8] leading-relaxed">Perfect. Natural and confident. <span class="text-[#3ecf8e]">Now tell me what movie.</span> <span class="typing-cursor text-[#3ecf8e]">|</span></p>
+              <div class="max-w-[78%] bg-[#1a1a1a] border border-[#242424] rounded-2xl rounded-bl-none px-3.5 py-2.5">
+                <p class="text-xs text-[#d4d4d8] leading-relaxed">Solid grammar! <span class="text-[#3ecf8e]">How did your team react to the report?</span> <span class="typing-cursor text-[#3ecf8e]">|</span></p>
               </div>
             </div>
           </div>
 
-          <span class="text-xs font-mono text-[#3ecf8e] uppercase tracking-wider">Pilar 02</span>
-          <h3 class="text-xl font-bold text-[#fafafa] mt-2 mb-2">Portal Lexi Alpha 24/7</h3>
+          <div class="flex items-center gap-2 mb-2">
+            <span class="topic-badge text-[#3ecf8e] border-[#3ecf8e]/25 bg-[#3ecf8e]/10">Pilar 02 &bull; Treino Diário</span>
+            <span class="text-[10px] font-mono text-[#71717a]">Disponível 24/7</span>
+          </div>
+          <h3 class="text-xl font-bold text-[#fafafa] mb-2">Portal Lexi Alpha</h3>
           <p class="text-[#898989] text-sm leading-relaxed">
-            Seu parceiro de IA exclusivo, parametrizado para os seus objetivos, sua profissão e suas travas. Disponível a qualquer hora para treino de áudio e texto.
+            Seu tutor de IA exclusivo, parametrizado para os seus objetivos, sua área de atuação profissional e suas travas específicas de pronúncia.
           </p>
         </div>
 
-        <!-- Card 3: Resultado / Sem Promessas -->
+        <!-- Card 3: Resultado / Sem Promessas Mágicas -->
         <div
-          class="rounded-3xl bg-gradient-to-br from-[#3ecf8e]/8 via-[#141414] to-[#0f0f0f] border border-[#3ecf8e]/20 p-8 relative overflow-hidden hover:border-[#3ecf8e]/40 transition-all duration-500"
+          class="topic-card rounded-3xl bg-gradient-to-br from-[#121c16] via-[#121212] to-[#0f0f0f] border border-[#3ecf8e]/25 p-7 sm:p-8 relative overflow-hidden"
           data-anim="fade-up"
         >
           <div class="flex items-start gap-4">
-            <div class="w-10 h-10 rounded-2xl bg-[#3ecf8e]/10 border border-[#3ecf8e]/25 flex items-center justify-center shrink-0">
+            <div class="icon-box text-[#3ecf8e] bg-[#3ecf8e]/15 border-[#3ecf8e]/30">
               <svg class="w-5 h-5 text-[#3ecf8e]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
               </svg>
             </div>
             <div>
-              <h3 class="text-lg font-bold text-[#fafafa] mb-2">Sem Promessas de Fluência Rápida</h3>
+              <div class="flex items-center gap-2 mb-1.5">
+                <span class="topic-badge text-[#3ecf8e] border-[#3ecf8e]/30 bg-[#3ecf8e]/15">Transparência Radical</span>
+              </div>
+              <h3 class="text-lg font-bold text-[#fafafa] mb-1.5">Sem Promessas de Fluência Rápida</h3>
               <p class="text-[#898989] text-sm leading-relaxed">
-                Não existe fluência em 3 meses. Existe método, consistência e dedicação. O que prometemos é que você começa a falar de verdade na primeira semana.
+                Não existe fluência em 3 meses. Existe método consistente e dedicação guiada. O que garantimos é que você começa a falar de verdade desde a primeira semana.
               </p>
             </div>
           </div>
@@ -145,13 +155,14 @@
     var gsap = window.gsap;
     var ST = window.ScrollTrigger;
     if (!gsap || !ST || reduced) return;
+
     gsap.from('#metodo [data-anim="fade-up"]', {
-      y: 50,
+      y: 45,
       opacity: 0,
-      duration: 0.9,
-      stagger: 0.12,
+      duration: 0.85,
+      stagger: 0.1,
       ease: 'power3.out',
-      scrollTrigger: { trigger: '#metodo', start: 'top 70%' }
+      scrollTrigger: { trigger: '#metodo', start: 'top 75%' }
     });
   });
 })();

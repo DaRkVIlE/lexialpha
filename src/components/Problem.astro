@@ -1,6 +1,6 @@
 ---
-// src/components/Problem.astro — Layout Editorial: Números Grandes + Split Vertical
-// Inspirado em Datamind: sem cards, divisor vertical, numerais enormes em Cormorant
+// src/components/Problem.astro — Layout Moderno & Intuitivo: Números de Alto Impacto + Cards Temáticos
+// Inspirado em Datamind: tipografia moderna sem serifa, micro-animações nos cards e divisores limpos.
 ---
 
 <section id="problema" class="py-32 px-4 sm:px-8 relative overflow-hidden border-t border-[#1a1a1a]">
@@ -10,11 +10,15 @@
   </div>
 
   <div class="max-w-6xl mx-auto">
-    <!-- Header Editorial -->
+    <!-- Header Moderno -->
     <div class="mb-20 max-w-3xl" data-anim="fade-up">
-      <span class="text-xs font-mono text-[#898989] uppercase tracking-[0.2em]">Transparência Radical</span>
-      <h2 class="font-editorial text-5xl sm:text-6xl md:text-7xl font-light tracking-tight leading-[1.02] mt-4 text-[#fafafa]">
-        Por que você estuda há anos<br />e ainda trava na hora de falar?
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full badge-glow mb-4">
+        <span class="w-1.5 h-1.5 rounded-full bg-red-400 micro-pulse"></span>
+        <span class="text-xs font-mono text-[#898989] uppercase tracking-[0.2em]">Transparência Radical</span>
+      </div>
+      <h2 class="font-sans font-extrabold text-4xl sm:text-5xl md:text-6xl tracking-tight leading-[1.05] mt-2 text-[#fafafa]">
+        Por que você estuda há anos<br />
+        <span class="text-gradient-emerald">e ainda trava na hora de falar?</span>
       </h2>
     </div>
 
@@ -22,96 +26,156 @@
     <div class="grid md:grid-cols-2 md:divide-x md:divide-[#1e1e1e]">
 
       <!-- Lado Esquerdo: Modelo Quebrado -->
-      <div class="md:pr-16 pb-16 md:pb-0" data-anim="fade-up">
+      <div class="md:pr-14 pb-16 md:pb-0" data-anim="fade-up">
         <!-- Numeral enorme decorativo -->
-        <div class="font-editorial text-[clamp(80px,15vw,160px)] leading-none font-light text-[#1c1c1c] select-none mb-1 counter-value" aria-hidden="true">
+        <div class="font-sans font-black text-[clamp(72px,12vw,140px)] leading-none text-[#222222] select-none mb-2 counter-value tracking-tighter" aria-hidden="true">
           <span id="prob-pct">0</span>%
         </div>
-        <p class="text-xs font-mono text-red-400/80 uppercase tracking-[0.15em] mb-8">dos alunos não chegam ao B2</p>
+        <p class="text-xs font-mono text-red-400 uppercase tracking-[0.15em] mb-8 font-semibold">dos alunos nunca alcançam o nível B2</p>
 
-        <div class="w-8 h-px bg-red-500/40 mb-6"></div>
+        <div class="w-10 h-0.5 bg-red-500/40 mb-6"></div>
 
-        <div class="flex items-center gap-3 mb-4">
-          <div class="w-8 h-8 rounded-lg bg-red-500/10 border border-red-500/20 flex items-center justify-center shrink-0">
-            <svg class="w-4 h-4 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="icon-box text-red-400 bg-red-500/10 border-red-500/25">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
             </svg>
           </div>
-          <span class="text-xs font-mono text-red-400 uppercase tracking-wider">Modelo Quebrado</span>
+          <div>
+            <span class="text-xs font-mono text-red-400 uppercase tracking-wider font-semibold">O Modelo do Aluno Eterno</span>
+            <h3 class="text-lg font-bold text-[#fafafa]">Método Tradicional de Cursinho</h3>
+          </div>
         </div>
 
-        <h3 class="text-xl font-bold text-[#fafafa] mb-4">O Modelo do Aluno Eterno</h3>
         <p class="text-[#898989] text-sm leading-relaxed mb-6">
-          Grandes redes de idiomas lucram com a sua permanência lenta. Elas te colocam para preencher livros de gramática, decorar regras de tempos verbais e traduzir frases soltas no caderno.
+          Grandes redes lucram com a sua permanência lenta. Elas te colocam para preencher livros de gramática, decorar regras de tempos verbais e traduzir mentalmente no caderno.
         </p>
 
-        <ul class="space-y-4 text-sm text-[#898989]">
-          <li class="flex items-start gap-3 border-t border-[#1a1a1a] pt-4">
-            <span class="text-red-400 shrink-0 mt-0.5 font-bold">&times;</span>
-            <span>Você aprende a analisar o idioma como matéria de prova escolar, não como reflexo motor.</span>
-          </li>
-          <li class="flex items-start gap-3 border-t border-[#1a1a1a] pt-4">
-            <span class="text-red-400 shrink-0 mt-0.5 font-bold">&times;</span>
-            <span>Cria o vício da tradução mental: seu cérebro tenta montar a frase em português antes de falar.</span>
-          </li>
-          <li class="flex items-start gap-3 border-t border-[#1a1a1a] pt-4">
-            <span class="text-red-400 shrink-0 mt-0.5 font-bold">&times;</span>
-            <span>Promessas mirabolantes de fluência em 3 ou 6 meses que só geram frustração e sensação de fracasso.</span>
-          </li>
-        </ul>
+        <!-- Tópicos com Representação Visual Intuitiva -->
+        <div class="space-y-3.5">
+          <div class="topic-card-danger topic-card p-4 rounded-xl bg-[#121212] border border-[#242424] flex items-start gap-3.5">
+            <div class="icon-box text-red-400">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+            </div>
+            <div class="space-y-1">
+              <span class="topic-badge text-red-400 border-red-500/20 bg-red-500/10">Foco Teórico de Prova</span>
+              <p class="text-xs sm:text-sm text-[#898989] leading-relaxed">
+                Você aprende a analisar a língua como disciplina escolar, não como reflexo motor imediato.
+              </p>
+            </div>
+          </div>
 
-        <div class="mt-8 p-4 rounded-xl bg-[#0c0c0c] border border-red-500/15">
-          <p class="text-xs font-mono text-red-400/80">Resultado: Anos pagando mensalidade e o mesmo bloqueio na primeira reunião ou viagem.</p>
+          <div class="topic-card-danger topic-card p-4 rounded-xl bg-[#121212] border border-[#242424] flex items-start gap-3.5">
+            <div class="icon-box text-red-400">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+              </svg>
+            </div>
+            <div class="space-y-1">
+              <span class="topic-badge text-red-400 border-red-500/20 bg-red-500/10">Tradução Mental Travada</span>
+              <p class="text-xs sm:text-sm text-[#898989] leading-relaxed">
+                Cria o vício da tradução interna: o cérebro tenta montar a frase em português antes de emitir a fala.
+              </p>
+            </div>
+          </div>
+
+          <div class="topic-card-danger topic-card p-4 rounded-xl bg-[#121212] border border-[#242424] flex items-start gap-3.5">
+            <div class="icon-box text-red-400">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <div class="space-y-1">
+              <span class="topic-badge text-red-400 border-red-500/20 bg-red-500/10">Falsas Promessas de 3 Meses</span>
+              <p class="text-xs sm:text-sm text-[#898989] leading-relaxed">
+                Promessas irreais de fluência mágica que só geram frustração, sensação de fracasso e culpa pessoal.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8 p-4 rounded-xl bg-[#161010] border border-red-500/20 flex items-center gap-3">
+          <div class="w-2 h-2 rounded-full bg-red-400 micro-pulse"></div>
+          <p class="text-xs font-mono text-red-400/90">Resultado: Anos pagando mensalidades altas e o mesmo bloqueio na primeira reunião.</p>
         </div>
       </div>
 
       <!-- Lado Direito: Método Gabe -->
-      <div class="md:pl-16 pt-16 md:pt-0" data-anim="fade-up">
+      <div class="md:pl-14 pt-16 md:pt-0" data-anim="fade-up">
         <!-- Numeral enorme decorativo -->
-        <div class="font-editorial text-[clamp(80px,15vw,160px)] leading-none font-light text-gradient-emerald select-none mb-1 counter-value" aria-hidden="true">
+        <div class="font-sans font-black text-[clamp(72px,12vw,140px)] leading-none text-gradient-emerald select-none mb-2 counter-value tracking-tighter" aria-hidden="true">
           <span id="prob-days">0</span>
         </div>
-        <p class="text-xs font-mono text-[#3ecf8e] uppercase tracking-[0.15em] mb-8">dias para destravar a primeira conversa real</p>
+        <p class="text-xs font-mono text-[#3ecf8e] uppercase tracking-[0.15em] mb-8 font-semibold">dias para destravar a primeira conversa real</p>
 
-        <div class="w-8 h-px bg-[#3ecf8e]/40 mb-6"></div>
+        <div class="w-10 h-0.5 bg-[#3ecf8e]/50 mb-6"></div>
 
-        <div class="flex items-center gap-3 mb-4">
-          <div class="w-8 h-8 rounded-lg bg-[#3ecf8e]/10 border border-[#3ecf8e]/25 flex items-center justify-center shrink-0">
-            <svg class="w-4 h-4 text-[#3ecf8e]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="icon-box text-[#3ecf8e] bg-[#3ecf8e]/10 border-[#3ecf8e]/25">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
             </svg>
           </div>
-          <span class="text-xs font-mono text-[#3ecf8e] uppercase tracking-wider">Método Gabriel Lima</span>
+          <div>
+            <span class="text-xs font-mono text-[#3ecf8e] uppercase tracking-wider font-semibold">Aquisição Natural de Fala</span>
+            <h3 class="text-lg font-bold text-[#fafafa]">Método Gabriel Lima + IA Lexi</h3>
+          </div>
         </div>
 
-        <h3 class="text-xl font-bold text-[#fafafa] mb-4">Aquisição Natural de Fala</h3>
         <p class="text-[#898989] text-sm leading-relaxed mb-6">
-          Você não aprendeu português decorando sujeito e predicado antes de começar a falar. Você ouviu blocos inteiros, repetiu sem medo de errar e refinou com o uso diário.
+          Você não aprendeu português decorando sujeito e predicado antes de começar a falar. Você absorveu blocos completos, praticou sem medo e refinou com o uso diário guiado.
         </p>
 
-        <ul class="space-y-4 text-sm text-[#898989]">
-          <li class="flex items-start gap-3 border-t border-[#1a1a1a] pt-4">
-            <svg class="w-4 h-4 text-[#3ecf8e] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
-            </svg>
-            <span>Absorção direta de expressões completas (chunks) que saem de forma automática da sua boca.</span>
-          </li>
-          <li class="flex items-start gap-3 border-t border-[#1a1a1a] pt-4">
-            <svg class="w-4 h-4 text-[#3ecf8e] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
-            </svg>
-            <span>Treino diário de 15 minutos no Portal Lexi Alpha para errar sem vergonha e destravar a língua.</span>
-          </li>
-          <li class="flex items-start gap-3 border-t border-[#1a1a1a] pt-4">
-            <svg class="w-4 h-4 text-[#3ecf8e] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
-            </svg>
-            <span>Sessões individuais 1 a 1 comigo toda semana para lapidar conversações reais e destravar o improviso.</span>
-          </li>
-        </ul>
+        <!-- Tópicos com Representação Visual Intuitiva -->
+        <div class="space-y-3.5">
+          <div class="topic-card p-4 rounded-xl bg-[#121212] border border-[#242424] flex items-start gap-3.5">
+            <div class="icon-box text-[#3ecf8e]">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <div class="space-y-1">
+              <span class="topic-badge text-[#3ecf8e] border-[#3ecf8e]/20 bg-[#3ecf8e]/10">Chunks Automáticos</span>
+              <p class="text-xs sm:text-sm text-[#898989] leading-relaxed">
+                Absorção direta de expressões completas que saem de forma automática e natural da sua boca.
+              </p>
+            </div>
+          </div>
 
-        <div class="mt-8 p-4 rounded-xl bg-[#0a0a0a] border border-[#3ecf8e]/15">
-          <p class="text-xs font-mono text-[#3ecf8e]">Resultado: Você pensa em inglês e fala com naturalidade, sem traduzir mentalmente.</p>
+          <div class="topic-card p-4 rounded-xl bg-[#121212] border border-[#242424] flex items-start gap-3.5">
+            <div class="icon-box text-[#3ecf8e]">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <div class="space-y-1">
+              <span class="topic-badge text-[#3ecf8e] border-[#3ecf8e]/20 bg-[#3ecf8e]/10">Micro-dose Diária 15min</span>
+              <p class="text-xs sm:text-sm text-[#898989] leading-relaxed">
+                Treino diário de 15 minutos no Portal Lexi Alpha para errar sem vergonha e destravar a musculatura.
+              </p>
+            </div>
+          </div>
+
+          <div class="topic-card p-4 rounded-xl bg-[#121212] border border-[#242424] flex items-start gap-3.5">
+            <div class="icon-box text-[#3ecf8e]">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+              </svg>
+            </div>
+            <div class="space-y-1">
+              <span class="topic-badge text-[#3ecf8e] border-[#3ecf8e]/20 bg-[#3ecf8e]/10">Mentoria 1 a 1 Exclusiva</span>
+              <p class="text-xs sm:text-sm text-[#898989] leading-relaxed">
+                Sessões individuais semanais comigo para lapidar conversações reais, simular trabalho e destravar o improviso.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8 p-4 rounded-xl bg-[#0c1812] border border-[#3ecf8e]/20 flex items-center gap-3">
+          <div class="w-2 h-2 rounded-full bg-[#3ecf8e] micro-pulse"></div>
+          <p class="text-xs font-mono text-[#3ecf8e]">Resultado: Você pensa em inglês e fala com naturalidade, sem traduzir internamente.</p>
         </div>
       </div>
     </div>
@@ -141,16 +205,16 @@
     // Fade-up elements
     if (!reduced) {
       gsap.from('[data-anim="fade-up"]', {
-        y: 60,
+        y: 50,
         opacity: 0,
-        duration: 0.9,
+        duration: 0.85,
         stagger: 0.12,
         ease: 'power3.out',
         scrollTrigger: { trigger: '#problema', start: 'top 75%' }
       });
     }
 
-    // CountUp: 95%
+    // CountUp: 95% e 21 dias
     var pctEl = document.getElementById('prob-pct');
     var daysEl = document.getElementById('prob-days');
     var triggered = false;
@@ -161,16 +225,30 @@
       onEnter: function () {
         if (triggered) return;
         triggered = true;
-        var obj = { val: 0 };
-        gsap.to(obj, {
-          val: 95, duration: 2, ease: 'power2.out',
-          onUpdate: function () { if (pctEl) pctEl.textContent = Math.round(obj.val); }
-        });
-        var obj2 = { val: 0 };
-        gsap.to(obj2, {
-          val: 21, duration: 1.6, ease: 'power2.out',
-          onUpdate: function () { if (daysEl) daysEl.textContent = Math.round(obj2.val); }
-        });
+
+        if (pctEl) {
+          var objPct = { val: 0 };
+          gsap.to(objPct, {
+            val: 95,
+            duration: 1.8,
+            ease: 'power2.out',
+            onUpdate: function () {
+              pctEl.textContent = Math.round(objPct.val);
+            }
+          });
+        }
+
+        if (daysEl) {
+          var objDays = { val: 0 };
+          gsap.to(objDays, {
+            val: 21,
+            duration: 1.8,
+            ease: 'power2.out',
+            onUpdate: function () {
+              daysEl.textContent = Math.round(objDays.val);
+            }
+          });
+        }
       }
     });
   });
