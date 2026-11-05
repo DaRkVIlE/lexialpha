@@ -7,6 +7,7 @@ import Logo from '../components/Logo.astro';
 import Hero from '../components/Hero.astro';
 import Problem from '../components/Problem.astro';
 import Solution from '../components/Solution.astro';
+import EstagiosFala from '../components/EstagiosFala.astro';
 import MontanhaB2 from '../components/MontanhaB2.astro';
 import LexiAlphaFeatures from '../components/LexiAlphaFeatures.astro';
 import SocialProof from '../components/SocialProof.astro';
@@ -22,10 +23,10 @@ import Footer from '../components/Footer.astro';
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>LexiQuest • Destravar sua fala em inglês com o método SPARK</title>
+    <title>LexiQuest • Destrave sua fala em inglês jogando 15 min por dia</title>
     <meta
       name="description"
-      content="Mentoria individual ao vivo com Gabriel Lima e prática diária com o PlayApp SPARK Alpha. Método real para adultos que estudam há anos mas ainda travam ao falar. 10 vagas por R$ 197/mês."
+      content="Missões diárias, repetição espaçada FSRS e mentoria individual 1 a 1 com Gabriel Lima. Método SPARK para destravar sua fala em inglês. 10 vagas por R$ 197/mês."
     />
 
     <!-- Google Fonts: Inter (Interface & Headings) & Source Code Pro (Labels) -->
@@ -37,34 +38,41 @@ import Footer from '../components/Footer.astro';
     />
 
     <!-- Open Graph -->
-    <meta property="og:title" content="LexiQuest • Destravar sua fala em inglês com o método SPARK" />
+    <meta property="og:title" content="LexiQuest • Destrave sua fala em inglês jogando 15 min por dia" />
     <meta
       property="og:description"
-      content="Mentoria individual ao vivo com Gabriel Lima + PlayApp SPARK Alpha para prática diária. 10 vagas por R$ 197/mês."
+      content="Missões diárias gamificadas com repetição FSRS + mentoria ao vivo 1 a 1 com Gabriel Lima. 10 vagas Alpha."
     />
     <meta property="og:type" content="website" />
   </head>
   <body class="min-h-screen flex flex-col font-sans bg-[#0f0f0f] text-[#fafafa] selection:bg-[#3ecf8e] selection:text-[#0f0f0f]">
-    <!-- Barra Superior Fixa (Datamind Glass Style) -->
+    <!-- Barra Superior Fixa (Datamind Glass Style + Streak HUD) -->
     <header class="fixed top-0 inset-x-0 z-50 glass-panel border-b border-white/[0.08] px-4 sm:px-8 py-3.5 flex items-center justify-between">
       <a href="#" class="flex items-center gap-2 hover:opacity-95 transition-opacity" aria-label="LexiQuest Home">
         <Logo size="sm" showBadge={true} />
       </a>
 
-      <nav class="hidden md:flex items-center gap-8 text-sm text-[#898989] font-medium">
+      <nav class="hidden md:flex items-center gap-7 text-sm text-[#898989] font-medium">
         <a href="#metodo" class="hover:text-[#3ecf8e] transition-colors">Como Funciona</a>
         <a href="#estagios" class="hover:text-[#3ecf8e] transition-colors">Estágios da Fala</a>
-        <a href="#aulas-ia" class="hover:text-[#3ecf8e] transition-colors">Rotina e IA</a>
+        <a href="#montanha-cefr" class="hover:text-[#3ecf8e] transition-colors">Escala CEFR</a>
+        <a href="#aulas-ia" class="hover:text-[#3ecf8e] transition-colors">Ecossistema</a>
         <a href="#pricing" class="hover:text-[#3ecf8e] transition-colors">Turma Alpha</a>
         <a href="#faq" class="hover:text-[#3ecf8e] transition-colors">Dúvidas</a>
       </nav>
 
       <div class="flex items-center gap-3">
+        <!-- Mini Streak HUD -->
+        <div class="hidden lg:flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#161616] border border-white/[0.08] text-xs font-mono text-[#a1a1aa] shadow-inner" aria-hidden="true">
+          <span class="text-[#f59e0b]">🔥</span>
+          <span>Streak: <strong class="text-[#fafafa]">14 dias</strong></span>
+        </div>
+
         <a
           href="#pricing"
-          class="px-5 py-2 rounded-full bg-[#3ecf8e] text-[#0f0f0f] text-xs sm:text-sm font-bold transition-all hover:bg-[#34b27b] active:scale-95 shadow-sm"
+          class="px-5 py-2 rounded-full bg-[#3ecf8e] text-[#0f0f0f] text-xs sm:text-sm font-bold transition-all hover:bg-[#34b27b] active:scale-95 shadow-sm shadow-[#3ecf8e]/20"
         >
-          Conhecer Turma Alpha
+          Garantir Vaga Alpha
         </a>
       </div>
     </header>
@@ -73,6 +81,7 @@ import Footer from '../components/Footer.astro';
       <Hero />
       <Problem />
       <Solution />
+      <EstagiosFala />
       <MontanhaB2 />
       <LexiAlphaFeatures />
       <SocialProof />

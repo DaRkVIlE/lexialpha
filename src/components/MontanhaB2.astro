@@ -72,7 +72,7 @@ const stages = [
 ];
 ---
 
-<section id="estagios" class="py-32 px-4 sm:px-8 relative border-t border-[#1a1a1a] overflow-hidden">
+<section id="montanha-cefr" class="py-32 px-4 sm:px-8 relative border-t border-[#1a1a1a] overflow-hidden">
   <!-- Glow atmosférico -->
   <div class="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[350px] bg-[#3ecf8e]/5 rounded-full blur-[180px] pointer-events-none"></div>
 
@@ -415,11 +415,18 @@ const stages = [
       });
     }
 
-    // GSAP scroll entrance for section
     if (window.gsap && window.ScrollTrigger && !reduced) {
-      window.gsap.from('#estagios [data-anim="fade-up"]', {
+      window.gsap.from('#montanha-cefr [data-anim="fade-up"]', {
         y: 40, opacity: 0, duration: 0.85, stagger: 0.12, ease: 'power3.out',
-        scrollTrigger: { trigger: '#estagios', start: 'top 75%' }
+        scrollTrigger: { trigger: '#montanha-cefr', start: 'top 75%' }
+      });
+      // Mountain visual entrance
+      window.gsap.from('#mountain-visual', {
+        opacity: 0,
+        x: -30,
+        duration: 1.0,
+        ease: 'power3.out',
+        scrollTrigger: { trigger: '#montanha-cefr', start: 'top 75%' }
       });
     }
   }

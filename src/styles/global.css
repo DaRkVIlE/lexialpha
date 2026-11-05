@@ -27,6 +27,22 @@
 
     --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     --font-mono: 'Source Code Pro', 'Menlo', monospace;
+
+    /* ── Gamification Tokens ──────────────────────────────────── */
+    --color-game-xp:   #f59e0b;   /* Amber – XP / reward */
+    --color-game-mana: #818cf8;   /* Indigo – skill / streak */
+    --color-game-hp:   #f87171;   /* Red – urgency / boss */
+    --color-game-boss: #c084fc;   /* Purple – boss / challenge */
+
+    --color-aether-card:        #111111;
+    --color-aether-card-border: rgba(255, 255, 255, 0.07);
+    --color-aether-card-hover:  rgba(62, 207, 142, 0.35);
+
+    --shadow-glow-sm: 0 0 20px -5px rgba(62, 207, 142, 0.35);
+    --shadow-glow-md: 0 0 40px -10px rgba(62, 207, 142, 0.25);
+    --shadow-xp:      0 0 20px -6px rgba(245, 158, 11, 0.4);
+    --shadow-mana:    0 0 20px -6px rgba(129, 140, 248, 0.4);
+    --shadow-boss:    0 0 20px -6px rgba(192, 132, 252, 0.4);
   }
 
   html {
@@ -306,6 +322,91 @@
   opacity: 0.03;
 }
 
+/* ─── Gamification: Float Badge ──────────────────────────── */
+@keyframes float-y {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-10px); }
+}
+
+.float-badge {
+  background: rgba(20, 20, 20, 0.82);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 14px;
+  padding: 0.55rem 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #d4d4d8;
+  white-space: nowrap;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.float-badge:hover {
+  border-color: rgba(62, 207, 142, 0.3);
+  box-shadow: var(--shadow-glow-sm);
+}
+.float-badge .badge-icon {
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+/* ─── Aether Card ────────────────────────────────────────── */
+.aether-card {
+  background: var(--color-aether-card);
+  border: 1px solid var(--color-aether-card-border);
+  border-radius: 24px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow  0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              transform   0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.aether-card:hover {
+  border-color: var(--color-aether-card-hover);
+  box-shadow: var(--shadow-glow-md);
+  transform: translateY(-2px);
+}
+
+/* ─── Glow Ring ──────────────────────────────────────────── */
+.glow-ring {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  position: relative;
+}
+.glow-ring::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 9999px;
+  background: radial-gradient(circle, rgba(62, 207, 142, 0.35) 0%, transparent 70%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.glow-ring:hover::before {
+  opacity: 1;
+}
+
+/* ─── XP Bar ─────────────────────────────────────────────── */
+.xp-bar-track {
+  height: 5px;
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 9999px;
+  overflow: hidden;
+}
+.xp-bar-fill {
+  height: 100%;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, var(--color-game-xp) 0%, #fbbf24 100%);
+  transition: width 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
 /* ─── Prefers Reduced Motion ─────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
   .wave-bar,
@@ -316,8 +417,11 @@
   }
   .topic-card,
   .glass-panel-hover,
-  .icon-box {
+  .icon-box,
+  .aether-card,
+  .float-badge {
     transition: none !important;
     transform: none !important;
   }
+  @keyframes float-y { 0%, 100% { transform: none; } }
 }

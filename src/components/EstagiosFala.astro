@@ -1,0 +1,268 @@
+---
+// src/components/EstagiosFala.astro — Estágios da Fala com Expandable Cards GSAP
+// Inspirado no blog-grid expansivo do Aether (flexGrow mechanic)
+// Fallback mobile: todos expandidos
+
+const estagios = [
+  {
+    id: 'ef-a2',
+    emoji: '🌱',
+    level: 'A2',
+    name: 'Sobrevivência',
+    subtitle: 'Você quebra o gelo sem pânico',
+    color: '#3ecf8e',
+    colorDim: 'rgba(62,207,142,0.12)',
+    colorBorder: 'rgba(62,207,142,0.3)',
+    trap: 'Traduz palavra por palavra e paralisa por medo de errar a gramática.',
+    solution: 'Chunks de Sobrevivência: blocos prontos que saem sem conjugação. Produção real desde o Dia 1 com a Lexi Alpha.',
+    xp: 800,
+    badge: 'Iniciante',
+  },
+  {
+    id: 'ef-b1',
+    emoji: '🏔️',
+    level: 'B1',
+    name: 'Autonomia',
+    subtitle: 'Reuniões sem roteiro, sem branco',
+    color: '#818cf8',
+    colorDim: 'rgba(129,140,248,0.12)',
+    colorBorder: 'rgba(129,140,248,0.3)',
+    trap: 'Platô intermediário: entende tudo mas na hora H a mente dá um branco.',
+    solution: 'Sessões 1 a 1 de improviso com Gabriel Lima. Trabalhamos diretamente nas travas emocionais com feedback em camadas.',
+    xp: 2400,
+    badge: 'Intermediário',
+  },
+  {
+    id: 'ef-b2',
+    emoji: '🏆',
+    level: 'B2',
+    name: 'Profissional',
+    subtitle: 'Lidera discussões, negocia, persuade',
+    color: '#c084fc',
+    colorDim: 'rgba(192,132,252,0.12)',
+    colorBorder: 'rgba(192,132,252,0.3)',
+    trap: 'Jargões técnicos, negociações rápidas e nativos simultâneos — a fala trava.',
+    solution: 'Lexi Alpha calibrada para sua área + simulações de entrevistas, negociações e conversas multi-nativas toda semana.',
+    xp: 5000,
+    badge: 'Avançado · Meta Alpha',
+  },
+];
+---
+
+<section id="estagios" class="py-32 px-4 sm:px-8 relative border-t border-[#1a1a1a] overflow-hidden">
+  <div class="absolute inset-0 dot-grid-bg opacity-30 pointer-events-none"></div>
+
+  <div class="max-w-6xl mx-auto relative z-10">
+
+    <!-- Header -->
+    <div class="mb-14" data-anim="fade-up">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full badge-glow mb-4">
+        <span class="w-1.5 h-1.5 rounded-full bg-[#3ecf8e] micro-pulse"></span>
+        <span class="text-xs font-mono text-[#3ecf8e] uppercase tracking-[0.2em]">Estágios da Fala</span>
+      </div>
+      <h2 class="font-sans font-extrabold text-4xl sm:text-5xl md:text-6xl tracking-tight text-[#fafafa] leading-[1.05] max-w-2xl">
+        Sua jornada tem<br />
+        <span class="text-gradient-emerald">três fases.</span>
+      </h2>
+      <p class="text-[#898989] text-base mt-4 max-w-xl leading-relaxed">
+        Cada estágio tem sua trava específica e sua solução exata. Clique em cada fase para ver o que muda.
+      </p>
+    </div>
+
+    <!-- Expandable Cards Container -->
+    <div
+      id="estagios-container"
+      class="flex flex-col lg:flex-row gap-4 lg:gap-3"
+      role="list"
+    >
+      {estagios.map((e, idx) => (
+        <div
+          id={e.id}
+          class:list={[
+            'estagio-card aether-card cursor-pointer select-none',
+            'flex flex-col p-7 lg:p-8',
+            'min-h-[200px] lg:min-h-[480px]',
+          ]}
+          style={`flex: 1; transition: flex 0.5s cubic-bezier(0.16,1,0.3,1); --accent: ${e.color}; --accent-dim: ${e.colorDim};`}
+          role="button"
+          tabindex="0"
+          aria-label={`Estágio ${e.level} — ${e.name}. Clique para expandir.`}
+          aria-expanded={idx === 1 ? 'true' : 'false'}
+          data-idx={idx}
+        >
+          <!-- Top row: level + badge + emoji -->
+          <div class="flex items-start justify-between mb-4">
+            <div>
+              <div class="text-[10px] font-mono uppercase tracking-[0.2em] mb-1" style={`color: ${e.color};`}>{e.level} · {e.badge}</div>
+              <div class="text-2xl font-extrabold text-[#fafafa]">{e.name}</div>
+              <div class="text-sm text-[#898989] mt-0.5">{e.subtitle}</div>
+            </div>
+            <div
+              class="text-3xl w-12 h-12 flex items-center justify-center rounded-2xl shrink-0"
+              style={`background: ${e.colorDim}; border: 1px solid ${e.colorBorder};`}
+            >
+              {e.emoji}
+            </div>
+          </div>
+
+          <!-- XP indicator -->
+          <div class="flex items-center gap-2 mb-5 text-[11px] font-mono" style={`color: ${e.color};`}>
+            <span>⭐</span>
+            <span>Meta: {e.xp.toLocaleString('pt-BR')} XP</span>
+          </div>
+
+          <!-- Expandable content -->
+          <div class="estagio-solution flex-1 flex flex-col gap-4">
+            <!-- Trava -->
+            <div class="rounded-xl p-4 bg-[#1a1010] border border-[#f87171]/20">
+              <div class="text-[10px] font-mono text-[#f87171] uppercase tracking-[0.15em] mb-1.5">🔴 Trava comum</div>
+              <p class="text-sm text-[#c4b5b5] leading-relaxed">{e.trap}</p>
+            </div>
+            <!-- Solução SPARK -->
+            <div class="rounded-xl p-4" style={`background: ${e.colorDim}; border: 1px solid ${e.colorBorder};`}>
+              <div class="text-[10px] font-mono uppercase tracking-[0.15em] mb-1.5" style={`color: ${e.color};`}>✅ Solução SPARK</div>
+              <p class="text-sm leading-relaxed" style="color: #d4d4d8;">{e.solution}</p>
+            </div>
+            <!-- CTA -->
+            <a
+              href="#pricing"
+              class="mt-auto inline-flex items-center justify-center gap-2 py-2.5 px-5 rounded-full text-xs font-bold transition-all"
+              style={`background: ${e.colorDim}; border: 1px solid ${e.colorBorder}; color: ${e.color};`}
+              tabindex="-1"
+              aria-hidden="true"
+            >
+              <span>Entrar nesta fase</span>
+              <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Keyboard hint (desktop only) -->
+    <p class="hidden lg:block text-center text-[11px] font-mono text-[#3d3d3d] mt-6" aria-hidden="true">
+      Clique ou use Tab + Enter para expandir um estágio
+    </p>
+
+  </div>
+</section>
+
+<script is:inline>
+(function () {
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var isDesktop = function() { return window.innerWidth >= 1024; };
+
+  function ready(fn) {
+    if (document.readyState !== 'loading') fn();
+    else document.addEventListener('DOMContentLoaded', fn);
+  }
+
+  ready(function () {
+    var gsap = window.gsap;
+    var ST = window.ScrollTrigger;
+
+    var container = document.getElementById('estagios-container');
+    var cards = document.querySelectorAll('.estagio-card');
+    var solutions = document.querySelectorAll('.estagio-solution');
+
+    if (!container || !cards.length) return;
+
+    // Initial state: card 1 (B1) active by default on desktop
+    var activeIdx = 1;
+
+    function setActive(idx) {
+      activeIdx = idx;
+      cards.forEach(function(card, i) {
+        var isActive = i === idx;
+        card.setAttribute('aria-expanded', isActive ? 'true' : 'false');
+
+        if (!isDesktop() || reduced) return; // Mobile: all expanded, no GSAP
+
+        if (gsap) {
+          // flexGrow expansion
+          gsap.to(card, {
+            flexGrow: isActive ? 2.5 : 1,
+            duration: 0.5,
+            ease: 'power2.inOut'
+          });
+          // Fade solution content
+          if (solutions[i]) {
+            gsap.to(solutions[i], {
+              opacity: isActive ? 1 : 0,
+              duration: isActive ? 0.4 : 0.2,
+              delay: isActive ? 0.2 : 0,
+              ease: 'power2.out'
+            });
+          }
+          // Active border highlight
+          gsap.to(card, {
+            borderColor: isActive
+              ? card.style.getPropertyValue('--accent') || 'rgba(62,207,142,0.35)'
+              : 'rgba(255,255,255,0.07)',
+            duration: 0.4,
+            ease: 'power2.out'
+          });
+        } else {
+          // Fallback without GSAP
+          card.style.flex = isActive ? '2.5' : '1';
+          if (solutions[i]) solutions[i].style.opacity = isActive ? '1' : '0';
+        }
+      });
+    }
+
+    // On desktop: initially collapse non-active, fade out their solutions
+    if (isDesktop() && !reduced && gsap) {
+      cards.forEach(function(card, i) {
+        if (i !== activeIdx) {
+          card.style.flex = '1';
+          if (solutions[i]) gsap.set(solutions[i], { opacity: 0 });
+        } else {
+          card.style.flex = '2.5';
+          if (solutions[i]) gsap.set(solutions[i], { opacity: 1 });
+        }
+      });
+    }
+
+    // Click + keyboard handlers
+    cards.forEach(function(card, i) {
+      card.addEventListener('click', function() { setActive(i); });
+      card.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          setActive(i);
+        }
+      });
+    });
+
+    // Handle resize: reset on desktop/mobile switch
+    var lastDesktop = isDesktop();
+    window.addEventListener('resize', function() {
+      var nowDesktop = isDesktop();
+      if (nowDesktop !== lastDesktop) {
+        lastDesktop = nowDesktop;
+        setActive(activeIdx);
+        if (!nowDesktop) {
+          // Mobile: show all
+          cards.forEach(function(card) { card.style.flex = '1'; });
+          solutions.forEach(function(s) { s.style.opacity = '1'; });
+        }
+      }
+    });
+
+    // ScrollTrigger entrance
+    if (gsap && ST && !reduced) {
+      gsap.registerPlugin(ST);
+      gsap.from(cards, {
+        y: 40,
+        opacity: 0,
+        duration: 0.75,
+        stagger: 0.1,
+        ease: 'power3.out',
+        scrollTrigger: { trigger: '#estagios', start: 'top 78%' }
+      });
+    }
+  });
+})();
+</script>
