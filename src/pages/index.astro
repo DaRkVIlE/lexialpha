@@ -2,19 +2,18 @@
 // index.astro — LexiQuest Landing Page
 // Design System: Deep Purple + Neon Lime (Sentry Purple Identity)
 // Story: Turma Alpha Launch — 15 Vagas Fundadoras · Método SPARK
+// Arquitetura Enxuta em 7 Blocos (Baseada na Auditoria UX/UI)
 import '../styles/global.css';
 import Logo from '../components/Logo.astro';
 import Hero from '../components/Hero.astro';
 import Problem from '../components/Problem.astro';
 import QuizNivelamento from '../components/QuizNivelamento.astro';
 import Solution from '../components/Solution.astro';
-import EstagiosFala from '../components/EstagiosFala.astro';
-import MontanhaB2 from '../components/MontanhaB2.astro';
-import LexiAlphaFeatures from '../components/LexiAlphaFeatures.astro';
-import SocialProof from '../components/SocialProof.astro';
+import AboutGabriel from '../components/AboutGabriel.astro';
 import Pricing from '../components/Pricing.astro';
 import Faq from '../components/Faq.astro';
 import FinalCTA from '../components/FinalCTA.astro';
+import StickyMobileCTA from '../components/StickyMobileCTA.astro';
 import Footer from '../components/Footer.astro';
 ---
 
@@ -38,41 +37,37 @@ import Footer from '../components/Footer.astro';
       rel="stylesheet"
     />
 
-    <!-- Open Graph -->
+    <!-- Open Graph & WhatsApp Preview -->
     <meta property="og:title" content="LexiQuest · Pare de Traduzir na Sua Cabeça · Destrave Sua Fala em 30 Dias" />
     <meta
       property="og:description"
       content="15 minutos diários de prática com IA sem julgamento + 3 sessões individuais por semana com o professor Gabriel. 15 vagas Alpha."
     />
     <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://landing-pi-jade-44.vercel.app" />
+    <meta property="og:image" content="https://landing-pi-jade-44.vercel.app/assets/feature-sky.webp" />
+    <meta name="twitter:card" content="summary_large_image" />
   </head>
   <body class="min-h-screen flex flex-col font-sans bg-[#1f1633] text-[#ffffff] selection:bg-[#c2ef4e] selection:text-[#1f1633]">
-    <!-- Barra Superior Fixa (Aether Glass Style + Streak HUD) -->
+    <!-- Barra Superior Fixa (Header Simplificado em Linha Única) -->
     <header class="fixed top-0 inset-x-0 z-50 glass-panel border-b border-[#3b2c60] px-4 sm:px-8 py-3.5 flex items-center justify-between">
       <a href="#" class="flex items-center gap-2 hover:opacity-95 transition-opacity" aria-label="LexiQuest Home">
         <Logo size="sm" showBadge={true} />
       </a>
 
-      <nav class="hidden md:flex items-center gap-6 lg:gap-7 text-xs lg:text-sm text-[#cfcfdb] font-medium">
+      <!-- 4 Links Essenciais (Sem Quebra de Linha) -->
+      <nav class="hidden md:flex items-center gap-6 lg:gap-8 text-xs lg:text-sm text-[#cfcfdb] font-medium">
         <a href="#metodo" class="hover:text-[#c2ef4e] transition-colors">Como Funciona</a>
         <a href="#quiz" class="hover:text-[#c2ef4e] transition-colors flex items-center gap-1.5">
           <span class="w-1.5 h-1.5 rounded-full bg-[#c2ef4e] micro-pulse"></span>
           <span>Teste 2 Min</span>
         </a>
-        <a href="#estagios" class="hover:text-[#c2ef4e] transition-colors">Estágios da Fala</a>
-        <a href="#montanha-cefr" class="hover:text-[#c2ef4e] transition-colors">Escala CEFR</a>
-        <a href="#ecossistema" class="hover:text-[#c2ef4e] transition-colors">Ecossistema</a>
-        <a href="#pricing" class="hover:text-[#c2ef4e] transition-colors">Turma Alpha (15 Vagas)</a>
+        <a href="#sobre" class="hover:text-[#c2ef4e] transition-colors">O Professor</a>
+        <a href="#pricing" class="hover:text-[#c2ef4e] transition-colors">Turma Alpha</a>
         <a href="#faq" class="hover:text-[#c2ef4e] transition-colors">Dúvidas</a>
       </nav>
 
       <div class="flex items-center gap-3">
-        <!-- Mini Streak HUD -->
-        <div class="hidden lg:flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#271d40] border border-[#3b2c60] text-xs font-mono text-[#cfcfdb] shadow-inner" aria-hidden="true">
-          <span class="w-2 h-2 rounded-full bg-[#fa7faa] micro-pulse"></span>
-          <span>Streak: <strong class="text-[#ffffff]">14 dias</strong></span>
-        </div>
-
         <a
           href="#quiz"
           class="px-4 sm:px-5 py-2 rounded-full bg-[#c2ef4e] text-[#1f1633] text-xs sm:text-sm font-sans font-extrabold transition-all hover:bg-[#b0dc41] active:scale-95 shadow-sm shadow-[#c2ef4e]/20"
@@ -82,19 +77,34 @@ import Footer from '../components/Footer.astro';
       </div>
     </header>
 
-    <main class="flex-1 pb-20 sm:pb-0">
+    <main class="flex-1 pb-16 sm:pb-0">
+      <!-- Bloco 1: Hero Humano com Mock do Gabriel e HUD de Latência -->
       <Hero />
+
+      <!-- Bloco 2: A Dor do Lag dos 3 Segundos -->
       <Problem />
+
+      <!-- Bloco 3: O Quiz Gamificado (Diagnóstico & Ponte WhatsApp) -->
       <QuizNivelamento />
+
+      <!-- Bloco 4: O Método SPARK na Prática (15 min IA + 3x Gabe + Portal) -->
       <Solution />
-      <EstagiosFala />
-      <MontanhaB2 />
-      <LexiAlphaFeatures />
-      <SocialProof />
+
+      <!-- Bloco 5: Quem é o Professor Gabriel Lima (5 Anos de Ensino, All Net & Retorno) -->
+      <AboutGabriel />
+
+      <!-- Bloco 6: A Oferta Exclusiva da Turma Alpha (15 Vagas · R$ 197/mês) -->
       <Pricing />
+
+      <!-- Bloco 7: FAQ Acessível & Remoção de Objeções -->
       <Faq />
+
+      <!-- Chamada Final de Conversão -->
       <FinalCTA />
     </main>
+
+    <!-- Barra Sticky para Mobile -->
+    <StickyMobileCTA />
 
     <Footer />
 
