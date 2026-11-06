@@ -17,6 +17,7 @@ const estagios = [
     solution: 'Chunks de Sobrevivência: blocos prontos que saem sem conjugação. Produção real desde o Dia 1 com a Lexi Alpha.',
     xp: 800,
     badge: 'Iniciante',
+    xpPercent: 25,
   },
   {
     id: 'ef-b1',
@@ -31,6 +32,7 @@ const estagios = [
     solution: 'Sessões 1 a 1 de improviso com Gabriel Lima. Trabalhamos diretamente nas travas emocionais com feedback em camadas.',
     xp: 2400,
     badge: 'Intermediário',
+    xpPercent: 60,
   },
   {
     id: 'ef-b2',
@@ -45,9 +47,15 @@ const estagios = [
     solution: 'Lexi Alpha calibrada para sua área + simulações de entrevistas, negociações e conversas multi-nativas toda semana.',
     xp: 5000,
     badge: 'Avançado · Meta Alpha',
+    xpPercent: 90,
   },
 ];
+
+// SVG ring constants
+const RING_R = 18;
+const RING_CIRCUMFERENCE = 2 * Math.PI * RING_R; // ≈ 113.1
 ---
+
 
 <section id="estagios" class="py-32 px-4 sm:px-8 relative border-t border-[#1a1a1a] overflow-hidden">
   <div class="absolute inset-0 dot-grid-bg opacity-30 pointer-events-none"></div>
@@ -82,6 +90,7 @@ const estagios = [
             'estagio-card aether-card cursor-pointer select-none',
             'flex flex-col p-7 lg:p-8',
             'min-h-[200px] lg:min-h-[480px]',
+            'relative overflow-hidden',
           ]}
           style={`flex: 1; transition: flex 0.5s cubic-bezier(0.16,1,0.3,1); --accent: ${e.color}; --accent-dim: ${e.colorDim};`}
           role="button"
@@ -89,19 +98,48 @@ const estagios = [
           aria-label={`Estágio ${e.level} — ${e.name}. Clique para expandir.`}
           aria-expanded={idx === 1 ? 'true' : 'false'}
           data-idx={idx}
+          data-color={e.color}
+          data-xp-percent={e.xpPercent}
         >
-          <!-- Top row: level + badge + emoji -->
+          <!-- Level-up flash overlay -->
+          <div class="level-flash absolute inset-0 pointer-events-none rounded-[24px]" style={`background: ${e.color};`}></div>
+
+          <!-- Top row: level + badge + XP ring + emoji -->
           <div class="flex items-start justify-between mb-4">
             <div>
               <div class="text-[10px] font-mono uppercase tracking-[0.2em] mb-1" style={`color: ${e.color};`}>{e.level} · {e.badge}</div>
               <div class="text-2xl font-extrabold text-[#fafafa]">{e.name}</div>
               <div class="text-sm text-[#898989] mt-0.5">{e.subtitle}</div>
             </div>
-            <div
-              class="text-3xl w-12 h-12 flex items-center justify-center rounded-2xl shrink-0"
-              style={`background: ${e.colorDim}; border: 1px solid ${e.colorBorder};`}
-            >
-              {e.emoji}
+            <div class="flex items-center gap-3 shrink-0">
+              <!-- XP Progress Ring (SVG) -->
+              <div class="relative flex items-center justify-center" style="width:44px;height:44px;">
+                <svg width="44" height="44" viewBox="0 0 44 44" fill="none" class="xp-ring-svg" data-percent={e.xpPercent} data-color={e.color}>
+                  <!-- Track -->
+                  <circle cx="22" cy="22" r={RING_R} stroke="rgba(255,255,255,0.07)" stroke-width="3" fill="none"/>
+                  <!-- Fill arc — starts at top (rotate -90deg) -->
+                  <circle
+                    class="xp-ring-arc"
+                    cx="22" cy="22" r={RING_R}
+                    stroke={e.color}
+                    stroke-width="3"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-dasharray={RING_CIRCUMFERENCE}
+                    stroke-dashoffset={RING_CIRCUMFERENCE}
+                    style="transform: rotate(-90deg); transform-origin: 22px 22px;"
+                  />
+                </svg>
+                <!-- Percentage label inside ring -->
+                <span class="absolute text-[9px] font-mono font-bold" style={`color: ${e.color};`}>{e.xpPercent}%</span>
+              </div>
+              <!-- Emoji icon -->
+              <div
+                class="text-3xl w-12 h-12 flex items-center justify-center rounded-2xl"
+                style={`background: ${e.colorDim}; border: 1px solid ${e.colorBorder};`}
+              >
+                {e.emoji}
+              </div>
             </div>
           </div>
 
@@ -154,6 +192,9 @@ const estagios = [
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var isDesktop = function() { return window.innerWidth >= 1024; };
 
+  // Ring circumference for r=18
+  var CIRC = 2 * Math.PI * 18; // ≈ 113.097
+
   function ready(fn) {
     if (document.readyState !== 'loading') fn();
     else document.addEventListener('DOMContentLoaded', fn);
@@ -169,8 +210,106 @@ const estagios = [
 
     if (!container || !cards.length) return;
 
+    // ── Set all ring arcs to initial state (dashoffset = CIRC = 0%) ──
+    document.querySelectorAll('.xp-ring-arc').forEach(function(arc) {
+      arc.style.strokeDashoffset = CIRC;
+    });
+
+    // ── Set all flash overlays to opacity 0 ──
+    document.querySelectorAll('.level-flash').forEach(function(el) {
+      el.style.opacity = '0';
+    });
+
     // Initial state: card 1 (B1) active by default on desktop
     var activeIdx = 1;
+
+    // ── XP Ring animation ──
+    function animateRing(card, toPercent) {
+      if (!gsap || reduced) return;
+      var arc = card.querySelector('.xp-ring-arc');
+      if (!arc) return;
+      var target = CIRC * (1 - toPercent / 100);
+      gsap.to(arc, {
+        strokeDashoffset: target,
+        duration: 0.8,
+        ease: 'power2.out',
+        delay: 0.15,
+      });
+    }
+
+    function resetRing(card) {
+      if (!gsap || reduced) return;
+      var arc = card.querySelector('.xp-ring-arc');
+      if (!arc) return;
+      gsap.to(arc, {
+        strokeDashoffset: CIRC,
+        duration: 0.4,
+        ease: 'power2.in',
+      });
+    }
+
+    // ── Level-up flash ──
+    function triggerFlash(card) {
+      if (!gsap || reduced) return;
+      var flash = card.querySelector('.level-flash');
+      if (!flash) return;
+      gsap.fromTo(flash,
+        { opacity: 0 },
+        { opacity: 0.15, duration: 0.1, ease: 'power1.out',
+          onComplete: function() {
+            gsap.to(flash, { opacity: 0, duration: 0.3, ease: 'power1.in' });
+          }
+        }
+      );
+    }
+
+    // ── XP particles ──
+    function spawnXpParticles(card) {
+      if (!gsap || reduced) return;
+      var color = card.getAttribute('data-color') || '#3ecf8e';
+      var rect = card.getBoundingClientRect(); // used for width reference
+      var cardW = card.offsetWidth;
+      var cardH = card.offsetHeight;
+
+      for (var p = 0; p < 4; p++) {
+        var span = document.createElement('span');
+        span.textContent = '+XP';
+        span.style.cssText = [
+          'position:absolute',
+          'pointer-events:none',
+          'font-size:10px',
+          'font-family:monospace',
+          'font-weight:700',
+          'color:' + color,
+          'opacity:0',
+          'z-index:50',
+          'left:' + (20 + Math.random() * (cardW * 0.5)) + 'px',
+          'top:' + (cardH * 0.3 + Math.random() * (cardH * 0.3)) + 'px',
+          'text-shadow: 0 0 8px ' + color,
+        ].join(';');
+        card.appendChild(span);
+
+        (function(s) {
+          gsap.fromTo(s,
+            { opacity: 0, y: 0 },
+            {
+              opacity: 1, y: -30,
+              duration: 0.6,
+              delay: p * 0.08,
+              ease: 'power2.out',
+              onComplete: function() {
+                gsap.to(s, {
+                  opacity: 0,
+                  duration: 0.3,
+                  ease: 'power1.in',
+                  onComplete: function() { s.remove(); }
+                });
+              }
+            }
+          );
+        })(span);
+      }
+    }
 
     function setActive(idx) {
       activeIdx = idx;
@@ -204,6 +343,17 @@ const estagios = [
             duration: 0.4,
             ease: 'power2.out'
           });
+
+          // ── NEW: XP Ring + Flash + Particles ──
+          if (isActive) {
+            var pct = parseInt(card.getAttribute('data-xp-percent') || '0', 10);
+            animateRing(card, pct);
+            triggerFlash(card);
+            spawnXpParticles(card);
+          } else {
+            resetRing(card);
+          }
+
         } else {
           // Fallback without GSAP
           card.style.flex = isActive ? '2.5' : '1';
@@ -221,6 +371,9 @@ const estagios = [
         } else {
           card.style.flex = '2.5';
           if (solutions[i]) gsap.set(solutions[i], { opacity: 1 });
+          // Animate the default active card's ring on load
+          var pct = parseInt(card.getAttribute('data-xp-percent') || '0', 10);
+          animateRing(card, pct);
         }
       });
     }

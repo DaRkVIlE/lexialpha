@@ -84,11 +84,11 @@
     <div class="mb-16" data-anim="fade-up" aria-hidden="true">
       <svg viewBox="0 0 680 100" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-2xl mx-auto opacity-70">
         <!-- Node circles -->
-        <circle cx="80" cy="50" r="22" fill="#3ecf8e" fill-opacity="0.08" stroke="#3ecf8e" stroke-opacity="0.5" stroke-width="1.5"/>
-        <circle cx="216" cy="50" r="22" fill="#3ecf8e" fill-opacity="0.08" stroke="#3ecf8e" stroke-opacity="0.5" stroke-width="1.5"/>
-        <circle cx="340" cy="50" r="22" fill="#3ecf8e" fill-opacity="0.08" stroke="#3ecf8e" stroke-opacity="0.5" stroke-width="1.5"/>
-        <circle cx="464" cy="50" r="22" fill="#3ecf8e" fill-opacity="0.08" stroke="#3ecf8e" stroke-opacity="0.5" stroke-width="1.5"/>
-        <circle cx="600" cy="50" r="22" fill="#3ecf8e" fill-opacity="0.1" stroke="#3ecf8e" stroke-opacity="0.7" stroke-width="1.5"/>
+        <circle id="spark-node-s" cx="80" cy="50" r="22" fill="#3ecf8e" fill-opacity="0.08" stroke="#3ecf8e" stroke-opacity="0.5" stroke-width="1.5"/>
+        <circle id="spark-node-p" cx="216" cy="50" r="22" fill="#3ecf8e" fill-opacity="0.08" stroke="#3ecf8e" stroke-opacity="0.5" stroke-width="1.5"/>
+        <circle id="spark-node-a" cx="340" cy="50" r="22" fill="#3ecf8e" fill-opacity="0.08" stroke="#3ecf8e" stroke-opacity="0.5" stroke-width="1.5"/>
+        <circle id="spark-node-r" cx="464" cy="50" r="22" fill="#3ecf8e" fill-opacity="0.08" stroke="#3ecf8e" stroke-opacity="0.5" stroke-width="1.5"/>
+        <circle id="spark-node-k" cx="600" cy="50" r="22" fill="#3ecf8e" fill-opacity="0.1" stroke="#3ecf8e" stroke-opacity="0.7" stroke-width="1.5"/>
 
         <!-- Node letters -->
         <text x="80" y="55" text-anchor="middle" font-size="13" font-family="'Source Code Pro', monospace" fill="#3ecf8e" font-weight="600">S</text>
@@ -98,10 +98,10 @@
         <text x="600" y="55" text-anchor="middle" font-size="13" font-family="'Source Code Pro', monospace" fill="#3ecf8e" font-weight="700">K</text>
 
         <!-- Arrows between nodes -->
-        <path d="M103 50 L191 50" stroke="#3ecf8e" stroke-opacity="0.35" stroke-width="1.2" marker-end="url(#sp-arr)"/>
-        <path d="M239 50 L315 50" stroke="#3ecf8e" stroke-opacity="0.35" stroke-width="1.2" marker-end="url(#sp-arr)"/>
-        <path d="M363 50 L439 50" stroke="#3ecf8e" stroke-opacity="0.35" stroke-width="1.2" marker-end="url(#sp-arr)"/>
-        <path d="M487 50 L575 50" stroke="#3ecf8e" stroke-opacity="0.35" stroke-width="1.2" marker-end="url(#sp-arr)"/>
+        <path id="spark-arc-sp" d="M103 50 L191 50" stroke="#3ecf8e" stroke-opacity="0.35" stroke-width="1.2" marker-end="url(#sp-arr)"/>
+        <path id="spark-arc-pa" d="M239 50 L315 50" stroke="#3ecf8e" stroke-opacity="0.35" stroke-width="1.2" marker-end="url(#sp-arr)"/>
+        <path id="spark-arc-ar" d="M363 50 L439 50" stroke="#3ecf8e" stroke-opacity="0.35" stroke-width="1.2" marker-end="url(#sp-arr)"/>
+        <path id="spark-arc-rk" d="M487 50 L575 50" stroke="#3ecf8e" stroke-opacity="0.35" stroke-width="1.2" marker-end="url(#sp-arr)"/>
         <!-- Return arc from K back to S -->
         <path d="M600 28 Q340 -18 80 28" stroke="#3ecf8e" stroke-opacity="0.2" stroke-width="1" fill="none" stroke-dasharray="4 3"/>
 
@@ -203,6 +203,47 @@
           });
         });
       }
+    });
+
+    // ── SPARK CYCLE PULSE ANIMATION ────────────────────────────────────────────
+    if (reduced) return;
+
+    var nodeIds = ['spark-node-s', 'spark-node-p', 'spark-node-a', 'spark-node-r', 'spark-node-k'];
+    var arcIds  = ['spark-arc-sp', 'spark-arc-pa', 'spark-arc-ar', 'spark-arc-rk'];
+
+    // Duration per step and total cycle (~3s for 5 nodes)
+    var stepDur = 0.5;   // time the pulse spends highlighting a node
+    var arcDur  = 0.4;   // time for the connecting arc to flash
+    var cyclePause = 0.3; // extra pause after last node before repeat
+
+    var sparkTL = gsap.timeline({ repeat: -1, repeatDelay: cyclePause });
+
+    nodeIds.forEach(function (nodeId, i) {
+      var nodeEl = document.getElementById(nodeId);
+      var arcEl  = arcIds[i] ? document.getElementById(arcIds[i]) : null;
+      var t = i * (stepDur + arcDur * 0.5); // stagger start
+
+      // Pulse the node: fillOpacity 0.08 -> 0.25 -> 0.08
+      if (nodeEl) {
+        sparkTL.to(nodeEl, { fillOpacity: 0.25, duration: stepDur * 0.4, ease: 'sine.inOut' }, t);
+        sparkTL.to(nodeEl, { fillOpacity: 0.08, duration: stepDur * 0.6, ease: 'sine.inOut' }, t + stepDur * 0.4);
+      }
+
+      // Flash the outgoing arc
+      if (arcEl) {
+        var arcStart = t + stepDur * 0.3;
+        sparkTL.to(arcEl, { strokeOpacity: 0.8, duration: arcDur * 0.4, ease: 'sine.inOut' }, arcStart);
+        sparkTL.to(arcEl, { strokeOpacity: 0.35, duration: arcDur * 0.6, ease: 'sine.inOut' }, arcStart + arcDur * 0.4);
+      }
+    });
+
+    // Start the SPARK cycle timeline when section enters viewport
+    sparkTL.pause();
+    ST.create({
+      trigger: '#ciencia',
+      start: 'top 80%',
+      once: true,
+      onEnter: function () { sparkTL.play(); }
     });
   });
 })();

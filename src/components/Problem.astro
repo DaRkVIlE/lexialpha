@@ -2,6 +2,7 @@
 // src/components/Problem.astro — Layout Moderno com SVG Visual
 ---
 
+
 <section id="problema" class="py-32 px-4 sm:px-8 relative overflow-hidden border-t border-[#1a1a1a]">
   <!-- Linha decorativa topo -->
   <div class="absolute top-0 left-0 right-0 overflow-hidden h-px">
@@ -30,16 +31,16 @@
         <text x="60" y="59" text-anchor="middle" font-size="10" font-family="monospace" fill="#ef4444" fill-opacity="0.7">PT</text>
 
         <!-- Loop arrows: hear -> translate -> build -> speak -> (too late) -->
-        <path d="M 85 45 Q 115 25 145 45" stroke="#ef4444" stroke-opacity="0.4" stroke-width="1.2" fill="none" marker-end="url(#arr-red)"/>
-        <path d="M 155 45 Q 185 25 215 45" stroke="#ef4444" stroke-opacity="0.4" stroke-width="1.2" fill="none" marker-end="url(#arr-red)"/>
-        <path d="M 225 45 Q 255 25 285 45" stroke="#ef4444" stroke-opacity="0.4" stroke-width="1.2" fill="none" marker-end="url(#arr-red)"/>
+        <path id="trad-arc-1" d="M 85 45 Q 115 25 145 45" stroke="#ef4444" stroke-opacity="0.4" stroke-width="1.2" fill="none" marker-end="url(#arr-red)"/>
+        <path id="trad-arc-2" d="M 155 45 Q 185 25 215 45" stroke="#ef4444" stroke-opacity="0.4" stroke-width="1.2" fill="none" marker-end="url(#arr-red)"/>
+        <path id="trad-arc-3" d="M 225 45 Q 255 25 285 45" stroke="#ef4444" stroke-opacity="0.4" stroke-width="1.2" fill="none" marker-end="url(#arr-red)"/>
 
         <!-- Loop nodes -->
-        <circle cx="150" cy="50" r="12" fill="#ef4444" fill-opacity="0.08" stroke="#ef4444" stroke-opacity="0.3" stroke-width="1"/>
+        <circle id="trad-node-ouvir" cx="150" cy="50" r="12" fill="#ef4444" fill-opacity="0.08" stroke="#ef4444" stroke-opacity="0.3" stroke-width="1"/>
         <text x="150" y="54" text-anchor="middle" font-size="7" font-family="monospace" fill="#ef4444" fill-opacity="0.7">ouvir</text>
-        <circle cx="220" cy="50" r="14" fill="#ef4444" fill-opacity="0.08" stroke="#ef4444" stroke-opacity="0.3" stroke-width="1"/>
+        <circle id="trad-node-traduzir" cx="220" cy="50" r="14" fill="#ef4444" fill-opacity="0.08" stroke="#ef4444" stroke-opacity="0.3" stroke-width="1"/>
         <text x="220" y="54" text-anchor="middle" font-size="6.5" font-family="monospace" fill="#ef4444" fill-opacity="0.7">traduzir</text>
-        <circle cx="290" cy="50" r="12" fill="#ef4444" fill-opacity="0.08" stroke="#ef4444" stroke-opacity="0.3" stroke-width="1"/>
+        <circle id="trad-node-montar" cx="290" cy="50" r="12" fill="#ef4444" fill-opacity="0.08" stroke="#ef4444" stroke-opacity="0.3" stroke-width="1"/>
         <text x="290" y="54" text-anchor="middle" font-size="7" font-family="monospace" fill="#ef4444" fill-opacity="0.7">montar</text>
 
         <!-- "tarde demais" label -->
@@ -58,10 +59,10 @@
         <text x="470" y="59" text-anchor="middle" font-size="9" font-family="monospace" fill="#3ecf8e" fill-opacity="0.9">SPARK</text>
 
         <!-- Direct arrow: think -> speak, no translation -->
-        <path d="M 496 50 Q 540 20 580 50" stroke="#3ecf8e" stroke-opacity="0.6" stroke-width="1.5" fill="none" marker-end="url(#arr-green)"/>
+        <path id="spark-direct-arrow" d="M 496 50 Q 540 20 580 50" stroke="#3ecf8e" stroke-opacity="0.6" stroke-width="1.5" fill="none" marker-end="url(#arr-green)"/>
 
         <!-- Speak node -->
-        <circle cx="590" cy="50" r="22" fill="#3ecf8e" fill-opacity="0.1" stroke="#3ecf8e" stroke-opacity="0.5" stroke-width="1.5"/>
+        <circle id="spark-speak-node" cx="590" cy="50" r="22" fill="#3ecf8e" fill-opacity="0.1" stroke="#3ecf8e" stroke-opacity="0.5" stroke-width="1.5"/>
         <text x="590" y="47" text-anchor="middle" font-size="8" font-family="monospace" fill="#3ecf8e">falar</text>
         <text x="590" y="58" text-anchor="middle" font-size="7" font-family="monospace" fill="#3ecf8e" fill-opacity="0.7">direto</text>
 
@@ -306,6 +307,88 @@
         }
       }
     });
+
+    // ── SVG ANIMATIONS ─────────────────────────────────────────────────────────
+    if (reduced) return;
+
+    // Helper: get path length safely
+    function pathLen(id) {
+      var el = document.getElementById(id);
+      if (!el) return 60;
+      return el.getTotalLength ? el.getTotalLength() : 60;
+    }
+
+    // ── LEFT: Circuito elétrico — arcos acendem em sequência em loop infinito ──
+    var arcIds = ['trad-arc-1', 'trad-arc-2', 'trad-arc-3'];
+    var nodeIds = ['trad-node-ouvir', 'trad-node-traduzir', 'trad-node-montar'];
+    var arcDur = 0.55;
+    var nodeDur = 0.25;
+    var gap = 0.1;
+    var cycleDelay = 0.6; // pause before repeat
+
+    // Pre-set all arcs to hidden
+    arcIds.forEach(function (id) {
+      var el = document.getElementById(id);
+      if (!el) return;
+      var len = pathLen(id);
+      gsap.set(el, { strokeDasharray: len, strokeDashoffset: len, strokeOpacity: 0.8 });
+    });
+
+    // Build a repeating timeline for the left circuit loop
+    var leftTL = gsap.timeline({ repeat: -1, repeatDelay: cycleDelay });
+    arcIds.forEach(function (id, i) {
+      var el = document.getElementById(id);
+      var node = document.getElementById(nodeIds[i]);
+      var len = pathLen(id);
+      var startTime = i * (arcDur + gap);
+      // Draw the arc
+      leftTL.to(el, { strokeDashoffset: 0, duration: arcDur, ease: 'power2.inOut' }, startTime);
+      // Pulse the destination node
+      if (node) {
+        leftTL.to(node, { fillOpacity: 0.35, duration: nodeDur, ease: 'power2.out' }, startTime + arcDur * 0.7);
+        leftTL.to(node, { fillOpacity: 0.08, duration: nodeDur, ease: 'power2.in' }, startTime + arcDur * 0.7 + nodeDur);
+      }
+      // Reset arc (hide instantly at end of full cycle, before repeat)
+      leftTL.set(el, { strokeDashoffset: len }, '+=0');
+    });
+
+    // ── RIGHT: SPARK arrow draws once on enter, then speak node glows ──────────
+    var arrowEl = document.getElementById('spark-direct-arrow');
+    var speakEl = document.getElementById('spark-speak-node');
+
+    if (arrowEl) {
+      var arrowLen = pathLen('spark-direct-arrow');
+      gsap.set(arrowEl, { strokeDasharray: arrowLen, strokeDashoffset: arrowLen });
+
+      ST.create({
+        trigger: '#problema',
+        start: 'top 65%',
+        once: true,
+        onEnter: function () {
+          // Draw the arrow
+          gsap.to(arrowEl, {
+            strokeDashoffset: 0,
+            duration: 0.9,
+            ease: 'power2.inOut',
+            onComplete: function () {
+              // After drawing, pulse the speak node with emerald glow
+              if (speakEl) {
+                gsap.to(speakEl, {
+                  fillOpacity: 0.28,
+                  strokeOpacity: 1,
+                  strokeWidth: 2,
+                  duration: 0.6,
+                  ease: 'power2.out',
+                  yoyo: true,
+                  repeat: -1,
+                  repeatDelay: 0.4
+                });
+              }
+            }
+          });
+        }
+      });
+    }
   });
 })();
 </script>
