@@ -1,287 +1,176 @@
 ---
-// src/components/LexiAlphaFeatures.astro — Bento Showcase: O Ecossistema da Turma Alpha
-// LibreChat IA + 3 Sessões Gabe + Portal do Aluno + SPARK Score
+// src/components/LexiAlphaFeatures.astro — O Ecossistema Integrado LexiQuest
+// Organograma Arquitetural: LibreChat IA 24/7 ↔ Gabriel Lima 3x/sem ↔ Portal do Aluno (Moodle Hub)
 ---
 
-<section id="ecossistema" class="py-28 px-4 sm:px-8 relative border-t border-[#2e224d]">
-  <div class="max-w-6xl mx-auto">
+<section id="ecossistema" class="py-24 sm:py-28 px-4 sm:px-8 relative border-t border-[#2e224d] overflow-hidden">
+  <!-- Glow atmosférico -->
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-[#6a5fc1]/10 rounded-full blur-[160px] pointer-events-none"></div>
+
+  <div class="max-w-6xl mx-auto relative z-10 w-full">
 
     <!-- Section Header -->
-    <div class="mb-16" data-anim="fade-up">
+    <div class="text-center mb-16 max-w-3xl mx-auto" data-anim="fade-up">
       <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full badge-glow mb-4">
         <span class="w-1.5 h-1.5 rounded-full bg-[#c2ef4e] micro-pulse"></span>
         <span class="text-xs font-mono text-[#c2ef4e] uppercase tracking-[0.2em]">O Ecossistema Completo</span>
       </div>
-      <h2 class="font-sans font-extrabold text-3xl sm:text-5xl md:text-6xl tracking-tight text-[#ffffff] leading-[1.05] max-w-2xl">
-        Mentor humano e IA.<br />
-        <span class="text-gradient-lime">Os dois, no lugar certo.</span>
+      <h2 class="font-sans font-extrabold text-3xl sm:text-5xl md:text-6xl tracking-tight text-[#ffffff] leading-[1.05]">
+        Tutor IA e Mentor Humano.<br />
+        <span class="text-gradient-lime">A engrenagem que não te deixa parar.</span>
       </h2>
-      <p class="text-[#cfcfdb] text-base sm:text-lg mt-4 max-w-xl leading-relaxed">
-        Uma sessão semanal de 1 hora cansa e é esquecida. Um app genérico de pecinhas não te faz falar. O Método SPARK une prática diária no LibreChat, mentoria com Gabe e atividades no Portal do Aluno.
+      <p class="text-[#cfcfdb] text-base sm:text-lg mt-4 leading-relaxed">
+        Nem app solitário de preencher lacunas, nem curso tradicional com 1 hora semanal que se perde. O ecossistema LexiQuest sincroniza três forças em um fluxo contínuo.
       </p>
     </div>
 
-    <!-- Bento Grid -->
-    <div id="bento-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-      <!-- Card 1 (lg:col-span-2): Companion IA no LibreChat -->
-      <div class="aether-card p-0 overflow-hidden lg:col-span-2 bg-[#271d40] border-[#3b2c60]" data-anim="fade-up">
-        <!-- Titlebar -->
-        <div class="flex items-center justify-between px-5 py-3.5 border-b border-[#3b2c60] bg-[#1f1633]">
-          <div class="flex items-center gap-2">
-            <div class="w-3 h-3 rounded-full bg-[#3b2c60]"></div>
-            <div class="w-3 h-3 rounded-full bg-[#3b2c60]"></div>
-            <div class="w-3 h-3 rounded-full bg-[#c2ef4e]/60"></div>
-          </div>
-          <div class="flex items-center gap-2">
-            <div class="w-2 h-2 rounded-full bg-[#c2ef4e] micro-pulse"></div>
-            <span class="text-[11px] font-mono text-[#cfcfdb]">Companion IA · LibreChat 24/7</span>
-          </div>
-          <!-- XP badge -->
-          <div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#fa7faa]/15 border border-[#fa7faa]/30">
-            <span class="text-[10px] font-mono text-[#fa7faa] font-bold">⭐ +120 XP</span>
-          </div>
-        </div>
-
-        <!-- Chat content -->
-        <div class="p-6 space-y-4 min-h-[280px]">
-          <!-- IA -->
-          <div class="flex items-start gap-3">
-            <div class="w-8 h-8 rounded-full bg-[#c2ef4e]/15 border border-[#c2ef4e]/30 flex items-center justify-center shrink-0 mt-0.5 text-xs text-[#c2ef4e]">
-              🤖
-            </div>
-            <div class="bg-[#1f1633] border border-[#3b2c60] rounded-2xl rounded-tl-none px-4 py-3 max-w-[85%]">
-              <p class="text-xs sm:text-sm text-[#cfcfdb] leading-relaxed">Hey! Ready to practice? Tell me about your presentation today. How did it go?</p>
-            </div>
-          </div>
-
-          <!-- User (hesitando naturalmente) -->
-          <div class="flex justify-end">
-            <div class="bg-[#2e224d] border border-[#c2ef4e]/20 rounded-2xl rounded-tr-none px-4 py-3 max-w-[78%]">
-              <p class="text-xs sm:text-sm text-[#ffffff] leading-relaxed">I was very nervous, but in the end people... like what I said.</p>
-            </div>
-          </div>
-
-          <!-- IA: Spaced Recasting Natural -->
-          <div class="flex items-start gap-3">
-            <div class="w-8 h-8 rounded-full bg-[#c2ef4e]/15 border border-[#c2ef4e]/30 flex items-center justify-center shrink-0 mt-0.5 text-xs text-[#c2ef4e]">
-              🤖
-            </div>
-            <div class="bg-[#1f1633] border border-[#3b2c60] rounded-2xl rounded-tl-none px-4 py-3 max-w-[88%]">
-              <p class="text-xs sm:text-sm text-[#cfcfdb] leading-relaxed">
-                Awesome! So even though you were nervous, <strong class="text-[#c2ef4e]">they really liked what you had to say</strong>? That is a huge win! What question did they ask you? <span class="typing-cursor text-[#c2ef4e]">|</span>
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Bottom: Chunk dominado + animated XP bar -->
-        <div class="px-6 pb-5 pt-3 border-t border-[#3b2c60] bg-[#1f1633]/60">
-          <div class="flex items-center justify-between mb-2">
-            <div class="text-[11px] font-mono text-[#c2ef4e]">🎯 Chunk modelado: "what you had to say"</div>
-            <div class="text-[11px] font-mono text-[#fa7faa]">⭐ +80 XP · Spaced Recasting</div>
-          </div>
-          <div class="xp-bar-track mb-1">
-            <div class="xp-bar-fill bento-xp-bar" data-target="82" style="width: 0%;"></div>
-          </div>
-          <div class="text-[10px] font-mono text-[#cfcfdb]">82% da microdose diária concluída</div>
-        </div>
+    <!-- Organograma Arquitetural Visual em SVG (Triângulo de Integração do Ecossistema) -->
+    <div class="mb-14 p-6 sm:p-10 rounded-3xl bg-[#271d40]/60 border border-[#3b2c60] shadow-2xl relative" data-anim="fade-up">
+      <div class="text-center mb-8">
+        <span class="text-xs font-mono text-[#c2ef4e] uppercase tracking-widest font-semibold">Diagrama de Fluxo Comunicativo</span>
       </div>
 
-      <!-- Card 2: Portal do Aluno com Atividades Guiadas -->
-      <div class="aether-card p-6 flex flex-col justify-between bg-[#271d40] border-[#3b2c60]" data-anim="fade-up">
+      <!-- Diagrama SVG Responsivo -->
+      <div class="max-w-3xl mx-auto">
+        <svg viewBox="0 0 800 360" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto select-none" aria-hidden="true">
+          <defs>
+            <linearGradient id="eco-grad1" x1="400" y1="50" x2="160" y2="280" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#c2ef4e" stop-opacity="0.8"/>
+              <stop offset="100%" stop-color="#6a5fc1" stop-opacity="0.8"/>
+            </linearGradient>
+            <linearGradient id="eco-grad2" x1="400" y1="50" x2="640" y2="280" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#c2ef4e" stop-opacity="0.8"/>
+              <stop offset="100%" stop-color="#fa7faa" stop-opacity="0.8"/>
+            </linearGradient>
+            <linearGradient id="eco-grad3" x1="160" y1="280" x2="640" y2="280" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#6a5fc1" stop-opacity="0.8"/>
+              <stop offset="100%" stop-color="#fa7faa" stop-opacity="0.8"/>
+            </linearGradient>
+          </defs>
+
+          <!-- Linhas de Conexão Triangulares -->
+          <line x1="400" y1="80" x2="180" y2="260" stroke="url(#eco-grad1)" stroke-width="2" stroke-dasharray="6 4"/>
+          <line x1="400" y1="80" x2="620" y2="260" stroke="url(#eco-grad2)" stroke-width="2" stroke-dasharray="6 4"/>
+          <line x1="220" y1="270" x2="580" y2="270" stroke="url(#eco-grad3)" stroke-width="2" stroke-dasharray="6 4"/>
+
+          <!-- Nó Central: Método SPARK Core -->
+          <circle cx="400" cy="200" r="44" fill="#1f1633" stroke="#c2ef4e" stroke-width="2"/>
+          <circle cx="400" cy="200" r="54" fill="none" stroke="#c2ef4e" stroke-opacity="0.2" stroke-width="1.5"/>
+          <text x="400" y="196" text-anchor="middle" font-size="14" font-family="'Rubik', sans-serif" font-weight="800" fill="#ffffff">SPARK</text>
+          <text x="400" y="214" text-anchor="middle" font-size="9" font-family="'Source Code Pro', monospace" fill="#c2ef4e" font-weight="600">CORE</text>
+
+          <!-- Nó Superior: Gabriel Lima (Mentor de Precisão) -->
+          <g transform="translate(290, 20)">
+            <rect x="0" y="0" width="220" height="74" rx="16" fill="#1f1633" stroke="#c2ef4e" stroke-width="1.5"/>
+            <circle cx="36" cy="37" r="18" fill="#c2ef4e" fill-opacity="0.15"/>
+            <path d="M30 37 L34 41 L42 33" stroke="#c2ef4e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <text x="66" y="32" font-size="13" font-family="'Rubik', sans-serif" font-weight="700" fill="#ffffff">Gabriel Lima</text>
+            <text x="66" y="48" font-size="10" font-family="'Source Code Pro', monospace" fill="#c2ef4e">3x Sessões Individuais / Sem</text>
+          </g>
+
+          <!-- Nó Esquerdo: Tutor IA no LibreChat -->
+          <g transform="translate(40, 230)">
+            <rect x="0" y="0" width="230" height="74" rx="16" fill="#1f1633" stroke="#6a5fc1" stroke-width="1.5"/>
+            <circle cx="36" cy="37" r="18" fill="#6a5fc1" fill-opacity="0.2"/>
+            <circle cx="36" cy="37" r="5" fill="#6a5fc1"/>
+            <text x="66" y="32" font-size="13" font-family="'Rubik', sans-serif" font-weight="700" fill="#ffffff">Tutor IA 24/7</text>
+            <text x="66" y="48" font-size="10" font-family="'Source Code Pro', monospace" fill="#cfcfdb">15 min/dia · Spaced Recasting</text>
+          </g>
+
+          <!-- Nó Direito: Portal do Aluno (Moodle Hub) -->
+          <g transform="translate(530, 230)">
+            <rect x="0" y="0" width="230" height="74" rx="16" fill="#1f1633" stroke="#fa7faa" stroke-width="1.5"/>
+            <circle cx="36" cy="37" r="18" fill="#fa7faa" fill-opacity="0.2"/>
+            <path d="M30 33 H42 M30 37 H42 M30 41 H38" stroke="#fa7faa" stroke-width="2" stroke-linecap="round"/>
+            <text x="66" y="32" font-size="13" font-family="'Rubik', sans-serif" font-weight="700" fill="#ffffff">Portal do Aluno</text>
+            <text x="66" y="48" font-size="10" font-family="'Source Code Pro', monospace" fill="#fa7faa">Missões, Áudios & Mapa CEFR</text>
+          </g>
+        </svg>
+      </div>
+    </div>
+
+    <!-- 3 Cartões Detalhados do Ecossistema -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+      <!-- Pilar 1: Prática com IA no LibreChat -->
+      <div class="aether-card p-7 sm:p-8 rounded-3xl bg-[#271d40] border border-[#3b2c60] flex flex-col justify-between" data-anim="fade-up">
         <div>
-          <div class="mb-4 flex items-center justify-between">
-            <span class="text-[10px] font-mono text-[#c2ef4e] uppercase tracking-[0.15em]">📚 Portal do Aluno</span>
-            <span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-[#6a5fc1]/20 border border-[#6a5fc1]/40 text-[#fa7faa]">Ativo no Piloto</span>
+          <div class="flex items-center justify-between mb-5">
+            <span class="text-[10px] font-mono uppercase tracking-wider text-[#6a5fc1] bg-[#6a5fc1]/10 border border-[#6a5fc1]/20 px-2.5 py-1 rounded-md font-semibold">Microdose Diária</span>
+            <span class="text-xs font-mono text-[#c2ef4e]">24/7 Disponível</span>
           </div>
 
-          <!-- Trilha de atividades do portal -->
-          <div class="rounded-2xl bg-[#1f1633] border border-[#3b2c60] p-4 mb-4 space-y-2.5">
-            <div class="flex items-center justify-between text-xs font-mono">
-              <span class="text-[#ffffff]">Trilha de Missões</span>
-              <span class="text-[#c2ef4e] font-bold">Semana 2</span>
-            </div>
-            <div class="space-y-1.5 text-xs">
-              <div class="flex items-center gap-2 p-2 rounded-lg bg-[#2e224d] text-[#cfcfdb]">
-                <span class="text-[#c2ef4e]">✓</span>
-                <span class="truncate">Áudio 04: Chunks de Restaurante</span>
-              </div>
-              <div class="flex items-center gap-2 p-2 rounded-lg bg-[#2e224d] text-[#cfcfdb]">
-                <span class="text-[#c2ef4e]">✓</span>
-                <span class="truncate">Gravação da Sessão com Gabe</span>
-              </div>
-              <div class="flex items-center gap-2 p-2 rounded-lg bg-[#3b2c60]/40 text-[#ffffff] border border-[#c2ef4e]/30">
-                <span class="text-[#fa7faa]">●</span>
-                <span class="truncate">Desafio No-Assist da Semana</span>
-              </div>
-            </div>
-          </div>
-
-          <h3 class="text-sm font-bold text-[#ffffff] mb-1">Ambiente Centralizado</h3>
-          <p class="text-xs text-[#cfcfdb] leading-relaxed">
-            Missões guiadas, gravações de cada aula e gamificação com XP e insígnias para consolidar sua rotina.
+          <h3 class="text-xl font-bold text-[#ffffff] mb-3">Tutor IA no LibreChat</h3>
+          <p class="text-xs sm:text-sm text-[#cfcfdb] leading-relaxed mb-6">
+            O ambiente seguro para errar quantas vezes forem necessárias. Você pratica 15 minutos por dia sem medo de julgamento social, modelando pronúncia e estruturas sob a técnica de <em>Spaced Recasting</em>.
           </p>
-        </div>
 
-        <div class="mt-4 pt-3 border-t border-[#3b2c60]">
-          <div class="xp-bar-track mb-1">
-            <div class="xp-bar-fill bento-xp-bar" data-target="70" style="width: 0%;"></div>
+          <div class="space-y-2 text-xs font-mono text-[#cfcfdb] pt-4 border-t border-[#3b2c60]">
+            <div class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#c2ef4e]"></span>
+              <span>Zero inibição ou vergonha</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#c2ef4e]"></span>
+              <span>Simulação de rotinas e viagens</span>
+            </div>
           </div>
-          <div class="text-[10px] font-mono text-[#cfcfdb]">70% das tarefas da semana cumpridas</div>
         </div>
       </div>
 
-      <!-- Card 3: Boss Raids Semanais de 30 min -->
-      <div class="aether-card p-6 flex flex-col justify-between bg-[#271d40] border-[#3b2c60]" data-anim="fade-up">
+      <!-- Pilar 2: Mentoria Individual com Gabe -->
+      <div class="aether-card p-7 sm:p-8 rounded-3xl bg-[#271d40] border border-[#c2ef4e]/30 flex flex-col justify-between shadow-xl" data-anim="fade-up">
         <div>
-          <div class="mb-4 flex items-center justify-between">
-            <span class="text-[10px] font-mono text-[#ffb287] uppercase tracking-[0.15em]">⚔️ Boss Raid Semanal</span>
-            <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-[#ffb287]/15 border border-[#ffb287]/30 text-[10px] font-mono text-[#ffb287]">Sessão 30m</span>
+          <div class="flex items-center justify-between mb-5">
+            <span class="text-[10px] font-mono uppercase tracking-wider text-[#c2ef4e] bg-[#c2ef4e]/10 border border-[#c2ef4e]/30 px-2.5 py-1 rounded-md font-bold">Aceleração Real</span>
+            <span class="text-xs font-mono text-[#fa7faa]">3x por Semana</span>
           </div>
 
-          <!-- Boss Raid Card -->
-          <div class="rounded-2xl bg-[#1f1633] border border-[#ffb287]/30 p-4 mb-4 relative overflow-hidden">
-            <div class="text-2xl mb-1">🎯</div>
-            <div class="text-xs font-bold text-[#ffffff] mb-0.5">Simulação de Mundo Real</div>
-            <div class="text-[11px] text-[#cfcfdb] mb-3 leading-relaxed">Negociação ou Pitch Executivo com Gabe</div>
-
-            <div class="mb-1">
-              <div class="flex items-center justify-between mb-1">
-                <span class="text-[10px] font-mono text-[#ffb287]">🔥 Desafio Ativo</span>
-                <span class="text-[10px] font-mono text-[#c2ef4e]">30 min sem travar</span>
-              </div>
-              <div class="xp-bar-track">
-                <div class="h-full rounded-full bg-gradient-to-r from-[#ffb287] to-[#c2ef4e]" style="width: 85%;"></div>
-              </div>
-            </div>
-          </div>
-
-          <h3 class="text-sm font-bold text-[#ffffff] mb-1">Simulações Sob Pressão</h3>
-          <p class="text-xs text-[#cfcfdb] leading-relaxed">
-            Uma vez por semana, um encontro individual de 30 minutos com Gabriel para testar sua fala em cenários reais sem roteiro prévio.
+          <h3 class="text-xl font-bold text-[#ffffff] mb-3">Mentoria com Gabriel Lima</h3>
+          <p class="text-xs sm:text-sm text-[#cfcfdb] leading-relaxed mb-6">
+            O olhar humano cirúrgico. Duas sessões semanais de 15 minutos para agilidade motora imediata, mais uma sessão de 30 minutos de <em>Boss Raid</em> para improviso sob pressão e autoridade executiva.
           </p>
-        </div>
 
-        <div class="mt-4 pt-3 border-t border-[#3b2c60] text-[10px] font-mono text-[#c2ef4e]">
-          ✅ 100% focado no seu objetivo pessoal
+          <div class="space-y-2 text-xs font-mono text-[#cfcfdb] pt-4 border-t border-[#3b2c60]">
+            <div class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#c2ef4e]"></span>
+              <span>2x 15 min: Destravamento rápido</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#fa7faa]"></span>
+              <span>1x 30 min: Boss Raid & Negociações</span>
+            </div>
+          </div>
         </div>
       </div>
 
-      <!-- Card 4: Streak e SPARK Score Calendar -->
-      <div id="streak-card" class="aether-card p-6 flex flex-col justify-between bg-[#271d40] border-[#3b2c60] lg:col-span-2" data-anim="fade-up">
+      <!-- Pilar 3: Portal do Aluno Moodle -->
+      <div class="aether-card p-7 sm:p-8 rounded-3xl bg-[#271d40] border border-[#3b2c60] flex flex-col justify-between" data-anim="fade-up">
         <div>
-          <div class="mb-4 flex items-center justify-between">
-            <span class="text-[10px] font-mono text-[#fa7faa] uppercase tracking-[0.15em]">🔥 Rotina & Mielinização Neural</span>
-            <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-[#fa7faa]/15 border border-[#fa7faa]/30 text-[11px] font-mono font-bold text-[#fa7faa]">14 dias streak</span>
+          <div class="flex items-center justify-between mb-5">
+            <span class="text-[10px] font-mono uppercase tracking-wider text-[#fa7faa] bg-[#fa7faa]/10 border border-[#fa7faa]/20 px-2.5 py-1 rounded-md font-semibold">Torre de Controle</span>
+            <span class="text-xs font-mono text-[#cfcfdb]">Ativo na Turma Alpha</span>
           </div>
 
-          <div class="grid sm:grid-cols-2 gap-6 items-center">
-            <!-- Calendar grid -->
-            <div id="streak-calendar" class="grid gap-1.5" style="grid-template-columns: repeat(7, 1fr);">
-              {['D','S','T','Q','Q','S','S'].map((d) => (
-                <div class="text-center text-[8px] font-mono text-[#79628c]">{d}</div>
-              ))}
-              {Array.from({length: 21}, (_, i) => {
-                const done = i >= 7;
-                const today = i === 20;
-                return (
-                  <div
-                    class:list={['streak-day rounded-md aspect-square flex items-center justify-center text-[8px] font-mono transition-colors', done ? 'streak-done' : '']}
-                    style={
-                      today
-                        ? 'background: #c2ef4e; color: #1f1633; font-weight: 700; box-shadow: 0 0 10px rgba(194,239,78,0.5);'
-                        : done
-                        ? 'background: rgba(194,239,78,0.18); border: 1px solid rgba(194,239,78,0.35); color: #c2ef4e;'
-                        : 'background: #1f1633; border: 1px solid #3b2c60; color: #79628c;'
-                    }
-                  >
-                    {today ? '✓' : done ? '✓' : '·'}
-                  </div>
-                );
-              })}
-            </div>
+          <h3 class="text-xl font-bold text-[#ffffff] mb-3">Portal do Aluno (Moodle Hub)</h3>
+          <p class="text-xs sm:text-sm text-[#cfcfdb] leading-relaxed mb-6">
+            Sua base de operações. Acesso direto a todas as gravações das suas sessões individuais com Gabe, trilhas de áudios nativos, missões semanais e o painel de evolução na escala CEFR.
+          </p>
 
-            <!-- Stats -->
-            <div class="space-y-3">
-              <div class="text-base font-bold text-[#ffffff]">
-                🔥 <span id="streak-counter" class="text-gradient-lime font-black text-2xl">0</span> dias consecutivos de prática
-              </div>
-              <p class="text-xs text-[#cfcfdb] leading-relaxed">
-                A neurociência comprova: o cérebro consolida sinapses por repetição frequente, não por aulas longas e exaustivas.
-              </p>
-              <div class="xp-bar-track">
-                <div class="xp-bar-fill" style="width: 66%;"></div>
-              </div>
-              <div class="text-[10px] font-mono text-[#cfcfdb]">Meta do ciclo Alpha: 21 dias (Mielinização Completa)</div>
+          <div class="space-y-2 text-xs font-mono text-[#cfcfdb] pt-4 border-t border-[#3b2c60]">
+            <div class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#c2ef4e]"></span>
+              <span>Gravações de todas as suas sessões</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#c2ef4e]"></span>
+              <span>Biblioteca de áudios e missões</span>
             </div>
           </div>
         </div>
       </div>
 
     </div>
+
   </div>
 </section>
-
-<script is:inline>
-(function () {
-  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  function ready(fn) {
-    if (document.readyState !== 'loading') fn(); else document.addEventListener('DOMContentLoaded', fn);
-  }
-  ready(function () {
-    var gsap = window.gsap;
-    var ST = window.ScrollTrigger;
-    if (!gsap || !ST || reduced) return;
-
-    gsap.from('#bento-grid .aether-card', {
-      y: 40,
-      opacity: 0,
-      duration: 0.8,
-      stagger: 0.1,
-      ease: 'power3.out',
-      scrollTrigger: { trigger: '#ecossistema', start: 'top 75%' }
-    });
-
-    document.querySelectorAll('.bento-xp-bar').forEach(function(bar) {
-      var target = bar.getAttribute('data-target') || '0';
-      gsap.fromTo(bar,
-        { width: '0%' },
-        {
-          width: target + '%',
-          duration: 1.4,
-          ease: 'power2.out',
-          scrollTrigger: { trigger: bar, start: 'top 85%' }
-        }
-      );
-    });
-
-    var doneDays = document.querySelectorAll('#streak-calendar .streak-done');
-    if (doneDays.length) {
-      gsap.set(doneDays, { opacity: 0, scale: 0.5 });
-      gsap.to(doneDays, {
-        opacity: 1,
-        scale: 1,
-        duration: 0.35,
-        stagger: 0.04,
-        ease: 'back.out(1.5)',
-        scrollTrigger: { trigger: '#streak-card', start: 'top 82%' }
-      });
-    }
-
-    var counterEl = document.getElementById('streak-counter');
-    if (counterEl) {
-      var obj = { val: 0 };
-      gsap.to(obj, {
-        val: 14,
-        duration: 1.2,
-        ease: 'power2.out',
-        onUpdate: function() {
-          counterEl.textContent = Math.round(obj.val);
-        },
-        scrollTrigger: { trigger: '#streak-card', start: 'top 82%' }
-      });
-    }
-  });
-})();
-</script>

@@ -24,7 +24,7 @@ import Footer from '../components/Footer.astro';
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>LexiQuest • Pare de Traduzir na Sua Cabeça · Destrave Sua Fala em 30 Dias</title>
+    <title>LexiQuest · Pare de Traduzir na Sua Cabeça · Destrave Sua Fala em 30 Dias</title>
     <meta
       name="description"
       content="15 minutos diários de prática com IA sem julgamento + 3 sessões individuais por semana com o professor Gabriel. 15 vagas Alpha por R$ 197/mês."
@@ -39,7 +39,7 @@ import Footer from '../components/Footer.astro';
     />
 
     <!-- Open Graph -->
-    <meta property="og:title" content="LexiQuest • Pare de Traduzir na Sua Cabeça · Destrave Sua Fala em 30 Dias" />
+    <meta property="og:title" content="LexiQuest · Pare de Traduzir na Sua Cabeça · Destrave Sua Fala em 30 Dias" />
     <meta
       property="og:description"
       content="15 minutos diários de prática com IA sem julgamento + 3 sessões individuais por semana com o professor Gabriel. 15 vagas Alpha."
@@ -68,8 +68,8 @@ import Footer from '../components/Footer.astro';
 
       <div class="flex items-center gap-3">
         <!-- Mini Streak HUD -->
-        <div class="hidden lg:flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#271d40] border border-[#3b2c60] text-xs font-mono text-[#cfcfdb] shadow-inner" aria-hidden="true">
-          <span class="text-[#fa7faa]">🔥</span>
+        <div class="hidden lg:flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#271d40] border border-[#3b2c60] text-xs font-mono text-[#cfcfdb] shadow-inner" aria-hidden="true">
+          <span class="w-2 h-2 rounded-full bg-[#fa7faa] micro-pulse"></span>
           <span>Streak: <strong class="text-[#ffffff]">14 dias</strong></span>
         </div>
 
@@ -121,9 +121,44 @@ import Footer from '../components/Footer.astro';
               onStart: () => els.forEach((el: Element) => el.setAttribute('data-animated', '1'))
             });
           },
-          start: 'top 82%',
+          start: 'top 85%',
+        });
+
+        ScrollTrigger.batch('[data-anim="scale-in"]:not([data-animated])', {
+          onEnter: (els) => {
+            gsap.to(els, {
+              opacity: 1,
+              scale: 1,
+              duration: 0.85,
+              stagger: 0.1,
+              ease: 'power3.out',
+              onStart: () => els.forEach((el: Element) => el.setAttribute('data-animated', '1'))
+            });
+          },
+          start: 'top 85%',
+        });
+
+        ScrollTrigger.batch('[data-anim="fade-in"]:not([data-animated])', {
+          onEnter: (els) => {
+            gsap.to(els, {
+              opacity: 1,
+              duration: 0.85,
+              stagger: 0.1,
+              ease: 'power2.out',
+              onStart: () => els.forEach((el: Element) => el.setAttribute('data-animated', '1'))
+            });
+          },
+          start: 'top 85%',
         });
       }
+
+      // Safety fallback: ensure nothing stays hidden under any circumstances
+      setTimeout(() => {
+        document.querySelectorAll('[data-anim]:not([data-animated])').forEach((el) => {
+          (el as HTMLElement).style.opacity = '1';
+          (el as HTMLElement).style.transform = 'none';
+        });
+      }, 1500);
     </script>
   </body>
 </html>

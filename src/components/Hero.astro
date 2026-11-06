@@ -1,26 +1,16 @@
 ---
 // src/components/Hero.astro — LexiQuest Hero Section
-// Aether Luxury + Gamificação: Floating RPG Badges orbital + Copy Canônica 03.6 (15 Vagas)
+// Aether Luxury Aesthetic: Live Interactive HUD Terminal + Copy Canônica 03.6 (15 Vagas)
 ---
 
-<section id="hero" class="relative min-h-screen flex flex-col justify-center overflow-hidden noise-overlay">
-  <!-- Background Parallax -->
-  <div id="hero-bg" class="absolute inset-0 z-0">
-    <img
-      src="/assets/feature-sky.webp"
-      alt=""
-      aria-hidden="true"
-      class="w-full h-full object-cover opacity-15"
-      style="filter: hue-rotate(220deg) saturate(1.4);"
-    />
-    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[#1f1633]/80 to-[#1f1633]"></div>
-    <!-- Lime & Sentry Purple radial glows -->
-    <div class="absolute top-1/3 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-[#6a5fc1]/15 rounded-full blur-[180px] pointer-events-none"></div>
-    <div class="absolute top-1/2 right-1/4 w-[500px] h-[400px] bg-[#c2ef4e]/10 rounded-full blur-[160px] pointer-events-none"></div>
-  </div>
+<section id="hero" class="relative min-h-[92vh] flex flex-col justify-center overflow-hidden border-b border-[#2e224d]">
+  <!-- Background Glows Sentry Purple & Neon Lime -->
+  <div class="absolute inset-0 dot-grid-bg opacity-30 pointer-events-none"></div>
+  <div class="absolute top-1/4 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-[#6a5fc1]/15 rounded-full blur-[180px] pointer-events-none"></div>
+  <div class="absolute top-1/2 right-1/4 w-[500px] h-[400px] bg-[#c2ef4e]/10 rounded-full blur-[160px] pointer-events-none"></div>
 
   <!-- Content -->
-  <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-8 pt-28 pb-24 w-full">
+  <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-8 pt-32 pb-20 w-full">
     <div class="flex flex-col lg:flex-row lg:items-center gap-12 lg:gap-16">
 
       <!-- Left: Copy Oficial (03.6) -->
@@ -29,7 +19,7 @@
         <div id="hero-badge" class="mb-6">
           <span class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[#271d40] border border-[#c2ef4e]/30 text-xs font-mono text-[#ffffff] uppercase tracking-[0.18em] shadow-sm">
             <span class="w-2 h-2 rounded-full bg-[#c2ef4e] micro-pulse"></span>
-            ⚡ Turma Alpha &nbsp;&bull;&nbsp; Apenas 15 Vagas para Alunos Fundadores
+            Turma Alpha · Apenas 15 Vagas Fundadoras
           </span>
         </div>
 
@@ -47,24 +37,36 @@
         </h1>
 
         <!-- Subheadline Canônica -->
-        <div id="hero-sub" class="max-w-2xl mb-8">
+        <div id="hero-sub" class="max-w-xl mb-8">
           <p class="text-base sm:text-lg text-[#cfcfdb] leading-relaxed">
-            Um método de aquisição natural acelerada que combina <strong class="text-[#ffffff]">15 minutos diários de prática com IA sem julgamento</strong> e <strong class="text-[#c2ef4e]">3 sessões individuais por semana com o professor Gabriel</strong>.
+            Método de aquisição acelerada que combina <strong class="text-[#ffffff]">15 minutos diários de prática com IA sem julgamento</strong> e <strong class="text-[#c2ef4e]">3 sessões individuais por semana com o professor Gabriel</strong>.
           </p>
 
-          <!-- Bullet points de prova rápida -->
-          <div class="mt-5 space-y-2.5 text-xs sm:text-sm text-[#cfcfdb]">
-            <div class="flex items-center gap-2.5">
-              <span class="text-[#c2ef4e] font-bold">✅</span>
-              <span><strong class="text-[#ffffff]">Zero caneta vermelha:</strong> o cérebro aprende por blocos sonoros (<em>chunks</em>), sem humilhação gramatical.</span>
+          <!-- Bullet points com ícones SVG minimalistas -->
+          <div class="mt-6 space-y-3 text-xs sm:text-sm text-[#cfcfdb]">
+            <div class="flex items-center gap-3">
+              <div class="w-5 h-5 rounded-full bg-[#c2ef4e]/15 flex items-center justify-center shrink-0 text-[#c2ef4e]">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <span><strong class="text-[#ffffff]">Zero caneta vermelha:</strong> aprendizado por blocos sonoros (<em>chunks</em>), sem inibição gramatical.</span>
             </div>
-            <div class="flex items-center gap-2.5">
-              <span class="text-[#c2ef4e] font-bold">✅</span>
-              <span><strong class="text-[#ffffff]">3 encontros rápidos por semana:</strong> esqueça aulas longas e maçantes de 1h em sextas-feiras.</span>
+            <div class="flex items-center gap-3">
+              <div class="w-5 h-5 rounded-full bg-[#c2ef4e]/15 flex items-center justify-center shrink-0 text-[#c2ef4e]">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <span><strong class="text-[#ffffff]">3 encontros rápidos por semana:</strong> 2x 15 min de agilidade + 1x 30 min de Boss Raid com Gabe.</span>
             </div>
-            <div class="flex items-center gap-2.5">
-              <span class="text-[#c2ef4e] font-bold">✅</span>
-              <span><strong class="text-[#ffffff]">Portal do Aluno + Garantia 30 dias:</strong> se sua fala não destravar, devolvemos 100% via Pix.</span>
+            <div class="flex items-center gap-3">
+              <div class="w-5 h-5 rounded-full bg-[#c2ef4e]/15 flex items-center justify-center shrink-0 text-[#c2ef4e]">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <span><strong class="text-[#ffffff]">Portal do Aluno + Garantia de 30 dias:</strong> destravamento real ou reembolso integral via Pix.</span>
             </div>
           </div>
         </div>
@@ -75,7 +77,7 @@
             href="#quiz"
             class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-[#c2ef4e] text-[#1f1633] font-sans font-extrabold text-sm sm:text-base hover:bg-[#b0dc41] active:scale-95 transition-all shadow-xl shadow-[#c2ef4e]/20 group"
           >
-            <span>FAZER TESTE DE NIVELAMENTO EM 2 MINUTOS (GRÁTIS)</span>
+            <span>Fazer Teste de Nivelamento (Grátis)</span>
             <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
             </svg>
@@ -84,205 +86,124 @@
             href="#metodo"
             class="inline-flex items-center justify-center px-7 py-4 rounded-full border border-[#3b2c60] text-[#cfcfdb] text-sm font-medium hover:border-[#c2ef4e]/50 hover:text-[#ffffff] transition-all bg-[#271d40]/60"
           >
-            Como Funciona o Método SPARK
+            A Ciência do SPARK
           </a>
         </div>
-        <p class="text-xs text-[#cfcfdb]/80 mt-3 font-mono">
-          ⚡ Sem cadastro de cartão. Diagnóstico instantâneo em 5 situações reais.
+        <p class="text-xs text-[#79628c] mt-3 font-mono">
+          Sem cadastro prévio. Diagnóstico do seu nível de fala em 2 minutos.
         </p>
 
-        <!-- Trust line -->
+        <!-- Trust Badges Limpos com Ícones SVG Monocromáticos -->
         <div id="hero-trust" class="mt-8 flex flex-wrap items-center gap-4 sm:gap-6 text-[#cfcfdb] text-xs font-mono">
-          <span class="flex items-center gap-1.5"><span class="text-[#c2ef4e]">🤖</span> Sparring IA 24/7 no LibreChat</span>
+          <span class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-[#c2ef4e]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+            </svg>
+            <span>Sparring IA 24/7 no LibreChat</span>
+          </span>
           <span class="w-px h-3 bg-[#3b2c60]"></span>
-          <span class="flex items-center gap-1.5"><span class="text-[#fa7faa]">🎯</span> 3 Sessões / Semana (2x15m + 1x30m)</span>
+          <span class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-[#fa7faa]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+            </svg>
+            <span>3 Sessões Semanais Gabe</span>
+          </span>
           <span class="w-px h-3 bg-[#3b2c60]"></span>
-          <span class="flex items-center gap-1.5"><span class="text-[#ffb287]">📚</span> Portal do Aluno Ativo</span>
-          <span class="w-px h-3 bg-[#3b2c60]"></span>
-          <span class="flex items-center gap-1.5"><span class="text-[#c2ef4e]">🛡️</span> Garantia Total 30 Dias</span>
+          <span class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-[#c2ef4e]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+            <span>Garantia 30 Dias</span>
+          </span>
         </div>
       </div>
 
-      <!-- Right: Floating RPG Badges Orbital -->
-      <div
-        id="hero-orbital"
-        class="hidden lg:flex flex-shrink-0 items-center justify-center"
-        aria-hidden="true"
-        style="width: 340px; height: 420px; position: relative;"
-      >
-        <!-- Central glow -->
-        <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <div class="w-36 h-36 rounded-full bg-[#c2ef4e]/15 blur-3xl"></div>
-        </div>
-
-        <!-- Center: LexiQuest orb -->
-        <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
-          <div class="w-18 h-18 rounded-full border border-[#c2ef4e]/50 bg-[#271d40] flex items-center justify-center shadow-[0_0_35px_rgba(194,239,78,0.35)]">
-            <span class="text-3xl" aria-hidden="true">⚔️</span>
+      <!-- Right: Aether Live HUD Diagnostic Terminal -->
+      <div class="hidden lg:block shrink-0 w-[420px] relative select-none">
+        <div class="rounded-3xl bg-[#271d40]/90 border border-[#3b2c60] p-6 shadow-2xl backdrop-blur-xl relative overflow-hidden">
+          
+          <!-- Terminal Titlebar -->
+          <div class="flex items-center justify-between pb-4 border-b border-[#3b2c60] mb-5">
+            <div class="flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-[#c2ef4e] micro-pulse"></span>
+              <span class="text-xs font-mono text-[#ffffff] font-bold tracking-wider">SPARK RADAR · B2 ENGINE</span>
+            </div>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#c2ef4e]/10 text-[#c2ef4e] border border-[#c2ef4e]/30 font-semibold">ONLINE</span>
           </div>
-        </div>
 
-        <!-- Badge 1: XP Streak — top -->
-        <div class="float-badge absolute" style="top: 10px; left: 50%; transform: translateX(-50%);" id="hb-1">
-          <span class="badge-icon text-[#fa7faa]">🔥</span>
-          <span style="color: #fa7faa;">14 dias streak</span>
-        </div>
+          <!-- Latency Gauge: 3.2s Tradução vs 0.3s SPARK Reflex -->
+          <div class="mb-5 p-4 rounded-2xl bg-[#1f1633] border border-[#3b2c60]">
+            <div class="flex items-center justify-between text-xs font-mono mb-2">
+              <span class="text-[#cfcfdb]">Latência da Resposta Oral</span>
+              <span class="text-[#c2ef4e] font-bold">10x Mais Rápido</span>
+            </div>
+            
+            <!-- Tradução Mental -->
+            <div class="mb-3">
+              <div class="flex justify-between text-[10px] font-mono text-[#ffb287] mb-1">
+                <span>Método Tradicional (Tradução)</span>
+                <span>3.2s</span>
+              </div>
+              <div class="w-full h-1.5 rounded-full bg-[#271d40] overflow-hidden">
+                <div class="w-[85%] h-full bg-[#ffb287] rounded-full"></div>
+              </div>
+            </div>
 
-        <!-- Badge 2: Level — top-right -->
-        <div class="float-badge absolute" style="top: 70px; right: 0px;" id="hb-2">
-          <span class="badge-icon text-[#c2ef4e]">⭐</span>
-          <span>Nível B1 · 2.400 XP</span>
-        </div>
+            <!-- Método SPARK -->
+            <div>
+              <div class="flex justify-between text-[10px] font-mono text-[#c2ef4e] mb-1">
+                <span>Método SPARK (Reflexo Motor)</span>
+                <span>0.3s</span>
+              </div>
+              <div class="w-full h-1.5 rounded-full bg-[#271d40] overflow-hidden">
+                <div class="w-[12%] h-full bg-[#c2ef4e] rounded-full"></div>
+              </div>
+            </div>
+          </div>
 
-        <!-- Badge 3: Boss — right -->
-        <div class="float-badge absolute" style="top: 50%; right: -25px; transform: translateY(-50%);" id="hb-3">
-          <span class="badge-icon text-[#ffb287]">👹</span>
-          <span style="color: #ffb287;">Boss Raid 30m desbloqueado</span>
-        </div>
+          <!-- Live Audio Waveform Simulation -->
+          <div class="p-4 rounded-2xl bg-[#1f1633] border border-[#3b2c60] mb-5">
+            <div class="flex items-center justify-between text-xs font-mono mb-3">
+              <span class="text-[#cfcfdb] flex items-center gap-2">
+                <svg class="w-3.5 h-3.5 text-[#c2ef4e]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
+                </svg>
+                <span>Treino de Fala em Andamento</span>
+              </span>
+              <span class="text-[10px] text-[#fa7faa] font-bold">+65 XP</span>
+            </div>
 
-        <!-- Badge 4: Recasting — bottom-right -->
-        <div class="float-badge absolute" style="bottom: 70px; right: 0px;" id="hb-4">
-          <span class="badge-icon text-[#c2ef4e]">✅</span>
-          <span style="color: #c2ef4e;">Spaced Recasting ativo</span>
-        </div>
+            <div class="flex items-center justify-center gap-1.5 h-10 py-1">
+              <span class="w-1 bg-[#c2ef4e] rounded-full wave-bar" style="height: 40%; animation-delay: 0.1s;"></span>
+              <span class="w-1 bg-[#c2ef4e] rounded-full wave-bar" style="height: 80%; animation-delay: 0.2s;"></span>
+              <span class="w-1 bg-[#c2ef4e] rounded-full wave-bar" style="height: 100%; animation-delay: 0.3s;"></span>
+              <span class="w-1 bg-[#c2ef4e] rounded-full wave-bar" style="height: 60%; animation-delay: 0.4s;"></span>
+              <span class="w-1 bg-[#c2ef4e] rounded-full wave-bar" style="height: 90%; animation-delay: 0.2s;"></span>
+              <span class="w-1 bg-[#c2ef4e] rounded-full wave-bar" style="height: 50%; animation-delay: 0.5s;"></span>
+              <span class="w-1 bg-[#c2ef4e] rounded-full wave-bar" style="height: 75%; animation-delay: 0.15s;"></span>
+              <span class="w-1 bg-[#c2ef4e] rounded-full wave-bar" style="height: 35%; animation-delay: 0.35s;"></span>
+            </div>
+            
+            <p class="text-[11px] font-mono text-center text-[#c2ef4e] mt-2">
+              "let me follow up on that" · Chunks B2 gravado
+            </p>
+          </div>
 
-        <!-- Badge 5: Score — bottom -->
-        <div class="float-badge absolute" style="bottom: 10px; left: 50%; transform: translateX(-50%);" id="hb-5">
-          <span class="badge-icon text-[#fa7faa]">📊</span>
-          <span>SPARK Score: 88% dominado</span>
-        </div>
+          <!-- Bottom HUD Stats -->
+          <div class="grid grid-cols-2 gap-3 text-center">
+            <div class="p-3 rounded-xl bg-[#1f1633] border border-[#3b2c60]">
+              <span class="text-[10px] font-mono text-[#79628c] uppercase block">Meta do Mês</span>
+              <span class="text-sm font-mono font-bold text-[#ffffff]">650 Chunks</span>
+            </div>
+            <div class="p-3 rounded-xl bg-[#1f1633] border border-[#3b2c60]">
+              <span class="text-[10px] font-mono text-[#79628c] uppercase block">Streak Aluno</span>
+              <span class="text-sm font-mono font-bold text-[#c2ef4e]">14 Dias Ativos</span>
+            </div>
+          </div>
 
-        <!-- Badge 6: Speed — bottom-left -->
-        <div class="float-badge absolute" style="bottom: 70px; left: 0px;" id="hb-6">
-          <span class="badge-icon text-[#c2ef4e]">⚡</span>
-          <span style="color: #c2ef4e;">Fala sem traduzir</span>
-        </div>
-
-        <!-- Badge 7: Sessions — left -->
-        <div class="float-badge absolute" style="top: 50%; left: -25px; transform: translateY(-50%);" id="hb-7">
-          <span class="badge-icon text-[#fa7faa]">🎯</span>
-          <span>3 sessões semanais</span>
-        </div>
-
-        <!-- Badge 8: Chunks — top-left -->
-        <div class="float-badge absolute" style="top: 70px; left: 0px;" id="hb-8">
-          <span class="badge-icon text-[#6a5fc1]">📖</span>
-          <span>2.500 chunks para B2</span>
         </div>
       </div>
 
     </div>
-
-    <!-- Mobile: Badges marquee horizontal -->
-    <div id="hero-marquee-wrap" class="lg:hidden mt-10 overflow-hidden relative" aria-hidden="true">
-      <div id="hero-marquee" class="flex gap-3 w-max">
-        <span class="float-badge"><span class="badge-icon text-[#fa7faa]">🔥</span> 14 dias streak</span>
-        <span class="float-badge"><span class="badge-icon text-[#c2ef4e]">⭐</span> Nível B1</span>
-        <span class="float-badge"><span class="badge-icon text-[#ffb287]">👹</span> Boss Raid 30m</span>
-        <span class="float-badge"><span class="badge-icon text-[#c2ef4e]">✅</span> Spaced Recasting</span>
-        <span class="float-badge"><span class="badge-icon text-[#fa7faa]">📊</span> SPARK Score 88%</span>
-        <span class="float-badge"><span class="badge-icon text-[#c2ef4e]">⚡</span> Sem Traduzir</span>
-        <span class="float-badge"><span class="badge-icon text-[#6a5fc1]">📖</span> 2.500 chunks B2</span>
-        <span class="float-badge"><span class="badge-icon text-[#c2ef4e]">🎯</span> 3 sessões / semana</span>
-        <!-- repeat for smooth loop -->
-        <span class="float-badge"><span class="badge-icon text-[#fa7faa]">🔥</span> 14 dias streak</span>
-        <span class="float-badge"><span class="badge-icon text-[#c2ef4e]">⭐</span> Nível B1</span>
-        <span class="float-badge"><span class="badge-icon text-[#ffb287]">👹</span> Boss Raid 30m</span>
-        <span class="float-badge"><span class="badge-icon text-[#c2ef4e]">✅</span> Spaced Recasting</span>
-        <span class="float-badge"><span class="badge-icon text-[#fa7faa]">📊</span> SPARK Score 88%</span>
-        <span class="float-badge"><span class="badge-icon text-[#c2ef4e]">⚡</span> Sem Traduzir</span>
-        <span class="float-badge"><span class="badge-icon text-[#6a5fc1]">📖</span> 2.500 chunks B2</span>
-        <span class="float-badge"><span class="badge-icon text-[#c2ef4e]">🎯</span> 3 sessões / semana</span>
-      </div>
-    </div>
-
   </div>
 </section>
-
-<script is:inline>
-(function () {
-  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  function ready(fn) {
-    if (document.readyState !== 'loading') fn();
-    else document.addEventListener('DOMContentLoaded', fn);
-  }
-
-  ready(function () {
-    if (reduced) return;
-
-    var gsap = window.gsap;
-    var ST = window.ScrollTrigger;
-    if (!gsap) return;
-
-    if (ST) gsap.registerPlugin(ST);
-
-    // Reveal headline lines
-    var lines = document.querySelectorAll('#hero .reveal-line');
-    gsap.set(lines, { overflow: 'hidden' });
-    gsap.from(lines, {
-      yPercent: 110,
-      duration: 1.1,
-      stagger: 0.1,
-      ease: 'power4.out',
-      delay: 0.2
-    });
-
-    // Entrance animations
-    gsap.from('#hero-badge',  { opacity: 0, y: -16, duration: 0.7, delay: 0.1, ease: 'power3.out' });
-    gsap.from('#hero-sub',    { opacity: 0, y: 24,  duration: 0.9, delay: 0.55, ease: 'power3.out' });
-    gsap.from('#hero-ctas',   { opacity: 0, y: 20,  duration: 0.9, delay: 0.65, ease: 'power3.out' });
-    gsap.from('#hero-trust',  { opacity: 0, y: 16,  duration: 0.8, delay: 0.8,  ease: 'power2.out' });
-
-    // Floating Badges
-    var badges = document.querySelectorAll('#hero-orbital [id^="hb-"]');
-    if (badges.length) {
-      gsap.from(badges, {
-        opacity: 0,
-        scale: 0.75,
-        duration: 0.7,
-        stagger: 0.08,
-        delay: 0.5,
-        ease: 'back.out(1.5)'
-      });
-
-      badges.forEach(function(badge, i) {
-        gsap.to(badge, {
-          y: (i % 2 === 0) ? -10 : 10,
-          duration: 2.4 + (i * 0.25),
-          repeat: -1,
-          yoyo: true,
-          ease: 'sine.inOut',
-          delay: i * 0.18
-        });
-      });
-    }
-
-    // Mobile marquee
-    var marquee = document.getElementById('hero-marquee');
-    if (marquee) {
-      var totalWidth = marquee.scrollWidth / 2;
-      gsap.to(marquee, {
-        x: '-' + totalWidth + 'px',
-        duration: 22,
-        ease: 'none',
-        repeat: -1
-      });
-    }
-
-    // Parallax BG on scroll
-    if (ST) {
-      gsap.to('#hero-bg', {
-        yPercent: 30,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: '#hero',
-          start: 'top top',
-          end: 'bottom top',
-          scrub: true
-        }
-      });
-    }
-  });
-})();
-</script>

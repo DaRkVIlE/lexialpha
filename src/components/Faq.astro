@@ -1,10 +1,10 @@
 ---
 // src/components/Faq.astro — Seção 7: Perguntas Frequentes (03.6)
-// Dúvidas Frequentes da Turma Alpha · Respostas Diretas
+// Dúvidas Frequentes da Turma Alpha · Respostas Diretas e Transparentes
 ---
 
-<section id="faq" class="py-28 px-4 sm:px-8 relative border-t border-[#2e224d] overflow-hidden">
-  <div class="max-w-4xl mx-auto relative z-10">
+<section id="faq" class="py-24 sm:py-28 px-4 sm:px-8 relative border-t border-[#2e224d] overflow-hidden">
+  <div class="max-w-4xl mx-auto relative z-10 w-full">
     <!-- Header -->
     <div class="mb-14 max-w-2xl" data-anim="fade-up">
       <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full badge-glow mb-4">
@@ -21,7 +21,7 @@
     </div>
 
     <!-- Accordion List Linear -->
-    <div class="border-b border-[#3b2c60] space-y-3" data-anim="fade-up">
+    <div class="space-y-3" data-anim="fade-up">
       {[
         {
           category: 'Iniciantes',
@@ -49,10 +49,10 @@
           a: 'O valor de R$ 197/mês é exclusivo para os 15 alunos fundadores da Turma Alpha (preço regular futuro de R$ 297/mês). O pagamento é realizado diretamente via Pix manual para Gabriel no WhatsApp. Não há taxa de matrícula nem fidelidade de 1 ano: você estuda mês a mês pelo tempo que precisar.'
         }
       ].map((faq, index) => (
-        <div class="faq-item topic-card p-5 sm:p-6 rounded-2xl bg-[#271d40] border border-[#3b2c60] group transition-all duration-250">
+        <div class="faq-item rounded-2xl bg-[#271d40] border border-[#3b2c60] group transition-all duration-200">
           <button
             type="button"
-            class="faq-trigger w-full text-left flex items-start justify-between gap-4 cursor-pointer select-none"
+            class="faq-trigger w-full text-left p-5 sm:p-6 flex items-start justify-between gap-4 cursor-pointer select-none"
             aria-expanded="false"
           >
             <div class="flex items-start gap-4">
@@ -60,15 +60,14 @@
                 {String(index + 1).padStart(2, '0')}
               </span>
               <div>
-                <span class="topic-badge text-[10px] mb-1.5 block max-w-fit text-[#fa7faa] border-[#fa7faa]/30 bg-[#fa7faa]/10">{faq.category}</span>
-                <span class="text-base sm:text-lg font-bold text-[#ffffff] group-hover:text-[#c2ef4e] transition-colors leading-snug">
+                <span class="text-[10px] font-mono mb-1.5 inline-block text-[#fa7faa] px-2 py-0.5 rounded bg-[#fa7faa]/10 border border-[#fa7faa]/20 font-semibold">{faq.category}</span>
+                <span class="text-base sm:text-lg font-bold text-[#ffffff] group-hover:text-[#c2ef4e] transition-colors leading-snug block">
                   {faq.q}
                 </span>
               </div>
             </div>
 
-            <!-- Ícone Plus / Cross -->
-            <div class="icon-box text-[#cfcfdb] group-hover:text-[#c2ef4e] group-hover:border-[#c2ef4e]/40 shrink-0 mt-1">
+            <div class="w-7 h-7 rounded-lg bg-[#1f1633] border border-[#3b2c60] flex items-center justify-center text-[#cfcfdb] group-hover:text-[#c2ef4e] group-hover:border-[#c2ef4e]/40 shrink-0 mt-1">
               <svg class="faq-icon w-3.5 h-3.5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4" />
               </svg>
@@ -78,7 +77,7 @@
           <!-- Painel colapsável -->
           <div class="faq-content grid grid-rows-[0fr] transition-all duration-300 ease-out">
             <div class="overflow-hidden">
-              <div class="pl-12 sm:pl-14 pr-4 pt-4 text-[#cfcfdb] text-sm sm:text-base leading-relaxed border-t border-[#3b2c60] mt-4">
+              <div class="px-5 sm:px-6 pb-6 text-[#cfcfdb] text-xs sm:text-sm leading-relaxed border-t border-[#3b2c60]/60 pt-4">
                 {faq.a}
               </div>
             </div>
@@ -98,36 +97,41 @@
           var item = btn.closest('.faq-item');
           var content = item.querySelector('.faq-content');
           var icon = item.querySelector('.faq-icon');
-          var isOpen = btn.getAttribute('aria-expanded') === 'true';
+          var isExpanded = btn.getAttribute('aria-expanded') === 'true';
 
+          // Close other faqs
           triggers.forEach(function (otherBtn) {
             if (otherBtn !== btn) {
-              otherBtn.setAttribute('aria-expanded', 'false');
               var otherItem = otherBtn.closest('.faq-item');
               var otherContent = otherItem.querySelector('.faq-content');
               var otherIcon = otherItem.querySelector('.faq-icon');
-              otherContent.classList.remove('grid-rows-[1fr]');
-              otherContent.classList.add('grid-rows-[0fr]');
+              otherBtn.setAttribute('aria-expanded', 'false');
+              if (otherContent) otherContent.style.gridTemplateRows = '0fr';
               if (otherIcon) otherIcon.style.transform = 'rotate(0deg)';
+              otherItem.classList.remove('border-[#c2ef4e]/40');
             }
           });
 
-          if (isOpen) {
+          // Toggle current
+          if (isExpanded) {
             btn.setAttribute('aria-expanded', 'false');
-            content.classList.remove('grid-rows-[1fr]');
-            content.classList.add('grid-rows-[0fr]');
+            content.style.gridTemplateRows = '0fr';
             if (icon) icon.style.transform = 'rotate(0deg)';
+            item.classList.remove('border-[#c2ef4e]/40');
           } else {
             btn.setAttribute('aria-expanded', 'true');
-            content.classList.remove('grid-rows-[0fr]');
-            content.classList.add('grid-rows-[1fr]');
+            content.style.gridTemplateRows = '1fr';
             if (icon) icon.style.transform = 'rotate(45deg)';
+            item.classList.add('border-[#c2ef4e]/40');
           }
         });
       });
     }
 
-    if (document.readyState !== 'loading') setup();
-    else document.addEventListener('DOMContentLoaded', setup);
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', setup);
+    } else {
+      setup();
+    }
   })();
 </script>

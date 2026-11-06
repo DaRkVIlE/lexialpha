@@ -1,246 +1,202 @@
 ---
-// src/components/SocialProof.astro — Métricas + Pilares com SVG do Ciclo SPARK
+// src/components/SocialProof.astro — A Lógica da Aquisição Natural: O Método S.P.A.R.K. Dissecado
 // S (Situational) · P (Persona-driven) · A (Acquisition) · R (Recasting) · K (Knowledge-mapped)
 ---
 
-<section id="ciencia" class="py-28 px-4 sm:px-8 relative border-t border-[#2e224d] overflow-hidden">
-  <!-- Linha decorativa topo -->
-  <div class="absolute top-0 left-0 right-0 h-px overflow-hidden">
-    <div id="sp-line" class="line-decor h-full w-full"></div>
-  </div>
+<section id="ciencia" class="py-24 sm:py-28 px-4 sm:px-8 relative border-t border-[#2e224d] overflow-hidden">
+  <!-- Glow decorativo -->
+  <div class="absolute top-1/4 right-1/4 w-[500px] h-[300px] bg-[#c2ef4e]/5 rounded-full blur-[140px] pointer-events-none"></div>
 
-  <div class="max-w-6xl mx-auto">
+  <div class="max-w-6xl mx-auto relative z-10 w-full">
+
     <!-- Header -->
-    <div class="text-center mb-16" data-anim="fade-up">
+    <div class="text-center mb-14 max-w-3xl mx-auto" data-anim="fade-up">
       <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full badge-glow mb-4">
         <span class="w-1.5 h-1.5 rounded-full bg-[#c2ef4e] micro-pulse"></span>
-        <span class="text-xs font-mono text-[#c2ef4e] uppercase tracking-[0.2em]">A Lógica da Aquisição Natural</span>
+        <span class="text-xs font-mono text-[#c2ef4e] uppercase tracking-[0.2em]">O Método S.P.A.R.K. Dissecado</span>
       </div>
-      <h2 class="font-sans font-extrabold text-3xl sm:text-5xl md:text-6xl tracking-tight mt-2 text-[#ffffff] leading-[1.08]">
-        Por que você finalmente destrava<br class="hidden sm:block" />
-        <span class="text-gradient-lime">com o Método SPARK</span>
+      <h2 class="font-sans font-extrabold text-3xl sm:text-5xl md:text-6xl tracking-tight text-[#ffffff] leading-[1.05]">
+        A lógica da aquisição natural.<br />
+        <span class="text-gradient-lime">O que cada letra do SPARK significa.</span>
       </h2>
+      <p class="text-[#cfcfdb] text-base sm:text-lg mt-4 leading-relaxed">
+        Não inventamos regras mágicas. O SPARK é um acrônimo neurocientífico para o processo biológico de absorção de uma segunda língua sem tradução mental.
+      </p>
     </div>
 
-    <!-- 4 Stats -->
+    <!-- 4 Métricas de Impacto Quantitativo -->
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mb-16" data-anim="fade-up">
-      <!-- Stat 1 -->
-      <div class="topic-card text-center p-6 sm:p-8 rounded-2xl bg-[#271d40] border border-[#3b2c60] flex flex-col justify-between">
+      <!-- Métrica 1 -->
+      <div class="p-6 sm:p-7 rounded-2xl bg-[#271d40] border border-[#3b2c60] text-center flex flex-col justify-between">
         <div>
-          <div class="font-sans font-black text-5xl sm:text-6xl md:text-7xl leading-none text-gradient-lime counter-value mb-2 tracking-tight">
-            <span class="sp-counter" data-target="15">0</span><span class="text-2xl sm:text-3xl font-extrabold">min</span>
+          <div class="font-sans font-black text-4xl sm:text-5xl text-gradient-lime mb-1">
+            <span class="sp-counter" data-target="15">15</span><span class="text-xl sm:text-2xl font-bold">min</span>
           </div>
-          <div class="w-12 h-1 bg-[#c2ef4e]/20 rounded-full mx-auto my-3 overflow-hidden">
+          <div class="w-10 h-1 bg-[#c2ef4e]/20 rounded-full mx-auto my-2.5">
             <div class="h-full bg-[#c2ef4e] w-full rounded-full"></div>
           </div>
-          <p class="text-xs font-mono text-[#ffffff] uppercase tracking-wider font-semibold mb-1">Mínimo Diário</p>
+          <p class="text-xs font-mono text-[#ffffff] uppercase tracking-wider font-semibold">Microdose Diária</p>
         </div>
-        <p class="text-[#cfcfdb] text-xs leading-relaxed hidden sm:block mt-2">Prática de 15 min no LibreChat para criar mielinização e hábito.</p>
+        <p class="text-[11px] text-[#cfcfdb] mt-2">Sparring no LibreChat para ativação motora diária de mielina.</p>
       </div>
 
-      <!-- Stat 2 -->
-      <div class="topic-card text-center p-6 sm:p-8 rounded-2xl bg-[#271d40] border border-[#3b2c60] flex flex-col justify-between">
+      <!-- Métrica 2 -->
+      <div class="p-6 sm:p-7 rounded-2xl bg-[#271d40] border border-[#3b2c60] text-center flex flex-col justify-between">
         <div>
-          <div class="font-sans font-black text-5xl sm:text-6xl md:text-7xl leading-none text-gradient-lime counter-value mb-2 tracking-tight">
-            <span class="sp-counter" data-target="3">0</span><span class="text-2xl sm:text-3xl font-extrabold">x</span>
+          <div class="font-sans font-black text-4xl sm:text-5xl text-gradient-lime mb-1">
+            <span class="sp-counter" data-target="3">3</span><span class="text-xl sm:text-2xl font-bold">x</span>
           </div>
-          <div class="w-12 h-1 bg-[#c2ef4e]/20 rounded-full mx-auto my-3 overflow-hidden">
+          <div class="w-10 h-1 bg-[#c2ef4e]/20 rounded-full mx-auto my-2.5">
             <div class="h-full bg-[#c2ef4e] w-full rounded-full"></div>
           </div>
-          <p class="text-xs font-mono text-[#ffffff] uppercase tracking-wider font-semibold mb-1">Sessões / Sem.</p>
+          <p class="text-xs font-mono text-[#ffffff] uppercase tracking-wider font-semibold">Sessões / Semana</p>
         </div>
-        <p class="text-[#cfcfdb] text-xs leading-relaxed hidden sm:block mt-2">2 de 15 min (agilidade) + 1 de 30 min (Boss Raids reais com Gabe).</p>
+        <p class="text-[11px] text-[#cfcfdb] mt-2">2x 15 min (agilidade) + 1x 30 min (Boss Raids reais com Gabe).</p>
       </div>
 
-      <!-- Stat 3 -->
-      <div class="topic-card text-center p-6 sm:p-8 rounded-2xl bg-[#271d40] border border-[#3b2c60] flex flex-col justify-between">
+      <!-- Métrica 3 -->
+      <div class="p-6 sm:p-7 rounded-2xl bg-[#271d40] border border-[#3b2c60] text-center flex flex-col justify-between">
         <div>
-          <div class="font-sans font-black text-5xl sm:text-6xl md:text-7xl leading-none text-gradient-lime counter-value mb-2 tracking-tight">
-            <span class="sp-counter" data-target="24">0</span><span class="text-2xl sm:text-3xl font-extrabold">/7</span>
+          <div class="font-sans font-black text-4xl sm:text-5xl text-gradient-lime mb-1">
+            <span class="sp-counter" data-target="2500">2.500</span>
           </div>
-          <div class="w-12 h-1 bg-[#c2ef4e]/20 rounded-full mx-auto my-3 overflow-hidden">
+          <div class="w-10 h-1 bg-[#c2ef4e]/20 rounded-full mx-auto my-2.5">
             <div class="h-full bg-[#c2ef4e] w-full rounded-full"></div>
           </div>
-          <p class="text-xs font-mono text-[#ffffff] uppercase tracking-wider font-semibold mb-1">Acesso 24/7</p>
+          <p class="text-xs font-mono text-[#ffffff] uppercase tracking-wider font-semibold">Chunks do B2</p>
         </div>
-        <p class="text-[#cfcfdb] text-xs leading-relaxed hidden sm:block mt-2">Companion IA e Portal de Atividades disponíveis na sua rotina.</p>
+        <p class="text-[11px] text-[#cfcfdb] mt-2">Acervo quantitativo necessário para autonomia executiva total.</p>
       </div>
 
-      <!-- Stat 4 -->
-      <div class="topic-card text-center p-6 sm:p-8 rounded-2xl bg-[#271d40] border border-[#3b2c60] flex flex-col justify-between">
+      <!-- Métrica 4 -->
+      <div class="p-6 sm:p-7 rounded-2xl bg-[#271d40] border border-[#3b2c60] text-center flex flex-col justify-between">
         <div>
-          <div class="font-sans font-black text-5xl sm:text-6xl md:text-7xl leading-none text-gradient-lime counter-value mb-2 tracking-tight">
-            <span class="sp-counter" data-target="100">0</span><span class="text-2xl sm:text-3xl font-extrabold">%</span>
+          <div class="font-sans font-black text-4xl sm:text-5xl text-gradient-lime mb-1">
+            <span class="sp-counter" data-target="15">15</span><span class="text-xl sm:text-2xl font-bold"> vagas</span>
           </div>
-          <div class="w-12 h-1 bg-[#c2ef4e]/20 rounded-full mx-auto my-3 overflow-hidden">
+          <div class="w-10 h-1 bg-[#c2ef4e]/20 rounded-full mx-auto my-2.5">
             <div class="h-full bg-[#c2ef4e] w-full rounded-full"></div>
           </div>
-          <p class="text-xs font-mono text-[#ffffff] uppercase tracking-wider font-semibold mb-1">Individual</p>
+          <p class="text-xs font-mono text-[#ffffff] uppercase tracking-wider font-semibold">Turma Alpha</p>
         </div>
-        <p class="text-[#cfcfdb] text-xs leading-relaxed hidden sm:block mt-2">Zero salas com outros alunos. Atenção 100% individualizada.</p>
+        <p class="text-[11px] text-[#cfcfdb] mt-2">Acompanhamento individual e exclusivo com Gabriel Lima.</p>
       </div>
     </div>
 
-    <!-- SVG: Ciclo SPARK com nós interativos -->
-    <div class="mb-16" data-anim="fade-up" aria-hidden="true">
-      <svg viewBox="0 0 680 100" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-2xl mx-auto opacity-80">
-        <!-- Node circles -->
-        <circle id="spark-node-s" cx="80" cy="50" r="22" fill="#c2ef4e" fill-opacity="0.1" stroke="#c2ef4e" stroke-opacity="0.6" stroke-width="1.5"/>
-        <circle id="spark-node-p" cx="216" cy="50" r="22" fill="#c2ef4e" fill-opacity="0.1" stroke="#c2ef4e" stroke-opacity="0.6" stroke-width="1.5"/>
-        <circle id="spark-node-a" cx="340" cy="50" r="22" fill="#c2ef4e" fill-opacity="0.1" stroke="#c2ef4e" stroke-opacity="0.6" stroke-width="1.5"/>
-        <circle id="spark-node-r" cx="464" cy="50" r="22" fill="#c2ef4e" fill-opacity="0.1" stroke="#c2ef4e" stroke-opacity="0.6" stroke-width="1.5"/>
-        <circle id="spark-node-k" cx="600" cy="50" r="22" fill="#c2ef4e" fill-opacity="0.15" stroke="#c2ef4e" stroke-opacity="0.8" stroke-width="1.8"/>
+    <!-- As 5 Etapas do S.P.A.R.K. Detalhadas -->
+    <div class="space-y-4 mb-14" data-anim="fade-up">
 
-        <!-- Node letters -->
-        <text x="80" y="55" text-anchor="middle" font-size="13" font-family="'Source Code Pro', monospace" fill="#c2ef4e" font-weight="bold">S</text>
-        <text x="216" y="55" text-anchor="middle" font-size="13" font-family="'Source Code Pro', monospace" fill="#c2ef4e" font-weight="bold">P</text>
-        <text x="340" y="55" text-anchor="middle" font-size="13" font-family="'Source Code Pro', monospace" fill="#c2ef4e" font-weight="bold">A</text>
-        <text x="464" y="55" text-anchor="middle" font-size="13" font-family="'Source Code Pro', monospace" fill="#c2ef4e" font-weight="bold">R</text>
-        <text x="600" y="55" text-anchor="middle" font-size="13" font-family="'Source Code Pro', monospace" fill="#c2ef4e" font-weight="bold">K</text>
-
-        <!-- Arrows between nodes -->
-        <path id="spark-arc-sp" d="M103 50 L191 50" stroke="#c2ef4e" stroke-opacity="0.4" stroke-width="1.5" marker-end="url(#sp-arr)"/>
-        <path id="spark-arc-pa" d="M239 50 L315 50" stroke="#c2ef4e" stroke-opacity="0.4" stroke-width="1.5" marker-end="url(#sp-arr)"/>
-        <path id="spark-arc-ar" d="M363 50 L439 50" stroke="#c2ef4e" stroke-opacity="0.4" stroke-width="1.5" marker-end="url(#sp-arr)"/>
-        <path id="spark-arc-rk" d="M487 50 L575 50" stroke="#c2ef4e" stroke-opacity="0.4" stroke-width="1.5" marker-end="url(#sp-arr)"/>
-        <!-- Return arc from K back to S -->
-        <path d="M600 28 Q340 -18 80 28" stroke="#c2ef4e" stroke-opacity="0.25" stroke-width="1" fill="none" stroke-dasharray="4 3"/>
-
-        <!-- Labels below -->
-        <text x="80" y="82" text-anchor="middle" font-size="8" font-family="monospace" fill="#cfcfdb">Situational</text>
-        <text x="216" y="82" text-anchor="middle" font-size="8" font-family="monospace" fill="#cfcfdb">Persona-driven</text>
-        <text x="340" y="82" text-anchor="middle" font-size="8" font-family="monospace" fill="#cfcfdb">Acquisition</text>
-        <text x="464" y="82" text-anchor="middle" font-size="8" font-family="monospace" fill="#cfcfdb">Recasting</text>
-        <text x="600" y="82" text-anchor="middle" font-size="8" font-family="monospace" fill="#c2ef4e" font-weight="bold">Knowledge-map</text>
-
-        <defs>
-          <marker id="sp-arr" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
-            <path d="M0,0 L0,6 L6,3 z" fill="#c2ef4e" fill-opacity="0.5"/>
-          </marker>
-        </defs>
-      </svg>
-    </div>
-
-    <!-- 4 Pilares de Aquisição -->
-    <div class="grid md:grid-cols-2 gap-6" data-anim="fade-up">
-      {[
-        {
-          n: '01',
-          badge: 'Reflexo Motor',
-          title: 'O Fim do Vício da Tradução Mental',
-          text: 'No método tradicional, você monta a frase em português antes de falar. Com o SPARK, você treina blocos sonoros prontos (chunks) até que a resposta saia no reflexo, como na sua língua materna.'
-        },
-        {
-          n: '02',
-          badge: 'Zero Julgamento',
-          title: 'Ambiente Seguro para Praticar Sem Medo',
-          text: 'A vergonha de errar é o principal motivo de travamento. No LibreChat, você pratica 15 min por dia com seu companion de IA sem julgamento, ganhando musculatura para as sessões ao vivo.'
-        },
-        {
-          n: '03',
-          badge: 'Aquisição Natural',
-          title: 'Spaced Recasting (Zero Caneta Vermelha)',
-          text: 'Interrupções com correções gramaticais explícitas bloqueiam o cérebro. Tanto a IA quanto Gabe devolvem sua frase reformulada naturalmente na conversa, modelando a estrutura certa sem humilhação.'
-        },
-        {
-          n: '04',
-          badge: 'Improviso Real',
-          title: 'Boss Raids e Situações Reais com Gabe',
-          text: 'A prática diária cria o vocabulário em blocos. As 3 sessões semanais individuais colocam esse repertório em ação em conversas e negociações reais sob pressão controlada.'
-        }
-      ].map((item) => (
-        <div class="topic-card p-6 sm:p-7 rounded-2xl bg-[#271d40] border border-[#3b2c60] flex items-start gap-5">
-          <span class="font-sans font-black text-3xl sm:text-4xl text-gradient-lime select-none leading-none shrink-0 tracking-tight">{item.n}</span>
-          <div class="space-y-2 flex-1">
-            <div class="flex items-center justify-between gap-2">
-              <h4 class="font-bold text-[#ffffff] text-base tracking-tight">{item.title}</h4>
-              <span class="topic-badge text-[#c2ef4e] border-[#c2ef4e]/25 bg-[#c2ef4e]/10 text-[10px]">{item.badge}</span>
+      <!-- Letra S: Situational -->
+      <div class="p-6 sm:p-8 rounded-2xl bg-[#271d40] border border-[#3b2c60] hover:border-[#c2ef4e]/40 transition-all">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-3">
+          <div class="flex items-center gap-4">
+            <span class="w-12 h-12 rounded-xl bg-[#c2ef4e]/10 border border-[#c2ef4e]/30 font-sans font-black text-2xl text-[#c2ef4e] flex items-center justify-center shrink-0">
+              S
+            </span>
+            <div>
+              <div class="flex items-center gap-2">
+                <h3 class="text-lg sm:text-xl font-bold text-[#ffffff]">Situational Framing</h3>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#c2ef4e]/10 text-[#c2ef4e] border border-[#c2ef4e]/20 font-semibold">Contexto Real</span>
+              </div>
+              <p class="text-xs font-mono text-[#cfcfdb] mt-0.5">O cérebro rejeita frases soltas de livros didáticos</p>
             </div>
-            <p class="text-[#cfcfdb] text-sm leading-relaxed">{item.text}</p>
           </div>
+          <span class="text-xs font-mono text-[#c2ef4e]">0% Gramática Desconectada</span>
         </div>
-      ))}
+        <p class="text-xs sm:text-sm text-[#cfcfdb] leading-relaxed pl-0 md:pl-16">
+          Em vez de decorar tabelas como "Simple Past vs Present Perfect", você treina dentro de <strong>situações de alta relevância prática</strong>: negociar um prazo com um cliente gringo, reclamar de um pedido errado no restaurante ou sustentar um bate-papo de corredor. O vocabulário ganha ancoragem emocional e funcional imediata.
+        </p>
+      </div>
+
+      <!-- Letra P: Persona-driven -->
+      <div class="p-6 sm:p-8 rounded-2xl bg-[#271d40] border border-[#3b2c60] hover:border-[#6a5fc1]/60 transition-all">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-3">
+          <div class="flex items-center gap-4">
+            <span class="w-12 h-12 rounded-xl bg-[#6a5fc1]/20 border border-[#6a5fc1]/40 font-sans font-black text-2xl text-[#6a5fc1] flex items-center justify-center shrink-0">
+              P
+            </span>
+            <div>
+              <div class="flex items-center gap-2">
+                <h3 class="text-lg sm:text-xl font-bold text-[#ffffff]">Persona-Driven Sparring</h3>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#6a5fc1]/15 text-[#6a5fc1] border border-[#6a5fc1]/30 font-semibold">Simulação de Papéis</span>
+              </div>
+              <p class="text-xs font-mono text-[#cfcfdb] mt-0.5">Adaptação de tom e hierarquia sob pressão social</p>
+            </div>
+          </div>
+          <span class="text-xs font-mono text-[#6a5fc1]">Flexibilidade Comunicativa</span>
+        </div>
+        <p class="text-xs sm:text-sm text-[#cfcfdb] leading-relaxed pl-0 md:pl-16">
+          Você não fala com uma entidade genérica. No LibreChat e com Gabe, interagimos com <strong>personas desenhadas para a sua rotina</strong>: o colega descontraído no pub, o oficial de imigração severo ou o investidor exigente. Você treina a alternar entre formalidade corporativa e coloquialismo natural sem hesitar.
+        </p>
+      </div>
+
+      <!-- Letra A: Acquisition -->
+      <div class="p-6 sm:p-8 rounded-2xl bg-[#271d40] border border-[#3b2c60] hover:border-[#c2ef4e]/40 transition-all">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-3">
+          <div class="flex items-center gap-4">
+            <span class="w-12 h-12 rounded-xl bg-[#c2ef4e]/10 border border-[#c2ef4e]/30 font-sans font-black text-2xl text-[#c2ef4e] flex items-center justify-center shrink-0">
+              A
+            </span>
+            <div>
+              <div class="flex items-center gap-2">
+                <h3 class="text-lg sm:text-xl font-bold text-[#ffffff]">Acquisition over Learning</h3>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#c2ef4e]/10 text-[#c2ef4e] border border-[#c2ef4e]/20 font-semibold">Teoria de Krashen</span>
+              </div>
+              <p class="text-xs font-mono text-[#cfcfdb] mt-0.5">A distinção clássica de Stephen Krashen</p>
+            </div>
+          </div>
+          <span class="text-xs font-mono text-[#c2ef4e]">Subconsciente vs Consciente</span>
+        </div>
+        <p class="text-xs sm:text-sm text-[#cfcfdb] leading-relaxed pl-0 md:pl-16">
+          <em>Learning</em> é o estudo consciente de regras gramaticais — que falha sob estresse social. <em>Acquisition</em> é a absorção subconsciente e biológica da língua através de blocos sonoros compreensíveis (<em>Comprehensible Input</em>). No SPARK, você adquire inglês da mesma forma natural que adquiriu sua língua nativa: falando e assimilando blocos completos.
+        </p>
+      </div>
+
+      <!-- Letra R: Recasting -->
+      <div class="p-6 sm:p-8 rounded-2xl bg-[#271d40] border border-[#3b2c60] hover:border-[#fa7faa]/60 transition-all">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-3">
+          <div class="flex items-center gap-4">
+            <span class="w-12 h-12 rounded-xl bg-[#fa7faa]/15 border border-[#fa7faa]/30 font-sans font-black text-2xl text-[#fa7faa] flex items-center justify-center shrink-0">
+              R
+            </span>
+            <div>
+              <div class="flex items-center gap-2">
+                <h3 class="text-lg sm:text-xl font-bold text-[#ffffff]">Recasting Sem Caneta Vermelha</h3>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#fa7faa]/10 text-[#fa7faa] border border-[#fa7faa]/20 font-semibold">Modelagem Invisível</span>
+              </div>
+              <p class="text-xs font-mono text-[#cfcfdb] mt-0.5">Correção conversacional sutil (Lyster & Ranta)</p>
+            </div>
+          </div>
+          <span class="text-xs font-mono text-[#fa7faa]">Zero Travamento</span>
+        </div>
+        <p class="text-xs sm:text-sm text-[#cfcfdb] leading-relaxed pl-0 md:pl-16">
+          A caneta vermelha e interrupções bruscas acionam a amígdala cerebral e disparam o medo de errar. No Método SPARK, utilizamos <strong>Spaced Recasting</strong>: se você diz <em>"I go to airport yesterday"</em>, a resposta da IA ou de Gabe replica: <em>"Oh, you went to the airport yesterday? Did your flight depart on time?"</em>. Seu cérebro absorve a estrutura correta sem que o fluxo do raciocínio seja interrompido.
+        </p>
+      </div>
+
+      <!-- Letra K: Knowledge-mapped -->
+      <div class="p-6 sm:p-8 rounded-2xl bg-[#271d40] border border-[#3b2c60] hover:border-[#c2ef4e]/40 transition-all">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-3">
+          <div class="flex items-center gap-4">
+            <span class="w-12 h-12 rounded-xl bg-[#c2ef4e]/10 border border-[#c2ef4e]/30 font-sans font-black text-2xl text-[#c2ef4e] flex items-center justify-center shrink-0">
+              K
+            </span>
+            <div>
+              <div class="flex items-center gap-2">
+                <h3 class="text-lg sm:text-xl font-bold text-[#ffffff]">Knowledge-Mapped Progress</h3>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#c2ef4e]/10 text-[#c2ef4e] border border-[#c2ef4e]/20 font-semibold">Mapeamento CEFR</span>
+              </div>
+              <p class="text-xs font-mono text-[#cfcfdb] mt-0.5">Rastreamento quantitativo de 350 a 2.500 chunks</p>
+            </div>
+          </div>
+          <span class="text-xs font-mono text-[#c2ef4e]">Metas Auditáveis</span>
+        </div>
+        <p class="text-xs sm:text-sm text-[#cfcfdb] leading-relaxed pl-0 md:pl-16">
+          Nada na sua evolução é baseado em intuição subjetiva. Cada estágio da escala CEFR (do A1 ao B2/C1) possui um <strong>inventário quantitativo de chunks mapeados</strong>. Você sabe exatamente quantos blocos de fala já automatizou, quais faltam para a autonomia profissional e tem visibilidade total do seu crescimento semana a semana.
+        </p>
+      </div>
+
     </div>
+
   </div>
 </section>
-
-<script is:inline>
-(function () {
-  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  function ready(fn) {
-    if (document.readyState !== 'loading') fn(); else document.addEventListener('DOMContentLoaded', fn);
-  }
-  ready(function () {
-    var gsap = window.gsap;
-    var ST = window.ScrollTrigger;
-    if (!gsap || !ST) return;
-
-    gsap.to('#sp-line', {
-      scaleX: 1, duration: 1.5, ease: 'power2.inOut',
-      scrollTrigger: { trigger: '#ciencia', start: 'top 85%' }
-    });
-
-    if (!reduced) {
-      gsap.from('#ciencia [data-anim="fade-up"]', {
-        y: 40, opacity: 0, duration: 0.85, stagger: 0.1, ease: 'power3.out',
-        scrollTrigger: { trigger: '#ciencia', start: 'top 80%' }
-      });
-    }
-
-    var counters = document.querySelectorAll('.sp-counter');
-    var done = false;
-    ST.create({
-      trigger: '#ciencia',
-      start: 'top 75%',
-      onEnter: function () {
-        if (done) return;
-        done = true;
-        counters.forEach(function (el) {
-          var target = parseInt(el.dataset.target || '0', 10);
-          var obj = { val: 0 };
-          gsap.to(obj, {
-            val: target, duration: 1.8, ease: 'power2.out',
-            onUpdate: function () { el.textContent = Math.round(obj.val); }
-          });
-        });
-      }
-    });
-
-    if (reduced) return;
-
-    var nodeIds = ['spark-node-s', 'spark-node-p', 'spark-node-a', 'spark-node-r', 'spark-node-k'];
-    var arcIds  = ['spark-arc-sp', 'spark-arc-pa', 'spark-arc-ar', 'spark-arc-rk'];
-
-    var stepDur = 0.5;
-    var arcDur  = 0.4;
-    var cyclePause = 0.3;
-
-    var sparkTL = gsap.timeline({ repeat: -1, repeatDelay: cyclePause });
-
-    nodeIds.forEach(function (nodeId, i) {
-      var nodeEl = document.getElementById(nodeId);
-      var arcEl  = arcIds[i] ? document.getElementById(arcIds[i]) : null;
-      var t = i * (stepDur + arcDur * 0.5);
-
-      if (nodeEl) {
-        sparkTL.to(nodeEl, { fillOpacity: 0.25, duration: stepDur * 0.4, ease: 'sine.inOut' }, t);
-        sparkTL.to(nodeEl, { fillOpacity: 0.1, duration: stepDur * 0.6, ease: 'sine.inOut' }, t + stepDur * 0.4);
-      }
-
-      if (arcEl) {
-        var arcStart = t + stepDur * 0.3;
-        sparkTL.to(arcEl, { strokeOpacity: 0.8, duration: arcDur * 0.4, ease: 'sine.inOut' }, arcStart);
-        sparkTL.to(arcEl, { strokeOpacity: 0.4, duration: arcDur * 0.6, ease: 'sine.inOut' }, arcStart + arcDur * 0.4);
-      }
-    });
-
-    sparkTL.pause();
-    ST.create({
-      trigger: '#ciencia',
-      start: 'top 80%',
-      once: true,
-      onEnter: function () { sparkTL.play(); }
-    });
-  });
-})();
-</script>

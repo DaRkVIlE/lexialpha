@@ -1,243 +1,185 @@
 ---
-// src/components/Solution.astro — Seção 4: Como Funciona o Método SPARK (03.6)
-// Os 3 Pilares da Experiência Alpha: LibreChat IA + 3 Sessões Gabe + Memória de Aquisição (SPARK Score)
+// src/components/Solution.astro — Seção 4: A Ciência por Trás do Destravamento
+// Neurociência da Aquisição: Memória Declarativa vs Procedural, Lexical Chunking & Spaced Recasting
 ---
 
-<section id="metodo" class="py-28 px-4 sm:px-8 relative border-t border-[#2e224d]">
+<section id="metodo" class="py-24 sm:py-28 px-4 sm:px-8 relative border-t border-[#2e224d]">
   <div class="max-w-6xl mx-auto">
 
-    <!-- Section Header (03.6) -->
-    <div class="mb-16" data-anim="fade-up">
+    <!-- Section Header -->
+    <div class="mb-14 max-w-3xl" data-anim="fade-up">
       <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full badge-glow mb-4">
         <span class="w-1.5 h-1.5 rounded-full bg-[#c2ef4e] micro-pulse"></span>
-        <span class="text-xs font-mono text-[#c2ef4e] uppercase tracking-[0.2em]">A Ciência do Destravamento</span>
+        <span class="text-xs font-mono text-[#c2ef4e] uppercase tracking-[0.2em]">Neurociência Aplicada & SLA</span>
       </div>
-      <h2 class="font-sans font-extrabold text-3xl sm:text-5xl md:text-6xl tracking-tight mt-2 text-[#ffffff] leading-[1.05] max-w-2xl">
-        A Ciência Por Trás do<br />
-        <span class="text-gradient-lime">Seu Destravamento.</span>
+      <h2 class="font-sans font-extrabold text-3xl sm:text-5xl md:text-6xl tracking-tight mt-2 text-[#ffffff] leading-[1.05]">
+        A ciência por trás<br />
+        <span class="text-gradient-lime">do seu destravamento oral.</span>
       </h2>
-      <p class="text-[#cfcfdb] text-base sm:text-lg mt-4 max-w-xl leading-relaxed">
-        Três pilares integrados eliminam a tradução mental e constroem a memória motora da fala no reflexo.
+      <p class="text-[#cfcfdb] text-base sm:text-lg mt-4 leading-relaxed">
+        Você não tem dificuldade para falar porque falta gramática. Você trava porque foi treinado no sistema cerebral errado. O Método SPARK transfere o inglês para o seu reflexo motor subconsciente.
       </p>
     </div>
 
-    <!-- 3 Aether Cards dos Pilares SPARK -->
+    <!-- Infográfico Comparativo: Memória Declarativa vs Memória Procedural -->
+    <div class="mb-14 p-6 sm:p-10 rounded-3xl bg-[#271d40]/70 border border-[#3b2c60] shadow-2xl relative overflow-hidden" data-anim="fade-up">
+      <div class="flex flex-col lg:flex-row items-stretch gap-8 relative z-10">
+        
+        <!-- Lado 1: O Erro Tradicional (Memória Declarativa) -->
+        <div class="flex-1 rounded-2xl p-6 sm:p-8 bg-[#281a28]/60 border border-[#4a2432] flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-mono text-[#ffb287] uppercase tracking-wider font-semibold">Método Tradicional · Curricular</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#ffb287]/10 text-[#ffb287] border border-[#ffb287]/20">Gera Bloqueio</span>
+            </div>
+            <h3 class="text-xl font-bold text-[#ffffff] mb-3">Memória Declarativa (Córtex Pré-Frontal)</h3>
+            <p class="text-xs sm:text-sm text-[#cfcfdb] leading-relaxed mb-6">
+              Escolas forçam você a memorizar regras sintáticas e conjugações conscientes. Sob pressão social ou reunião real, o cérebro tenta processar cada palavra isoladamente:
+            </p>
+            
+            <!-- Processo de Tradução Mental -->
+            <div class="space-y-2.5 font-mono text-xs">
+              <div class="flex items-center gap-3 p-3 rounded-xl bg-[#1f1633] text-[#cfcfdb] border border-[#4a2432]/60">
+                <span class="w-5 h-5 rounded-full bg-[#ffb287]/20 text-[#ffb287] flex items-center justify-center shrink-0 text-[10px]">1</span>
+                <span>Pensar na frase em português</span>
+              </div>
+              <div class="flex items-center gap-3 p-3 rounded-xl bg-[#1f1633] text-[#cfcfdb] border border-[#4a2432]/60">
+                <span class="w-5 h-5 rounded-full bg-[#ffb287]/20 text-[#ffb287] flex items-center justify-center shrink-0 text-[10px]">2</span>
+                <span>Buscar regras gramaticais e exceções</span>
+              </div>
+              <div class="flex items-center gap-3 p-3 rounded-xl bg-[#1f1633] text-[#ffb287] border border-[#ffb287]/30">
+                <span class="w-5 h-5 rounded-full bg-[#ffb287]/20 text-[#ffb287] flex items-center justify-center shrink-0 text-[10px]">3</span>
+                <span><strong>O "Lag dos 3 Segundos"</strong> e pânico de errar</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-[#4a2432] text-xs font-mono text-[#ffb287]">
+            Resultado: Hesitação contínua, exaustão mental e silêncio.
+          </div>
+        </div>
+
+        <!-- Divisor Central com Ícone SVG -->
+        <div class="hidden lg:flex items-center justify-center shrink-0">
+          <div class="w-10 h-10 rounded-full bg-[#1f1633] border border-[#3b2c60] flex items-center justify-center text-[#c2ef4e] shadow-xl">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </div>
+        </div>
+
+        <!-- Lado 2: O Método SPARK (Memória Procedural) -->
+        <div class="flex-1 rounded-2xl p-6 sm:p-8 bg-[#1f1633]/90 border border-[#c2ef4e]/30 flex flex-col justify-between shadow-xl">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-mono text-[#c2ef4e] uppercase tracking-wider font-semibold">Método SPARK · LexiQuest</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#c2ef4e]/10 text-[#c2ef4e] border border-[#c2ef4e]/30 font-bold">Reflexo Motor</span>
+            </div>
+            <h3 class="text-xl font-bold text-[#ffffff] mb-3">Memória Procedural (Gânglios da Base)</h3>
+            <p class="text-xs sm:text-sm text-[#cfcfdb] leading-relaxed mb-6">
+              O mesmo sistema neurológico responsável por andar de bicicleta, dirigir ou digitar sem olhar o teclado. As estruturas são gravadas como blocos formulaicos:
+            </p>
+
+            <!-- Processo de Reflexo Natural -->
+            <div class="space-y-2.5 font-mono text-xs">
+              <div class="flex items-center gap-3 p-3 rounded-xl bg-[#271d40] text-[#cfcfdb] border border-[#3b2c60]">
+                <span class="w-5 h-5 rounded-full bg-[#c2ef4e]/20 text-[#c2ef4e] flex items-center justify-center shrink-0 text-[10px]">1</span>
+                <span>Absorção diária de Chunks pré-fabricados</span>
+              </div>
+              <div class="flex items-center gap-3 p-3 rounded-xl bg-[#271d40] text-[#cfcfdb] border border-[#3b2c60]">
+                <span class="w-5 h-5 rounded-full bg-[#c2ef4e]/20 text-[#c2ef4e] flex items-center justify-center shrink-0 text-[10px]">2</span>
+                <span>Spaced Recasting com IA sem caneta vermelha</span>
+              </div>
+              <div class="flex items-center gap-3 p-3 rounded-xl bg-[#271d40] text-[#c2ef4e] border border-[#c2ef4e]/30">
+                <span class="w-5 h-5 rounded-full bg-[#c2ef4e]/20 text-[#c2ef4e] flex items-center justify-center shrink-0 text-[10px]">3</span>
+                <span><strong>Fala instantânea em 0,3s</strong> sem tradução</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-[#3b2c60] text-xs font-mono text-[#c2ef4e]">
+            Resultado: Naturalidade, ritmo nativo e segurança espontânea.
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 3 Pilares da Arquitetura Científica -->
     <div id="pilares-grid" class="grid md:grid-cols-3 gap-6">
 
-      <!-- Pilar 1: Sparring Diário com IA no LibreChat (15 min/dia) -->
-      <div class="aether-card p-8 flex flex-col justify-between min-h-[440px] border-[#3b2c60] bg-[#271d40]" data-anim="fade-up">
+      <!-- Pilar 1: Lexical Approach (Michael Lewis) -->
+      <div class="aether-card p-7 sm:p-8 flex flex-col justify-between rounded-3xl border-[#3b2c60] bg-[#271d40]" data-anim="fade-up">
         <div>
-          <!-- Visual: Chat Simulator com Recasting sem Caneta Vermelha -->
-          <div class="mb-6 rounded-2xl bg-[#1f1633] border border-[#3b2c60] p-4 relative overflow-hidden">
-            <div class="flex items-center justify-between mb-3 border-b border-[#3b2c60] pb-2">
-              <span class="text-[10px] font-mono text-[#c2ef4e] uppercase tracking-[0.15em] flex items-center gap-1.5">
-                <span class="w-1.5 h-1.5 rounded-full bg-[#c2ef4e] micro-pulse"></span>
-                LibreChat Companion · 15 min
-              </span>
-              <span class="text-[10px] font-mono text-[#fa7faa]">+45 XP</span>
-            </div>
-
-            <!-- Chat bubbles -->
-            <div class="space-y-2.5 text-xs font-sans">
-              <!-- Aluno errando naturalmente -->
-              <div class="p-2.5 rounded-xl bg-[#2e224d] text-[#ffffff] border border-[#3b2c60]/60 max-w-[88%] ml-auto">
-                <p class="text-[11px] text-[#cfcfdb] font-mono mb-0.5">Você:</p>
-                "I go to airport yesterday, but flight cancel."
-              </div>
-              <!-- IA respondendo com Spaced Recasting (sem caneta vermelha) -->
-              <div class="p-2.5 rounded-xl bg-[#1f1633] text-[#ffffff] border border-[#c2ef4e]/30 max-w-[92%]">
-                <p class="text-[10px] text-[#c2ef4e] font-mono mb-0.5 flex items-center gap-1">
-                  <span>✨</span> Spaced Recasting (Zero caneta vermelha):
-                </p>
-                "Oh no! So you <strong class="text-[#c2ef4e]">went to the airport yesterday</strong> and your <strong class="text-[#c2ef4e]">flight was cancelled</strong>? What did you do next?"
-              </div>
-            </div>
-          </div>
-
-          <div class="flex items-center gap-2 mb-3">
-            <span class="topic-badge text-[#c2ef4e] border-[#c2ef4e]/25 bg-[#c2ef4e]/10">Pilar 01 · Reflexo</span>
-            <span class="text-[10px] font-mono text-[#cfcfdb]">15 min/dia</span>
-          </div>
-          <h3 class="text-xl font-extrabold text-[#ffffff] mb-2 tracking-tight">Sparring Diário no LibreChat</h3>
-          <p class="text-[#cfcfdb] text-sm leading-relaxed mb-4">
-            Prática conversacional sem estresse. O tutor de IA nunca te interrompe para corrigir com caneta vermelha — ele modela a pronúncia e estrutura certa naturalmente (<em>Spaced Recasting</em>).
-          </p>
-        </div>
-
-        <div class="flex items-center gap-2 text-xs font-mono text-[#c2ef4e] pt-3 border-t border-[#3b2c60]">
-          <span class="w-2 h-2 rounded-full bg-[#c2ef4e]"></span>
-          <span>Zero humilhação gramatical</span>
-        </div>
-      </div>
-
-      <!-- Pilar 2: 3 Sessões Individuais com Gabe na Semana (2x15m + 1x30m Boss Raids) -->
-      <div
-        class="aether-card p-8 flex flex-col justify-between min-h-[440px] border-[#c2ef4e]/30"
-        style="background: linear-gradient(155deg, #271d40 0%, #1f1633 100%);"
-        data-anim="fade-up"
-      >
-        <div>
-          <!-- Visual: Timeline das 3 sessões semanais -->
-          <div class="mb-6 rounded-2xl bg-[#1f1633] border border-[#3b2c60] p-4 relative overflow-hidden">
-            <div class="text-[10px] font-mono text-[#cfcfdb] uppercase tracking-[0.15em] mb-3 flex items-center justify-between">
-              <span>Sessões Individuais · Gabe</span>
-              <span class="text-[#fa7faa] font-bold">1h / semana dividida</span>
-            </div>
-
-            <!-- 3 blocos de sessão -->
-            <div class="space-y-2">
-              <div class="flex items-center justify-between p-2 rounded-lg bg-[#2e224d] border border-[#3b2c60]">
-                <div class="flex items-center gap-2">
-                  <span class="text-xs">⚡</span>
-                  <span class="text-xs font-mono text-[#ffffff]">Sessão 1 (15 min)</span>
-                </div>
-                <span class="text-[10px] font-mono text-[#c2ef4e]">Agilidade & Chunks</span>
-              </div>
-              <div class="flex items-center justify-between p-2 rounded-lg bg-[#2e224d] border border-[#3b2c60]">
-                <div class="flex items-center gap-2">
-                  <span class="text-xs">⚡</span>
-                  <span class="text-xs font-mono text-[#ffffff]">Sessão 2 (15 min)</span>
-                </div>
-                <span class="text-[10px] font-mono text-[#c2ef4e]">Desinibição Motora</span>
-              </div>
-              <div class="flex items-center justify-between p-2 rounded-lg bg-[#3b2440] border border-[#ffb287]/40">
-                <div class="flex items-center gap-2">
-                  <span class="text-xs">⚔️</span>
-                  <span class="text-xs font-mono text-[#ffffff]">Sessão 3 (30 min)</span>
-                </div>
-                <span class="text-[10px] font-mono text-[#ffb287] font-bold">Boss Raid Real</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="flex items-center gap-2 mb-3">
-            <span class="topic-badge text-[#fa7faa] border-[#fa7faa]/30 bg-[#fa7faa]/10">Pilar 02 · Humano</span>
-            <span class="text-[10px] font-mono text-[#cfcfdb]">3x / semana</span>
-          </div>
-          <h3 class="text-xl font-extrabold text-[#ffffff] mb-2 tracking-tight">3 Sessões com Gabe</h3>
-          <p class="text-[#cfcfdb] text-sm leading-relaxed mb-4">
-            Duas sessões rápidas de 15 minutos para agilidade de resposta + uma sessão estendida de 30 minutos para simulações do mundo real e desafios de fala (<em>Boss Raids</em>).
-          </p>
-        </div>
-
-        <div class="flex items-center gap-2 text-xs font-mono text-[#fa7faa] pt-3 border-t border-[#3b2c60]">
-          <span class="w-2 h-2 rounded-full bg-[#fa7faa]"></span>
-          <span>100% individual · Sem salas coletivas</span>
-        </div>
-      </div>
-
-      <!-- Pilar 3: Memória de Aquisição (SPARK Score & Portal de Atividades) -->
-      <div class="aether-card p-8 flex flex-col justify-between min-h-[440px] border-[#3b2c60] bg-[#271d40]" data-anim="fade-up">
-        <div>
-          <!-- Visual: Curva de Retenção e Dashboard SPARK Score -->
-          <div class="mb-6 relative h-36 bg-[#1f1633] p-3 rounded-2xl border border-[#3b2c60]">
-            <div class="flex items-center justify-between text-[10px] font-mono text-[#cfcfdb] mb-1">
-              <span>Mapeamento de Chunks</span>
-              <span class="text-[#c2ef4e] font-bold">SPARK Score: 88%</span>
-            </div>
-
-            <svg id="fsrs-svg" viewBox="0 0 240 85" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-24">
-              <!-- Grid lines -->
-              <line x1="0" y1="15" x2="240" y2="15" stroke="#3b2c60" stroke-width="1"/>
-              <line x1="0" y1="45" x2="240" y2="45" stroke="#3b2c60" stroke-width="1"/>
-              <line x1="0" y1="75" x2="240" y2="75" stroke="#3b2c60" stroke-width="1"/>
-
-              <!-- Traditional forgetting curve -->
-              <path id="fsrs-trad" d="M 0 15 C 30 15, 50 25, 60 45 C 70 65, 80 75, 240 80"
-                    stroke="#ffb287" stroke-width="1.5" stroke-dasharray="4 3" fill="none" opacity="0"/>
-              <text id="fsrs-trad-label" x="140" y="82" fill="#ffb287" font-size="7" opacity="0" font-family="monospace">Esquecimento tradicional</text>
-
-              <!-- SPARK retention curve -->
-              <path id="fsrs-s1" d="M 0 15 C 15 15, 25 30, 50 48" stroke="#c2ef4e" stroke-width="2" fill="none"/>
-              <line id="fsrs-r1" x1="50" y1="48" x2="50" y2="18" stroke="#c2ef4e" stroke-width="1.5" stroke-dasharray="2 2" opacity="0"/>
-              <path id="fsrs-s2" d="M 50 18 C 70 18, 80 32, 110 46" stroke="#c2ef4e" stroke-width="2" fill="none" opacity="0"/>
-              <line id="fsrs-r2" x1="110" y1="46" x2="110" y2="15" stroke="#c2ef4e" stroke-width="1.5" stroke-dasharray="2 2" opacity="0"/>
-              <path id="fsrs-s3" d="M 110 15 C 140 15, 160 26, 200 40" stroke="#c2ef4e" stroke-width="2" fill="none" opacity="0"/>
-              <line id="fsrs-r3" x1="200" y1="40" x2="200" y2="12" stroke="#c2ef4e" stroke-width="1.5" stroke-dasharray="2 2" opacity="0"/>
-              <path id="fsrs-s4" d="M 200 12 L 240 12" stroke="#c2ef4e" stroke-width="2" fill="none" opacity="0"/>
-
-              <circle id="fsrs-dot1" cx="50" cy="18" r="3" fill="#c2ef4e" opacity="0"/>
-              <circle id="fsrs-dot2" cx="110" cy="15" r="3" fill="#c2ef4e" opacity="0"/>
-              <circle id="fsrs-dot3" cx="200" cy="12" r="3" fill="#c2ef4e" opacity="0"/>
-
-              <text x="195" y="9" fill="#c2ef4e" font-size="8" font-weight="bold" font-family="monospace">Retenção 92%</text>
+          <div class="w-12 h-12 rounded-2xl bg-[#c2ef4e]/10 border border-[#c2ef4e]/30 flex items-center justify-center text-[#c2ef4e] mb-6">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
             </svg>
           </div>
 
-          <div class="flex items-center gap-2 mb-3">
-            <span class="topic-badge text-[#6a5fc1] border-[#6a5fc1]/30 bg-[#6a5fc1]/10">Pilar 03 · Ciência</span>
-            <span class="text-[10px] font-mono text-[#cfcfdb]">Mapeamento</span>
+          <div class="flex items-center gap-2 mb-2">
+            <span class="text-[10px] font-mono text-[#c2ef4e] uppercase tracking-wider font-semibold">Pilar 01 · Lexical Approach</span>
           </div>
-          <h3 class="text-xl font-extrabold text-[#ffffff] mb-2 tracking-tight">Memória & Portal do Aluno</h3>
-          <p class="text-[#cfcfdb] text-sm leading-relaxed mb-4">
-            Rastreamento de chunks dominados sem traduzir, medidos pelo seu <strong>SPARK Score</strong>. Atividades guiadas, gravações e exercícios práticos centralizados no Portal do Aluno.
+          <h3 class="text-xl font-bold text-[#ffffff] mb-3 tracking-tight">Blocos Sonoros (Chunks)</h3>
+          <p class="text-[#cfcfdb] text-xs sm:text-sm leading-relaxed mb-4">
+            Em vez de ensinar 2.000 palavras soltas e regras gramaticais abstratas, você absorve blocos linguísticos já prontos para uso ("as far as I know", "let me circle back"). A mente acessa um bloco único em milissegundos.
           </p>
         </div>
 
-        <div class="flex items-center gap-2 text-xs font-mono text-[#6a5fc1] pt-3 border-t border-[#3b2c60]">
-          <span class="w-2 h-2 rounded-full bg-[#6a5fc1]"></span>
-          <span>Progresso factual e mensurável</span>
+        <div class="pt-4 border-t border-[#3b2c60] text-xs font-mono text-[#cfcfdb] flex items-center justify-between">
+          <span>Meta: 2.500 chunks B2</span>
+          <span class="text-[#c2ef4e]">0% tradução</span>
+        </div>
+      </div>
+
+      <!-- Pilar 2: Krashen Affective Filter & Spaced Recasting -->
+      <div class="aether-card p-7 sm:p-8 flex flex-col justify-between rounded-3xl border-[#3b2c60] bg-[#271d40]" data-anim="fade-up">
+        <div>
+          <div class="w-12 h-12 rounded-2xl bg-[#6a5fc1]/20 border border-[#6a5fc1]/40 flex items-center justify-center text-[#fa7faa] mb-6">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+          </div>
+
+          <div class="flex items-center gap-2 mb-2">
+            <span class="text-[10px] font-mono text-[#fa7faa] uppercase tracking-wider font-semibold">Pilar 02 · Filtro Afetivo Zero</span>
+          </div>
+          <h3 class="text-xl font-bold text-[#ffffff] mb-3 tracking-tight">Spaced Recasting Sem Caneta</h3>
+          <p class="text-[#cfcfdb] text-xs sm:text-sm leading-relaxed mb-4">
+            Interrupções com correções gramaticais explícitas travam a fala. No LibreChat e com Gabe, aplicamos <em>recasting</em>: sua frase imperfeita é devolvida polida organicamente no fluxo do diálogo, remodelando a via neural sem constrangimento.
+          </p>
+        </div>
+
+        <div class="pt-4 border-t border-[#3b2c60] text-xs font-mono text-[#cfcfdb] flex items-center justify-between">
+          <span>Ambiente Seguro</span>
+          <span class="text-[#fa7faa]">Zero inibição</span>
+        </div>
+      </div>
+
+      <!-- Pilar 3: Microdosing Diário + Mentoria de Precisão -->
+      <div class="aether-card p-7 sm:p-8 flex flex-col justify-between rounded-3xl border-[#3b2c60] bg-[#271d40]" data-anim="fade-up">
+        <div>
+          <div class="w-12 h-12 rounded-2xl bg-[#c2ef4e]/10 border border-[#c2ef4e]/30 flex items-center justify-center text-[#c2ef4e] mb-6">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+
+          <div class="flex items-center gap-2 mb-2">
+            <span class="text-[10px] font-mono text-[#c2ef4e] uppercase tracking-wider font-semibold">Pilar 03 · Mielinização Neural</span>
+          </div>
+          <h3 class="text-xl font-bold text-[#ffffff] mb-3 tracking-tight">Microdose Diária (15 min)</h3>
+          <p class="text-[#cfcfdb] text-xs sm:text-sm leading-relaxed mb-4">
+            A neuroplasticidade responde à frequência, não à maratona. Uma sessão semanal de 1 hora tem 80% de perda após 48h. Com 15 minutos diários de sparring IA + 3 sessões individuais com Gabe, o cérebro cria camadas densas de mielina.
+          </p>
+        </div>
+
+        <div class="pt-4 border-t border-[#3b2c60] text-xs font-mono text-[#cfcfdb] flex items-center justify-between">
+          <span>3x Encontros Gabe</span>
+          <span class="text-[#c2ef4e]">15 min diários</span>
         </div>
       </div>
 
     </div>
   </div>
 </section>
-
-<script is:inline>
-(function () {
-  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  function ready(fn) {
-    if (document.readyState !== 'loading') fn(); else document.addEventListener('DOMContentLoaded', fn);
-  }
-  ready(function () {
-    var gsap = window.gsap;
-    var ST = window.ScrollTrigger;
-    if (!gsap || !ST || reduced) return;
-
-    gsap.from('#pilares-grid .aether-card', {
-      y: 45,
-      opacity: 0,
-      duration: 0.85,
-      stagger: 0.12,
-      ease: 'power3.out',
-      scrollTrigger: { trigger: '#metodo', start: 'top 75%' }
-    });
-
-    var fsrsTrig = { trigger: '#metodo', start: 'top 70%' };
-
-    var s1 = document.getElementById('fsrs-s1');
-    if (s1 && s1.getTotalLength) {
-      var l1 = s1.getTotalLength();
-      gsap.set(s1, { strokeDasharray: l1, strokeDashoffset: l1 });
-      gsap.to(s1, { strokeDashoffset: 0, duration: 0.6, ease: 'power2.inOut', scrollTrigger: fsrsTrig });
-    }
-    gsap.to(['#fsrs-r1', '#fsrs-dot1'], { opacity: 0.6, duration: 0.3, delay: 0.6, scrollTrigger: fsrsTrig });
-
-    var s2 = document.getElementById('fsrs-s2');
-    if (s2 && s2.getTotalLength) {
-      var l2 = s2.getTotalLength();
-      gsap.set(s2, { strokeDasharray: l2, strokeDashoffset: l2, opacity: 1 });
-      gsap.to(s2, { strokeDashoffset: 0, duration: 0.6, ease: 'power2.inOut', delay: 0.75, scrollTrigger: fsrsTrig });
-    }
-    gsap.to(['#fsrs-r2', '#fsrs-dot2'], { opacity: 0.6, duration: 0.3, delay: 1.35, scrollTrigger: fsrsTrig });
-
-    var s3 = document.getElementById('fsrs-s3');
-    if (s3 && s3.getTotalLength) {
-      var l3 = s3.getTotalLength();
-      gsap.set(s3, { strokeDasharray: l3, strokeDashoffset: l3, opacity: 1 });
-      gsap.to(s3, { strokeDashoffset: 0, duration: 0.65, ease: 'power2.inOut', delay: 1.5, scrollTrigger: fsrsTrig });
-    }
-    gsap.to(['#fsrs-r3', '#fsrs-dot3'], { opacity: 0.6, duration: 0.3, delay: 2.15, scrollTrigger: fsrsTrig });
-
-    var s4 = document.getElementById('fsrs-s4');
-    if (s4 && s4.getTotalLength) {
-      var l4 = s4.getTotalLength();
-      gsap.set(s4, { strokeDasharray: l4, strokeDashoffset: l4, opacity: 1 });
-      gsap.to(s4, { strokeDashoffset: 0, duration: 0.5, ease: 'power1.inOut', delay: 2.3, scrollTrigger: fsrsTrig });
-    }
-
-    gsap.to(['#fsrs-trad', '#fsrs-trad-label'], { opacity: 0.6, duration: 0.6, delay: 2.5, scrollTrigger: fsrsTrig });
-  });
-})();
-</script>

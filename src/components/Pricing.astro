@@ -1,18 +1,18 @@
 ---
 // src/components/Pricing.astro — Seção 6: A Oferta da Turma Alpha (03.6)
-// Transparência Total: 15 Vagas Fundadoras • R$ 197/mês vs Regular R$ 297/mês • Pix Manual
+// Transparência Total: 15 Vagas Fundadoras · R$ 197/mês vs Regular R$ 297/mês · Pix Manual
 ---
 
-<section id="pricing" class="py-28 px-4 sm:px-8 relative border-t border-[#2e224d] overflow-hidden">
+<section id="pricing" class="py-24 sm:py-28 px-4 sm:px-8 relative border-t border-[#2e224d] overflow-hidden">
   <!-- Glow central Lime + Purple -->
-  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-[#c2ef4e]/6 rounded-full blur-[200px] pointer-events-none"></div>
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-[#c2ef4e]/5 rounded-full blur-[200px] pointer-events-none"></div>
 
-  <div class="max-w-5xl mx-auto relative z-10">
+  <div class="max-w-5xl mx-auto relative z-10 w-full">
     <!-- Header Oficial (03.6) -->
     <div class="text-center mb-16 max-w-3xl mx-auto" data-anim="fade-up">
       <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full badge-glow mb-4">
         <span class="w-1.5 h-1.5 rounded-full bg-[#c2ef4e] micro-pulse"></span>
-        <span class="text-xs font-mono text-[#c2ef4e] uppercase tracking-[0.2em]">⚡ Escassez Real · Apenas 15 Vagas Fundadoras</span>
+        <span class="text-xs font-mono text-[#c2ef4e] uppercase tracking-[0.2em]">Escassez Real · Apenas 15 Vagas Fundadoras</span>
       </div>
       <h2 class="font-sans font-extrabold text-3xl sm:text-5xl md:text-6xl tracking-tight leading-[1.05] mt-2 text-[#ffffff]">
         Condição Exclusiva de Lançamento:<br />
@@ -23,57 +23,55 @@
       </p>
     </div>
 
-    <!-- Card de Oferta com Micro-Parallax -->
+    <!-- Card de Oferta Aether Luxury -->
     <div id="pricing-card-wrapper" class="max-w-2xl mx-auto" data-anim="fade-up">
 
-      <!-- Mini Progress Visual: Semanas de evolução -->
+      <!-- Timeline Visual de Evolução -->
       <div class="mb-6 rounded-2xl bg-[#1f1633] border border-[#3b2c60] p-5" aria-hidden="true">
         <div class="text-[10px] font-mono text-[#cfcfdb] uppercase tracking-[0.18em] mb-4 text-center">Progressão típica nos primeiros 30 a 90 dias</div>
         <div class="relative">
-          <!-- Timeline line -->
-          <div class="absolute top-5 left-0 right-0 h-px bg-[#3b2c60]"></div>
-          <div id="pricing-timeline-fill" class="absolute top-5 left-0 h-px bg-[#c2ef4e]" style="width: 0%;"></div>
-
+          <div class="absolute top-5 left-0 right-0 h-0.5 bg-[#3b2c60]"></div>
           <div class="flex justify-between relative z-10">
-            <!-- Week 1 -->
-            <div class="flex flex-col items-center gap-2">
-              <div id="pt-node-1" class="w-10 h-10 rounded-full border-2 border-[#3b2c60] bg-[#1f1633] flex items-center justify-center transition-all duration-300">
-                <span class="text-base">🌱</span>
+            <!-- Sem 1 -->
+            <div class="flex flex-col items-center gap-1.5">
+              <div class="w-10 h-10 rounded-full border border-[#c2ef4e] bg-[#271d40] flex items-center justify-center text-[#c2ef4e] font-mono text-xs font-bold">
+                01
               </div>
-              <span class="text-[9px] font-mono text-[#79628c]">Semana 1</span>
-              <span class="text-[9px] font-mono font-bold text-[#c2ef4e] opacity-0" id="pt-label-1">Destrava</span>
+              <span class="text-[10px] font-mono text-[#cfcfdb]">Semana 1</span>
+              <span class="text-[10px] font-mono font-bold text-[#c2ef4e]">Descongela</span>
             </div>
-            <!-- Week 3 -->
-            <div class="flex flex-col items-center gap-2">
-              <div id="pt-node-2" class="w-10 h-10 rounded-full border-2 border-[#3b2c60] bg-[#1f1633] flex items-center justify-center transition-all duration-300">
-                <span class="text-base">💬</span>
+            <!-- Sem 3 -->
+            <div class="flex flex-col items-center gap-1.5">
+              <div class="w-10 h-10 rounded-full border border-[#6a5fc1] bg-[#271d40] flex items-center justify-center text-[#6a5fc1] font-mono text-xs font-bold">
+                03
               </div>
-              <span class="text-[9px] font-mono text-[#79628c]">Semana 3</span>
-              <span class="text-[9px] font-mono font-bold text-[#fa7faa] opacity-0" id="pt-label-2">Flui</span>
+              <span class="text-[10px] font-mono text-[#cfcfdb]">Semana 3</span>
+              <span class="text-[10px] font-mono font-bold text-[#6a5fc1]">Flui</span>
             </div>
-            <!-- Week 6 -->
-            <div class="flex flex-col items-center gap-2">
-              <div id="pt-node-3" class="w-10 h-10 rounded-full border-2 border-[#3b2c60] bg-[#1f1633] flex items-center justify-center transition-all duration-300">
-                <span class="text-base">⚡</span>
+            <!-- Sem 6 -->
+            <div class="flex flex-col items-center gap-1.5">
+              <div class="w-10 h-10 rounded-full border border-[#fa7faa] bg-[#271d40] flex items-center justify-center text-[#fa7faa] font-mono text-xs font-bold">
+                06
               </div>
-              <span class="text-[9px] font-mono text-[#79628c]">Semana 6</span>
-              <span class="text-[9px] font-mono font-bold text-[#6a5fc1] opacity-0" id="pt-label-3">Acelera</span>
+              <span class="text-[10px] font-mono text-[#cfcfdb]">Semana 6</span>
+              <span class="text-[10px] font-mono font-bold text-[#fa7faa]">Acelera</span>
             </div>
-            <!-- Week 12 -->
-            <div class="flex flex-col items-center gap-2">
-              <div id="pt-node-4" class="w-10 h-10 rounded-full border-2 border-[#3b2c60] bg-[#1f1633] flex items-center justify-center transition-all duration-300">
-                <span class="text-base">🏆</span>
+            <!-- Sem 12 -->
+            <div class="flex flex-col items-center gap-1.5">
+              <div class="w-10 h-10 rounded-full border border-[#c2ef4e] bg-[#271d40] flex items-center justify-center text-[#c2ef4e] font-mono text-xs font-bold shadow-md shadow-[#c2ef4e]/20">
+                12
               </div>
-              <span class="text-[9px] font-mono text-[#79628c]">Semana 12</span>
-              <span class="text-[9px] font-mono font-bold text-[#c2ef4e] opacity-0" id="pt-label-4">B2 Real</span>
+              <span class="text-[10px] font-mono text-[#cfcfdb]">Semana 12</span>
+              <span class="text-[10px] font-mono font-bold text-[#c2ef4e]">B2 Real</span>
             </div>
           </div>
         </div>
       </div>
 
+      <!-- Card Central de Preço -->
       <div
         id="pricing-card"
-        class="topic-card rounded-3xl bg-[#271d40] border border-[#3b2c60] p-8 sm:p-12 shadow-2xl relative overflow-hidden"
+        class="rounded-3xl bg-[#271d40] border border-[#3b2c60] p-8 sm:p-12 shadow-2xl relative overflow-hidden"
       >
         <!-- Eyebrow do Card -->
         <div class="flex items-center justify-between pb-6 border-b border-[#3b2c60]">
@@ -81,160 +79,97 @@
             <span class="w-2 h-2 rounded-full bg-[#c2ef4e] micro-pulse"></span>
             <span class="uppercase tracking-widest font-bold">Turma Alpha Fundadora</span>
           </div>
-          <span class="topic-badge text-[#c2ef4e] border-[#c2ef4e]/30 bg-[#c2ef4e]/10">
-            15 vagas estritas
+          <span class="text-xs font-mono px-3 py-1 rounded-full text-[#c2ef4e] border border-[#c2ef4e]/30 bg-[#c2ef4e]/10 font-bold">
+            15 Vagas Restritas
           </span>
         </div>
 
-        <!-- Preço com Âncora Canônica (03.6) -->
+        <!-- Preço com Âncora Canônica -->
         <div class="py-8 text-center">
-          <!-- Âncora Regular riscada -->
           <div class="flex items-center justify-center gap-2 mb-2">
-            <span class="text-xs font-mono text-[#cfcfdb] uppercase tracking-wider">Preço Regular da Mentoria:</span>
+            <span class="text-xs font-mono text-[#cfcfdb] uppercase tracking-wider">Preço Regular Futuro:</span>
             <span class="text-sm font-mono line-through text-[#ffb287] font-semibold">R$ 297/mês</span>
           </div>
 
-          <p class="text-xs font-mono text-[#c2ef4e] uppercase tracking-widest mb-2 font-bold">Preço Exclusivo da Turma Alpha</p>
+          <p class="text-xs font-mono text-[#c2ef4e] uppercase tracking-widest mb-2 font-bold">Preço Travado para Membros Alpha</p>
           <div class="flex items-baseline justify-center gap-2">
             <span class="font-sans font-bold text-2xl sm:text-3xl text-[#ffffff]">R$</span>
-            <span class="font-sans font-black text-[72px] sm:text-[96px] text-gradient-lime leading-none select-none counter-value tracking-tighter">197</span>
-            <span class="text-[#cfcfdb] text-base font-mono">/ mês</span>
+            <span class="font-sans font-black text-6xl sm:text-7xl md:text-8xl text-gradient-lime leading-none select-none tracking-tighter">197</span>
+            <span class="text-[#cfcfdb] text-sm font-mono">/mês</span>
           </div>
-          <p class="text-xs font-mono text-[#fa7faa] mt-2">
-            ⚡ Preço travado em R$ 197 enquanto mantiver a matrícula ativa (via Pix manual)
-          </p>
-          <p class="text-xs text-[#cfcfdb] mt-2">
-            Sem taxa de matrícula &bull; Sem fidelidade de 1 ano &bull; Cancele quando quiser
+          <p class="text-xs font-mono text-[#cfcfdb] mt-2">
+            Pagamento via Pix manual direto · Sem fidelidade · Cancele quando quiser
           </p>
         </div>
 
-        <!-- Lista de Benefícios Canônicos (03.6) -->
-        <div class="pt-6 border-t border-[#3b2c60] mb-8">
-          <h3 class="text-xs font-mono uppercase tracking-widest text-[#cfcfdb] mb-5 font-semibold">O Que Está Incluso:</h3>
-          <ul class="space-y-3.5">
-            {[
-              {
-                tag: '3x Semanais',
-                text: '3 sessões individuais por semana com Gabriel (1h/semana dividida: 2x 15min + 1x 30min Boss Raids)'
-              },
-              {
-                tag: 'LibreChat 24/7',
-                text: 'Acesso 24/7 ao companion de IA no LibreChat para sparring diário de 15 min sem caneta vermelha'
-              },
-              {
-                tag: 'Portal do Aluno',
-                text: 'Acesso ao Portal do Aluno com missões práticas, gravações das aulas e atividades guiadas'
-              },
-              {
-                tag: 'SPARK Score',
-                text: 'Prontuário semanal de evolução e rastreamento científico de chunks dominados sem traduzir'
-              },
-              {
-                tag: 'Preço Travado',
-                text: 'Condição de aluno fundador: valor de R$ 197/mês mantido por todo o seu ciclo de estudos'
-              },
-              {
-                tag: 'Garantia 30 Dias',
-                text: 'Garantia incondicional de 30 dias: devolução integral de 100% via Pix caso sua fala não destrave'
-              }
-            ].map((item) => (
-              <li class="flex items-start gap-3.5 border-t border-[#3b2c60] pt-3 text-sm sm:text-base text-[#ffffff] group">
-                <div class="w-5 h-5 rounded-md bg-[#c2ef4e]/10 text-[#c2ef4e] flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-[#c2ef4e]/20 transition-colors">
-                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-                <div class="flex-1 flex flex-col sm:flex-row sm:items-center justify-between gap-1">
-                  <span class="leading-relaxed text-[#cfcfdb] group-hover:text-[#ffffff] transition-colors">{item.text}</span>
-                  <span class="topic-badge text-[10px] self-start sm:self-auto shrink-0">{item.tag}</span>
-                </div>
-              </li>
-            ))}
-          </ul>
+        <!-- Inclusões Oficiais (03.6) -->
+        <div class="space-y-3.5 pb-8 border-y border-[#3b2c60] text-xs sm:text-sm text-[#cfcfdb]">
+          <div class="flex items-center gap-3">
+            <div class="w-5 h-5 rounded-full bg-[#c2ef4e]/15 flex items-center justify-center shrink-0 text-[#c2ef4e]">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <span><strong class="text-[#ffffff]">3 Sessões Individuais / Semana:</strong> 2x 15m (agilidade) + 1x 30m (Boss Raid) com Gabe.</span>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <div class="w-5 h-5 rounded-full bg-[#c2ef4e]/15 flex items-center justify-center shrink-0 text-[#c2ef4e]">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <span><strong class="text-[#ffffff]">LibreChat IA 24/7:</strong> sparring diário de 15 min sem caneta vermelha (Spaced Recasting).</span>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <div class="w-5 h-5 rounded-full bg-[#c2ef4e]/15 flex items-center justify-center shrink-0 text-[#c2ef4e]">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <span><strong class="text-[#ffffff]">Portal do Aluno (Moodle Hub):</strong> gravações das suas sessões, áudios e missões guiadas.</span>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <div class="w-5 h-5 rounded-full bg-[#c2ef4e]/15 flex items-center justify-center shrink-0 text-[#c2ef4e]">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <span><strong class="text-[#ffffff]">Diagnóstico CEFR Contínuo:</strong> rastreamento do mapa de 350 a 2.500 chunks.</span>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <div class="w-5 h-5 rounded-full bg-[#c2ef4e]/15 flex items-center justify-center shrink-0 text-[#c2ef4e]">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <span><strong class="text-[#ffffff]">Garantia Incondicional 30 Dias:</strong> destrave sua fala ou 100% de reembolso via Pix.</span>
+          </div>
         </div>
 
-        <!-- CTA Principal Oficial (03.6) -->
-        <a
-          href="https://wa.me/5511967239791?text=Ol%C3%A1%20Gabe!%20Quero%20uma%20das%2015%20vagas%20da%20Turma%20Alpha%20no%20WhatsApp%20por%20R$%20197/m%C3%AAs"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="btn-slide block w-full py-4 text-center rounded-full bg-[#c2ef4e] text-[#1f1633] font-sans font-extrabold text-base hover:bg-[#b0dc41] active:scale-98 transition-all shadow-xl shadow-[#c2ef4e]/20 cursor-pointer"
-        >
-          <span class="btn-text-top">QUERO UMA DAS 15 VAGAS DA TURMA ALPHA NO WHATSAPP &rarr;</span>
-          <span class="btn-text-bottom">Falar Diretamente com Gabriel no WhatsApp &rarr;</span>
-        </a>
+        <!-- CTA Principal: WhatsApp Direto -->
+        <div class="pt-8">
+          <a
+            href="https://wa.me/5511967239791?text=Ol%C3%A1%20Gabe!%20Quero%20garantir%20minha%20vaga%20na%20Turma%20Alpha%20da%20LexiQuest%20por%20R%24%20197%2Fm%C3%AAs!"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-full inline-flex items-center justify-center gap-3 px-8 py-5 rounded-full bg-[#c2ef4e] text-[#1f1633] font-sans font-extrabold text-base hover:bg-[#b0dc41] active:scale-95 transition-all shadow-xl shadow-[#c2ef4e]/20 group"
+          >
+            <span>Garantir Uma das 15 Vagas Alpha</span>
+            <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </a>
 
-        <!-- Garantia Micro-copy -->
-        <div class="mt-6 flex items-center justify-center gap-2.5 text-[#cfcfdb] text-xs text-center">
-          <svg class="w-4 h-4 text-[#c2ef4e] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-          </svg>
-          <span>Garantia de 30 dias. Se sentir que o método não destravou sua fala, devolvo 100% via Pix sem perguntas.</span>
+          <p class="text-center text-xs font-mono text-[#79628c] mt-4">
+            Conversa direta no WhatsApp pessoal de Gabriel Lima
+          </p>
         </div>
+
       </div>
-    </div>
-
-    <!-- Escassez Real Baseada em Capacidade (DL-09) -->
-    <div class="mt-10 text-center" data-anim="fade-up">
-      <p class="text-xs font-mono text-[#cfcfdb]">
-        <span class="text-[#c2ef4e] font-bold">15 vagas exclusivas</span> calibradas para a capacidade real de atendimento individual de Gabriel.
-      </p>
     </div>
   </div>
 </section>
-
-<script is:inline>
-  (function initPricing() {
-    var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    var card = document.getElementById('pricing-card');
-    if (card) {
-      card.addEventListener('mousemove', function(e) {
-        var rect = card.getBoundingClientRect();
-        var x = e.clientX - rect.left;
-        var y = e.clientY - rect.top;
-        var rotateX = ((y - rect.height / 2) / rect.height) * -2.5;
-        var rotateY = ((x - rect.width / 2) / rect.width) * 2.5;
-        card.style.transform = 'perspective(1000px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) translateY(-2px)';
-      });
-      card.addEventListener('mouseleave', function() {
-        card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)';
-      });
-    }
-
-    var gsap = window.gsap;
-    var ST = window.ScrollTrigger;
-    if (!gsap || !ST || reduced) return;
-
-    var nodes = [
-      { node: document.getElementById('pt-node-1'), label: document.getElementById('pt-label-1'), color: '#c2ef4e', border: '#c2ef4e', delay: 0 },
-      { node: document.getElementById('pt-node-2'), label: document.getElementById('pt-label-2'), color: '#fa7faa', border: '#fa7faa', delay: 0.4 },
-      { node: document.getElementById('pt-node-3'), label: document.getElementById('pt-label-3'), color: '#6a5fc1', border: '#6a5fc1', delay: 0.8 },
-      { node: document.getElementById('pt-node-4'), label: document.getElementById('pt-label-4'), color: '#c2ef4e', border: '#c2ef4e', delay: 1.2 },
-    ];
-    var fill = document.getElementById('pricing-timeline-fill');
-
-    ST.create({
-      trigger: '#pricing',
-      start: 'top 70%',
-      once: true,
-      onEnter: function() {
-        if (fill) gsap.to(fill, { width: '100%', duration: 1.6, ease: 'power2.inOut' });
-
-        nodes.forEach(function(item) {
-          if (!item.node) return;
-          gsap.to(item.node, {
-            borderColor: item.border,
-            boxShadow: '0 0 16px -4px ' + item.color + '55',
-            duration: 0.4,
-            delay: item.delay,
-            ease: 'power2.out'
-          });
-          if (item.label) {
-            gsap.to(item.label, { opacity: 1, y: 0, duration: 0.3, delay: item.delay + 0.1, ease: 'power2.out' });
-          }
-        });
-      }
-    });
-  })();
-</script>

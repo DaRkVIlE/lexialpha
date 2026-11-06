@@ -269,6 +269,13 @@
   transform: scale(0.94);
 }
 
+@media (prefers-reduced-motion: reduce) {
+  [data-anim] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
 /* ─── Line Decorative ────────────────────────────────────── */
 .line-decor {
   height: 1px;

@@ -1,177 +1,184 @@
 ---
-// src/components/EstagiosFala.astro — Estágios da Fala com Expandable Cards GSAP
-// Inspirado no blog-grid expansivo do Aether (flexGrow mechanic)
-// Fallback mobile: todos expandidos
+// src/components/EstagiosFala.astro — Jornada em 3 Fases da Fala
+// Progressão Visual Gamificada com CTAs Contextualizados por Estágio
 
 const estagios = [
   {
-    id: 'ef-a2',
-    emoji: '🌱',
-    level: 'A2',
-    name: 'Sobrevivência',
-    subtitle: 'Você quebra o gelo sem pânico',
+    id: 'fase-1',
+    level: 'Fase 01 · A1/A2',
+    name: 'Sobrevivência & Descongelamento',
+    subtitle: 'Destrave a voz e quebre o pânico inicial',
     color: '#c2ef4e',
-    colorDim: 'rgba(194, 239, 78, 0.12)',
-    colorBorder: 'rgba(194, 239, 78, 0.35)',
-    trap: 'Traduz palavra por palavra e paralisa por medo de errar a gramática.',
-    solution: 'Chunks Nucleares: blocos formulaicos que saem sem conjugação mental. Prática diária no LibreChat + 3 sessões semanais com Gabe.',
-    xp: 800,
-    badge: 'Iniciante',
-    xpPercent: 25,
+    colorDim: 'rgba(194, 239, 78, 0.1)',
+    colorBorder: 'rgba(194, 239, 78, 0.3)',
+    milestone: '650 Chunks Nucleares',
+    hours: '15 min/dia IA + 3x Gabe',
+    trap: 'Traduz mentalmente cada palavra do português e paralisa pelo medo do julgamento alheio.',
+    solution: 'Automatização de blocos conversacionais fixos no LibreChat. Na primeira semana você pede, responde e expressa necessidades sem tradução mental.',
+    waMessage: encodeURIComponent('Olá Gabe! Quero entrar na Turma Alpha no Estágio 1 (Sobrevivência A1/A2) para destravar minha fala e perder o medo!'),
+    btnText: 'Garantir Vaga no Estágio 1',
+    xpPercent: 30,
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />`
   },
   {
-    id: 'ef-b1',
-    emoji: '🏔️',
-    level: 'B1',
-    name: 'Autonomia',
-    subtitle: 'Conversas fluidas, sem branco mental',
+    id: 'fase-2',
+    level: 'Fase 02 · B1',
+    name: 'Autonomia & Tração',
+    subtitle: 'Sustente diálogos contínuos sem branco mental',
     color: '#6a5fc1',
-    colorDim: 'rgba(106, 95, 193, 0.15)',
-    colorBorder: 'rgba(106, 95, 193, 0.4)',
-    trap: 'Platô intermediário: entende bem o inglês, mas na hora de falar a mente dá um branco.',
-    solution: '3 Sessões semanais com Gabe (2x15m + 1x30m) com feedback em camadas (Spaced Recasting) sem caneta vermelha.',
-    xp: 2400,
-    badge: 'Intermediário',
-    xpPercent: 60,
+    colorDim: 'rgba(106, 95, 193, 0.12)',
+    colorBorder: 'rgba(106, 95, 193, 0.35)',
+    milestone: '1.400 Chunks Acumulados',
+    hours: '2x15m agilidade + 1x30m debate',
+    trap: 'Entende filmes e gringos falando, mas na hora de responder a mente congela no platô intermediário.',
+    solution: 'Treino de conectores vivos, storytelling e Spaced Recasting com Gabe. Você aprende a contornar palavras esquecidas e manter o ritmo natural da conversa.',
+    waMessage: encodeURIComponent('Olá Gabe! Quero entrar na Turma Alpha no Estágio 2 (Autonomia B1) para superar o platô intermediário e falar com fluidez!'),
+    btnText: 'Garantir Vaga no Estágio 2',
+    xpPercent: 65,
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />`
   },
   {
-    id: 'ef-b2',
-    emoji: '🏆',
-    level: 'B2',
-    name: 'Profissional',
-    subtitle: 'Lidera reuniões, negocia, persuade',
+    id: 'fase-3',
+    level: 'Fase 03 · B2 (Meta Alpha)',
+    name: 'Domínio Executivo & Autoridade',
+    subtitle: 'Lidere reuniões internacionais com segurança',
     color: '#fa7faa',
-    colorDim: 'rgba(250, 127, 170, 0.15)',
-    colorBorder: 'rgba(250, 127, 170, 0.4)',
-    trap: 'Reuniões com clientes internacionais e negociações rápidas onde a fala hesita.',
-    solution: '2.500 chunks dominados com Boss Raids semanais de 30 min e simulações do mundo corporativo real.',
-    xp: 5000,
-    badge: 'Avançado · Meta Alpha',
-    xpPercent: 90,
-  },
+    colorDim: 'rgba(250, 127, 170, 0.12)',
+    colorBorder: 'rgba(250, 127, 170, 0.35)',
+    milestone: '2.500 Chunks Executivos',
+    hours: 'Boss Raids semanais de 30 min',
+    trap: 'Hesitação e postura tímida em reuniões globais, pedindo desculpas pelo nível de inglês perante colegas nativos.',
+    solution: 'Simulações reais de pitch corporativo, negociações difíceis e Boss Raids intensivos com Gabriel. Postura de autoridade e argumentação persuasiva.',
+    waMessage: encodeURIComponent('Olá Gabe! Quero entrar na Turma Alpha no Estágio 3 (Executivo B2) para destravar meu inglês em reuniões corporativas!'),
+    btnText: 'Garantir Vaga no Estágio 3',
+    xpPercent: 95,
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />`
+  }
 ];
 
-// SVG ring constants
 const RING_R = 18;
-const RING_CIRCUMFERENCE = 2 * Math.PI * RING_R; // ≈ 113.1
+const RING_CIRCUMFERENCE = 2 * Math.PI * RING_R; // ~113.1
 ---
 
-
-<section id="estagios" class="py-28 px-4 sm:px-8 relative border-t border-[#2e224d] overflow-hidden">
+<section id="estagios" class="py-24 sm:py-28 px-4 sm:px-8 relative border-t border-[#2e224d] overflow-hidden">
   <div class="absolute inset-0 dot-grid-bg opacity-30 pointer-events-none"></div>
 
-  <div class="max-w-6xl mx-auto relative z-10">
+  <div class="max-w-6xl mx-auto relative z-10 w-full">
 
     <!-- Header -->
-    <div class="mb-14" data-anim="fade-up">
+    <div class="mb-14 max-w-3xl" data-anim="fade-up">
       <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full badge-glow mb-4">
         <span class="w-1.5 h-1.5 rounded-full bg-[#c2ef4e] micro-pulse"></span>
-        <span class="text-xs font-mono text-[#c2ef4e] uppercase tracking-[0.2em]">Estágios da Fala</span>
+        <span class="text-xs font-mono text-[#c2ef4e] uppercase tracking-[0.2em]">Trilha de Evolução</span>
       </div>
-      <h2 class="font-sans font-extrabold text-3xl sm:text-5xl md:text-6xl tracking-tight text-[#ffffff] leading-[1.05] max-w-2xl">
+      <h2 class="font-sans font-extrabold text-3xl sm:text-5xl md:text-6xl tracking-tight text-[#ffffff] leading-[1.05]">
         Sua jornada tem<br />
-        <span class="text-gradient-lime">três fases.</span>
+        <span class="text-gradient-lime">três fases de maestria.</span>
       </h2>
-      <p class="text-[#cfcfdb] text-base mt-4 max-w-xl leading-relaxed">
-        Cada estágio tem sua trava específica e sua solução exata no Método SPARK.
+      <p class="text-[#cfcfdb] text-base sm:text-lg mt-4 leading-relaxed">
+        Cada fase ataca uma trava neurológica específica e entrega um marco mensurável de autonomia comunicativa.
       </p>
     </div>
 
-    <!-- Expandable Cards Container -->
-    <div
-      id="estagios-container"
-      class="flex flex-col lg:flex-row gap-4 lg:gap-3"
-      role="list"
-    >
-      {estagios.map((e, idx) => (
+    <!-- Organograma Visual de Progressão (Timeline Rail) -->
+    <div class="hidden lg:flex items-center justify-between mb-8 px-6 py-4 rounded-2xl bg-[#271d40]/60 border border-[#3b2c60]">
+      <div class="flex items-center gap-3">
+        <span class="w-2 h-2 rounded-full bg-[#c2ef4e]"></span>
+        <span class="text-xs font-mono text-[#c2ef4e] font-semibold uppercase">Fase 1: Descongelamento</span>
+      </div>
+      <div class="flex-1 mx-4 h-0.5 bg-gradient-to-r from-[#c2ef4e]/40 via-[#6a5fc1]/40 to-[#fa7faa]/40"></div>
+      <div class="flex items-center gap-3">
+        <span class="w-2 h-2 rounded-full bg-[#6a5fc1]"></span>
+        <span class="text-xs font-mono text-[#6a5fc1] font-semibold uppercase">Fase 2: Tração Contínua</span>
+      </div>
+      <div class="flex-1 mx-4 h-0.5 bg-gradient-to-r from-[#6a5fc1]/40 to-[#fa7faa]/40"></div>
+      <div class="flex items-center gap-3">
+        <span class="w-2 h-2 rounded-full bg-[#fa7faa]"></span>
+        <span class="text-xs font-mono text-[#fa7faa] font-semibold uppercase">Fase 3: Autonomia Executiva B2</span>
+      </div>
+    </div>
+
+    <!-- 3 Cards de Fases com CTAs Independentes -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      {estagios.map((e) => (
         <div
-          id={e.id}
-          class:list={[
-            'estagio-card aether-card cursor-pointer select-none',
-            'flex flex-col p-7 lg:p-8',
-            'min-h-[200px] lg:min-h-[480px]',
-            'relative overflow-hidden',
-          ]}
-          style={`flex: 1; transition: flex 0.5s cubic-bezier(0.16,1,0.3,1); --accent: ${e.color}; --accent-dim: ${e.colorDim};`}
-          role="button"
-          tabindex="0"
-          aria-label={`Estágio ${e.level} — ${e.name}. Clique para expandir.`}
-          aria-expanded={idx === 1 ? 'true' : 'false'}
-          data-idx={idx}
-          data-color={e.color}
-          data-xp-percent={e.xpPercent}
+          class="aether-card p-6 sm:p-8 rounded-3xl bg-[#271d40] border border-[#3b2c60] flex flex-col justify-between relative overflow-hidden transition-all duration-300 hover:border-[#c2ef4e]/40 shadow-xl"
+          data-anim="fade-up"
         >
-          <!-- Level-up flash overlay -->
-          <div class="level-flash absolute inset-0 pointer-events-none rounded-[24px]" style={`background: ${e.color};`}></div>
-
-          <!-- Top row: level + badge + XP ring + emoji -->
-          <div class="flex items-start justify-between mb-4">
-            <div>
-              <div class="text-[10px] font-mono uppercase tracking-[0.2em] mb-1" style={`color: ${e.color};`}>{e.level} · {e.badge}</div>
-              <div class="text-2xl font-extrabold text-[#fafafa]">{e.name}</div>
-              <div class="text-sm text-[#898989] mt-0.5">{e.subtitle}</div>
-            </div>
-            <div class="flex items-center gap-3 shrink-0">
-              <!-- XP Progress Ring (SVG) -->
-              <div class="relative flex items-center justify-center" style="width:44px;height:44px;">
-                <svg width="44" height="44" viewBox="0 0 44 44" fill="none" class="xp-ring-svg" data-percent={e.xpPercent} data-color={e.color}>
-                  <!-- Track -->
-                  <circle cx="22" cy="22" r={RING_R} stroke="rgba(255,255,255,0.07)" stroke-width="3" fill="none"/>
-                  <!-- Fill arc — starts at top (rotate -90deg) -->
-                  <circle
-                    class="xp-ring-arc"
-                    cx="22" cy="22" r={RING_R}
-                    stroke={e.color}
-                    stroke-width="3"
-                    fill="none"
-                    stroke-linecap="round"
-                    stroke-dasharray={RING_CIRCUMFERENCE}
-                    stroke-dashoffset={RING_CIRCUMFERENCE}
-                    style="transform: rotate(-90deg); transform-origin: 22px 22px;"
-                  />
-                </svg>
-                <!-- Percentage label inside ring -->
-                <span class="absolute text-[9px] font-mono font-bold" style={`color: ${e.color};`}>{e.xpPercent}%</span>
+          <!-- Top Row: Badge + XP Ring + Icon -->
+          <div>
+            <div class="flex items-start justify-between gap-4 mb-5">
+              <div>
+                <span class="text-[11px] font-mono uppercase tracking-[0.2em] font-semibold block mb-1" style={`color: ${e.color};`}>
+                  {e.level}
+                </span>
+                <h3 class="text-xl sm:text-2xl font-extrabold text-[#ffffff] tracking-tight leading-snug">
+                  {e.name}
+                </h3>
+                <p class="text-xs text-[#cfcfdb] mt-1">{e.subtitle}</p>
               </div>
-              <!-- Emoji icon -->
-              <div
-                class="text-3xl w-12 h-12 flex items-center justify-center rounded-2xl"
-                style={`background: ${e.colorDim}; border: 1px solid ${e.colorBorder};`}
-              >
-                {e.emoji}
+
+              <!-- XP Ring + Icon -->
+              <div class="shrink-0 flex items-center gap-2">
+                <div
+                  class="w-10 h-10 rounded-xl flex items-center justify-center shrink-0"
+                  style={`background: ${e.colorDim}; border: 1px solid ${e.colorBorder}; color: ${e.color};`}
+                >
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={e.icon} />
+                </div>
+              </div>
+            </div>
+
+            <!-- Metas Quantitativas do Estágio -->
+            <div class="grid grid-cols-2 gap-2 mb-6 p-3 rounded-xl bg-[#1f1633] border border-[#3b2c60]/60 text-[11px] font-mono">
+              <div>
+                <span class="text-[#79628c] block text-[10px] uppercase">Meta Lexical</span>
+                <span class="text-[#ffffff] font-semibold">{e.milestone}</span>
+              </div>
+              <div>
+                <span class="text-[#79628c] block text-[10px] uppercase">Rotina Guiada</span>
+                <span class="text-[#c2ef4e] font-semibold">{e.hours}</span>
+              </div>
+            </div>
+
+            <!-- Trava vs Solução -->
+            <div class="space-y-3.5 mb-8">
+              <!-- Trava -->
+              <div class="p-4 rounded-xl bg-[#281a28]/80 border border-[#4a2432]">
+                <div class="flex items-center gap-2 text-[10px] font-mono text-[#ffb287] uppercase tracking-wider font-semibold mb-1">
+                  <svg class="w-3.5 h-3.5 text-[#ffb287]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                  </svg>
+                  <span>A Trava Deste Nível</span>
+                </div>
+                <p class="text-xs text-[#cfcfdb] leading-relaxed">{e.trap}</p>
+              </div>
+
+              <!-- Solução SPARK -->
+              <div class="p-4 rounded-xl bg-[#1f1633] border border-[#3b2c60]">
+                <div class="flex items-center gap-2 text-[10px] font-mono text-[#c2ef4e] uppercase tracking-wider font-semibold mb-1">
+                  <svg class="w-3.5 h-3.5 text-[#c2ef4e]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span>A Aceleração SPARK</span>
+                </div>
+                <p class="text-xs text-[#cfcfdb] leading-relaxed">{e.solution}</p>
               </div>
             </div>
           </div>
 
-          <!-- XP indicator -->
-          <div class="flex items-center gap-2 mb-5 text-[11px] font-mono" style={`color: ${e.color};`}>
-            <span>⭐</span>
-            <span>Meta: {e.xp.toLocaleString('pt-BR')} XP</span>
-          </div>
-
-          <!-- Expandable content -->
-          <div class="estagio-solution flex-1 flex flex-col gap-4">
-            <!-- Trava -->
-            <div class="rounded-xl p-4 bg-[#1a1010] border border-[#f87171]/20">
-              <div class="text-[10px] font-mono text-[#f87171] uppercase tracking-[0.15em] mb-1.5">🔴 Trava comum</div>
-              <p class="text-sm text-[#c4b5b5] leading-relaxed">{e.trap}</p>
-            </div>
-            <!-- Solução SPARK -->
-            <div class="rounded-xl p-4" style={`background: ${e.colorDim}; border: 1px solid ${e.colorBorder};`}>
-              <div class="text-[10px] font-mono uppercase tracking-[0.15em] mb-1.5" style={`color: ${e.color};`}>✅ Solução SPARK</div>
-              <p class="text-sm leading-relaxed" style="color: #d4d4d8;">{e.solution}</p>
-            </div>
-            <!-- CTA -->
+          <!-- CTA Específico por Estágio (Leva direto ao WhatsApp de Gabe com a mensagem da respectiva fase) -->
+          <div class="pt-4 border-t border-[#3b2c60]">
             <a
-              href="#pricing"
-              class="mt-auto inline-flex items-center justify-center gap-2 py-2.5 px-5 rounded-full text-xs font-bold transition-all"
+              href={`https://wa.me/5511967239791?text=${e.waMessage}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-xs font-mono font-bold transition-all duration-200 group cursor-pointer"
               style={`background: ${e.colorDim}; border: 1px solid ${e.colorBorder}; color: ${e.color};`}
-              tabindex="-1"
-              aria-hidden="true"
             >
-              <span>Entrar nesta fase</span>
-              <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              <span>{e.btnText}</span>
+              <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
             </a>
           </div>
@@ -179,243 +186,5 @@ const RING_CIRCUMFERENCE = 2 * Math.PI * RING_R; // ≈ 113.1
       ))}
     </div>
 
-    <!-- Keyboard hint (desktop only) -->
-    <p class="hidden lg:block text-center text-[11px] font-mono text-[#3d3d3d] mt-6" aria-hidden="true">
-      Clique ou use Tab + Enter para expandir um estágio
-    </p>
-
   </div>
 </section>
-
-<script is:inline>
-(function () {
-  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var isDesktop = function() { return window.innerWidth >= 1024; };
-
-  // Ring circumference for r=18
-  var CIRC = 2 * Math.PI * 18; // ≈ 113.097
-
-  function ready(fn) {
-    if (document.readyState !== 'loading') fn();
-    else document.addEventListener('DOMContentLoaded', fn);
-  }
-
-  ready(function () {
-    var gsap = window.gsap;
-    var ST = window.ScrollTrigger;
-
-    var container = document.getElementById('estagios-container');
-    var cards = document.querySelectorAll('.estagio-card');
-    var solutions = document.querySelectorAll('.estagio-solution');
-
-    if (!container || !cards.length) return;
-
-    // ── Set all ring arcs to initial state (dashoffset = CIRC = 0%) ──
-    document.querySelectorAll('.xp-ring-arc').forEach(function(arc) {
-      arc.style.strokeDashoffset = CIRC;
-    });
-
-    // ── Set all flash overlays to opacity 0 ──
-    document.querySelectorAll('.level-flash').forEach(function(el) {
-      el.style.opacity = '0';
-    });
-
-    // Initial state: card 1 (B1) active by default on desktop
-    var activeIdx = 1;
-
-    // ── XP Ring animation ──
-    function animateRing(card, toPercent) {
-      if (!gsap || reduced) return;
-      var arc = card.querySelector('.xp-ring-arc');
-      if (!arc) return;
-      var target = CIRC * (1 - toPercent / 100);
-      gsap.to(arc, {
-        strokeDashoffset: target,
-        duration: 0.8,
-        ease: 'power2.out',
-        delay: 0.15,
-      });
-    }
-
-    function resetRing(card) {
-      if (!gsap || reduced) return;
-      var arc = card.querySelector('.xp-ring-arc');
-      if (!arc) return;
-      gsap.to(arc, {
-        strokeDashoffset: CIRC,
-        duration: 0.4,
-        ease: 'power2.in',
-      });
-    }
-
-    // ── Level-up flash ──
-    function triggerFlash(card) {
-      if (!gsap || reduced) return;
-      var flash = card.querySelector('.level-flash');
-      if (!flash) return;
-      gsap.fromTo(flash,
-        { opacity: 0 },
-        { opacity: 0.15, duration: 0.1, ease: 'power1.out',
-          onComplete: function() {
-            gsap.to(flash, { opacity: 0, duration: 0.3, ease: 'power1.in' });
-          }
-        }
-      );
-    }
-
-    // ── XP particles ──
-    function spawnXpParticles(card) {
-      if (!gsap || reduced) return;
-      var color = card.getAttribute('data-color') || '#3ecf8e';
-      var rect = card.getBoundingClientRect(); // used for width reference
-      var cardW = card.offsetWidth;
-      var cardH = card.offsetHeight;
-
-      for (var p = 0; p < 4; p++) {
-        var span = document.createElement('span');
-        span.textContent = '+XP';
-        span.style.cssText = [
-          'position:absolute',
-          'pointer-events:none',
-          'font-size:10px',
-          'font-family:monospace',
-          'font-weight:700',
-          'color:' + color,
-          'opacity:0',
-          'z-index:50',
-          'left:' + (20 + Math.random() * (cardW * 0.5)) + 'px',
-          'top:' + (cardH * 0.3 + Math.random() * (cardH * 0.3)) + 'px',
-          'text-shadow: 0 0 8px ' + color,
-        ].join(';');
-        card.appendChild(span);
-
-        (function(s) {
-          gsap.fromTo(s,
-            { opacity: 0, y: 0 },
-            {
-              opacity: 1, y: -30,
-              duration: 0.6,
-              delay: p * 0.08,
-              ease: 'power2.out',
-              onComplete: function() {
-                gsap.to(s, {
-                  opacity: 0,
-                  duration: 0.3,
-                  ease: 'power1.in',
-                  onComplete: function() { s.remove(); }
-                });
-              }
-            }
-          );
-        })(span);
-      }
-    }
-
-    function setActive(idx) {
-      activeIdx = idx;
-      cards.forEach(function(card, i) {
-        var isActive = i === idx;
-        card.setAttribute('aria-expanded', isActive ? 'true' : 'false');
-
-        if (!isDesktop() || reduced) return; // Mobile: all expanded, no GSAP
-
-        if (gsap) {
-          // flexGrow expansion
-          gsap.to(card, {
-            flexGrow: isActive ? 2.5 : 1,
-            duration: 0.5,
-            ease: 'power2.inOut'
-          });
-          // Fade solution content
-          if (solutions[i]) {
-            gsap.to(solutions[i], {
-              opacity: isActive ? 1 : 0,
-              duration: isActive ? 0.4 : 0.2,
-              delay: isActive ? 0.2 : 0,
-              ease: 'power2.out'
-            });
-          }
-          // Active border highlight
-          gsap.to(card, {
-            borderColor: isActive
-              ? card.style.getPropertyValue('--accent') || 'rgba(62,207,142,0.35)'
-              : 'rgba(255,255,255,0.07)',
-            duration: 0.4,
-            ease: 'power2.out'
-          });
-
-          // ── NEW: XP Ring + Flash + Particles ──
-          if (isActive) {
-            var pct = parseInt(card.getAttribute('data-xp-percent') || '0', 10);
-            animateRing(card, pct);
-            triggerFlash(card);
-            spawnXpParticles(card);
-          } else {
-            resetRing(card);
-          }
-
-        } else {
-          // Fallback without GSAP
-          card.style.flex = isActive ? '2.5' : '1';
-          if (solutions[i]) solutions[i].style.opacity = isActive ? '1' : '0';
-        }
-      });
-    }
-
-    // On desktop: initially collapse non-active, fade out their solutions
-    if (isDesktop() && !reduced && gsap) {
-      cards.forEach(function(card, i) {
-        if (i !== activeIdx) {
-          card.style.flex = '1';
-          if (solutions[i]) gsap.set(solutions[i], { opacity: 0 });
-        } else {
-          card.style.flex = '2.5';
-          if (solutions[i]) gsap.set(solutions[i], { opacity: 1 });
-          // Animate the default active card's ring on load
-          var pct = parseInt(card.getAttribute('data-xp-percent') || '0', 10);
-          animateRing(card, pct);
-        }
-      });
-    }
-
-    // Click + keyboard handlers
-    cards.forEach(function(card, i) {
-      card.addEventListener('click', function() { setActive(i); });
-      card.addEventListener('keydown', function(e) {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          setActive(i);
-        }
-      });
-    });
-
-    // Handle resize: reset on desktop/mobile switch
-    var lastDesktop = isDesktop();
-    window.addEventListener('resize', function() {
-      var nowDesktop = isDesktop();
-      if (nowDesktop !== lastDesktop) {
-        lastDesktop = nowDesktop;
-        setActive(activeIdx);
-        if (!nowDesktop) {
-          // Mobile: show all
-          cards.forEach(function(card) { card.style.flex = '1'; });
-          solutions.forEach(function(s) { s.style.opacity = '1'; });
-        }
-      }
-    });
-
-    // ScrollTrigger entrance
-    if (gsap && ST && !reduced) {
-      gsap.registerPlugin(ST);
-      gsap.from(cards, {
-        y: 40,
-        opacity: 0,
-        duration: 0.75,
-        stagger: 0.1,
-        ease: 'power3.out',
-        scrollTrigger: { trigger: '#estagios', start: 'top 78%' }
-      });
-    }
-  });
-})();
-</script>
