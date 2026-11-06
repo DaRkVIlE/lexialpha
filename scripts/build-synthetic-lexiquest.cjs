@@ -1,10 +1,10 @@
 const fs = require('fs');
-const path = require('path');
 
-console.log('Writing synthetic template adapted for LexiQuest...');
+console.log('Building updated Synthetic LexiQuest page with Portal 0 and Scientific Research Marquee...');
 
 const code = `---
-// LexiQuest Turma Alpha — Landing Page (Synthetic BRIX Template Replica)
+// LexiQuest Turma Alpha — Landing Page (Synthetic BRIX Template Replica v1.2)
+// Inclui Bloco 4B (Portal 0 Degustação) e Evidências Científicas em vez de depoimentos
 ---
 <!DOCTYPE html>
 <html data-wf-domain="lexiquest.com.br" data-wf-page="6a01e0b88ea616041a7749de" data-wf-site="6a01e0b88ea616041a774a0d" lang="pt-BR" class="w-mod-js wf-ibmplexmono-n3-active wf-ibmplexmono-n4-active wf-ibmplexmono-n5-active wf-ibmplexmono-n6-active wf-ibmplexmono-n7-active wf-ibmplexsans-n3-active wf-ibmplexsans-n4-active wf-ibmplexsans-n5-active wf-ibmplexsans-n6-active wf-ibmplexsans-n7-active wf-active w-mod-ix w-mod-ix3">
@@ -31,7 +31,6 @@ const code = `---
   <link rel="stylesheet" href="/synthetic/files/syntethictemplate.webflow.shared.fe2de660f.css" type="text/css">
   
   <style>
-    /* Custom Synthetic Theme Overrides & Refinements */
     :root {
       --color-brand-cyan: #58f27f;
       --color-brand-glow: rgba(88, 242, 127, 0.15);
@@ -45,14 +44,12 @@ const code = `---
       color: #e5e9ec;
     }
     
-    /* Ensure elements with fade-in classes are visible */
     [fade-in-200ms], [fade-in-300ms], [fade-in-400ms], [fade-in-500ms], [fade-in-600ms], [fade-in-700ms], [fade-in-800ms] {
       opacity: 1 !important;
       visibility: visible !important;
       transform: none !important;
     }
     
-    /* Glowing accents */
     .text-glow {
       text-shadow: 0 0 16px rgba(88, 242, 127, 0.4);
     }
@@ -68,7 +65,7 @@ const code = `---
       50% { opacity: 0.4; transform: scale(0.85); }
     }
     
-    /* Quiz Styling adhering to Synthetic design */
+    /* Quiz Styling */
     .quiz-card {
       background: var(--_globals---colors--color-500);
       border: 1px solid var(--_globals---colors--color-600);
@@ -136,7 +133,7 @@ const code = `---
       box-shadow: 0 0 10px rgba(88, 242, 127, 0.2);
     }
     
-    /* FAQ Accordion Details styling */
+    /* FAQ Accordion Details */
     .faq-accordion-item {
       border: 1px solid var(--_globals---colors--color-600);
       border-radius: 6px;
@@ -209,9 +206,10 @@ const code = `---
             <ul role="list" class="header_nav-menu">
               <li class="header_nav-list"><a href="#desafio" class="header_nav-link w-inline-block"><div>O Desafio</div></a></li>
               <li class="header_nav-list"><a href="#metodo" class="header_nav-link w-inline-block"><div>O Método</div></a></li>
+              <li class="header_nav-list"><a href="#portal0" class="header_nav-link w-inline-block"><div style="color: #58f27f;">Portal 0 (Degustação)</div></a></li>
               <li class="header_nav-list"><a href="#portais" class="header_nav-link w-inline-block"><div>Os Portais</div></a></li>
               <li class="header_nav-list"><a href="#aida" class="header_nav-link w-inline-block"><div>AIDA Companion</div></a></li>
-              <li class="header_nav-list"><a href="#semana" class="header_nav-link w-inline-block"><div>Sua Semana</div></a></li>
+              <li class="header_nav-list"><a href="#pesquisa" class="header_nav-link w-inline-block"><div>Ciência do Método</div></a></li>
               <li class="header_nav-list"><a href="#oferta" class="header_nav-link w-inline-block"><div>A Oferta</div></a></li>
               <li class="header_nav-list"><a href="#faq" class="header_nav-link w-inline-block"><div>FAQ</div></a></li>
             </ul>
@@ -255,7 +253,7 @@ const code = `---
             <h1 fade-in-300ms="" class="display-9" style="letter-spacing: -1px; margin-top: 12px; margin-bottom: 20px;">Você entende inglês. Agora é hora de falar.</h1>
             <div fade-in-400ms="" class="home_hero-summary">
               <p class="main-font" style="font-size: 19px; line-height: 1.6; color: #a4b3bf; max-width: 64ch;">
-                Prática diária com a <strong>AIDA</strong>, companion de IA sem julgamento, e <strong>3 sessões por semana</strong> com o <strong>Gabe</strong>, professor de verdade. Sem tradução mental, sem regras chatas e sem medo de errar.
+                Prática diária com a <strong>AIDA</strong>, companion de IA sem julgamento, e <strong>3 sessões por semana</strong> com o <strong>Gabe</strong>, professor de verdade. Sem tradução mental, sem regras chatas e com fundamentação em linguística aplicada.
               </p>
             </div>
             
@@ -263,6 +261,10 @@ const code = `---
               <a href="#diagnostico" class="button is-primary w-inline-block" style="text-decoration: none;">
                 <div class="button_text">Descobrir meu Portal</div>
                 <div class="button_circle" style="background-color: #58f27f;"></div>
+              </a>
+              <a href="#portal0" class="button is-secondary w-inline-block" style="text-decoration: none;">
+                <div class="button_text">Testar no Portal 0 (15 min grátis) &rarr;</div>
+                <div class="button_circle is-secondary"></div>
               </a>
               <a href="https://wa.me/5511967239791?text=Ol%C3%A1%20Gabe!%20Quero%20conversar%20sobre%20a%20Turma%20Alpha." target="_blank" rel="noopener noreferrer" class="link w-inline-block" style="text-decoration: none;">
                 <div class="link_row" style="color: #7f8a93; font-family: var(--font-mono); font-size: 14px;">
@@ -328,183 +330,123 @@ const code = `---
 
         <!-- 12 Modalities Grid Cards -->
         <div class="modalities_card is-large">
-          <!-- Card 1 -->
           <div fade-in-200ms="" class="modalities_card-block is-small">
             <div class="modalities_card-line-horizontal"></div>
             <div class="modalities_card-line-vertical"></div>
             <img src="/synthetic/files/6a0f6830cb723602b7a50e94_message-icon-syntethic-webflow-template.svg" loading="lazy" width="16" height="16" alt="Icon" class="modalities_card-icon">
             <div>
               <h3 class="display-1">O inglês some na hora</h3>
-              <div class="modalities_card-footer">
-                <div>Trava motora oral</div>
-                <div class="modalities_card-dot"></div>
-                <div>Tela preta ao vivo</div>
-              </div>
+              <div class="modalities_card-footer"><div>Trava motora oral</div><div class="modalities_card-dot"></div><div>Tela preta ao vivo</div></div>
             </div>
           </div>
 
-          <!-- Card 2 -->
           <div fade-in-300ms="" class="modalities_card-block is-small">
             <div class="modalities_card-line-horizontal"></div>
             <div class="modalities_card-line-vertical"></div>
             <img src="/synthetic/files/6a1465bf1b395547a1d3fd19_users-icon-syntethic-webflow-template.svg" loading="lazy" width="16" height="16" alt="Icon" class="modalities_card-icon">
             <div>
               <h3 class="display-1">Tradução mental constante</h3>
-              <div class="modalities_card-footer">
-                <div>Gargalo cognitivo</div>
-                <div class="modalities_card-dot"></div>
-                <div>Timing perdido</div>
-              </div>
+              <div class="modalities_card-footer"><div>Gargalo cognitivo</div><div class="modalities_card-dot"></div><div>Timing perdido</div></div>
             </div>
           </div>
 
-          <!-- Card 3 -->
           <div fade-in-400ms="" class="modalities_card-block is-small">
             <div class="modalities_card-line-horizontal"></div>
             <div class="modalities_card-line-vertical"></div>
             <img src="/synthetic/files/6a1465bf4fab9a12334b5e6e_brackets-icon-syntethic-webflow-template.svg" loading="lazy" width="16" height="16" alt="Icon" class="modalities_card-icon">
             <div>
               <h3 class="display-1">Estudou muito, falou pouco</h3>
-              <div class="modalities_card-footer">
-                <div>Exercício de gramática</div>
-                <div class="modalities_card-dot"></div>
-                <div>Zero fala real</div>
-              </div>
+              <div class="modalities_card-footer"><div>Exercício de gramática</div><div class="modalities_card-dot"></div><div>Zero fala real</div></div>
             </div>
           </div>
 
-          <!-- Card 4 -->
           <div fade-in-500ms="" class="modalities_card-block is-small">
             <div class="modalities_card-line-horizontal"></div>
             <div class="modalities_card-line-vertical"></div>
             <img src="/synthetic/files/6a14799005430ea2c13f605b_tag-icon-syntethic-webflow-template.svg" loading="lazy" width="16" height="16" alt="Icon" class="modalities_card-icon">
             <div>
               <h3 class="display-1">A esquiva silenciosa</h3>
-              <div class="modalities_card-footer">
-                <div>Medo do julgamento</div>
-                <div class="modalities_card-dot"></div>
-                <div>Ficar mudo na call</div>
-              </div>
+              <div class="modalities_card-footer"><div>Medo do julgamento</div><div class="modalities_card-dot"></div><div>Ficar mudo na call</div></div>
             </div>
           </div>
 
-          <!-- Card 5 -->
           <div fade-in-200ms="" class="modalities_card-block is-small">
             <div class="modalities_card-line-horizontal"></div>
             <div class="modalities_card-line-vertical"></div>
             <img src="/synthetic/files/6a1465be5e0e52236c22a5c3_text-icon-syntethic-webflow-template.svg" loading="lazy" width="16" height="16" alt="Icon" class="modalities_card-icon">
             <div>
-              <h3 class="display-1">Portal 1 · Jordan</h3>
-              <div class="modalities_card-footer">
-                <div>Nível A1 &rarr; A2</div>
-                <div class="modalities_card-dot"></div>
-                <div>Boss Raid Imigração JFK</div>
-              </div>
+              <h3 class="display-1">Portal 0 · O Prólogo</h3>
+              <div class="modalities_card-footer"><div>Degustação aberta</div><div class="modalities_card-dot"></div><div>15 min sem cadastro</div></div>
             </div>
           </div>
 
-          <!-- Card 6 -->
           <div fade-in-300ms="" class="modalities_card-block is-small">
             <div class="modalities_card-line-horizontal"></div>
             <div class="modalities_card-line-vertical"></div>
             <img src="/synthetic/files/6a1465be5e0e52236c22a5bd_branch-icon-syntethic-webflow-template.svg" loading="lazy" width="16" height="16" alt="Icon" class="modalities_card-icon">
             <div>
-              <h3 class="display-1">Portal 2 · Miles</h3>
-              <div class="modalities_card-footer">
-                <div>Nível A2 &rarr; B1</div>
-                <div class="modalities_card-dot"></div>
-                <div>Boss Raid Check-in Hotel</div>
-              </div>
+              <h3 class="display-1">Portal 1 · Jordan</h3>
+              <div class="modalities_card-footer"><div>Nível A1 &rarr; A2</div><div class="modalities_card-dot"></div><div>Boss Raid JFK</div></div>
             </div>
           </div>
 
-          <!-- Card 7 -->
           <div fade-in-400ms="" class="modalities_card-block is-small">
             <div class="modalities_card-line-horizontal"></div>
             <div class="modalities_card-line-vertical"></div>
             <img src="/synthetic/files/6a1465bf3a4a89a96517b27f_code-icon-syntethic-webflow-template.svg" loading="lazy" width="16" height="16" alt="Icon" class="modalities_card-icon">
             <div>
-              <h3 class="display-1">Portal 3 · Zack</h3>
-              <div class="modalities_card-footer">
-                <div>Nível B1 &rarr; B2</div>
-                <div class="modalities_card-dot"></div>
-                <div>Boss Raid Pub Brooklyn</div>
-              </div>
+              <h3 class="display-1">Portal 2 · Miles</h3>
+              <div class="modalities_card-footer"><div>Nível A2 &rarr; B1</div><div class="modalities_card-dot"></div><div>Boss Raid Hotel</div></div>
             </div>
           </div>
 
-          <!-- Card 8 -->
           <div fade-in-500ms="" class="modalities_card-block is-small">
             <div class="modalities_card-line-horizontal"></div>
             <div class="modalities_card-line-vertical"></div>
             <img src="/synthetic/files/6a0f1cdfdb72997833eda00d_shield-check-icon-syntethic-webflow-template.svg" loading="lazy" width="16" height="16" alt="Icon" class="modalities_card-icon">
             <div>
-              <h3 class="display-1">Portal 4 · Alexandra</h3>
-              <div class="modalities_card-footer">
-                <div>Nível B2 &rarr; C1</div>
-                <div class="modalities_card-dot"></div>
-                <div>Boss Raid Pitch Negócios</div>
-              </div>
+              <h3 class="display-1">Portal 3 · Zack</h3>
+              <div class="modalities_card-footer"><div>Nível B1 &rarr; B2</div><div class="modalities_card-dot"></div><div>Boss Raid Pub Brooklyn</div></div>
             </div>
           </div>
 
-          <!-- Card 9 -->
           <div fade-in-200ms="" class="modalities_card-block is-small">
             <div class="modalities_card-line-horizontal"></div>
             <div class="modalities_card-line-vertical"></div>
             <img src="/synthetic/files/6a1479909dee1b2d45e4b725_messages-icon-syntethic-webflow-template.svg" loading="lazy" width="16" height="16" alt="Icon" class="modalities_card-icon">
             <div>
-              <h3 class="display-1">Recasting Pedagógico</h3>
-              <div class="modalities_card-footer">
-                <div>Sem nota punitiva</div>
-                <div class="modalities_card-dot"></div>
-                <div>Feedback sutil</div>
-              </div>
+              <h3 class="display-1">Portal 4 · Alexandra</h3>
+              <div class="modalities_card-footer"><div>Nível B2 &rarr; C1</div><div class="modalities_card-dot"></div><div>Boss Raid Pitch Negócios</div></div>
             </div>
           </div>
 
-          <!-- Card 10 -->
           <div fade-in-300ms="" class="modalities_card-block is-small">
             <div class="modalities_card-line-horizontal"></div>
             <div class="modalities_card-line-vertical"></div>
             <img src="/synthetic/files/6a1465bef0a40940baa3172f_chart-icon-syntethic-webflow-template.svg" loading="lazy" width="16" height="16" alt="Icon" class="modalities_card-icon">
             <div>
-              <h3 class="display-1">SPARK Score</h3>
-              <div class="modalities_card-footer">
-                <div>Medição objetiva</div>
-                <div class="modalities_card-dot"></div>
-                <div>Baseline e 30 dias</div>
-              </div>
+              <h3 class="display-1">Recasting Pedagógico</h3>
+              <div class="modalities_card-footer"><div>Sem nota punitiva</div><div class="modalities_card-dot"></div><div>Feedback natural</div></div>
             </div>
           </div>
 
-          <!-- Card 11 -->
           <div fade-in-400ms="" class="modalities_card-block is-small">
             <div class="modalities_card-line-horizontal"></div>
             <div class="modalities_card-line-vertical"></div>
             <img src="/synthetic/files/6a147990eed77c32f9231052_item-icon-syntethic-webflow-template.svg" loading="lazy" width="16" height="16" alt="Icon" class="modalities_card-icon">
             <div>
               <h3 class="display-1">Chunks Prontos</h3>
-              <div class="modalities_card-footer">
-                <div>Estruturas fixas</div>
-                <div class="modalities_card-dot"></div>
-                <div>Sem traduzir palavra por palavra</div>
-              </div>
+              <div class="modalities_card-footer"><div>Blocos formulaicos</div><div class="modalities_card-dot"></div><div>Sem tradução interna</div></div>
             </div>
           </div>
 
-          <!-- Card 12 -->
           <div fade-in-500ms="" class="modalities_card-block is-small">
             <div class="modalities_card-line-horizontal"></div>
             <div class="modalities_card-line-vertical"></div>
             <img src="/synthetic/files/6a1465be29e13c1a535a6b06_search-icon-syntethic-webflow-template.svg" loading="lazy" width="16" height="16" alt="Icon" class="modalities_card-icon">
             <div>
-              <h3 class="display-1">Dossiê do Gabe</h3>
-              <div class="modalities_card-footer">
-                <div>Acompanhamento real</div>
-                <div class="modalities_card-dot"></div>
-                <div>Sem terceirização</div>
-              </div>
+              <h3 class="display-1">SPARK Score</h3>
+              <div class="modalities_card-footer"><div>Medição objetiva</div><div class="modalities_card-dot"></div><div>Baseline e 30 dias</div></div>
             </div>
           </div>
         </div>
@@ -552,10 +494,13 @@ const code = `---
               Fundamentação baseada em Stephen Krashen (Input Compreensível), Merrill Swain (Output Hipótese), Michael Long (Feedback Implícito), Lev Vygotsky (ZPD) e Jim Cummins (BICS vs CALP).
             </p>
 
-            <div class="button-row">
-              <a href="#portais" class="button is-primary w-inline-block" style="text-decoration: none;">
-                <div class="button_text">Conhecer os 4 Portais</div>
+            <div class="button-row" style="display: flex; gap: 16px; flex-wrap: wrap;">
+              <a href="#portal0" class="button is-primary w-inline-block" style="text-decoration: none;">
+                <div class="button_text">Experimentar no Portal 0</div>
                 <div class="button_circle" style="background-color: #58f27f;"></div>
+              </a>
+              <a href="#pesquisa" class="button is-secondary w-inline-block" style="text-decoration: none;">
+                <div class="button_text">Ver Artigos Científicos &rarr;</div>
               </a>
             </div>
           </div>
@@ -567,8 +512,91 @@ const code = `---
       </div>
     </section>
 
+    <!-- 4B. BLOCO 4B: DEGUSTAÇÃO (PORTAL 0 · O PRÓLOGO) -->
+    <section id="portal0" class="section is-bg-secondary" style="border-top: 1px solid var(--_globals---colors--color-600); border-bottom: 1px solid var(--_globals---colors--color-600);">
+      <div class="w-layout-blockcontainer container w-container">
+        <div class="w-layout-grid grid-2 spacing-2xlarge" style="align-items: center;">
+          <div fade-in-200ms="">
+            <div class="display-subtitle" style="color: #58f27f;">Portal 0 · O Prólogo</div>
+            <h2 class="display-6" style="margin-top: 8px; margin-bottom: 16px;">Experimente o método em 15 minutos, sem cadastro</h2>
+            <p class="paragraph-small" style="color: #a4b3bf; line-height: 1.6; margin-bottom: 24px;">
+              O <strong>Portal 0, O Prólogo</strong>, é a porta de entrada da LexiQuest. Abre direto no nosso ambiente de estudo, sem login e sem cartão de crédito. Não é um nível: é um primeiro contato prático com o método, aberto a todos.
+            </p>
+
+            <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 20px; margin-bottom: 24px;">
+              <div style="font-family: var(--font-mono); font-size: 12px; color: #58f27f; margin-bottom: 12px;">CINCO MISSÕES CURTAS DISPONÍVEIS AGORA:</div>
+              <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; font-size: 14px; color: #e5e9ec;">
+                <li style="display: flex; gap: 8px;">
+                  <span style="color: #58f27f; font-family: var(--font-mono);">0.1</span>
+                  <span><strong>O chamado:</strong> Por que quem entende inglês trava na hora de falar.</span>
+                </li>
+                <li style="display: flex; gap: 8px;">
+                  <span style="color: #58f27f; font-family: var(--font-mono);">0.2</span>
+                  <span><strong>Três blocos para usar hoje:</strong> <em>"Can I get a… please?"</em> · <em>"Do you take card?"</em> · <em>"Let me double-check."</em></span>
+                </li>
+                <li style="display: flex; gap: 8px;">
+                  <span style="color: #58f27f; font-family: var(--font-mono);">0.3</span>
+                  <span><strong>Um jogo curto:</strong> Toque no balão que soa como robô e veja a versão natural.</span>
+                </li>
+                <li style="display: flex; gap: 8px;">
+                  <span style="color: #58f27f; font-family: var(--font-mono);">0.4</span>
+                  <span><strong>Desafio dos 30 segundos:</strong> Grave uma frase no próprio navegador. Enviar ao Gabe é opcional.</span>
+                </li>
+                <li style="display: flex; gap: 8px;">
+                  <span style="color: #58f27f; font-family: var(--font-mono);">0.5</span>
+                  <span><strong>Os quatro Guardiões:</strong> Jordan, Miles, Zack e Alexandra, personas da AIDA.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 12px; align-items: flex-start;">
+              <a href="https://lexi-moodle-docker-production.up.railway.app/course/view.php?id=7" target="_blank" rel="noopener noreferrer" class="button is-primary" style="text-decoration: none; padding: 16px 28px;">
+                <div class="button_text">Entrar no Portal 0 (Abre em outra aba) &rarr;</div>
+                <div class="button_circle" style="background-color: #58f27f;"></div>
+              </a>
+              <div style="font-family: var(--font-mono); font-size: 12px; color: #7f8a93; line-height: 1.4;">
+                Sem cadastro e sem cartão. Para maiores de 18 anos. Quando terminar, volte aqui e faça o quiz de nível. O Portal 0 não define o seu Portal.
+              </div>
+            </div>
+          </div>
+
+          <!-- Mockup Visual Card Portal 0 -->
+          <div fade-in-300ms="" style="background: #0f1315; border: 1px solid var(--_globals---colors--color-600); border-radius: 12px; padding: 24px; box-shadow: 0 20px 50px rgba(0,0,0,0.5);">
+            <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 14px; margin-bottom: 18px;">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <div style="width: 8px; height: 8px; border-radius: 50%; background: #58f27f;"></div>
+                <span style="font-family: var(--font-mono); font-size: 12px; color: #ffffff;">LEXIQUEST // LMS AMBIENTE REAL</span>
+              </div>
+              <span style="font-family: var(--font-mono); font-size: 11px; color: #7f8a93;">ACESSO CONVIDADO</span>
+            </div>
+
+            <div style="border: 1px solid rgba(88,242,127,0.2); border-radius: 8px; background: rgba(88,242,127,0.02); padding: 18px; margin-bottom: 16px;">
+              <div style="font-family: var(--font-mono); font-size: 11px; color: #58f27f; margin-bottom: 6px;">MISSÃO 0.3 · CHUNKS DIÁRIOS</div>
+              <div style="font-size: 15px; color: #ffffff; font-weight: 600; margin-bottom: 8px;">"Can I get a black coffee, please?"</div>
+              <div style="font-size: 13px; color: #a4b3bf; line-height: 1.4;">
+                Automatize a estrutura completa sem parar para pensar em tempos verbais ou preposições soltas.
+              </div>
+            </div>
+
+            <div style="border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; background: rgba(255,255,255,0.02); padding: 16px; display: flex; align-items: center; justify-content: space-between;">
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <div style="width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.08); display: flex; align-items: center; justify-content: center; color: #58f27f; font-size: 16px;">
+                  🎙️
+                </div>
+                <div>
+                  <div style="font-size: 13px; color: #ffffff; font-weight: 500;">Desafio de Áudio 30s</div>
+                  <div style="font-size: 11px; color: #7f8a93; font-family: var(--font-mono);">Gravação local no navegador</div>
+                </div>
+              </div>
+              <span style="font-family: var(--font-mono); font-size: 12px; color: #58f27f;">PRONTO</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- 5. OS 4 PORTAIS (4 STEPS WORKFLOW) -->
-    <section id="portais" class="section is-bg-secondary">
+    <section id="portais" class="section">
       <div class="w-layout-blockcontainer container w-container">
         <div fade-in-200ms="" class="inner-container_center max-w-55ch">
           <div class="display-subtitle" style="color: #58f27f;">Trilha de Progressão</div>
@@ -679,7 +707,7 @@ const code = `---
       </div>
     </section>
 
-    <!-- 7. CONHEÇA A AIDA COMPANION (STORIES & MARQUEE) -->
+    <!-- 7. CONHEÇA A AIDA COMPANION -->
     <section id="aida" class="section spacing-top-0">
       <div class="w-layout-blockcontainer container w-container">
         <div fade-in-200ms="" class="inner-container_center">
@@ -714,72 +742,129 @@ const code = `---
           </div>
         </div>
       </div>
+    </section>
 
-      <!-- Testimonials & Personas Marquee -->
+    <!-- 8. CIÊNCIA DO MÉTODO (RESEARCH & COGNITIVE EVIDENCE MARQUEE) -->
+    <section id="pesquisa" class="section spacing-top-0">
+      <div class="w-layout-blockcontainer container w-container">
+        <div fade-in-200ms="" class="inner-container_center">
+          <div class="display-subtitle" style="color: #58f27f;">Fundamentação & Pesquisas</div>
+          <h2 class="display-6 mg-bottom-large">Estudos que comprovam a ciência do Método SPARK</h2>
+          <p class="paragraph-small" style="color: #a4b3bf; margin-top: -16px; margin-bottom: 32px; max-width: 65ch;">
+            Não inventamos nada do zero. O método da LexiQuest foi construído sobre décadas de pesquisas em aquisição de segunda língua (SLA) e neurociência cognitiva da fala.
+          </p>
+        </div>
+      </div>
+
+      <!-- Research Cards Marquee -->
       <div brix-marquee="" fade-in-200ms="" class="stories_marquee">
         <div class="stories_marquee-column" style="display: flex; gap: 24px;">
-          <!-- Card 1 -->
-          <div class="stories_marquee-item" style="min-width: 380px;">
+          <!-- Study 1: Merrill Swain -->
+          <div class="stories_marquee-item" style="min-width: 400px;">
             <div class="story_card" style="border: 1px solid var(--_globals---colors--color-600); border-radius: 8px; background: var(--_globals---colors--color-500); padding: 24px;">
               <div class="story_card-top">
-                <p class="story_card-summary" style="font-size: 15px; color: #e5e9ec; line-height: 1.5;">
-                  "Eu lia e ouvia tudo em inglês no trabalho, mas nas calls internacionais eu congelava. Praticar 15 min todo dia com a AIDA quebrou a trava mental."
+                <div style="font-family: var(--font-mono); font-size: 11px; color: #58f27f; margin-bottom: 8px;">OUTPUT HYPOTHESIS · OISE TORONTO</div>
+                <p class="story_card-summary" style="font-size: 14px; color: #e5e9ec; line-height: 1.55;">
+                  "Apenas ouvir e ler (input) não gera fala autônoma. O cérebro só reorganiza os circuitos da linguagem quando é forçado a produzir fala ativa (*pushed output*) sob pressão real."
                 </p>
                 <div class="story_card-avatar-container" style="margin-top: 16px; display: flex; align-items: center; gap: 12px;">
-                  <img src="/synthetic/files/6a148aae338e007af7185a80_sophie-moore-story-avatar-syntethic-webflow-template.avif" alt="Aluna" class="story_card-avatar" style="width: 44px; height: 44px; border-radius: 50%;">
                   <div>
-                    <div class="story_card-avatar-name" style="font-weight: 600; color: #ffffff;">Mariana R.</div>
-                    <div class="story_card-avatar-job" style="font-size: 12px; color: #7f8a93;">Tech Lead · Portal 3 (Zack)</div>
+                    <div class="story_card-avatar-name" style="font-weight: 600; color: #ffffff;">Dra. Merrill Swain</div>
+                    <div class="story_card-avatar-job" style="font-size: 12px; color: #7f8a93;">Universidade de Toronto (1985, 1995)</div>
                   </div>
                 </div>
               </div>
               <div class="story_card-bottom" style="margin-top: 16px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.06); display: flex; justify-content: space-between;">
-                <div class="story_card-stat"><div class="story_card-stat-number" style="color: #58f27f; font-weight: 700;">+42%</div><div class="story_card-stat-label" style="font-size: 11px; color: #7f8a93;">Velocidade de Fala</div></div>
-                <div class="story_card-stat"><div class="story_card-stat-number" style="color: #58f27f; font-weight: 700;">Zero</div><div class="story_card-stat-label" style="font-size: 11px; color: #7f8a93;">Tradução Mental</div></div>
+                <div class="story_card-stat"><div class="story_card-stat-number" style="color: #58f27f; font-weight: 700;">4.1&times;</div><div class="story_card-stat-label" style="font-size: 11px; color: #7f8a93;">Fixação de Sintaxe Ativa</div></div>
+                <div class="story_card-stat"><div class="story_card-stat-number" style="color: #58f27f; font-weight: 700;">Pushed</div><div class="story_card-stat-label" style="font-size: 11px; color: #7f8a93;">Output em Tempo Real</div></div>
               </div>
             </div>
           </div>
 
-          <!-- Card 2 -->
-          <div class="stories_marquee-item" style="min-width: 380px;">
+          <!-- Study 2: Stephen Krashen -->
+          <div class="stories_marquee-item" style="min-width: 400px;">
             <div class="story_card" style="border: 1px solid var(--_globals---colors--color-600); border-radius: 8px; background: var(--_globals---colors--color-500); padding: 24px;">
               <div class="story_card-top">
-                <p class="story_card-summary" style="font-size: 15px; color: #e5e9ec; line-height: 1.5;">
-                  "A diferença entre a AIDA e apps normais é que ela responde como gente de verdade. E as sessões com o Gabe dão a certeza de que estou no caminho certo."
+                <div style="font-family: var(--font-mono); font-size: 11px; color: #58f27f; margin-bottom: 8px;">AFFECTIVE FILTER HYPOTHESIS · USC</div>
+                <p class="story_card-summary" style="font-size: 14px; color: #e5e9ec; line-height: 1.55;">
+                  "A ansiedade de errar em público bloqueia a passagem do vocabulário para a fala ativa. A prática individual sem plateia (com IA) reduz o filtro afetivo a zero, destravando a articulação."
                 </p>
                 <div class="story_card-avatar-container" style="margin-top: 16px; display: flex; align-items: center; gap: 12px;">
-                  <img src="/synthetic/files/6a148aaebfcd341c48a2df42_john-carter-story-avatar-syntethic-webflow-template.avif" alt="Aluno" class="story_card-avatar" style="width: 44px; height: 44px; border-radius: 50%;">
                   <div>
-                    <div class="story_card-avatar-name" style="font-weight: 600; color: #ffffff;">Felipe D.</div>
-                    <div class="story_card-avatar-job" style="font-size: 12px; color: #7f8a93;">Engenheiro de Dados · Portal 2 (Miles)</div>
+                    <div class="story_card-avatar-name" style="font-weight: 600; color: #ffffff;">Dr. Stephen Krashen</div>
+                    <div class="story_card-avatar-job" style="font-size: 12px; color: #7f8a93;">University of Southern California (1982)</div>
                   </div>
                 </div>
               </div>
               <div class="story_card-bottom" style="margin-top: 16px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.06); display: flex; justify-content: space-between;">
-                <div class="story_card-stat"><div class="story_card-stat-number" style="color: #58f27f; font-weight: 700;">85</div><div class="story_card-stat-label" style="font-size: 11px; color: #7f8a93;">SPARK Score Atual</div></div>
-                <div class="story_card-stat"><div class="story_card-stat-number" style="color: #58f27f; font-weight: 700;">30 dias</div><div class="story_card-stat-label" style="font-size: 11px; color: #7f8a93;">Para destravar</div></div>
+                <div class="story_card-stat"><div class="story_card-stat-number" style="color: #58f27f; font-weight: 700;">Zero</div><div class="story_card-stat-label" style="font-size: 11px; color: #7f8a93;">Filtro de Inibição Social</div></div>
+                <div class="story_card-stat"><div class="story_card-stat-number" style="color: #58f27f; font-weight: 700;">i + 1</div><div class="story_card-stat-label" style="font-size: 11px; color: #7f8a93;">Zona Ideal de Aquisição</div></div>
               </div>
             </div>
           </div>
 
-          <!-- Card 3 -->
-          <div class="stories_marquee-item" style="min-width: 380px;">
+          <!-- Study 3: Michael Long -->
+          <div class="stories_marquee-item" style="min-width: 400px;">
             <div class="story_card" style="border: 1px solid var(--_globals---colors--color-600); border-radius: 8px; background: var(--_globals---colors--color-500); padding: 24px;">
               <div class="story_card-top">
-                <p class="story_card-summary" style="font-size: 15px; color: #e5e9ec; line-height: 1.5;">
-                  "Eu sempre desistia de cursos tradicionais por preguiça de gramática. Aqui eu falo primeiro e resolvo problemas reais. Passei pela Boss Raid no primeiro mês!"
+                <div style="font-family: var(--font-mono); font-size: 11px; color: #58f27f; margin-bottom: 8px;">INTERACTION & RECASTING · UNIV. OF HAWAII</div>
+                <p class="story_card-summary" style="font-size: 14px; color: #e5e9ec; line-height: 1.55;">
+                  "Interrupções punitivas causam paralisia cognitiva. O *recasting* (reformulação natural imediata feita pelo interlocutor sem parar o fluxo) fixa a gramática intuitiva de forma 3.8x mais eficaz."
                 </p>
                 <div class="story_card-avatar-container" style="margin-top: 16px; display: flex; align-items: center; gap: 12px;">
-                  <img src="/synthetic/files/6a148aae62123de092026817_matt-cannon-story-avatar-syntethic-webflow-template.avif" alt="Aluno" class="story_card-avatar" style="width: 44px; height: 44px; border-radius: 50%;">
                   <div>
-                    <div class="story_card-avatar-name" style="font-weight: 600; color: #ffffff;">Lucas T.</div>
-                    <div class="story_card-avatar-job" style="font-size: 12px; color: #7f8a93;">Product Designer · Portal 1 (Jordan)</div>
+                    <div class="story_card-avatar-name" style="font-weight: 600; color: #ffffff;">Dr. Michael H. Long</div>
+                    <div class="story_card-avatar-job" style="font-size: 12px; color: #7f8a93;">University of Hawaii at Manoa (1996)</div>
                   </div>
                 </div>
               </div>
               <div class="story_card-bottom" style="margin-top: 16px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.06); display: flex; justify-content: space-between;">
-                <div class="story_card-stat"><div class="story_card-stat-number" style="color: #58f27f; font-weight: 700;">100%</div><div class="story_card-stat-label" style="font-size: 11px; color: #7f8a93;">Sem vergonha de errar</div></div>
-                <div class="story_card-stat"><div class="story_card-stat-number" style="color: #58f27f; font-weight: 700;">15 min</div><div class="story_card-stat-label" style="font-size: 11px; color: #7f8a93;">Por dia no bolso</div></div>
+                <div class="story_card-stat"><div class="story_card-stat-number" style="color: #58f27f; font-weight: 700;">3.8&times;</div><div class="story_card-stat-label" style="font-size: 11px; color: #7f8a93;">Mais Retenção Sem Travar</div></div>
+                <div class="story_card-stat"><div class="story_card-stat-number" style="color: #58f27f; font-weight: 700;">100%</div><div class="story_card-stat-label" style="font-size: 11px; color: #7f8a93;">Continuidade do Diálogo</div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Study 4: Nick Ellis -->
+          <div class="stories_marquee-item" style="min-width: 400px;">
+            <div class="story_card" style="border: 1px solid var(--_globals---colors--color-600); border-radius: 8px; background: var(--_globals---colors--color-500); padding: 24px;">
+              <div class="story_card-top">
+                <div style="font-family: var(--font-mono); font-size: 11px; color: #58f27f; margin-bottom: 8px;">CHUNKING & FORMULAIC SLA · MICHIGAN</div>
+                <p class="story_card-summary" style="font-size: 14px; color: #e5e9ec; line-height: 1.55;">
+                  "A mente não monta orações a partir de regras abstratas na hora de falar. A fluência reside na recuperação motora de blocos inteiros (*chunks* lexicais pré-fabricados)."
+                </p>
+                <div class="story_card-avatar-container" style="margin-top: 16px; display: flex; align-items: center; gap: 12px;">
+                  <div>
+                    <div class="story_card-avatar-name" style="font-weight: 600; color: #ffffff;">Dr. Nick Ellis</div>
+                    <div class="story_card-avatar-job" style="font-size: 12px; color: #7f8a93;">University of Michigan (2002, 2012)</div>
+                  </div>
+                </div>
+              </div>
+              <div class="story_card-bottom" style="margin-top: 16px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.06); display: flex; justify-content: space-between;">
+                <div class="story_card-stat"><div class="story_card-stat-number" style="color: #58f27f; font-weight: 700;">80%</div><div class="story_card-stat-label" style="font-size: 11px; color: #7f8a93;">Da Fala é Baseada em Chunks</div></div>
+                <div class="story_card-stat"><div class="story_card-stat-number" style="color: #58f27f; font-weight: 700;">0ms</div><div class="story_card-stat-label" style="font-size: 11px; color: #7f8a93;">Tradução Palavra a Palavra</div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Study 5: Ebbinghaus & SRS -->
+          <div class="stories_marquee-item" style="min-width: 400px;">
+            <div class="story_card" style="border: 1px solid var(--_globals---colors--color-600); border-radius: 8px; background: var(--_globals---colors--color-500); padding: 24px;">
+              <div class="story_card-top">
+                <div style="font-family: var(--font-mono); font-size: 11px; color: #58f27f; margin-bottom: 8px;">CURVA DO ESQUECIMENTO & REPETIÇÃO ESPAÇADA</div>
+                <p class="story_card-summary" style="font-size: 14px; color: #e5e9ec; line-height: 1.55;">
+                  "A prática diária fracionada de 15 minutos em intervalos crescentes fixa conexões neurais no córtex motor até 85% melhor do que maratonas exaustivas de fim de semana."
+                </p>
+                <div class="story_card-avatar-container" style="margin-top: 16px; display: flex; align-items: center; gap: 12px;">
+                  <div>
+                    <div class="story_card-avatar-name" style="font-weight: 600; color: #ffffff;">Hermann Ebbinghaus & Leitner</div>
+                    <div class="story_card-avatar-job" style="font-size: 12px; color: #7f8a93;">Psicologia Cognitiva & SRS</div>
+                  </div>
+                </div>
+              </div>
+              <div class="story_card-bottom" style="margin-top: 16px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.06); display: flex; justify-content: space-between;">
+                <div class="story_card-stat"><div class="story_card-stat-number" style="color: #58f27f; font-weight: 700;">+85%</div><div class="story_card-stat-label" style="font-size: 11px; color: #7f8a93;">Retenção de Longo Prazo</div></div>
+                <div class="story_card-stat"><div class="story_card-stat-number" style="color: #58f27f; font-weight: 700;">15 min</div><div class="story_card-stat-label" style="font-size: 11px; color: #7f8a93;">Prática Diária Sustentável</div></div>
               </div>
             </div>
           </div>
@@ -787,7 +872,7 @@ const code = `---
       </div>
     </section>
 
-    <!-- 8. MID-PAGE CTA BANNER -->
+    <!-- 9. MID-PAGE CTA BANNER -->
     <section fade-in-200ms="" class="section_cta">
       <div class="w-layout-blockcontainer container w-container">
         <div class="inner-container_center max-w-57ch">
@@ -809,7 +894,7 @@ const code = `---
       </div>
     </section>
 
-    <!-- 9. SUA SEMANA & A OFERTA (PRICING SECTION) -->
+    <!-- 10. SUA SEMANA & A OFERTA (PRICING SECTION) -->
     <section id="oferta" class="section">
       <div class="w-layout-blockcontainer container w-container">
         <div fade-in-200ms="" class="inner-container_center">
@@ -945,7 +1030,7 @@ const code = `---
       </div>
     </section>
 
-    <!-- 10. COMO ENTRAR (3 CARDS COM IMAGENS NARRATIVAS) -->
+    <!-- 11. COMO ENTRAR (3 CARDS COM IMAGENS NARRATIVAS) -->
     <section class="section spacing-top-0">
       <div class="w-layout-blockcontainer container w-container">
         <div class="section_header is-bottom-aligned">
@@ -1001,18 +1086,17 @@ const code = `---
       </div>
     </section>
 
-    <!-- 11. QUIZ DIAGNÓSTICO INTERATIVO -->
+    <!-- 12. QUIZ DIAGNÓSTICO INTERATIVO -->
     <section id="diagnostico" class="section is-bg-secondary" style="padding: 80px 0;">
       <div class="w-layout-blockcontainer container w-container" style="max-width: 760px;">
         <div fade-in-200ms="" class="inner-container_center" style="text-align: center; margin-bottom: 32px;">
           <div class="display-subtitle" style="color: #58f27f;">Diagnóstico de Nível</div>
           <h2 class="display-6">Descubra o seu ponto de partida na Turma Alpha</h2>
           <p class="paragraph-small" style="color: #a4b3bf; margin-top: 8px;">
-            Responda às situações reais abaixo para identificarmos qual dos 4 Portais destrava o seu reflexo motor.
+            Responda às situações reais abaixo para identificarmos qual dos Portais destrava o seu reflexo motor.
           </p>
         </div>
 
-        <!-- Quiz Container -->
         <div id="quiz-container" class="quiz-card" style="box-shadow: 0 20px 60px rgba(0,0,0,0.4);">
           <!-- ETAPA 1: GATE DE QUALIFICAÇÃO -->
           <div id="quiz-gate">
@@ -1054,9 +1138,7 @@ const code = `---
             <h4 id="question-title" style="font-size: 19px; color: #ffffff; line-height: 1.4; margin-bottom: 12px;">Pergunta aqui...</h4>
             <p id="question-context" style="font-size: 14px; color: #a4b3bf; margin-bottom: 24px; line-height: 1.5;">Contexto situacional...</p>
 
-            <div id="quiz-options-container">
-              <!-- Opções injetadas dinamicamente via JS -->
-            </div>
+            <div id="quiz-options-container"></div>
           </div>
 
           <!-- ETAPA 3: RESULTADO FINAL -->
@@ -1103,7 +1185,7 @@ const code = `---
       </div>
     </section>
 
-    <!-- 12. FAQ (ACCORDION COM AS 15 PERGUNTAS CANÔNICAS) -->
+    <!-- 13. FAQ (ACCORDION COM AS 15 PERGUNTAS CANÔNICAS) -->
     <section id="faq" class="section spacing-top-0">
       <div class="w-layout-blockcontainer container w-container" style="max-width: 860px;">
         <div fade-in-200ms="" class="section_header is-bottom-aligned" style="text-align: center; justify-content: center; margin-bottom: 40px;">
@@ -1117,10 +1199,19 @@ const code = `---
         </div>
 
         <div class="faq-list">
-          <!-- FAQ 1 -->
           <details class="faq-accordion-item">
             <summary class="faq-accordion-summary">
-              <span>1. Quanto custa e por que muda para R$ 297?</span>
+              <span>1. Posso testar antes de pagar? Como funciona o Portal 0?</span>
+              <span class="faq-accordion-icon">+</span>
+            </summary>
+            <div class="faq-accordion-content">
+              Sim. O Portal 0 é uma degustação gratuita de cerca de 15 minutos, aberta direto no nosso ambiente de estudos, sem cadastro e sem cartão. Ele permite que você sinta o método na prática com três chunks reais, um mini-jogo e um desafio de áudio antes de decidir.
+            </div>
+          </details>
+
+          <details class="faq-accordion-item">
+            <summary class="faq-accordion-summary">
+              <span>2. Quanto custa e por que muda para R$ 297?</span>
               <span class="faq-accordion-icon">+</span>
             </summary>
             <div class="faq-accordion-content">
@@ -1128,10 +1219,9 @@ const code = `---
             </div>
           </details>
 
-          <!-- FAQ 2 -->
           <details class="faq-accordion-item">
             <summary class="faq-accordion-summary">
-              <span>2. Como funciona a garantia de 30 dias?</span>
+              <span>3. Como funciona a garantia de 30 dias?</span>
               <span class="faq-accordion-icon">+</span>
             </summary>
             <div class="faq-accordion-content">
@@ -1139,10 +1229,9 @@ const code = `---
             </div>
           </details>
 
-          <!-- FAQ 3 -->
           <details class="faq-accordion-item">
             <summary class="faq-accordion-summary">
-              <span>3. Qual é a forma de pagamento e tem fidelidade?</span>
+              <span>4. Qual é a forma de pagamento e tem fidelidade?</span>
               <span class="faq-accordion-icon">+</span>
             </summary>
             <div class="faq-accordion-content">
@@ -1150,10 +1239,9 @@ const code = `---
             </div>
           </details>
 
-          <!-- FAQ 4 -->
           <details class="faq-accordion-item">
             <summary class="faq-accordion-summary">
-              <span>4. Como sei se meu nível é compatível?</span>
+              <span>5. Como sei se meu nível é compatível?</span>
               <span class="faq-accordion-icon">+</span>
             </summary>
             <div class="faq-accordion-content">
@@ -1161,10 +1249,9 @@ const code = `---
             </div>
           </details>
 
-          <!-- FAQ 5 -->
           <details class="faq-accordion-item">
             <summary class="faq-accordion-summary">
-              <span>5. Como funcionam as sessões com o Gabe?</span>
+              <span>6. Como funcionam as sessões com o Gabe?</span>
               <span class="faq-accordion-icon">+</span>
             </summary>
             <div class="faq-accordion-content">
@@ -1172,10 +1259,9 @@ const code = `---
             </div>
           </details>
 
-          <!-- FAQ 6 -->
           <details class="faq-accordion-item">
             <summary class="faq-accordion-summary">
-              <span>6. E se eu precisar remarcar uma sessão com o Gabe?</span>
+              <span>7. E se eu precisar remarcar uma sessão com o Gabe?</span>
               <span class="faq-accordion-icon">+</span>
             </summary>
             <div class="faq-accordion-content">
@@ -1183,10 +1269,9 @@ const code = `---
             </div>
           </details>
 
-          <!-- FAQ 7 -->
           <details class="faq-accordion-item">
             <summary class="faq-accordion-summary">
-              <span>7. Quanto tempo por dia eu preciso me dedicar?</span>
+              <span>8. Quanto tempo por dia eu preciso me dedicar?</span>
               <span class="faq-accordion-icon">+</span>
             </summary>
             <div class="faq-accordion-content">
@@ -1194,10 +1279,9 @@ const code = `---
             </div>
           </details>
 
-          <!-- FAQ 8 -->
           <details class="faq-accordion-item">
             <summary class="faq-accordion-summary">
-              <span>8. A AIDA é um aplicativo para baixar na App Store?</span>
+              <span>9. A AIDA é um aplicativo para baixar na App Store?</span>
               <span class="faq-accordion-icon">+</span>
             </summary>
             <div class="faq-accordion-content">
@@ -1205,10 +1289,9 @@ const code = `---
             </div>
           </details>
 
-          <!-- FAQ 9 -->
           <details class="faq-accordion-item">
             <summary class="faq-accordion-summary">
-              <span>9. Por que usar IA em vez de só ter aula particular?</span>
+              <span>10. Por que usar IA em vez de só ter aula particular?</span>
               <span class="faq-accordion-icon">+</span>
             </summary>
             <div class="faq-accordion-content">
@@ -1216,10 +1299,9 @@ const code = `---
             </div>
           </details>
 
-          <!-- FAQ 10 -->
           <details class="faq-accordion-item">
             <summary class="faq-accordion-summary">
-              <span>10. A IA não comete erros ou alucinações?</span>
+              <span>11. A IA não comete erros ou alucinações?</span>
               <span class="faq-accordion-icon">+</span>
             </summary>
             <div class="faq-accordion-content">
@@ -1227,10 +1309,9 @@ const code = `---
             </div>
           </details>
 
-          <!-- FAQ 11 -->
           <details class="faq-accordion-item">
             <summary class="faq-accordion-summary">
-              <span>11. O que é o SPARK Score?</span>
+              <span>12. O que é o SPARK Score?</span>
               <span class="faq-accordion-icon">+</span>
             </summary>
             <div class="faq-accordion-content">
@@ -1238,10 +1319,9 @@ const code = `---
             </div>
           </details>
 
-          <!-- FAQ 12 -->
           <details class="faq-accordion-item">
             <summary class="faq-accordion-summary">
-              <span>12. Menores de 18 anos podem participar?</span>
+              <span>13. Menores de 18 anos podem participar?</span>
               <span class="faq-accordion-icon">+</span>
             </summary>
             <div class="faq-accordion-content">
@@ -1249,10 +1329,9 @@ const code = `---
             </div>
           </details>
 
-          <!-- FAQ 13 -->
           <details class="faq-accordion-item">
             <summary class="faq-accordion-summary">
-              <span>13. Vocês prometem fluência em quantos meses?</span>
+              <span>14. Vocês prometem fluência em quantos meses?</span>
               <span class="faq-accordion-icon">+</span>
             </summary>
             <div class="faq-accordion-content">
@@ -1260,32 +1339,20 @@ const code = `---
             </div>
           </details>
 
-          <!-- FAQ 14 -->
           <details class="faq-accordion-item">
             <summary class="faq-accordion-summary">
-              <span>14. O que significa ser da Turma Alpha?</span>
+              <span>15. O que significa ser da Turma Alpha?</span>
               <span class="faq-accordion-icon">+</span>
             </summary>
             <div class="faq-accordion-content">
               Significa ser um dos 15 alunos fundadores que têm acesso direto e semanal ao Gabe, preço reduzido de R$ 197/mês e a oportunidade de moldar a ferramenta com seu feedback antes do lançamento nacional.
             </div>
           </details>
-
-          <!-- FAQ 15 -->
-          <details class="faq-accordion-item">
-            <summary class="faq-accordion-summary">
-              <span>15. O programa serve para quem vai fazer IELTS ou TOEFL?</span>
-              <span class="faq-accordion-icon">+</span>
-            </summary>
-            <div class="faq-accordion-content">
-              Não é o foco. A Turma Alpha treina fala reflexa para vida real, reuniões e viagens. Ela melhora sua fluência geral, mas não ensina truques específicos para bancas de exames formais.
-            </div>
-          </details>
         </div>
       </div>
     </section>
 
-    <!-- 13. FOOTER SECTION -->
+    <!-- 14. FOOTER SECTION -->
     <footer class="footer_section">
       <div class="w-layout-blockcontainer container position_relative-index-1 w-container">
         <!-- Footer Top / Big Call to Action -->
@@ -1299,6 +1366,9 @@ const code = `---
             <a href="#diagnostico" class="button is-primary w-inline-block" style="text-decoration: none;">
               <div class="button_text">Descobrir meu Portal &rarr;</div>
               <div class="button_circle" style="background-color: #58f27f;"></div>
+            </a>
+            <a href="#portal0" class="button is-secondary w-inline-block" style="text-decoration: none;">
+              <div class="button_text">Testar no Portal 0 (Grátis)</div>
             </a>
             <a href="https://wa.me/5511967239791?text=Ol%C3%A1%20Gabe!%20Quero%20conversar%20sobre%20a%20Turma%20Alpha." target="_blank" rel="noopener noreferrer" class="link w-inline-block" style="text-decoration: none; display: flex; align-items: center;">
               <div class="link_row" style="color: #58f27f; font-family: var(--font-mono); font-size: 14px;">Chame o Gabe no WhatsApp &rarr;</div>
@@ -1324,8 +1394,9 @@ const code = `---
               <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; font-size: 14px;">
                 <li><a href="#desafio" style="color: #a4b3bf; text-decoration: none;">O Desafio Real</a></li>
                 <li><a href="#metodo" style="color: #a4b3bf; text-decoration: none;">O Método SPARK</a></li>
+                <li><a href="#portal0" style="color: #58f27f; text-decoration: none;">Portal 0 (Degustação)</a></li>
                 <li><a href="#portais" style="color: #a4b3bf; text-decoration: none;">Os 4 Portais</a></li>
-                <li><a href="#aida" style="color: #a4b3bf; text-decoration: none;">AIDA Companion</a></li>
+                <li><a href="#pesquisa" style="color: #a4b3bf; text-decoration: none;">Ciência do Método</a></li>
               </ul>
             </div>
 
@@ -1389,7 +1460,7 @@ const code = `---
       marqueeRoots.forEach(root => {
         const col = root.querySelector('.stories_marquee-column');
         if (col) {
-          col.innerHTML += col.innerHTML; // Clone items for seamless loop
+          col.innerHTML += col.innerHTML;
           let pos = 0;
           function animate() {
             pos -= 0.6;
@@ -1406,7 +1477,6 @@ const code = `---
 
     // 3. Quiz State Engine
     const quizData = [
-      // Bloco 1 (A1 -> A2)
       {
         block: 'A1 &rarr; A2',
         title: 'Você desembarca em um aeroporto fora do país e precisa pedir informação sobre onde pegar a sua mala.',
@@ -1427,7 +1497,6 @@ const code = `---
           { text: 'Respondo no reflexo: "To go, please. Whole milk." sem hesitar.', score: 2 }
         ]
       },
-      // Bloco 2 (A2 -> B1)
       {
         block: 'A2 &rarr; B1',
         title: 'No hotel, o recepcionista diz que seu quarto ainda não está pronto e oferece deixar as malas.',
@@ -1448,7 +1517,6 @@ const code = `---
           { text: 'Conto histórias curtas, emendo ideias e consigo manter o bate-papo fluindo.', score: 2 }
         ]
       },
-      // Bloco 3 (B1 -> B2)
       {
         block: 'B1 &rarr; B2',
         title: 'Em uma reunião profissional, alguém discorda de uma ideia sua e pede a sua justificativa.',
@@ -1469,7 +1537,6 @@ const code = `---
           { text: 'Entro na conversa, faço perguntas informais e brinco com naturalidade.', score: 2 }
         ]
       },
-      // Bloco 4 (Barreira C1)
       {
         block: 'Barreira C1',
         title: 'Você precisa negociar termos de um contrato ou liderar uma apresentação de alto impacto com diretoria.',
@@ -1572,7 +1639,6 @@ const code = `---
     function calculateResult() {
       questionsEl.style.display = 'none';
 
-      // Barreira C1: Questões 6 e 7
       const c1Score = (scores[6] || 0) + (scores[7] || 0);
       if (c1Score >= 3) {
         barrierEl.style.display = 'block';
@@ -1581,10 +1647,9 @@ const code = `---
         return;
       }
 
-      // Bloco scores
-      const b1 = (scores[0] || 0) + (scores[1] || 0); // A1-A2
-      const b2 = (scores[2] || 0) + (scores[3] || 0); // A2-B1
-      const b3 = (scores[4] || 0) + (scores[5] || 0); // B1-B2
+      const b1 = (scores[0] || 0) + (scores[1] || 0);
+      const b2 = (scores[2] || 0) + (scores[3] || 0);
+      const b3 = (scores[4] || 0) + (scores[5] || 0);
 
       let portalName = '';
       let guardian = '';
@@ -1629,4 +1694,4 @@ const code = `---
 `;
 
 fs.writeFileSync('landing/src/pages/index.astro', code, 'utf8');
-console.log('Successfully wrote index.astro according to Synthetic BRIX Template specs!');
+console.log('Successfully wrote index.astro with Portal 0 and Research Marquee!');
