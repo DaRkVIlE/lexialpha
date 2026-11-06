@@ -1,7 +1,7 @@
 ---
-// src/pages/index.astro — LexiQuest Alpha v2
-// Baseado 100% no Design System Aether Webflow
-// Foco: Storytelling Visual, Imagens Canônicas, Quizz Corrigido e Identidade LexiQuest
+// src/pages/index.astro — LexiQuest Alpha (Impeccable & Design System Elevation)
+// Tokens: 100% Aether Webflow Design System (Three-layer token hierarchy)
+// Layout: Rítmico, sem cards aninhados, sem emojis, tipografia e espaçamentos canônicos
 import '../styles/aether.css';
 ---
 
@@ -40,7 +40,20 @@ import '../styles/aether.css';
   <meta name="twitter:image" content="https://landing-pi-jade-44.vercel.app/assets/og-card.png" />
 
   <style is:global>
-    /* Suporte suave a rolagem e paleta Aether */
+    /* ============================================================
+       DESIGN SYSTEM: SEMANTIC TOKENS & CRAFT OVERRIDES
+       ============================================================ */
+    :root {
+      --brand-green: #58f27f;
+      --brand-green-muted: rgba(88, 242, 127, 0.15);
+      --brand-green-border: rgba(88, 242, 127, 0.35);
+      --surface-dark: #121212;
+      --surface-elevated: #161616;
+      --border-subtle: #1c1c1c;
+      --border-medium: #262626;
+      --text-muted: #8d9399;
+    }
+
     html {
       scroll-behavior: smooth;
       background-color: var(--black, #0d0d0d);
@@ -51,32 +64,165 @@ import '../styles/aether.css';
       color: var(--white, #ffffff);
       margin: 0;
       overflow-x: hidden;
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: var(--_typography---font-family--primary-font, 'Inter', sans-serif);
+      -webkit-font-smoothing: antialiased;
     }
+
+    /* Utilitários semânticos */
     .text-lime {
-      color: #58f27f !important;
+      color: var(--brand-green) !important;
     }
-    
-    /* ==========================================
-       QUIZ STYLES (GLOBAL FIX: NUNCA MAIS ESBRANQUIÇADO)
-       ========================================== */
-    .quiz-card-aether {
-      background-color: #121212 !important;
-      border: 1px solid #222222 !important;
-      border-radius: 24px;
-      padding: 36px;
+    .text-muted {
+      color: var(--text-muted) !important;
+    }
+
+    /* ============================================================
+       SIMULADOR DA CAFETERIA (ESTILIZAÇÃO AETHER & CRAFT FLOOR)
+       Sem emojis, sem bordas esquerdas de 3px, design puro
+       ============================================================ */
+    .sim-tab-btn {
+      padding: 10px 22px;
+      border-radius: 99px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1px solid var(--border-medium);
+      background: var(--surface-dark);
+      color: var(--text-muted);
+      transition: all 0.25s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      outline: none;
+    }
+    .sim-tab-btn:hover {
+      border-color: #383838;
+      color: #ffffff;
+    }
+    .sim-tab-btn.active-trad {
+      background: rgba(248, 113, 113, 0.1) !important;
+      border-color: rgba(248, 113, 113, 0.4) !important;
+      color: #fca5a5 !important;
+    }
+    .sim-tab-btn.active-lexi {
+      background: var(--brand-green-muted) !important;
+      border-color: var(--brand-green-border) !important;
+      color: var(--brand-green) !important;
+    }
+
+    .sim-chat-box {
+      background-color: var(--surface-dark);
+      border: 1px solid var(--stroke-colour, #171717);
+      border-radius: 20px;
+      padding: 32px;
       max-width: 820px;
       margin: 0 auto;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    }
+    .chat-bubble {
+      padding: 18px 22px;
+      border-radius: 14px;
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 14px;
+      transition: all 0.2s ease;
+    }
+    .chat-bubble-user {
+      background: var(--surface-elevated);
+      border: 1px solid var(--border-medium);
+      color: #ffffff;
+    }
+    .chat-bubble-trad {
+      background: rgba(248, 113, 113, 0.05);
+      border: 1px solid rgba(248, 113, 113, 0.2);
+      color: #fca5a5;
+    }
+    .chat-bubble-lexi {
+      background: rgba(88, 242, 127, 0.05);
+      border: 1px solid rgba(88, 242, 127, 0.2);
+      color: #bbf7d0;
+    }
+
+    /* ============================================================
+       FEATURE TABS: ESTÁGIOS DE FALA (AETHER NATIVO)
+       ============================================================ */
+    .stage-tab-item {
+      padding: 10px 20px;
+      border-radius: 8px;
+      border: 1px solid var(--border-subtle);
+      background-color: var(--surface-dark);
+      color: var(--text-muted);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+    .stage-tab-item:hover {
+      border-color: var(--border-medium);
+      color: #ffffff;
+    }
+    .stage-tab-item.active {
+      border-color: var(--brand-green-border);
+      background-color: var(--brand-green-muted);
+      color: var(--brand-green);
+    }
+
+    .stage-card-wrapper {
+      border: 1px solid var(--stroke-colour, #171717);
+      border-radius: 20px;
+      background-color: var(--surface-dark);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: stretch;
+      margin-top: 36px;
+    }
+    @media (max-width: 991px) {
+      .stage-card-wrapper {
+        grid-template-columns: 1fr;
+      }
+    }
+    .stage-card-content {
+      padding: 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .stage-card-media {
       position: relative;
+      background: #080808;
+      overflow: hidden;
+      min-height: 320px;
+    }
+    .stage-card-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: opacity 0.3s ease;
+    }
+
+    /* ============================================================
+       QUIZ STYLES (IMPECCABLE PRECISION & ZERO ESBRANQUIÇADO)
+       ============================================================ */
+    .quiz-card-aether {
+      background-color: var(--surface-dark) !important;
+      border: 1px solid var(--stroke-colour, #171717) !important;
+      border-radius: 24px;
+      padding: 40px;
+      max-width: 800px;
+      margin: 0 auto;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
     }
     .quiz-option-btn {
       width: 100% !important;
       text-align: left !important;
       padding: 20px 24px !important;
       border-radius: 14px !important;
-      background-color: #161616 !important;
-      border: 1px solid #262626 !important;
+      background-color: var(--surface-elevated) !important;
+      border: 1px solid var(--border-medium) !important;
       color: #ffffff !important;
       display: flex !important;
       align-items: center !important;
@@ -87,24 +233,20 @@ import '../styles/aether.css';
       line-height: 1.5 !important;
       box-sizing: border-box !important;
       outline: none !important;
-      box-shadow: none !important;
     }
     .quiz-option-btn:hover {
-      border-color: #58f27f !important;
-      background-color: #1c1c1c !important;
+      border-color: var(--brand-green) !important;
+      background-color: #1a1a1a !important;
       transform: translateY(-2px);
-      box-shadow: 0 8px 24px -4px rgba(88, 242, 127, 0.2) !important;
-    }
-    .quiz-option-btn:active {
-      transform: scale(0.99);
+      box-shadow: 0 8px 24px -4px rgba(88, 242, 127, 0.18) !important;
     }
     .quiz-opt-letter {
       width: 32px !important;
       height: 32px !important;
-      border-radius: 9px !important;
+      border-radius: 8px !important;
       background-color: #222222 !important;
       border: 1px solid #2e2e2e !important;
-      color: #58f27f !important;
+      color: var(--brand-green) !important;
       font-weight: 800 !important;
       font-size: 14px !important;
       display: flex !important;
@@ -114,15 +256,15 @@ import '../styles/aether.css';
       transition: all 0.2s ease !important;
     }
     .quiz-option-btn:hover .quiz-opt-letter {
-      background-color: #58f27f !important;
+      background-color: var(--brand-green) !important;
       color: #0d0d0d !important;
     }
     .quiz-input-field {
       width: 100% !important;
       padding: 18px 20px !important;
       border-radius: 12px !important;
-      background-color: #161616 !important;
-      border: 1px solid #292929 !important;
+      background-color: var(--surface-elevated) !important;
+      border: 1px solid var(--border-medium) !important;
       color: #ffffff !important;
       font-size: 15px !important;
       outline: none !important;
@@ -130,131 +272,22 @@ import '../styles/aether.css';
       transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
     }
     .quiz-input-field:focus {
-      border-color: #58f27f !important;
+      border-color: var(--brand-green) !important;
       box-shadow: 0 0 0 3px rgba(88, 242, 127, 0.15) !important;
-    }
-
-    /* ==========================================
-       STORYTELLING & INTERACTIVE WIDGETS
-       ========================================== */
-    .story-toggle-btn {
-      padding: 12px 24px;
-      border-radius: 99px;
-      font-size: 14px;
-      font-weight: 600;
-      cursor: pointer;
-      border: 1px solid #292929;
-      background: #141414;
-      color: #888888;
-      transition: all 0.25s ease;
-      outline: none;
-    }
-    .story-toggle-btn.active-trad {
-      background: #2a1515 !important;
-      border-color: #f87171 !important;
-      color: #fca5a5 !important;
-    }
-    .story-toggle-btn.active-lexi {
-      background: #122417 !important;
-      border-color: #58f27f !important;
-      color: #58f27f !important;
-      box-shadow: 0 0 20px rgba(88, 242, 127, 0.2) !important;
-    }
-    .dialogue-bubble {
-      padding: 16px 20px;
-      border-radius: 16px;
-      font-size: 14px;
-      line-height: 1.6;
-      margin-bottom: 12px;
-      animation: fadeInBubble 0.3s ease;
-    }
-    @keyframes fadeInBubble {
-      from { opacity: 0; transform: translateY(6px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .bubble-user {
-      background: #1e1e1e;
-      border: 1px solid #2e2e2e;
-      color: #ffffff;
-      align-self: flex-start;
-      border-bottom-left-radius: 4px;
-    }
-    .bubble-error {
-      background: #2b1111;
-      border: 1px solid #7f1d1d;
-      color: #fca5a5;
-      align-self: flex-end;
-      border-bottom-right-radius: 4px;
-    }
-    .bubble-success {
-      background: #0d2616;
-      border: 1px solid #166534;
-      color: #86efac;
-      align-self: flex-end;
-      border-bottom-right-radius: 4px;
-    }
-
-    /* Floating Showcase Glow */
-    .hero-device-wrapper {
-      position: relative;
-      margin-top: 56px;
-      border-radius: 24px;
-      padding: 8px;
-      background: linear-gradient(180deg, rgba(88, 242, 127, 0.3) 0%, rgba(255, 255, 255, 0.05) 50%, rgba(0, 0, 0, 0.8) 100%);
-      box-shadow: 0 30px 100px -20px rgba(88, 242, 127, 0.2);
-    }
-    .hero-device-inner {
-      border-radius: 18px;
-      overflow: hidden;
-      position: relative;
-      background: #0d0d0d;
-      border: 1px solid #222222;
-    }
-    .hero-device-img {
-      width: 100%;
-      height: auto;
-      display: block;
-      filter: contrast(1.05);
-      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .hero-device-wrapper:hover .hero-device-img {
-      transform: scale(1.015);
-    }
-    .floating-chip {
-      position: absolute;
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      background: rgba(18, 18, 18, 0.88);
-      border: 1px solid rgba(88, 242, 127, 0.35);
-      padding: 10px 18px;
-      border-radius: 99px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 13px;
-      font-weight: 600;
-      color: #ffffff;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
-      animation: floatChip 4s ease-in-out infinite alternate;
-      z-index: 2;
-    }
-    @keyframes floatChip {
-      0% { transform: translateY(0px); }
-      100% { transform: translateY(-8px); }
     }
   </style>
 </head>
 <body>
   <div class="page-wrapper">
 
-    <!-- NAVBAR (LexiQuest Oficial Branding) -->
+    <!-- NAVBAR (Identidade LexiQuest Oficial) -->
     <div class="navbar">
       <div role="banner" class="navbar-wrap w-nav">
         <div class="navbar-container">
           <div class="navbar-wrapper">
             <div class="nav-left">
               <a href="#" class="navbar-brand w-nav-brand w--current" aria-label="home" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
-                <!-- Logo SVG LexiQuest -->
+                <!-- Logo Vetorial LexiQuest -->
                 <div style="width: 38px; height: 38px; border-radius: 10px; background: #141414; border: 1px solid #282828; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(88, 242, 127, 0.15);">
                   <svg width="22" height="22" viewBox="0 0 48 48" fill="none">
                     <path d="M14 12V34H26" stroke="#58f27f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
@@ -273,7 +306,7 @@ import '../styles/aether.css';
 
             <nav role="navigation" class="nav-menu-wrapper w-nav-menu">
               <ul role="list" class="nav-menu-two w-list-unstyled">
-                <li class="nav-list-item"><a href="#historia" class="nav-link w-inline-block"><div class="body-s-medium">O Conflito</div></a></li>
+                <li class="nav-list-item"><a href="#problema" class="nav-link w-inline-block"><div class="body-s-medium">O Atrito</div></a></li>
                 <li class="nav-list-item"><a href="#simulador" class="nav-link w-inline-block"><div class="body-s-medium">Na Prática</div></a></li>
                 <li class="nav-list-item"><a href="#estagios" class="nav-link w-inline-block"><div class="body-s-medium">A Jornada</div></a></li>
                 <li class="nav-list-item"><a href="#metodo" class="nav-link w-inline-block"><div class="body-s-medium">Como Funciona</div></a></li>
@@ -306,12 +339,12 @@ import '../styles/aether.css';
       </div>
     </div>
 
-    <!-- HERO SECTION (Aether Editorial + Cinematic Artwork Showcase) -->
+    <!-- HERO SECTION (Aether Editorial Puro: Espaçoso, Simétrico e Sem Clutter) -->
     <section class="home-hero">
       <div class="container">
         <div class="home-hero-inner">
           <div class="home-hero-center">
-            <div data-wf--tag-box-wrap--variant="base" class="tag-box-wrap" style="justify-content: center; margin-bottom: 20px;">
+            <div data-wf--tag-box-wrap--variant="base" class="tag-box-wrap" style="justify-content: center; margin-bottom: 24px;">
               <div class="tag-box" style="border-color: rgba(88, 242, 127, 0.3);">
                 <div class="tag-icon"></div>
                 <div class="tag text-lime">Turma Alpha · 15 Vagas com Acompanhamento Direto</div>
@@ -350,33 +383,10 @@ import '../styles/aether.css';
               </a>
             </div>
           </div>
-
-          <!-- CINEMATIC ARTWORK SHOWCASE (Imagem Canônica da LexiQuest + Floating Badges) -->
-          <div class="hero-device-wrapper" style="max-width: 1040px; margin-left: auto; margin-right: auto;">
-            <div class="hero-device-inner">
-              <img
-                src="/assets/cover_hero.jpg"
-                alt="LexiQuest Cockpit de Aprendizagem com IA e Gabriel Lima"
-                class="hero-device-img"
-                loading="eager"
-              />
-              
-              <!-- Floating Micro-Badges -->
-              <div class="floating-chip" style="top: 24px; left: 24px;">
-                <span style="width: 8px; height: 8px; border-radius: 50%; background: #58f27f; box-shadow: 0 0 8px #58f27f;"></span>
-                <span>IA Companion 24/7 · Spaced Recasting</span>
-              </div>
-              <div class="floating-chip" style="bottom: 24px; right: 24px; animation-delay: 2s; border-color: rgba(255, 255, 255, 0.2);">
-                <span style="color: #58f27f;">🎙️</span>
-                <span>3x Semana com Gabriel Lima · 1-on-1</span>
-              </div>
-            </div>
-          </div>
-
         </div>
       </div>
 
-      <!-- Ambient portraits do Aether -->
+      <!-- Ambient portraits do Aether perfeitamente posicionados nas laterais -->
       <div class="hero-float" aria-hidden="true">
         <div class="hero-float-01 _01"><img src="/aether/6a71df2e01bdba7b0fbcaf8a_image%2013.webp" alt="Avatar" class="all-img" /></div>
         <div class="hero-float-01 _03"><img src="/aether/6a71df2dc9eed5a1cea7c2fd_image%2011.webp" alt="Avatar" class="all-img" /></div>
@@ -385,7 +395,7 @@ import '../styles/aether.css';
       </div>
     </section>
 
-    <!-- LOGOS / CREDENCIAIS MARQUEE -->
+    <!-- CREDENCIAIS & MARQUEE -->
     <section class="logos">
       <div class="section-02">
         <div class="container">
@@ -416,8 +426,8 @@ import '../styles/aether.css';
       </div>
     </section>
 
-    <!-- O CONFLITO REAL: POR QUE VOCÊ TRAVA? -->
-    <section class="service" id="historia">
+    <!-- O ATRITO: POR QUE VOCÊ TRAVA? (.service-grid Puro e Alinhado) -->
+    <section class="service" id="problema">
       <div class="section-02">
         <div class="container">
           <div class="section-inner">
@@ -425,19 +435,12 @@ import '../styles/aether.css';
               <div data-wf--tag-box-wrap--variant="blue" class="tag-box-wrap" style="justify-content: center; margin-bottom: 16px;">
                 <div class="tag-box">
                   <div class="tag-icon w-variant-2e667d52-7c51-ea40-1a61-1eb73fdb904c"></div>
-                  <div class="tag w-variant-2e667d52-7c51-ea40-1a61-1eb73fdb904c">O Grande Erro da Indústria</div>
+                  <div class="tag w-variant-2e667d52-7c51-ea40-1a61-1eb73fdb904c">A Causa da Insegurança</div>
                 </div>
               </div>
               <h2 class="h-02">Por que você estuda anos e trava na hora de falar?</h2>
               <div class="color-gray" style="margin-top: 16px;">
                 <div class="body-m-regular">O cérebro adulto não adquire fala por análise sintática. Quando a pressão sobe, regras gramaticais colapsam.</div>
-              </div>
-            </div>
-
-            <!-- Grid com Ilustração Canônica + 3 Fricções Aether -->
-            <div style="display: grid; grid-template-columns: 1fr; gap: 32px; margin-bottom: 48px;">
-              <div style="border-radius: 20px; overflow: hidden; border: 1px solid #1f1f1f; background: #121212;">
-                <img src="/assets/cap1_problema.jpg" alt="A Fricção da Tradução Mental" style="width: 100%; max-height: 420px; object-fit: cover; display: block;" />
               </div>
             </div>
 
@@ -486,75 +489,70 @@ import '../styles/aether.css';
       </div>
     </section>
 
-    <!-- STORYTELLING ANIMADO: O SIMULADOR DA CAFETERIA (INTERATIVO) -->
-    <section class="state" id="simulador" style="padding-top: 20px;">
+    <!-- STORYTELLING ANIMADO: O TESTE DA CAFETERIA (Design System Limpo & Sem Emojis) -->
+    <section class="state" id="simulador">
       <div class="section-02">
         <div class="container">
           <div class="section-inner">
-            <div class="header-center" style="max-width: 820px; margin: 0 auto 40px; text-align: center;">
+            <div class="header-center" style="max-width: 800px; margin: 0 auto 36px; text-align: center;">
               <div data-wf--tag-box-wrap--variant="yellow" class="tag-box-wrap" style="justify-content: center; margin-bottom: 16px;">
                 <div class="tag-box">
                   <div class="tag-icon w-variant-5f608897-5531-7a7c-52a8-4781b464b78d"></div>
-                  <div class="tag w-variant-5f608897-5531-7a7c-52a8-4781b464b78d">Experiência Interativa · Teste na Prática</div>
+                  <div class="tag w-variant-5f608897-5531-7a7c-52a8-4781b464b78d">Demonstração Interativa</div>
                 </div>
               </div>
               <h2 class="h-02">Veja a diferença na prática: O Teste da Cafeteria</h2>
               <div class="color-gray" style="margin-top: 12px;">
-                <div class="body-m-regular">Alterne entre os dois métodos para ver por que um te cala e o outro destrava sua fala instantaneamente.</div>
+                <div class="body-m-regular">Alterne entre as duas abordagens para ver por que a correção tradicional te cala e o Spaced Recasting destrava sua fala.</div>
               </div>
             </div>
 
-            <!-- Dialogue Simulator Card -->
-            <div style="background: #121212; border: 1px solid #1f1f1f; border-radius: 28px; padding: 36px; max-width: 840px; margin: 0 auto; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);">
-              
-              <!-- Switcher Tabs -->
-              <div style="display: flex; gap: 12px; justify-content: center; margin-bottom: 32px; flex-wrap: wrap;">
-                <button type="button" id="tab-trad" class="story-toggle-btn active-trad">
-                  ❌ No Cursinho Tradicional (Interrupção)
+            <div class="sim-chat-box">
+              <!-- Switcher Tabs com Ícones SVG -->
+              <div style="display: flex; gap: 12px; justify-content: center; margin-bottom: 28px; flex-wrap: wrap;">
+                <button type="button" id="tab-trad" class="sim-tab-btn active-trad">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+                  <span>No Cursinho Tradicional</span>
                 </button>
-                <button type="button" id="tab-lexi" class="story-toggle-btn">
-                  🟢 Na LexiQuest (Spaced Recasting)
+                <button type="button" id="tab-lexi" class="sim-tab-btn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Na LexiQuest (Spaced Recasting)</span>
                 </button>
               </div>
 
-              <!-- Dialogue Display Box -->
-              <div id="sim-scenario-box" style="background: #171717; border: 1px solid #292929; border-radius: 20px; padding: 28px; min-height: 280px; display: flex; flex-direction: column; justify-content: space-between;">
-                
-                <div id="sim-chat-container" style="display: flex; flex-direction: column; gap: 14px;">
-                  <!-- Scenario 1: Tradicional (Default) -->
-                  <div class="dialogue-bubble bubble-user">
-                    <span style="font-size: 11px; text-transform: uppercase; color: #888; font-weight: 700; display: block; margin-bottom: 4px;">Você (Tentando pedir um café em Nova York)</span>
-                    "I want... ah... a cup coffee, with milk... hot, please?"
-                  </div>
-                  <div class="dialogue-bubble bubble-error">
-                    <span style="font-size: 11px; text-transform: uppercase; color: #f87171; font-weight: 700; display: block; margin-bottom: 4px;">Professor Tradicional (Interrupção com Caneta Vermelha)</span>
-                    "Não! Falta a preposição 'of'! Não é 'cup coffee', é 'cup OF coffee'! E o mais educado seria 'Could I please have...?'. Repita comigo a regra."
-                  </div>
-                  <div style="background: rgba(239, 68, 68, 0.1); border-left: 3px solid #ef4444; padding: 12px 16px; border-radius: 8px; font-size: 13px; color: #fca5a5; margin-top: 8px;">
-                    <strong>O que acontece no seu cérebro:</strong> O filtro afetivo sobe ao máximo. Você sente vergonha imediata e decide ficar calado pelo resto da viagem para não errar de novo.
-                  </div>
+              <!-- Chat Container -->
+              <div id="sim-chat-container">
+                <div class="chat-bubble chat-bubble-user">
+                  <div class="body-s-medium text-muted" style="margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px; font-size: 11px;">Você (Em uma cafeteria em Nova York)</div>
+                  <div class="body-m-regular">"I want... ah... a cup coffee, with milk... hot, please?"</div>
                 </div>
-
-                <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #262626; padding-top: 16px; margin-top: 20px;">
-                  <span style="font-size: 12px; color: #888;">Cenário: Cafeteria Internacional</span>
-                  <span id="sim-status-pill" style="font-size: 12px; font-weight: 700; color: #f87171; background: rgba(248, 113, 113, 0.1); padding: 4px 10px; border-radius: 99px;">
-                    Resultado: Bloqueio & Travamento
-                  </span>
+                <div class="chat-bubble chat-bubble-trad">
+                  <div class="body-s-medium" style="color: #f87171; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px; font-size: 11px;">Professor Tradicional (Interrupção Explicita)</div>
+                  <div class="body-m-regular">"Não! Falta a preposição 'of'! Não é 'cup coffee', é 'cup OF coffee'! E o mais educado seria 'Could I please have...?'. Anote a regra no caderno."</div>
+                </div>
+                <div style="background: rgba(248, 113, 113, 0.08); border: 1px solid rgba(248, 113, 113, 0.2); padding: 14px 18px; border-radius: 10px; font-size: 13px; color: #fca5a5; line-height: 1.6;">
+                  <strong>O que acontece no seu cérebro:</strong> O filtro afetivo sobe ao máximo. Você sente desconforto e vergonha imediata, preferindo ficar calado pelo resto da viagem para não errar de novo.
                 </div>
               </div>
 
+              <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-subtle); padding-top: 16px; margin-top: 24px;">
+                <span class="body-s-regular text-muted">Cenário de Conversação Real</span>
+                <span id="sim-status-pill" style="font-size: 12px; font-weight: 700; color: #f87171; background: rgba(248, 113, 113, 0.1); border: 1px solid rgba(248, 113, 113, 0.25); padding: 4px 12px; border-radius: 99px;">
+                  Resultado: Bloqueio & Travamento
+                </span>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- A JORNADA: OS 4 ESTÁGIOS DE DESTRAVAMENTO -->
-    <section class="state" id="estagios">
+    <!-- A JORNADA: OS 4 ESTÁGIOS DE FALA (.feature-tabs Aether Nativo) -->
+    <section class="features" id="estagios">
       <div class="section-02">
         <div class="container">
           <div class="section-inner">
-            <div class="header-center" style="max-width: 800px; margin: 0 auto 60px; text-align: center;">
+            <div class="header-center max-width-large" style="text-align: center; margin: 0 auto 36px;">
               <div data-wf--tag-box-wrap--variant="base" class="tag-box-wrap" style="justify-content: center; margin-bottom: 16px;">
                 <div class="tag-box">
                   <div class="tag-icon"></div>
@@ -562,69 +560,57 @@ import '../styles/aether.css';
                 </div>
               </div>
               <h2 class="h-02">Os 4 Estágios da Sua Fala na LexiQuest</h2>
-              <div class="color-gray" style="margin-top: 16px;">
-                <div class="body-m-regular">Uma progressão natural e sem pressão: do primeiro café sem mímica até a negociação profissional de alto nível.</div>
+              <div class="color-gray" style="margin-top: 12px;">
+                <div class="body-m-regular">Clique nos estágios para acompanhar sua progressão natural do café básico até reuniões executivas.</div>
               </div>
             </div>
 
-            <!-- Grid dos 4 Estágios -->
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
-              
-              <!-- Estágio 1 -->
-              <div style="background: #121212; border: 1px solid #1f1f1f; border-radius: 20px; overflow: hidden; transition: transform 0.2s ease;">
-                <img src="/assets/dia2_cafeteria.jpg" alt="Estágio 1 - Sobrevivência" style="width: 100%; height: 160px; object-fit: cover;" />
-                <div style="padding: 24px;">
-                  <div style="font-size: 11px; font-weight: 700; color: #58f27f; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">Estágio 01 · A0/A1</div>
-                  <div class="body-l-medium" style="color: #ffffff; margin-bottom: 10px;">Descongelamento Imediato</div>
-                  <div class="color-gray body-s-regular" style="line-height: 1.6;">
-                    Blocos sonoros de sobrevivência prática. Peça café, resolva hotéis e circule em aeroportos sem pânico e sem mímica.
-                  </div>
-                </div>
-              </div>
-
-              <!-- Estágio 2 -->
-              <div style="background: #121212; border: 1px solid #1f1f1f; border-radius: 20px; overflow: hidden; transition: transform 0.2s ease;">
-                <img src="/assets/cap3_preparacao.jpg" alt="Estágio 2 - Autonomia" style="width: 100%; height: 160px; object-fit: cover;" />
-                <div style="padding: 24px;">
-                  <div style="font-size: 11px; font-weight: 700; color: #58f27f; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">Estágio 02 · A2</div>
-                  <div class="body-l-medium" style="color: #ffffff; margin-bottom: 10px;">Autonomia do Dia a Dia</div>
-                  <div class="color-gray body-s-regular" style="line-height: 1.6;">
-                    15 min diários de IA no celular. O cérebro automatiza o vocabulário cotidiano e para de pensar em português antes de falar.
-                  </div>
-                </div>
-              </div>
-
-              <!-- Estágio 3 -->
-              <div style="background: #121212; border: 1px solid #1f1f1f; border-radius: 20px; overflow: hidden; transition: transform 0.2s ease;">
-                <img src="/assets/cap2_metodo.jpg" alt="Estágio 3 - Fluência" style="width: 100%; height: 160px; object-fit: cover;" />
-                <div style="padding: 24px;">
-                  <div style="font-size: 11px; font-weight: 700; color: #58f27f; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">Estágio 03 · B1</div>
-                  <div class="body-l-medium" style="color: #ffffff; margin-bottom: 10px;">Fluência Conversacional</div>
-                  <div class="color-gray body-s-regular" style="line-height: 1.6;">
-                    Sessões de agilidade com Gabriel. Conectores naturais, histórias completas e opiniões sustentadas com leveza e confiança.
-                  </div>
-                </div>
-              </div>
-
-              <!-- Estágio 4 -->
-              <div style="background: #121212; border: 1px solid rgba(88, 242, 127, 0.4); border-radius: 20px; overflow: hidden; transition: transform 0.2s ease;">
-                <img src="/assets/dia4_fluencia.jpg" alt="Estágio 4 - Expressão Executiva" style="width: 100%; height: 160px; object-fit: cover;" />
-                <div style="padding: 24px;">
-                  <div style="font-size: 11px; font-weight: 700; color: #58f27f; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">Estágio 04 · B2/C1</div>
-                  <div class="body-l-medium" style="color: #ffffff; margin-bottom: 10px;">Autoridade & Diplomacia</div>
-                  <div class="color-gray body-s-regular" style="line-height: 1.6;">
-                    Reuniões executivas sob pressão, pitch de projetos e humor sutil. Você fala com a mesma presença que tem em português.
-                  </div>
-                </div>
-              </div>
-
+            <!-- Tab Pills -->
+            <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+              <button type="button" class="stage-tab-item active" data-stage="0">
+                <span>01. Descongelamento (A0/A1)</span>
+              </button>
+              <button type="button" class="stage-tab-item" data-stage="1">
+                <span>02. Autonomia Diária (A2)</span>
+              </button>
+              <button type="button" class="stage-tab-item" data-stage="2">
+                <span>03. Fluência Conversacional (B1)</span>
+              </button>
+              <button type="button" class="stage-tab-item" data-stage="3">
+                <span>04. Autoridade & Diplomacia (B2/C1)</span>
+              </button>
             </div>
+
+            <!-- Feature Card: Split Editorial & Artwork Canônica -->
+            <div class="stage-card-wrapper">
+              <div class="stage-card-content">
+                <div id="stage-badge" class="body-s-medium text-lime" style="text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px;">
+                  Estágio 01 · Nível A0/A1
+                </div>
+                <h3 id="stage-title" class="h-02" style="font-size: 32px; line-height: 1.2; margin: 0 0 16px;">
+                  Descongelamento Imediato
+                </h3>
+                <p id="stage-desc" class="color-gray body-m-regular" style="line-height: 1.7; margin: 0 0 28px;">
+                  Imersão em blocos sonoros de sobrevivência prática. Peça café, resolva imprevistos em hotéis e circule em aeroportos sem pânico e sem precisar fazer mímica.
+                </p>
+                <div style="border-top: 1px solid var(--border-subtle); padding-top: 20px;">
+                  <div class="body-s-medium text-lime" style="margin-bottom: 4px;">DOMÍNIO ADQUIRIDO:</div>
+                  <div id="stage-skills" class="body-s-regular" style="color: #ffffff;">
+                    Pedidos em restaurantes, compras, check-in e saudações no reflexo.
+                  </div>
+                </div>
+              </div>
+              <div class="stage-card-media">
+                <img id="stage-img" src="/assets/dia2_cafeteria.jpg" alt="Estágio de Fala" />
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
     </section>
 
-    <!-- O COMPARATIVO CLONADO DO AETHER (STATE CARDS) -->
+    <!-- O COMPARATIVO (State Cards Cloned do Aether) -->
     <section class="state" id="comparativo">
       <div class="section-02">
         <div class="container">
@@ -728,7 +714,7 @@ import '../styles/aether.css';
 
             <div class="service-grid">
               <!-- Pilar 1 -->
-              <div class="service-card" style="background: #121212; border: 1px solid #1a1a1a; padding: 32px; border-radius: 20px;">
+              <div class="service-card" style="background: var(--surface-dark); border: 1px solid var(--stroke-colour); padding: 32px; border-radius: 20px;">
                 <div class="body-s-medium text-lime" style="text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">Passo 01 · Prática Diária</div>
                 <div class="body-l-medium" style="color: #ffffff; margin-bottom: 12px; font-size: 22px;">15 min/dia de IA 24/7 (LibreChat)</div>
                 <div class="color-gray">
@@ -739,7 +725,7 @@ import '../styles/aether.css';
               </div>
 
               <!-- Pilar 2 -->
-              <div class="service-card" style="background: #121212; border: 1px solid rgba(88, 242, 127, 0.35); padding: 32px; border-radius: 20px; box-shadow: 0 10px 40px rgba(88, 242, 127, 0.08);">
+              <div class="service-card" style="background: var(--surface-dark); border: 1px solid var(--brand-green-border); padding: 32px; border-radius: 20px; box-shadow: 0 10px 40px rgba(88, 242, 127, 0.08);">
                 <div class="body-s-medium text-lime" style="text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">Passo 02 · Aceleração Humana</div>
                 <div class="body-l-medium" style="color: #ffffff; margin-bottom: 12px; font-size: 22px;">3x na Semana com Gabriel</div>
                 <div class="color-gray">
@@ -750,7 +736,7 @@ import '../styles/aether.css';
               </div>
 
               <!-- Pilar 3 -->
-              <div class="service-card" style="background: #121212; border: 1px solid #1a1a1a; padding: 32px; border-radius: 20px;">
+              <div class="service-card" style="background: var(--surface-dark); border: 1px solid var(--stroke-colour); padding: 32px; border-radius: 20px;">
                 <div class="body-s-medium text-lime" style="text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">Passo 03 · Torre de Controle</div>
                 <div class="body-l-medium" style="color: #ffffff; margin-bottom: 12px; font-size: 22px;">Portal do Aluno (Moodle Hub)</div>
                 <div class="color-gray">
@@ -765,72 +751,66 @@ import '../styles/aether.css';
       </div>
     </section>
 
-    <!-- O MENTOR: GABRIEL FERREIRA LIMA (STORYTELLING EM 3 ATOS) -->
+    <!-- O MENTOR: GABRIEL FERREIRA LIMA (Layout Editorial 2-Colunas Limpo) -->
     <section class="service" id="mentor">
       <div class="section-02">
         <div class="container">
           <div class="section-inner">
-            <div style="background: #121212; border: 1px solid #1a1a1a; border-radius: 28px; padding: 48px; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);">
-              <div data-wf--tag-box-wrap--variant="blue" class="tag-box-wrap" style="margin-bottom: 20px;">
-                <div class="tag-box">
-                  <div class="tag-icon w-variant-2e667d52-7c51-ea40-1a61-1eb73fdb904c"></div>
-                  <div class="tag w-variant-2e667d52-7c51-ea40-1a61-1eb73fdb904c">A História do Mentor</div>
-                </div>
-              </div>
-
-              <h2 class="h-02" style="margin-bottom: 32px;">
-                5 anos ensinando idiomas, uma passagem pela alta coquetelaria e um retorno definitivo.
-              </h2>
-
-              <!-- 3 Atos da História -->
-              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; margin-bottom: 40px;">
+            <div style="background: var(--surface-dark); border: 1px solid var(--stroke-colour); border-radius: 28px; padding: 56px;">
+              <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 48px; align-items: start;">
                 
-                <div style="background: #171717; border: 1px solid #242424; padding: 28px; border-radius: 18px;">
-                  <div style="font-size: 12px; font-weight: 700; color: #58f27f; text-transform: uppercase; margin-bottom: 8px;">Ato 01 · 2018–2023</div>
-                  <div class="body-m-medium" style="color: #ffffff; margin-bottom: 10px;">A Trincheira das Salas de Aula</div>
-                  <div class="color-gray body-s-regular" style="line-height: 1.6;">
-                    5 anos na linha de frente do ensino — incluindo duas unidades da tradicional <strong>All Net Idiomas</strong> e mentoria particular. Vi de perto centenas de alunos dominarem livros de regras, mas congelarem ao tentar falar em viagens ou reuniões.
+                <!-- Coluna Esquerda: A História Narrativa -->
+                <div>
+                  <div data-wf--tag-box-wrap--variant="blue" class="tag-box-wrap" style="margin-bottom: 20px;">
+                    <div class="tag-box">
+                      <div class="tag-icon w-variant-2e667d52-7c51-ea40-1a61-1eb73fdb904c"></div>
+                      <div class="tag w-variant-2e667d52-7c51-ea40-1a61-1eb73fdb904c">O Professor Responsável</div>
+                    </div>
+                  </div>
+                  <h2 class="h-02" style="margin-bottom: 24px; font-size: 40px; line-height: 1.2;">
+                    5 anos ensinando idiomas, uma passagem pela alta coquetelaria e um retorno definitivo.
+                  </h2>
+                  <div class="color-gray" style="display: flex; flex-direction: column; gap: 16px; font-size: 15px; line-height: 1.7;">
+                    <p>
+                      Durante cerca de <strong>5 anos</strong>, atuei na linha de frente do ensino de idiomas — tanto em <strong>duas unidades da tradicional rede All Net Idiomas</strong> quanto na mentoria particular de profissionais. A constatação era sempre a mesma: alunos cheios de regras no caderno travavam completamente ao tentar falar em viagens ou reuniões.
+                    </p>
+                    <p>
+                      Em determinado momento, decidi pausar as aulas para me dedicar à alta coquetelaria. Foi uma imersão profunda em hospitalidade, precisão e leitura humana de pessoas sob pressão. Entendi ali que ninguém se expressa sob ameaça: a fala humana só destrava em ambiente seguro e acolhedor.
+                    </p>
+                    <p>
+                      Hoje, estou retornando com a síntese perfeita: unindo a paciência infinita da Inteligência Artificial para prática diária 24/7 sem julgamento ao acompanhamento individual e estratégico que nenhum aplicativo solitário é capaz de entregar.
+                    </p>
                   </div>
                 </div>
 
-                <div style="background: #171717; border: 1px solid #242424; padding: 28px; border-radius: 18px;">
-                  <div style="font-size: 12px; font-weight: 700; color: #58f27f; text-transform: uppercase; margin-bottom: 8px;">Ato 02 · 2023–2025</div>
-                  <div class="body-m-medium" style="color: #ffffff; margin-bottom: 10px;">A Escola da Hospitalidade</div>
-                  <div class="color-gray body-s-regular" style="line-height: 1.6;">
-                    Uma imersão completa na alta coquetelaria. Aprendi a ler pessoas sob pressão em segundos, exercitar a escuta ativa refinada e entender que a comunicação humana só destrava em um ambiente de absoluto acolhimento e zero julgamento.
+                <!-- Coluna Direita: Métricas & Credenciais -->
+                <div style="display: flex; flex-direction: column; gap: 20px;">
+                  <div style="background: var(--surface-elevated); border: 1px solid var(--border-medium); padding: 24px; border-radius: 16px;">
+                    <div class="body-s-medium text-lime" style="text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px;">Experiência Real</div>
+                    <div class="body-l-medium" style="color: #ffffff;">5 Anos de Sala de Aula</div>
+                    <div class="color-gray body-s-regular" style="margin-top: 4px;">Centenas de adultos destravados presencialmente.</div>
                   </div>
-                </div>
 
-                <div style="background: #171717; border: 1px solid rgba(88, 242, 127, 0.3); padding: 28px; border-radius: 18px;">
-                  <div style="font-size: 12px; font-weight: 700; color: #58f27f; text-transform: uppercase; margin-bottom: 8px;">Ato 03 · 2026</div>
-                  <div class="body-m-medium" style="color: #ffffff; margin-bottom: 10px;">A Síntese LexiQuest</div>
-                  <div class="color-gray body-s-regular" style="line-height: 1.6;">
-                    O retorno ao ensino com uma metodologia que a indústria tradicional não consegue entregar: a paciência infinita da IA para você treinar diariamente sem medo, somada a encontros 1-a-1 com Gabriel para destravar a voz no mundo real.
+                  <div style="background: var(--surface-elevated); border: 1px solid var(--border-medium); padding: 24px; border-radius: 16px;">
+                    <div class="body-s-medium text-lime" style="text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px;">Instituições</div>
+                    <div class="body-l-medium" style="color: #ffffff;">Rede All Net Idiomas</div>
+                    <div class="color-gray body-s-regular" style="margin-top: 4px;">Atuação em duas unidades e mentoria executiva.</div>
+                  </div>
+
+                  <div style="background: var(--surface-elevated); border: 1px solid var(--border-medium); padding: 24px; border-radius: 16px;">
+                    <div class="body-s-medium text-lime" style="text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px;">Acompanhamento</div>
+                    <div class="body-l-medium" style="color: #ffffff;">100% Individual</div>
+                    <div class="color-gray body-s-regular" style="margin-top: 4px;">Sessões exclusivas 1-a-1 diretamente com Gabriel.</div>
+                  </div>
+
+                  <div style="background: var(--surface-elevated); border: 1px solid var(--border-medium); padding: 24px; border-radius: 16px;">
+                    <div class="body-s-medium text-lime" style="text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px;">Garantia Incondicional</div>
+                    <div class="body-l-medium" style="color: #ffffff;">30 Dias com Reembolso Pix</div>
+                    <div class="color-gray body-s-regular" style="margin-top: 4px;">Risco financeiro zero para o aluno fundador.</div>
                   </div>
                 </div>
 
               </div>
-
-              <!-- Destaques Numéricos -->
-              <div style="display: flex; flex-wrap: wrap; gap: 32px; padding-top: 28px; border-top: 1px solid #1f1f1f;">
-                <div>
-                  <div class="body-s-medium text-lime">EXPERIÊNCIA REAL</div>
-                  <div class="body-m-medium" style="color: #ffffff; font-size: 18px;">5 Anos de Sala de Aula</div>
-                </div>
-                <div>
-                  <div class="body-s-medium text-lime">INSTITUIÇÕES</div>
-                  <div class="body-m-medium" style="color: #ffffff; font-size: 18px;">Rede All Net Idiomas & Mentoria</div>
-                </div>
-                <div>
-                  <div class="body-s-medium text-lime">FORMATO</div>
-                  <div class="body-m-medium" style="color: #ffffff; font-size: 18px;">100% Individual (Sem turmas cheias)</div>
-                </div>
-                <div>
-                  <div class="body-s-medium text-lime">GARANTIA</div>
-                  <div class="body-m-medium" style="color: #ffffff; font-size: 18px;">30 Dias com Reembolso Pix</div>
-                </div>
-              </div>
-
             </div>
           </div>
         </div>
@@ -858,24 +838,24 @@ import '../styles/aether.css';
             <!-- Quiz Container -->
             <div class="quiz-card-aether" id="quiz-container">
               <!-- Top bar -->
-              <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #222222; padding-bottom: 16px; margin-bottom: 28px;">
-                <div style="font-size: 13px; font-weight: 700; color: #58f27f;" id="quiz-step-label">
+              <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-subtle); padding-bottom: 16px; margin-bottom: 28px;">
+                <div style="font-size: 13px; font-weight: 700; color: var(--brand-green);" id="quiz-step-label">
                   Questão 1 de 5
                 </div>
                 <div style="width: 160px; height: 6px; border-radius: 99px; background: #1a1a1a; overflow: hidden;">
-                  <div id="quiz-progress-bar" style="width: 20%; height: 100%; background: #58f27f; border-radius: 99px; transition: width 0.3s ease;"></div>
+                  <div id="quiz-progress-bar" style="width: 20%; height: 100%; background: var(--brand-green); border-radius: 99px; transition: width 0.3s ease;"></div>
                 </div>
               </div>
 
               <!-- Question Area -->
               <div id="quiz-question-area">
-                <div style="font-size: 12px; font-weight: 700; text-transform: uppercase; color: #58f27f; letter-spacing: 0.5px; margin-bottom: 8px;" id="situation-tag">
+                <div style="font-size: 12px; font-weight: 700; text-transform: uppercase; color: var(--brand-green); letter-spacing: 0.5px; margin-bottom: 8px;" id="situation-tag">
                   Situação 1: Café & Sobrevivência (Nível A1)
                 </div>
                 <h3 id="question-title" style="font-size: 20px; font-weight: 700; color: #ffffff; margin: 0 0 12px; line-height: 1.4;">
                   Você está em Nova York e o barista te entrega um café totalmente diferente do que você pediu. O que acontece?
                 </h3>
-                <p id="question-desc" style="font-size: 14px; color: #888888; margin: 0 0 24px;">
+                <p id="question-desc" style="font-size: 14px; color: var(--text-muted); margin: 0 0 24px;">
                   Seja sincero com a sua reação imediata e instintiva:
                 </p>
 
@@ -886,23 +866,23 @@ import '../styles/aether.css';
 
               <!-- Lead Capture Area -->
               <div id="quiz-lead-area" style="display: none; text-align: center; padding: 20px 0;">
-                <div style="font-size: 12px; font-weight: 700; color: #58f27f; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">
+                <div style="font-size: 12px; font-weight: 700; color: var(--brand-green); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">
                   Última Etapa
                 </div>
                 <h3 style="font-size: 26px; font-weight: 800; color: #ffffff; margin-bottom: 10px;">
                   Quase lá. Receba seu diagnóstico completo.
                 </h3>
-                <p style="font-size: 14px; color: #888888; margin-bottom: 28px; max-width: 440px; margin-left: auto; margin-right: auto;">
+                <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 28px; max-width: 440px; margin-left: auto; margin-right: auto;">
                   Informe seu nome e WhatsApp para ver o seu resultado detalhado e encaminhar sua análise para Gabriel Lima:
                 </p>
 
                 <form id="quiz-lead-form" style="max-width: 400px; margin: 0 auto; display: flex; flex-direction: column; gap: 18px; text-align: left;">
                   <div>
-                    <label style="display: block; font-size: 12px; font-weight: 700; color: #888888; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px;">Seu Nome</label>
+                    <label style="display: block; font-size: 12px; font-weight: 700; color: var(--text-muted); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px;">Seu Nome</label>
                     <input type="text" id="lead-name" class="quiz-input-field" placeholder="Como o Gabe deve te chamar?" required />
                   </div>
                   <div>
-                    <label style="display: block; font-size: 12px; font-weight: 700; color: #888888; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px;">WhatsApp (com DDD)</label>
+                    <label style="display: block; font-size: 12px; font-weight: 700; color: var(--text-muted); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px;">WhatsApp (com DDD)</label>
                     <input type="tel" id="lead-phone" class="quiz-input-field" placeholder="(11) 9 0000-0000" required />
                   </div>
                   <button type="submit" class="btn-01-link w-variant-e00ff45f-ff78-0ca4-3201-26a6f77c8432" style="width: 100%; border: none; cursor: pointer; margin-top: 8px;">
@@ -919,15 +899,15 @@ import '../styles/aether.css';
 
               <!-- Result Area -->
               <div id="quiz-result-area" style="display: none; text-align: center; padding: 20px 0;">
-                <div style="font-size: 12px; font-weight: 700; color: #58f27f; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">
+                <div style="font-size: 12px; font-weight: 700; color: var(--brand-green); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">
                   Diagnóstico Concluído
                 </div>
                 <h3 id="result-portal-name" class="h-02 text-lime" style="font-size: 28px; margin-bottom: 16px;">
                   Nível Detectado
                 </h3>
 
-                <div style="background: #171717; border: 1px solid #282828; border-radius: 20px; padding: 28px; text-align: left; margin: 28px 0;">
-                  <div style="font-size: 12px; font-weight: 700; color: #58f27f; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">O Que Está Acontecendo na Sua Fala</div>
+                <div style="background: var(--surface-elevated); border: 1px solid var(--border-medium); border-radius: 20px; padding: 28px; text-align: left; margin: 28px 0;">
+                  <div style="font-size: 12px; font-weight: 700; color: var(--brand-green); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">O Que Está Acontecendo na Sua Fala</div>
                   <p id="result-block-text" style="font-size: 15px; color: #ffffff; line-height: 1.6; margin: 0 0 20px;">
                     Análise...
                   </p>
@@ -946,7 +926,7 @@ import '../styles/aether.css';
                       </div>
                     </div>
                   </a>
-                  <button type="button" id="btn-restart-quiz" class="btn-01-link" style="background: transparent; border: 1px solid #2e2e2e; color: #ffffff; cursor: pointer; border-radius: 99px; padding: 0 24px;">
+                  <button type="button" id="btn-restart-quiz" class="btn-01-link" style="background: transparent; border: 1px solid var(--border-medium); color: #ffffff; cursor: pointer; border-radius: 99px; padding: 0 24px;">
                     <div class="body-m-medium">↻ Refazer Teste</div>
                   </button>
                 </div>
@@ -957,7 +937,7 @@ import '../styles/aether.css';
       </div>
     </section>
 
-    <!-- A OFERTA ALPHA (AETHER PRICING CARD) -->
+    <!-- A OFERTA ALPHA (Card de Preço Central Aether) -->
     <section class="state" id="oferta">
       <div class="section-02">
         <div class="container">
@@ -976,10 +956,10 @@ import '../styles/aether.css';
             </div>
 
             <!-- Card Central de Preço -->
-            <div style="max-width: 660px; margin: 0 auto; background: #121212; border: 1px solid rgba(88, 242, 127, 0.4); border-radius: 28px; padding: 48px; text-align: center; box-shadow: 0 25px 80px rgba(0, 0, 0, 0.6);">
-              <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #1f1f1f; padding-bottom: 20px; margin-bottom: 32px;">
+            <div style="max-width: 660px; margin: 0 auto; background: var(--surface-dark); border: 1px solid var(--brand-green-border); border-radius: 28px; padding: 48px; text-align: center; box-shadow: 0 25px 80px rgba(0, 0, 0, 0.6);">
+              <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-subtle); padding-bottom: 20px; margin-bottom: 32px;">
                 <div class="body-m-medium" style="color: #ffffff; font-weight: 700;">Alunos Fundadores Alpha</div>
-                <div class="body-s-medium text-lime" style="background: rgba(88, 242, 127, 0.1); border: 1px solid rgba(88, 242, 127, 0.3); padding: 5px 14px; border-radius: 99px; font-weight: 700;">
+                <div class="body-s-medium text-lime" style="background: var(--brand-green-muted); border: 1px solid var(--brand-green-border); padding: 5px 14px; border-radius: 99px; font-weight: 700;">
                   15 Vagas Restritas
                 </div>
               </div>
@@ -995,21 +975,21 @@ import '../styles/aether.css';
               </div>
 
               <!-- Lista de Inclusões -->
-              <div style="text-align: left; display: flex; flex-direction: column; gap: 16px; border-top: 1px solid #1f1f1f; border-bottom: 1px solid #1f1f1f; padding: 28px 0; margin-bottom: 32px;">
+              <div style="text-align: left; display: flex; flex-direction: column; gap: 16px; border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 28px 0; margin-bottom: 32px;">
                 <div style="display: flex; gap: 14px; align-items: flex-start;">
-                  <span style="color: #58f27f; font-weight: 800; font-size: 16px;">✓</span>
+                  <span style="color: var(--brand-green); font-weight: 800; font-size: 16px;">✓</span>
                   <span class="body-s-regular" style="color: #ffffff;"><strong>3 Sessões Individuais / Semana:</strong> 2x 15m (agilidade oral) + 1x 30m (conversação real) com Gabe.</span>
                 </div>
                 <div style="display: flex; gap: 14px; align-items: flex-start;">
-                  <span style="color: #58f27f; font-weight: 800; font-size: 16px;">✓</span>
+                  <span style="color: var(--brand-green); font-weight: 800; font-size: 16px;">✓</span>
                   <span class="body-s-regular" style="color: #ffffff;"><strong>LibreChat IA 24/7:</strong> Sparring diário de 15 min sem caneta vermelha (Spaced Recasting orgânico).</span>
                 </div>
                 <div style="display: flex; gap: 14px; align-items: flex-start;">
-                  <span style="color: #58f27f; font-weight: 800; font-size: 16px;">✓</span>
+                  <span style="color: var(--brand-green); font-weight: 800; font-size: 16px;">✓</span>
                   <span class="body-s-regular" style="color: #ffffff;"><strong>Portal do Aluno (Moodle Hub):</strong> Gravações salvas das suas sessões para você rever seu próprio progresso.</span>
                 </div>
                 <div style="display: flex; gap: 14px; align-items: flex-start;">
-                  <span style="color: #58f27f; font-weight: 800; font-size: 16px;">✓</span>
+                  <span style="color: var(--brand-green); font-weight: 800; font-size: 16px;">✓</span>
                   <span class="body-s-regular" style="color: #ffffff;"><strong>Garantia Incondicional Pix de 30 Dias:</strong> Sua fala destrava ou 100% de reembolso via Pix imediato.</span>
                 </div>
               </div>
@@ -1043,17 +1023,17 @@ import '../styles/aether.css';
             </div>
 
             <div style="display: flex; flex-direction: column; gap: 16px;">
-              <div style="background: #121212; border: 1px solid #1f1f1f; border-radius: 16px; padding: 24px;">
+              <div style="background: var(--surface-dark); border: 1px solid var(--stroke-colour); border-radius: 16px; padding: 24px;">
                 <div class="body-m-medium" style="color: #ffffff; margin-bottom: 8px;">Eu começo do absoluto zero, o método serve para mim?</div>
                 <div class="color-gray body-s-regular">Sim! O método começa por blocos sonoros de sobrevivência prática. Gabriel te acompanha individualmente desde o primeiro dia, eliminando qualquer medo de errar.</div>
               </div>
 
-              <div style="background: #121212; border: 1px solid #1f1f1f; border-radius: 16px; padding: 24px;">
+              <div style="background: var(--surface-dark); border: 1px solid var(--stroke-colour); border-radius: 16px; padding: 24px;">
                 <div class="body-m-medium" style="color: #ffffff; margin-bottom: 8px;">Minha rotina é muito corrida, vou dar conta?</div>
                 <div class="color-gray body-s-regular">Foi desenhado exatamente para quem não tem tempo a perder. A prática com IA dura apenas 15 minutos diários no celular, e as sessões com Gabe são ágeis (2 de 15 min e 1 de 30 min por semana), sem deslocamento ou enrolação.</div>
               </div>
 
-              <div style="background: #121212; border: 1px solid #1f1f1f; border-radius: 16px; padding: 24px;">
+              <div style="background: var(--surface-dark); border: 1px solid var(--stroke-colour); border-radius: 16px; padding: 24px;">
                 <div class="body-m-medium" style="color: #ffffff; margin-bottom: 8px;">Como funcionam os pagamentos e a garantia?</div>
                 <div class="color-gray body-s-regular">O pagamento é feito mensalmente via Pix manual direto para Gabriel. Não há contrato de fidelidade ou taxas ocultas. Se nos primeiros 30 dias você não sentir evolução real, devolvemos 100% do seu valor via Pix.</div>
               </div>
@@ -1066,7 +1046,7 @@ import '../styles/aether.css';
     <!-- CTA FINAL (AETHER LUXURY CARD) -->
     <section class="cta">
       <div class="container">
-        <div class="cta-inner" style="background: #121212; border: 1px solid #1f1f1f; border-radius: 28px; padding: 60px 48px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 32px; box-shadow: 0 25px 70px rgba(0,0,0,0.5);">
+        <div class="cta-inner" style="background: var(--surface-dark); border: 1px solid var(--stroke-colour); border-radius: 28px; padding: 60px 48px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 32px; box-shadow: 0 25px 70px rgba(0,0,0,0.5);">
           <div class="cta-left" style="max-width: 600px;">
             <div class="h-01" style="font-size: 42px; line-height: 1.1; margin-bottom: 16px;">
               Sua próxima conversa em inglês começa aqui.
@@ -1097,13 +1077,13 @@ import '../styles/aether.css';
     <section class="footer-outer">
       <div class="container">
         <div class="footer-wrapper" style="padding-bottom: 48px;">
-          <div class="footer-block-wrap" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; border-top: 1px solid #171717; padding-top: 32px; width: 100%;">
+          <div class="footer-block-wrap" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; border-top: 1px solid var(--stroke-colour); padding-top: 32px; width: 100%;">
             <div style="display: flex; align-items: center; gap: 12px;">
               <span style="font-weight: 800; color: #ffffff; font-size: 17px;">Lexi<span class="text-lime">Quest</span></span>
               <span class="color-gray body-s-regular">· Método Gabriel Lima</span>
             </div>
             <div style="display: flex; gap: 24px; flex-wrap: wrap;">
-              <a href="#historia" class="nav-link w-inline-block"><div class="body-s-medium">O Conflito</div></a>
+              <a href="#problema" class="nav-link w-inline-block"><div class="body-s-medium">O Atrito</div></a>
               <a href="#simulador" class="nav-link w-inline-block"><div class="body-s-medium">Na Prática</div></a>
               <a href="#estagios" class="nav-link w-inline-block"><div class="body-s-medium">A Jornada</div></a>
               <a href="#metodo" class="nav-link w-inline-block"><div class="body-s-medium">Como Funciona</div></a>
@@ -1120,7 +1100,7 @@ import '../styles/aether.css';
 
   </div>
 
-  <!-- SCRIPTS INTERATIVOS (QUIZ & STORY SIMULATOR) -->
+  <!-- SCRIPTS INTERATIVOS -->
   <script is:inline>
     // 1. SIMULADOR DA CAFETERIA (INTERACTIVE STORY SWITCHER)
     (function initStorySimulator() {
@@ -1132,27 +1112,93 @@ import '../styles/aether.css';
       if (!tabTrad || !tabLexi || !chatContainer || !statusPill) return;
 
       tabTrad.addEventListener('click', function() {
-        tabTrad.className = 'story-toggle-btn active-trad';
-        tabLexi.className = 'story-toggle-btn';
+        tabTrad.className = 'sim-tab-btn active-trad';
+        tabLexi.className = 'sim-tab-btn';
         statusPill.textContent = 'Resultado: Bloqueio & Travamento';
         statusPill.style.color = '#f87171';
         statusPill.style.background = 'rgba(248, 113, 113, 0.1)';
+        statusPill.style.borderColor = 'rgba(248, 113, 113, 0.25)';
 
-        chatContainer.innerHTML = '<div class="dialogue-bubble bubble-user"><span style="font-size: 11px; text-transform: uppercase; color: #888; font-weight: 700; display: block; margin-bottom: 4px;">Você (Tentando pedir um café em Nova York)</span>"I want... ah... a cup coffee, with milk... hot, please?"</div><div class="dialogue-bubble bubble-error"><span style="font-size: 11px; text-transform: uppercase; color: #f87171; font-weight: 700; display: block; margin-bottom: 4px;">Professor Tradicional (Interrupção com Caneta Vermelha)</span>"Não! Falta a preposição \'of\'! Não é \'cup coffee\', é \'cup OF coffee\'! E o mais educado seria \'Could I please have...?\'. Repita comigo a regra."</div><div style="background: rgba(239, 68, 68, 0.1); border-left: 3px solid #ef4444; padding: 12px 16px; border-radius: 8px; font-size: 13px; color: #fca5a5; margin-top: 8px;"><strong>O que acontece no seu cérebro:</strong> O filtro afetivo sobe ao máximo. Você sente vergonha imediata e decide ficar calado pelo resto da viagem para não errar de novo.</div>';
+        chatContainer.innerHTML = '<div class="chat-bubble chat-bubble-user"><div class="body-s-medium text-muted" style="margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px; font-size: 11px;">Você (Em uma cafeteria em Nova York)</div><div class="body-m-regular">"I want... ah... a cup coffee, with milk... hot, please?"</div></div><div class="chat-bubble chat-bubble-trad"><div class="body-s-medium" style="color: #f87171; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px; font-size: 11px;">Professor Tradicional (Interrupção Explicita)</div><div class="body-m-regular">"Não! Falta a preposição \'of\'! Não é \'cup coffee\', é \'cup OF coffee\'! E o mais educado seria \'Could I please have...?\'. Anote a regra no caderno."</div></div><div style="background: rgba(248, 113, 113, 0.08); border: 1px solid rgba(248, 113, 113, 0.2); padding: 14px 18px; border-radius: 10px; font-size: 13px; color: #fca5a5; line-height: 1.6;"><strong>O que acontece no seu cérebro:</strong> O filtro afetivo sobe ao máximo. Você sente desconforto e vergonha imediata, preferindo ficar calado pelo resto da viagem para não errar de novo.</div>';
       });
 
       tabLexi.addEventListener('click', function() {
-        tabLexi.className = 'story-toggle-btn active-lexi';
-        tabTrad.className = 'story-toggle-btn';
+        tabLexi.className = 'sim-tab-btn active-lexi';
+        tabTrad.className = 'sim-tab-btn';
         statusPill.textContent = 'Resultado: Fala Natural no Reflexo';
         statusPill.style.color = '#58f27f';
         statusPill.style.background = 'rgba(88, 242, 127, 0.1)';
+        statusPill.style.borderColor = 'rgba(88, 242, 127, 0.3)';
 
-        chatContainer.innerHTML = '<div class="dialogue-bubble bubble-user"><span style="font-size: 11px; text-transform: uppercase; color: #888; font-weight: 700; display: block; margin-bottom: 4px;">Você (Tentando pedir um café em Nova York)</span>"I want... ah... a cup coffee, with milk... hot, please?"</div><div class="dialogue-bubble bubble-success"><span style="font-size: 11px; text-transform: uppercase; color: #58f27f; font-weight: 700; display: block; margin-bottom: 4px;">IA Companion & Gabriel (Spaced Recasting Orgânico)</span>"Sure! One <strong>hot cup of coffee with milk</strong> coming right up! Would you like whole milk or oat milk?"</div><div style="background: rgba(88, 242, 127, 0.1); border-left: 3px solid #58f27f; padding: 12px 16px; border-radius: 8px; font-size: 13px; color: #bbf7d0; margin-top: 8px;"><strong>O que acontece no seu cérebro:</strong> A modelagem correta (\'hot cup of coffee with milk\') foi absorvida sem interrupção. A conversa continuou fluindo no reflexo motor oral.</div>';
+        chatContainer.innerHTML = '<div class="chat-bubble chat-bubble-user"><div class="body-s-medium text-muted" style="margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px; font-size: 11px;">Você (Em uma cafeteria em Nova York)</div><div class="body-m-regular">"I want... ah... a cup coffee, with milk... hot, please?"</div></div><div class="chat-bubble chat-bubble-lexi"><div class="body-s-medium text-lime" style="margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px; font-size: 11px;">IA Companion & Gabriel (Spaced Recasting Orgânico)</div><div class="body-m-regular">"Sure! One <strong>hot cup of coffee with milk</strong> coming right up! Would you like whole milk or oat milk?"</div></div><div style="background: rgba(88, 242, 127, 0.08); border: 1px solid rgba(88, 242, 127, 0.2); padding: 14px 18px; border-radius: 10px; font-size: 13px; color: #bbf7d0; line-height: 1.6;"><strong>O que acontece no seu cérebro:</strong> A modelagem correta (\'hot cup of coffee with milk\') foi absorvida sem interrupção. A conversa continuou fluindo no reflexo motor oral.</div>';
       });
     })();
 
-    // 2. QUIZ INTERATIVO (GLOBAL RESTYLING & ZERO ESBRANQUIÇADO)
+    // 2. TABS INTERATIVAS: OS 4 ESTÁGIOS DA FALA
+    (function initStageTabs() {
+      const stagesData = [
+        {
+          badge: "Estágio 01 · Nível A0/A1",
+          title: "Descongelamento Imediato",
+          desc: "Imersão em blocos sonoros de sobrevivência prática. Peça café, resolva imprevistos em hotéis e circule em aeroportos sem pânico e sem precisar fazer mímica.",
+          skills: "Pedidos em restaurantes, compras, check-in e saudações no reflexo.",
+          img: "/assets/dia2_cafeteria.jpg"
+        },
+        {
+          badge: "Estágio 02 · Nível A2",
+          title: "Autonomia do Dia a Dia",
+          desc: "15 minutos diários de sparring com IA no celular. O cérebro automatiza o vocabulário cotidiano e para de pensar em português antes de emitir cada frase.",
+          skills: "Rotina pessoal, orientações, planos de viagem e conversas sem tradução mental.",
+          img: "/assets/cap3_preparacao.jpg"
+        },
+        {
+          badge: "Estágio 03 · Nível B1",
+          title: "Fluência Conversacional",
+          desc: "Sessões estratégicas de agilidade oral com Gabriel Lima. Conectores naturais, histórias completas e opiniões sustentadas com leveza e segurança.",
+          skills: "Debate de ideias, relatos espontâneos, vocabulário amplo e ritmo fluido.",
+          img: "/assets/cap2_metodo.jpg"
+        },
+        {
+          badge: "Estágio 04 · Nível B2/C1",
+          title: "Autoridade & Diplomacia Executiva",
+          desc: "Reuniões profissionais internacionais sob pressão, pitch de projetos e humor sutil. Você se comunica com a mesma autoridade e elegância que tem em português.",
+          skills: "Negociações de alto impacto, liderança remota e apresentações executivas globais.",
+          img: "/assets/dia4_fluencia.jpg"
+        }
+      ];
+
+      const tabButtons = document.querySelectorAll('.stage-tab-item');
+      const badgeEl = document.getElementById('stage-badge');
+      const titleEl = document.getElementById('stage-title');
+      const descEl = document.getElementById('stage-desc');
+      const skillsEl = document.getElementById('stage-skills');
+      const imgEl = document.getElementById('stage-img');
+
+      if (!tabButtons.length || !badgeEl || !titleEl || !descEl || !skillsEl || !imgEl) return;
+
+      tabButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const idx = parseInt(btn.getAttribute('data-stage') || '0', 10);
+          const data = stagesData[idx];
+          if (!data) return;
+
+          tabButtons.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+
+          imgEl.style.opacity = '0.3';
+          setTimeout(() => {
+            badgeEl.textContent = data.badge;
+            titleEl.textContent = data.title;
+            descEl.textContent = data.desc;
+            skillsEl.textContent = data.skills;
+            imgEl.src = data.img;
+            imgEl.style.opacity = '1';
+          }, 150);
+        });
+      });
+    })();
+
+    // 3. QUIZ INTERATIVO (ZERO ESBRANQUIÇADO & DESIGN TOKENIZED)
     (function initAetherQuiz() {
       const questions = [
         {
