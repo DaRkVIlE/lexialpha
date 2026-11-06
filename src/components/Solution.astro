@@ -1,178 +1,182 @@
 ---
-// src/components/Solution.astro — Pilares SPARK: 3 Aether Cards com gamificação
+// src/components/Solution.astro — Seção 4: Como Funciona o Método SPARK (03.6)
+// Os 3 Pilares da Experiência Alpha: LibreChat IA + 3 Sessões Gabe + Memória de Aquisição (SPARK Score)
 ---
 
-<section id="metodo" class="py-32 px-4 sm:px-8 relative border-t border-[#1a1a1a]">
+<section id="metodo" class="py-28 px-4 sm:px-8 relative border-t border-[#2e224d]">
   <div class="max-w-6xl mx-auto">
 
-    <!-- Section Header -->
+    <!-- Section Header (03.6) -->
     <div class="mb-16" data-anim="fade-up">
       <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full badge-glow mb-4">
-        <span class="w-1.5 h-1.5 rounded-full bg-[#3ecf8e] micro-pulse"></span>
-        <span class="text-xs font-mono text-[#3ecf8e] uppercase tracking-[0.2em]">Como Funciona</span>
+        <span class="w-1.5 h-1.5 rounded-full bg-[#c2ef4e] micro-pulse"></span>
+        <span class="text-xs font-mono text-[#c2ef4e] uppercase tracking-[0.2em]">A Ciência do Destravamento</span>
       </div>
-      <h2 class="font-sans font-extrabold text-4xl sm:text-5xl md:text-6xl tracking-tight mt-2 text-[#fafafa] leading-[1.05] max-w-2xl">
-        Três pilares.<br />
-        <span class="text-gradient-emerald">Uma ascensão real.</span>
+      <h2 class="font-sans font-extrabold text-3xl sm:text-5xl md:text-6xl tracking-tight mt-2 text-[#ffffff] leading-[1.05] max-w-2xl">
+        A Ciência Por Trás do<br />
+        <span class="text-gradient-lime">Seu Destravamento.</span>
       </h2>
-      <p class="text-[#898989] text-base mt-4 max-w-xl leading-relaxed">
-        Ciência de memória espaçada, prática diária gamificada e mentoria humana semanal. Os três juntos formam o método SPARK.
+      <p class="text-[#cfcfdb] text-base sm:text-lg mt-4 max-w-xl leading-relaxed">
+        Três pilares integrados eliminam a tradução mental e constroem a memória motora da fala no reflexo.
       </p>
     </div>
 
-    <!-- 3 Aether Cards -->
-    <div id="pilares-grid" class="grid md:grid-cols-3 gap-5">
+    <!-- 3 Aether Cards dos Pilares SPARK -->
+    <div id="pilares-grid" class="grid md:grid-cols-3 gap-6">
 
-      <!-- Card 1: FSRS Revisão Espaçada -->
-      <div class="aether-card p-8 flex flex-col min-h-[420px]" data-anim="fade-up">
-        <!-- Accent glow corner -->
-        <div class="absolute -top-16 -left-16 w-40 h-40 bg-[#3ecf8e]/8 rounded-full blur-3xl pointer-events-none"></div>
+      <!-- Pilar 1: Sparring Diário com IA no LibreChat (15 min/dia) -->
+      <div class="aether-card p-8 flex flex-col justify-between min-h-[440px] border-[#3b2c60] bg-[#271d40]" data-anim="fade-up">
+        <div>
+          <!-- Visual: Chat Simulator com Recasting sem Caneta Vermelha -->
+          <div class="mb-6 rounded-2xl bg-[#1f1633] border border-[#3b2c60] p-4 relative overflow-hidden">
+            <div class="flex items-center justify-between mb-3 border-b border-[#3b2c60] pb-2">
+              <span class="text-[10px] font-mono text-[#c2ef4e] uppercase tracking-[0.15em] flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#c2ef4e] micro-pulse"></span>
+                LibreChat Companion · 15 min
+              </span>
+              <span class="text-[10px] font-mono text-[#fa7faa]">+45 XP</span>
+            </div>
 
-        <!-- Visual: Curva de Retenção FSRS vs Tradicional (animated on scroll) -->
-        <div class="mb-8 relative h-32">
-          <svg id="fsrs-svg" viewBox="0 0 240 100" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
-            <!-- Grid lines -->
-            <line x1="0" y1="20" x2="240" y2="20" stroke="#1e1e1e" stroke-width="1"/>
-            <line x1="0" y1="50" x2="240" y2="50" stroke="#1e1e1e" stroke-width="1"/>
-            <line x1="0" y1="80" x2="240" y2="80" stroke="#1e1e1e" stroke-width="1"/>
+            <!-- Chat bubbles -->
+            <div class="space-y-2.5 text-xs font-sans">
+              <!-- Aluno errando naturalmente -->
+              <div class="p-2.5 rounded-xl bg-[#2e224d] text-[#ffffff] border border-[#3b2c60]/60 max-w-[88%] ml-auto">
+                <p class="text-[11px] text-[#cfcfdb] font-mono mb-0.5">Você:</p>
+                "I go to airport yesterday, but flight cancel."
+              </div>
+              <!-- IA respondendo com Spaced Recasting (sem caneta vermelha) -->
+              <div class="p-2.5 rounded-xl bg-[#1f1633] text-[#ffffff] border border-[#c2ef4e]/30 max-w-[92%]">
+                <p class="text-[10px] text-[#c2ef4e] font-mono mb-0.5 flex items-center gap-1">
+                  <span>✨</span> Spaced Recasting (Zero caneta vermelha):
+                </p>
+                "Oh no! So you <strong class="text-[#c2ef4e]">went to the airport yesterday</strong> and your <strong class="text-[#c2ef4e]">flight was cancelled</strong>? What did you do next?"
+              </div>
+            </div>
+          </div>
 
-            <!-- Traditional: forgetting curve (red-ish, fades in after FSRS) -->
-            <path id="fsrs-trad" d="M 0 20 C 30 20, 50 30, 60 50 C 70 70, 80 85, 240 90"
-                  stroke="#f87171" stroke-width="1.5" stroke-dasharray="4 3" fill="none" opacity="0"/>
-            <text id="fsrs-trad-label" x="170" y="92" fill="#f87171" font-size="8" opacity="0" font-family="monospace">Método tradicional</text>
-
-            <!-- FSRS: animated staircase retention -->
-            <path id="fsrs-s1" d="M 0 20 C 15 20, 25 35, 50 55" stroke="#3ecf8e" stroke-width="2" fill="none"/>
-            <line id="fsrs-r1" x1="50" y1="55" x2="50" y2="22" stroke="#3ecf8e" stroke-width="1.5" stroke-dasharray="2 2" opacity="0"/>
-            <path id="fsrs-s2" d="M 50 22 C 70 22, 80 38, 110 56" stroke="#3ecf8e" stroke-width="2" fill="none" opacity="0"/>
-            <line id="fsrs-r2" x1="110" y1="56" x2="110" y2="20" stroke="#3ecf8e" stroke-width="1.5" stroke-dasharray="2 2" opacity="0"/>
-            <path id="fsrs-s3" d="M 110 20 C 140 20, 160 34, 200 50" stroke="#3ecf8e" stroke-width="2" fill="none" opacity="0"/>
-            <line id="fsrs-r3" x1="200" y1="50" x2="200" y2="17" stroke="#3ecf8e" stroke-width="1.5" stroke-dasharray="2 2" opacity="0"/>
-            <path id="fsrs-s4" d="M 200 17 L 240 17" stroke="#3ecf8e" stroke-width="2" fill="none" opacity="0"/>
-
-            <!-- Review dots (appear on each review) -->
-            <circle id="fsrs-dot1" cx="50" cy="22" r="3" fill="#3ecf8e" opacity="0"/>
-            <circle id="fsrs-dot2" cx="110" cy="20" r="3" fill="#3ecf8e" opacity="0"/>
-            <circle id="fsrs-dot3" cx="200" cy="17" r="3" fill="#3ecf8e" opacity="0"/>
-
-            <!-- FSRS Label -->
-            <text x="206" y="12" fill="#3ecf8e" font-size="8" font-weight="600" font-family="monospace">FSRS</text>
-
-            <!-- Y axis labels -->
-            <text x="2" y="18" fill="#71717a" font-size="7" font-family="monospace">100%</text>
-            <text x="2" y="90" fill="#71717a" font-size="7" font-family="monospace">0%</text>
-          </svg>
-          <div class="absolute top-0 right-0 text-[10px] font-mono text-[#71717a]">Retenção ao longo do tempo</div>
+          <div class="flex items-center gap-2 mb-3">
+            <span class="topic-badge text-[#c2ef4e] border-[#c2ef4e]/25 bg-[#c2ef4e]/10">Pilar 01 · Reflexo</span>
+            <span class="text-[10px] font-mono text-[#cfcfdb]">15 min/dia</span>
+          </div>
+          <h3 class="text-xl font-extrabold text-[#ffffff] mb-2 tracking-tight">Sparring Diário no LibreChat</h3>
+          <p class="text-[#cfcfdb] text-sm leading-relaxed mb-4">
+            Prática conversacional sem estresse. O tutor de IA nunca te interrompe para corrigir com caneta vermelha — ele modela a pronúncia e estrutura certa naturalmente (<em>Spaced Recasting</em>).
+          </p>
         </div>
 
-        <div>
-          <div class="flex items-center gap-2 mb-3">
-            <span class="topic-badge text-[#3ecf8e] border-[#3ecf8e]/25 bg-[#3ecf8e]/10">Pilar 01 · Ciência</span>
-          </div>
-          <h3 class="text-xl font-extrabold text-[#fafafa] mb-2 tracking-tight">Revisão Espaçada FSRS</h3>
-          <p class="text-[#898989] text-sm leading-relaxed mb-5">
-            O algoritmo FSRS calcula o momento exato antes que você esqueça. Cada revisão é cirúrgica — sem repetir o que você já sabe, sem perder o que está consolidando.
-          </p>
-          <div class="flex items-center gap-2 text-xs font-mono text-[#71717a]">
-            <span class="w-2 h-2 rounded-full bg-[#3ecf8e]"></span>
-            <span>Retenção média: 92%</span>
-          </div>
+        <div class="flex items-center gap-2 text-xs font-mono text-[#c2ef4e] pt-3 border-t border-[#3b2c60]">
+          <span class="w-2 h-2 rounded-full bg-[#c2ef4e]"></span>
+          <span>Zero humilhação gramatical</span>
         </div>
       </div>
 
-      <!-- Card 2: PlayApp SPARK (central, destaque sutil) -->
+      <!-- Pilar 2: 3 Sessões Individuais com Gabe na Semana (2x15m + 1x30m Boss Raids) -->
       <div
-        class="aether-card p-8 flex flex-col min-h-[420px] border-[#3ecf8e]/20"
-        style="background: linear-gradient(145deg, #111111 0%, #0d1a12 100%);"
+        class="aether-card p-8 flex flex-col justify-between min-h-[440px] border-[#c2ef4e]/30"
+        style="background: linear-gradient(155deg, #271d40 0%, #1f1633 100%);"
         data-anim="fade-up"
       >
-        <div class="absolute -top-10 left-1/2 -translate-x-1/2 w-48 h-48 bg-[#3ecf8e]/10 rounded-full blur-3xl pointer-events-none"></div>
-
-        <!-- Mini Missão Mock -->
-        <div class="mb-8 rounded-2xl bg-[#0a0a0a] border border-[#1f2e1f] p-4 relative overflow-hidden">
-          <!-- Header -->
-          <div class="flex items-center justify-between mb-3">
-            <span class="text-[10px] font-mono text-[#3ecf8e] uppercase tracking-[0.15em]">SPARK ALPHA · DIA 5</span>
-            <span class="text-[10px] font-mono text-[#71717a]">15 min</span>
-          </div>
-
-          <!-- Mission title -->
-          <div class="text-xs font-bold text-[#fafafa] mb-2">🎯 Missão: Job Interview Prep</div>
-          <div class="text-[11px] text-[#898989] mb-3 leading-relaxed">
-            Responda: "Tell me about yourself" usando seus <span class="text-[#3ecf8e]">chunks do dia</span>.
-          </div>
-
-          <!-- XP Bar -->
-          <div class="mb-2">
-            <div class="flex items-center justify-between mb-1">
-              <span class="text-[10px] font-mono text-[#f59e0b]">⭐ XP</span>
-              <span class="text-[10px] font-mono text-[#898989]">1.840 / 2.400</span>
+        <div>
+          <!-- Visual: Timeline das 3 sessões semanais -->
+          <div class="mb-6 rounded-2xl bg-[#1f1633] border border-[#3b2c60] p-4 relative overflow-hidden">
+            <div class="text-[10px] font-mono text-[#cfcfdb] uppercase tracking-[0.15em] mb-3 flex items-center justify-between">
+              <span>Sessões Individuais · Gabe</span>
+              <span class="text-[#fa7faa] font-bold">1h / semana dividida</span>
             </div>
-            <div class="xp-bar-track">
-              <div class="xp-bar-fill" style="width: 76%;"></div>
+
+            <!-- 3 blocos de sessão -->
+            <div class="space-y-2">
+              <div class="flex items-center justify-between p-2 rounded-lg bg-[#2e224d] border border-[#3b2c60]">
+                <div class="flex items-center gap-2">
+                  <span class="text-xs">⚡</span>
+                  <span class="text-xs font-mono text-[#ffffff]">Sessão 1 (15 min)</span>
+                </div>
+                <span class="text-[10px] font-mono text-[#c2ef4e]">Agilidade & Chunks</span>
+              </div>
+              <div class="flex items-center justify-between p-2 rounded-lg bg-[#2e224d] border border-[#3b2c60]">
+                <div class="flex items-center gap-2">
+                  <span class="text-xs">⚡</span>
+                  <span class="text-xs font-mono text-[#ffffff]">Sessão 2 (15 min)</span>
+                </div>
+                <span class="text-[10px] font-mono text-[#c2ef4e]">Desinibição Motora</span>
+              </div>
+              <div class="flex items-center justify-between p-2 rounded-lg bg-[#3b2440] border border-[#ffb287]/40">
+                <div class="flex items-center gap-2">
+                  <span class="text-xs">⚔️</span>
+                  <span class="text-xs font-mono text-[#ffffff]">Sessão 3 (30 min)</span>
+                </div>
+                <span class="text-[10px] font-mono text-[#ffb287] font-bold">Boss Raid Real</span>
+              </div>
             </div>
           </div>
 
-          <!-- Streak badge -->
-          <div class="flex items-center gap-2 mt-3">
-            <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-[#f59e0b]/15 border border-[#f59e0b]/30 text-[10px] font-mono text-[#f59e0b]">
-              🔥 14 dias streak
-            </span>
-            <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-[#3ecf8e]/15 border border-[#3ecf8e]/30 text-[10px] font-mono text-[#3ecf8e]">
-              ✅ 3/5 tarefas
-            </span>
+          <div class="flex items-center gap-2 mb-3">
+            <span class="topic-badge text-[#fa7faa] border-[#fa7faa]/30 bg-[#fa7faa]/10">Pilar 02 · Humano</span>
+            <span class="text-[10px] font-mono text-[#cfcfdb]">3x / semana</span>
           </div>
+          <h3 class="text-xl font-extrabold text-[#ffffff] mb-2 tracking-tight">3 Sessões com Gabe</h3>
+          <p class="text-[#cfcfdb] text-sm leading-relaxed mb-4">
+            Duas sessões rápidas de 15 minutos para agilidade de resposta + uma sessão estendida de 30 minutos para simulações do mundo real e desafios de fala (<em>Boss Raids</em>).
+          </p>
         </div>
 
-        <div>
-          <div class="flex items-center gap-2 mb-3">
-            <span class="topic-badge text-[#3ecf8e] border-[#3ecf8e]/30 bg-[#3ecf8e]/15">Pilar 02 · Prática</span>
-            <span class="text-[10px] font-mono text-[#71717a]">24/7</span>
-          </div>
-          <h3 class="text-xl font-extrabold text-[#fafafa] mb-2 tracking-tight">PlayApp SPARK Alpha</h3>
-          <p class="text-[#898989] text-sm leading-relaxed">
-            Missões diárias gamificadas de 15 min. Chunks reais, progressão em XP, streaks e bosses desbloqueáveis. Você não estuda — você joga.
-          </p>
+        <div class="flex items-center gap-2 text-xs font-mono text-[#fa7faa] pt-3 border-t border-[#3b2c60]">
+          <span class="w-2 h-2 rounded-full bg-[#fa7faa]"></span>
+          <span>100% individual · Sem salas coletivas</span>
         </div>
       </div>
 
-      <!-- Card 3: Mentoria 1 a 1 -->
-      <div class="aether-card p-8 flex flex-col min-h-[420px]" data-anim="fade-up">
-        <div class="absolute -top-16 -right-16 w-40 h-40 bg-[#818cf8]/8 rounded-full blur-3xl pointer-events-none"></div>
+      <!-- Pilar 3: Memória de Aquisição (SPARK Score & Portal de Atividades) -->
+      <div class="aether-card p-8 flex flex-col justify-between min-h-[440px] border-[#3b2c60] bg-[#271d40]" data-anim="fade-up">
+        <div>
+          <!-- Visual: Curva de Retenção e Dashboard SPARK Score -->
+          <div class="mb-6 relative h-36 bg-[#1f1633] p-3 rounded-2xl border border-[#3b2c60]">
+            <div class="flex items-center justify-between text-[10px] font-mono text-[#cfcfdb] mb-1">
+              <span>Mapeamento de Chunks</span>
+              <span class="text-[#c2ef4e] font-bold">SPARK Score: 88%</span>
+            </div>
 
-        <!-- Visual: Waveform de áudio com análise -->
-        <div class="mb-8 relative h-32 flex flex-col justify-center">
-          <div class="text-[10px] font-mono text-[#71717a] mb-2">Sessão ao vivo · Gravação 03</div>
-          <div class="flex items-center gap-[2px] h-12">
-            {[8,14,22,36,28,18,44,30,16,42,26,52,38,20,46,32,56,24,44,30,52,26,40,34,48,22,42,36,18,28,14,20,34,46,28,38,52,24,44].map((h, i) => (
-              <div
-                class="rounded-full flex-1 wave-bar"
-                style={`height:${h}px; background:${i > 18 ? '#818cf8' : '#3ecf8e'}; opacity:${0.4 + (i % 5) * 0.1}; animation-delay:${i * 0.04}s;`}
-              ></div>
-            ))}
+            <svg id="fsrs-svg" viewBox="0 0 240 85" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-24">
+              <!-- Grid lines -->
+              <line x1="0" y1="15" x2="240" y2="15" stroke="#3b2c60" stroke-width="1"/>
+              <line x1="0" y1="45" x2="240" y2="45" stroke="#3b2c60" stroke-width="1"/>
+              <line x1="0" y1="75" x2="240" y2="75" stroke="#3b2c60" stroke-width="1"/>
+
+              <!-- Traditional forgetting curve -->
+              <path id="fsrs-trad" d="M 0 15 C 30 15, 50 25, 60 45 C 70 65, 80 75, 240 80"
+                    stroke="#ffb287" stroke-width="1.5" stroke-dasharray="4 3" fill="none" opacity="0"/>
+              <text id="fsrs-trad-label" x="140" y="82" fill="#ffb287" font-size="7" opacity="0" font-family="monospace">Esquecimento tradicional</text>
+
+              <!-- SPARK retention curve -->
+              <path id="fsrs-s1" d="M 0 15 C 15 15, 25 30, 50 48" stroke="#c2ef4e" stroke-width="2" fill="none"/>
+              <line id="fsrs-r1" x1="50" y1="48" x2="50" y2="18" stroke="#c2ef4e" stroke-width="1.5" stroke-dasharray="2 2" opacity="0"/>
+              <path id="fsrs-s2" d="M 50 18 C 70 18, 80 32, 110 46" stroke="#c2ef4e" stroke-width="2" fill="none" opacity="0"/>
+              <line id="fsrs-r2" x1="110" y1="46" x2="110" y2="15" stroke="#c2ef4e" stroke-width="1.5" stroke-dasharray="2 2" opacity="0"/>
+              <path id="fsrs-s3" d="M 110 15 C 140 15, 160 26, 200 40" stroke="#c2ef4e" stroke-width="2" fill="none" opacity="0"/>
+              <line id="fsrs-r3" x1="200" y1="40" x2="200" y2="12" stroke="#c2ef4e" stroke-width="1.5" stroke-dasharray="2 2" opacity="0"/>
+              <path id="fsrs-s4" d="M 200 12 L 240 12" stroke="#c2ef4e" stroke-width="2" fill="none" opacity="0"/>
+
+              <circle id="fsrs-dot1" cx="50" cy="18" r="3" fill="#c2ef4e" opacity="0"/>
+              <circle id="fsrs-dot2" cx="110" cy="15" r="3" fill="#c2ef4e" opacity="0"/>
+              <circle id="fsrs-dot3" cx="200" cy="12" r="3" fill="#c2ef4e" opacity="0"/>
+
+              <text x="195" y="9" fill="#c2ef4e" font-size="8" font-weight="bold" font-family="monospace">Retenção 92%</text>
+            </svg>
           </div>
-          <!-- Feedback badge -->
-          <div class="mt-2 flex items-center gap-2">
-            <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-[#818cf8]/15 border border-[#818cf8]/30 text-[10px] font-mono text-[#818cf8]">
-              ⚡ Feedback camadas
-            </span>
-            <span class="text-[10px] font-mono text-[#71717a]">Duração 23min</span>
+
+          <div class="flex items-center gap-2 mb-3">
+            <span class="topic-badge text-[#6a5fc1] border-[#6a5fc1]/30 bg-[#6a5fc1]/10">Pilar 03 · Ciência</span>
+            <span class="text-[10px] font-mono text-[#cfcfdb]">Mapeamento</span>
           </div>
+          <h3 class="text-xl font-extrabold text-[#ffffff] mb-2 tracking-tight">Memória & Portal do Aluno</h3>
+          <p class="text-[#cfcfdb] text-sm leading-relaxed mb-4">
+            Rastreamento de chunks dominados sem traduzir, medidos pelo seu <strong>SPARK Score</strong>. Atividades guiadas, gravações e exercícios práticos centralizados no Portal do Aluno.
+          </p>
         </div>
 
-        <div>
-          <div class="flex items-center gap-2 mb-3">
-            <span class="topic-badge text-[#818cf8] border-[#818cf8]/25 bg-[#818cf8]/10">Pilar 03 · Humano</span>
-          </div>
-          <h3 class="text-xl font-extrabold text-[#fafafa] mb-2 tracking-tight">Mentoria 1 a 1 ao Vivo</h3>
-          <p class="text-[#898989] text-sm leading-relaxed mb-5">
-            Toda semana, sessões individuais com Gabriel Lima. Sem grupos, sem agenda compartilhada. Feedback em camadas, trabalho direto nas suas travas específicas.
-          </p>
-          <div class="flex flex-wrap gap-2">
-            <span class="topic-badge text-[#d4d4d8] border-[#2e2e2e]">2x Rápidas/sem</span>
-            <span class="topic-badge text-[#d4d4d8] border-[#2e2e2e]">1x Estendida/sem</span>
-            <span class="topic-badge text-[#818cf8] border-[#818cf8]/30 bg-[#818cf8]/10">100% Individual</span>
-          </div>
+        <div class="flex items-center gap-2 text-xs font-mono text-[#6a5fc1] pt-3 border-t border-[#3b2c60]">
+          <span class="w-2 h-2 rounded-full bg-[#6a5fc1]"></span>
+          <span>Progresso factual e mensurável</span>
         </div>
       </div>
 
@@ -200,46 +204,32 @@
       scrollTrigger: { trigger: '#metodo', start: 'top 75%' }
     });
 
-    gsap.from('#metodo [data-anim="fade-up"]:first-child', {
-      y: 30,
-      opacity: 0,
-      duration: 0.7,
-      ease: 'power3.out',
-      scrollTrigger: { trigger: '#metodo', start: 'top 80%' }
-    });
-
-    // ── FSRS Curve Animation (draw-on-scroll) ─────────────────
     var fsrsTrig = { trigger: '#metodo', start: 'top 70%' };
 
-    // Segment 1 draws first
     var s1 = document.getElementById('fsrs-s1');
     if (s1 && s1.getTotalLength) {
       var l1 = s1.getTotalLength();
       gsap.set(s1, { strokeDasharray: l1, strokeDashoffset: l1 });
       gsap.to(s1, { strokeDashoffset: 0, duration: 0.6, ease: 'power2.inOut', scrollTrigger: fsrsTrig });
     }
-    // Review spike 1 + dot
-    gsap.to(['#fsrs-r1', '#fsrs-dot1'], { opacity: 0.5, duration: 0.3, delay: 0.6, scrollTrigger: fsrsTrig });
+    gsap.to(['#fsrs-r1', '#fsrs-dot1'], { opacity: 0.6, duration: 0.3, delay: 0.6, scrollTrigger: fsrsTrig });
 
-    // Segment 2
     var s2 = document.getElementById('fsrs-s2');
     if (s2 && s2.getTotalLength) {
       var l2 = s2.getTotalLength();
       gsap.set(s2, { strokeDasharray: l2, strokeDashoffset: l2, opacity: 1 });
       gsap.to(s2, { strokeDashoffset: 0, duration: 0.6, ease: 'power2.inOut', delay: 0.75, scrollTrigger: fsrsTrig });
     }
-    gsap.to(['#fsrs-r2', '#fsrs-dot2'], { opacity: 0.5, duration: 0.3, delay: 1.35, scrollTrigger: fsrsTrig });
+    gsap.to(['#fsrs-r2', '#fsrs-dot2'], { opacity: 0.6, duration: 0.3, delay: 1.35, scrollTrigger: fsrsTrig });
 
-    // Segment 3
     var s3 = document.getElementById('fsrs-s3');
     if (s3 && s3.getTotalLength) {
       var l3 = s3.getTotalLength();
       gsap.set(s3, { strokeDasharray: l3, strokeDashoffset: l3, opacity: 1 });
       gsap.to(s3, { strokeDashoffset: 0, duration: 0.65, ease: 'power2.inOut', delay: 1.5, scrollTrigger: fsrsTrig });
     }
-    gsap.to(['#fsrs-r3', '#fsrs-dot3'], { opacity: 0.5, duration: 0.3, delay: 2.15, scrollTrigger: fsrsTrig });
+    gsap.to(['#fsrs-r3', '#fsrs-dot3'], { opacity: 0.6, duration: 0.3, delay: 2.15, scrollTrigger: fsrsTrig });
 
-    // Segment 4 (flat line — mastery!)
     var s4 = document.getElementById('fsrs-s4');
     if (s4 && s4.getTotalLength) {
       var l4 = s4.getTotalLength();
@@ -247,8 +237,7 @@
       gsap.to(s4, { strokeDashoffset: 0, duration: 0.5, ease: 'power1.inOut', delay: 2.3, scrollTrigger: fsrsTrig });
     }
 
-    // Traditional forgetting curve fades in last (contrast reveal)
-    gsap.to(['#fsrs-trad', '#fsrs-trad-label'], { opacity: 0.5, duration: 0.6, delay: 2.5, scrollTrigger: fsrsTrig });
+    gsap.to(['#fsrs-trad', '#fsrs-trad-label'], { opacity: 0.6, duration: 0.6, delay: 2.5, scrollTrigger: fsrsTrig });
   });
 })();
 </script>

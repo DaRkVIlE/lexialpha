@@ -1,0 +1,459 @@
+---
+// src/components/QuizNivelamento.astro — Seção 3: Quiz Gamificado de Nivelamento
+// Momento WOW Interativo (2 minutos) · Classificação nos 5 Portais SPARK
+---
+
+<section id="quiz" class="py-28 px-4 sm:px-8 relative overflow-hidden border-t border-[#2e224d]">
+  <!-- Fundo com Glow Sentry Purple & Neon Lime -->
+  <div class="absolute inset-0 dot-grid-bg opacity-40 pointer-events-none"></div>
+  <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-[#6a5fc1]/10 rounded-full blur-[140px] pointer-events-none"></div>
+
+  <div class="max-w-4xl mx-auto relative z-10">
+
+    <!-- Header da Seção -->
+    <div class="text-center mb-12" data-anim="fade-up">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full badge-glow mb-4">
+        <span class="w-1.5 h-1.5 rounded-full bg-[#c2ef4e] micro-pulse"></span>
+        <span class="text-xs font-mono text-[#c2ef4e] uppercase tracking-[0.2em]">Diagnóstico de Entrada · 2 Minutos</span>
+      </div>
+      <h2 class="font-sans font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-tight leading-[1.08] text-[#ffffff] mb-4">
+        Descubra Exatamente Onde<br />
+        <span class="text-gradient-lime">Sua Fala Está Travando.</span>
+      </h2>
+      <p class="text-[#cfcfdb] text-base sm:text-lg max-w-xl mx-auto leading-relaxed">
+        Responda a 5 situações práticas do mundo real e receba o diagnóstico instantâneo do seu nível comunicativo e portal de entrada.
+      </p>
+    </div>
+
+    <!-- Quiz Widget Card (Aether Card) -->
+    <div
+      id="quiz-container"
+      class="aether-card p-6 sm:p-10 shadow-2xl relative border border-[#3b2c60] bg-[#271d40]/90 backdrop-blur-xl"
+      data-anim="scale-in"
+    >
+      <!-- HUD / Top Bar do Quiz -->
+      <div class="flex items-center justify-between gap-4 pb-6 border-b border-[#3b2c60] mb-8">
+        <!-- Progress Steps -->
+        <div class="flex items-center gap-2">
+          <span class="text-xs font-mono text-[#c2ef4e] font-bold uppercase tracking-wider" id="quiz-step-label">
+            Questão 1 de 5
+          </span>
+          <span class="text-[#79628c]">/</span>
+          <span class="text-xs font-mono text-[#fa7faa] font-semibold" id="quiz-xp-badge">
+            +50 XP
+          </span>
+        </div>
+
+        <!-- Progress Bar Track -->
+        <div class="w-32 sm:w-48 h-2 rounded-full bg-[#1f1633] overflow-hidden p-0.5 border border-[#3b2c60]">
+          <div
+            id="quiz-progress-bar"
+            class="h-full rounded-full bg-gradient-to-r from-[#6a5fc1] via-[#fa7faa] to-[#c2ef4e] transition-all duration-500 ease-out"
+            style="width: 20%;"
+          ></div>
+        </div>
+      </div>
+
+      <!-- QUESTIONS CONTAINER (Dinâmico via JS) -->
+      <div id="quiz-question-area" class="transition-opacity duration-300">
+        <!-- Badge da Situação -->
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#1f1633] border border-[#3b2c60] text-xs font-mono text-[#cfcfdb] mb-4" id="situation-tag">
+          <span class="text-[#c2ef4e]">⚡ Situação 1:</span> Café & Sobrevivência
+        </div>
+
+        <!-- Título da Situação -->
+        <h3 id="question-title" class="font-sans font-bold text-xl sm:text-2xl text-[#ffffff] mb-3 leading-snug">
+          Você está em Nova York e o barista te entrega um café totalmente diferente do que você pediu. O que acontece?
+        </h3>
+        <p id="question-desc" class="text-sm text-[#cfcfdb] mb-8">
+          Seja honesto com a sua reação imediata e instintiva:
+        </p>
+
+        <!-- Opções -->
+        <div id="options-container" class="space-y-3.5">
+          <!-- Gerado via script -->
+        </div>
+      </div>
+
+      <!-- RESULT CONTAINER (Oculto inicialmente) -->
+      <div id="quiz-result-area" class="hidden text-center py-4">
+        <!-- Badge de Conquista -->
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#6a5fc1]/20 border border-[#6a5fc1]/50 text-xs font-mono text-[#fa7faa] uppercase tracking-wider mb-5">
+          <span>🏆 Diagnóstico Concluído</span>
+          <span class="text-[#c2ef4e] font-bold">+250 XP Acumulados</span>
+        </div>
+
+        <!-- Título do Portal -->
+        <div class="mb-4">
+          <span class="text-xs font-mono uppercase tracking-[0.25em] text-[#cfcfdb] block mb-1">Seu Ponto de Partida Oficial</span>
+          <h3 id="result-portal-name" class="font-sans font-black text-3xl sm:text-4xl text-gradient-lime">
+            PORTAL 2: O Motor do BICS (Nível A2)
+          </h3>
+          <p id="result-guardian" class="text-xs font-mono text-[#fa7faa] mt-1">Guardião Regente: Miles · Rank D</p>
+        </div>
+
+        <!-- Visual do Diagnóstico / Cartão de Análise -->
+        <div class="p-6 rounded-2xl bg-[#1f1633] border border-[#3b2c60] text-left max-w-2xl mx-auto my-6 space-y-4">
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 rounded-xl bg-[#c2ef4e]/10 border border-[#c2ef4e]/30 flex items-center justify-center shrink-0 text-[#c2ef4e]">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <div>
+              <h4 class="text-sm font-mono text-[#c2ef4e] uppercase font-bold tracking-wider">O Bloqueio Detectado</h4>
+              <p id="result-block-text" class="text-sm text-[#ffffff] mt-1 leading-relaxed">
+                Você tem vocabulário passivo na memória, mas sofre com o <strong>"Lag dos 3 Segundos"</strong>: traduz internamente para o português antes de falar, gerando insegurança e pausas longas.
+              </p>
+            </div>
+          </div>
+
+          <div class="border-t border-[#3b2c60] pt-4 flex items-start gap-4">
+            <div class="w-10 h-10 rounded-xl bg-[#fa7faa]/10 border border-[#fa7faa]/30 flex items-center justify-center shrink-0 text-[#fa7faa]">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <div>
+              <h4 class="text-sm font-mono text-[#fa7faa] uppercase font-bold tracking-wider">O Plano SPARK para seus primeiros 30 Dias</h4>
+              <p id="result-plan-text" class="text-sm text-[#cfcfdb] mt-1 leading-relaxed">
+                Automatizar <strong>650 Chunks Nucleares</strong> com prática diária de 15 min no LibreChat + 3 sessões semanais com Gabe para destravar viagens e reuniões sem tradução mental.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA Principal: Enviar para WhatsApp de Gabe -->
+        <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a
+            id="btn-whatsapp-result"
+            href="https://wa.me/5511967239791"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-[#c2ef4e] text-[#1f1633] font-sans font-extrabold text-sm sm:text-base transition-all hover:bg-[#b0dc41] hover:scale-[1.02] active:scale-95 shadow-xl shadow-[#c2ef4e]/20 group"
+          >
+            <span>Ver Meu Diagnóstico & Falar com Gabe no WhatsApp</span>
+            <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </a>
+
+          <button
+            type="button"
+            id="btn-restart-quiz"
+            class="px-5 py-3 text-xs font-mono text-[#cfcfdb] hover:text-[#ffffff] transition-colors"
+          >
+            ↺ Refazer Teste
+          </button>
+        </div>
+
+        <p class="text-xs text-[#79628c] mt-4 font-mono">
+          ⚡ 15 vagas abertas para a Turma Alpha · Conversa direta com Gabriel Lima
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Script Interativo do Quiz Gamificado -->
+<script is:inline>
+  (function() {
+    const questions = [
+      {
+        tag: "⚡ Situação 1: Café & Sobrevivência (A1)",
+        title: "Você está em Nova York e o barista te entrega um café totalmente diferente do que você pediu. O que acontece?",
+        desc: "Seja sincero com a sua reação imediata:",
+        options: [
+          {
+            text: "Fico com vergonha, bebo assim mesmo ou aponto pro copo fazendo mímica.",
+            points: 0,
+            badge: "Pânico Inicial"
+          },
+          {
+            text: "Tento formular a frase na cabeça ('The coffee... is not this... please?'), demoro uns segundos mas consigo pedir a troca.",
+            points: 1,
+            badge: "Tradução Mental"
+          },
+          {
+            text: "Falo no reflexo imediato: 'Hey, sorry, I actually ordered an iced latte, could you check it?' sem traduzir.",
+            points: 2,
+            badge: "Reflexo Natural"
+          }
+        ]
+      },
+      {
+        tag: "✈️ Situação 2: Aeroporto & Imprevistos (A2)",
+        title: "Seu voo de conexão foi cancelado de surpresa em Londres. Você precisa ir ao balcão e entender o que fazer com bagagem e hotel.",
+        desc: "Como você conduz essa conversa crítica?",
+        options: [
+          {
+            text: "Pânico total. Abro o Google Tradutor no celular ou procuro algum brasileiro na fila pra me ajudar.",
+            points: 0,
+            badge: "Bloqueio"
+          },
+          {
+            text: "Consigo me virar com palavras soltas e pausas longas, mas o coração acelera e fico inseguro se entendi tudo.",
+            points: 1,
+            badge: "Sobrevivência Travada"
+          },
+          {
+            text: "Converso com calma usando blocos práticos ('What are my options for tonight?' / 'Where can I claim my bags?').",
+            points: 2,
+            badge: "Autonomia Cotidiana"
+          }
+        ]
+      },
+      {
+        tag: "🍻 Situação 3: Pub & Conversa Casual (B1)",
+        title: "Em um evento social ou pub no exterior, nativos puxam papo com você sobre rotina, viagens passadas e trabalho.",
+        desc: "Qual é a sua postura durante o bate-papo?",
+        options: [
+          {
+            text: "Entendo algumas palavras soltas, mas só sorrio e concordo com a cabeça para não passar vergonha.",
+            points: 0,
+            badge: "Mudo Social"
+          },
+          {
+            text: "Respondo perguntas curtas e diretas, mas se a conversa aprofunda, travo na gramática e fico quieto.",
+            points: 1,
+            badge: "Hesitação B1"
+          },
+          {
+            text: "Bato papo de forma solta, conto histórias usando expressões vivas ('actually', 'by the way', 'to be honest') sem medo de errar.",
+            points: 2,
+            badge: "Fluência Conversacional"
+          }
+        ]
+      },
+      {
+        tag: "💼 Situação 4: Reunião Profissional & Pitch (B2)",
+        title: "Numa reunião remota da sua empresa com clientes gringos, questionam o prazo de entrega do seu projeto sob pressão.",
+        desc: "Como você reage profissionalmente?",
+        options: [
+          {
+            text: "Fico mudo de câmera fechada ou rezo para o meu colega de trabalho responder no meu lugar.",
+            points: 0,
+            badge: "Insegurança Corporativa"
+          },
+          {
+            text: "Falo o inglês técnico básico da minha área, mas peço desculpas pelo meu inglês e sinto que não transmiti autoridade.",
+            points: 1,
+            badge: "Barreira Executiva"
+          },
+          {
+            text: "Assumo a resposta com diplomacia executiva, negocio prazos ('If you can meet us halfway...') com firmeza.",
+            points: 2,
+            badge: "Autonomia B2"
+          }
+        ]
+      },
+      {
+        tag: "🎭 Situação 5: Humor Sutil & Diplomacia (C1)",
+        title: "Durante um jantar corporativo ou apresentação executiva, alguém faz uma piada com sarcasmo e duplo sentido refinado.",
+        desc: "Qual o seu nível de percepção?",
+        options: [
+          {
+            text: "Só dou risada quando todo mundo ri, sem entender a menor graça ou o contexto da piada.",
+            points: 0,
+            badge: "Desconexão Cultural"
+          },
+          {
+            text: "Entendo o sentido literal das palavras, mas perco a ironia ou o jogo de palavras sutil.",
+            points: 1,
+            badge: "Compreensão Literal"
+          },
+          {
+            text: "Pego a nuance na hora, consigo responder com outra tirada inteligente e sustento a retórica com elegância.",
+            points: 2,
+            badge: "Soberania C1"
+          }
+        ]
+      }
+    ];
+
+    let currentStep = 0;
+    let totalScore = 0;
+
+    const questionArea = document.getElementById('quiz-question-area');
+    const resultArea = document.getElementById('quiz-result-area');
+    const stepLabel = document.getElementById('quiz-step-label');
+    const xpBadge = document.getElementById('quiz-xp-badge');
+    const progressBar = document.getElementById('quiz-progress-bar');
+    const situationTag = document.getElementById('situation-tag');
+    const questionTitle = document.getElementById('question-title');
+    const questionDesc = document.getElementById('question-desc');
+    const optionsContainer = document.getElementById('options-container');
+
+    const resultPortalName = document.getElementById('result-portal-name');
+    const resultGuardian = document.getElementById('result-guardian');
+    const resultBlockText = document.getElementById('result-block-text');
+    const resultPlanText = document.getElementById('result-plan-text');
+    const btnWhatsapp = document.getElementById('btn-whatsapp-result');
+    const btnRestart = document.getElementById('btn-restart-quiz');
+
+    function renderQuestion(index) {
+      const q = questions[index];
+      if (!q) return;
+
+      stepLabel.textContent = `Questão ${index + 1} de ${questions.length}`;
+      xpBadge.textContent = `+${(index + 1) * 50} XP`;
+      progressBar.style.width = `${((index + 1) / questions.length) * 100}%`;
+
+      situationTag.innerHTML = q.tag;
+      questionTitle.textContent = q.title;
+      questionDesc.textContent = q.desc;
+
+      optionsContainer.innerHTML = '';
+      q.options.forEach((opt, optIndex) => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'w-full text-left p-4 sm:p-5 rounded-xl bg-[#1f1633] border border-[#3b2c60] hover:border-[#c2ef4e]/60 hover:bg-[#2e224d] transition-all flex items-center justify-between gap-4 group cursor-pointer active:scale-[0.99]';
+        
+        btn.innerHTML = `
+          <div class="flex items-start gap-3.5">
+            <span class="w-6 h-6 rounded-full bg-[#271d40] border border-[#3b2c60] text-xs font-mono text-[#c2ef4e] flex items-center justify-center shrink-0 mt-0.5 group-hover:border-[#c2ef4e] group-hover:bg-[#c2ef4e]/10">
+              ${String.fromCharCode(65 + optIndex)}
+            </span>
+            <span class="text-sm sm:text-base text-[#cfcfdb] group-hover:text-[#ffffff] leading-relaxed font-sans">
+              ${opt.text}
+            </span>
+          </div>
+          <span class="hidden sm:inline-block text-[11px] font-mono text-[#79628c] uppercase group-hover:text-[#fa7faa] shrink-0">
+            ${opt.badge}
+          </span>
+        `;
+
+        btn.addEventListener('click', function() {
+          selectOption(opt.points, index);
+        });
+
+        optionsContainer.appendChild(btn);
+      });
+
+      // Telemetria LGPD-compliant (04.5)
+      try {
+        if (window.dataLayer) {
+          window.dataLayer.push({
+            event: 'quiz_step_view',
+            question_index: index + 1
+          });
+        }
+      } catch (e) {}
+    }
+
+    function selectOption(points, index) {
+      totalScore += points;
+
+      // Telemetria por resposta
+      try {
+        if (window.dataLayer) {
+          window.dataLayer.push({
+            event: 'quiz_step_complete',
+            question_index: index + 1,
+            points: points
+          });
+        }
+      } catch (e) {}
+
+      if (currentStep < questions.length - 1) {
+        currentStep++;
+        questionArea.style.opacity = '0';
+        setTimeout(() => {
+          renderQuestion(currentStep);
+          questionArea.style.opacity = '1';
+        }, 180);
+      } else {
+        showResults();
+      }
+    }
+
+    function showResults() {
+      questionArea.classList.add('hidden');
+      resultArea.classList.remove('hidden');
+
+      let portalName = '';
+      let guardian = '';
+      let rank = '';
+      let blockText = '';
+      let planText = '';
+      let waMessage = '';
+
+      if (totalScore <= 2) {
+        rank = 'A1';
+        portalName = 'PORTAL 1: O Descongelamento (Nível A1)';
+        guardian = 'Guardião Regente: Jordan · Rank E';
+        blockText = 'Seu principal obstáculo é o <strong>Pânico Inicial de Falar</strong> e a trava de tentar memorizar regras de prova. Você ainda não criou a musculatura automática da fala.';
+        planText = 'Imersão de 30 dias focada em <strong>350 Chunks Nucleares</strong> de sobrevivência com o companion IA no LibreChat + 3 sessões semanais curtas com Gabriel para eliminar o medo de errar.';
+        waMessage = encodeURIComponent('Olá Gabe! Fiz o quiz da LexiQuest e meu resultado deu Portal 1 (Nível A1). Quero destravar minha fala na Turma Alpha de 15 vagas!');
+      } else if (totalScore <= 4) {
+        rank = 'A2';
+        portalName = 'PORTAL 2: O Motor do BICS (Nível A2)';
+        guardian = 'Guardião Regente: Miles · Rank D';
+        blockText = 'Você tem vocabulário passivo, mas sofre com o <strong>"Lag dos 3 Segundos"</strong>: traduz para o português antes de soltar a voz, travando em aeroportos, hotéis e imprevistos.';
+        planText = 'Dominar <strong>650 Chunks Cotidianos</strong> com feedback imediato sem caneta vermelha (Spaced Recasting) e simulações guiadas com Gabriel para falar no reflexo motor.';
+        waMessage = encodeURIComponent('Olá Gabe! Fiz o quiz da LexiQuest e meu resultado deu Portal 2 (Nível A2). Quero destravar minha fala na Turma Alpha de 15 vagas!');
+      } else if (totalScore <= 7) {
+        rank = 'B1';
+        portalName = 'PORTAL 3: A Tração Conversacional (Nível B1)';
+        guardian = 'Guardião Regente: Zack · Rank C';
+        blockText = 'Você já entende bem, mas sua fala ainda é fragmentada. Falta o domínio de <strong>conectores vivos e storytelling</strong> para sustentar conversas longas sem pausas constrangedoras.';
+        planText = 'Ativação de <strong>750 Chunks de Tração</strong> para encadear argumentos, expressar discordâncias elegantes e simulações com Gabe para destravar debates.';
+        waMessage = encodeURIComponent('Olá Gabe! Fiz o quiz da LexiQuest e meu resultado deu Portal 3 (Nível B1). Quero destravar minha fala na Turma Alpha de 15 vagas!');
+      } else if (totalScore <= 9) {
+        rank = 'B2';
+        portalName = 'PORTAL 4: A Fronteira Executiva (Nível B2)';
+        guardian = 'Guardiã Regente: Alexandra · Rank B';
+        blockText = 'Você se comunica bem, mas sente insegurança em <strong>reuniões de alto nível e negociações</strong>, muitas vezes pedindo desculpas pelo seu inglês diante de gringos.';
+        planText = 'Consolidação de <strong>2.500 Chunks Acumulados</strong> (Cume da Autonomia Total) com simulações de reuniões reais e Boss Raids semanais de 30 min com Gabriel.';
+        waMessage = encodeURIComponent('Olá Gabe! Fiz o quiz da LexiQuest e meu resultado deu Portal 4 (Nível B2). Quero destravar minha fala executiva na Turma Alpha de 15 vagas!');
+      } else {
+        rank = 'C1';
+        portalName = 'PORTAL 5: O Trono da Soberania (Nível C1/C2)';
+        guardian = 'Guardião Regente: Prof. Hayes · Rank A/S';
+        blockText = 'Você tem fluência sólida! O seu desafio agora é o <strong>refinamento cultural profundo, humor sutil, ironia fina e oratória persuasiva de liderança global</strong>.';
+        planText = 'Treinamento de <strong>3.500 Chunks Totais</strong> com debates complexos e refinamento retórico personalizado diretamente com o professor Gabriel.';
+        waMessage = encodeURIComponent('Olá Gabe! Fiz o quiz da LexiQuest e meu resultado deu Portal 5 (Nível C1/C2). Quero refinar minha oratória e retórica na Turma Alpha!');
+      }
+
+      resultPortalName.textContent = portalName;
+      resultGuardian.textContent = guardian;
+      resultBlockText.innerHTML = blockText;
+      resultPlanText.innerHTML = planText;
+      btnWhatsapp.href = `https://wa.me/5511967239791?text=${waMessage}`;
+
+      // Telemetria LGPD-compliant (04.5)
+      try {
+        if (window.dataLayer) {
+          window.dataLayer.push({
+            event: 'quiz_complete',
+            calculated_rank: rank,
+            total_score: totalScore
+          });
+        }
+      } catch (e) {}
+    }
+
+    btnRestart?.addEventListener('click', function() {
+      currentStep = 0;
+      totalScore = 0;
+      resultArea.classList.add('hidden');
+      questionArea.classList.remove('hidden');
+      renderQuestion(0);
+    });
+
+    // Iniciar na primeira pergunta
+    renderQuestion(0);
+
+    // Telemetria de visualização da seção
+    try {
+      if (window.dataLayer) {
+        window.dataLayer.push({
+          event: 'quiz_start',
+          source_section: 'section_3'
+        });
+      }
+    } catch (e) {}
+
+  })();
+</script>

@@ -1,9 +1,8 @@
 ---
-// src/components/Hero.astro — LexiQuest Hero
-// Aether Luxury + Gamificação: Floating RPG Badges orbital + headline atualizado
+// src/components/Hero.astro — LexiQuest Hero Section
+// Aether Luxury + Gamificação: Floating RPG Badges orbital + Copy Canônica 03.6 (15 Vagas)
 ---
 
-<!-- RPG Badges data -->
 <section id="hero" class="relative min-h-screen flex flex-col justify-center overflow-hidden noise-overlay">
   <!-- Background Parallax -->
   <div id="hero-bg" class="absolute inset-0 z-0">
@@ -11,75 +10,96 @@
       src="/assets/feature-sky.webp"
       alt=""
       aria-hidden="true"
-      class="w-full h-full object-cover opacity-20"
-      style="filter: hue-rotate(80deg) saturate(1.3);"
+      class="w-full h-full object-cover opacity-15"
+      style="filter: hue-rotate(220deg) saturate(1.4);"
     />
-    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[#0f0f0f]/70 to-[#0f0f0f]"></div>
-    <!-- Emerald radial glow -->
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[500px] bg-[#3ecf8e]/8 rounded-full blur-[180px] pointer-events-none"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[#1f1633]/80 to-[#1f1633]"></div>
+    <!-- Lime & Sentry Purple radial glows -->
+    <div class="absolute top-1/3 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-[#6a5fc1]/15 rounded-full blur-[180px] pointer-events-none"></div>
+    <div class="absolute top-1/2 right-1/4 w-[500px] h-[400px] bg-[#c2ef4e]/10 rounded-full blur-[160px] pointer-events-none"></div>
   </div>
 
   <!-- Content -->
-  <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-8 pt-28 pb-32 w-full">
+  <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-8 pt-28 pb-24 w-full">
     <div class="flex flex-col lg:flex-row lg:items-center gap-12 lg:gap-16">
 
-      <!-- Left: Copy -->
+      <!-- Left: Copy Oficial (03.6) -->
       <div class="flex-1 min-w-0">
-        <!-- Eyebrow -->
-        <div id="hero-badge" class="mb-8">
-          <span class="inline-flex items-center gap-2.5 text-xs font-mono text-[#898989] uppercase tracking-[0.2em]">
-            <span class="w-1.5 h-1.5 rounded-full bg-[#3ecf8e] animate-pulse"></span>
-            LexiQuest &nbsp;&bull;&nbsp; Turma Alpha 2026 &nbsp;&bull;&nbsp; 10 Vagas
+        <!-- Eyebrow Badge (15 Vagas) -->
+        <div id="hero-badge" class="mb-6">
+          <span class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[#271d40] border border-[#c2ef4e]/30 text-xs font-mono text-[#ffffff] uppercase tracking-[0.18em] shadow-sm">
+            <span class="w-2 h-2 rounded-full bg-[#c2ef4e] micro-pulse"></span>
+            ⚡ Turma Alpha &nbsp;&bull;&nbsp; Apenas 15 Vagas para Alunos Fundadores
           </span>
         </div>
 
-        <!-- Headline gamificada -->
-        <h1 class="mb-8 max-w-2xl">
-          <span class="reveal-line block font-sans font-extrabold text-5xl sm:text-6xl md:text-7xl leading-[1.0] tracking-[-0.03em] text-[#fafafa]">
-            Destrave sua fala
+        <!-- Headline Canônica 03.6 -->
+        <h1 class="mb-6 max-w-3xl">
+          <span class="reveal-line block font-sans font-extrabold text-4xl sm:text-6xl md:text-7xl leading-[1.04] tracking-[-0.03em] text-[#ffffff]">
+            Pare de traduzir
           </span>
-          <span class="reveal-line block font-sans font-extrabold text-5xl sm:text-6xl md:text-7xl leading-[1.0] tracking-[-0.03em] text-[#fafafa]">
-            em inglês
+          <span class="reveal-line block font-sans font-extrabold text-4xl sm:text-6xl md:text-7xl leading-[1.04] tracking-[-0.03em] text-[#ffffff]">
+            na sua cabeça.
           </span>
-          <span class="reveal-line block font-sans font-extrabold text-5xl sm:text-6xl md:text-7xl leading-[1.0] tracking-[-0.03em] text-gradient-emerald mt-2">
-            jogando 15 min por dia.
+          <span class="reveal-line block font-sans font-extrabold text-4xl sm:text-6xl md:text-7xl leading-[1.04] tracking-[-0.03em] text-gradient-lime mt-1">
+            Destrave sua fala em 30 dias.
           </span>
         </h1>
 
-        <!-- Sub + CTAs -->
-        <div class="flex flex-col sm:flex-row sm:items-end gap-8 max-w-xl">
-          <div id="hero-sub">
-            <p class="text-base sm:text-lg text-[#898989] leading-relaxed">
-              Missões diárias, revisão espaçada FSRS e mentoria 1 a 1 com Gabriel Lima. O método SPARK transforma sua prática em progressão real — como subir de nível.
-            </p>
-          </div>
+        <!-- Subheadline Canônica -->
+        <div id="hero-sub" class="max-w-2xl mb-8">
+          <p class="text-base sm:text-lg text-[#cfcfdb] leading-relaxed">
+            Um método de aquisição natural acelerada que combina <strong class="text-[#ffffff]">15 minutos diários de prática com IA sem julgamento</strong> e <strong class="text-[#c2ef4e]">3 sessões individuais por semana com o professor Gabriel</strong>.
+          </p>
 
-          <div id="hero-ctas" class="flex flex-col gap-3 shrink-0">
-            <a
-              href="#pricing"
-              class="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-[#3ecf8e] text-[#0f0f0f] font-bold text-sm hover:bg-[#34b27b] active:scale-95 transition-all shadow-lg shadow-[#3ecf8e]/20 group"
-            >
-              <span>Garantir Vaga Alpha</span>
-              <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-              </svg>
-            </a>
-            <a
-              href="/playapp"
-              class="inline-flex items-center justify-center px-7 py-3.5 rounded-full border border-[#363636] text-[#d4d4d8] text-sm font-medium hover:border-[#3ecf8e]/40 hover:text-[#fafafa] transition-all"
-            >
-              Testar o PlayApp grátis
-            </a>
+          <!-- Bullet points de prova rápida -->
+          <div class="mt-5 space-y-2.5 text-xs sm:text-sm text-[#cfcfdb]">
+            <div class="flex items-center gap-2.5">
+              <span class="text-[#c2ef4e] font-bold">✅</span>
+              <span><strong class="text-[#ffffff]">Zero caneta vermelha:</strong> o cérebro aprende por blocos sonoros (<em>chunks</em>), sem humilhação gramatical.</span>
+            </div>
+            <div class="flex items-center gap-2.5">
+              <span class="text-[#c2ef4e] font-bold">✅</span>
+              <span><strong class="text-[#ffffff]">3 encontros rápidos por semana:</strong> esqueça aulas longas e maçantes de 1h em sextas-feiras.</span>
+            </div>
+            <div class="flex items-center gap-2.5">
+              <span class="text-[#c2ef4e] font-bold">✅</span>
+              <span><strong class="text-[#ffffff]">Portal do Aluno + Garantia 30 dias:</strong> se sua fala não destravar, devolvemos 100% via Pix.</span>
+            </div>
           </div>
         </div>
 
+        <!-- CTAs Primário & Secundário -->
+        <div id="hero-ctas" class="flex flex-col sm:flex-row sm:items-center gap-4">
+          <a
+            href="#quiz"
+            class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-[#c2ef4e] text-[#1f1633] font-sans font-extrabold text-sm sm:text-base hover:bg-[#b0dc41] active:scale-95 transition-all shadow-xl shadow-[#c2ef4e]/20 group"
+          >
+            <span>FAZER TESTE DE NIVELAMENTO EM 2 MINUTOS (GRÁTIS)</span>
+            <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </a>
+          <a
+            href="#metodo"
+            class="inline-flex items-center justify-center px-7 py-4 rounded-full border border-[#3b2c60] text-[#cfcfdb] text-sm font-medium hover:border-[#c2ef4e]/50 hover:text-[#ffffff] transition-all bg-[#271d40]/60"
+          >
+            Como Funciona o Método SPARK
+          </a>
+        </div>
+        <p class="text-xs text-[#cfcfdb]/80 mt-3 font-mono">
+          ⚡ Sem cadastro de cartão. Diagnóstico instantâneo em 5 situações reais.
+        </p>
+
         <!-- Trust line -->
-        <div id="hero-trust" class="mt-10 flex flex-wrap items-center gap-6 text-[#71717a] text-xs font-mono">
-          <span>🎮 Missões Diárias &nbsp;&bull;&nbsp; 15 min</span>
-          <span class="w-px h-3 bg-[#363636]"></span>
-          <span>🧠 FSRS Science-based</span>
-          <span class="w-px h-3 bg-[#363636]"></span>
-          <span>🛡️ Garantia 30 dias</span>
+        <div id="hero-trust" class="mt-8 flex flex-wrap items-center gap-4 sm:gap-6 text-[#cfcfdb] text-xs font-mono">
+          <span class="flex items-center gap-1.5"><span class="text-[#c2ef4e]">🤖</span> Sparring IA 24/7 no LibreChat</span>
+          <span class="w-px h-3 bg-[#3b2c60]"></span>
+          <span class="flex items-center gap-1.5"><span class="text-[#fa7faa]">🎯</span> 3 Sessões / Semana (2x15m + 1x30m)</span>
+          <span class="w-px h-3 bg-[#3b2c60]"></span>
+          <span class="flex items-center gap-1.5"><span class="text-[#ffb287]">📚</span> Portal do Aluno Ativo</span>
+          <span class="w-px h-3 bg-[#3b2c60]"></span>
+          <span class="flex items-center gap-1.5"><span class="text-[#c2ef4e]">🛡️</span> Garantia Total 30 Dias</span>
         </div>
       </div>
 
@@ -88,92 +108,91 @@
         id="hero-orbital"
         class="hidden lg:flex flex-shrink-0 items-center justify-center"
         aria-hidden="true"
-        style="width: 320px; height: 400px; position: relative;"
+        style="width: 340px; height: 420px; position: relative;"
       >
         <!-- Central glow -->
         <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <div class="w-32 h-32 rounded-full bg-[#3ecf8e]/10 blur-3xl"></div>
+          <div class="w-36 h-36 rounded-full bg-[#c2ef4e]/15 blur-3xl"></div>
         </div>
 
         <!-- Center: LexiQuest orb -->
         <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
-          <div class="w-16 h-16 rounded-full border border-[#3ecf8e]/40 bg-[#0f0f0f] flex items-center justify-center shadow-[0_0_30px_rgba(62,207,142,0.25)]">
-            <span class="text-2xl" aria-hidden="true">⚔️</span>
+          <div class="w-18 h-18 rounded-full border border-[#c2ef4e]/50 bg-[#271d40] flex items-center justify-center shadow-[0_0_35px_rgba(194,239,78,0.35)]">
+            <span class="text-3xl" aria-hidden="true">⚔️</span>
           </div>
         </div>
 
         <!-- Badge 1: XP Streak — top -->
         <div class="float-badge absolute" style="top: 10px; left: 50%; transform: translateX(-50%);" id="hb-1">
-          <span class="badge-icon text-[#f59e0b]">🔥</span>
-          <span style="color: #f59e0b;">14 dias streak</span>
+          <span class="badge-icon text-[#fa7faa]">🔥</span>
+          <span style="color: #fa7faa;">14 dias streak</span>
         </div>
 
         <!-- Badge 2: Level — top-right -->
         <div class="float-badge absolute" style="top: 70px; right: 0px;" id="hb-2">
-          <span class="badge-icon">⭐</span>
+          <span class="badge-icon text-[#c2ef4e]">⭐</span>
           <span>Nível B1 · 2.400 XP</span>
         </div>
 
         <!-- Badge 3: Boss — right -->
-        <div class="float-badge absolute" style="top: 50%; right: -20px; transform: translateY(-50%);" id="hb-3">
-          <span class="badge-icon" style="color: #c084fc;">👹</span>
-          <span style="color: #c084fc;">Boss desbloqueado</span>
+        <div class="float-badge absolute" style="top: 50%; right: -25px; transform: translateY(-50%);" id="hb-3">
+          <span class="badge-icon text-[#ffb287]">👹</span>
+          <span style="color: #ffb287;">Boss Raid 30m desbloqueado</span>
         </div>
 
-        <!-- Badge 4: Mission done — bottom-right -->
+        <!-- Badge 4: Recasting — bottom-right -->
         <div class="float-badge absolute" style="bottom: 70px; right: 0px;" id="hb-4">
-          <span class="badge-icon text-[#3ecf8e]">✅</span>
-          <span style="color: #3ecf8e;">Missão completa</span>
+          <span class="badge-icon text-[#c2ef4e]">✅</span>
+          <span style="color: #c2ef4e;">Spaced Recasting ativo</span>
         </div>
 
-        <!-- Badge 5: Review — bottom -->
+        <!-- Badge 5: Score — bottom -->
         <div class="float-badge absolute" style="bottom: 10px; left: 50%; transform: translateX(-50%);" id="hb-5">
-          <span class="badge-icon">🧠</span>
-          <span>FSRS: 8 cards revisados</span>
+          <span class="badge-icon text-[#fa7faa]">📊</span>
+          <span>SPARK Score: 88% dominado</span>
         </div>
 
         <!-- Badge 6: Speed — bottom-left -->
         <div class="float-badge absolute" style="bottom: 70px; left: 0px;" id="hb-6">
-          <span class="badge-icon" style="color: #818cf8;">⚡</span>
-          <span style="color: #818cf8;">Fala +40% mais rápido</span>
+          <span class="badge-icon text-[#c2ef4e]">⚡</span>
+          <span style="color: #c2ef4e;">Fala sem traduzir</span>
         </div>
 
-        <!-- Badge 7: Session — left -->
-        <div class="float-badge absolute" style="top: 50%; left: -20px; transform: translateY(-50%);" id="hb-7">
-          <span class="badge-icon text-[#3ecf8e]">🎯</span>
-          <span>Sessão 1 a 1 · hoje</span>
+        <!-- Badge 7: Sessions — left -->
+        <div class="float-badge absolute" style="top: 50%; left: -25px; transform: translateY(-50%);" id="hb-7">
+          <span class="badge-icon text-[#fa7faa]">🎯</span>
+          <span>3 sessões semanais</span>
         </div>
 
-        <!-- Badge 8: Vocabulary — top-left -->
+        <!-- Badge 8: Chunks — top-left -->
         <div class="float-badge absolute" style="top: 70px; left: 0px;" id="hb-8">
-          <span class="badge-icon">📖</span>
-          <span>+320 chunks ativos</span>
+          <span class="badge-icon text-[#6a5fc1]">📖</span>
+          <span>2.500 chunks para B2</span>
         </div>
       </div>
 
     </div>
 
     <!-- Mobile: Badges marquee horizontal -->
-    <div id="hero-marquee-wrap" class="lg:hidden mt-8 overflow-hidden relative" aria-hidden="true">
+    <div id="hero-marquee-wrap" class="lg:hidden mt-10 overflow-hidden relative" aria-hidden="true">
       <div id="hero-marquee" class="flex gap-3 w-max">
-        <!-- duplicated for seamless loop -->
-        <span class="float-badge"><span class="badge-icon text-[#f59e0b]">🔥</span> 14 dias streak</span>
-        <span class="float-badge"><span class="badge-icon">⭐</span> Nível B1</span>
-        <span class="float-badge"><span class="badge-icon" style="color:#c084fc">👹</span> Boss desbloqueado</span>
-        <span class="float-badge"><span class="badge-icon text-[#3ecf8e]">✅</span> Missão completa</span>
-        <span class="float-badge"><span class="badge-icon">🧠</span> FSRS ativo</span>
-        <span class="float-badge"><span class="badge-icon" style="color:#818cf8">⚡</span> +40% mais rápido</span>
-        <span class="float-badge"><span class="badge-icon">📖</span> +320 chunks</span>
-        <span class="float-badge"><span class="badge-icon text-[#3ecf8e]">🎯</span> 1 a 1 · hoje</span>
-        <!-- repeat -->
-        <span class="float-badge"><span class="badge-icon text-[#f59e0b]">🔥</span> 14 dias streak</span>
-        <span class="float-badge"><span class="badge-icon">⭐</span> Nível B1</span>
-        <span class="float-badge"><span class="badge-icon" style="color:#c084fc">👹</span> Boss desbloqueado</span>
-        <span class="float-badge"><span class="badge-icon text-[#3ecf8e]">✅</span> Missão completa</span>
-        <span class="float-badge"><span class="badge-icon">🧠</span> FSRS ativo</span>
-        <span class="float-badge"><span class="badge-icon" style="color:#818cf8">⚡</span> +40% mais rápido</span>
-        <span class="float-badge"><span class="badge-icon">📖</span> +320 chunks</span>
-        <span class="float-badge"><span class="badge-icon text-[#3ecf8e]">🎯</span> 1 a 1 · hoje</span>
+        <span class="float-badge"><span class="badge-icon text-[#fa7faa]">🔥</span> 14 dias streak</span>
+        <span class="float-badge"><span class="badge-icon text-[#c2ef4e]">⭐</span> Nível B1</span>
+        <span class="float-badge"><span class="badge-icon text-[#ffb287]">👹</span> Boss Raid 30m</span>
+        <span class="float-badge"><span class="badge-icon text-[#c2ef4e]">✅</span> Spaced Recasting</span>
+        <span class="float-badge"><span class="badge-icon text-[#fa7faa]">📊</span> SPARK Score 88%</span>
+        <span class="float-badge"><span class="badge-icon text-[#c2ef4e]">⚡</span> Sem Traduzir</span>
+        <span class="float-badge"><span class="badge-icon text-[#6a5fc1]">📖</span> 2.500 chunks B2</span>
+        <span class="float-badge"><span class="badge-icon text-[#c2ef4e]">🎯</span> 3 sessões / semana</span>
+        <!-- repeat for smooth loop -->
+        <span class="float-badge"><span class="badge-icon text-[#fa7faa]">🔥</span> 14 dias streak</span>
+        <span class="float-badge"><span class="badge-icon text-[#c2ef4e]">⭐</span> Nível B1</span>
+        <span class="float-badge"><span class="badge-icon text-[#ffb287]">👹</span> Boss Raid 30m</span>
+        <span class="float-badge"><span class="badge-icon text-[#c2ef4e]">✅</span> Spaced Recasting</span>
+        <span class="float-badge"><span class="badge-icon text-[#fa7faa]">📊</span> SPARK Score 88%</span>
+        <span class="float-badge"><span class="badge-icon text-[#c2ef4e]">⚡</span> Sem Traduzir</span>
+        <span class="float-badge"><span class="badge-icon text-[#6a5fc1]">📖</span> 2.500 chunks B2</span>
+        <span class="float-badge"><span class="badge-icon text-[#c2ef4e]">🎯</span> 3 sessões / semana</span>
       </div>
     </div>
 
@@ -215,10 +234,9 @@
     gsap.from('#hero-ctas',   { opacity: 0, y: 20,  duration: 0.9, delay: 0.65, ease: 'power3.out' });
     gsap.from('#hero-trust',  { opacity: 0, y: 16,  duration: 0.8, delay: 0.8,  ease: 'power2.out' });
 
-    // Floating Badges — entrance + independent float
+    // Floating Badges
     var badges = document.querySelectorAll('#hero-orbital [id^="hb-"]');
     if (badges.length) {
-      // Staggered entrance
       gsap.from(badges, {
         opacity: 0,
         scale: 0.75,
@@ -228,7 +246,6 @@
         ease: 'back.out(1.5)'
       });
 
-      // Independent float per badge (different durations + delays for organic feel)
       badges.forEach(function(badge, i) {
         gsap.to(badge, {
           y: (i % 2 === 0) ? -10 : 10,

@@ -1,25 +1,25 @@
 ---
-// src/components/Pricing.astro — Oferta Turma Alpha
-// Mensalidade de entrada R$ 197/mês • 10 vagas • Sem fidelidade
+// src/components/Pricing.astro — Seção 6: A Oferta da Turma Alpha (03.6)
+// Transparência Total: 15 Vagas Fundadoras • R$ 197/mês vs Regular R$ 297/mês • Pix Manual
 ---
 
-<section id="pricing" class="py-32 px-4 sm:px-8 relative border-t border-[#1a1a1a] overflow-hidden">
-  <!-- Glow central -->
-  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-[#3ecf8e]/6 rounded-full blur-[200px] pointer-events-none"></div>
+<section id="pricing" class="py-28 px-4 sm:px-8 relative border-t border-[#2e224d] overflow-hidden">
+  <!-- Glow central Lime + Purple -->
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-[#c2ef4e]/6 rounded-full blur-[200px] pointer-events-none"></div>
 
   <div class="max-w-5xl mx-auto relative z-10">
-    <!-- Header -->
+    <!-- Header Oficial (03.6) -->
     <div class="text-center mb-16 max-w-3xl mx-auto" data-anim="fade-up">
       <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full badge-glow mb-4">
-        <span class="w-1.5 h-1.5 rounded-full bg-[#3ecf8e] micro-pulse"></span>
-        <span class="text-xs font-mono text-[#3ecf8e] uppercase tracking-[0.2em]">Apenas 10 Vagas na Turma Alpha</span>
+        <span class="w-1.5 h-1.5 rounded-full bg-[#c2ef4e] micro-pulse"></span>
+        <span class="text-xs font-mono text-[#c2ef4e] uppercase tracking-[0.2em]">⚡ Escassez Real · Apenas 15 Vagas Fundadoras</span>
       </div>
-      <h2 class="font-sans font-extrabold text-4xl sm:text-5xl md:text-6xl tracking-tight leading-[1.05] mt-2 text-[#fafafa]">
-        Mentoria ao vivo com o Gabe<br />
-        <span class="text-gradient-emerald">+ SPARK Alpha todo dia.</span>
+      <h2 class="font-sans font-extrabold text-3xl sm:text-5xl md:text-6xl tracking-tight leading-[1.05] mt-2 text-[#ffffff]">
+        Condição Exclusiva de Lançamento:<br />
+        <span class="text-gradient-lime">A Oferta da Turma Alpha.</span>
       </h2>
-      <p class="text-base sm:text-lg text-[#898989] leading-relaxed mt-5 max-w-2xl mx-auto">
-        Sem contratos anuais, sem taxa de matrícula. Comece quando quiser, cancele quando quiser.
+      <p class="text-base sm:text-lg text-[#cfcfdb] leading-relaxed mt-4 max-w-2xl mx-auto">
+        Tudo o que você precisa para parar de traduzir e destravar sua fala em inglês em 30 dias. Sem contratos longos ou taxa de matrícula.
       </p>
     </div>
 
@@ -27,45 +27,45 @@
     <div id="pricing-card-wrapper" class="max-w-2xl mx-auto" data-anim="fade-up">
 
       <!-- Mini Progress Visual: Semanas de evolução -->
-      <div class="mb-6 rounded-2xl bg-[#0d0d0d] border border-[#1f1f1f] p-5" aria-hidden="true">
-        <div class="text-[10px] font-mono text-[#898989] uppercase tracking-[0.18em] mb-4 text-center">Progressão típica de um aluno Alpha</div>
+      <div class="mb-6 rounded-2xl bg-[#1f1633] border border-[#3b2c60] p-5" aria-hidden="true">
+        <div class="text-[10px] font-mono text-[#cfcfdb] uppercase tracking-[0.18em] mb-4 text-center">Progressão típica nos primeiros 30 a 90 dias</div>
         <div class="relative">
           <!-- Timeline line -->
-          <div class="absolute top-5 left-0 right-0 h-px bg-[#1e1e1e]"></div>
-          <div id="pricing-timeline-fill" class="absolute top-5 left-0 h-px bg-[#3ecf8e]" style="width: 0%;"></div>
+          <div class="absolute top-5 left-0 right-0 h-px bg-[#3b2c60]"></div>
+          <div id="pricing-timeline-fill" class="absolute top-5 left-0 h-px bg-[#c2ef4e]" style="width: 0%;"></div>
 
           <div class="flex justify-between relative z-10">
             <!-- Week 1 -->
             <div class="flex flex-col items-center gap-2">
-              <div id="pt-node-1" class="w-10 h-10 rounded-full border-2 border-[#1e1e1e] bg-[#0d0d0d] flex items-center justify-center transition-all duration-300">
+              <div id="pt-node-1" class="w-10 h-10 rounded-full border-2 border-[#3b2c60] bg-[#1f1633] flex items-center justify-center transition-all duration-300">
                 <span class="text-base">🌱</span>
               </div>
-              <span class="text-[9px] font-mono text-[#3d3d3d]">Semana 1</span>
-              <span class="text-[9px] font-mono font-bold text-[#3ecf8e] opacity-0" id="pt-label-1">Destrava</span>
+              <span class="text-[9px] font-mono text-[#79628c]">Semana 1</span>
+              <span class="text-[9px] font-mono font-bold text-[#c2ef4e] opacity-0" id="pt-label-1">Destrava</span>
             </div>
             <!-- Week 3 -->
             <div class="flex flex-col items-center gap-2">
-              <div id="pt-node-2" class="w-10 h-10 rounded-full border-2 border-[#1e1e1e] bg-[#0d0d0d] flex items-center justify-center transition-all duration-300">
+              <div id="pt-node-2" class="w-10 h-10 rounded-full border-2 border-[#3b2c60] bg-[#1f1633] flex items-center justify-center transition-all duration-300">
                 <span class="text-base">💬</span>
               </div>
-              <span class="text-[9px] font-mono text-[#3d3d3d]">Semana 3</span>
-              <span class="text-[9px] font-mono font-bold text-[#818cf8] opacity-0" id="pt-label-2">Flui</span>
+              <span class="text-[9px] font-mono text-[#79628c]">Semana 3</span>
+              <span class="text-[9px] font-mono font-bold text-[#fa7faa] opacity-0" id="pt-label-2">Flui</span>
             </div>
             <!-- Week 6 -->
             <div class="flex flex-col items-center gap-2">
-              <div id="pt-node-3" class="w-10 h-10 rounded-full border-2 border-[#1e1e1e] bg-[#0d0d0d] flex items-center justify-center transition-all duration-300">
+              <div id="pt-node-3" class="w-10 h-10 rounded-full border-2 border-[#3b2c60] bg-[#1f1633] flex items-center justify-center transition-all duration-300">
                 <span class="text-base">⚡</span>
               </div>
-              <span class="text-[9px] font-mono text-[#3d3d3d]">Semana 6</span>
-              <span class="text-[9px] font-mono font-bold text-[#c084fc] opacity-0" id="pt-label-3">Acelera</span>
+              <span class="text-[9px] font-mono text-[#79628c]">Semana 6</span>
+              <span class="text-[9px] font-mono font-bold text-[#6a5fc1] opacity-0" id="pt-label-3">Acelera</span>
             </div>
             <!-- Week 12 -->
             <div class="flex flex-col items-center gap-2">
-              <div id="pt-node-4" class="w-10 h-10 rounded-full border-2 border-[#1e1e1e] bg-[#0d0d0d] flex items-center justify-center transition-all duration-300">
+              <div id="pt-node-4" class="w-10 h-10 rounded-full border-2 border-[#3b2c60] bg-[#1f1633] flex items-center justify-center transition-all duration-300">
                 <span class="text-base">🏆</span>
               </div>
-              <span class="text-[9px] font-mono text-[#3d3d3d]">Semana 12</span>
-              <span class="text-[9px] font-mono font-bold text-[#f59e0b] opacity-0" id="pt-label-4">B2 Real</span>
+              <span class="text-[9px] font-mono text-[#79628c]">Semana 12</span>
+              <span class="text-[9px] font-mono font-bold text-[#c2ef4e] opacity-0" id="pt-label-4">B2 Real</span>
             </div>
           </div>
         </div>
@@ -73,70 +73,79 @@
 
       <div
         id="pricing-card"
-        class="topic-card rounded-3xl bg-[#141414]/95 border border-[#2e2e2e] p-8 sm:p-12 shadow-2xl relative overflow-hidden"
+        class="topic-card rounded-3xl bg-[#271d40] border border-[#3b2c60] p-8 sm:p-12 shadow-2xl relative overflow-hidden"
       >
         <!-- Eyebrow do Card -->
-        <div class="flex items-center justify-between pb-7 border-b border-[#1f1f1f]">
-          <div class="flex items-center gap-2 text-xs font-mono text-[#3ecf8e]">
-            <span class="w-2 h-2 rounded-full bg-[#3ecf8e] micro-pulse"></span>
-            <span class="uppercase tracking-widest font-bold">Turma Alpha Exclusiva</span>
+        <div class="flex items-center justify-between pb-6 border-b border-[#3b2c60]">
+          <div class="flex items-center gap-2 text-xs font-mono text-[#c2ef4e]">
+            <span class="w-2 h-2 rounded-full bg-[#c2ef4e] micro-pulse"></span>
+            <span class="uppercase tracking-widest font-bold">Turma Alpha Fundadora</span>
           </div>
-          <span class="topic-badge text-[#3ecf8e] border-[#3ecf8e]/30 bg-[#3ecf8e]/10">
-            10 vagas abertas
+          <span class="topic-badge text-[#c2ef4e] border-[#c2ef4e]/30 bg-[#c2ef4e]/10">
+            15 vagas estritas
           </span>
         </div>
 
-        <!-- Preço -->
-        <div class="py-10 text-center">
-          <p class="text-xs font-mono text-[#898989] uppercase tracking-widest mb-3 font-semibold">Mensalidade de Entrada</p>
-          <div class="flex items-baseline justify-center gap-2">
-            <span class="font-sans font-bold text-2xl sm:text-3xl text-[#fafafa]">R$</span>
-            <span class="font-sans font-black text-[80px] sm:text-[100px] text-gradient-emerald leading-none select-none counter-value tracking-tighter">197</span>
-            <span class="text-[#898989] text-base font-mono">/mês</span>
+        <!-- Preço com Âncora Canônica (03.6) -->
+        <div class="py-8 text-center">
+          <!-- Âncora Regular riscada -->
+          <div class="flex items-center justify-center gap-2 mb-2">
+            <span class="text-xs font-mono text-[#cfcfdb] uppercase tracking-wider">Preço Regular da Mentoria:</span>
+            <span class="text-sm font-mono line-through text-[#ffb287] font-semibold">R$ 297/mês</span>
           </div>
-          <p class="text-xs sm:text-sm text-[#898989] mt-3">
+
+          <p class="text-xs font-mono text-[#c2ef4e] uppercase tracking-widest mb-2 font-bold">Preço Exclusivo da Turma Alpha</p>
+          <div class="flex items-baseline justify-center gap-2">
+            <span class="font-sans font-bold text-2xl sm:text-3xl text-[#ffffff]">R$</span>
+            <span class="font-sans font-black text-[72px] sm:text-[96px] text-gradient-lime leading-none select-none counter-value tracking-tighter">197</span>
+            <span class="text-[#cfcfdb] text-base font-mono">/ mês</span>
+          </div>
+          <p class="text-xs font-mono text-[#fa7faa] mt-2">
+            ⚡ Preço travado em R$ 197 enquanto mantiver a matrícula ativa (via Pix manual)
+          </p>
+          <p class="text-xs text-[#cfcfdb] mt-2">
             Sem taxa de matrícula &bull; Sem fidelidade de 1 ano &bull; Cancele quando quiser
           </p>
         </div>
 
-        <!-- Lista de Benefícios -->
-        <div class="pt-6 border-t border-[#1f1f1f] mb-10">
-          <h3 class="text-xs font-mono uppercase tracking-widest text-[#898989] mb-5 font-semibold">O Que Está Incluso:</h3>
+        <!-- Lista de Benefícios Canônicos (03.6) -->
+        <div class="pt-6 border-t border-[#3b2c60] mb-8">
+          <h3 class="text-xs font-mono uppercase tracking-widest text-[#cfcfdb] mb-5 font-semibold">O Que Está Incluso:</h3>
           <ul class="space-y-3.5">
             {[
               {
-                tag: '1 a 1 Alinhamento',
-                text: '2 sessões semanais rápidas de alinhamento e destravamento com o Gabe (100% individuais)'
+                tag: '3x Semanais',
+                text: '3 sessões individuais por semana com Gabriel (1h/semana dividida: 2x 15min + 1x 30min Boss Raids)'
               },
               {
-                tag: '1 a 1 Conversação',
-                text: '1 sessão semanal estendida focada em conversação plena e situações reais (100% individual)'
+                tag: 'LibreChat 24/7',
+                text: 'Acesso 24/7 ao companion de IA no LibreChat para sparring diário de 15 min sem caneta vermelha'
               },
               {
-                tag: 'SPARK Alpha',
-                text: 'Acesso 24/7 ao PlayApp SPARK Alpha para prática diária autônoma com missões guiadas e chunks reais'
+                tag: 'Portal do Aluno',
+                text: 'Acesso ao Portal do Aluno com missões práticas, gravações das aulas e atividades guiadas'
               },
               {
-                tag: 'Diagnóstico',
-                text: 'Diagnóstico contínuo das suas travas reais para guiar os encontros e calibrar o tutor'
+                tag: 'SPARK Score',
+                text: 'Prontuário semanal de evolução e rastreamento científico de chunks dominados sem traduzir'
               },
               {
-                tag: 'WhatsApp Direto',
-                text: 'Acompanhamento direto e suporte pelo WhatsApp pessoal do professor'
+                tag: 'Preço Travado',
+                text: 'Condição de aluno fundador: valor de R$ 197/mês mantido por todo o seu ciclo de estudos'
               },
               {
                 tag: 'Garantia 30 Dias',
-                text: 'Garantia incondicional de 30 dias: devolução integral via Pix se o método não for para você'
+                text: 'Garantia incondicional de 30 dias: devolução integral de 100% via Pix caso sua fala não destrave'
               }
             ].map((item) => (
-              <li class="flex items-start gap-3.5 border-t border-[#1a1a1a] pt-3.5 text-sm sm:text-base text-[#d4d4d8] group">
-                <div class="w-5 h-5 rounded-md bg-[#3ecf8e]/10 text-[#3ecf8e] flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-[#3ecf8e]/20 transition-colors">
-                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <li class="flex items-start gap-3.5 border-t border-[#3b2c60] pt-3 text-sm sm:text-base text-[#ffffff] group">
+                <div class="w-5 h-5 rounded-md bg-[#c2ef4e]/10 text-[#c2ef4e] flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-[#c2ef4e]/20 transition-colors">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
                 <div class="flex-1 flex flex-col sm:flex-row sm:items-center justify-between gap-1">
-                  <span class="leading-relaxed">{item.text}</span>
+                  <span class="leading-relaxed text-[#cfcfdb] group-hover:text-[#ffffff] transition-colors">{item.text}</span>
                   <span class="topic-badge text-[10px] self-start sm:self-auto shrink-0">{item.tag}</span>
                 </div>
               </li>
@@ -144,31 +153,31 @@
           </ul>
         </div>
 
-        <!-- CTA Principal -->
+        <!-- CTA Principal Oficial (03.6) -->
         <a
-          href="https://wa.me/5511967239791?text=Oi%20Gabe!%20Quero%20garantir%20minha%20vaga%20na%20Turma%20Alpha%20por%20R$%20197/m%C3%AAs"
+          href="https://wa.me/5511967239791?text=Ol%C3%A1%20Gabe!%20Quero%20uma%20das%2015%20vagas%20da%20Turma%20Alpha%20no%20WhatsApp%20por%20R$%20197/m%C3%AAs"
           target="_blank"
           rel="noopener noreferrer"
-          class="btn-slide block w-full py-4 text-center rounded-full bg-[#3ecf8e] text-[#0f0f0f] font-bold text-base hover:bg-[#34b27b] active:scale-98 transition-all shadow-xl shadow-[#3ecf8e]/20 cursor-pointer"
+          class="btn-slide block w-full py-4 text-center rounded-full bg-[#c2ef4e] text-[#1f1633] font-sans font-extrabold text-base hover:bg-[#b0dc41] active:scale-98 transition-all shadow-xl shadow-[#c2ef4e]/20 cursor-pointer"
         >
-          <span class="btn-text-top">Garantir Minha Vaga no WhatsApp &rarr;</span>
-          <span class="btn-text-bottom">Conversar Diretamente com o Gabe &rarr;</span>
+          <span class="btn-text-top">QUERO UMA DAS 15 VAGAS DA TURMA ALPHA NO WHATSAPP &rarr;</span>
+          <span class="btn-text-bottom">Falar Diretamente com Gabriel no WhatsApp &rarr;</span>
         </a>
 
         <!-- Garantia Micro-copy -->
-        <div class="mt-6 flex items-center justify-center gap-2.5 text-[#898989] text-xs text-center">
-          <svg class="w-4 h-4 text-[#3ecf8e] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div class="mt-6 flex items-center justify-center gap-2.5 text-[#cfcfdb] text-xs text-center">
+          <svg class="w-4 h-4 text-[#c2ef4e] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
           </svg>
-          <span>Garantia de 30 dias. Se sentir que o método não é para você, devolvo 100% via Pix.</span>
+          <span>Garantia de 30 dias. Se sentir que o método não destravou sua fala, devolvo 100% via Pix sem perguntas.</span>
         </div>
       </div>
     </div>
 
-    <!-- Limite de Vagas -->
-    <div class="mt-12 text-center" data-anim="fade-up">
-      <p class="text-xs font-mono text-[#898989]">
-        <span class="text-[#3ecf8e] font-bold">10 vagas estritas</span> para assegurar acompanhamento pessoal 1 a 1.
+    <!-- Escassez Real Baseada em Capacidade (DL-09) -->
+    <div class="mt-10 text-center" data-anim="fade-up">
+      <p class="text-xs font-mono text-[#cfcfdb]">
+        <span class="text-[#c2ef4e] font-bold">15 vagas exclusivas</span> calibradas para a capacidade real de atendimento individual de Gabriel.
       </p>
     </div>
   </div>
@@ -178,7 +187,6 @@
   (function initPricing() {
     var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    // 3D Tilt on card
     var card = document.getElementById('pricing-card');
     if (card) {
       card.addEventListener('mousemove', function(e) {
@@ -194,16 +202,15 @@
       });
     }
 
-    // Timeline animation on scroll
     var gsap = window.gsap;
     var ST = window.ScrollTrigger;
     if (!gsap || !ST || reduced) return;
 
     var nodes = [
-      { node: document.getElementById('pt-node-1'), label: document.getElementById('pt-label-1'), color: '#3ecf8e', border: '#3ecf8e', delay: 0 },
-      { node: document.getElementById('pt-node-2'), label: document.getElementById('pt-label-2'), color: '#818cf8', border: '#818cf8', delay: 0.4 },
-      { node: document.getElementById('pt-node-3'), label: document.getElementById('pt-label-3'), color: '#c084fc', border: '#c084fc', delay: 0.8 },
-      { node: document.getElementById('pt-node-4'), label: document.getElementById('pt-label-4'), color: '#f59e0b', border: '#f59e0b', delay: 1.2 },
+      { node: document.getElementById('pt-node-1'), label: document.getElementById('pt-label-1'), color: '#c2ef4e', border: '#c2ef4e', delay: 0 },
+      { node: document.getElementById('pt-node-2'), label: document.getElementById('pt-label-2'), color: '#fa7faa', border: '#fa7faa', delay: 0.4 },
+      { node: document.getElementById('pt-node-3'), label: document.getElementById('pt-label-3'), color: '#6a5fc1', border: '#6a5fc1', delay: 0.8 },
+      { node: document.getElementById('pt-node-4'), label: document.getElementById('pt-label-4'), color: '#c2ef4e', border: '#c2ef4e', delay: 1.2 },
     ];
     var fill = document.getElementById('pricing-timeline-fill');
 
@@ -212,7 +219,6 @@
       start: 'top 70%',
       once: true,
       onEnter: function() {
-        // Animate timeline fill
         if (fill) gsap.to(fill, { width: '100%', duration: 1.6, ease: 'power2.inOut' });
 
         nodes.forEach(function(item) {

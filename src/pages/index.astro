@@ -1,11 +1,12 @@
 ---
 // index.astro — LexiQuest Landing Page
-// Design System: Supabase Dark
-// Story: Turma Alpha Launch — SPARK Alpha + Lexi Alpha
+// Design System: Deep Purple + Neon Lime (Sentry Purple Identity)
+// Story: Turma Alpha Launch — 15 Vagas Fundadoras · Método SPARK
 import '../styles/global.css';
 import Logo from '../components/Logo.astro';
 import Hero from '../components/Hero.astro';
 import Problem from '../components/Problem.astro';
+import QuizNivelamento from '../components/QuizNivelamento.astro';
 import Solution from '../components/Solution.astro';
 import EstagiosFala from '../components/EstagiosFala.astro';
 import MontanhaB2 from '../components/MontanhaB2.astro';
@@ -23,56 +24,60 @@ import Footer from '../components/Footer.astro';
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>LexiQuest • Destrave sua fala em inglês jogando 15 min por dia</title>
+    <title>LexiQuest • Pare de Traduzir na Sua Cabeça · Destrave Sua Fala em 30 Dias</title>
     <meta
       name="description"
-      content="Missões diárias, repetição espaçada FSRS e mentoria individual 1 a 1 com Gabriel Lima. Método SPARK para destravar sua fala em inglês. 10 vagas por R$ 197/mês."
+      content="15 minutos diários de prática com IA sem julgamento + 3 sessões individuais por semana com o professor Gabriel. 15 vagas Alpha por R$ 197/mês."
     />
 
-    <!-- Google Fonts: Inter (Interface & Headings) & Source Code Pro (Labels) -->
+    <!-- Google Fonts: Rubik + Inter + Source Code Pro -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Source+Code+Pro:wght@500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Rubik:wght@400;500;600;700;800;900&family=Source+Code+Pro:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
 
     <!-- Open Graph -->
-    <meta property="og:title" content="LexiQuest • Destrave sua fala em inglês jogando 15 min por dia" />
+    <meta property="og:title" content="LexiQuest • Pare de Traduzir na Sua Cabeça · Destrave Sua Fala em 30 Dias" />
     <meta
       property="og:description"
-      content="Missões diárias gamificadas com repetição FSRS + mentoria ao vivo 1 a 1 com Gabriel Lima. 10 vagas Alpha."
+      content="15 minutos diários de prática com IA sem julgamento + 3 sessões individuais por semana com o professor Gabriel. 15 vagas Alpha."
     />
     <meta property="og:type" content="website" />
   </head>
-  <body class="min-h-screen flex flex-col font-sans bg-[#0f0f0f] text-[#fafafa] selection:bg-[#3ecf8e] selection:text-[#0f0f0f]">
-    <!-- Barra Superior Fixa (Datamind Glass Style + Streak HUD) -->
-    <header class="fixed top-0 inset-x-0 z-50 glass-panel border-b border-white/[0.08] px-4 sm:px-8 py-3.5 flex items-center justify-between">
+  <body class="min-h-screen flex flex-col font-sans bg-[#1f1633] text-[#ffffff] selection:bg-[#c2ef4e] selection:text-[#1f1633]">
+    <!-- Barra Superior Fixa (Aether Glass Style + Streak HUD) -->
+    <header class="fixed top-0 inset-x-0 z-50 glass-panel border-b border-[#3b2c60] px-4 sm:px-8 py-3.5 flex items-center justify-between">
       <a href="#" class="flex items-center gap-2 hover:opacity-95 transition-opacity" aria-label="LexiQuest Home">
         <Logo size="sm" showBadge={true} />
       </a>
 
-      <nav class="hidden md:flex items-center gap-7 text-sm text-[#898989] font-medium">
-        <a href="#metodo" class="hover:text-[#3ecf8e] transition-colors">Como Funciona</a>
-        <a href="#estagios" class="hover:text-[#3ecf8e] transition-colors">Estágios da Fala</a>
-        <a href="#montanha-cefr" class="hover:text-[#3ecf8e] transition-colors">Escala CEFR</a>
-        <a href="#aulas-ia" class="hover:text-[#3ecf8e] transition-colors">Ecossistema</a>
-        <a href="#pricing" class="hover:text-[#3ecf8e] transition-colors">Turma Alpha</a>
-        <a href="#faq" class="hover:text-[#3ecf8e] transition-colors">Dúvidas</a>
+      <nav class="hidden md:flex items-center gap-6 lg:gap-7 text-xs lg:text-sm text-[#cfcfdb] font-medium">
+        <a href="#metodo" class="hover:text-[#c2ef4e] transition-colors">Como Funciona</a>
+        <a href="#quiz" class="hover:text-[#c2ef4e] transition-colors flex items-center gap-1.5">
+          <span class="w-1.5 h-1.5 rounded-full bg-[#c2ef4e] micro-pulse"></span>
+          <span>Teste 2 Min</span>
+        </a>
+        <a href="#estagios" class="hover:text-[#c2ef4e] transition-colors">Estágios da Fala</a>
+        <a href="#montanha-cefr" class="hover:text-[#c2ef4e] transition-colors">Escala CEFR</a>
+        <a href="#ecossistema" class="hover:text-[#c2ef4e] transition-colors">Ecossistema</a>
+        <a href="#pricing" class="hover:text-[#c2ef4e] transition-colors">Turma Alpha (15 Vagas)</a>
+        <a href="#faq" class="hover:text-[#c2ef4e] transition-colors">Dúvidas</a>
       </nav>
 
       <div class="flex items-center gap-3">
         <!-- Mini Streak HUD -->
-        <div class="hidden lg:flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#161616] border border-white/[0.08] text-xs font-mono text-[#a1a1aa] shadow-inner" aria-hidden="true">
-          <span class="text-[#f59e0b]">🔥</span>
-          <span>Streak: <strong class="text-[#fafafa]">14 dias</strong></span>
+        <div class="hidden lg:flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#271d40] border border-[#3b2c60] text-xs font-mono text-[#cfcfdb] shadow-inner" aria-hidden="true">
+          <span class="text-[#fa7faa]">🔥</span>
+          <span>Streak: <strong class="text-[#ffffff]">14 dias</strong></span>
         </div>
 
         <a
-          href="#pricing"
-          class="px-5 py-2 rounded-full bg-[#3ecf8e] text-[#0f0f0f] text-xs sm:text-sm font-bold transition-all hover:bg-[#34b27b] active:scale-95 shadow-sm shadow-[#3ecf8e]/20"
+          href="#quiz"
+          class="px-4 sm:px-5 py-2 rounded-full bg-[#c2ef4e] text-[#1f1633] text-xs sm:text-sm font-sans font-extrabold transition-all hover:bg-[#b0dc41] active:scale-95 shadow-sm shadow-[#c2ef4e]/20"
         >
-          Garantir Vaga Alpha
+          Fazer o Teste (Grátis)
         </a>
       </div>
     </header>
@@ -80,6 +85,7 @@ import Footer from '../components/Footer.astro';
     <main class="flex-1 pb-20 sm:pb-0">
       <Hero />
       <Problem />
+      <QuizNivelamento />
       <Solution />
       <EstagiosFala />
       <MontanhaB2 />
@@ -87,33 +93,6 @@ import Footer from '../components/Footer.astro';
       <SocialProof />
       <Pricing />
       <Faq />
-
-      <!-- PlayApp SPARK Alpha Bridge -->
-      <section id="playapp" class="py-24 px-4 sm:px-8 relative border-t border-[#1a1a1a] overflow-hidden">
-        <div class="absolute inset-0 dot-grid-bg opacity-60 pointer-events-none"></div>
-        <div class="max-w-4xl mx-auto text-center relative z-10">
-          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full badge-glow mb-6">
-            <span class="w-1.5 h-1.5 rounded-full bg-[#3ecf8e] micro-pulse"></span>
-            <span class="text-xs font-mono text-[#3ecf8e] uppercase tracking-[0.2em]">SPARK Alpha · Playbook 7 Dias</span>
-          </div>
-          <h2 class="font-sans font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-tight leading-[1.08] mb-5 text-[#fafafa]">
-            Quer testar o método antes<br /><span class="text-gradient-emerald">de qualquer compromisso?</span>
-          </h2>
-          <p class="text-[#898989] text-base sm:text-lg mb-10 max-w-xl mx-auto leading-relaxed">
-            O PlayApp SPARK Alpha guia seus primeiros 7 dias de prática diária. Missões curtas, chunks reais, sem instalação e sem custo.
-          </p>
-          <a
-            href="/playapp"
-            class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl border border-[#3ecf8e]/40 text-[#3ecf8e] font-bold text-sm hover:bg-[#3ecf8e]/10 active:scale-95 transition-all group"
-          >
-            <span>Acessar o PlayApp SPARK Alpha</span>
-            <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-            </svg>
-          </a>
-        </div>
-      </section>
-
       <FinalCTA />
     </main>
 
@@ -126,11 +105,9 @@ import Footer from '../components/Footer.astro';
 
       gsap.registerPlugin(ScrollTrigger);
 
-      // Expose globally so is:inline scripts can access them
       (window as any).gsap = gsap;
       (window as any).ScrollTrigger = ScrollTrigger;
 
-      // Global [data-anim] fallback — components handle their own, this catches any missed ones
       const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       if (!reduced) {
         ScrollTrigger.batch('[data-anim="fade-up"]:not([data-animated])', {

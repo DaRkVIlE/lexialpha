@@ -2,47 +2,55 @@
 
 @layer base {
   :root {
-    --color-background: #0f0f0f;
-    --color-background-elevated: #171717;
-    --color-card: #141414;
-    --color-card-border: #242424;
-    --color-foreground: #fafafa;
-    --color-foreground-muted: #898989;
-    --color-foreground-subtle: #b4b4b4;
-    --color-border: #242424;
-    --color-border-dark: #2e2e2e;
-    --color-border-mid: #363636;
-    --color-border-light: #393939;
+    /* ── Canonical Deep Purple + Lime Green Tokens (Design System 04.1) ── */
+    --color-background: #1f1633;
+    --color-background-elevated: #271d40;
+    --color-card: #271d40;
+    --color-card-border: #2e224d;
+    --color-foreground: #ffffff;
+    --color-foreground-muted: #cfcfdb;
+    --color-foreground-subtle: #a4a4b8;
+    --color-border: #2e224d;
+    --color-border-dark: #241a3c;
+    --color-border-mid: #3b2c60;
+    --color-border-light: #4f3b7d;
 
-    --color-primary: #3ecf8e;
-    --color-primary-hover: #34b27b;
-    --color-accent: #00c573;
-    --color-accent-hover: #00a862;
-    --color-accent-dim: rgba(62, 207, 142, 0.15);
-    --color-accent-border: rgba(62, 207, 142, 0.3);
+    /* Sentry Purple Brand & Lime Green Action */
+    --color-primary: #6a5fc1;
+    --color-primary-hover: #5d52b3;
+    --color-secondary: #79628c;
+    --color-accent: #c2ef4e;
+    --color-accent-hover: #b0dc41;
+    --color-accent-dim: rgba(194, 239, 78, 0.15);
+    --color-accent-border: rgba(194, 239, 78, 0.35);
+
+    /* Coral & Pink Accents */
+    --color-coral: #ffb287;
+    --color-pink: #fa7faa;
 
     --radius-pill: 9999px;
     --radius-card: 16px;
     --radius-input: 8px;
 
-    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-sans: 'Rubik', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     --font-mono: 'Source Code Pro', 'Menlo', monospace;
 
     /* ── Gamification Tokens ──────────────────────────────────── */
-    --color-game-xp:   #f59e0b;   /* Amber – XP / reward */
-    --color-game-mana: #818cf8;   /* Indigo – skill / streak */
-    --color-game-hp:   #f87171;   /* Red – urgency / boss */
-    --color-game-boss: #c084fc;   /* Purple – boss / challenge */
+    --color-game-xp:   #fa7faa;   /* Pink – XP / reward */
+    --color-game-mana: #6a5fc1;   /* Purple – skill / companion */
+    --color-game-hp:   #ffb287;   /* Coral – urgency / alert */
+    --color-game-boss: #c2ef4e;   /* Lime – mastery / boss */
 
-    --color-aether-card:        #111111;
-    --color-aether-card-border: rgba(255, 255, 255, 0.07);
-    --color-aether-card-hover:  rgba(62, 207, 142, 0.35);
+    --color-aether-card:        #271d40;
+    --color-aether-card-border: #3b2c60;
+    --color-aether-card-hover:  rgba(194, 239, 78, 0.45);
 
-    --shadow-glow-sm: 0 0 20px -5px rgba(62, 207, 142, 0.35);
-    --shadow-glow-md: 0 0 40px -10px rgba(62, 207, 142, 0.25);
-    --shadow-xp:      0 0 20px -6px rgba(245, 158, 11, 0.4);
-    --shadow-mana:    0 0 20px -6px rgba(129, 140, 248, 0.4);
-    --shadow-boss:    0 0 20px -6px rgba(192, 132, 252, 0.4);
+    --shadow-glow-sm: 0 0 20px -5px rgba(194, 239, 78, 0.35);
+    --shadow-glow-md: 0 0 40px -10px rgba(194, 239, 78, 0.25);
+    --shadow-purple-glow: 0 0 35px -5px rgba(106, 95, 193, 0.4);
+    --shadow-xp:      0 0 20px -6px rgba(250, 127, 170, 0.4);
+    --shadow-mana:    0 0 20px -6px rgba(106, 95, 193, 0.4);
+    --shadow-boss:    0 0 20px -6px rgba(194, 239, 78, 0.4);
   }
 
   html {
@@ -60,43 +68,58 @@
   }
 
   ::selection {
-    background-color: var(--color-primary);
-    color: #0f0f0f;
+    background-color: var(--color-accent);
+    color: #1f1633;
   }
 
   ::-webkit-scrollbar { width: 6px; }
-  ::-webkit-scrollbar-track { background: #0f0f0f; }
-  ::-webkit-scrollbar-thumb { background: #242424; border-radius: 9999px; }
-  ::-webkit-scrollbar-thumb:hover { background: #363636; }
+  ::-webkit-scrollbar-track { background: #1f1633; }
+  ::-webkit-scrollbar-thumb { background: #3b2c60; border-radius: 9999px; }
+  ::-webkit-scrollbar-thumb:hover { background: #4f3b7d; }
 }
 
 /* ─── Glass Panels ────────────────────────────────────────── */
 .glass-panel {
-  background: rgba(20, 20, 20, 0.75);
+  background: rgba(39, 29, 64, 0.82);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .glass-panel-hover {
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .glass-panel-hover:hover {
-  border-color: rgba(62, 207, 142, 0.35);
-  box-shadow: 0 0 35px -10px rgba(62, 207, 142, 0.15);
+  border-color: rgba(194, 239, 78, 0.4);
+  box-shadow: 0 0 35px -10px rgba(194, 239, 78, 0.2);
   transform: translateY(-2px);
 }
 
 /* ─── Text Gradients ─────────────────────────────────────── */
 .text-gradient-title {
-  background: linear-gradient(180deg, #FFFFFF 0%, #D4D4D8 50%, #A1A1AA 100%);
+  background: linear-gradient(180deg, #FFFFFF 0%, #E8E5F5 50%, #CFCFDB 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
+.text-gradient-lime {
+  background: linear-gradient(135deg, #C2EF4E 0%, #b0dc41 50%, #95c52c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Compatibilidade com componentes que chamam text-gradient-emerald */
 .text-gradient-emerald {
-  background: linear-gradient(135deg, #3ECF8E 0%, #22c55e 50%, #16a34a 100%);
+  background: linear-gradient(135deg, #C2EF4E 0%, #b0dc41 50%, #95c52c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-purple {
+  background: linear-gradient(135deg, #a79bf5 0%, #6a5fc1 60%, #4e449c 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -104,16 +127,16 @@
 
 /* ─── Badge Glow ─────────────────────────────────────────── */
 .badge-glow {
-  background: rgba(23, 23, 23, 0.8);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
+  background: rgba(39, 29, 64, 0.85);
+  border: 1px solid rgba(194, 239, 78, 0.25);
+  box-shadow: 0 0 20px -5px rgba(194, 239, 78, 0.2);
 }
 
 /* ─── Topic Cards & Visual Representation ─────────────────── */
 .topic-card {
   position: relative;
-  background: #141414;
-  border: 1px solid #242424;
+  background: #271d40;
+  border: 1px solid #3b2c60;
   border-radius: 16px;
   padding: 1.25rem 1.5rem;
   transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
@@ -124,16 +147,21 @@
 
 .topic-card:hover {
   transform: translateY(-2px);
-  border-color: rgba(62, 207, 142, 0.35);
-  box-shadow: 0 8px 30px -8px rgba(0, 0, 0, 0.5), 0 0 20px -5px rgba(62, 207, 142, 0.12);
-  background-color: #171717;
+  border-color: rgba(194, 239, 78, 0.45);
+  box-shadow: 0 8px 30px -8px rgba(0, 0, 0, 0.6), 0 0 25px -5px rgba(194, 239, 78, 0.2);
+  background-color: #2f234e;
+}
+
+.topic-card-danger {
+  background: #281a28;
+  border-color: #4a2432;
 }
 
 .topic-card-danger:hover {
   transform: translateY(-2px);
-  border-color: rgba(248, 113, 113, 0.35);
-  box-shadow: 0 8px 30px -8px rgba(0, 0, 0, 0.5), 0 0 20px -5px rgba(239, 68, 68, 0.12);
-  background-color: #161212;
+  border-color: rgba(255, 178, 135, 0.5);
+  box-shadow: 0 8px 30px -8px rgba(0, 0, 0, 0.6), 0 0 25px -5px rgba(255, 178, 135, 0.25);
+  background-color: #311c2a;
 }
 
 .topic-badge {
@@ -147,30 +175,30 @@
   text-transform: uppercase;
   padding: 0.2rem 0.6rem;
   border-radius: 6px;
-  background: #1a1a1a;
-  border: 1px solid #2a2a2a;
-  color: #898989;
+  background: #1f1633;
+  border: 1px solid #3b2c60;
+  color: #cfcfdb;
   transition: all 0.25s ease;
 }
 
 .topic-card:hover .topic-badge {
-  color: #3ecf8e;
-  border-color: rgba(62, 207, 142, 0.3);
-  background: rgba(62, 207, 142, 0.08);
+  color: #c2ef4e;
+  border-color: rgba(194, 239, 78, 0.35);
+  background: rgba(194, 239, 78, 0.1);
 }
 
 .topic-card-danger:hover .topic-badge {
-  color: #f87171;
-  border-color: rgba(248, 113, 113, 0.3);
-  background: rgba(239, 68, 68, 0.08);
+  color: #ffb287;
+  border-color: rgba(255, 178, 135, 0.35);
+  background: rgba(255, 178, 135, 0.1);
 }
 
 .icon-box {
   width: 2.25rem;
   height: 2.25rem;
   border-radius: 10px;
-  background: #181818;
-  border: 1px solid #282828;
+  background: #1f1633;
+  border: 1px solid #3b2c60;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -179,14 +207,14 @@
 }
 
 .topic-card:hover .icon-box {
-  background: rgba(62, 207, 142, 0.12);
-  border-color: rgba(62, 207, 142, 0.4);
+  background: rgba(194, 239, 78, 0.15);
+  border-color: rgba(194, 239, 78, 0.5);
   transform: scale(1.05);
 }
 
 .topic-card-danger:hover .icon-box {
-  background: rgba(239, 68, 68, 0.12);
-  border-color: rgba(239, 68, 68, 0.4);
+  background: rgba(255, 178, 135, 0.15);
+  border-color: rgba(255, 178, 135, 0.5);
   transform: scale(1.05);
 }
 
@@ -214,7 +242,7 @@
   transform: translateX(-50%) scaleX(0);
   width: 80%;
   height: 2px;
-  background: #3ecf8e;
+  background: #c2ef4e;
   transition: transform 0.3s ease;
 }
 
@@ -244,7 +272,7 @@
 /* ─── Line Decorative ────────────────────────────────────── */
 .line-decor {
   height: 1px;
-  background: linear-gradient(90deg, transparent, #3ecf8e 50%, transparent);
+  background: linear-gradient(90deg, transparent, #c2ef4e 50%, transparent);
   transform: scaleX(0);
   transform-origin: left center;
 }
@@ -329,10 +357,10 @@
 }
 
 .float-badge {
-  background: rgba(20, 20, 20, 0.82);
+  background: rgba(39, 29, 64, 0.88);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(255, 255, 255, 0.10);
+  border: 1px solid rgba(194, 239, 78, 0.25);
   border-radius: 14px;
   padding: 0.55rem 0.9rem;
   display: inline-flex;
@@ -340,13 +368,13 @@
   gap: 0.45rem;
   font-size: 0.72rem;
   font-weight: 600;
-  color: #d4d4d8;
+  color: #ffffff;
   white-space: nowrap;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.45);
   transition: box-shadow 0.3s ease, border-color 0.3s ease;
 }
 .float-badge:hover {
-  border-color: rgba(62, 207, 142, 0.3);
+  border-color: rgba(194, 239, 78, 0.6);
   box-shadow: var(--shadow-glow-sm);
 }
 .float-badge .badge-icon {
@@ -384,7 +412,7 @@
   position: absolute;
   inset: -4px;
   border-radius: 9999px;
-  background: radial-gradient(circle, rgba(62, 207, 142, 0.35) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(194, 239, 78, 0.35) 0%, transparent 70%);
   pointer-events: none;
   opacity: 0;
   transition: opacity 0.3s ease;
@@ -396,14 +424,14 @@
 /* ─── XP Bar ─────────────────────────────────────────────── */
 .xp-bar-track {
   height: 5px;
-  background: rgba(255, 255, 255, 0.07);
+  background: rgba(255, 255, 255, 0.08);
   border-radius: 9999px;
   overflow: hidden;
 }
 .xp-bar-fill {
   height: 100%;
   border-radius: 9999px;
-  background: linear-gradient(90deg, var(--color-game-xp) 0%, #fbbf24 100%);
+  background: linear-gradient(90deg, #fa7faa 0%, #c2ef4e 100%);
   transition: width 1.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 

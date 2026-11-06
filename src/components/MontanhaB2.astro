@@ -11,19 +11,19 @@ const stages = [
     trapBadge: 'Tradução Palavra por Palavra',
     trap: 'Tenta traduzir palavra por palavra do português e paralisa por medo de errar a regra gramatical.',
     solutionBadge: 'Chunks de Sobrevivência',
-    solution: 'Você treina blocos de fala prontos, com frases que saem sem precisar conjugá-las. Produção real desde o primeiro dia com a Lexi Alpha.',
+    solution: 'Você treina blocos de fala prontos (chunks formulaicos) que saem no reflexo. Produção oral desde a primeira semana com Companion IA no LibreChat + sessões com Gabe.',
     outcome: 'Consegue se apresentar, pedir informações básicas e entender instruções simples sem pânico.'
   },
   {
     id: 'stage-a2',
     level: 'A2',
-    name: 'Autonomia Cotidiana',
+    name: 'Autonomia Cotidiana (BICS)',
     hours: '180 a 200 horas guiadas (Cambridge)',
     trapBadge: 'Pausas Longas e Hesitação',
     trap: 'Vocabulário solto sem conexão estrutural. Pausas longas e desconfortáveis entre as palavras.',
     solutionBadge: 'Microdose Diária 15min',
-    solution: '15 minutos por dia no PlayApp SPARK Alpha. Situações de rotina reais, levemente acima do seu nível atual. Você expande sem sentir que está estudando.',
-    outcome: 'Descreve tarefas do trabalho, fala sobre acontecimentos do dia e entende o contexto de áudios comuns.'
+    solution: '15 minutos por dia de sparring no LibreChat com Spaced Recasting + trilha guiada no Portal do Aluno. Situações reais de aeroporto, hotel e rotina.',
+    outcome: 'Descreve tarefas do trabalho, relata viagens e lida com imprevistos cotidianos sem recorrer ao português.'
   },
   {
     id: 'stage-b1',
@@ -32,28 +32,28 @@ const stages = [
     hours: '350 a 400 horas guiadas (Cambridge)',
     trapBadge: 'Platô Intermediário',
     trap: 'O famoso platô intermediário: você entende quase tudo que ouve e lê, mas na hora de falar sob pressão a mente dá um branco.',
-    solutionBadge: 'Sessões 1 a 1 de Improviso',
-    solution: 'Encontros individuais 1 a 1 com Gabriel Lima. Trabalhamos diretamente nas suas travas emocionais de improviso, forçando raciocínio direto em inglês com feedback natural em camadas.',
-    outcome: 'Participa de reuniões sem roteiro prévio, expressa opiniões pessoais e lida com imprevistos sem recorrer ao português.'
+    solutionBadge: '3 Sessões Semanais com Gabe',
+    solution: 'Encontros individuais (2x15m + 1x30m) com Gabriel Lima. Trabalhamos diretamente nas suas travas emocionais de improviso, forçando raciocínio direto em inglês sem caneta vermelha.',
+    outcome: 'Participa de reuniões sem roteiro prévio, expressa opiniões pessoais e lida com imprevistos sem hesitação.'
   },
   {
     id: 'stage-b2',
     level: 'B2',
-    name: 'Domínio Executivo',
+    name: 'Domínio Executivo (Meta Alpha)',
     hours: '500 a 600 horas guiadas (Cambridge)',
     trapBadge: 'Jargões e Negociações',
-    trap: 'Dificuldade em lidar com jargões profissionais, argumentos técnicos complexos ou conversas rápidas com múltiplos nativos.',
-    solutionBadge: 'Tutor Calibrado por Carreira',
-    solution: 'O tutor Lexi Alpha calibrado para a sua área. Simulações de negociações, entrevistas e situações reais do seu trabalho, toda semana.',
-    outcome: 'Fluência profissional sólida, capacidade de persuasão, liderança de discussões e compreensão de nuances culturais.'
+    trap: 'Dificuldade em lidar com jargões corporativos, negociações rápidas sob pressão ou reuniões com clientes internacionais nativos.',
+    solutionBadge: '2.500 Chunks + Boss Raids',
+    solution: 'Consolidação de 2.500 chunks executivos acumulados (Cume da Autonomia Total). Simulações de negociações, entrevistas e Boss Raids semanais de 30 minutos com Gabriel.',
+    outcome: 'Autonomia profissional completa. Você lidera reuniões internacionais com segurança e sem pedir desculpas pelo seu inglês.'
   },
   {
     id: 'stage-c1',
     level: 'C1',
-    name: 'Autonomia Plena',
+    name: 'Autonomia Plena & Diplomacia',
     hours: '700 a 800 horas guiadas (Cambridge)',
     trapBadge: 'Nuances e Metáforas',
-    trap: 'Falta de naturalidade em expressões idiomáticas sutis e metáforas avançadas da língua.',
+    trap: 'Falta de naturalidade em expressões idiomáticas sutis, ironia fina e metáforas avançadas da língua.',
     solutionBadge: 'Pensamento Instintivo',
     solution: 'Consolidação do pensamento direto em inglês. A língua passa a ser um segundo canal natural de raciocínio, com esforço cognitivo próximo de zero.',
     outcome: 'Comunicação precisa, flexível e totalmente espontânea em qualquer esfera profissional ou social.'
@@ -61,34 +61,34 @@ const stages = [
   {
     id: 'stage-c2',
     level: 'C2',
-    name: 'Maestria Nativa Plena',
+    name: 'Maestria Nativa & Soberania',
     hours: '1.000 a 1.200 horas guiadas (Cambridge)',
     trapBadge: 'Estagnação Avançada',
     trap: 'Sensação de estagnação após anos de estudo, com dificuldade em nuances diplomáticas e oratória de alto impacto.',
-    solutionBadge: 'Domínio e Oratória',
-    solution: 'Treino avançado de debates, oratória e liderança global. O inglês deixa de ser algo que você usa e vira algo que você habita.',
-    outcome: 'Comunicação indistinguível de um falante nativo culto, com domínio absoluto de tom, sutileza e persuasão.'
+    solutionBadge: 'Domínio e Oratória (3.500 Chunks)',
+    solution: 'Treino avançado de debates, oratória e liderança global. O acervo total de 3.500 chunks consolida o domínio de tom, sutileza e persuasão indistinguível de um nativo culto.',
+    outcome: 'Comunicação indistinguível de um falante nativo culto, com domínio absoluto de retórica e liderança global.'
   }
 ];
 ---
 
-<section id="montanha-cefr" class="py-32 px-4 sm:px-8 relative border-t border-[#1a1a1a] overflow-hidden">
-  <!-- Glow atmosférico -->
-  <div class="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[350px] bg-[#3ecf8e]/5 rounded-full blur-[180px] pointer-events-none"></div>
+<section id="montanha-cefr" class="py-28 px-4 sm:px-8 relative border-t border-[#2e224d] overflow-hidden">
+  <!-- Glow atmosférico Sentry Purple + Lime -->
+  <div class="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[350px] bg-[#6a5fc1]/10 rounded-full blur-[180px] pointer-events-none"></div>
 
   <div class="max-w-6xl mx-auto relative z-10">
     <!-- Header -->
     <div class="mb-16 max-w-3xl" data-anim="fade-up">
       <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full badge-glow mb-4">
-        <span class="w-1.5 h-1.5 rounded-full bg-[#3ecf8e] micro-pulse"></span>
-        <span class="text-xs font-mono text-[#898989] uppercase tracking-[0.2em]">Mapeamento Quantitativo CEFR</span>
+        <span class="w-1.5 h-1.5 rounded-full bg-[#c2ef4e] micro-pulse"></span>
+        <span class="text-xs font-mono text-[#c2ef4e] uppercase tracking-[0.2em]">Mapeamento Quantitativo CEFR</span>
       </div>
-      <h2 class="font-sans font-extrabold text-4xl sm:text-5xl md:text-6xl tracking-tight leading-[1.05] mt-2 text-[#fafafa]">
+      <h2 class="font-sans font-extrabold text-3xl sm:text-5xl md:text-6xl tracking-tight leading-[1.05] mt-2 text-[#ffffff]">
         A jornada da fala em 6 etapas.<br />
-        <span class="text-gradient-emerald">De onde você está ao C2 nativo.</span>
+        <span class="text-gradient-lime">De onde você está ao C2 nativo.</span>
       </h2>
-      <p class="text-base sm:text-lg text-[#898989] leading-relaxed mt-5">
-        A escala internacional de proficiência (CEFR) cruzada com a média de horas de estudo guiado de Cambridge English, e a forma exata como aceleramos cada etapa.
+      <p class="text-base sm:text-lg text-[#cfcfdb] leading-relaxed mt-4">
+        A escala internacional de proficiência (CEFR) cruzada com a média de horas de Cambridge English, e a forma exata como aceleramos cada etapa com blocos sonoros (chunks).
       </p>
     </div>
 
@@ -103,11 +103,11 @@ const stages = [
           class="absolute z-20 pointer-events-none opacity-0 transition-opacity duration-150 left-full ml-3"
           style="top: 0; min-width: 200px; max-width: 240px;"
         >
-          <div class="bg-[#151519] border border-[#3ecf8e]/30 rounded-xl p-3 shadow-xl">
-            <div id="mt-tip-level" class="text-[10px] font-mono text-[#3ecf8e] uppercase tracking-wider mb-1"></div>
-            <div id="mt-tip-name" class="text-sm font-bold text-[#fafafa] mb-1"></div>
-            <div id="mt-tip-hours" class="text-[10px] font-mono text-[#828294] mb-2"></div>
-            <div id="mt-tip-trap" class="text-[10px] text-[#898989] leading-relaxed"></div>
+          <div class="bg-[#1f1633] border border-[#c2ef4e]/40 rounded-xl p-3 shadow-xl">
+            <div id="mt-tip-level" class="text-[10px] font-mono text-[#c2ef4e] uppercase tracking-wider mb-1 font-bold"></div>
+            <div id="mt-tip-name" class="text-sm font-bold text-[#ffffff] mb-1"></div>
+            <div id="mt-tip-hours" class="text-[10px] font-mono text-[#cfcfdb] mb-2"></div>
+            <div id="mt-tip-trap" class="text-[10px] text-[#cfcfdb] leading-relaxed"></div>
           </div>
         </div>
 
@@ -127,76 +127,76 @@ const stages = [
 
           <!-- Mountain zones (bottom to top = A1 to C2) -->
           <!-- A1 base -->
-          <rect x="0" y="340" width="300" height="62" fill="#1a3028" clip-path="url(#mountain-clip)"
+          <rect x="0" y="340" width="300" height="62" fill="#2a1942" clip-path="url(#mountain-clip)"
                 class="mountain-zone cursor-pointer hover:brightness-125 transition-all duration-200"
                 data-stage="stage-a1" data-level="A1" data-name="Descongelamento Inicial"
                 data-hours="90 a 100 horas (Cambridge)" data-trap="Tradução palavra por palavra. Paralisa por medo de errar a gramática." />
           <!-- A2 -->
-          <rect x="0" y="278" width="300" height="64" fill="#1f4035" clip-path="url(#mountain-clip)"
+          <rect x="0" y="278" width="300" height="64" fill="#362054" clip-path="url(#mountain-clip)"
                 class="mountain-zone cursor-pointer hover:brightness-125 transition-all duration-200"
                 data-stage="stage-a2" data-level="A2" data-name="Autonomia Cotidiana"
                 data-hours="180 a 200 horas (Cambridge)" data-trap="Vocabulário solto, pausas longas entre palavras." />
           <!-- B1 -->
-          <rect x="0" y="210" width="300" height="70" fill="#255048" clip-path="url(#mountain-clip)"
+          <rect x="0" y="210" width="300" height="70" fill="#45286b" clip-path="url(#mountain-clip)"
                 class="mountain-zone cursor-pointer hover:brightness-125 transition-all duration-200"
                 data-stage="stage-b1" data-level="B1" data-name="Conversação Fluida"
                 data-hours="350 a 400 horas (Cambridge)" data-trap="Platô intermediário: entende mas trava ao falar sob pressão." />
           <!-- B2 -->
-          <rect x="0" y="148" width="300" height="64" fill="#2a6058" clip-path="url(#mountain-clip)"
+          <rect x="0" y="148" width="300" height="64" fill="#583387" clip-path="url(#mountain-clip)"
                 class="mountain-zone cursor-pointer hover:brightness-125 transition-all duration-200"
                 data-stage="stage-b2" data-level="B2" data-name="Domínio Executivo"
                 data-hours="500 a 600 horas (Cambridge)" data-trap="Dificuldade com jargões e conversas técnicas rápidas." />
           <!-- C1 -->
-          <rect x="0" y="88" width="300" height="62" fill="#2f7068" clip-path="url(#mountain-clip)"
+          <rect x="0" y="88" width="300" height="62" fill="#7241a8" clip-path="url(#mountain-clip)"
                 class="mountain-zone cursor-pointer hover:brightness-125 transition-all duration-200"
                 data-stage="stage-c1" data-level="C1" data-name="Autonomia Plena"
                 data-hours="700 a 800 horas (Cambridge)" data-trap="Falta de naturalidade em expressões idiomáticas sutis." />
           <!-- C2 peak -->
-          <rect x="0" y="16" width="300" height="74" fill="#3ecf8e" fill-opacity="0.7" clip-path="url(#mountain-clip)"
+          <rect x="0" y="16" width="300" height="74" fill="#c2ef4e" fill-opacity="0.85" clip-path="url(#mountain-clip)"
                 class="mountain-zone cursor-pointer hover:brightness-110 transition-all duration-200"
                 data-stage="stage-c2" data-level="C2" data-name="Maestria Nativa Plena"
                 data-hours="1.000 a 1.200 horas (Cambridge)" data-trap="Estagnação avançada, dificuldade em oratória de alto impacto." />
 
           <!-- Mountain outline -->
-          <polygon points="150,18 290,400 10,400" stroke="#3ecf8e" stroke-opacity="0.25" stroke-width="1.5" fill="none" />
+          <polygon points="150,18 290,400 10,400" stroke="#c2ef4e" stroke-opacity="0.35" stroke-width="1.5" fill="none" />
 
           <!-- Level divider lines -->
-          <line x1="10" y1="340" x2="290" y2="340" stroke="#0f0f0f" stroke-opacity="0.5" stroke-width="1"/>
-          <line x1="10" y1="278" x2="290" y2="278" stroke="#0f0f0f" stroke-opacity="0.5" stroke-width="1"/>
-          <line x1="10" y1="210" x2="290" y2="210" stroke="#0f0f0f" stroke-opacity="0.5" stroke-width="1"/>
-          <line x1="10" y1="148" x2="290" y2="148" stroke="#0f0f0f" stroke-opacity="0.5" stroke-width="1"/>
-          <line x1="10" y1="88" x2="290" y2="88" stroke="#0f0f0f" stroke-opacity="0.5" stroke-width="1"/>
+          <line x1="10" y1="340" x2="290" y2="340" stroke="#1f1633" stroke-opacity="0.6" stroke-width="1"/>
+          <line x1="10" y1="278" x2="290" y2="278" stroke="#1f1633" stroke-opacity="0.6" stroke-width="1"/>
+          <line x1="10" y1="210" x2="290" y2="210" stroke="#1f1633" stroke-opacity="0.6" stroke-width="1"/>
+          <line x1="10" y1="148" x2="290" y2="148" stroke="#1f1633" stroke-opacity="0.6" stroke-width="1"/>
+          <line x1="10" y1="88" x2="290" y2="88" stroke="#1f1633" stroke-opacity="0.6" stroke-width="1"/>
 
           <!-- Level labels (left of mountain) -->
-          <text x="8" y="376" font-size="10" font-family="'Source Code Pro', monospace" fill="#3ecf8e" fill-opacity="0.9" font-weight="600">A1</text>
-          <text x="8" y="314" font-size="10" font-family="'Source Code Pro', monospace" fill="#3ecf8e" fill-opacity="0.9" font-weight="600">A2</text>
-          <text x="8" y="248" font-size="10" font-family="'Source Code Pro', monospace" fill="#3ecf8e" fill-opacity="0.9" font-weight="600">B1</text>
-          <text x="8" y="184" font-size="10" font-family="'Source Code Pro', monospace" fill="#3ecf8e" fill-opacity="0.9" font-weight="600">B2</text>
-          <text x="8" y="124" font-size="10" font-family="'Source Code Pro', monospace" fill="#3ecf8e" fill-opacity="0.9" font-weight="600">C1</text>
-          <text x="8" y="60" font-size="10" font-family="'Source Code Pro', monospace" fill="#3ecf8e" fill-opacity="0.95" font-weight="700">C2</text>
+          <text x="8" y="376" font-size="10" font-family="'Source Code Pro', monospace" fill="#c2ef4e" fill-opacity="0.9" font-weight="600">A1</text>
+          <text x="8" y="314" font-size="10" font-family="'Source Code Pro', monospace" fill="#c2ef4e" fill-opacity="0.9" font-weight="600">A2</text>
+          <text x="8" y="248" font-size="10" font-family="'Source Code Pro', monospace" fill="#c2ef4e" fill-opacity="0.9" font-weight="600">B1</text>
+          <text x="8" y="184" font-size="10" font-family="'Source Code Pro', monospace" fill="#c2ef4e" fill-opacity="0.9" font-weight="600">B2</text>
+          <text x="8" y="124" font-size="10" font-family="'Source Code Pro', monospace" fill="#c2ef4e" fill-opacity="0.9" font-weight="600">C1</text>
+          <text x="8" y="60" font-size="10" font-family="'Source Code Pro', monospace" fill="#c2ef4e" fill-opacity="0.95" font-weight="700">C2</text>
 
           <!-- Active indicator dot (animated by JS) -->
-          <circle id="mt-indicator" cx="150" cy="371" r="5" fill="#3ecf8e" stroke="#0f0f0f" stroke-width="2" class="pointer-events-none" />
-          <circle id="mt-indicator-ring" cx="150" cy="371" r="9" fill="none" stroke="#3ecf8e" stroke-opacity="0.4" stroke-width="1.5" class="pointer-events-none" />
+          <circle id="mt-indicator" cx="150" cy="371" r="5" fill="#c2ef4e" stroke="#1f1633" stroke-width="2" class="pointer-events-none" />
+          <circle id="mt-indicator-ring" cx="150" cy="371" r="9" fill="none" stroke="#c2ef4e" stroke-opacity="0.5" stroke-width="1.5" class="pointer-events-none" />
 
           <!-- Peak star marker -->
-          <circle cx="150" cy="18" r="3" fill="#3ecf8e" />
-          <circle cx="150" cy="18" r="6" fill="none" stroke="#3ecf8e" stroke-opacity="0.5" stroke-width="1"/>
+          <circle cx="150" cy="18" r="3" fill="#c2ef4e" />
+          <circle cx="150" cy="18" r="6" fill="none" stroke="#c2ef4e" stroke-opacity="0.6" stroke-width="1"/>
         </svg>
       </div>
 
       <!-- Tabs + Content (direita / full width no mobile) -->
       <div class="flex-1 space-y-8" id="cefr-container" data-anim="fade-up">
         <!-- Barra de Abas -->
-        <div class="flex items-center gap-2 p-1.5 rounded-2xl bg-[#121212] border border-[#242424] overflow-x-auto scrollbar-none max-w-fit mx-auto sm:mx-0 shadow-lg">
+        <div class="flex items-center gap-2 p-1.5 rounded-2xl bg-[#271d40] border border-[#3b2c60] overflow-x-auto scrollbar-none max-w-fit mx-auto sm:mx-0 shadow-lg">
           {stages.map((stage, index) => (
             <button
               type="button"
               data-stage-target={stage.id}
               class={`stage-tab-btn px-4 py-2.5 rounded-xl text-xs font-mono transition-all duration-250 cursor-pointer whitespace-nowrap flex items-center gap-2 group ${
                 index === 0
-                  ? 'bg-[#3ecf8e] text-[#0f0f0f] font-bold shadow-md shadow-[#3ecf8e]/20 active-tab'
-                  : 'text-[#898989] hover:text-[#fafafa] hover:bg-[#1a1a1a]'
+                  ? 'bg-[#c2ef4e] text-[#1f1633] font-bold shadow-md shadow-[#c2ef4e]/20 active-tab'
+                  : 'text-[#cfcfdb] hover:text-[#ffffff] hover:bg-[#3b2c60]'
               }`}
             >
               <span class="font-bold tracking-wider px-1.5 py-0.5 rounded bg-black/20 text-inherit">{stage.level}</span>
@@ -213,21 +213,21 @@ const stages = [
               class={`stage-pane ${index === 0 ? 'block' : 'hidden'} transition-all`}
               style={index === 0 ? 'opacity: 1;' : 'opacity: 0;'}
             >
-              <div class="rounded-3xl bg-[#141414]/95 border border-[#242424] p-6 sm:p-10 relative overflow-hidden backdrop-blur-sm shadow-2xl">
+              <div class="rounded-3xl bg-[#271d40] border border-[#3b2c60] p-6 sm:p-10 relative overflow-hidden backdrop-blur-sm shadow-2xl">
                 <!-- Topo do Estágio -->
-                <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-8 border-b border-[#1f1f1f]">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-8 border-b border-[#3b2c60]">
                   <div class="flex items-center gap-5 sm:gap-6">
-                    <div class="font-sans font-black text-6xl sm:text-7xl md:text-8xl tracking-tighter text-gradient-emerald leading-none select-none">
+                    <div class="font-sans font-black text-6xl sm:text-7xl md:text-8xl tracking-tighter text-gradient-lime leading-none select-none">
                       {stage.level}
                     </div>
                     <div>
-                      <h3 class="text-2xl sm:text-3xl font-extrabold text-[#fafafa] tracking-tight">{stage.name}</h3>
-                      <p class="text-xs font-mono text-[#898989] uppercase tracking-wider mt-1">{stage.hours}</p>
+                      <h3 class="text-2xl sm:text-3xl font-extrabold text-[#ffffff] tracking-tight">{stage.name}</h3>
+                      <p class="text-xs font-mono text-[#cfcfdb] uppercase tracking-wider mt-1">{stage.hours}</p>
                     </div>
                   </div>
 
-                  <div class="flex items-center gap-2 text-xs font-mono text-[#3ecf8e] px-4 py-1.5 rounded-full bg-[#3ecf8e]/10 border border-[#3ecf8e]/20 self-start md:self-auto">
-                    <span class="w-1.5 h-1.5 rounded-full bg-[#3ecf8e] micro-pulse"></span>
+                  <div class="flex items-center gap-2 text-xs font-mono text-[#c2ef4e] px-4 py-1.5 rounded-full bg-[#c2ef4e]/10 border border-[#c2ef4e]/30 self-start md:self-auto">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#c2ef4e] micro-pulse"></span>
                     <span>Referência Oficial Cambridge</span>
                   </div>
                 </div>
@@ -235,61 +235,66 @@ const stages = [
                 <!-- Split Grid: Fricção vs Aceleração -->
                 <div class="grid md:grid-cols-2 gap-6 pt-8">
                   <!-- Card 1: Ponto de Fricção -->
-                  <div class="topic-card-danger topic-card p-6 rounded-2xl bg-[#111111] border border-[#242424]">
+                  <div class="topic-card-danger topic-card p-6 rounded-2xl bg-[#281a28] border border-[#4a2432]">
                     <div class="flex items-center justify-between gap-3 mb-4">
                       <div class="flex items-center gap-3">
-                        <div class="icon-box text-red-400">
+                        <div class="icon-box text-[#ffb287]">
                           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
                           </svg>
                         </div>
-                        <span class="text-xs font-mono text-red-400 uppercase tracking-wider font-semibold">Ponto de Fricção</span>
+                        <span class="text-xs font-mono text-[#ffb287] uppercase tracking-wider font-semibold">Ponto de Fricção</span>
                       </div>
-                      <span class="topic-badge text-red-400 border-red-500/20 bg-red-500/10">{stage.trapBadge}</span>
+                      <span class="topic-badge text-[#ffb287] border-[#ffb287]/25 bg-[#ffb287]/10">{stage.trapBadge}</span>
                     </div>
-                    <h4 class="text-sm font-semibold text-[#fafafa] mb-2">Onde você trava no método comum:</h4>
-                    <p class="text-[#898989] text-sm leading-relaxed">
+                    <h4 class="text-sm font-semibold text-[#ffffff] mb-2">Onde você trava no método comum:</h4>
+                    <p class="text-[#cfcfdb] text-sm leading-relaxed">
                       {stage.trap}
                     </p>
                   </div>
 
                   <!-- Card 2: Aceleração Ativa -->
-                  <div class="topic-card p-6 rounded-2xl bg-[#111111] border border-[#242424]">
+                  <div class="topic-card p-6 rounded-2xl bg-[#1f1633] border border-[#3b2c60]">
                     <div class="flex items-center justify-between gap-3 mb-4">
                       <div class="flex items-center gap-3">
-                        <div class="icon-box text-[#3ecf8e]">
+                        <div class="icon-box text-[#c2ef4e]">
                           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
                           </svg>
                         </div>
-                        <span class="text-xs font-mono text-[#3ecf8e] uppercase tracking-wider font-semibold">Aceleração Ativa</span>
+                        <span class="text-xs font-mono text-[#c2ef4e] uppercase tracking-wider font-semibold">Aceleração Ativa</span>
                       </div>
-                      <span class="topic-badge text-[#3ecf8e] border-[#3ecf8e]/20 bg-[#3ecf8e]/10">{stage.solutionBadge}</span>
+                      <span class="topic-badge text-[#c2ef4e] border-[#c2ef4e]/25 bg-[#c2ef4e]/10">{stage.solutionBadge}</span>
                     </div>
-                    <h4 class="text-sm font-semibold text-[#fafafa] mb-2">Como o método acelera:</h4>
-                    <p class="text-[#d4d4d8] text-sm leading-relaxed font-medium">
+                    <h4 class="text-sm font-semibold text-[#ffffff] mb-2">Como o método acelera:</h4>
+                    <p class="text-[#cfcfdb] text-sm leading-relaxed font-medium">
                       {stage.solution}
                     </p>
                   </div>
                 </div>
 
                 <!-- Barra Inferior: Habilidade Consolidada -->
-                <div class="mt-6 pt-5 border-t border-[#1f1f1f] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs sm:text-sm text-[#898989]">
+                <div class="mt-6 pt-5 border-t border-[#3b2c60] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs sm:text-sm text-[#cfcfdb]">
                   <div class="flex items-center gap-3">
-                    <div class="w-6 h-6 rounded-lg bg-[#3ecf8e]/15 flex items-center justify-center shrink-0 text-[#3ecf8e]">
+                    <div class="w-6 h-6 rounded-lg bg-[#c2ef4e]/15 flex items-center justify-center shrink-0 text-[#c2ef4e]">
                       <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
                     <span>
-                      <strong class="text-[#fafafa] font-semibold">Habilidade consolidada:</strong> {stage.outcome}
+                      <strong class="text-[#ffffff] font-semibold">Habilidade consolidada:</strong> {stage.outcome}
                     </span>
                   </div>
-                  <span class="text-[11px] font-mono text-[#71717a] uppercase tracking-wider">Marco Validado</span>
+                  <span class="text-[11px] font-mono text-[#fa7faa] uppercase tracking-wider">Marco Validado</span>
                 </div>
               </div>
             </div>
           ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
         </div>
       </div>
     </div>

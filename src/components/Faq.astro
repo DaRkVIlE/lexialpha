@@ -1,90 +1,84 @@
 ---
-// src/components/Faq.astro — Perguntas Frequentes LexiQuest
-
-const faqs = [
-  {
-    category: 'Metodologia',
-    q: 'Vocês prometem fluência em 3 ou 6 meses?',
-    a: 'Não. E desconfie de quem fizer essa promessa. Cada aluno tem um histórico diferente, medos particulares e uma rotina própria. O que temos é um método real: mentoria individual com o Gabe, encontros regulares de conversação e o PlayApp SPARK Alpha para prática diária. Sem atalhos, sem promessa vazia.'
-  },
-  {
-    category: 'Formato 1 a 1',
-    q: 'Como funcionam os encontros com o professor Gabe?',
-    a: 'Na Turma Alpha o acompanhamento é estritamente individual: 2 sessões rápidas de alinhamento por semana e 1 sessão estendida dedicada à conversação guiada e situações reais de trabalho. Nenhum grupo dividindo atenção.'
-  },
-  {
-    category: 'IA Complementar',
-    q: 'A inteligência artificial substitui as aulas com o professor?',
-    a: 'Não. O PlayApp SPARK Alpha resolve o problema do vazio entre uma aula e outra: você pratica todos os dias com missões guiadas, chunks reais e prompts prontos para usar em qualquer IA de sua preferência. O Gabe usa as sessões individuais para ajustar o que a IA não resolve, como improviso, pressão e nuances de tom.'
-  },
-  {
-    category: 'Rotina Mínima',
-    q: 'Preciso estudar exatamente 15 minutos por dia?',
-    a: '15 minutos é o mínimo recomendado para manter a consistência e fixar os blocos de fala. É o suficiente para quem tem rotina corrida. Se tiver mais tempo disponível, o tutor de IA está disponível 24h, sem limite ou cobrança adicional.'
-  },
-  {
-    category: 'Investimento e Risco',
-    q: 'Como funciona a mensalidade de R$ 197 e o cancelamento?',
-    a: 'A mensalidade de entrada é de R$ 197 por mês para os 10 primeiros alunos da Turma Alpha. Sem taxa de matrícula, sem fidelidade de 12 meses. Você cancela quando quiser, sem multa. Garantia de 30 dias: se não gostar, devolvemos 100% via Pix.'
-  },
-  {
-    category: 'Acolhimento',
-    q: 'Posso conversar com o professor antes de me inscrever?',
-    a: 'Pode. Clique no botão de WhatsApp e fale diretamente com o Gabe. A gente alinha seus objetivos, tira as dúvidas e verifica se a Turma Alpha faz sentido pro seu momento antes de qualquer decisão.'
-  }
-];
+// src/components/Faq.astro — Seção 7: Perguntas Frequentes (03.6)
+// Dúvidas Frequentes da Turma Alpha · Respostas Diretas
 ---
 
-<section id="faq" class="py-32 px-4 sm:px-8 relative border-t border-[#1a1a1a] overflow-hidden">
+<section id="faq" class="py-28 px-4 sm:px-8 relative border-t border-[#2e224d] overflow-hidden">
   <div class="max-w-4xl mx-auto relative z-10">
     <!-- Header -->
-    <div class="mb-16 max-w-2xl" data-anim="fade-up">
+    <div class="mb-14 max-w-2xl" data-anim="fade-up">
       <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full badge-glow mb-4">
-        <span class="w-1.5 h-1.5 rounded-full bg-[#3ecf8e] micro-pulse"></span>
-        <span class="text-xs font-mono text-[#898989] uppercase tracking-[0.2em]">Tire Suas Dúvidas</span>
+        <span class="w-1.5 h-1.5 rounded-full bg-[#c2ef4e] micro-pulse"></span>
+        <span class="text-xs font-mono text-[#c2ef4e] uppercase tracking-[0.2em]">Tire Suas Dúvidas</span>
       </div>
-      <h2 class="font-sans font-extrabold text-4xl sm:text-5xl md:text-6xl tracking-tight leading-[1.05] mt-2 text-[#fafafa]">
+      <h2 class="font-sans font-extrabold text-3xl sm:text-5xl md:text-6xl tracking-tight leading-[1.05] mt-2 text-[#ffffff]">
         Perguntas Frequentes.<br />
-        <span class="text-gradient-emerald">Respostas diretas.</span>
+        <span class="text-gradient-lime">Respostas diretas.</span>
       </h2>
-      <p class="text-base sm:text-lg text-[#898989] leading-relaxed mt-5">
-        Respostas sinceras sobre a metodologia, a rotina individual e o acompanhamento na Turma Alpha.
+      <p class="text-base sm:text-lg text-[#cfcfdb] leading-relaxed mt-4">
+        Respostas transparentes sobre a metodologia, as 3 sessões semanais e o formato da Turma Alpha.
       </p>
     </div>
 
-    <!-- Accordion List Linear com Micro-Badges -->
-    <div class="border-b border-[#1f1f1f] space-y-3" data-anim="fade-up">
-      {faqs.map((faq, index) => (
-        <div class="faq-item topic-card p-5 sm:p-6 rounded-2xl bg-[#121212] border border-[#242424] group transition-all duration-250">
+    <!-- Accordion List Linear -->
+    <div class="border-b border-[#3b2c60] space-y-3" data-anim="fade-up">
+      {[
+        {
+          category: 'Iniciantes',
+          q: 'Eu começo do absoluto zero, o método serve para mim?',
+          a: 'Sim! O Método SPARK começa exatamente como aprendemos nossa língua materna: por imersão contextual e blocos sonoros de sobrevivência (chunks). Gabriel te acompanha individualmente desde a primeira palavra, eliminando qualquer medo de errar.'
+        },
+        {
+          category: 'Neurociência',
+          q: 'Por que as aulas são divididas em 3 encontros por semana?',
+          a: 'A neurociência comprova que a mielinização neural ocorre por repetição espaçada. Aulas longas de 1 hora inteira geram exaustão mental e 80% do conteúdo é esquecido em 48 horas. Três sessões curtas na semana (duas de 15 min de agilidade + uma de 30 min de Boss Raid) mantêm o inglês ativo o tempo todo sem sobrecarregar sua rotina.'
+        },
+        {
+          category: 'Garantia Pix',
+          q: 'Como funciona a garantia incondicional de 30 dias?',
+          a: 'Se em 30 dias você praticar e sentir que o método não destravou sua fala, basta me mandar uma mensagem no WhatsApp que devolvo 100% do valor pago via Pix. Sem pegadinhas, sem burocracia e sem ressentimento.'
+        },
+        {
+          category: 'Tecnologia',
+          q: 'Como funciona o LibreChat e o Portal do Aluno?',
+          a: 'No LibreChat você tem seu companion pessoal de IA para treinar 15 minutos diários de conversa sem vergonha, recebendo Spaced Recasting (a IA responde modelando a frase correta sem caneta vermelha). No Portal do Aluno você acessa sua trilha semanal de tarefas, gravações das suas aulas com Gabe e materiais guiados.'
+        },
+        {
+          category: 'Investimento',
+          q: 'Como funciona o valor de R$ 197/mês da Turma Alpha?',
+          a: 'O valor de R$ 197/mês é exclusivo para os 15 alunos fundadores da Turma Alpha (preço regular futuro de R$ 297/mês). O pagamento é realizado diretamente via Pix manual para Gabriel no WhatsApp. Não há taxa de matrícula nem fidelidade de 1 ano: você estuda mês a mês pelo tempo que precisar.'
+        }
+      ].map((faq, index) => (
+        <div class="faq-item topic-card p-5 sm:p-6 rounded-2xl bg-[#271d40] border border-[#3b2c60] group transition-all duration-250">
           <button
             type="button"
             class="faq-trigger w-full text-left flex items-start justify-between gap-4 cursor-pointer select-none"
             aria-expanded="false"
           >
             <div class="flex items-start gap-4">
-              <span class="text-xs font-mono font-bold text-[#3ecf8e] mt-1 shrink-0 px-2 py-0.5 rounded bg-[#3ecf8e]/10 border border-[#3ecf8e]/20">
+              <span class="text-xs font-mono font-bold text-[#c2ef4e] mt-1 shrink-0 px-2 py-0.5 rounded bg-[#c2ef4e]/10 border border-[#c2ef4e]/30">
                 {String(index + 1).padStart(2, '0')}
               </span>
               <div>
-                <span class="topic-badge text-[10px] mb-1.5 block max-w-fit">{faq.category}</span>
-                <span class="text-base sm:text-lg font-bold text-[#fafafa] group-hover:text-[#3ecf8e] transition-colors leading-snug">
+                <span class="topic-badge text-[10px] mb-1.5 block max-w-fit text-[#fa7faa] border-[#fa7faa]/30 bg-[#fa7faa]/10">{faq.category}</span>
+                <span class="text-base sm:text-lg font-bold text-[#ffffff] group-hover:text-[#c2ef4e] transition-colors leading-snug">
                   {faq.q}
                 </span>
               </div>
             </div>
 
-            <!-- Ícone Plus / Cross rotativo -->
-            <div class="icon-box text-[#898989] group-hover:text-[#3ecf8e] group-hover:border-[#3ecf8e]/40 shrink-0 mt-1">
+            <!-- Ícone Plus / Cross -->
+            <div class="icon-box text-[#cfcfdb] group-hover:text-[#c2ef4e] group-hover:border-[#c2ef4e]/40 shrink-0 mt-1">
               <svg class="faq-icon w-3.5 h-3.5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4" />
               </svg>
             </div>
           </button>
 
-          <!-- Painel colapsável com transição suave -->
+          <!-- Painel colapsável -->
           <div class="faq-content grid grid-rows-[0fr] transition-all duration-300 ease-out">
             <div class="overflow-hidden">
-              <div class="pl-12 sm:pl-14 pr-4 pt-4 text-[#898989] text-sm sm:text-base leading-relaxed border-t border-[#1a1a1a] mt-4">
+              <div class="pl-12 sm:pl-14 pr-4 pt-4 text-[#cfcfdb] text-sm sm:text-base leading-relaxed border-t border-[#3b2c60] mt-4">
                 {faq.a}
               </div>
             </div>
@@ -98,38 +92,33 @@ const faqs = [
 <script is:inline>
   (function initModernFaq() {
     function setup() {
-      const items = document.querySelectorAll('.faq-item');
-      if (!items.length) return;
+      var triggers = document.querySelectorAll('.faq-trigger');
+      triggers.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var item = btn.closest('.faq-item');
+          var content = item.querySelector('.faq-content');
+          var icon = item.querySelector('.faq-icon');
+          var isOpen = btn.getAttribute('aria-expanded') === 'true';
 
-      items.forEach((item) => {
-        const trigger = item.querySelector('.faq-trigger');
-        const content = item.querySelector('.faq-content');
-        const icon = item.querySelector('.faq-icon');
-
-        if (!trigger || !content) return;
-
-        trigger.addEventListener('click', () => {
-          const isOpen = trigger.getAttribute('aria-expanded') === 'true';
-
-          // Fechar outros itens para foco limpo
-          items.forEach((other) => {
-            if (other !== item) {
-              const otherTrigger = other.querySelector('.faq-trigger');
-              const otherContent = other.querySelector('.faq-content');
-              const otherIcon = other.querySelector('.faq-icon');
-              if (otherTrigger) otherTrigger.setAttribute('aria-expanded', 'false');
-              if (otherContent) otherContent.classList.replace('grid-rows-[1fr]', 'grid-rows-[0fr]');
+          triggers.forEach(function (otherBtn) {
+            if (otherBtn !== btn) {
+              otherBtn.setAttribute('aria-expanded', 'false');
+              var otherItem = otherBtn.closest('.faq-item');
+              var otherContent = otherItem.querySelector('.faq-content');
+              var otherIcon = otherItem.querySelector('.faq-icon');
+              otherContent.classList.remove('grid-rows-[1fr]');
+              otherContent.classList.add('grid-rows-[0fr]');
               if (otherIcon) otherIcon.style.transform = 'rotate(0deg)';
             }
           });
 
           if (isOpen) {
-            trigger.setAttribute('aria-expanded', 'false');
+            btn.setAttribute('aria-expanded', 'false');
             content.classList.remove('grid-rows-[1fr]');
             content.classList.add('grid-rows-[0fr]');
             if (icon) icon.style.transform = 'rotate(0deg)';
           } else {
-            trigger.setAttribute('aria-expanded', 'true');
+            btn.setAttribute('aria-expanded', 'true');
             content.classList.remove('grid-rows-[0fr]');
             content.classList.add('grid-rows-[1fr]');
             if (icon) icon.style.transform = 'rotate(45deg)';
@@ -138,10 +127,7 @@ const faqs = [
       });
     }
 
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', setup);
-    } else {
-      setup();
-    }
+    if (document.readyState !== 'loading') setup();
+    else document.addEventListener('DOMContentLoaded', setup);
   })();
 </script>

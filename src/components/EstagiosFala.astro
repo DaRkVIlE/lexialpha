@@ -10,11 +10,11 @@ const estagios = [
     level: 'A2',
     name: 'Sobrevivência',
     subtitle: 'Você quebra o gelo sem pânico',
-    color: '#3ecf8e',
-    colorDim: 'rgba(62,207,142,0.12)',
-    colorBorder: 'rgba(62,207,142,0.3)',
+    color: '#c2ef4e',
+    colorDim: 'rgba(194, 239, 78, 0.12)',
+    colorBorder: 'rgba(194, 239, 78, 0.35)',
     trap: 'Traduz palavra por palavra e paralisa por medo de errar a gramática.',
-    solution: 'Chunks de Sobrevivência: blocos prontos que saem sem conjugação. Produção real desde o Dia 1 com a Lexi Alpha.',
+    solution: 'Chunks Nucleares: blocos formulaicos que saem sem conjugação mental. Prática diária no LibreChat + 3 sessões semanais com Gabe.',
     xp: 800,
     badge: 'Iniciante',
     xpPercent: 25,
@@ -24,12 +24,12 @@ const estagios = [
     emoji: '🏔️',
     level: 'B1',
     name: 'Autonomia',
-    subtitle: 'Reuniões sem roteiro, sem branco',
-    color: '#818cf8',
-    colorDim: 'rgba(129,140,248,0.12)',
-    colorBorder: 'rgba(129,140,248,0.3)',
-    trap: 'Platô intermediário: entende tudo mas na hora H a mente dá um branco.',
-    solution: 'Sessões 1 a 1 de improviso com Gabriel Lima. Trabalhamos diretamente nas travas emocionais com feedback em camadas.',
+    subtitle: 'Conversas fluidas, sem branco mental',
+    color: '#6a5fc1',
+    colorDim: 'rgba(106, 95, 193, 0.15)',
+    colorBorder: 'rgba(106, 95, 193, 0.4)',
+    trap: 'Platô intermediário: entende bem o inglês, mas na hora de falar a mente dá um branco.',
+    solution: '3 Sessões semanais com Gabe (2x15m + 1x30m) com feedback em camadas (Spaced Recasting) sem caneta vermelha.',
     xp: 2400,
     badge: 'Intermediário',
     xpPercent: 60,
@@ -39,12 +39,12 @@ const estagios = [
     emoji: '🏆',
     level: 'B2',
     name: 'Profissional',
-    subtitle: 'Lidera discussões, negocia, persuade',
-    color: '#c084fc',
-    colorDim: 'rgba(192,132,252,0.12)',
-    colorBorder: 'rgba(192,132,252,0.3)',
-    trap: 'Jargões técnicos, negociações rápidas e nativos simultâneos — a fala trava.',
-    solution: 'Lexi Alpha calibrada para sua área + simulações de entrevistas, negociações e conversas multi-nativas toda semana.',
+    subtitle: 'Lidera reuniões, negocia, persuade',
+    color: '#fa7faa',
+    colorDim: 'rgba(250, 127, 170, 0.15)',
+    colorBorder: 'rgba(250, 127, 170, 0.4)',
+    trap: 'Reuniões com clientes internacionais e negociações rápidas onde a fala hesita.',
+    solution: '2.500 chunks dominados com Boss Raids semanais de 30 min e simulações do mundo corporativo real.',
     xp: 5000,
     badge: 'Avançado · Meta Alpha',
     xpPercent: 90,
@@ -57,7 +57,7 @@ const RING_CIRCUMFERENCE = 2 * Math.PI * RING_R; // ≈ 113.1
 ---
 
 
-<section id="estagios" class="py-32 px-4 sm:px-8 relative border-t border-[#1a1a1a] overflow-hidden">
+<section id="estagios" class="py-28 px-4 sm:px-8 relative border-t border-[#2e224d] overflow-hidden">
   <div class="absolute inset-0 dot-grid-bg opacity-30 pointer-events-none"></div>
 
   <div class="max-w-6xl mx-auto relative z-10">
@@ -65,15 +65,15 @@ const RING_CIRCUMFERENCE = 2 * Math.PI * RING_R; // ≈ 113.1
     <!-- Header -->
     <div class="mb-14" data-anim="fade-up">
       <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full badge-glow mb-4">
-        <span class="w-1.5 h-1.5 rounded-full bg-[#3ecf8e] micro-pulse"></span>
-        <span class="text-xs font-mono text-[#3ecf8e] uppercase tracking-[0.2em]">Estágios da Fala</span>
+        <span class="w-1.5 h-1.5 rounded-full bg-[#c2ef4e] micro-pulse"></span>
+        <span class="text-xs font-mono text-[#c2ef4e] uppercase tracking-[0.2em]">Estágios da Fala</span>
       </div>
-      <h2 class="font-sans font-extrabold text-4xl sm:text-5xl md:text-6xl tracking-tight text-[#fafafa] leading-[1.05] max-w-2xl">
+      <h2 class="font-sans font-extrabold text-3xl sm:text-5xl md:text-6xl tracking-tight text-[#ffffff] leading-[1.05] max-w-2xl">
         Sua jornada tem<br />
-        <span class="text-gradient-emerald">três fases.</span>
+        <span class="text-gradient-lime">três fases.</span>
       </h2>
-      <p class="text-[#898989] text-base mt-4 max-w-xl leading-relaxed">
-        Cada estágio tem sua trava específica e sua solução exata. Clique em cada fase para ver o que muda.
+      <p class="text-[#cfcfdb] text-base mt-4 max-w-xl leading-relaxed">
+        Cada estágio tem sua trava específica e sua solução exata no Método SPARK.
       </p>
     </div>
 
