@@ -1,6 +1,6 @@
 ---
 // src/components/Hero.astro — LexiQuest Hero Section
-// Aether Luxury Aesthetic: Presença do Mentor Gabriel Lima + HUD de Latência Oral
+// Apresentação Oficial da Turma Alpha & Mentor Gabriel Lima
 ---
 
 <section id="hero" class="relative min-h-[92vh] flex flex-col justify-center overflow-hidden border-b border-[#2e224d]">
@@ -118,83 +118,41 @@
         </div>
       </div>
 
-      <!-- Right: Card do Mentor Gabriel + Terminal de Latência -->
-      <div class="hidden lg:block shrink-0 w-[420px] relative select-none" data-anim="fade-up">
+      <!-- Right: Card do Mentor Gabriel Lima -->
+      <div class="hidden lg:block shrink-0 w-[380px] relative select-none" data-anim="fade-up">
         <div class="rounded-3xl bg-[#271d40]/90 border border-[#3b2c60] p-6 shadow-2xl backdrop-blur-xl relative overflow-hidden">
           
-          <!-- Bloco do Mentor Gabriel Lima (Mock Fotográfico + Credenciais) -->
-          <div class="flex items-center gap-4 pb-5 border-b border-[#3b2c60] mb-5">
+          <!-- Bloco do Mentor Gabriel Lima -->
+          <div class="flex items-center gap-4 pb-5 border-b border-[#3b2c60]">
             <div class="relative w-16 h-16 rounded-2xl bg-gradient-to-br from-[#6a5fc1]/30 to-[#c2ef4e]/20 border border-[#c2ef4e]/40 flex items-center justify-center text-[#c2ef4e] shrink-0 shadow-lg overflow-hidden">
               <svg class="w-8 h-8 text-[#c2ef4e]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
               </svg>
-              <div class="absolute bottom-0 inset-x-0 bg-[#c2ef4e]/20 text-xs font-sans font-bold text-center text-[#c2ef4e] py-0.5">MOCK</div>
             </div>
 
             <div class="flex-1 min-w-0">
               <div class="flex items-center justify-between">
                 <h3 class="font-sans font-bold text-base text-[#ffffff] truncate">Gabriel Ferreira Lima</h3>
-                <span class="text-xs font-sans font-bold px-2 py-0.5 rounded bg-[#c2ef4e]/10 text-[#c2ef4e] border border-[#c2ef4e]/30">ONLINE</span>
+                <span class="text-xs font-sans font-bold px-2 py-0.5 rounded bg-[#c2ef4e]/10 text-[#c2ef4e] border border-[#c2ef4e]/30">MENTOR</span>
               </div>
-              <p class="text-xs font-sans font-semibold text-[#c2ef4e] mt-0.5">Professor & Criador do SPARK</p>
+              <p class="text-xs font-sans font-semibold text-[#c2ef4e] mt-0.5">Professor Responsável</p>
               <p class="text-xs text-[#cfcfdb] mt-1">5 anos de sala de aula · All Net & Mentoria</p>
             </div>
           </div>
 
-          <!-- Demonstrador de Áudio do Gabriel (15s Mock Player) -->
-          <div class="mb-5 p-4 rounded-2xl bg-[#1f1633] border border-[#3b2c60] relative overflow-hidden">
-            <div class="flex items-center justify-between text-xs font-sans font-semibold mb-3">
-              <span class="text-[#cfcfdb] flex items-center gap-2">
-                <span class="w-2 h-2 rounded-full bg-[#c2ef4e] micro-pulse"></span>
-                <span>Demonstração de Fala Real (15s)</span>
-              </span>
-              <span class="text-xs text-[#fa7faa] font-bold">Áudio do Gabe</span>
+          <!-- Resumo da Dinâmica Alpha -->
+          <div class="mt-5 space-y-3 text-xs text-[#cfcfdb]">
+            <div class="p-3.5 rounded-xl bg-[#1f1633] border border-[#3b2c60] flex items-center justify-between">
+              <span class="text-[#cfcfdb]">Prática Diária</span>
+              <span class="font-semibold text-[#ffffff]">15 min no LibreChat IA</span>
             </div>
-
-            <!-- Waveform Animation -->
-            <div class="flex items-center justify-center gap-1.5 h-8 py-1 bg-[#271d40]/40 rounded-xl px-4 border border-[#3b2c60]/50">
-              <span class="w-1 bg-[#c2ef4e] rounded-full wave-bar" style="height: 40%; animation-delay: 0.1s;"></span>
-              <span class="w-1 bg-[#c2ef4e] rounded-full wave-bar" style="height: 80%; animation-delay: 0.2s;"></span>
-              <span class="w-1 bg-[#c2ef4e] rounded-full wave-bar" style="height: 100%; animation-delay: 0.3s;"></span>
-              <span class="w-1 bg-[#c2ef4e] rounded-full wave-bar" style="height: 60%; animation-delay: 0.4s;"></span>
-              <span class="w-1 bg-[#c2ef4e] rounded-full wave-bar" style="height: 90%; animation-delay: 0.2s;"></span>
-              <span class="w-1 bg-[#c2ef4e] rounded-full wave-bar" style="height: 50%; animation-delay: 0.5s;"></span>
-              <span class="w-1 bg-[#c2ef4e] rounded-full wave-bar" style="height: 75%; animation-delay: 0.15s;"></span>
-              <span class="w-1 bg-[#c2ef4e] rounded-full wave-bar" style="height: 35%; animation-delay: 0.35s;"></span>
+            <div class="p-3.5 rounded-xl bg-[#1f1633] border border-[#3b2c60] flex items-center justify-between">
+              <span class="text-[#cfcfdb]">Sessões com Gabriel</span>
+              <span class="font-semibold text-[#c2ef4e]">3 encontros / semana</span>
             </div>
-            
-            <p class="text-xs font-sans text-center text-[#cfcfdb] mt-2.5">
-              "Hey! Let's get straight to the point without translating."
-            </p>
-          </div>
-
-          <!-- Latency Gauge: 3.2s Tradução vs 0.3s SPARK Reflex — ANIMATED -->
-          <div class="p-4 rounded-2xl bg-[#1f1633] border border-[#3b2c60]" id="hero-latency-gauge">
-            <div class="flex items-center justify-between text-xs font-sans font-semibold mb-3">
-              <span class="text-[#cfcfdb]">Latência da Resposta Oral</span>
-              <span class="text-[#c2ef4e] font-bold">10x Mais Rápido</span>
-            </div>
-            
-            <!-- Tradução Mental -->
-            <div class="mb-3">
-              <div class="flex justify-between text-xs font-sans mb-1 text-[#ffb287]">
-                <span>Método Tradicional</span>
-                <span id="hero-trad-counter">0.0s</span>
-              </div>
-              <div class="w-full h-2 rounded-full bg-[#271d40] overflow-hidden">
-                <div id="hero-trad-bar" class="h-full bg-[#ffb287] rounded-full transition-none" style="width: 0%"></div>
-              </div>
-            </div>
-
-            <!-- Método SPARK -->
-            <div>
-              <div class="flex justify-between text-xs font-sans mb-1 text-[#c2ef4e]">
-                <span>Método SPARK (Reflexo)</span>
-                <span id="hero-spark-counter">0.0s</span>
-              </div>
-              <div class="w-full h-2 rounded-full bg-[#271d40] overflow-hidden">
-                <div id="hero-spark-bar" class="h-full bg-[#c2ef4e] rounded-full transition-none" style="width: 0%"></div>
-              </div>
+            <div class="p-3.5 rounded-xl bg-[#1f1633] border border-[#3b2c60] flex items-center justify-between">
+              <span class="text-[#cfcfdb]">Formato da Turma</span>
+              <span class="font-semibold text-[#fa7faa]">15 Vagas · 100% Individual</span>
             </div>
           </div>
 
