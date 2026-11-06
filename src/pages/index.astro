@@ -6,10 +6,13 @@ import '../styles/aether.css';
 ---
 
 <!DOCTYPE html>
-<html lang="pt-BR" class="w-mod-js w-mod-ix3">
+<html lang="pt-BR" data-wf-domain="aether-template.webflow.io" data-wf-page="6a46377f9b1772d83fc52c0b" data-wf-site="6a46377c9b1772d83fc52bb4" class="w-mod-js w-mod-ix3">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script is:inline>
+    !function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);
+  </script>
   <title>LexiQuest · Pare de Traduzir na Sua Cabeça · Destrave Sua Fala em Inglês</title>
   <meta
     name="description"
@@ -74,6 +77,52 @@ import '../styles/aether.css';
     }
     .text-muted {
       color: var(--text-muted) !important;
+    }
+
+    /* ============================================================
+       AETHER HARDWARE-ACCELERATED ANIMATIONS & MICRO-INTERACTIONS
+       ============================================================ */
+    @keyframes aetherMarquee {
+      0% {
+        transform: translate3d(0, 0, 0);
+      }
+      100% {
+        transform: translate3d(-100%, 0, 0);
+      }
+    }
+    .partner-wrap {
+      animation: aetherMarquee 35s linear infinite;
+      will-change: transform;
+    }
+    .partner-right:hover .partner-wrap {
+      animation-play-state: paused;
+    }
+
+    /* Button hover micro-interaction: rotation of dots icon */
+    .btn-01-link .btn-icon {
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .btn-01-link:hover .btn-icon {
+      transform: rotate(180deg);
+    }
+
+    /* Service cards & State cards interactive hover lift */
+    .service-card, .state-card {
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease, box-shadow 0.35s ease;
+    }
+    .service-card:hover, .state-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(88, 242, 127, 0.35);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4), 0 0 24px rgba(88, 242, 127, 0.08);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .partner-wrap {
+        animation: none !important;
+      }
+      .service-card:hover, .state-card:hover {
+        transform: none !important;
+      }
     }
 
     /* ============================================================
@@ -344,18 +393,18 @@ import '../styles/aether.css';
       <div class="container">
         <div class="home-hero-inner">
           <div class="home-hero-center">
-            <div data-wf--tag-box-wrap--variant="base" class="tag-box-wrap" style="justify-content: center; margin-bottom: 24px;">
+            <div slide-up-01="" data-wf--tag-box-wrap--variant="base" class="tag-box-wrap" style="justify-content: center; margin-bottom: 24px;">
               <div class="tag-box" style="border-color: rgba(88, 242, 127, 0.3);">
                 <div class="tag-icon"></div>
                 <div class="tag text-lime">Turma Alpha · 15 Vagas com Acompanhamento Direto</div>
               </div>
             </div>
 
-            <h1 class="h-01">
+            <h1 slide-up-01="" class="h-01">
               Pare de traduzir na sua cabeça.<br />
               <span class="text-lime">Destrave sua fala em inglês.</span>
             </h1>
-            <div class="short-text" style="max-width: 680px; margin: 0 auto;">
+            <div slide-up-02="" class="short-text" style="max-width: 680px; margin: 0 auto;">
               <div class="color-gray">
                 <div class="body-m-regular">
                   O método acelerado que une <strong>15 minutos diários de prática com IA sem julgamento</strong> e <strong>3 sessões individuais por semana direto com o professor Gabriel Lima</strong>.
@@ -364,7 +413,7 @@ import '../styles/aether.css';
             </div>
           </div>
 
-          <div class="hero-btn">
+          <div slide-up-03="" class="hero-btn">
             <div class="btn">
               <a href="#diagnostico" class="btn-01-link w-variant-e00ff45f-ff78-0ca4-3201-26a6f77c8432 w-inline-block">
                 <div class="btn-outer">
@@ -386,12 +435,16 @@ import '../styles/aether.css';
         </div>
       </div>
 
-      <!-- Ambient portraits do Aether perfeitamente posicionados nas laterais -->
+      <!-- Ambient portraits do Aether perfeitamente posicionados nas laterais com fluidez orgânica -->
       <div class="hero-float" aria-hidden="true">
-        <div class="hero-float-01 _01"><img src="/aether/6a71df2e01bdba7b0fbcaf8a_image%2013.webp" alt="Avatar" class="all-img" /></div>
-        <div class="hero-float-01 _03"><img src="/aether/6a71df2dc9eed5a1cea7c2fd_image%2011.webp" alt="Avatar" class="all-img" /></div>
-        <div class="hero-float-01 _05"><img src="/aether/6a71df2d19d562ccf209c668_image%2015.webp" alt="Avatar" class="all-img" /></div>
-        <div class="hero-float-01 _07"><img src="/aether/6a71df2d4d114675ed561298_image%2016.webp" alt="Avatar" class="all-img" /></div>
+        <div class="hero-float-01 _01"><img src="/aether/6a71df2e01bdba7b0fbcaf8a_image%2013.webp" alt="Avatar 1" class="all-img" /></div>
+        <div class="hero-float-01 _02"><img src="/aether/6a71df2d0b210822a72bae32_image%2014.webp" alt="Avatar 2" class="all-img" /></div>
+        <div class="hero-float-01 _03"><img src="/aether/6a71df2dc9eed5a1cea7c2fd_image%2011.webp" alt="Avatar 3" class="all-img" /></div>
+        <div class="hero-float-01 _04"><img src="/aether/6a71df2d6370c6cdcda6a026_image%2018.webp" alt="Avatar 4" class="all-img" /></div>
+        <div class="hero-float-01 _05"><img src="/aether/6a71df2d19d562ccf209c668_image%2015.webp" alt="Avatar 5" class="all-img" /></div>
+        <div class="hero-float-01 _06"><img src="/aether/6a71df2d8077db844252f78e_image%207.webp" alt="Avatar 6" class="all-img" /></div>
+        <div class="hero-float-01 _07"><img src="/aether/6a71df2d4d114675ed561298_image%2016.webp" alt="Avatar 7" class="all-img" /></div>
+        <div class="hero-float-01 _08"><img src="/aether/6a71df2db8d0a9e79333f57b_image%2017.webp" alt="Avatar 8" class="all-img" /></div>
       </div>
     </section>
 
@@ -400,7 +453,7 @@ import '../styles/aether.css';
       <div class="section-02">
         <div class="container">
           <div class="partner-inner">
-            <div class="partner-left">
+            <div slide-up-01="" class="partner-left">
               <div data-wf--tag-box-wrap--variant="base" class="tag-box-wrap">
                 <div class="tag-box">
                   <div class="tag-icon"></div>
@@ -409,7 +462,7 @@ import '../styles/aether.css';
               </div>
             </div>
             <div class="partner-right">
-              <div class="partner-wrap" style="display: flex; gap: 40px; align-items: center; white-space: nowrap;">
+              <div class="partner-wrap" style="display: flex; gap: 40px; align-items: center; white-space: nowrap; padding-right: 40px;">
                 <span class="body-m-medium" style="color: #ffffff; opacity: 0.85;">5 Anos de Sala de Aula</span>
                 <span style="color: #292929;">/</span>
                 <span class="body-m-medium" style="color: #ffffff; opacity: 0.85;">Rede All Net Idiomas</span>
@@ -418,8 +471,20 @@ import '../styles/aether.css';
                 <span style="color: #292929;">/</span>
                 <span class="body-m-medium" style="color: #ffffff; opacity: 0.85;">Conversação Executiva & Viagens</span>
                 <span style="color: #292929;">/</span>
-                <span class="body-m-medium" style="color: #58f27f;">Garantia Pix de 30 Dias</span>
+                <span class="body-m-medium text-lime">Garantia Pix de 30 Dias</span>
               </div>
+              <div class="partner-wrap" aria-hidden="true" style="display: flex; gap: 40px; align-items: center; white-space: nowrap; padding-right: 40px;">
+                <span class="body-m-medium" style="color: #ffffff; opacity: 0.85;">5 Anos de Sala de Aula</span>
+                <span style="color: #292929;">/</span>
+                <span class="body-m-medium" style="color: #ffffff; opacity: 0.85;">Rede All Net Idiomas</span>
+                <span style="color: #292929;">/</span>
+                <span class="body-m-medium" style="color: #ffffff; opacity: 0.85;">100% Individual</span>
+                <span style="color: #292929;">/</span>
+                <span class="body-m-medium" style="color: #ffffff; opacity: 0.85;">Conversação Executiva & Viagens</span>
+                <span style="color: #292929;">/</span>
+                <span class="body-m-medium text-lime">Garantia Pix de 30 Dias</span>
+              </div>
+              <div class="partner-float"></div>
             </div>
           </div>
         </div>
@@ -431,7 +496,7 @@ import '../styles/aether.css';
       <div class="section-02">
         <div class="container">
           <div class="section-inner">
-            <div class="header-center" style="max-width: 800px; margin: 0 auto 60px; text-align: center;">
+            <div slide-up-01="" class="header-center" style="max-width: 800px; margin: 0 auto 60px; text-align: center;">
               <div data-wf--tag-box-wrap--variant="blue" class="tag-box-wrap" style="justify-content: center; margin-bottom: 16px;">
                 <div class="tag-box">
                   <div class="tag-icon w-variant-2e667d52-7c51-ea40-1a61-1eb73fdb904c"></div>
@@ -446,7 +511,7 @@ import '../styles/aether.css';
 
             <div class="service-grid">
               <!-- Card 1 -->
-              <div class="service-card">
+              <div slide-up-01="" class="service-card">
                 <div class="service-card-img-box">
                   <img src="/aether/6a4c3904f973ea91d65a15ca_18d35268cc1f3a7647a2b164eef1b424_Group 2087336133.svg" alt="Tradução Mental" class="service-card-img" />
                 </div>
@@ -459,7 +524,7 @@ import '../styles/aether.css';
               </div>
 
               <!-- Card 2 -->
-              <div class="service-card">
+              <div slide-up-02="" class="service-card">
                 <div class="service-card-img-box">
                   <img src="/aether/6a4c39048826a46ca2e2b3c1_0af3a5b0354b34b92379b55e113fc1b0_Group 2087336134.svg" alt="Apps Solitários" class="service-card-img" />
                 </div>
@@ -472,7 +537,7 @@ import '../styles/aether.css';
               </div>
 
               <!-- Card 3 -->
-              <div class="service-card">
+              <div slide-up-03="" class="service-card">
                 <div class="service-card-img-box">
                   <img src="/aether/6a4c3904c06df95902d02ecc_123306a716f22527f53d99f1915b86b5_Group 2087336135.svg" alt="Caneta Vermelha" class="service-card-img" />
                 </div>
@@ -494,7 +559,7 @@ import '../styles/aether.css';
       <div class="section-02">
         <div class="container">
           <div class="section-inner">
-            <div class="header-center" style="max-width: 800px; margin: 0 auto 36px; text-align: center;">
+            <div slide-up-01="" class="header-center" style="max-width: 800px; margin: 0 auto 36px; text-align: center;">
               <div data-wf--tag-box-wrap--variant="yellow" class="tag-box-wrap" style="justify-content: center; margin-bottom: 16px;">
                 <div class="tag-box">
                   <div class="tag-icon w-variant-5f608897-5531-7a7c-52a8-4781b464b78d"></div>
@@ -507,7 +572,7 @@ import '../styles/aether.css';
               </div>
             </div>
 
-            <div class="sim-chat-box">
+            <div slide-up-02="" class="sim-chat-box">
               <!-- Switcher Tabs com Ícones SVG -->
               <div style="display: flex; gap: 12px; justify-content: center; margin-bottom: 28px; flex-wrap: wrap;">
                 <button type="button" id="tab-trad" class="sim-tab-btn active-trad">
@@ -552,7 +617,7 @@ import '../styles/aether.css';
       <div class="section-02">
         <div class="container">
           <div class="section-inner">
-            <div class="header-center max-width-large" style="text-align: center; margin: 0 auto 36px;">
+            <div slide-up-01="" class="header-center max-width-large" style="text-align: center; margin: 0 auto 36px;">
               <div data-wf--tag-box-wrap--variant="base" class="tag-box-wrap" style="justify-content: center; margin-bottom: 16px;">
                 <div class="tag-box">
                   <div class="tag-icon"></div>
@@ -566,7 +631,7 @@ import '../styles/aether.css';
             </div>
 
             <!-- Tab Pills -->
-            <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+            <div slide-up-02="" style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
               <button type="button" class="stage-tab-item active" data-stage="0">
                 <span>01. Descongelamento (A0/A1)</span>
               </button>
@@ -582,7 +647,7 @@ import '../styles/aether.css';
             </div>
 
             <!-- Feature Card: Split Editorial & Artwork Canônica -->
-            <div class="stage-card-wrapper">
+            <div slide-up-03="" class="stage-card-wrapper">
               <div class="stage-card-content">
                 <div id="stage-badge" class="body-s-medium text-lime" style="text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px;">
                   Estágio 01 · Nível A0/A1
@@ -615,7 +680,7 @@ import '../styles/aether.css';
       <div class="section-02">
         <div class="container">
           <div class="section-inner">
-            <div class="header-center" style="max-width: 800px; margin: 0 auto 60px; text-align: center;">
+            <div slide-up-01="" class="header-center" style="max-width: 800px; margin: 0 auto 60px; text-align: center;">
               <h2 class="h-02">O Cursinho Tradicional vs. A Mentoria LexiQuest</h2>
               <div class="color-gray" style="margin-top: 16px;">
                 <div class="body-m-regular">Veja a diferença prática entre o modelo do aluno eterno e a imersão individual guiada por Gabriel.</div>
@@ -624,7 +689,7 @@ import '../styles/aether.css';
 
             <div class="state-grid">
               <!-- Card 1 -->
-              <div class="state-card">
+              <div slide-up-01="" class="state-card">
                 <div class="state-card-top">
                   <div class="h-02 text-lime">15 min</div>
                   <div class="color-gray"><div class="body-m-medium">Prática Diária Sem Fricção</div></div>
@@ -647,7 +712,7 @@ import '../styles/aether.css';
               </div>
 
               <!-- Card 2 -->
-              <div class="state-card">
+              <div slide-up-02="" class="state-card">
                 <div class="state-card-top">
                   <div class="h-02 text-lime">100%</div>
                   <div class="color-gray"><div class="body-m-medium">Atenção e Foco Individual</div></div>
@@ -670,7 +735,7 @@ import '../styles/aether.css';
               </div>
 
               <!-- Card 3 -->
-              <div class="state-card">
+              <div slide-up-03="" class="state-card">
                 <div class="state-card-top">
                   <div class="h-02 text-lime">Zero</div>
                   <div class="color-gray"><div class="body-m-medium">Vergonha ou Bloqueio</div></div>
@@ -702,7 +767,7 @@ import '../styles/aether.css';
       <div class="section-02">
         <div class="container">
           <div class="section-inner">
-            <div class="header-center max-width-large" style="text-align: center; margin: 0 auto 60px;">
+            <div slide-up-01="" class="header-center max-width-large" style="text-align: center; margin: 0 auto 60px;">
               <div data-wf--tag-box-wrap--variant="yellow" class="tag-box-wrap" style="justify-content: center; margin-bottom: 16px;">
                 <div class="tag-box">
                   <div class="tag-icon w-variant-5f608897-5531-7a7c-52a8-4781b464b78d"></div>
@@ -714,7 +779,7 @@ import '../styles/aether.css';
 
             <div class="service-grid">
               <!-- Pilar 1 -->
-              <div class="service-card" style="background: var(--surface-dark); border: 1px solid var(--stroke-colour); padding: 32px; border-radius: 20px;">
+              <div slide-up-01="" class="service-card" style="background: var(--surface-dark); border: 1px solid var(--stroke-colour); padding: 32px; border-radius: 20px;">
                 <div class="body-s-medium text-lime" style="text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">Passo 01 · Prática Diária</div>
                 <div class="body-l-medium" style="color: #ffffff; margin-bottom: 12px; font-size: 22px;">15 min/dia de IA 24/7 (LibreChat)</div>
                 <div class="color-gray">
@@ -725,7 +790,7 @@ import '../styles/aether.css';
               </div>
 
               <!-- Pilar 2 -->
-              <div class="service-card" style="background: var(--surface-dark); border: 1px solid var(--brand-green-border); padding: 32px; border-radius: 20px; box-shadow: 0 10px 40px rgba(88, 242, 127, 0.08);">
+              <div slide-up-02="" class="service-card" style="background: var(--surface-dark); border: 1px solid var(--brand-green-border); padding: 32px; border-radius: 20px; box-shadow: 0 10px 40px rgba(88, 242, 127, 0.08);">
                 <div class="body-s-medium text-lime" style="text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">Passo 02 · Aceleração Humana</div>
                 <div class="body-l-medium" style="color: #ffffff; margin-bottom: 12px; font-size: 22px;">3x na Semana com Gabriel</div>
                 <div class="color-gray">
@@ -736,7 +801,7 @@ import '../styles/aether.css';
               </div>
 
               <!-- Pilar 3 -->
-              <div class="service-card" style="background: var(--surface-dark); border: 1px solid var(--stroke-colour); padding: 32px; border-radius: 20px;">
+              <div slide-up-03="" class="service-card" style="background: var(--surface-dark); border: 1px solid var(--stroke-colour); padding: 32px; border-radius: 20px;">
                 <div class="body-s-medium text-lime" style="text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">Passo 03 · Torre de Controle</div>
                 <div class="body-l-medium" style="color: #ffffff; margin-bottom: 12px; font-size: 22px;">Portal do Aluno (Moodle Hub)</div>
                 <div class="color-gray">
@@ -756,7 +821,7 @@ import '../styles/aether.css';
       <div class="section-02">
         <div class="container">
           <div class="section-inner">
-            <div style="background: var(--surface-dark); border: 1px solid var(--stroke-colour); border-radius: 28px; padding: 56px;">
+            <div slide-up-01="" style="background: var(--surface-dark); border: 1px solid var(--stroke-colour); border-radius: 28px; padding: 56px;">
               <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 48px; align-items: start;">
                 
                 <!-- Coluna Esquerda: A História Narrativa -->
@@ -822,7 +887,7 @@ import '../styles/aether.css';
       <div class="section-02">
         <div class="container">
           <div class="section-inner">
-            <div class="header-center" style="max-width: 800px; margin: 0 auto 48px; text-align: center;">
+            <div slide-up-01="" class="header-center" style="max-width: 800px; margin: 0 auto 48px; text-align: center;">
               <div data-wf--tag-box-wrap--variant="base" class="tag-box-wrap" style="justify-content: center; margin-bottom: 16px;">
                 <div class="tag-box">
                   <div class="tag-icon"></div>
@@ -836,7 +901,7 @@ import '../styles/aether.css';
             </div>
 
             <!-- Quiz Container -->
-            <div class="quiz-card-aether" id="quiz-container">
+            <div slide-up-02="" class="quiz-card-aether" id="quiz-container">
               <!-- Top bar -->
               <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-subtle); padding-bottom: 16px; margin-bottom: 28px;">
                 <div style="font-size: 13px; font-weight: 700; color: var(--brand-green);" id="quiz-step-label">
@@ -942,7 +1007,7 @@ import '../styles/aether.css';
       <div class="section-02">
         <div class="container">
           <div class="section-inner">
-            <div class="header-center" style="max-width: 800px; margin: 0 auto 48px; text-align: center;">
+            <div slide-up-01="" class="header-center" style="max-width: 800px; margin: 0 auto 48px; text-align: center;">
               <div data-wf--tag-box-wrap--variant="yellow" class="tag-box-wrap" style="justify-content: center; margin-bottom: 16px;">
                 <div class="tag-box">
                   <div class="tag-icon w-variant-5f608897-5531-7a7c-52a8-4781b464b78d"></div>
@@ -956,7 +1021,7 @@ import '../styles/aether.css';
             </div>
 
             <!-- Card Central de Preço -->
-            <div style="max-width: 660px; margin: 0 auto; background: var(--surface-dark); border: 1px solid var(--brand-green-border); border-radius: 28px; padding: 48px; text-align: center; box-shadow: 0 25px 80px rgba(0, 0, 0, 0.6);">
+            <div slide-up-02="" style="max-width: 660px; margin: 0 auto; background: var(--surface-dark); border: 1px solid var(--brand-green-border); border-radius: 28px; padding: 48px; text-align: center; box-shadow: 0 25px 80px rgba(0, 0, 0, 0.6);">
               <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-subtle); padding-bottom: 20px; margin-bottom: 32px;">
                 <div class="body-m-medium" style="color: #ffffff; font-weight: 700;">Alunos Fundadores Alpha</div>
                 <div class="body-s-medium text-lime" style="background: var(--brand-green-muted); border: 1px solid var(--brand-green-border); padding: 5px 14px; border-radius: 99px; font-weight: 700;">
@@ -1015,14 +1080,14 @@ import '../styles/aether.css';
       <div class="section-02">
         <div class="container">
           <div class="section-inner" style="max-width: 800px; margin: 0 auto;">
-            <div class="header-center" style="margin-bottom: 48px; text-align: center;">
+            <div slide-up-01="" class="header-center" style="margin-bottom: 48px; text-align: center;">
               <h2 class="h-02">Perguntas Frequentes</h2>
               <div class="color-gray" style="margin-top: 12px;">
                 <div class="body-m-regular">Tudo o que você precisa saber sobre a metodologia e o formato das aulas.</div>
               </div>
             </div>
 
-            <div style="display: flex; flex-direction: column; gap: 16px;">
+            <div slide-up-02="" style="display: flex; flex-direction: column; gap: 16px;">
               <div style="background: var(--surface-dark); border: 1px solid var(--stroke-colour); border-radius: 16px; padding: 24px;">
                 <div class="body-m-medium" style="color: #ffffff; margin-bottom: 8px;">Eu começo do absoluto zero, o método serve para mim?</div>
                 <div class="color-gray body-s-regular">Sim! O método começa por blocos sonoros de sobrevivência prática. Gabriel te acompanha individualmente desde o primeiro dia, eliminando qualquer medo de errar.</div>
@@ -1046,7 +1111,7 @@ import '../styles/aether.css';
     <!-- CTA FINAL (AETHER LUXURY CARD) -->
     <section class="cta">
       <div class="container">
-        <div class="cta-inner" style="background: var(--surface-dark); border: 1px solid var(--stroke-colour); border-radius: 28px; padding: 60px 48px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 32px; box-shadow: 0 25px 70px rgba(0,0,0,0.5);">
+        <div slide-up-01="" class="cta-inner" style="background: var(--surface-dark); border: 1px solid var(--stroke-colour); border-radius: 28px; padding: 60px 48px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 32px; box-shadow: 0 25px 70px rgba(0,0,0,0.5);">
           <div class="cta-left" style="max-width: 600px;">
             <div class="h-01" style="font-size: 42px; line-height: 1.1; margin-bottom: 16px;">
               Sua próxima conversa em inglês começa aqui.
@@ -1077,7 +1142,7 @@ import '../styles/aether.css';
     <section class="footer-outer">
       <div class="container">
         <div class="footer-wrapper" style="padding-bottom: 48px;">
-          <div class="footer-block-wrap" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; border-top: 1px solid var(--stroke-colour); padding-top: 32px; width: 100%;">
+          <div slide-up-01="" class="footer-block-wrap" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; border-top: 1px solid var(--stroke-colour); padding-top: 32px; width: 100%;">
             <div style="display: flex; align-items: center; gap: 12px;">
               <span style="font-weight: 800; color: #ffffff; font-size: 17px;">Lexi<span class="text-lime">Quest</span></span>
               <span class="color-gray body-s-regular">· Método Gabriel Lima</span>
@@ -1374,6 +1439,154 @@ import '../styles/aether.css';
 
       // Init on load
       renderQuestion(0);
+    })();
+  </script>
+
+  <!-- Aether Webflow & GSAP Core Libraries -->
+  <script is:inline src="/aether/jquery.min.js"></script>
+  <script is:inline src="/aether/webflow-core.js"></script>
+  <script is:inline src="/aether/webflow-ix3.js"></script>
+  <script is:inline src="/aether/gsap.min.js"></script>
+  <script is:inline src="/aether/ScrollTrigger.min.js"></script>
+
+  <!-- GSAP & AETHER ANIMATION ORCHESTRATOR -->
+  <script is:inline>
+    (function initAetherAnimations() {
+      // Respect accessibility preferences
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        return;
+      }
+
+      function setupMotion() {
+        if (typeof gsap === 'undefined') return;
+        if (typeof ScrollTrigger !== 'undefined') {
+          gsap.registerPlugin(ScrollTrigger);
+        }
+
+        // 1. HERO CASCADE ENTRANCE
+        const heroTl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+        heroTl
+          .from('.home-hero .tag-box-wrap', { opacity: 0, y: 20, duration: 0.6 })
+          .from('.home-hero .h-01', { opacity: 0, y: 35, duration: 0.8 }, '-=0.4')
+          .from('.home-hero .short-text', { opacity: 0, y: 25, duration: 0.8 }, '-=0.5')
+          .from('.home-hero .hero-btn', { opacity: 0, y: 25, duration: 0.8 }, '-=0.5')
+          .from('.hero-float-01', {
+            scale: 0.5,
+            opacity: 0,
+            stagger: 0.08,
+            duration: 0.9,
+            ease: 'back.out(1.4)'
+          }, '-=0.7');
+
+        // 2. CONTINUOUS AMBIENT FLOATING FOR HERO AVATARS
+        const floatParams = [
+          { y: -10, x: 4, dur: 3.8 },
+          { y: 8, x: -5, dur: 4.2 },
+          { y: -12, x: -4, dur: 4.6 },
+          { y: 10, x: 6, dur: 3.5 },
+          { y: -8, x: 5, dur: 4.0 },
+          { y: 12, x: -4, dur: 4.4 },
+          { y: -11, x: 6, dur: 3.7 },
+          { y: 9, x: -5, dur: 4.1 }
+        ];
+        document.querySelectorAll('.hero-float-01').forEach((el, i) => {
+          const cfg = floatParams[i % floatParams.length];
+          gsap.to(el, {
+            y: cfg.y,
+            x: cfg.x,
+            duration: cfg.dur,
+            repeat: -1,
+            yoyo: true,
+            ease: 'sine.inOut',
+            delay: i * 0.2
+          });
+        });
+
+        // 3. SCROLL-TRIGGERED ENTRANCE REVEALS (AETHER SLIDE-UP SPEC)
+        if (typeof ScrollTrigger !== 'undefined') {
+          // Reveals for slide-up-01 (Headings, Main titles)
+          gsap.utils.toArray('[slide-up-01]').forEach(el => {
+            // Avoid re-animating hero elements handled by heroTl
+            if (el.closest('.home-hero')) return;
+            gsap.from(el, {
+              scrollTrigger: {
+                trigger: el,
+                start: 'top 90%',
+                once: true
+              },
+              opacity: 0,
+              y: 35,
+              duration: 0.8,
+              ease: 'power2.out'
+            });
+          });
+
+          // Reveals for slide-up-02 (Secondary content, tabs, descriptions)
+          gsap.utils.toArray('[slide-up-02]').forEach(el => {
+            if (el.closest('.home-hero')) return;
+            gsap.from(el, {
+              scrollTrigger: {
+                trigger: el,
+                start: 'top 88%',
+                once: true
+              },
+              opacity: 0,
+              y: 40,
+              duration: 0.85,
+              delay: 0.1,
+              ease: 'power2.out'
+            });
+          });
+
+          // Reveals for slide-up-03 (Third-level cards & wrappers)
+          gsap.utils.toArray('[slide-up-03]').forEach(el => {
+            if (el.closest('.home-hero')) return;
+            gsap.from(el, {
+              scrollTrigger: {
+                trigger: el,
+                start: 'top 86%',
+                once: true
+              },
+              opacity: 0,
+              y: 45,
+              duration: 0.9,
+              delay: 0.18,
+              ease: 'power2.out'
+            });
+          });
+
+          // Staggered reveals for cards inside grids
+          ['.service-grid', '.state-grid'].forEach(gridSelector => {
+            const grid = document.querySelector(gridSelector);
+            if (grid) {
+              const cards = Array.from(grid.children);
+              gsap.from(cards, {
+                scrollTrigger: {
+                  trigger: grid,
+                  start: 'top 85%',
+                  once: true
+                },
+                opacity: 0,
+                y: 30,
+                stagger: 0.12,
+                duration: 0.8,
+                ease: 'power2.out'
+              });
+            }
+          });
+
+          // Refresh positions once images and fonts load
+          window.addEventListener('load', () => {
+            ScrollTrigger.refresh();
+          });
+        }
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', setupMotion);
+      } else {
+        setupMotion();
+      }
     })();
   </script>
 </body>
