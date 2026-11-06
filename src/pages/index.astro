@@ -41,12 +41,16 @@ import Footer from '../components/Footer.astro';
     <meta property="og:title" content="LexiQuest · Pare de Traduzir na Sua Cabeça · Destrave Sua Fala em 30 Dias" />
     <meta
       property="og:description"
-      content="15 minutos diários de prática com IA sem julgamento + 3 sessões individuais por semana com o professor Gabriel. 15 vagas Alpha."
+      content="15 minutos diários de prática com IA sem julgamento + 3 sessões individuais por semana com o professor Gabriel. 15 vagas Alpha por R$ 197/mês."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://landing-pi-jade-44.vercel.app" />
-    <meta property="og:image" content="https://landing-pi-jade-44.vercel.app/assets/feature-sky.webp" />
+    <meta property="og:image" content="https://landing-pi-jade-44.vercel.app/assets/og-card.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="LexiQuest Alpha · Pare de Traduzir na Sua Cabeça" />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://landing-pi-jade-44.vercel.app/assets/og-card.png" />
   </head>
   <body class="min-h-screen flex flex-col font-sans bg-[#1f1633] text-[#ffffff] selection:bg-[#c2ef4e] selection:text-[#1f1633]">
     <!-- Barra Superior Fixa (Header Simplificado em Linha Única) -->
@@ -160,6 +164,54 @@ import Footer from '../components/Footer.astro';
           },
           start: 'top 85%',
         });
+
+        // Latency Gauge Animation (3.2s vs 0.3s)
+        const gauge = document.getElementById('hero-latency-gauge');
+        if (gauge) {
+          const tradBar = document.getElementById('hero-trad-bar');
+          const sparkBar = document.getElementById('hero-spark-bar');
+          const tradCounter = document.getElementById('hero-trad-counter');
+          const sparkCounter = document.getElementById('hero-spark-counter');
+
+          ScrollTrigger.create({
+            trigger: gauge,
+            start: 'top 85%',
+            once: true,
+            onEnter: () => {
+              const trad = { val: 0 };
+              gsap.to(trad, {
+                val: 3.2,
+                duration: 1.6,
+                ease: 'power2.out',
+                onUpdate: () => {
+                  if (tradCounter) tradCounter.textContent = `${trad.val.toFixed(1)}s`;
+                }
+              });
+              if (tradBar) gsap.to(tradBar, { width: '85%', duration: 1.6, ease: 'power2.out' });
+
+              const spark = { val: 0 };
+              gsap.to(spark, {
+                val: 0.3,
+                duration: 0.7,
+                delay: 0.3,
+                ease: 'power3.out',
+                onUpdate: () => {
+                  if (sparkCounter) sparkCounter.textContent = `${spark.val.toFixed(1)}s`;
+                }
+              });
+              if (sparkBar) gsap.to(sparkBar, { width: '12%', duration: 0.7, delay: 0.3, ease: 'power3.out' });
+            }
+          });
+        }
+      } else {
+        const tb = document.getElementById('hero-trad-bar');
+        const sb = document.getElementById('hero-spark-bar');
+        const tc = document.getElementById('hero-trad-counter');
+        const sc = document.getElementById('hero-spark-counter');
+        if (tb) tb.style.width = '85%';
+        if (sb) sb.style.width = '12%';
+        if (tc) tc.textContent = '3.2s';
+        if (sc) sc.textContent = '0.3s';
       }
 
       // Safety fallback: ensure nothing stays hidden under any circumstances
@@ -168,7 +220,16 @@ import Footer from '../components/Footer.astro';
           (el as HTMLElement).style.opacity = '1';
           (el as HTMLElement).style.transform = 'none';
         });
-      }, 1500);
+
+        const tb = document.getElementById('hero-trad-bar');
+        const sb = document.getElementById('hero-spark-bar');
+        const tc = document.getElementById('hero-trad-counter');
+        const sc = document.getElementById('hero-spark-counter');
+        if (tb && (!tb.style.width || tb.style.width === '0%')) tb.style.width = '85%';
+        if (sb && (!sb.style.width || sb.style.width === '0%')) sb.style.width = '12%';
+        if (tc && tc.textContent === '0.0s') tc.textContent = '3.2s';
+        if (sc && sc.textContent === '0.0s') sc.textContent = '0.3s';
+      }, 1800);
     </script>
   </body>
 </html>

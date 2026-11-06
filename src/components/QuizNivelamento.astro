@@ -12,13 +12,11 @@
 
     <!-- Header da Seção -->
     <div class="text-center mb-12" data-anim="fade-up">
-      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full badge-glow mb-4">
-        <span class="w-1.5 h-1.5 rounded-full bg-[#c2ef4e] micro-pulse"></span>
-        <span class="text-xs font-mono text-[#c2ef4e] uppercase tracking-[0.2em]">Diagnóstico de Entrada · 2 Minutos</span>
+      <div class="inline-flex items-center gap-2 mb-3">
+        <span class="text-xs font-sans font-bold text-[#c2ef4e] uppercase tracking-[0.22em]">// Diagnóstico de Entrada · 2 Minutos</span>
       </div>
       <h2 class="font-sans font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-tight leading-[1.08] text-[#ffffff] mb-4">
-        Descubra Onde Sua Fala<br />
-        <span class="text-gradient-lime">Está Realmente Travando.</span>
+        Onde exatamente a sua fala está travando?
       </h2>
       <p class="text-[#cfcfdb] text-base sm:text-lg max-w-xl mx-auto leading-relaxed">
         Responda a 5 situações práticas do mundo real e receba o diagnóstico imediato do seu nível comunicativo e portal de entrada na Turma Alpha.
@@ -34,11 +32,11 @@
       <div class="flex items-center justify-between gap-4 pb-6 border-b border-[#3b2c60] mb-8">
         <!-- Progress Steps -->
         <div class="flex items-center gap-2">
-          <span class="text-xs font-mono text-[#c2ef4e] font-bold uppercase tracking-wider" id="quiz-step-label">
+          <span class="text-xs font-sans font-bold text-[#c2ef4e] uppercase tracking-wider" id="quiz-step-label">
             Questão 1 de 5
           </span>
           <span class="text-[#79628c]">/</span>
-          <span class="text-xs font-mono text-[#fa7faa] font-semibold" id="quiz-xp-badge">
+          <span class="text-xs font-sans font-semibold text-[#fa7faa]" id="quiz-xp-badge">
             +50 XP
           </span>
         </div>
@@ -56,7 +54,7 @@
       <!-- QUESTIONS CONTAINER (Inicia populado estaticamente para evitar tela em branco) -->
       <div id="quiz-question-area" class="transition-opacity duration-300">
         <!-- Badge da Situação -->
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#1f1633] border border-[#3b2c60] text-xs font-mono text-[#cfcfdb] mb-4" id="situation-tag">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#1f1633] border border-[#3b2c60] text-xs font-sans font-medium text-[#cfcfdb] mb-4" id="situation-tag">
           <span class="w-1.5 h-1.5 rounded-full bg-[#c2ef4e]"></span>
           <span>Situação 1: Café & Sobrevivência (Nível A1)</span>
         </div>
@@ -71,35 +69,86 @@
 
         <!-- Opções -->
         <div id="options-container" class="space-y-3.5">
-          <!-- Fallback estático caso JS tarde a carregar -->
-          <button type="button" class="quiz-opt-btn w-full text-left p-4 sm:p-5 rounded-xl bg-[#1f1633] border border-[#3b2c60] hover:border-[#c2ef4e]/60 hover:bg-[#2e224d] transition-all flex items-center justify-between gap-4 group cursor-pointer active:scale-[0.99]" data-points="0" data-index="0">
-            <div class="flex items-start gap-3.5">
-              <span class="w-6 h-6 rounded-full bg-[#271d40] border border-[#3b2c60] text-xs font-mono text-[#c2ef4e] flex items-center justify-center shrink-0 mt-0.5 group-hover:border-[#c2ef4e] group-hover:bg-[#c2ef4e]/10">A</span>
+          <button type="button" class="quiz-opt-btn w-full text-left p-4 sm:p-5 rounded-xl bg-[#1f1633] border border-[#3b2c60] hover:border-[#c2ef4e]/60 hover:bg-[#2e224d] transition-all flex items-center gap-4 group cursor-pointer active:scale-[0.99]" data-points="0" data-index="0">
+            <div class="flex items-start gap-3.5 flex-1">
+              <span class="w-6 h-6 rounded-full bg-[#271d40] border border-[#3b2c60] text-xs font-sans font-bold text-[#c2ef4e] flex items-center justify-center shrink-0 mt-0.5 group-hover:border-[#c2ef4e] group-hover:bg-[#c2ef4e]/10">A</span>
               <span class="text-sm sm:text-base text-[#cfcfdb] group-hover:text-[#ffffff] leading-relaxed font-sans">Fico com vergonha, bebo assim mesmo ou aponto pro copo fazendo mímica.</span>
             </div>
-            <span class="hidden sm:inline-block text-[11px] font-mono text-[#79628c] uppercase group-hover:text-[#fa7faa] shrink-0">Pânico Inicial</span>
           </button>
-          <button type="button" class="quiz-opt-btn w-full text-left p-4 sm:p-5 rounded-xl bg-[#1f1633] border border-[#3b2c60] hover:border-[#c2ef4e]/60 hover:bg-[#2e224d] transition-all flex items-center justify-between gap-4 group cursor-pointer active:scale-[0.99]" data-points="1" data-index="0">
-            <div class="flex items-start gap-3.5">
-              <span class="w-6 h-6 rounded-full bg-[#271d40] border border-[#3b2c60] text-xs font-mono text-[#c2ef4e] flex items-center justify-center shrink-0 mt-0.5 group-hover:border-[#c2ef4e] group-hover:bg-[#c2ef4e]/10">B</span>
+          <button type="button" class="quiz-opt-btn w-full text-left p-4 sm:p-5 rounded-xl bg-[#1f1633] border border-[#3b2c60] hover:border-[#c2ef4e]/60 hover:bg-[#2e224d] transition-all flex items-center gap-4 group cursor-pointer active:scale-[0.99]" data-points="1" data-index="0">
+            <div class="flex items-start gap-3.5 flex-1">
+              <span class="w-6 h-6 rounded-full bg-[#271d40] border border-[#3b2c60] text-xs font-sans font-bold text-[#c2ef4e] flex items-center justify-center shrink-0 mt-0.5 group-hover:border-[#c2ef4e] group-hover:bg-[#c2ef4e]/10">B</span>
               <span class="text-sm sm:text-base text-[#cfcfdb] group-hover:text-[#ffffff] leading-relaxed font-sans">Tento formular na cabeça ('The coffee... is not this... please?'), demoro mas peço a troca.</span>
             </div>
-            <span class="hidden sm:inline-block text-[11px] font-mono text-[#79628c] uppercase group-hover:text-[#fa7faa] shrink-0">Tradução Mental</span>
           </button>
-          <button type="button" class="quiz-opt-btn w-full text-left p-4 sm:p-5 rounded-xl bg-[#1f1633] border border-[#3b2c60] hover:border-[#c2ef4e]/60 hover:bg-[#2e224d] transition-all flex items-center justify-between gap-4 group cursor-pointer active:scale-[0.99]" data-points="2" data-index="0">
-            <div class="flex items-start gap-3.5">
-              <span class="w-6 h-6 rounded-full bg-[#271d40] border border-[#3b2c60] text-xs font-mono text-[#c2ef4e] flex items-center justify-center shrink-0 mt-0.5 group-hover:border-[#c2ef4e] group-hover:bg-[#c2ef4e]/10">C</span>
+          <button type="button" class="quiz-opt-btn w-full text-left p-4 sm:p-5 rounded-xl bg-[#1f1633] border border-[#3b2c60] hover:border-[#c2ef4e]/60 hover:bg-[#2e224d] transition-all flex items-center gap-4 group cursor-pointer active:scale-[0.99]" data-points="2" data-index="0">
+            <div class="flex items-start gap-3.5 flex-1">
+              <span class="w-6 h-6 rounded-full bg-[#271d40] border border-[#3b2c60] text-xs font-sans font-bold text-[#c2ef4e] flex items-center justify-center shrink-0 mt-0.5 group-hover:border-[#c2ef4e] group-hover:bg-[#c2ef4e]/10">C</span>
               <span class="text-sm sm:text-base text-[#cfcfdb] group-hover:text-[#ffffff] leading-relaxed font-sans">Falo no reflexo: 'Hey, sorry, I actually ordered an iced latte, could you check it?' sem traduzir.</span>
             </div>
-            <span class="hidden sm:inline-block text-[11px] font-mono text-[#79628c] uppercase group-hover:text-[#fa7faa] shrink-0">Reflexo Natural</span>
           </button>
         </div>
+      </div>
+
+      <!-- LEAD CAPTURE CONTAINER (aparece após última questão, antes do resultado) -->
+      <div id="quiz-lead-area" class="hidden text-center py-4">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#c2ef4e]/10 border border-[#c2ef4e]/30 text-xs font-sans font-semibold text-[#c2ef4e] uppercase tracking-wider mb-6">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <span>Quiz concluído! +250 XP</span>
+        </div>
+
+        <h3 class="font-sans font-black text-2xl sm:text-3xl text-[#ffffff] mb-2 leading-tight">
+          Quase lá.<br/>
+          <span class="text-gradient-lime">Receba seu diagnóstico completo.</span>
+        </h3>
+        <p class="text-sm text-[#cfcfdb] mb-8 max-w-sm mx-auto leading-relaxed">
+          Deixe seu nome e WhatsApp para receber o resultado e falar diretamente com o professor Gabriel.
+        </p>
+
+        <form id="quiz-lead-form" class="max-w-sm mx-auto space-y-4 text-left" novalidate>
+          <div>
+            <label for="lead-name" class="block text-xs font-sans font-semibold text-[#cfcfdb] uppercase tracking-wider mb-1.5">Seu nome</label>
+            <input
+              id="lead-name"
+              type="text"
+              placeholder="Como o Gabe vai te chamar?"
+              autocomplete="given-name"
+              class="w-full px-4 py-3 rounded-xl bg-[#1f1633] border border-[#3b2c60] text-[#ffffff] placeholder-[#79628c] text-sm font-sans focus:outline-none focus:border-[#c2ef4e]/60 focus:bg-[#271d40] transition-all"
+              required
+            />
+          </div>
+          <div>
+            <label for="lead-phone" class="block text-xs font-sans font-semibold text-[#cfcfdb] uppercase tracking-wider mb-1.5">WhatsApp (com DDD)</label>
+            <input
+              id="lead-phone"
+              type="tel"
+              placeholder="(11) 9 0000-0000"
+              autocomplete="tel"
+              inputmode="numeric"
+              class="w-full px-4 py-3 rounded-xl bg-[#1f1633] border border-[#3b2c60] text-[#ffffff] placeholder-[#79628c] text-sm font-sans focus:outline-none focus:border-[#c2ef4e]/60 focus:bg-[#271d40] transition-all"
+              required
+            />
+          </div>
+          <button
+            type="submit"
+            class="w-full inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-[#c2ef4e] text-[#1f1633] font-sans font-extrabold text-sm sm:text-base hover:bg-[#b0dc41] active:scale-95 transition-all shadow-xl shadow-[#c2ef4e]/20 group"
+          >
+            <span>Ver Meu Diagnóstico Completo</span>
+            <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </button>
+          <p id="lead-error" class="hidden text-xs text-[#fa7faa] text-center pt-1">Por favor, preencha nome e WhatsApp para continuar.</p>
+        </form>
+        <p class="text-xs text-[#79628c] mt-4">Seus dados vão direto para o professor Gabriel. Zero spam.</p>
       </div>
 
       <!-- RESULT CONTAINER (Oculto inicialmente) -->
       <div id="quiz-result-area" class="hidden text-center py-4">
         <!-- Badge de Conquista -->
-        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#6a5fc1]/20 border border-[#6a5fc1]/50 text-xs font-mono text-[#fa7faa] uppercase tracking-wider mb-5">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#6a5fc1]/20 border border-[#6a5fc1]/50 text-xs font-sans font-semibold text-[#fa7faa] uppercase tracking-wider mb-5">
           <svg class="w-4 h-4 text-[#c2ef4e]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
@@ -109,11 +158,11 @@
 
         <!-- Título do Portal -->
         <div class="mb-4">
-          <span class="text-xs font-mono uppercase tracking-[0.25em] text-[#cfcfdb] block mb-1">Seu Ponto de Partida Oficial</span>
+          <span class="text-xs font-sans font-semibold uppercase tracking-[0.25em] text-[#cfcfdb] block mb-1">Seu Ponto de Partida Oficial</span>
           <h3 id="result-portal-name" class="font-sans font-black text-3xl sm:text-4xl text-gradient-lime">
             PORTAL 2: O Motor do BICS (Nível A2)
           </h3>
-          <p id="result-guardian" class="text-xs font-mono text-[#fa7faa] mt-1">Guardião Regente: Miles · Rank D</p>
+          <p id="result-guardian" class="text-xs font-sans text-[#fa7faa] mt-1">Guardião Regente: Miles · Rank D</p>
         </div>
 
         <!-- Visual do Diagnóstico / Cartão de Análise -->
@@ -125,7 +174,7 @@
               </svg>
             </div>
             <div>
-              <h4 class="text-sm font-mono text-[#c2ef4e] uppercase font-bold tracking-wider">O Bloqueio Detectado</h4>
+              <h4 class="text-sm font-sans font-bold text-[#c2ef4e] uppercase tracking-wider">O Bloqueio Detectado</h4>
               <p id="result-block-text" class="text-sm text-[#ffffff] mt-1 leading-relaxed">
                 Você tem vocabulário passivo na memória, mas sofre com o <strong>"Lag dos 3 Segundos"</strong>: traduz internamente para o português antes de falar, gerando insegurança e pausas longas.
               </p>
@@ -139,7 +188,7 @@
               </svg>
             </div>
             <div>
-              <h4 class="text-sm font-mono text-[#fa7faa] uppercase font-bold tracking-wider">O Plano SPARK para seus primeiros 30 Dias</h4>
+              <h4 class="text-sm font-sans font-bold text-[#fa7faa] uppercase tracking-wider">O Plano SPARK para seus primeiros 30 Dias</h4>
               <p id="result-plan-text" class="text-sm text-[#cfcfdb] mt-1 leading-relaxed">
                 Automatizar <strong>650 Chunks Nucleares</strong> com prática diária de 15 min no LibreChat + 3 sessões semanais com Gabe para destravar viagens e reuniões sem tradução mental.
               </p>
@@ -165,13 +214,13 @@
           <button
             type="button"
             id="btn-restart-quiz"
-            class="px-5 py-3 text-xs font-mono text-[#cfcfdb] hover:text-[#ffffff] transition-colors cursor-pointer"
+            class="px-5 py-3 text-xs font-sans text-[#cfcfdb] hover:text-[#ffffff] transition-colors cursor-pointer"
           >
             ↻ Refazer Teste
           </button>
         </div>
 
-        <p class="text-xs text-[#79628c] mt-4 font-mono">
+        <p class="text-xs text-[#79628c] mt-4 font-sans">
           15 vagas abertas para a Turma Alpha · Conversa direta com Gabriel Lima
         </p>
       </div>
@@ -299,9 +348,12 @@
 
       let currentStep = 0;
       let totalScore = 0;
+      let leadName = '';
+      let leadPhone = '';
 
       const questionArea = document.getElementById('quiz-question-area');
       const resultArea = document.getElementById('quiz-result-area');
+      const leadArea = document.getElementById('quiz-lead-area');
       const stepLabel = document.getElementById('quiz-step-label');
       const xpBadge = document.getElementById('quiz-xp-badge');
       const progressBar = document.getElementById('quiz-progress-bar');
@@ -337,20 +389,18 @@
         q.options.forEach((opt, optIndex) => {
           const btn = document.createElement('button');
           btn.type = 'button';
-          btn.className = 'quiz-opt-btn w-full text-left p-4 sm:p-5 rounded-xl bg-[#1f1633] border border-[#3b2c60] hover:border-[#c2ef4e]/60 hover:bg-[#2e224d] transition-all flex items-center justify-between gap-4 group cursor-pointer active:scale-[0.99]';
+          btn.className = 'quiz-opt-btn w-full text-left p-4 sm:p-5 rounded-xl bg-[#1f1633] border border-[#3b2c60] hover:border-[#c2ef4e]/60 hover:bg-[#2e224d] transition-all flex items-center gap-4 group cursor-pointer active:scale-[0.99]';
           
+          // No badge on buttons — spoiler-free
           btn.innerHTML = `
-            <div class="flex items-start gap-3.5">
-              <span class="w-6 h-6 rounded-full bg-[#271d40] border border-[#3b2c60] text-xs font-mono text-[#c2ef4e] flex items-center justify-center shrink-0 mt-0.5 group-hover:border-[#c2ef4e] group-hover:bg-[#c2ef4e]/10">
+            <div class="flex items-start gap-3.5 flex-1">
+              <span class="w-6 h-6 rounded-full bg-[#271d40] border border-[#3b2c60] text-xs font-sans font-bold text-[#c2ef4e] flex items-center justify-center shrink-0 mt-0.5 group-hover:border-[#c2ef4e] group-hover:bg-[#c2ef4e]/10">
                 ${String.fromCharCode(65 + optIndex)}
               </span>
               <span class="text-sm sm:text-base text-[#cfcfdb] group-hover:text-[#ffffff] leading-relaxed font-sans">
                 ${opt.text}
               </span>
             </div>
-            <span class="hidden sm:inline-block text-[11px] font-mono text-[#79628c] uppercase group-hover:text-[#fa7faa] shrink-0">
-              ${opt.badge}
-            </span>
           `;
 
           btn.addEventListener('click', function() {
@@ -372,12 +422,23 @@
             questionArea.style.opacity = '1';
           }, 180);
         } else {
-          showResults();
+          // Show lead capture before result
+          showLeadCapture();
         }
       }
 
-      function showResults() {
+      function showLeadCapture() {
         questionArea.classList.add('hidden');
+        const leadAreaEl = document.getElementById('quiz-lead-area');
+        if (leadAreaEl) {
+          leadAreaEl.classList.remove('hidden');
+          if (progressBar) progressBar.style.width = '100%';
+        }
+      }
+
+      function showResults(name) {
+        const leadAreaEl = document.getElementById('quiz-lead-area');
+        if (leadAreaEl) leadAreaEl.classList.add('hidden');
         resultArea.classList.remove('hidden');
 
         let portalName = '';
@@ -391,31 +452,31 @@
           guardian = 'Guardião Regente: Jordan · Rank E';
           blockText = 'Seu principal obstáculo é o <strong>Pânico Inicial de Falar</strong> e a trava de tentar memorizar regras sintáticas. Você ainda não criou a musculatura automática da fala.';
           planText = 'Imersão de 30 dias focada em <strong>350 Chunks Nucleares</strong> de sobrevivência com o companion IA no LibreChat + 3 sessões semanais curtas com Gabriel para eliminar o medo de errar.';
-          waMessage = encodeURIComponent('Olá Gabe! Fiz o quiz da LexiQuest e meu resultado deu Portal 1 (Nível A1). Quero destravar minha fala na Turma Alpha de 15 vagas!');
+          waMessage = encodeURIComponent(`Olá Gabe! Meu nome é ${name}. Fiz o quiz da LexiQuest e meu resultado deu Portal 1 (Nível A1). Quero destravar minha fala na Turma Alpha de 15 vagas!`);
         } else if (totalScore <= 4) {
           portalName = 'PORTAL 2: O Motor do BICS (Nível A2)';
           guardian = 'Guardião Regente: Miles · Rank D';
           blockText = 'Você tem vocabulário passivo, mas sofre com o <strong>"Lag dos 3 Segundos"</strong>: traduz para o português antes de soltar a voz, travando em aeroportos, hotéis e imprevistos.';
           planText = 'Dominar <strong>650 Chunks Cotidianos</strong> com feedback imediato sem caneta vermelha (Spaced Recasting) e simulações guiadas com Gabriel para falar no reflexo motor.';
-          waMessage = encodeURIComponent('Olá Gabe! Fiz o quiz da LexiQuest e meu resultado deu Portal 2 (Nível A2). Quero destravar minha fala na Turma Alpha de 15 vagas!');
+          waMessage = encodeURIComponent(`Olá Gabe! Meu nome é ${name}. Fiz o quiz da LexiQuest e meu resultado deu Portal 2 (Nível A2). Quero destravar minha fala na Turma Alpha de 15 vagas!`);
         } else if (totalScore <= 7) {
           portalName = 'PORTAL 3: A Tração Conversacional (Nível B1)';
           guardian = 'Guardião Regente: Zack · Rank C';
           blockText = 'Você já entende bem, mas sua fala ainda é fragmentada. Falta o domínio de <strong>conectores vivos e storytelling</strong> para sustentar conversas longas sem pausas constrangedoras.';
           planText = 'Ativação de <strong>750 Chunks de Tração</strong> para encadear argumentos, expressar discordâncias elegantes e simulações com Gabe para destravar debates.';
-          waMessage = encodeURIComponent('Olá Gabe! Fiz o quiz da LexiQuest e meu resultado deu Portal 3 (Nível B1). Quero destravar minha fala na Turma Alpha de 15 vagas!');
+          waMessage = encodeURIComponent(`Olá Gabe! Meu nome é ${name}. Fiz o quiz da LexiQuest e meu resultado deu Portal 3 (Nível B1). Quero destravar minha fala na Turma Alpha de 15 vagas!`);
         } else if (totalScore <= 9) {
           portalName = 'PORTAL 4: A Fronteira Executiva (Nível B2)';
           guardian = 'Guardiã Regente: Alexandra · Rank B';
           blockText = 'Você se comunica bem, mas sente insegurança em <strong>reuniões de alto nível e negociações</strong>, muitas vezes pedindo desculpas pelo seu inglês diante de gringos.';
           planText = 'Consolidação de <strong>2.500 Chunks Acumulados</strong> (Cume da Autonomia Total) com simulações de reuniões reais e Boss Raids semanais de 30 min com Gabriel.';
-          waMessage = encodeURIComponent('Olá Gabe! Fiz o quiz da LexiQuest e meu resultado deu Portal 4 (Nível B2). Quero destravar minha fala executiva na Turma Alpha de 15 vagas!');
+          waMessage = encodeURIComponent(`Olá Gabe! Meu nome é ${name}. Fiz o quiz da LexiQuest e meu resultado deu Portal 4 (Nível B2). Quero destravar minha fala executiva na Turma Alpha de 15 vagas!`);
         } else {
           portalName = 'PORTAL 5: O Trono da Soberania (Nível C1/C2)';
           guardian = 'Guardião Regente: Prof. Hayes · Rank A/S';
           blockText = 'Você tem fluência sólida! O seu desafio agora é o <strong>refinamento cultural profundo, humor sutil, ironia fina e oratória persuasiva de liderança global</strong>.';
           planText = 'Treinamento de <strong>3.500 Chunks Totais</strong> com debates complexos e refinamento retórico personalizado diretamente com o professor Gabriel.';
-          waMessage = encodeURIComponent('Olá Gabe! Fiz o quiz da LexiQuest e meu resultado deu Portal 5 (Nível C1/C2). Quero refinar minha oratória e retórica na Turma Alpha!');
+          waMessage = encodeURIComponent(`Olá Gabe! Meu nome é ${name}. Fiz o quiz da LexiQuest e meu resultado deu Portal 5 (Nível C1/C2). Quero refinar minha oratória e retórica na Turma Alpha!`);
         }
 
         if (resultPortalName) resultPortalName.textContent = portalName;
@@ -423,12 +484,36 @@
         if (resultBlockText) resultBlockText.innerHTML = blockText;
         if (resultPlanText) resultPlanText.innerHTML = planText;
         if (btnWhatsapp) btnWhatsapp.href = `https://wa.me/5511967239791?text=${waMessage}`;
+
+        // Persist lead to localStorage
+        try {
+          localStorage.setItem('lq_lead', JSON.stringify({ name: name, score: totalScore, portal: portalName, ts: Date.now() }));
+        } catch(e) {}
       }
+
+      // Lead form submit handler
+      const leadForm = document.getElementById('quiz-lead-form');
+      const leadError = document.getElementById('lead-error');
+      leadForm?.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const nameInput = document.getElementById('lead-name');
+        const phoneInput = document.getElementById('lead-phone');
+        const name = nameInput ? nameInput.value.trim() : '';
+        const phone = phoneInput ? phoneInput.value.trim() : '';
+        if (!name || !phone) {
+          if (leadError) leadError.classList.remove('hidden');
+          return;
+        }
+        if (leadError) leadError.classList.add('hidden');
+        showResults(name);
+      });
 
       btnRestart?.addEventListener('click', function() {
         currentStep = 0;
         totalScore = 0;
         if (resultArea) resultArea.classList.add('hidden');
+        const leadAreaEl = document.getElementById('quiz-lead-area');
+        if (leadAreaEl) leadAreaEl.classList.add('hidden');
         if (questionArea) {
           questionArea.classList.remove('hidden');
           questionArea.style.opacity = '1';

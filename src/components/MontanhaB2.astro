@@ -87,7 +87,7 @@ const stages = [
     <div class="mb-14 max-w-3xl" data-anim="fade-up">
       <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full badge-glow mb-4">
         <span class="w-1.5 h-1.5 rounded-full bg-[#c2ef4e] micro-pulse"></span>
-        <span class="text-xs font-mono text-[#c2ef4e] uppercase tracking-[0.2em]">Mapeamento Quantitativo CEFR</span>
+        <span class="text-xs font-sans font-semibold text-[#c2ef4e] uppercase tracking-[0.2em]">Mapeamento Quantitativo CEFR</span>
       </div>
       <h2 class="font-sans font-extrabold text-3xl sm:text-5xl md:text-6xl tracking-tight leading-[1.05] mt-2 text-[#ffffff]">
         A jornada da fala em 6 etapas.<br />
@@ -103,7 +103,7 @@ const stages = [
 
       <!-- Mountain SVG Visual (visível em lg+) -->
       <div id="mountain-visual" class="hidden lg:block shrink-0 w-[280px] relative select-none rounded-3xl p-4 bg-[#271d40]/40 border border-[#3b2c60]" aria-hidden="true">
-        <div class="text-[11px] font-mono text-[#cfcfdb] uppercase tracking-wider mb-2 text-center">Escalada da Fluência</div>
+        <div class="text-xs font-sans text-[#cfcfdb] uppercase tracking-wider mb-2 text-center">Escalada da Fluência</div>
         
         <svg viewBox="0 0 300 420" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto">
           <defs>
@@ -165,7 +165,7 @@ const stages = [
                 type="button"
                 data-stage-target={stage.id}
                 data-stage-cy={stage.cy}
-                class={`stage-tab-btn px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs font-mono transition-all duration-200 cursor-pointer whitespace-nowrap flex items-center gap-2 group ${
+                class={`stage-tab-btn px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs font-sans transition-all duration-200 cursor-pointer whitespace-nowrap flex items-center gap-2 group ${
                   index === 0
                     ? 'bg-[#c2ef4e] text-[#1f1633] font-bold shadow-md shadow-[#c2ef4e]/20 active-tab'
                     : 'text-[#cfcfdb] hover:text-[#ffffff] hover:bg-[#3b2c60]'
@@ -194,11 +194,11 @@ const stages = [
                     </div>
                     <div>
                       <h3 class="text-xl sm:text-2xl md:text-3xl font-extrabold text-[#ffffff] tracking-tight">{stage.name}</h3>
-                      <p class="text-xs font-mono text-[#cfcfdb] uppercase tracking-wider mt-1">{stage.hours}</p>
+                      <p class="text-xs font-sans text-[#cfcfdb] uppercase tracking-wider mt-1">{stage.hours}</p>
                     </div>
                   </div>
 
-                  <div class="flex items-center gap-2 text-xs font-mono text-[#c2ef4e] px-3.5 py-1.5 rounded-full bg-[#c2ef4e]/10 border border-[#c2ef4e]/30 self-start md:self-auto shrink-0">
+                  <div class="flex items-center gap-2 text-xs font-sans text-[#c2ef4e] px-3.5 py-1.5 rounded-full bg-[#c2ef4e]/10 border border-[#c2ef4e]/30 self-start md:self-auto shrink-0">
                     <span class="w-1.5 h-1.5 rounded-full bg-[#c2ef4e] micro-pulse"></span>
                     <span>Referência Oficial Cambridge</span>
                   </div>
@@ -215,9 +215,9 @@ const stages = [
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
                           </svg>
                         </div>
-                        <span class="text-xs font-mono text-[#ffb287] uppercase tracking-wider font-semibold">Ponto de Fricção</span>
+                        <span class="text-xs font-sans text-[#ffb287] uppercase tracking-wider font-semibold">Ponto de Fricção</span>
                       </div>
-                      <span class="text-[10px] sm:text-xs font-mono px-2 py-0.5 rounded-md text-[#ffb287] border border-[#ffb287]/25 bg-[#ffb287]/10">{stage.trapBadge}</span>
+                      <span class="text-xs sm:text-xs font-sans px-2 py-0.5 rounded-md text-[#ffb287] border border-[#ffb287]/25 bg-[#ffb287]/10">{stage.trapBadge}</span>
                     </div>
                     <h4 class="text-xs sm:text-sm font-semibold text-[#ffffff] mb-2">Onde você trava no método comum:</h4>
                     <p class="text-[#cfcfdb] text-xs sm:text-sm leading-relaxed">
@@ -234,9 +234,9 @@ const stages = [
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
                           </svg>
                         </div>
-                        <span class="text-xs font-mono text-[#c2ef4e] uppercase tracking-wider font-semibold">Aceleração Ativa</span>
+                        <span class="text-xs font-sans text-[#c2ef4e] uppercase tracking-wider font-semibold">Aceleração Ativa</span>
                       </div>
-                      <span class="text-[10px] sm:text-xs font-mono px-2 py-0.5 rounded-md text-[#c2ef4e] border border-[#c2ef4e]/25 bg-[#c2ef4e]/10">{stage.solutionBadge}</span>
+                      <span class="text-xs sm:text-xs font-sans px-2 py-0.5 rounded-md text-[#c2ef4e] border border-[#c2ef4e]/25 bg-[#c2ef4e]/10">{stage.solutionBadge}</span>
                     </div>
                     <h4 class="text-xs sm:text-sm font-semibold text-[#ffffff] mb-2">Como o método acelera:</h4>
                     <p class="text-[#cfcfdb] text-xs sm:text-sm leading-relaxed font-medium">
@@ -257,7 +257,7 @@ const stages = [
                       <strong class="text-[#ffffff] font-semibold">Habilidade consolidada:</strong> {stage.outcome}
                     </span>
                   </div>
-                  <span class="text-[11px] font-mono text-[#fa7faa] uppercase tracking-wider shrink-0">Marco Validado</span>
+                  <span class="text-xs font-sans text-[#fa7faa] uppercase tracking-wider shrink-0">Marco Validado</span>
                 </div>
               </div>
             </div>

@@ -7,13 +7,9 @@
   <div class="max-w-4xl mx-auto relative z-10 w-full">
     <!-- Header -->
     <div class="mb-14 max-w-2xl" data-anim="fade-up">
-      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full badge-glow mb-4">
-        <span class="w-1.5 h-1.5 rounded-full bg-[#c2ef4e] micro-pulse"></span>
-        <span class="text-xs font-mono text-[#c2ef4e] uppercase tracking-[0.2em]">Tire Suas Dúvidas</span>
-      </div>
-      <h2 class="font-sans font-extrabold text-3xl sm:text-5xl md:text-6xl tracking-tight leading-[1.05] mt-2 text-[#ffffff]">
-        Perguntas Frequentes.<br />
-        <span class="text-gradient-lime">Respostas diretas.</span>
+      <p class="text-xs font-sans font-bold text-[#c2ef4e] uppercase tracking-[0.25em] mb-3">Tire Suas Dúvidas</p>
+      <h2 class="font-sans font-extrabold text-3xl sm:text-5xl md:text-6xl tracking-tight leading-[1.05] text-[#ffffff]">
+        Perguntas Frequentes.
       </h2>
       <p class="text-base sm:text-lg text-[#cfcfdb] leading-relaxed mt-4">
         Respostas transparentes sobre a metodologia, as 3 sessões semanais e o formato da Turma Alpha.
@@ -56,11 +52,11 @@
             aria-expanded="false"
           >
             <div class="flex items-start gap-4">
-              <span class="text-xs font-mono font-bold text-[#c2ef4e] mt-1 shrink-0 px-2 py-0.5 rounded bg-[#c2ef4e]/10 border border-[#c2ef4e]/30">
+              <span class="text-xs font-sans font-bold text-[#c2ef4e] mt-1 shrink-0 px-2 py-0.5 rounded bg-[#c2ef4e]/10 border border-[#c2ef4e]/30">
                 {String(index + 1).padStart(2, '0')}
               </span>
               <div>
-                <span class="text-[10px] font-mono mb-1.5 inline-block text-[#fa7faa] px-2 py-0.5 rounded bg-[#fa7faa]/10 border border-[#fa7faa]/20 font-semibold">{faq.category}</span>
+                <span class="text-xs font-sans mb-1.5 inline-block text-[#fa7faa] px-2 py-0.5 rounded bg-[#fa7faa]/10 border border-[#fa7faa]/20 font-semibold">{faq.category}</span>
                 <span class="text-base sm:text-lg font-bold text-[#ffffff] group-hover:text-[#c2ef4e] transition-colors leading-snug block">
                   {faq.q}
                 </span>
