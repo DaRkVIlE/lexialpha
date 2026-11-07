@@ -684,7 +684,8 @@ const code = `---
             </div>
           </div>
 
-          <!-- VISUAL SPEC COMPONENT 2: THE SPARK KINETIC LOOP DIAGRAM -->
+          <!-- VISUAL SPEC COMPONENT 2: THE SPARK KINETIC LOOP & NEURAL COGNITION -->
+            <div style="margin-bottom: 16px; border-radius: 8px; overflow: hidden; border: 1px solid var(--_globals---colors--color-600); box-shadow: 0 10px 30px rgba(0,0,0,0.4);"><img src="/synthetic/images/cap2_metodo.jpg" alt="Mapeamento Neural Método SPARK" style="width: 100%; height: auto; display: block;"></div>
           <div fade-in-300ms="" style="background: rgba(15, 19, 21, 0.9); border: 1px solid var(--_globals---colors--color-600); border-radius: 12px; padding: 28px; box-shadow: 0 20px 50px rgba(0,0,0,0.5); position: relative;">
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 12px;">
               <div style="display: flex; align-items: center; gap: 8px;">
@@ -770,6 +771,7 @@ const code = `---
       <div class="w-layout-blockcontainer container w-container">
         <div class="w-layout-grid grid-2 spacing-2xlarge" style="align-items: center;">
           <div fade-in-200ms="">
+            <div style="border-radius: 8px; overflow: hidden; margin-bottom: 20px; border: 1px solid rgba(88,242,127,0.3); max-height: 180px;"><img src="/synthetic/images/portal_opening.jpg" alt="Portal 0 - A Entrada dos Portais" style="width: 100%; height: 180px; object-fit: cover; display: block;"></div>
             <div class="display-subtitle" style="color: #58f27f;">Portal 0 · O Prólogo</div>
             <h2 class="display-6" style="margin-top: 8px; margin-bottom: 16px;">Experimente o método em 15 minutos, sem cadastro</h2>
             <p class="paragraph-small" style="color: #a4b3bf; line-height: 1.6; margin-bottom: 24px;">
@@ -912,6 +914,7 @@ const code = `---
             <div class="portal-rail-node"></div>
             <div data-wf--how-it-works-item--variant="variant" class="how_it_works_item w-variant-8fe28ea2-a73c-875c-7028-d1000ea9f4bf" style="border: 1px solid var(--_globals---colors--color-600); border-radius: 8px; padding: 24px; position: relative; overflow: hidden;">
               <div style="font-family: var(--font-mono); font-size: 11px; color: #58f27f; margin-bottom: 6px; letter-spacing: 0.05em;">PORTAL 1 · NÍVEL A1 &rarr; A2</div>
+              <div style="border-radius: 6px; overflow: hidden; margin-bottom: 14px; border: 1px solid rgba(255,255,255,0.08);"><img src="/synthetic/images/bossraid_portal1.jpg" alt="Boss Raid Portal 1 - Aeroporto JFK" style="width: 100%; height: 130px; object-fit: cover; display: block;"></div>
               <h3 class="how_it_works_item-heading" style="font-size: 20px; color: #ffffff;">O Descongelamento</h3>
               <p class="how_it_works_item-summary" style="font-size: 13px; color: #a4b3bf; line-height: 1.5; margin-top: 8px;">
                 <strong>Guardião: Jordan.</strong> Destravar a boca e quebrar o pânico inicial. Automatizar chunks básicos do dia a dia sem gaguejar.
@@ -940,6 +943,7 @@ const code = `---
             <div class="portal-rail-node"></div>
             <div data-wf--how-it-works-item--variant="variant" class="how_it_works_item w-variant-8fe28ea2-a73c-875c-7028-d1000ea9f4bf" style="border: 1px solid var(--_globals---colors--color-600); border-radius: 8px; padding: 24px; position: relative; overflow: hidden;">
               <div style="font-family: var(--font-mono); font-size: 11px; color: #38bdf8; margin-bottom: 6px; letter-spacing: 0.05em;">PORTAL 2 · NÍVEL A2 &rarr; B1</div>
+              <div style="border-radius: 6px; overflow: hidden; margin-bottom: 14px; border: 1px solid rgba(255,255,255,0.08);"><img src="/synthetic/images/cap1_cafeteria.jpg" alt="Boss Raid Portal 2 - Cafeteria & Viagens" style="width: 100%; height: 130px; object-fit: cover; display: block;"></div>
               <h3 class="how_it_works_item-heading" style="font-size: 20px; color: #ffffff;">A Travessia</h3>
               <p class="how_it_works_item-summary" style="font-size: 13px; color: #a4b3bf; line-height: 1.5; margin-top: 8px;">
                 <strong>Guardião: Miles.</strong> Sustentar pequenas conversas, fazer perguntas e resolver imprevistos práticos em viagens e no trabalho.
@@ -968,6 +972,7 @@ const code = `---
             <div class="portal-rail-node"></div>
             <div data-wf--how-it-works-item--variant="variant" class="how_it_works_item w-variant-8fe28ea2-a73c-875c-7028-d1000ea9f4bf" style="border: 1px solid var(--_globals---colors--color-600); border-radius: 8px; padding: 24px; position: relative; overflow: hidden;">
               <div style="font-family: var(--font-mono); font-size: 11px; color: #818cf8; margin-bottom: 6px; letter-spacing: 0.05em;">PORTAL 3 · NÍVEL B1 &rarr; B2</div>
+              <div style="border-radius: 6px; overflow: hidden; margin-bottom: 14px; border: 1px solid rgba(255,255,255,0.08);"><img src="/synthetic/images/bossraid_portal3.jpg" alt="Boss Raid Portal 3 - Pub no Brooklyn" style="width: 100%; height: 130px; object-fit: cover; display: block;"></div>
               <h3 class="how_it_works_item-heading" style="font-size: 20px; color: #ffffff;">O Território</h3>
               <p class="how_it_works_item-summary" style="font-size: 13px; color: #a4b3bf; line-height: 1.5; margin-top: 8px;">
                 <strong>Guardião: Zack.</strong> Argumentar, expressar opinião com nuance, contar histórias e sustentar discussões profissionais sem roteiro prévio.
@@ -996,6 +1001,7 @@ const code = `---
             <div class="portal-rail-node"></div>
             <div data-wf--how-it-works-item--variant="variant" class="how_it_works_item w-variant-8fe28ea2-a73c-875c-7028-d1000ea9f4bf" style="border: 1px solid var(--_globals---colors--color-600); border-radius: 8px; padding: 24px; position: relative; overflow: hidden;">
               <div style="font-family: var(--font-mono); font-size: 11px; color: #c084fc; margin-bottom: 6px; letter-spacing: 0.05em;">PORTAL 4 · NÍVEL B2 &rarr; C1</div>
+              <div style="border-radius: 6px; overflow: hidden; margin-bottom: 14px; border: 1px solid rgba(255,255,255,0.08);"><img src="/synthetic/images/bossraid_portal4.jpg" alt="Boss Raid Portal 4 - Pitch Executivo" style="width: 100%; height: 130px; object-fit: cover; display: block;"></div>
               <h3 class="how_it_works_item-heading" style="font-size: 20px; color: #ffffff;">O Domínio</h3>
               <p class="how_it_works_item-summary" style="font-size: 13px; color: #a4b3bf; line-height: 1.5; margin-top: 8px;">
                 <strong>Guardiã: Alexandra.</strong> Refinamento executivo, sutileza em reuniões de liderança, humor, precisão e velocidade de resposta sem sotaque paralisante.
@@ -1088,7 +1094,7 @@ const code = `---
           </div>
 
           <div fade-in-300ms="" style="border-radius: 12px; overflow: hidden; border: 1px solid var(--_globals---colors--color-600); box-shadow: 0 20px 50px rgba(0,0,0,0.5);">
-            <img src="/synthetic/images/cap3_reuniao.jpg" alt="AIDA Companion em Ação" style="width: 100%; height: auto; display: block;">
+            <img src="/synthetic/images/cap3_reuniao.jpg" alt="Sessões de Voz e Acompanhamento Gabe" style="width: 100%; height: auto; display: block;">
           </div>
         </div>
       </div>
