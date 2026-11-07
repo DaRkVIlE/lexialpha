@@ -1,10 +1,12 @@
 const fs = require('fs');
+const path = require('path');
 
-console.log('Building updated Synthetic LexiQuest page with Portal 0 and Scientific Research Marquee...');
+console.log('Building Synthetic LexiQuest page with Complete Motion Design Engine...');
+
+const script6Code = fs.readFileSync('landing/scripts/original-script6.js', 'utf8');
 
 const code = `---
-// LexiQuest Turma Alpha — Landing Page (Synthetic BRIX Template Replica v1.2)
-// Inclui Bloco 4B (Portal 0 Degustação) e Evidências Científicas em vez de depoimentos
+// LexiQuest Turma Alpha — Landing Page (Synthetic BRIX Template Replica v1.3 with Full Motion Design)
 ---
 <!DOCTYPE html>
 <html data-wf-domain="lexiquest.com.br" data-wf-page="6a01e0b88ea616041a7749de" data-wf-site="6a01e0b88ea616041a774a0d" lang="pt-BR" class="w-mod-js wf-ibmplexmono-n3-active wf-ibmplexmono-n4-active wf-ibmplexmono-n5-active wf-ibmplexmono-n6-active wf-ibmplexmono-n7-active wf-ibmplexsans-n3-active wf-ibmplexsans-n4-active wf-ibmplexsans-n5-active wf-ibmplexsans-n6-active wf-ibmplexsans-n7-active wf-active w-mod-ix w-mod-ix3">
@@ -44,12 +46,7 @@ const code = `---
       color: #e5e9ec;
     }
     
-    [fade-in-200ms], [fade-in-300ms], [fade-in-400ms], [fade-in-500ms], [fade-in-600ms], [fade-in-700ms], [fade-in-800ms] {
-      opacity: 1 !important;
-      visibility: visible !important;
-      transform: none !important;
-    }
-    
+    /* Glowing accents */
     .text-glow {
       text-shadow: 0 0 16px rgba(88, 242, 127, 0.4);
     }
@@ -63,6 +60,60 @@ const code = `---
     @keyframes pulse-dot {
       0%, 100% { opacity: 1; transform: scale(1); }
       50% { opacity: 0.4; transform: scale(0.85); }
+    }
+
+    /* Motion Design & Interactions */
+    .button {
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+    }
+    
+    .button:hover {
+      transform: translateY(-2px) scale(1.01);
+      box-shadow: 0 8px 24px rgba(88, 242, 127, 0.25);
+    }
+    
+    .button .button_circle {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 120%;
+      height: 200%;
+      border-radius: 100vw;
+      transform: translate(0, 100%);
+      transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+      pointer-events: none;
+      z-index: 1;
+    }
+    
+    .button:hover .button_circle {
+      transform: translate(0, -15%);
+    }
+    
+    .button .button_text {
+      position: relative;
+      z-index: 2;
+      transition: color 0.3s ease;
+    }
+    
+    .button.is-primary:hover .button_text {
+      color: #0b0d0e;
+    }
+
+    /* Micro-interactions on Cards */
+    .modalities_card-block, .how_it_works_item, .plans_card, .blog_featured-card, .story_card {
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease, box-shadow 0.35s ease;
+    }
+    
+    .modalities_card-block:hover, .how_it_works_item:hover, .blog_featured-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(88, 242, 127, 0.5) !important;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+    }
+    
+    .plans_card:hover {
+      transform: translateY(-6px);
     }
     
     /* Quiz Styling */
@@ -718,7 +769,6 @@ const code = `---
           </p>
         </div>
 
-        <!-- AIDA Comparison Box -->
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-bottom: 48px;">
           <div style="background: rgba(88, 242, 127, 0.03); border: 1px solid rgba(88, 242, 127, 0.2); border-radius: 8px; padding: 28px;">
             <div style="font-family: var(--font-mono); font-size: 13px; font-weight: 700; color: #58f27f; margin-bottom: 14px;">O QUE A AIDA FAZ</div>
@@ -1432,50 +1482,61 @@ const code = `---
   <script is:inline src="/synthetic/files/ScrollTrigger.min.js"></script>
   <script is:inline src="/synthetic/files/SplitText.min.js"></script>
 
-  <!-- SYNTHETIC INTERACTIVE ENGINES & DIAGNOSTIC LOGIC -->
+  <!-- AUTHENTIC BRIX TEMPLATE MOTION ENGINES (MARQUEE & COUNTERS) -->
   <script is:inline>
-    // 1. Counter Animations
-    document.addEventListener('DOMContentLoaded', () => {
-      const counters = document.querySelectorAll('[brix-counter]');
-      counters.forEach((counter) => {
-        const target = parseFloat(counter.textContent.replace(/[^0-9.]/g, '')) || 0;
-        let current = 0;
-        const duration = 2000;
-        const step = target / (duration / 30);
-        
-        const update = () => {
-          current += step;
-          if (current >= target) {
-            counter.textContent = target % 1 === 0 ? target : target.toFixed(1);
-          } else {
-            counter.textContent = target % 1 === 0 ? Math.floor(current) : current.toFixed(1);
-            requestAnimationFrame(update);
-          }
-        };
-        update();
-      });
+${script6Code}
+  </script>
 
-      // 2. Marquee horizontal continuous scroll
-      const marqueeRoots = document.querySelectorAll('[brix-marquee]');
-      marqueeRoots.forEach(root => {
-        const col = root.querySelector('.stories_marquee-column');
-        if (col) {
-          col.innerHTML += col.innerHTML;
-          let pos = 0;
-          function animate() {
-            pos -= 0.6;
-            if (pos <= -col.scrollWidth / 2) {
-              pos = 0;
-            }
-            col.style.transform = 'translateX(' + pos + 'px)';
-            requestAnimationFrame(animate);
-          }
-          animate();
+  <!-- NATIVE GSAP MOTION DESIGN: SCROLLTRIGGER REVEALS, HERO STAGGER & QUIZ ENGINE -->
+  <script is:inline>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof gsap !== 'undefined') {
+        if (typeof ScrollTrigger !== 'undefined') {
+          gsap.registerPlugin(ScrollTrigger);
         }
-      });
+
+        // 1. Hero Stagger Entrance on page load
+        const heroTl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+        heroTl.from('.header_section', { y: -20, opacity: 0, duration: 0.7 })
+              .from('.hero_section .display-subtitle', { y: 20, opacity: 0, duration: 0.5 }, '-=0.3')
+              .from('.hero_section .display-9', { y: 25, opacity: 0, duration: 0.6 }, '-=0.3')
+              .from('.hero_section .home_hero-summary', { y: 20, opacity: 0, duration: 0.5 }, '-=0.3')
+              .from('.hero_section .button-row', { y: 20, opacity: 0, duration: 0.5 }, '-=0.3')
+              .from('.hero_section .home_hero-image', { scale: 0.97, opacity: 0, duration: 0.8 }, '-=0.3');
+
+        // 2. ScrollTrigger reveals for all [fade-in] elements across the page
+        const scrollElements = document.querySelectorAll(
+          'section:not(.hero_section) [fade-in-200ms], section:not(.hero_section) [fade-in-300ms], section:not(.hero_section) [fade-in-400ms], section:not(.hero_section) [fade-in-500ms], section:not(.hero_section) [fade-in-600ms], footer [fade-in-200ms], footer [fade-in-300ms]'
+        );
+
+        scrollElements.forEach((el) => {
+          let delay = 0;
+          if (el.hasAttribute('fade-in-200ms')) delay = 0.05;
+          else if (el.hasAttribute('fade-in-300ms')) delay = 0.15;
+          else if (el.hasAttribute('fade-in-400ms')) delay = 0.25;
+          else if (el.hasAttribute('fade-in-500ms')) delay = 0.35;
+          else if (el.hasAttribute('fade-in-600ms')) delay = 0.45;
+
+          gsap.fromTo(el,
+            { opacity: 0, y: 32 },
+            {
+              opacity: 1,
+              y: 0,
+              duration: 0.85,
+              delay: delay,
+              ease: 'power2.out',
+              scrollTrigger: {
+                trigger: el,
+                start: 'top 88%',
+                once: true
+              }
+            }
+          );
+        });
+      }
     });
 
-    // 3. Quiz State Engine
+    // Quiz State Engine
     const quizData = [
       {
         block: 'A1 &rarr; A2',
@@ -1694,4 +1755,4 @@ const code = `---
 `;
 
 fs.writeFileSync('landing/src/pages/index.astro', code, 'utf8');
-console.log('Successfully wrote index.astro with Portal 0 and Research Marquee!');
+console.log('Successfully wrote index.astro with Complete Motion Design Engine!');
