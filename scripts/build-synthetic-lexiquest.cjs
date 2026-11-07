@@ -21,7 +21,8 @@ const code = `---
   <meta property="og:url" content="https://landing-pi-jade-44.vercel.app">
   <meta property="og:image" content="https://landing-pi-jade-44.vercel.app/synthetic/images/cover_hero.jpg">
   
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/favicon.png">
   
   <!-- Preconnect & Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -305,9 +306,8 @@ const code = `---
       <div data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="header_navbar-container w-nav">
         <div class="header_navbar">
           <!-- Logo -->
-          <a href="#" class="logo_container w-inline-block" style="text-decoration: none; display: flex; align-items: center; gap: 10px;">
-            <div style="width: 14px; height: 14px; border-radius: 3px; background: #58f27f; box-shadow: 0 0 10px #58f27f;"></div>
-            <span style="font-family: var(--font-mono); font-weight: 700; font-size: 18px; letter-spacing: -0.02em; color: #ffffff;">LEXIQUEST</span>
+          <a href="#" class="logo_container w-inline-block" style="text-decoration: none; display: flex; align-items: center; transition: opacity 0.2s;">
+            <img src="/synthetic/images/lexiquest_logo_white.png" alt="LexiQuest Official Logo" style="height: 32px; width: auto; display: block; filter: drop-shadow(0 0 12px rgba(88,242,127,0.2));">
           </a>
 
           <!-- Nav Menu -->
@@ -1729,7 +1729,10 @@ const code = `---
           <div class="w-layout-grid footer_nav-card-list">
             <div fade-in-200ms="" class="footer_nav-card" style="border: 1px solid var(--_globals---colors--color-600); border-radius: 8px; background: var(--_globals---colors--color-500); padding: 24px;">
               <div class="footer_nav-card-dot"></div>
-              <div style="font-family: var(--font-mono); font-size: 16px; font-weight: 700; color: #ffffff; margin-bottom: 8px;">LexiQuest Turma Alpha</div>
+              <div style="margin-bottom: 12px;">
+                <img src="/synthetic/images/lexiquest_logo_white.png" alt="LexiQuest" style="height: 26px; width: auto; display: block;">
+              </div>
+              <div style="font-family: var(--font-mono); font-size: 13px; font-weight: 600; color: #58f27f; margin-bottom: 8px;">TURMA ALPHA // PILOTO 2026</div>
               <p style="font-size: 13px; color: #a4b3bf; line-height: 1.5;">
                 Prática diária de voz com IA + 3 encontros semanais com o Gabe. Método focado em adultos que entendem inglês mas travam na fala.
               </p>
