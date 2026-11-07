@@ -1,5 +1,5 @@
 ---
-// LexiQuest Turma Alpha — Landing Page (Synthetic BRIX Template Replica v1.3 with Full Motion Design)
+// LexiQuest Turma Alpha — Landing Page (Synthetic BRIX Template Replica v1.4 with High-Converting Visual Representations & Animations)
 ---
 <!DOCTYPE html>
 <html data-wf-domain="lexiquest.com.br" data-wf-page="6a01e0b88ea616041a7749de" data-wf-site="6a01e0b88ea616041a774a0d" lang="pt-BR" class="w-mod-js wf-ibmplexmono-n3-active wf-ibmplexmono-n4-active wf-ibmplexmono-n5-active wf-ibmplexmono-n6-active wf-ibmplexmono-n7-active wf-ibmplexsans-n3-active wf-ibmplexsans-n4-active wf-ibmplexsans-n5-active wf-ibmplexsans-n6-active wf-ibmplexsans-n7-active wf-active w-mod-ix w-mod-ix3">
@@ -107,6 +107,65 @@
     
     .plans_card:hover {
       transform: translateY(-6px);
+    }
+
+    /* Waveform Animation */
+    @keyframes wave-bounce {
+      0%, 100% { height: 6px; opacity: 0.35; }
+      50% { height: 32px; opacity: 1; }
+    }
+    
+    .wave-bar {
+      width: 4px;
+      border-radius: 2px;
+      background: linear-gradient(to top, #10b981, #58f27f);
+      animation: wave-bounce 1.2s infinite ease-in-out;
+    }
+
+    /* SPARK Kinetic Loop Stroke */
+    @keyframes dash-pulse {
+      to {
+        stroke-dashoffset: -240;
+      }
+    }
+    
+    .spark-loop-path {
+      stroke-dasharray: 8 6;
+      animation: dash-pulse 12s linear infinite;
+    }
+
+    /* Energy Rail Node */
+    .portal-rail-node {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #0f1315;
+      border: 2px solid #58f27f;
+      box-shadow: 0 0 12px rgba(88, 242, 127, 0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .portal-rail-node::after {
+      content: '';
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #58f27f;
+    }
+
+    /* Ebbinghaus Graph */
+    .ebbinghaus-point {
+      transition: transform 0.25s ease, filter 0.25s ease;
+      cursor: pointer;
+    }
+    .ebbinghaus-point:hover {
+      transform: scale(1.35);
+      filter: drop-shadow(0 0 10px #58f27f);
     }
     
     /* Quiz Styling */
@@ -241,118 +300,111 @@
           <!-- Logo -->
           <a href="#" class="logo_container w-inline-block" style="text-decoration: none; display: flex; align-items: center; gap: 10px;">
             <div style="width: 14px; height: 14px; border-radius: 3px; background: #58f27f; box-shadow: 0 0 10px #58f27f;"></div>
-            <span style="font-family: var(--font-mono); font-weight: 700; font-size: 18px; letter-spacing: -0.5px; color: #ffffff;">Lexi<span style="color: #58f27f;">Quest</span></span>
-            <span style="font-family: var(--font-mono); font-size: 11px; color: #7f8a93; padding: 2px 6px; border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; margin-left: 4px;">TURMA ALPHA</span>
+            <span style="font-family: var(--font-mono); font-weight: 700; font-size: 18px; letter-spacing: -0.02em; color: #ffffff;">LEXIQUEST</span>
           </a>
 
-          <!-- Menu Links -->
-          <nav role="navigation" class="header_nav is-right-auto w-nav-menu">
-            <ul role="list" class="header_nav-menu">
-              <li class="header_nav-list"><a href="#desafio" class="header_nav-link w-inline-block"><div>O Desafio</div></a></li>
-              <li class="header_nav-list"><a href="#metodo" class="header_nav-link w-inline-block"><div>O Método</div></a></li>
-              <li class="header_nav-list"><a href="#portal0" class="header_nav-link w-inline-block"><div style="color: #58f27f;">Portal 0 (Degustação)</div></a></li>
-              <li class="header_nav-list"><a href="#portais" class="header_nav-link w-inline-block"><div>Os Portais</div></a></li>
-              <li class="header_nav-list"><a href="#aida" class="header_nav-link w-inline-block"><div>AIDA Companion</div></a></li>
-              <li class="header_nav-list"><a href="#pesquisa" class="header_nav-link w-inline-block"><div>Ciência do Método</div></a></li>
-              <li class="header_nav-list"><a href="#oferta" class="header_nav-link w-inline-block"><div>A Oferta</div></a></li>
-              <li class="header_nav-list"><a href="#faq" class="header_nav-link w-inline-block"><div>FAQ</div></a></li>
-            </ul>
+          <!-- Nav Menu -->
+          <nav role="navigation" class="header_nav-menu w-nav-menu">
+            <a href="#desafio" class="header_nav-link w-nav-link">O Desafio</a>
+            <a href="#metodo" class="header_nav-link w-nav-link">Método SPARK</a>
+            <a href="#portal0" class="header_nav-link w-nav-link" style="color: #58f27f; font-weight: 600;">Portal 0 (Degustação)</a>
+            <a href="#portais" class="header_nav-link w-nav-link">Os 4 Portais</a>
+            <a href="#sistema" class="header_nav-link w-nav-link">O Sistema</a>
+            <a href="#pesquisa" class="header_nav-link w-nav-link">Ciência</a>
+            <a href="#oferta" class="header_nav-link w-nav-link">Turma Alpha</a>
+            <a href="#faq" class="header_nav-link w-nav-link">FAQ</a>
           </nav>
 
-          <!-- Header Right: Stats Bar & CTA Button -->
-          <div class="header_button-row">
-            <div class="header_stats-container is-hidden-landscape">
-              <div class="header_stats-column">
-                <div class="header_stats-name-container">
-                  <div class="header_stats-dot"></div>
-                  <div class="header_stats-name">PILOTO</div>
-                </div>
-                <div class="header_stats-value">15 vagas</div>
-              </div>
-              <div class="header_stats-column">
-                <div class="header_stats-name">INÍCIO</div>
-                <div class="header_stats-value">10/11</div>
-              </div>
-              <div class="header_stats-column">
-                <div class="header_stats-name">MÉTODO</div>
-                <div class="header_stats-value">SPARK</div>
-              </div>
-            </div>
-
-            <a href="#diagnostico" class="button is-primary w-inline-block" style="text-decoration: none;">
-              <div class="button_text">Descobrir meu Portal</div>
+          <!-- Right Action: Diagnostic Quiz Button -->
+          <div class="header_right-side">
+            <a href="#quiz" class="button is-primary is-small w-inline-block" style="text-decoration: none;">
+              <div class="button_text">Fazer Quiz de Nível &rarr;</div>
               <div class="button_circle" style="background-color: #58f27f;"></div>
             </a>
+            <div class="header_menu-button w-nav-button">
+              <div class="header_menu-button-icon w-icon-nav-menu"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Header Stats Bar -->
+      <div class="header_stats">
+        <div class="header_stats-list">
+          <div class="header_stats-item">
+            <div class="header_stats-dot"></div>
+            <div>TURMA ALPHA: 15 VAGAS EXCLUSIVAS</div>
+          </div>
+          <div class="header_stats-item">
+            <div class="header_stats-dot"></div>
+            <div>INÍCIO: 01 DE DEZEMBRO DE 2026</div>
+          </div>
+          <div class="header_stats-item">
+            <div class="header_stats-dot"></div>
+            <div>PRÁTICA DIÁRIA DE VOZ COM IA + 3 ENCONTROS SEMANAIS COM O GABE</div>
+          </div>
+          <div class="header_stats-item">
+            <div class="header_stats-dot"></div>
+            <div>GARANTIA BLINDADA DE 30 DIAS</div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- 2. HERO SECTION -->
-    <section class="hero_section spacing-top-0">
+    <section class="hero_section">
       <div class="w-layout-blockcontainer container w-container">
-        <div class="hero_home-v2">
-          <div class="home_hero-description">
-            <div fade-in-200ms="" class="display-subtitle" style="color: #58f27f;">LexiQuest · Turma Alpha de Lançamento</div>
-            <h1 fade-in-300ms="" class="display-9" style="letter-spacing: -1px; margin-top: 12px; margin-bottom: 20px;">Você entende inglês. Agora é hora de falar.</h1>
-            <div fade-in-400ms="" class="home_hero-summary">
-              <p class="main-font" style="font-size: 19px; line-height: 1.6; color: #a4b3bf; max-width: 64ch;">
-                Prática diária com a <strong>AIDA</strong>, companion de IA sem julgamento, e <strong>3 sessões por semana</strong> com o <strong>Gabe</strong>, professor de verdade. Sem tradução mental, sem regras chatas e com fundamentação em linguística aplicada.
-              </p>
+        <div class="home_hero-layout">
+          <div class="home_hero-content">
+            <div class="display-subtitle text-glow" style="color: #58f27f;">
+              Turma Alpha · Piloto Exclusivo para 15 Alunos
             </div>
             
-            <div fade-in-500ms="" class="button-row" style="margin-top: 32px; display: flex; gap: 16px; align-items: center; flex-wrap: wrap;">
-              <a href="#diagnostico" class="button is-primary w-inline-block" style="text-decoration: none;">
-                <div class="button_text">Descobrir meu Portal</div>
+            <h1 class="display-9">
+              Você entende inglês.<br>
+              <span style="color: #58f27f;">Agora é hora de falar.</span>
+            </h1>
+
+            <p class="home_hero-summary" style="font-size: 18px; line-height: 1.6; color: #a4b3bf; margin-top: 16px; margin-bottom: 32px;">
+              Prática diária de voz com IA, 3 encontros por semana com o Gabe e uma trilha imersiva em formato de jogo. Menos que uma pizza por semana: <strong>R$ 197/mês</strong> no plano trimestral, com 30 dias de garantia incondicional.
+            </p>
+
+            <div class="button-row" style="display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 40px;">
+              <a href="#quiz" class="button is-primary w-inline-block" style="text-decoration: none;">
+                <div class="button_text">Descobrir Meu Nível no Quiz (3 min) &rarr;</div>
                 <div class="button_circle" style="background-color: #58f27f;"></div>
               </a>
               <a href="#portal0" class="button is-secondary w-inline-block" style="text-decoration: none;">
-                <div class="button_text">Testar no Portal 0 (15 min grátis) &rarr;</div>
-                <div class="button_circle is-secondary"></div>
-              </a>
-              <a href="https://wa.me/5511967239791?text=Ol%C3%A1%20Gabe!%20Quero%20conversar%20sobre%20a%20Turma%20Alpha." target="_blank" rel="noopener noreferrer" class="link w-inline-block" style="text-decoration: none;">
-                <div class="link_row" style="color: #7f8a93; font-family: var(--font-mono); font-size: 14px;">
-                  <div>Prefere conversar antes? <span style="color: #58f27f; text-decoration: underline;">Chame o Gabe no WhatsApp &rarr;</span></div>
-                </div>
+                <div class="button_text">Degustação: Entrar no Portal 0</div>
               </a>
             </div>
-          </div>
 
-          <!-- Hero Image & Narrative Card -->
-          <div style="position: relative; margin-top: 48px; border-radius: 12px; overflow: hidden; border: 1px solid var(--_globals---colors--color-600); box-shadow: 0 20px 60px rgba(0,0,0,0.6);">
-            <img src="/synthetic/images/cover_hero.jpg" alt="LexiQuest Turma Alpha — Gabriel Lima & AIDA" class="home_hero-image" style="width: 100%; height: auto; display: block; filter: brightness(0.95);">
-            
-            <!-- Floating HUD overlay badges -->
-            <div style="position: absolute; bottom: 20px; left: 20px; background: rgba(11,13,14,0.85); backdrop-filter: blur(12px); border: 1px solid rgba(88,242,127,0.3); border-radius: 8px; padding: 14px 20px; display: flex; align-items: center; gap: 14px;">
-              <div style="width: 10px; height: 10px; border-radius: 50%; background: #58f27f; box-shadow: 0 0 10px #58f27f;"></div>
-              <div>
-                <div style="font-family: var(--font-mono); font-size: 11px; color: #7f8a93; text-transform: uppercase;">AIDA Recasting Engine</div>
-                <div style="font-family: var(--font-sans); font-size: 14px; font-weight: 600; color: #ffffff;">Correção natural sem travar o fluxo da conversa</div>
+            <!-- Stats Grid Hero -->
+            <div class="w-layout-grid header_card-list" style="margin-top: 24px;">
+              <div class="header_card" style="border: 1px solid var(--_globals---colors--color-600); border-radius: 8px; background: var(--_globals---colors--color-500); padding: 20px;">
+                <div class="header_card-dot"></div>
+                <div class="header_card-text" style="font-family: var(--font-mono); font-size: 24px; font-weight: 700; color: #58f27f;"><span brix-counter="15">15</span> Vagas</div>
+                <p class="paragraph-small" style="color: #7f8a93; margin-top: 4px;">Acompanhamento próximo e individualizado de cada aluno</p>
+              </div>
+
+              <div class="header_card" style="border: 1px solid var(--_globals---colors--color-600); border-radius: 8px; background: var(--_globals---colors--color-500); padding: 20px;">
+                <div class="header_card-dot"></div>
+                <div class="header_card-text" style="font-family: var(--font-mono); font-size: 24px; font-weight: 700; color: #58f27f;"><span brix-counter="3">3</span>x / semana</div>
+                <p class="paragraph-small" style="color: #7f8a93; margin-top: 4px;">Encontros ao vivo com o Gabe para destravar a fala em grupo</p>
+              </div>
+
+              <div class="header_card" style="border: 1px solid var(--_globals---colors--color-600); border-radius: 8px; background: var(--_globals---colors--color-500); padding: 20px;">
+                <div class="header_card-dot"></div>
+                <div class="header_card-text" style="font-family: var(--font-mono); font-size: 24px; font-weight: 700; color: #58f27f;"><span brix-counter="30">30</span> Dias</div>
+                <p class="paragraph-small" style="color: #7f8a93; margin-top: 4px;">Garantia incondicional: se não destravar, 100% de reembolso</p>
               </div>
             </div>
-
-            <div style="position: absolute; top: 20px; right: 20px; background: rgba(11,13,14,0.85); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 10px 16px; font-family: var(--font-mono); font-size: 12px; color: #58f27f;">
-              SPARK SCORE: 78 &uarr;
-            </div>
           </div>
 
-          <!-- Numbers / Metric Counters -->
-          <div class="number_section">
-            <div fade-in-200ms="" class="number_section-item">
-              <div class="number_section-number"><span brix-counter="">15</span></div>
-              <div style="font-family: var(--font-mono); font-size: 13px; color: #a4b3bf;">Vagas exclusivas no Piloto Alpha</div>
-            </div>
-            <div fade-in-300ms="" class="number_section-item">
-              <div class="number_section-number"><span brix-counter="">5</span> anos</div>
-              <div style="font-family: var(--font-mono); font-size: 13px; color: #a4b3bf;">De sala de aula do Gabe</div>
-            </div>
-            <div fade-in-400ms="" class="number_section-item">
-              <div class="number_section-number"><span brix-counter="">3</span>x</div>
-              <div style="font-family: var(--font-mono); font-size: 13px; color: #a4b3bf;">Sessões semanais ao vivo com o Gabe</div>
-            </div>
-            <div fade-in-500ms="" class="number_section-item">
-              <div class="number_section-number"><span brix-counter="">30</span> dias</div>
-              <div style="font-family: var(--font-mono); font-size: 13px; color: #a4b3bf;">Garantia incondicional via Pix</div>
+          <!-- Hero Image -->
+          <div class="home_hero-image-wrapper" style="position: relative;">
+            <div style="border-radius: 12px; overflow: hidden; border: 1px solid var(--_globals---colors--color-600); box-shadow: 0 20px 60px rgba(0,0,0,0.6);">
+              <img src="/synthetic/images/cover_hero.jpg" alt="LexiQuest Interface Arena" class="home_hero-image" style="width: 100%; height: auto; display: block;">
             </div>
           </div>
         </div>
@@ -369,6 +421,82 @@
             <p class="paragraph-small mg-top-xsmall" style="max-width: 60ch; color: #a4b3bf;">
               Você entende o que lê e o que ouve. Na hora de falar, o inglês some. A culpa não é da sua memória: adultos aprendem por reflexo motor oral e não por decoreba de gramática.
             </p>
+          </div>
+        </div>
+
+        <!-- VISUAL SPEC COMPONENT 1: DUAL-PATH COGNITIVE CIRCUIT -->
+        <div fade-in-200ms="" style="margin-top: 32px; margin-bottom: 48px; background: rgba(15, 19, 21, 0.85); border: 1px solid var(--_globals---colors--color-600); border-radius: 12px; padding: 28px; backdrop-filter: blur(12px); box-shadow: 0 16px 40px rgba(0,0,0,0.4);">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; flex-wrap: wrap; gap: 12px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 16px;">
+            <div>
+              <div style="font-family: var(--font-mono); font-size: 11px; color: #58f27f; letter-spacing: 0.08em; text-transform: uppercase;">Mapeamento Cognitivo · SLA Neurociência</div>
+              <div style="font-size: 18px; font-weight: 600; color: #ffffff; margin-top: 4px;">Por que o método tradicional trava a fala (e como o SPARK resolve)</div>
+            </div>
+            <div style="display: flex; gap: 8px;">
+              <span style="display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-mono); font-size: 11px; padding: 4px 10px; border-radius: 4px; background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.3); color: #f87171;">
+                <span style="width: 6px; height: 6px; border-radius: 50%; background: #ef4444;"></span> Circuito Tradicional: Gargalo
+              </span>
+              <span style="display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-mono); font-size: 11px; padding: 4px 10px; border-radius: 4px; background: rgba(88, 242, 127, 0.1); border: 1px solid rgba(88, 242, 127, 0.3); color: #58f27f;">
+                <span style="width: 6px; height: 6px; border-radius: 50%; background: #58f27f;"></span> Circuito LexiQuest: Reflexo
+              </span>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px;">
+            <!-- Path 1: Tradicional -->
+            <div style="background: rgba(0,0,0,0.4); border: 1px solid rgba(239,68,68,0.25); border-radius: 8px; padding: 22px;">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;">
+                <span style="font-family: var(--font-mono); font-size: 12px; font-weight: 600; color: #f87171;">01. ESTUDO PASSIVO & REGRAS</span>
+                <span style="font-family: var(--font-mono); font-size: 11px; color: #7f8a93;">Latência: >4.5s</span>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 10px; font-size: 13px;">
+                <div style="display: flex; align-items: center; gap: 10px; color: #a4b3bf;">
+                  <div style="width: 24px; height: 24px; border-radius: 4px; background: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: 11px;">1</div>
+                  <span>Input passivo: Aulas teóricas e exercícios de preencher lacuna</span>
+                </div>
+                <div style="padding-left: 12px; color: #7f8a93; font-size: 11px;">↓ <em>Cria dependência crônica de tradução</em></div>
+                <div style="display: flex; align-items: center; gap: 10px; color: #a4b3bf;">
+                  <div style="width: 24px; height: 24px; border-radius: 4px; background: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: 11px;">2</div>
+                  <span>Tradução mental interna: Português &rarr; Inglês palavra por palavra</span>
+                </div>
+                <div style="padding-left: 12px; color: #7f8a93; font-size: 11px;">↓ <em>Sobrecarga do córtex pré-frontal e overthinking</em></div>
+                <div style="display: flex; align-items: center; gap: 10px; color: #a4b3bf;">
+                  <div style="width: 24px; height: 24px; border-radius: 4px; background: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: 11px;">3</div>
+                  <span>Filtro afetivo elevado: Medo de errar e vergonha na frente da turma</span>
+                </div>
+                <div style="padding-left: 12px; color: #ef4444; font-size: 11px;">↓ <em>Gargalo motor paralisante</em></div>
+                <div style="background: rgba(239,68,68,0.1); border: 1px dashed rgba(239,68,68,0.4); border-radius: 6px; padding: 12px 14px; color: #fca5a5; font-weight: 500; display: flex; align-items: center; gap: 8px;">
+                  <span>🚫</span> <strong>Resultado: "Tela Preta", gagueira e silêncio na hora H</strong>
+                </div>
+              </div>
+            </div>
+
+            <!-- Path 2: LexiQuest -->
+            <div style="background: rgba(88,242,127,0.02); border: 1px solid rgba(88,242,127,0.3); border-radius: 8px; padding: 22px; box-shadow: 0 0 24px rgba(88,242,127,0.06);">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;">
+                <span style="font-family: var(--font-mono); font-size: 12px; font-weight: 600; color: #58f27f;">02. MÉTODO SPARK · FALA ATIVA</span>
+                <span style="font-family: var(--font-mono); font-size: 11px; color: #58f27f;">Latência: <1.0s</span>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 10px; font-size: 13px;">
+                <div style="display: flex; align-items: center; gap: 10px; color: #e5e9ec;">
+                  <div style="width: 24px; height: 24px; border-radius: 4px; background: rgba(88,242,127,0.15); color: #58f27f; display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: 11px; font-weight: 600;">1</div>
+                  <span>Chunks de alta frequência: Blocos prontos internalizados por inteiro</span>
+                </div>
+                <div style="padding-left: 12px; color: #58f27f; font-size: 11px;">↓ <em>Simulação imersiva individual (Filtro Afetivo = Zero)</em></div>
+                <div style="display: flex; align-items: center; gap: 10px; color: #e5e9ec;">
+                  <div style="width: 24px; height: 24px; border-radius: 4px; background: rgba(88,242,127,0.15); color: #58f27f; display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: 11px; font-weight: 600;">2</div>
+                  <span>Prática deliberada diária de 15 min com IA com áudio instantâneo</span>
+                </div>
+                <div style="padding-left: 12px; color: #58f27f; font-size: 11px;">↓ <em>Recasting gentil e repetição espaçada ativa</em></div>
+                <div style="display: flex; align-items: center; gap: 10px; color: #e5e9ec;">
+                  <div style="width: 24px; height: 24px; border-radius: 4px; background: rgba(88,242,127,0.15); color: #58f27f; display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: 11px; font-weight: 600;">3</div>
+                  <span>Consolidação motora em 3 sessões ao vivo por semana com o Gabe</span>
+                </div>
+                <div style="padding-left: 12px; color: #58f27f; font-size: 11px;">↓ <em>Reflexo automatizado permanente</em></div>
+                <div style="background: rgba(88,242,127,0.12); border: 1px solid rgba(88,242,127,0.4); border-radius: 6px; padding: 12px 14px; color: #58f27f; font-weight: 600; display: flex; align-items: center; gap: 8px;">
+                  <span>⚡</span> <strong>Resultado: Fala fluida, instintiva e sem tradução mental</strong>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -437,60 +565,60 @@
           <div fade-in-400ms="" class="modalities_card-block is-small">
             <div class="modalities_card-line-horizontal"></div>
             <div class="modalities_card-line-vertical"></div>
-            <img src="/synthetic/files/6a1465bf3a4a89a96517b27f_code-icon-syntethic-webflow-template.svg" loading="lazy" width="16" height="16" alt="Icon" class="modalities_card-icon">
+            <img src="/synthetic/files/6a14798f498c36fe9f60f6db_terminal-icon-syntethic-webflow-template.svg" loading="lazy" width="16" height="16" alt="Icon" class="modalities_card-icon">
             <div>
               <h3 class="display-1">Portal 2 · Miles</h3>
-              <div class="modalities_card-footer"><div>Nível A2 &rarr; B1</div><div class="modalities_card-dot"></div><div>Boss Raid Hotel</div></div>
+              <div class="modalities_card-footer"><div>Nível A2 &rarr; B1</div><div class="modalities_card-dot"></div><div>Boss Raid Check-in</div></div>
             </div>
           </div>
 
           <div fade-in-500ms="" class="modalities_card-block is-small">
             <div class="modalities_card-line-horizontal"></div>
             <div class="modalities_card-line-vertical"></div>
-            <img src="/synthetic/files/6a0f1cdfdb72997833eda00d_shield-check-icon-syntethic-webflow-template.svg" loading="lazy" width="16" height="16" alt="Icon" class="modalities_card-icon">
+            <img src="/synthetic/files/6a14798f0962354c4146e5ca_search-icon-syntethic-webflow-template.svg" loading="lazy" width="16" height="16" alt="Icon" class="modalities_card-icon">
             <div>
               <h3 class="display-1">Portal 3 · Zack</h3>
-              <div class="modalities_card-footer"><div>Nível B1 &rarr; B2</div><div class="modalities_card-dot"></div><div>Boss Raid Pub Brooklyn</div></div>
+              <div class="modalities_card-footer"><div>Nível B1 &rarr; B2</div><div class="modalities_card-dot"></div><div>Boss Raid Pub Talk</div></div>
             </div>
           </div>
 
           <div fade-in-200ms="" class="modalities_card-block is-small">
             <div class="modalities_card-line-horizontal"></div>
             <div class="modalities_card-line-vertical"></div>
-            <img src="/synthetic/files/6a1479909dee1b2d45e4b725_messages-icon-syntethic-webflow-template.svg" loading="lazy" width="16" height="16" alt="Icon" class="modalities_card-icon">
+            <img src="/synthetic/files/6a14798fb12f458e390cbf17_settings-icon-syntethic-webflow-template.svg" loading="lazy" width="16" height="16" alt="Icon" class="modalities_card-icon">
             <div>
               <h3 class="display-1">Portal 4 · Alexandra</h3>
-              <div class="modalities_card-footer"><div>Nível B2 &rarr; C1</div><div class="modalities_card-dot"></div><div>Boss Raid Pitch Negócios</div></div>
+              <div class="modalities_card-footer"><div>Nível B2 &rarr; C1</div><div class="modalities_card-dot"></div><div>Boss Raid Pitch</div></div>
             </div>
           </div>
 
           <div fade-in-300ms="" class="modalities_card-block is-small">
             <div class="modalities_card-line-horizontal"></div>
             <div class="modalities_card-line-vertical"></div>
-            <img src="/synthetic/files/6a1465bef0a40940baa3172f_chart-icon-syntethic-webflow-template.svg" loading="lazy" width="16" height="16" alt="Icon" class="modalities_card-icon">
+            <img src="/synthetic/files/6a14798fcf9d3e8e19c0b115_bell-icon-syntethic-webflow-template.svg" loading="lazy" width="16" height="16" alt="Icon" class="modalities_card-icon">
             <div>
-              <h3 class="display-1">Recasting Pedagógico</h3>
-              <div class="modalities_card-footer"><div>Sem nota punitiva</div><div class="modalities_card-dot"></div><div>Feedback natural</div></div>
+              <h3 class="display-1">AIDA Companion</h3>
+              <div class="modalities_card-footer"><div>Prática diária de voz</div><div class="modalities_card-dot"></div><div>Zero julgamento</div></div>
             </div>
           </div>
 
           <div fade-in-400ms="" class="modalities_card-block is-small">
             <div class="modalities_card-line-horizontal"></div>
             <div class="modalities_card-line-vertical"></div>
-            <img src="/synthetic/files/6a147990eed77c32f9231052_item-icon-syntethic-webflow-template.svg" loading="lazy" width="16" height="16" alt="Icon" class="modalities_card-icon">
+            <img src="/synthetic/files/6a1479901416bfb42ef0ce2a_layers-icon-syntethic-webflow-template.svg" loading="lazy" width="16" height="16" alt="Icon" class="modalities_card-icon">
             <div>
-              <h3 class="display-1">Chunks Prontos</h3>
-              <div class="modalities_card-footer"><div>Blocos formulaicos</div><div class="modalities_card-dot"></div><div>Sem tradução interna</div></div>
+              <h3 class="display-1">3x / semana com Gabe</h3>
+              <div class="modalities_card-footer"><div>Sessões ao vivo</div><div class="modalities_card-dot"></div><div>Feedback cirúrgico</div></div>
             </div>
           </div>
 
           <div fade-in-500ms="" class="modalities_card-block is-small">
             <div class="modalities_card-line-horizontal"></div>
             <div class="modalities_card-line-vertical"></div>
-            <img src="/synthetic/files/6a1465be29e13c1a535a6b06_search-icon-syntethic-webflow-template.svg" loading="lazy" width="16" height="16" alt="Icon" class="modalities_card-icon">
+            <img src="/synthetic/files/6a147990d0b04bc5f2ba7c65_user-icon-syntethic-webflow-template.svg" loading="lazy" width="16" height="16" alt="Icon" class="modalities_card-icon">
             <div>
-              <h3 class="display-1">SPARK Score</h3>
-              <div class="modalities_card-footer"><div>Medição objetiva</div><div class="modalities_card-dot"></div><div>Baseline e 30 dias</div></div>
+              <h3 class="display-1">Arena Moodle LMS</h3>
+              <div class="modalities_card-footer"><div>Trilha gamificada</div><div class="modalities_card-dot"></div><div>Boss Raids</div></div>
             </div>
           </div>
         </div>
@@ -500,7 +628,7 @@
     <!-- 4. O MÉTODO SPARK (QUALITY STANDARDS DEEP DIVE) -->
     <section id="metodo" class="section spacing-top-0">
       <div class="w-layout-blockcontainer container w-container">
-        <div class="w-layout-grid grid-2 spacing-2xlarge">
+        <div class="w-layout-grid grid-2 spacing-2xlarge" style="align-items: center;">
           <div fade-in-200ms="" id="w-node-_260e5434-8714-d8f3-af88-7e5c1d92a4b9-1a7749de">
             <div class="display-subtitle" style="color: #58f27f;">Fundamentação & Método</div>
             <h2 class="display-6">Três decisões do Método SPARK para você falar sem travar</h2>
@@ -549,8 +677,82 @@
             </div>
           </div>
 
-          <div style="position: relative; border-radius: 8px; overflow: hidden; border: 1px solid var(--_globals---colors--color-600);">
-            <img src="/synthetic/images/cap2_metodo.jpg" alt="Método SPARK — LexiQuest" class="image has-border" style="width: 100%; height: auto; display: block;">
+          <!-- VISUAL SPEC COMPONENT 2: THE SPARK KINETIC LOOP DIAGRAM -->
+          <div fade-in-300ms="" style="background: rgba(15, 19, 21, 0.9); border: 1px solid var(--_globals---colors--color-600); border-radius: 12px; padding: 28px; box-shadow: 0 20px 50px rgba(0,0,0,0.5); position: relative;">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 12px;">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <div style="width: 8px; height: 8px; border-radius: 50%; background: #58f27f; box-shadow: 0 0 8px #58f27f;"></div>
+                <span style="font-family: var(--font-mono); font-size: 12px; font-weight: 600; color: #ffffff;">SPARK // KINETIC FEEDBACK LOOP</span>
+              </div>
+              <span style="font-family: var(--font-mono); font-size: 11px; color: #58f27f;">LATÊNCIA: <1.2s</span>
+            </div>
+
+            <!-- SVG Pentagram Loop Diagram -->
+            <div style="text-align: center; margin-bottom: 20px;">
+              <svg viewBox="0 0 360 220" style="width: 100%; max-width: 340px; margin: 0 auto; overflow: visible;">
+                <defs>
+                  <linearGradient id="sparkGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#58f27f" />
+                    <stop offset="50%" stop-color="#38bdf8" />
+                    <stop offset="100%" stop-color="#a855f7" />
+                  </linearGradient>
+                </defs>
+
+                <!-- Connecting polygon path -->
+                <polygon points="180,25 315,80 265,190 95,190 45,80" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="2" />
+                <polygon points="180,25 315,80 265,190 95,190 45,80" fill="none" stroke="url(#sparkGradient)" stroke-width="2.5" class="spark-loop-path" />
+
+                <!-- Center Core -->
+                <circle cx="180" cy="115" r="32" fill="#0b0d0e" stroke="rgba(88,242,127,0.4)" stroke-width="2" />
+                <circle cx="180" cy="115" r="22" fill="rgba(88,242,127,0.1)" />
+                <text x="180" y="112" text-anchor="middle" fill="#58f27f" font-family="var(--font-mono)" font-size="11" font-weight="700">SPARK</text>
+                <text x="180" y="126" text-anchor="middle" fill="#a4b3bf" font-family="var(--font-mono)" font-size="8">MOTOR</text>
+
+                <!-- Node S -->
+                <circle cx="180" cy="25" r="16" fill="#0f1315" stroke="#58f27f" stroke-width="2" />
+                <text x="180" y="30" text-anchor="middle" fill="#58f27f" font-family="var(--font-mono)" font-size="12" font-weight="700">S</text>
+
+                <!-- Node P -->
+                <circle cx="315" cy="80" r="16" fill="#0f1315" stroke="#38bdf8" stroke-width="2" />
+                <text x="315" y="85" text-anchor="middle" fill="#38bdf8" font-family="var(--font-mono)" font-size="12" font-weight="700">P</text>
+
+                <!-- Node A -->
+                <circle cx="265" cy="190" r="16" fill="#0f1315" stroke="#818cf8" stroke-width="2" />
+                <text x="265" y="195" text-anchor="middle" fill="#818cf8" font-family="var(--font-mono)" font-size="12" font-weight="700">A</text>
+
+                <!-- Node R -->
+                <circle cx="95" cy="190" r="16" fill="#0f1315" stroke="#c084fc" stroke-width="2" />
+                <text x="95" y="195" text-anchor="middle" fill="#c084fc" font-family="var(--font-mono)" font-size="12" font-weight="700">R</text>
+
+                <!-- Node K -->
+                <circle cx="45" cy="80" r="16" fill="#0f1315" stroke="#f472b6" stroke-width="2" />
+                <text x="45" y="85" text-anchor="middle" fill="#f472b6" font-family="var(--font-mono)" font-size="12" font-weight="700">K</text>
+              </svg>
+            </div>
+
+            <!-- 5 Steps Breakdown Cards -->
+            <div style="display: grid; grid-template-columns: 1fr; gap: 8px;">
+              <div style="padding: 8px 12px; border-radius: 6px; background: rgba(88,242,127,0.05); border-left: 3px solid #58f27f; font-size: 12px; color: #e5e9ec; display: flex; justify-content: space-between;">
+                <span><strong>S</strong> · Simulação Imersiva</span>
+                <span style="font-family: var(--font-mono); color: #58f27f;">Cenários Reais</span>
+              </div>
+              <div style="padding: 8px 12px; border-radius: 6px; background: rgba(56,189,248,0.05); border-left: 3px solid #38bdf8; font-size: 12px; color: #e5e9ec; display: flex; justify-content: space-between;">
+                <span><strong>P</strong> · Prática Deliberada</span>
+                <span style="font-family: var(--font-mono); color: #38bdf8;">15 min/dia Speaking</span>
+              </div>
+              <div style="padding: 8px 12px; border-radius: 6px; background: rgba(129,140,248,0.05); border-left: 3px solid #818cf8; font-size: 12px; color: #e5e9ec; display: flex; justify-content: space-between;">
+                <span><strong>A</strong> · Avaliação Imediata</span>
+                <span style="font-family: var(--font-mono); color: #818cf8;">Recasting Instantâneo</span>
+              </div>
+              <div style="padding: 8px 12px; border-radius: 6px; background: rgba(192,132,252,0.05); border-left: 3px solid #c084fc; font-size: 12px; color: #e5e9ec; display: flex; justify-content: space-between;">
+                <span><strong>R</strong> · Repetição Espaçada SRS</span>
+                <span style="font-family: var(--font-mono); color: #c084fc;">Retenção Permanente</span>
+              </div>
+              <div style="padding: 8px 12px; border-radius: 6px; background: rgba(244,114,182,0.05); border-left: 3px solid #f472b6; font-size: 12px; color: #e5e9ec; display: flex; justify-content: space-between;">
+                <span><strong>K</strong> · Kinetismo Motor</span>
+                <span style="font-family: var(--font-mono); color: #f472b6;">Reflexo sem Tradução</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -604,35 +806,80 @@
             </div>
           </div>
 
-          <!-- Mockup Visual Card Portal 0 -->
+          <!-- VISUAL SPEC COMPONENT 3: LIVE AUDIO SIMULATION & VOICE WAVEFORM WIDGET -->
           <div fade-in-300ms="" style="background: #0f1315; border: 1px solid var(--_globals---colors--color-600); border-radius: 12px; padding: 24px; box-shadow: 0 20px 50px rgba(0,0,0,0.5);">
             <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 14px; margin-bottom: 18px;">
               <div style="display: flex; align-items: center; gap: 8px;">
-                <div style="width: 8px; height: 8px; border-radius: 50%; background: #58f27f;"></div>
-                <span style="font-family: var(--font-mono); font-size: 12px; color: #ffffff;">LEXIQUEST // LMS AMBIENTE REAL</span>
+                <div style="width: 8px; height: 8px; border-radius: 50%; background: #58f27f; box-shadow: 0 0 8px #58f27f; animation: pulse-dot 1.5s infinite;"></div>
+                <span style="font-family: var(--font-mono); font-size: 12px; font-weight: 600; color: #ffffff;">LEXIQUEST // LIVE AUDIO SIMULATOR</span>
               </div>
-              <span style="font-family: var(--font-mono); font-size: 11px; color: #7f8a93;">ACESSO CONVIDADO</span>
+              <span style="font-family: var(--font-mono); font-size: 11px; padding: 2px 8px; border-radius: 4px; background: rgba(88,242,127,0.1); color: #58f27f; border: 1px solid rgba(88,242,127,0.3);">PORTAL 0 · PROLOGUE</span>
             </div>
 
-            <div style="border: 1px solid rgba(88,242,127,0.2); border-radius: 8px; background: rgba(88,242,127,0.02); padding: 18px; margin-bottom: 16px;">
-              <div style="font-family: var(--font-mono); font-size: 11px; color: #58f27f; margin-bottom: 6px;">MISSÃO 0.3 · CHUNKS DIÁRIOS</div>
-              <div style="font-size: 15px; color: #ffffff; font-weight: 600; margin-bottom: 8px;">"Can I get a black coffee, please?"</div>
-              <div style="font-size: 13px; color: #a4b3bf; line-height: 1.4;">
-                Automatize a estrutura completa sem parar para pensar em tempos verbais ou preposições soltas.
+            <!-- Scenario Box -->
+            <div style="border: 1px solid rgba(88,242,127,0.25); border-radius: 8px; background: rgba(88,242,127,0.02); padding: 18px; margin-bottom: 16px;">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;">
+                <span style="font-family: var(--font-mono); font-size: 11px; color: #58f27f;">MISSÃO 0.4 · DESAFIO DE FALA REAL</span>
+                <span style="font-family: var(--font-mono); font-size: 11px; color: #7f8a93;">Aeroporto de Heathrow</span>
               </div>
-            </div>
 
-            <div style="border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; background: rgba(255,255,255,0.02); padding: 16px; display: flex; align-items: center; justify-content: space-between;">
-              <div style="display: flex; align-items: center; gap: 12px;">
-                <div style="width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.08); display: flex; align-items: center; justify-content: center; color: #58f27f; font-size: 16px;">
-                  🎙️
+              <!-- AI Voice Bubble with Live Waveform -->
+              <div style="background: rgba(0,0,0,0.4); border-radius: 8px; padding: 14px; margin-bottom: 14px;">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+                  <span style="font-family: var(--font-mono); font-size: 11px; color: #38bdf8; font-weight: 600;">🎙️ Jordan (Oficial de Imigração):</span>
+                  <!-- Animated Voice Waveform (14 bars) -->
+                  <div style="display: flex; align-items: center; gap: 3px; height: 24px;">
+                    <div class="wave-bar" style="animation-delay: 0.1s;"></div>
+                    <div class="wave-bar" style="animation-delay: 0.3s;"></div>
+                    <div class="wave-bar" style="animation-delay: 0.15s;"></div>
+                    <div class="wave-bar" style="animation-delay: 0.4s;"></div>
+                    <div class="wave-bar" style="animation-delay: 0.25s;"></div>
+                    <div class="wave-bar" style="animation-delay: 0.5s;"></div>
+                    <div class="wave-bar" style="animation-delay: 0.2s;"></div>
+                    <div class="wave-bar" style="animation-delay: 0.35s;"></div>
+                    <div class="wave-bar" style="animation-delay: 0.45s;"></div>
+                    <div class="wave-bar" style="animation-delay: 0.1s;"></div>
+                    <div class="wave-bar" style="animation-delay: 0.3s;"></div>
+                    <div class="wave-bar" style="animation-delay: 0.2s;"></div>
+                  </div>
                 </div>
+                <div style="font-size: 14px; color: #ffffff; font-style: italic;">
+                  "Good afternoon. What is the primary purpose of your visit to the UK?"
+                </div>
+              </div>
+
+              <!-- User Response Simulation -->
+              <div style="background: rgba(88,242,127,0.06); border: 1px solid rgba(88,242,127,0.2); border-radius: 8px; padding: 14px;">
+                <div style="font-family: var(--font-mono); font-size: 11px; color: #58f27f; margin-bottom: 6px; font-weight: 600;">
+                  🟢 Sua Resposta (Speaking Ativo):
+                </div>
+                <div style="font-size: 14px; color: #e5e9ec; font-weight: 500;">
+                  "I'm here for a four-day technology conference in central London."
+                </div>
+              </div>
+            </div>
+
+            <!-- Real-time HUD Telemetry Badges -->
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 16px;">
+              <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 6px; padding: 10px;">
+                <div style="font-size: 11px; color: #7f8a93; font-family: var(--font-mono);">PRECISÃO FONÉTICA</div>
+                <div style="font-size: 16px; font-weight: 700; color: #58f27f; font-family: var(--font-mono); margin-top: 2px;">98% (Nativa)</div>
+              </div>
+              <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 6px; padding: 10px;">
+                <div style="font-size: 11px; color: #7f8a93; font-family: var(--font-mono);">LATÊNCIA DE RESPOSTA</div>
+                <div style="font-size: 16px; font-weight: 700; color: #58f27f; font-family: var(--font-mono); margin-top: 2px;">0.7s (Sem Trava)</div>
+              </div>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 14px; display: flex; align-items: center; justify-content: space-between;">
+              <div style="display: flex; align-items: center; gap: 10px;">
+                <span style="font-size: 20px;">🏆</span>
                 <div>
-                  <div style="font-size: 13px; color: #ffffff; font-weight: 500;">Desafio de Áudio 30s</div>
-                  <div style="font-size: 11px; color: #7f8a93; font-family: var(--font-mono);">Gravação local no navegador</div>
+                  <div style="font-size: 13px; color: #ffffff; font-weight: 600;">Missão Concluída · Boss Raid Desbloqueada</div>
+                  <div style="font-size: 11px; color: #7f8a93; font-family: var(--font-mono);">Sem login necessário no Moodle</div>
                 </div>
               </div>
-              <span style="font-family: var(--font-mono); font-size: 12px; color: #58f27f;">PRONTO</span>
+              <span style="font-family: var(--font-mono); font-size: 12px; color: #58f27f; font-weight: 700;">+25 XP</span>
             </div>
           </div>
         </div>
@@ -650,59 +897,117 @@
           </p>
         </div>
 
-        <div class="w-layout-grid how_it_works_layout cols-4">
+        <!-- VISUAL SPEC COMPONENT 4: ENERGY RAIL & PROGRESSION TELEMETRY -->
+        <div class="w-layout-grid how_it_works_layout cols-4" style="position: relative;">
+          
           <!-- Portal 1 -->
           <div fade-in-200ms="">
-            <div data-wf--how-it-works-item--variant="variant" class="how_it_works_item w-variant-8fe28ea2-a73c-875c-7028-d1000ea9f4bf" style="border: 1px solid var(--_globals---colors--color-600); border-radius: 8px; padding: 24px;">
-              <div style="font-family: var(--font-mono); font-size: 12px; color: #58f27f; margin-bottom: 8px;">PORTAL 1 · NÍVEL A1 &rarr; A2</div>
+            <div class="portal-rail-node"></div>
+            <div data-wf--how-it-works-item--variant="variant" class="how_it_works_item w-variant-8fe28ea2-a73c-875c-7028-d1000ea9f4bf" style="border: 1px solid var(--_globals---colors--color-600); border-radius: 8px; padding: 24px; position: relative; overflow: hidden;">
+              <div style="font-family: var(--font-mono); font-size: 11px; color: #58f27f; margin-bottom: 6px; letter-spacing: 0.05em;">PORTAL 1 · NÍVEL A1 &rarr; A2</div>
               <h3 class="how_it_works_item-heading" style="font-size: 20px; color: #ffffff;">O Descongelamento</h3>
-              <p class="how_it_works_item-summary" style="font-size: 14px; color: #a4b3bf; line-height: 1.5; margin-top: 8px;">
+              <p class="how_it_works_item-summary" style="font-size: 13px; color: #a4b3bf; line-height: 1.5; margin-top: 8px;">
                 <strong>Guardião: Jordan.</strong> Destravar a boca e quebrar o pânico inicial. Automatizar chunks básicos do dia a dia sem gaguejar.
               </p>
-              <div style="margin-top: 16px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.06); font-family: var(--font-mono); font-size: 12px; color: #e5e9ec;">
-                <span style="color: #ffc400;">Boss Raid:</span> Passar pela Imigração no JFK sem congelar.
+              
+              <!-- Telemetry Metrics Bar -->
+              <div style="margin-top: 14px; background: rgba(0,0,0,0.3); border-radius: 6px; padding: 10px; font-family: var(--font-mono); font-size: 11px; display: flex; flex-direction: column; gap: 4px;">
+                <div style="display: flex; justify-content: space-between; color: #7f8a93;">
+                  <span>Retenção Ativa:</span>
+                  <span style="color: #58f27f;">45% &rarr; 60%</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; color: #7f8a93;">
+                  <span>Latência Média:</span>
+                  <span style="color: #58f27f;">2.2s</span>
+                </div>
+              </div>
+
+              <div style="margin-top: 14px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.06); font-family: var(--font-mono); font-size: 12px; color: #e5e9ec;">
+                <span style="color: #ffc400; font-weight: 600;">Boss Raid:</span> Passar pela Imigração no JFK sem congelar.
               </div>
             </div>
           </div>
 
           <!-- Portal 2 -->
           <div fade-in-300ms="">
-            <div data-wf--how-it-works-item--variant="variant" class="how_it_works_item w-variant-8fe28ea2-a73c-875c-7028-d1000ea9f4bf" style="border: 1px solid var(--_globals---colors--color-600); border-radius: 8px; padding: 24px;">
-              <div style="font-family: var(--font-mono); font-size: 12px; color: #58f27f; margin-bottom: 8px;">PORTAL 2 · NÍVEL A2 &rarr; B1</div>
+            <div class="portal-rail-node"></div>
+            <div data-wf--how-it-works-item--variant="variant" class="how_it_works_item w-variant-8fe28ea2-a73c-875c-7028-d1000ea9f4bf" style="border: 1px solid var(--_globals---colors--color-600); border-radius: 8px; padding: 24px; position: relative; overflow: hidden;">
+              <div style="font-family: var(--font-mono); font-size: 11px; color: #38bdf8; margin-bottom: 6px; letter-spacing: 0.05em;">PORTAL 2 · NÍVEL A2 &rarr; B1</div>
               <h3 class="how_it_works_item-heading" style="font-size: 20px; color: #ffffff;">A Travessia</h3>
-              <p class="how_it_works_item-summary" style="font-size: 14px; color: #a4b3bf; line-height: 1.5; margin-top: 8px;">
+              <p class="how_it_works_item-summary" style="font-size: 13px; color: #a4b3bf; line-height: 1.5; margin-top: 8px;">
                 <strong>Guardião: Miles.</strong> Sustentar pequenas conversas, fazer perguntas e resolver imprevistos práticos em viagens e no trabalho.
               </p>
-              <div style="margin-top: 16px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.06); font-family: var(--font-mono); font-size: 12px; color: #e5e9ec;">
-                <span style="color: #ffc400;">Boss Raid:</span> Resolver problema no Check-in de Hotel.
+
+              <!-- Telemetry Metrics Bar -->
+              <div style="margin-top: 14px; background: rgba(0,0,0,0.3); border-radius: 6px; padding: 10px; font-family: var(--font-mono); font-size: 11px; display: flex; flex-direction: column; gap: 4px;">
+                <div style="display: flex; justify-content: space-between; color: #7f8a93;">
+                  <span>Retenção Ativa:</span>
+                  <span style="color: #38bdf8;">65% &rarr; 75%</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; color: #7f8a93;">
+                  <span>Latência Média:</span>
+                  <span style="color: #38bdf8;">1.6s</span>
+                </div>
+              </div>
+
+              <div style="margin-top: 14px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.06); font-family: var(--font-mono); font-size: 12px; color: #e5e9ec;">
+                <span style="color: #ffc400; font-weight: 600;">Boss Raid:</span> Resolver problema no Check-in de Hotel.
               </div>
             </div>
           </div>
 
           <!-- Portal 3 -->
           <div fade-in-400ms="">
-            <div data-wf--how-it-works-item--variant="variant" class="how_it_works_item w-variant-8fe28ea2-a73c-875c-7028-d1000ea9f4bf" style="border: 1px solid var(--_globals---colors--color-600); border-radius: 8px; padding: 24px;">
-              <div style="font-family: var(--font-mono); font-size: 12px; color: #58f27f; margin-bottom: 8px;">PORTAL 3 · NÍVEL B1 &rarr; B2</div>
+            <div class="portal-rail-node"></div>
+            <div data-wf--how-it-works-item--variant="variant" class="how_it_works_item w-variant-8fe28ea2-a73c-875c-7028-d1000ea9f4bf" style="border: 1px solid var(--_globals---colors--color-600); border-radius: 8px; padding: 24px; position: relative; overflow: hidden;">
+              <div style="font-family: var(--font-mono); font-size: 11px; color: #818cf8; margin-bottom: 6px; letter-spacing: 0.05em;">PORTAL 3 · NÍVEL B1 &rarr; B2</div>
               <h3 class="how_it_works_item-heading" style="font-size: 20px; color: #ffffff;">O Território</h3>
-              <p class="how_it_works_item-summary" style="font-size: 14px; color: #a4b3bf; line-height: 1.5; margin-top: 8px;">
-                <strong>Guardião: Zack.</strong> Argumentar, expressar opinião com nuance, contar histórias e sustentar discussões profissionais sem preparar roteiro prévio.
+              <p class="how_it_works_item-summary" style="font-size: 13px; color: #a4b3bf; line-height: 1.5; margin-top: 8px;">
+                <strong>Guardião: Zack.</strong> Argumentar, expressar opinião com nuance, contar histórias e sustentar discussões profissionais sem roteiro prévio.
               </p>
-              <div style="margin-top: 16px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.06); font-family: var(--font-mono); font-size: 12px; color: #e5e9ec;">
-                <span style="color: #ffc400;">Boss Raid:</span> Bate-papo informal em um Pub no Brooklyn.
+
+              <!-- Telemetry Metrics Bar -->
+              <div style="margin-top: 14px; background: rgba(0,0,0,0.3); border-radius: 6px; padding: 10px; font-family: var(--font-mono); font-size: 11px; display: flex; flex-direction: column; gap: 4px;">
+                <div style="display: flex; justify-content: space-between; color: #7f8a93;">
+                  <span>Retenção Ativa:</span>
+                  <span style="color: #818cf8;">80% &rarr; 88%</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; color: #7f8a93;">
+                  <span>Latência Média:</span>
+                  <span style="color: #818cf8;">1.1s</span>
+                </div>
+              </div>
+
+              <div style="margin-top: 14px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.06); font-family: var(--font-mono); font-size: 12px; color: #e5e9ec;">
+                <span style="color: #ffc400; font-weight: 600;">Boss Raid:</span> Bate-papo informal em um Pub no Brooklyn.
               </div>
             </div>
           </div>
 
           <!-- Portal 4 -->
           <div fade-in-500ms="">
-            <div data-wf--how-it-works-item--variant="variant" class="how_it_works_item w-variant-8fe28ea2-a73c-875c-7028-d1000ea9f4bf" style="border: 1px solid var(--_globals---colors--color-600); border-radius: 8px; padding: 24px;">
-              <div style="font-family: var(--font-mono); font-size: 12px; color: #58f27f; margin-bottom: 8px;">PORTAL 4 · NÍVEL B2 &rarr; C1</div>
+            <div class="portal-rail-node"></div>
+            <div data-wf--how-it-works-item--variant="variant" class="how_it_works_item w-variant-8fe28ea2-a73c-875c-7028-d1000ea9f4bf" style="border: 1px solid var(--_globals---colors--color-600); border-radius: 8px; padding: 24px; position: relative; overflow: hidden;">
+              <div style="font-family: var(--font-mono); font-size: 11px; color: #c084fc; margin-bottom: 6px; letter-spacing: 0.05em;">PORTAL 4 · NÍVEL B2 &rarr; C1</div>
               <h3 class="how_it_works_item-heading" style="font-size: 20px; color: #ffffff;">O Domínio</h3>
-              <p class="how_it_works_item-summary" style="font-size: 14px; color: #a4b3bf; line-height: 1.5; margin-top: 8px;">
+              <p class="how_it_works_item-summary" style="font-size: 13px; color: #a4b3bf; line-height: 1.5; margin-top: 8px;">
                 <strong>Guardiã: Alexandra.</strong> Refinamento executivo, sutileza em reuniões de liderança, humor, precisão e velocidade de resposta sem sotaque paralisante.
               </p>
-              <div style="margin-top: 16px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.06); font-family: var(--font-mono); font-size: 12px; color: #e5e9ec;">
-                <span style="color: #ffc400;">Boss Raid:</span> Pitch Executivo e negociação de proposta.
+
+              <!-- Telemetry Metrics Bar -->
+              <div style="margin-top: 14px; background: rgba(0,0,0,0.3); border-radius: 6px; padding: 10px; font-family: var(--font-mono); font-size: 11px; display: flex; flex-direction: column; gap: 4px;">
+                <div style="display: flex; justify-content: space-between; color: #7f8a93;">
+                  <span>Retenção Ativa:</span>
+                  <span style="color: #c084fc;">92% &rarr; 98%</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; color: #7f8a93;">
+                  <span>Latência Média:</span>
+                  <span style="color: #c084fc;"><0.8s (Fluente)</span>
+                </div>
+              </div>
+
+              <div style="margin-top: 14px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.06); font-family: var(--font-mono); font-size: 12px; color: #e5e9ec;">
+                <span style="color: #ffc400; font-weight: 600;">Boss Raid:</span> Pitch Executivo e negociação de proposta.
               </div>
             </div>
           </div>
@@ -711,77 +1016,72 @@
     </section>
 
     <!-- 6. O SISTEMA DE 3 PEÇAS (INTEGRATION HUB) -->
-    <section class="integration_section">
+    <section id="sistema" class="section is-bg-secondary">
       <div class="w-layout-blockcontainer container w-container">
-        <div class="integration_section-container">
-          <div fade-in-200ms="" class="integration_section-description">
-            <div class="display-subtitle" style="color: #58f27f;">Arquitetura Pedagógica</div>
-            <h2 class="display-6 mg-bottom-xmall">A IA dá volume, o Gabe dá julgamento, o jogo dá hábito</h2>
-            <p class="paragraph-small mg-bottom-default" style="color: #a4b3bf; line-height: 1.6;">
-              Cada peça faz o que faz melhor. A <strong>AIDA</strong> dá volume diário sem julgamento. O <strong>Gabe</strong> valida nuances com olhar de 5 anos de sala de aula. O <strong>Portal</strong> dá a estrutura com repetição espaçada.
+        <div fade-in-200ms="" class="inner-container_center max-w-55ch">
+          <div class="display-subtitle" style="color: #58f27f;">O Ecossistema Completo</div>
+          <h2 class="display-6 mg-bottom-large">As 3 peças que garantem que você não vai desistir</h2>
+          <p class="paragraph-small" style="color: #a4b3bf; margin-top: -16px; margin-bottom: 32px;">
+            A maioria dos alunos para no meio do caminho porque estuda sozinho com um app impessoal ou faz aulas tradicionais sem prática diária. Na LexiQuest você tem o tripé perfeito.
+          </p>
+        </div>
+
+        <div class="w-layout-grid grid-3 spacing-large">
+          <div fade-in-200ms="" class="plans_card is-popular" style="border: 1px solid var(--_globals---colors--color-600); border-radius: 8px; background: var(--_globals---colors--color-500); padding: 32px;">
+            <div style="font-family: var(--font-mono); font-size: 12px; color: #58f27f; margin-bottom: 8px;">PEÇA 1 · DIÁRIA</div>
+            <h3 style="font-size: 22px; color: #ffffff; margin-bottom: 12px;">AIDA Companion</h3>
+            <p style="font-size: 14px; color: #a4b3bf; line-height: 1.6;">
+              IA conversacional com voz ultrarrealista. Você treina falar 15 minutos por dia direto no celular ou computador. Ela não julga, tem paciência infinita e aplica recasting inteligente.
             </p>
+          </div>
 
-            <div style="margin-top: 20px; display: flex; flex-direction: column; gap: 14px;">
-              <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); padding: 14px 18px; border-radius: 6px;">
-                <div style="font-family: var(--font-mono); font-size: 12px; color: #58f27f;">01 · AIDA COMPANION</div>
-                <div style="font-size: 14px; color: #ffffff; margin-top: 4px;">Disponível 24/7 no seu bolso para você errar sem vergonha e automatizar chunks.</div>
-              </div>
-              <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); padding: 14px 18px; border-radius: 6px;">
-                <div style="font-family: var(--font-mono); font-size: 12px; color: #58f27f;">02 · 3 SESSÕES COM O GABE</div>
-                <div style="font-size: 14px; color: #ffffff; margin-top: 4px;">Duas de 15 min e uma de 30 min por semana para calibrar sua fala ao vivo.</div>
-              </div>
-              <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); padding: 14px 18px; border-radius: 6px;">
-                <div style="font-family: var(--font-mono); font-size: 12px; color: #58f27f;">03 · PORTAL GAMIFICADO</div>
-                <div style="font-family: var(--font-mono); font-size: 12px; color: #ffffff; margin-top: 4px;">Trilha de missões curtas que cabem em 15 minutos por dia na sua rotina normal.</div>
-              </div>
-            </div>
+          <div fade-in-300ms="" class="plans_card is-popular" style="border: 1px solid #58f27f; border-radius: 8px; background: var(--_globals---colors--color-500); padding: 32px; box-shadow: 0 0 30px rgba(88,242,127,0.15);">
+            <div style="font-family: var(--font-mono); font-size: 12px; color: #58f27f; margin-bottom: 8px;">PEÇA 2 · SEMANAL</div>
+            <h3 style="font-size: 22px; color: #ffffff; margin-bottom: 12px;">3x / Semana com Gabe</h3>
+            <p style="font-size: 14px; color: #a4b3bf; line-height: 1.6;">
+              Encontros ao vivo pelo Google Meet em grupos pequenos. Você coloca em prática com humanos o que treinou com a IA. O Gabe ajusta sua pronúncia, quebra vícios e destrói o medo.
+            </p>
+          </div>
 
-            <div class="button-row" style="margin-top: 24px;">
-              <a href="#semana" class="button is-secondary w-inline-block" style="text-decoration: none;">
-                <div class="button_text">Ver como é a rotina semanal</div>
-                <div class="button_circle is-secondary"></div>
-              </a>
-            </div>
+          <div fade-in-400ms="" class="plans_card is-popular" style="border: 1px solid var(--_globals---colors--color-600); border-radius: 8px; background: var(--_globals---colors--color-500); padding: 32px;">
+            <div style="font-family: var(--font-mono); font-size: 12px; color: #58f27f; margin-bottom: 8px;">PEÇA 3 · CONTÍNUA</div>
+            <h3 style="font-size: 22px; color: #ffffff; margin-bottom: 12px;">Arena Moodle LMS</h3>
+            <p style="font-size: 14px; color: #a4b3bf; line-height: 1.6;">
+              Trilha gamificada estruturada em 4 Portais. Áudios gravados, transcrições, decks Anki com repetição espaçada (SRS), métricas de progresso e as temidas Boss Raids de cada nível.
+            </p>
           </div>
         </div>
-      </div>
-
-      <div fade-in-200ms="" class="integration_section-image-wrapper" style="text-align: center; margin-top: 40px;">
-        <img src="/synthetic/images/dia2_cafeteria.jpg" alt="AIDA Companion em Cenas Reais" class="integration_section-image" style="border-radius: 12px; border: 1px solid var(--_globals---colors--color-600); max-width: 90%; box-shadow: 0 20px 50px rgba(0,0,0,0.5);">
       </div>
     </section>
 
     <!-- 7. CONHEÇA A AIDA COMPANION -->
-    <section id="aida" class="section spacing-top-0">
+    <section class="section">
       <div class="w-layout-blockcontainer container w-container">
-        <div fade-in-200ms="" class="inner-container_center">
-          <div class="display-subtitle" style="color: #58f27f;">Prática Sem Plateia</div>
-          <h2 class="display-6 mg-bottom-large">Conheça a AIDA: conversa todo dia, no seu nível, sem plateia</h2>
-          <p class="paragraph-small" style="color: #a4b3bf; margin-top: -16px; margin-bottom: 32px; max-width: 60ch;">
-            A AIDA fala por meio das personas dos Guardiões. É sempre a mesma memória acumulada sobre você, seus interesses e onde você costuma hesitar.
-          </p>
-        </div>
-
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-bottom: 48px;">
-          <div style="background: rgba(88, 242, 127, 0.03); border: 1px solid rgba(88, 242, 127, 0.2); border-radius: 8px; padding: 28px;">
-            <div style="font-family: var(--font-mono); font-size: 13px; font-weight: 700; color: #58f27f; margin-bottom: 14px;">O QUE A AIDA FAZ</div>
-            <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px; font-size: 14px; color: #e5e9ec;">
-              <li>&check; Conversa em ritmo natural no seu nível exato (A1 ao B2)</li>
-              <li>&check; Modela a forma correta organicamente através de recasting</li>
-              <li>&check; Lembra do que você dominou nas sessões anteriores</li>
-              <li>&check; Disponível 24 horas por dia no seu celular para treinar no trajeto</li>
-              <li>&check; Transmite os pontos de atenção para o dossiê do Gabe</li>
-            </ul>
+        <div class="w-layout-grid grid-2 spacing-2xlarge" style="align-items: center;">
+          <div fade-in-200ms="">
+            <div class="display-subtitle" style="color: #58f27f;">Tecnologia com Alma Humana</div>
+            <h2 class="display-6">Conheça a AIDA: sua parceira de fala que nunca dorme</h2>
+            <p class="paragraph-small mg-top-xsmall" style="color: #a4b3bf; line-height: 1.6;">
+              AIDA (Artificial Intelligence Dialogue Assistant) é o motor de voz da LexiQuest. Com latência quase humana e modulação de voz emocional, ela assume as quatro personas dos Guardiões da trilha.
+            </p>
+            <div style="margin-top: 24px; display: flex; flex-direction: column; gap: 14px;">
+              <div style="display: flex; gap: 12px; align-items: center;">
+                <div style="width: 8px; height: 8px; border-radius: 50%; background: #58f27f;"></div>
+                <div style="color: #ffffff; font-size: 15px;">Zero vergonha: fale quantas vezes precisar sem medo do ridículo</div>
+              </div>
+              <div style="display: flex; gap: 12px; align-items: center;">
+                <div style="width: 8px; height: 8px; border-radius: 50%; background: #58f27f;"></div>
+                <div style="color: #ffffff; font-size: 15px;">Recasting invisível: ela repete o correto sem interromper o fluxo do seu raciocínio</div>
+              </div>
+              <div style="display: flex; gap: 12px; align-items: center;">
+                <div style="width: 8px; height: 8px; border-radius: 50%; background: #58f27f;"></div>
+                <div style="color: #ffffff; font-size: 15px;">Sotaques globais: treine com personas americanas, britânicas e internacionais</div>
+              </div>
+            </div>
           </div>
 
-          <div style="background: rgba(255, 60, 60, 0.03); border: 1px solid rgba(255, 60, 60, 0.2); border-radius: 8px; padding: 28px;">
-            <div style="font-family: var(--font-mono); font-size: 13px; font-weight: 700; color: #ff6b6b; margin-bottom: 14px;">O QUE A AIDA NUNCA FAZ</div>
-            <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px; font-size: 14px; color: #a4b3bf;">
-              <li>&cross; Não te dá notas punitivas nem pontuações que geram vergonha</li>
-              <li>&cross; Não interrompe a sua linha de raciocínio para corrigir gramática</li>
-              <li>&cross; Não te deixa no vácuo esperando correção que nunca vem</li>
-              <li>&cross; Não substitui o julgamento humano e a segurança do Gabe</li>
-            </ul>
+          <div fade-in-300ms="" style="border-radius: 12px; overflow: hidden; border: 1px solid var(--_globals---colors--color-600); box-shadow: 0 20px 50px rgba(0,0,0,0.5);">
+            <img src="/synthetic/images/cap3_reuniao.jpg" alt="AIDA Companion em Ação" style="width: 100%; height: auto; display: block;">
           </div>
         </div>
       </div>
@@ -796,6 +1096,67 @@
           <p class="paragraph-small" style="color: #a4b3bf; margin-top: -16px; margin-bottom: 32px; max-width: 65ch;">
             Não inventamos nada do zero. O método da LexiQuest foi construído sobre décadas de pesquisas em aquisição de segunda língua (SLA) e neurociência cognitiva da fala.
           </p>
+        </div>
+
+        <!-- VISUAL SPEC COMPONENT 5: EBBINGHAUS FORGETTING CURVE VS ACTIVE RECALL -->
+        <div fade-in-200ms="" style="margin-bottom: 40px; background: rgba(15, 19, 21, 0.85); border: 1px solid var(--_globals---colors--color-600); border-radius: 12px; padding: 28px; box-shadow: 0 16px 40px rgba(0,0,0,0.4);">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; flex-wrap: wrap; gap: 12px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 14px;">
+            <div>
+              <div style="font-family: var(--font-mono); font-size: 11px; color: #58f27f; letter-spacing: 0.08em; text-transform: uppercase;">Experimento Neurocognitivo · Retenção Mnemônica</div>
+              <div style="font-size: 17px; font-weight: 600; color: #ffffff; margin-top: 4px;">Curva de Esquecimento (Ebbinghaus) vs. Prática Ativa LexiQuest</div>
+            </div>
+            <div style="display: flex; gap: 16px; font-family: var(--font-mono); font-size: 11px;">
+              <span style="color: #f87171; display: flex; align-items: center; gap: 6px;">
+                <span style="width: 12px; height: 2px; background: #ef4444; display: inline-block;"></span> Sem Repetição Ativa: 18% Retenção
+              </span>
+              <span style="color: #58f27f; display: flex; align-items: center; gap: 6px;">
+                <span style="width: 12px; height: 2px; background: #58f27f; display: inline-block;"></span> LexiQuest SRS + Fala: 92% Retenção
+              </span>
+            </div>
+          </div>
+
+          <!-- SVG Chart -->
+          <div style="width: 100%; overflow-x: auto;">
+            <svg viewBox="0 0 760 220" style="width: 100%; min-width: 650px; height: auto; overflow: visible;">
+              <!-- Grid Lines -->
+              <line x1="60" y1="20" x2="720" y2="20" stroke="rgba(255,255,255,0.06)" stroke-dasharray="4 4" />
+              <line x1="60" y1="70" x2="720" y2="70" stroke="rgba(255,255,255,0.06)" stroke-dasharray="4 4" />
+              <line x1="60" y1="120" x2="720" y2="120" stroke="rgba(255,255,255,0.06)" stroke-dasharray="4 4" />
+              <line x1="60" y1="170" x2="720" y2="170" stroke="rgba(255,255,255,0.06)" stroke-dasharray="4 4" />
+              
+              <!-- Axes -->
+              <line x1="60" y1="20" x2="60" y2="180" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" />
+              <line x1="60" y1="180" x2="720" y2="180" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" />
+
+              <!-- Y-Axis Labels -->
+              <text x="45" y="25" text-anchor="end" fill="#7f8a93" font-family="var(--font-mono)" font-size="10">100%</text>
+              <text x="45" y="75" text-anchor="end" fill="#7f8a93" font-family="var(--font-mono)" font-size="10">75%</text>
+              <text x="45" y="125" text-anchor="end" fill="#7f8a93" font-family="var(--font-mono)" font-size="10">50%</text>
+              <text x="45" y="175" text-anchor="end" fill="#7f8a93" font-family="var(--font-mono)" font-size="10">25%</text>
+
+              <!-- X-Axis Labels -->
+              <text x="60" y="200" text-anchor="middle" fill="#7f8a93" font-family="var(--font-mono)" font-size="10">Dia 0</text>
+              <text x="180" y="200" text-anchor="middle" fill="#7f8a93" font-family="var(--font-mono)" font-size="10">Dia 1</text>
+              <text x="320" y="200" text-anchor="middle" fill="#7f8a93" font-family="var(--font-mono)" font-size="10">Dia 3 (IA)</text>
+              <text x="480" y="200" text-anchor="middle" fill="#7f8a93" font-family="var(--font-mono)" font-size="10">Dia 7 (Gabe)</text>
+              <text x="660" y="200" text-anchor="middle" fill="#7f8a93" font-family="var(--font-mono)" font-size="10">Dia 21 (Boss Raid)</text>
+
+              <!-- Red Traditional Forgetting Curve (Steep drop) -->
+              <path d="M 60 20 Q 120 150, 180 162 T 320 170 T 480 172 T 700 174" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-dasharray="6 4" opacity="0.85" />
+
+              <!-- Green LexiQuest Rebound Curve (SRS Sawtooth) -->
+              <path d="M 60 20 Q 100 80, 180 90 L 180 25 Q 240 60, 320 65 L 320 28 Q 400 48, 480 50 L 480 30 Q 560 38, 660 40 L 700 42" fill="none" stroke="#58f27f" stroke-width="3" />
+
+              <!-- Key Data Rebound Points -->
+              <circle cx="180" cy="25" r="5" fill="#0b0d0e" stroke="#58f27f" stroke-width="2" class="ebbinghaus-point" />
+              <circle cx="320" cy="28" r="5" fill="#0b0d0e" stroke="#58f27f" stroke-width="2" class="ebbinghaus-point" />
+              <circle cx="480" cy="30" r="5" fill="#0b0d0e" stroke="#58f27f" stroke-width="2" class="ebbinghaus-point" />
+              <circle cx="660" cy="40" r="6" fill="#58f27f" stroke="#ffffff" stroke-width="2" class="ebbinghaus-point" />
+
+              <!-- Tooltip text over Boss Raid final point -->
+              <text x="660" y="22" text-anchor="middle" fill="#58f27f" font-family="var(--font-mono)" font-size="10" font-weight="700">92% Retenção Longo Prazo</text>
+            </svg>
+          </div>
         </div>
       </div>
 
@@ -852,18 +1213,18 @@
               <div class="story_card-top">
                 <div style="font-family: var(--font-mono); font-size: 11px; color: #58f27f; margin-bottom: 8px;">INTERACTION & RECASTING · UNIV. OF HAWAII</div>
                 <p class="story_card-summary" style="font-size: 14px; color: #e5e9ec; line-height: 1.55;">
-                  "Interrupções punitivas causam paralisia cognitiva. O *recasting* (reformulação natural imediata feita pelo interlocutor sem parar o fluxo) fixa a gramática intuitiva de forma 3.8x mais eficaz."
+                  "Interrupções punitivas aumentam a insegurança e o silêncio. A correção implícita (*recasting*) durante o diálogo em tempo real é a intervenção de maior eficácia comprovada para fluência."
                 </p>
                 <div class="story_card-avatar-container" style="margin-top: 16px; display: flex; align-items: center; gap: 12px;">
                   <div>
-                    <div class="story_card-avatar-name" style="font-weight: 600; color: #ffffff;">Dr. Michael H. Long</div>
-                    <div class="story_card-avatar-job" style="font-size: 12px; color: #7f8a93;">University of Hawaii at Manoa (1996)</div>
+                    <div class="story_card-avatar-name" style="font-weight: 600; color: #ffffff;">Dr. Michael Long</div>
+                    <div class="story_card-avatar-job" style="font-size: 12px; color: #7f8a93;">University of Maryland / Hawaii (1996)</div>
                   </div>
                 </div>
               </div>
               <div class="story_card-bottom" style="margin-top: 16px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.06); display: flex; justify-content: space-between;">
-                <div class="story_card-stat"><div class="story_card-stat-number" style="color: #58f27f; font-weight: 700;">3.8&times;</div><div class="story_card-stat-label" style="font-size: 11px; color: #7f8a93;">Mais Retenção Sem Travar</div></div>
-                <div class="story_card-stat"><div class="story_card-stat-number" style="color: #58f27f; font-weight: 700;">100%</div><div class="story_card-stat-label" style="font-size: 11px; color: #7f8a93;">Continuidade do Diálogo</div></div>
+                <div class="story_card-stat"><div class="story_card-stat-number" style="color: #58f27f; font-weight: 700;">Recasting</div><div class="story_card-stat-label" style="font-size: 11px; color: #7f8a93;">Correção Sem Punição</div></div>
+                <div class="story_card-stat"><div class="story_card-stat-number" style="color: #58f27f; font-weight: 700;">3.4&times;</div><div class="story_card-stat-label" style="font-size: 11px; color: #7f8a93;">Mais Engajamento Oral</div></div>
               </div>
             </div>
           </div>
@@ -872,9 +1233,9 @@
           <div class="stories_marquee-item" style="min-width: 400px;">
             <div class="story_card" style="border: 1px solid var(--_globals---colors--color-600); border-radius: 8px; background: var(--_globals---colors--color-500); padding: 24px;">
               <div class="story_card-top">
-                <div style="font-family: var(--font-mono); font-size: 11px; color: #58f27f; margin-bottom: 8px;">CHUNKING & FORMULAIC SLA · MICHIGAN</div>
+                <div style="font-family: var(--font-mono); font-size: 11px; color: #58f27f; margin-bottom: 8px;">USAGE-BASED ACQUISITION · MICHIGAN</div>
                 <p class="story_card-summary" style="font-size: 14px; color: #e5e9ec; line-height: 1.55;">
-                  "A mente não monta orações a partir de regras abstratas na hora de falar. A fluência reside na recuperação motora de blocos inteiros (*chunks* lexicais pré-fabricados)."
+                  "A mente humana processa linguagem através de blocos prontos de alta frequência (*formulaic chunks*), e não combinando regras abstratas em tempo real na hora da conversa."
                 </p>
                 <div class="story_card-avatar-container" style="margin-top: 16px; display: flex; align-items: center; gap: 12px;">
                   <div>
@@ -884,30 +1245,30 @@
                 </div>
               </div>
               <div class="story_card-bottom" style="margin-top: 16px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.06); display: flex; justify-content: space-between;">
-                <div class="story_card-stat"><div class="story_card-stat-number" style="color: #58f27f; font-weight: 700;">80%</div><div class="story_card-stat-label" style="font-size: 11px; color: #7f8a93;">Da Fala é Baseada em Chunks</div></div>
-                <div class="story_card-stat"><div class="story_card-stat-number" style="color: #58f27f; font-weight: 700;">0ms</div><div class="story_card-stat-label" style="font-size: 11px; color: #7f8a93;">Tradução Palavra a Palavra</div></div>
+                <div class="story_card-stat"><div class="story_card-stat-number" style="color: #58f27f; font-weight: 700;">Chunks</div><div class="story_card-stat-label" style="font-size: 11px; color: #7f8a93;">Blocos Lexicais Prontos</div></div>
+                <div class="story_card-stat"><div class="story_card-stat-number" style="color: #58f27f; font-weight: 700;"><0.9s</div><div class="story_card-stat-label" style="font-size: 11px; color: #7f8a93;">Velocidade de Acesso</div></div>
               </div>
             </div>
           </div>
 
-          <!-- Study 5: Ebbinghaus & SRS -->
+          <!-- Study 5: Hermann Ebbinghaus & Leitner (SRS) -->
           <div class="stories_marquee-item" style="min-width: 400px;">
             <div class="story_card" style="border: 1px solid var(--_globals---colors--color-600); border-radius: 8px; background: var(--_globals---colors--color-500); padding: 24px;">
               <div class="story_card-top">
-                <div style="font-family: var(--font-mono); font-size: 11px; color: #58f27f; margin-bottom: 8px;">CURVA DO ESQUECIMENTO & REPETIÇÃO ESPAÇADA</div>
+                <div style="font-family: var(--font-mono); font-size: 11px; color: #58f27f; margin-bottom: 8px;">SPACED REPETITION SYSTEM (SRS)</div>
                 <p class="story_card-summary" style="font-size: 14px; color: #e5e9ec; line-height: 1.55;">
-                  "A prática diária fracionada de 15 minutos em intervalos crescentes fixa conexões neurais no córtex motor até 85% melhor do que maratonas exaustivas de fim de semana."
+                  "Sem repetição ativa espaçada, 80% do vocabulário aprendido desaparece em 48 horas. Revisões em intervalos matemáticos crescentes consolidam o conteúdo na memória de longo prazo."
                 </p>
                 <div class="story_card-avatar-container" style="margin-top: 16px; display: flex; align-items: center; gap: 12px;">
                   <div>
-                    <div class="story_card-avatar-name" style="font-weight: 600; color: #ffffff;">Hermann Ebbinghaus & Leitner</div>
-                    <div class="story_card-avatar-job" style="font-size: 12px; color: #7f8a93;">Psicologia Cognitiva & SRS</div>
+                    <div class="story_card-avatar-name" style="font-weight: 600; color: #ffffff;">Hermann Ebbinghaus & Paul Pimsleur</div>
+                    <div class="story_card-avatar-job" style="font-size: 12px; color: #7f8a93;">Curva do Esquecimento e Algoritmos SRS</div>
                   </div>
                 </div>
               </div>
               <div class="story_card-bottom" style="margin-top: 16px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.06); display: flex; justify-content: space-between;">
-                <div class="story_card-stat"><div class="story_card-stat-number" style="color: #58f27f; font-weight: 700;">+85%</div><div class="story_card-stat-label" style="font-size: 11px; color: #7f8a93;">Retenção de Longo Prazo</div></div>
-                <div class="story_card-stat"><div class="story_card-stat-number" style="color: #58f27f; font-weight: 700;">15 min</div><div class="story_card-stat-label" style="font-size: 11px; color: #7f8a93;">Prática Diária Sustentável</div></div>
+                <div class="story_card-stat"><div class="story_card-stat-number" style="color: #58f27f; font-weight: 700;">80%</div><div class="story_card-stat-label" style="font-size: 11px; color: #7f8a93;">Perda em 48h sem SRS</div></div>
+                <div class="story_card-stat"><div class="story_card-stat-number" style="color: #58f27f; font-weight: 700;">92%</div><div class="story_card-stat-label" style="font-size: 11px; color: #7f8a93;">Retenção com LexiQuest</div></div>
               </div>
             </div>
           </div>
@@ -916,21 +1277,21 @@
     </section>
 
     <!-- 9. MID-PAGE CTA BANNER -->
-    <section fade-in-200ms="" class="section_cta">
+    <section class="section is-bg-secondary" style="border-top: 1px solid var(--_globals---colors--color-600); border-bottom: 1px solid var(--_globals---colors--color-600);">
       <div class="w-layout-blockcontainer container w-container">
-        <div class="inner-container_center max-w-57ch">
-          <div fade-in-200ms="" class="cta_badge">
-            <div class="cta_badge-dot"></div>
-            <div class="cta_badge-text-wrapper">TURMA ALPHA &middot; <span>15 VAGAS EXCLUSIVAS</span></div>
-          </div>
-          <h2 fade-in-300ms="" class="display-6 mg-top-small">Em até 8 minutos você sabe exatamente onde começar.</h2>
-          <p fade-in-400ms="" class="mg-top-xsmall mg-bottom-default" style="color: #a4b3bf; line-height: 1.6;">
-            O quiz diagnóstico identifica o seu nível real de fala e aponta o seu Portal ideal. Depois, você conversa diretamente com o Gabe pelo WhatsApp. Nada é cobrado antes.
+        <div fade-in-200ms="" class="cta_wrapper" style="text-align: center; max-width: 65ch; margin: 0 auto; padding: 40px 20px;">
+          <div class="display-subtitle" style="color: #58f27f;">Piloto Exclusivo</div>
+          <h2 class="display-6" style="margin-top: 8px; margin-bottom: 16px;">São apenas 15 vagas na Turma Alpha.</h2>
+          <p class="paragraph-small" style="color: #a4b3bf; margin-bottom: 32px; font-size: 16px; line-height: 1.6;">
+            Para garantir que o Gabe acompanhe de perto cada aluno nas 3 sessões ao vivo por semana, limitamos a turma rigidamente a 15 pessoas.
           </p>
-          <div fade-in-500ms="" class="button-row">
-            <a href="#diagnostico" class="button is-primary-dark w-inline-block" style="text-decoration: none;">
-              <div class="button_text">Fazer Quiz Diagnóstico Gratuito</div>
-              <div class="button_circle is-primary-dark" style="background-color: #58f27f;"></div>
+          <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+            <a href="#quiz" class="button is-primary" style="text-decoration: none; padding: 18px 36px;">
+              <div class="button_text">Descobrir Meu Nível no Quiz (3 min) &rarr;</div>
+              <div class="button_circle" style="background-color: #58f27f;"></div>
+            </a>
+            <a href="#portal0" class="button is-secondary" style="text-decoration: none; padding: 18px 32px;">
+              <div class="button_text">Testar no Portal 0 (Sem Cadastro)</div>
             </a>
           </div>
         </div>
@@ -940,133 +1301,101 @@
     <!-- 10. SUA SEMANA & A OFERTA (PRICING SECTION) -->
     <section id="oferta" class="section">
       <div class="w-layout-blockcontainer container w-container">
-        <div fade-in-200ms="" class="inner-container_center">
-          <div class="display-subtitle" style="color: #58f27f;">Rotina & Investimento</div>
-          <h2 class="display-6 mg-bottom-xmall">15 minutos por dia e 1 hora por semana com o Gabe</h2>
-          <p class="paragraph-small mg-bottom-medium" style="color: #a4b3bf;">
-            Uma rotina curta, constante e sustentável. Sem maratona pesada de sábado que você abandona na terceira semana.
+        <div fade-in-200ms="" class="inner-container_center max-w-55ch">
+          <div class="display-subtitle" style="color: #58f27f;">Ritmo Semanal & Investimento</div>
+          <h2 class="display-6 mg-bottom-large">Como funciona sua semana na Turma Alpha</h2>
+          <p class="paragraph-small" style="color: #a4b3bf; margin-top: -16px; margin-bottom: 40px;">
+            Uma rotina leve desenhada para quem trabalha e não tem horas para gastar com deslocamento ou tarefas maçantes.
           </p>
         </div>
 
-        <div class="w-layout-grid plans_layout" style="align-items: stretch;">
-          <!-- Card 1: Sua Rotina -->
-          <div fade-in-200ms="" class="plans_card">
+        <!-- Weekly Schedule Grid -->
+        <div class="w-layout-grid grid-3 spacing-large" style="margin-bottom: 50px;">
+          <div fade-in-200ms="" class="story_card" style="border: 1px solid var(--_globals---colors--color-600); border-radius: 8px; background: var(--_globals---colors--color-500); padding: 24px;">
+            <div style="font-family: var(--font-mono); font-size: 12px; color: #58f27f; margin-bottom: 8px;">DE SEGUNDA A SEXTA · 15 MIN</div>
+            <h3 style="font-size: 18px; color: #ffffff; margin-bottom: 10px;">Prática de Voz com IA (AIDA)</h3>
+            <p style="font-size: 14px; color: #a4b3bf; line-height: 1.55;">
+              Missões curtas de fala no seu ritmo. Você coloca o fone no carro, no banho ou na pausa do almoço e treina diálogos reais com voz.
+            </p>
+          </div>
+
+          <div fade-in-300ms="" class="story_card" style="border: 1px solid var(--_globals---colors--color-600); border-radius: 8px; background: var(--_globals---colors--color-500); padding: 24px;">
+            <div style="font-family: var(--font-mono); font-size: 12px; color: #58f27f; margin-bottom: 8px;">3X POR SEMANA · 60 MIN</div>
+            <h3 style="font-size: 18px; color: #ffffff; margin-bottom: 10px;">Sessões ao Vivo com Gabe</h3>
+            <p style="font-size: 14px; color: #a4b3bf; line-height: 1.55;">
+              Encontros práticos via Google Meet com turmas de no máximo 15 pessoas. Foco 100% em speaking, sem slides sonolentos ou teoria chata.
+            </p>
+          </div>
+
+          <div fade-in-400ms="" class="story_card" style="border: 1px solid var(--_globals---colors--color-600); border-radius: 8px; background: var(--_globals---colors--color-500); padding: 24px;">
+            <div style="font-family: var(--font-mono); font-size: 12px; color: #58f27f; margin-bottom: 8px;">FIM DE SEMANA · ASSÍNCRONO</div>
+            <h3 style="font-size: 18px; color: #ffffff; margin-bottom: 10px;">Arena Moodle & Boss Raid</h3>
+            <p style="font-size: 14px; color: #a4b3bf; line-height: 1.55;">
+              Revisão espaçada (SRS), áudios gravados e o desafio final do Portal para testar sua evolução antes de desbloquear o próximo nível.
+            </p>
+          </div>
+        </div>
+
+        <!-- The Alpha Offer Bento Box -->
+        <div fade-in-200ms="" class="plans_card" style="border: 2px solid #58f27f; border-radius: 12px; background: #0f1315; padding: 48px 36px; max-width: 780px; margin: 0 auto; box-shadow: 0 0 50px rgba(88,242,127,0.12);">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 16px; margin-bottom: 24px;">
             <div>
-              <div class="display-subtitle text-color-accent" style="color: #58f27f;">Rotina Semanal</div>
-              <div class="text-neutral-500 display-2" style="color: #ffffff;">Como funciona</div>
-              <h3 class="display-7" style="font-size: 28px; margin-top: 8px;">15 min/dia</h3>
-              <p class="paragraph-small mg-top-small mg-bottom-medium" style="color: #a4b3bf;">
-                Projetado para caber na vida de adultos que trabalham e têm dias cheios.
-              </p>
-              <div class="plans_card-menu">
-                <div class="plans_card-menu-item">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 12 12" fill="none" class="plans_card-menu-icon"><path d="M4.93977 7.58977L9.53977 2.98977L10.2398 3.69977L4.93977 9.00977L1.75977 5.81977L2.45977 5.11977L4.93977 7.58977Z" fill="currentColor"></path></svg>
-                  <div>7 práticas curtas com a AIDA no celular</div>
-                </div>
-                <div class="plans_card-menu-item">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 12 12" fill="none" class="plans_card-menu-icon"><path d="M4.93977 7.58977L9.53977 2.98977L10.2398 3.69977L4.93977 9.00977L1.75977 5.81977L2.45977 5.11977L4.93977 7.58977Z" fill="currentColor"></path></svg>
-                  <div>3 sessões ao vivo com o Gabe (15, 15 e 30 min)</div>
-                </div>
-                <div class="plans_card-menu-item">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 12 12" fill="none" class="plans_card-menu-icon"><path d="M4.93977 7.58977L9.53977 2.98977L10.2398 3.69977L4.93977 9.00977L1.75977 5.81977L2.45977 5.11977L4.93977 7.58977Z" fill="currentColor"></path></svg>
-                  <div>Horários individuais fixados previamente</div>
-                </div>
-                <div class="plans_card-menu-item">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 12 12" fill="none" class="plans_card-menu-icon"><path d="M4.93977 7.58977L9.53977 2.98977L10.2398 3.69977L4.93977 9.00977L1.75977 5.81977L2.45977 5.11977L4.93977 7.58977Z" fill="currentColor"></path></svg>
-                  <div>Dossiê de erros e acertos atualizado</div>
-                </div>
+              <div style="display: inline-block; font-family: var(--font-mono); font-size: 11px; padding: 4px 10px; border-radius: 4px; background: rgba(88,242,127,0.15); color: #58f27f; font-weight: 700; margin-bottom: 8px;">
+                CONDIÇÃO ESPECIAL DA TURMA ALPHA
               </div>
+              <h3 style="font-size: 32px; color: #ffffff; font-weight: 700;">Acesso Completo LexiQuest</h3>
+              <p style="font-size: 15px; color: #a4b3bf; margin-top: 4px;">Plano Trimestral · Menos que uma pizza por semana</p>
             </div>
-            <div class="plans_card-button">
-              <a href="#diagnostico" class="button is-secondary w-inline-block" style="text-decoration: none;">
-                <div class="button_text">Descobrir meu Ponto de Partida</div>
-                <div class="button_circle is-secondary"></div>
-              </a>
+            
+            <div style="text-align: right;">
+              <div style="font-size: 14px; color: #7f8a93; text-decoration: line-through;">De R$ 397/mês</div>
+              <div style="font-size: 40px; font-weight: 800; color: #58f27f; font-family: var(--font-mono); line-height: 1;">R$ 197<span style="font-size: 16px; color: #a4b3bf; font-weight: 400;">/mês</span></div>
+              <div style="font-size: 12px; color: #7f8a93; font-family: var(--font-mono); margin-top: 4px;">Cobrança trimestral (3x R$ 197)</div>
             </div>
           </div>
 
-          <!-- Card 2: Turma Alpha (Popular) -->
-          <div fade-in-300ms="" class="plans_card is-popular" style="border-color: #58f27f; box-shadow: 0 0 40px rgba(88, 242, 127, 0.15);">
-            <div>
-              <div class="display-subtitle text-color-accent" style="color: #58f27f;">Turma Alpha · Lançamento</div>
-              <div class="text-neutral-500 display-2" style="color: #ffffff;">Plano Piloto</div>
-              <h3 class="display-6" style="color: #ffffff; margin-top: 8px;">
-                R$ <span brix-counter-start="0" brix-counter="">197</span><span style="font-size: 16px; color: #a4b3bf; font-weight: normal;"> / mês no Pix</span>
-              </h3>
-              <p class="paragraph-small mg-top-small mg-bottom-medium" style="color: #a4b3bf;">
-                Valor congelado para os 15 primeiros alunos da turma fundadora.
-              </p>
-              
-              <div class="plans_card-menu">
-                <div class="plans_card-menu-item">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 12 12" fill="none" class="plans_card-menu-icon" style="color: #58f27f;"><path d="M4.93977 7.58977L9.53977 2.98977L10.2398 3.69977L4.93977 9.00977L1.75977 5.81977L2.45977 5.11977L4.93977 7.58977Z" fill="currentColor"></path></svg>
-                  <div><strong>Portais 1 a 4 completos</strong> (A1 ao B2)</div>
-                </div>
-                <div class="plans_card-menu-item">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 12 12" fill="none" class="plans_card-menu-icon" style="color: #58f27f;"><path d="M4.93977 7.58977L9.53977 2.98977L10.2398 3.69977L4.93977 9.00977L1.75977 5.81977L2.45977 5.11977L4.93977 7.58977Z" fill="currentColor"></path></svg>
-                  <div><strong>AIDA Companion 24/7</strong> com 4 personas</div>
-                </div>
-                <div class="plans_card-menu-item">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 12 12" fill="none" class="plans_card-menu-icon" style="color: #58f27f;"><path d="M4.93977 7.58977L9.53977 2.98977L10.2398 3.69977L4.93977 9.00977L1.75977 5.81977L2.45977 5.11977L4.93977 7.58977Z" fill="currentColor"></path></svg>
-                  <div><strong>3 sessões por semana com Gabe</strong></div>
-                </div>
-                <div class="plans_card-menu-item">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 12 12" fill="none" class="plans_card-menu-icon" style="color: #58f27f;"><path d="M4.93977 7.58977L9.53977 2.98977L10.2398 3.69977L4.93977 9.00977L1.75977 5.81977L2.45977 5.11977L4.93977 7.58977Z" fill="currentColor"></path></svg>
-                  <div><strong>SPARK Score:</strong> baseline e reavaliação aos 30d</div>
-                </div>
-                <div class="plans_card-menu-item">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 12 12" fill="none" class="plans_card-menu-icon" style="color: #58f27f;"><path d="M4.93977 7.58977L9.53977 2.98977L10.2398 3.69977L4.93977 9.00977L1.75977 5.81977L2.45977 5.11977L4.93977 7.58977Z" fill="currentColor"></path></svg>
-                  <div><strong>Garantia Pix de 30 Dias</strong></div>
-                </div>
+          <div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 24px; margin-bottom: 32px;">
+            <div style="font-family: var(--font-mono); font-size: 12px; color: #58f27f; margin-bottom: 14px;">TUDO O QUE ESTÁ INCLUSO:</div>
+            <div class="w-layout-grid grid-2" style="gap: 12px;">
+              <div style="display: flex; gap: 10px; font-size: 14px; color: #e5e9ec; align-items: center;">
+                <span style="color: #58f27f; font-weight: 700;">✓</span> <span>Acesso ilimitado à <strong>AIDA Companion (IA)</strong> 24/7</span>
               </div>
-
-              <!-- Transparência Radical de Preço -->
-              <div style="margin-top: 20px; padding: 14px; background: rgba(88,242,127,0.05); border: 1px dashed rgba(88,242,127,0.3); border-radius: 6px; font-size: 12px; color: #a4b3bf; line-height: 1.5;">
-                <strong style="color: #58f27f;">Transparência Radical de Preço:</strong> Após cerca de 6 meses de piloto, o valor passará para R$ 297/mês para todos os alunos, com aviso prévio de pelo menos 30 dias.
+              <div style="display: flex; gap: 10px; font-size: 14px; color: #e5e9ec; align-items: center;">
+                <span style="color: #58f27f; font-weight: 700;">✓</span> <span><strong>3 sessões ao vivo semanais</strong> com Gabe</span>
               </div>
-            </div>
-
-            <div class="plans_card-button" style="margin-top: 24px;">
-              <a href="#diagnostico" class="button is-primary w-inline-block" style="text-decoration: none; width: 100%;">
-                <div class="button_text">Garantir Minha Vaga (R$ 197)</div>
-                <div class="button_circle" style="background-color: #58f27f;"></div>
-              </a>
+              <div style="display: flex; gap: 10px; font-size: 14px; color: #e5e9ec; align-items: center;">
+                <span style="color: #58f27f; font-weight: 700;">✓</span> <span>Trilha completa dos <strong>4 Portais na Arena Moodle</strong></span>
+              </div>
+              <div style="display: flex; gap: 10px; font-size: 14px; color: #e5e9ec; align-items: center;">
+                <span style="color: #58f27f; font-weight: 700;">✓</span> <span>Gravação de todas as sessões para revisão</span>
+              </div>
+              <div style="display: flex; gap: 10px; font-size: 14px; color: #e5e9ec; align-items: center;">
+                <span style="color: #58f27f; font-weight: 700;">✓</span> <span>Decks Anki com repetição espaçada (SRS)</span>
+              </div>
+              <div style="display: flex; gap: 10px; font-size: 14px; color: #e5e9ec; align-items: center;">
+                <span style="color: #58f27f; font-weight: 700;">✓</span> <span>Comunidade exclusiva no WhatsApp</span>
+              </div>
             </div>
           </div>
 
-          <!-- Card 3: Garantia & Segurança -->
-          <div fade-in-400ms="" class="plans_card">
+          <!-- Guarantee Box -->
+          <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(88,242,127,0.3); border-radius: 8px; padding: 20px; display: flex; gap: 16px; align-items: center; margin-bottom: 32px;">
+            <div style="font-size: 32px; flex-shrink: 0;">🛡️</div>
             <div>
-              <div class="display-subtitle text-color-accent" style="color: #58f27f;">Risco Zero</div>
-              <div class="text-neutral-500 display-2" style="color: #ffffff;">Garantia Pix</div>
-              <h3 class="display-7" style="font-size: 28px; margin-top: 8px;">30 Dias</h3>
-              <p class="paragraph-small mg-top-small mg-bottom-medium" style="color: #a4b3bf;">
-                Use o programa de verdade. Se não fizer sentido, devolvemos 100% da primeira mensalidade.
-              </p>
-              <div class="plans_card-menu">
-                <div class="plans_card-menu-item">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 12 12" fill="none" class="plans_card-menu-icon"><path d="M4.93977 7.58977L9.53977 2.98977L10.2398 3.69977L4.93977 9.00977L1.75977 5.81977L2.45977 5.11977L4.93977 7.58977Z" fill="currentColor"></path></svg>
-                  <div>Critério: 3 sessões feitas com o Gabe</div>
-                </div>
-                <div class="plans_card-menu-item">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 12 12" fill="none" class="plans_card-menu-icon"><path d="M4.93977 7.58977L9.53977 2.98977L10.2398 3.69977L4.93977 9.00977L1.75977 5.81977L2.45977 5.11977L4.93977 7.58977Z" fill="currentColor"></path></svg>
-                  <div>Critério: Seção 0 de onboarding concluída</div>
-                </div>
-                <div class="plans_card-menu-item">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 12 12" fill="none" class="plans_card-menu-icon"><path d="M4.93977 7.58977L9.53977 2.98977L10.2398 3.69977L4.93977 9.00977L1.75977 5.81977L2.45977 5.11977L4.93977 7.58977Z" fill="currentColor"></path></svg>
-                  <div>Critério: 2 Speaking Quests com AIDA</div>
-                </div>
-                <div class="plans_card-menu-item">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 12 12" fill="none" class="plans_card-menu-icon"><path d="M4.93977 7.58977L9.53977 2.98977L10.2398 3.69977L4.93977 9.00977L1.75977 5.81977L2.45977 5.11977L4.93977 7.58977Z" fill="currentColor"></path></svg>
-                  <div>7 dias de arrependimento (Código do Consumidor)</div>
-                </div>
+              <div style="font-weight: 700; color: #ffffff; font-size: 15px;">Garantia Blindada de 30 Dias</div>
+              <div style="font-size: 13px; color: #a4b3bf; margin-top: 2px; line-height: 1.5;">
+                Participe das sessões, fale com a AIDA todos os dias e acesse a Arena. Se em 30 dias você sentir que não destravou o início da sua fala, basta enviar uma única mensagem no WhatsApp e devolvemos 100% do seu investimento. Sem perguntas ou letras miúdas.
               </div>
             </div>
-            <div class="plans_card-button">
-              <a href="https://wa.me/5511967239791?text=Ol%C3%A1%20Gabe!%20Gostaria%20de%20tirar%20uma%20d%C3%BAvida%20sobre%20a%20Turma%20Alpha." target="_blank" rel="noopener noreferrer" class="button is-secondary w-inline-block" style="text-decoration: none;">
-                <div class="button_text">Tirar Dúvidas no WhatsApp</div>
-                <div class="button_circle is-secondary"></div>
-              </a>
+          </div>
+
+          <div style="text-align: center;">
+            <a href="#quiz" class="button is-primary" style="text-decoration: none; padding: 20px 48px; width: 100%; display: block;">
+              <div class="button_text" style="font-size: 17px; font-weight: 700;">Descobrir Meu Nível no Quiz e Garantir Minha Vaga &rarr;</div>
+              <div class="button_circle" style="background-color: #58f27f;"></div>
+            </a>
+            <div style="font-family: var(--font-mono); font-size: 12px; color: #7f8a93; margin-top: 12px;">
+              Apenas 15 vagas disponíveis · Início em 01 de Dezembro de 2026
             </div>
           </div>
         </div>
@@ -1074,54 +1403,46 @@
     </section>
 
     <!-- 11. COMO ENTRAR (3 CARDS COM IMAGENS NARRATIVAS) -->
-    <section class="section spacing-top-0">
+    <section class="section is-bg-secondary">
       <div class="w-layout-blockcontainer container w-container">
-        <div class="section_header is-bottom-aligned">
-          <div fade-in-200ms="" class="inner-container max-w-40ch">
-            <div class="display-subtitle" style="color: #58f27f;">Processo Transparente</div>
-            <h2 class="display-6">Três passos para entrar. Você só paga no terceiro.</h2>
-          </div>
+        <div fade-in-200ms="" class="inner-container_center max-w-55ch">
+          <div class="display-subtitle" style="color: #58f27f;">Passo a Passo</div>
+          <h2 class="display-6 mg-bottom-large">Como entrar na Turma Alpha em 3 passos</h2>
+          <p class="paragraph-small" style="color: #a4b3bf; margin-top: -16px; margin-bottom: 40px;">
+            Criamos uma barreira consciente para garantir que você esteja no momento certo e não gaste seu dinheiro à toa.
+          </p>
         </div>
 
-        <div class="w-layout-grid grid-3" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
-          <!-- Passo 1 -->
-          <div class="blog_featured-card" style="border: 1px solid var(--_globals---colors--color-600); border-radius: 8px; overflow: hidden; background: var(--_globals---colors--color-500);">
-            <div style="height: 180px; overflow: hidden;">
-              <img src="/synthetic/images/dia1_diagnostico.jpg" alt="Passo 1: Faça o Quiz" style="width: 100%; height: 100%; object-fit: cover;">
-            </div>
+        <div class="w-layout-grid grid-3 spacing-large">
+          <div fade-in-200ms="" class="blog_featured-card" style="border: 1px solid var(--_globals---colors--color-600); border-radius: 8px; background: var(--_globals---colors--color-500); overflow: hidden;">
+            <img src="/synthetic/images/passo1_quiz.jpg" alt="Passo 1 Quiz Diagnóstico" style="width: 100%; height: 200px; object-fit: cover;">
             <div style="padding: 24px;">
-              <div style="font-family: var(--font-mono); font-size: 12px; color: #58f27f; margin-bottom: 8px;">PASSO 1</div>
-              <h3 style="font-size: 20px; color: #ffffff; margin-bottom: 8px;">Faça o Quiz</h3>
-              <p style="font-size: 14px; color: #a4b3bf; line-height: 1.6;">
-                Em até 8 minutos você descobre o seu ponto de partida exato (Portal 1 ao 4). Sem áudio constrangedor e sem cronômetro.
+              <div style="font-family: var(--font-mono); font-size: 12px; color: #58f27f; margin-bottom: 6px;">PASSO 1 · 3 MINUTOS</div>
+              <h3 style="font-size: 18px; color: #ffffff; margin-bottom: 8px;">Faça o Quiz Diagnóstico</h3>
+              <p style="font-size: 14px; color: #a4b3bf; line-height: 1.55;">
+                Responda às 8 perguntas situacionais abaixo para mapear seu nível e saber em qual dos 4 Portais você vai começar.
               </p>
             </div>
           </div>
 
-          <!-- Passo 2 -->
-          <div class="blog_featured-card" style="border: 1px solid var(--_globals---colors--color-600); border-radius: 8px; overflow: hidden; background: var(--_globals---colors--color-500);">
-            <div style="height: 180px; overflow: hidden;">
-              <img src="/synthetic/images/cap3_preparacao.jpg" alt="Passo 2: Converse com o Gabe" style="width: 100%; height: 100%; object-fit: cover;">
-            </div>
+          <div fade-in-300ms="" class="blog_featured-card" style="border: 1px solid var(--_globals---colors--color-600); border-radius: 8px; background: var(--_globals---colors--color-500); overflow: hidden;">
+            <img src="/synthetic/images/passo2_mentoria.jpg" alt="Passo 2 Conversa com Gabe" style="width: 100%; height: 200px; object-fit: cover;">
             <div style="padding: 24px;">
-              <div style="font-family: var(--font-mono); font-size: 12px; color: #58f27f; margin-bottom: 8px;">PASSO 2</div>
-              <h3 style="font-size: 20px; color: #ffffff; margin-bottom: 8px;">Converse com o Gabe</h3>
-              <p style="font-size: 14px; color: #a4b3bf; line-height: 1.6;">
-                Pelo WhatsApp, vocês confirmam o seu Portal, alinham os três horários da semana e tiram dúvidas. Nada é cobrado nessa etapa.
+              <div style="font-family: var(--font-mono); font-size: 12px; color: #58f27f; margin-bottom: 6px;">PASSO 2 · WHATSAPP</div>
+              <h3 style="font-size: 18px; color: #ffffff; margin-bottom: 8px;">Converse com o Gabe</h3>
+              <p style="font-size: 14px; color: #a4b3bf; line-height: 1.55;">
+                Ao concluir o quiz, seu resultado gera uma mensagem direta no WhatsApp do Gabe para confirmar se a Turma Alpha é para você.
               </p>
             </div>
           </div>
 
-          <!-- Passo 3 -->
-          <div class="blog_featured-card" style="border: 1px solid var(--_globals---colors--color-600); border-radius: 8px; overflow: hidden; background: var(--_globals---colors--color-500);">
-            <div style="height: 180px; overflow: hidden;">
-              <img src="/synthetic/images/dia4_fluencia.jpg" alt="Passo 3: Pagamento e Início" style="width: 100%; height: 100%; object-fit: cover;">
-            </div>
+          <div fade-in-400ms="" class="blog_featured-card" style="border: 1px solid var(--_globals---colors--color-600); border-radius: 8px; background: var(--_globals---colors--color-500); overflow: hidden;">
+            <img src="/synthetic/images/passo3_reuniao.jpg" alt="Passo 3 Acesso à Arena" style="width: 100%; height: 200px; object-fit: cover;">
             <div style="padding: 24px;">
-              <div style="font-family: var(--font-mono); font-size: 12px; color: #58f27f; margin-bottom: 8px;">PASSO 3</div>
-              <h3 style="font-size: 20px; color: #ffffff; margin-bottom: 8px;">Pagamento e Início</h3>
-              <p style="font-size: 14px; color: #a4b3bf; line-height: 1.6;">
-                Se fizer sentido para os dois lados, você faz o Pix de R$ 197 e recebe seu acesso em até 48 horas para começar a falar.
+              <div style="font-family: var(--font-mono); font-size: 12px; color: #58f27f; margin-bottom: 6px;">PASSO 3 · ARENA LMS</div>
+              <h3 style="font-size: 18px; color: #ffffff; margin-bottom: 8px;">Acesso Imediato à Arena</h3>
+              <p style="font-size: 14px; color: #a4b3bf; line-height: 1.55;">
+                Com a vaga confirmada, você recebe acesso ao Moodle da LexiQuest, configura a AIDA e entra no grupo dos 15 pioneiros.
               </p>
             </div>
           </div>
@@ -1130,338 +1451,306 @@
     </section>
 
     <!-- 12. QUIZ DIAGNÓSTICO INTERATIVO -->
-    <section id="diagnostico" class="section is-bg-secondary" style="padding: 80px 0;">
-      <div class="w-layout-blockcontainer container w-container" style="max-width: 760px;">
-        <div fade-in-200ms="" class="inner-container_center" style="text-align: center; margin-bottom: 32px;">
-          <div class="display-subtitle" style="color: #58f27f;">Diagnóstico de Nível</div>
-          <h2 class="display-6">Descubra o seu ponto de partida na Turma Alpha</h2>
-          <p class="paragraph-small" style="color: #a4b3bf; margin-top: 8px;">
-            Responda às situações reais abaixo para identificarmos qual dos Portais destrava o seu reflexo motor.
+    <section id="quiz" class="section">
+      <div class="w-layout-blockcontainer container w-container">
+        <div fade-in-200ms="" class="inner-container_center max-w-55ch">
+          <div class="display-subtitle" style="color: #58f27f;">Diagnóstico Preciso</div>
+          <h2 class="display-6 mg-bottom-large">Descubra em qual Portal você começa</h2>
+          <p class="paragraph-small" style="color: #a4b3bf; margin-top: -16px; margin-bottom: 32px;">
+            8 perguntas práticas baseadas em situações reais. Ao final, você descobre se o seu ponto de partida é o Portal 1, 2, 3 ou 4.
           </p>
         </div>
 
-        <div id="quiz-container" class="quiz-card" style="box-shadow: 0 20px 60px rgba(0,0,0,0.4);">
-          <!-- ETAPA 1: GATE DE QUALIFICAÇÃO -->
-          <div id="quiz-gate">
-            <div style="font-family: var(--font-mono); font-size: 12px; color: #58f27f; margin-bottom: 12px;">ETAPA 1 DE 2 &middot; IDENTIFICAÇÃO</div>
-            <h3 style="font-size: 22px; color: #ffffff; margin-bottom: 16px;">Antes de começar, quem é você?</h3>
-            <p style="font-size: 14px; color: #a4b3bf; margin-bottom: 24px;">
-              Precisamos destes dados para que o Gabe possa analisar o seu resultado e validar a sua vaga na Turma Alpha.
-            </p>
+        <div fade-in-200ms="" class="inner-container_center" style="max-width: 680px; margin: 0 auto;">
+          <div class="quiz-card" id="quiz-container">
+            
+            <!-- Lead Capture Step -->
+            <div id="quiz-step-lead">
+              <div style="font-family: var(--font-mono); font-size: 12px; color: #58f27f; margin-bottom: 8px;">ETAPA 1 DE 2 · IDENTIFICAÇÃO</div>
+              <h3 style="font-size: 22px; color: #ffffff; margin-bottom: 8px;">Para onde devemos enviar seu diagnóstico completo?</h3>
+              <p style="font-size: 14px; color: #a4b3bf; margin-bottom: 24px;">
+                Preencha para liberar as 8 perguntas situacionais. Seus dados estão seguros conosco.
+              </p>
 
-            <label style="font-family: var(--font-mono); font-size: 12px; color: #e5e9ec; text-transform: uppercase;">Seu Nome Completo:</label>
-            <input type="text" id="user-name" class="quiz-input" placeholder="Ex: Gabriel Lima" required>
+              <label style="font-family: var(--font-mono); font-size: 12px; color: #a4b3bf; display: block; margin-bottom: 4px;">SEU NOME COMPLETO</label>
+              <input type="text" id="quiz-name" class="quiz-input" placeholder="Ex: Gabriel Henrique" required>
 
-            <label style="font-family: var(--font-mono); font-size: 12px; color: #e5e9ec; text-transform: uppercase;">Seu WhatsApp (com DDD):</label>
-            <input type="tel" id="user-phone" class="quiz-input" placeholder="Ex: (11) 96723-9791" required>
+              <label style="font-family: var(--font-mono); font-size: 12px; color: #a4b3bf; display: block; margin-bottom: 4px;">SEU MELHOR E-MAIL</label>
+              <input type="email" id="quiz-email" class="quiz-input" placeholder="Ex: gabriel@email.com" required>
 
-            <label style="font-family: var(--font-mono); font-size: 12px; color: #e5e9ec; text-transform: uppercase;">Ano de Nascimento (Piloto exclusivo para 18+):</label>
-            <input type="number" id="user-birth" class="quiz-input" placeholder="Ex: 1995" min="1930" max="2026" required>
+              <label style="font-family: var(--font-mono); font-size: 12px; color: #a4b3bf; display: block; margin-bottom: 4px;">SEU WHATSAPP COM DDD</label>
+              <input type="tel" id="quiz-phone" class="quiz-input" placeholder="Ex: (11) 98765-4321" required>
 
-            <div style="display: flex; gap: 12px; align-items: flex-start; margin-bottom: 24px;">
-              <input type="checkbox" id="user-consent" style="margin-top: 4px; accent-color: #58f27f;" required>
-              <label for="user-consent" style="font-size: 12px; color: #7f8a93; line-height: 1.5;">
-                Concordo em receber meu diagnóstico e o contato do Gabe via WhatsApp para fins de validação pedagógica na Turma Alpha (LGPD).
-              </label>
+              <button type="button" id="btn-start-quiz" class="button is-primary" style="width: 100%; border: none; cursor: pointer; padding: 16px;">
+                <span class="button_text">Iniciar Perguntas do Diagnóstico &rarr;</span>
+                <span class="button_circle" style="background-color: #58f27f;"></span>
+              </button>
             </div>
 
-            <button type="button" id="btn-start-quiz" class="button is-primary" style="width: 100%; border: none; cursor: pointer; display: flex; justify-content: center;">
-              <div class="button_text">Iniciar Diagnóstico de Nível &rarr;</div>
-            </button>
-            <div id="gate-error" style="color: #ff6b6b; font-size: 13px; font-family: var(--font-mono); margin-top: 12px; display: none;"></div>
-          </div>
+            <!-- Questions Step -->
+            <div id="quiz-step-questions" style="display: none;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                <span id="quiz-progress-text" style="font-family: var(--font-mono); font-size: 12px; color: #58f27f;">PERGUNTA 1 DE 8</span>
+                <span id="quiz-block-badge" style="font-family: var(--font-mono); font-size: 11px; padding: 2px 8px; border-radius: 4px; background: rgba(88,242,127,0.1); color: #58f27f;">BLOCO A1 &rarr; A2</span>
+              </div>
+              <div style="width: 100%; height: 4px; background: rgba(255,255,255,0.06); border-radius: 2px; margin-bottom: 24px; overflow: hidden;">
+                <div id="quiz-progress-bar" style="width: 12.5%; height: 100%; background: #58f27f; transition: width 0.3s ease;"></div>
+              </div>
 
-          <!-- ETAPA 2: QUESTÕES SITUACIONAIS -->
-          <div id="quiz-questions" style="display: none;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 12px;">
-              <div id="quiz-progress-text" style="font-family: var(--font-mono); font-size: 12px; color: #58f27f;">QUESTÃO 1 DE 8</div>
-              <div id="quiz-block-badge" style="font-family: var(--font-mono); font-size: 11px; color: #7f8a93; border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; padding: 2px 8px;">A1 &rarr; A2</div>
-            </div>
+              <h4 id="quiz-question-title" style="font-size: 19px; color: #ffffff; line-height: 1.4; margin-bottom: 12px;">Pergunta aqui...</h4>
+              <p id="quiz-question-context" style="font-size: 14px; color: #a4b3bf; margin-bottom: 24px;">Contexto aqui...</p>
 
-            <h4 id="question-title" style="font-size: 19px; color: #ffffff; line-height: 1.4; margin-bottom: 12px;">Pergunta aqui...</h4>
-            <p id="question-context" style="font-size: 14px; color: #a4b3bf; margin-bottom: 24px; line-height: 1.5;">Contexto situacional...</p>
-
-            <div id="quiz-options-container"></div>
-          </div>
-
-          <!-- ETAPA 3: RESULTADO FINAL -->
-          <div id="quiz-result" style="display: none; text-align: center; padding: 20px 10px;">
-            <div style="display: inline-block; width: 64px; height: 64px; border-radius: 50%; background: rgba(88,242,127,0.1); border: 2px solid #58f27f; line-height: 60px; font-size: 32px; margin-bottom: 16px;">
-              🎯
-            </div>
-            <div id="result-badge" style="font-family: var(--font-mono); font-size: 12px; color: #58f27f; text-transform: uppercase; margin-bottom: 8px;">PORTAL INDICADO</div>
-            <h3 id="result-title" style="font-size: 26px; color: #ffffff; margin-bottom: 12px;">Portal 1 · O Descongelamento</h3>
-            <p id="result-desc" style="font-size: 15px; color: #a4b3bf; line-height: 1.6; max-width: 540px; margin: 0 auto 28px auto;">
-              Seu foco deve ser destravar a boca e automatizar chunks básicos antes de tentar conversas elaboradas.
-            </p>
-
-            <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 20px; text-align: left; max-width: 540px; margin: 0 auto 28px auto;">
-              <div style="font-family: var(--font-mono); font-size: 12px; color: #58f27f; margin-bottom: 6px;">PLANO RECOMENDADO NO PILOTO:</div>
-              <div id="result-plan" style="font-size: 14px; color: #e5e9ec; line-height: 1.5;">
-                Prática diária de small talk com AIDA + sessões com Gabe focadas em desinibição motora.
+              <div id="quiz-options-container">
+                <!-- Options rendered dynamically -->
               </div>
             </div>
 
-            <a id="btn-result-whatsapp" href="#" target="_blank" rel="noopener noreferrer" class="button is-primary" style="text-decoration: none; display: inline-flex; justify-content: center; width: 100%; max-width: 480px;">
-              <div class="button_text">Conversar com o Gabe sobre minha vaga &rarr;</div>
-              <div class="button_circle" style="background-color: #58f27f;"></div>
-            </a>
-            <p style="font-size: 12px; color: #7f8a93; margin-top: 14px; font-family: var(--font-mono);">
-              Nada é cobrado agora. Você só confirma a matrícula após falar diretamente com o Gabe.
-            </p>
-          </div>
+            <!-- Result Step -->
+            <div id="quiz-step-result" style="display: none; text-align: center;">
+              <div style="font-family: var(--font-mono); font-size: 12px; color: #58f27f; margin-bottom: 8px;">DIAGNÓSTICO CONCLUÍDO</div>
+              <div id="result-badge" style="display: inline-block; padding: 6px 14px; border-radius: 6px; background: rgba(88,242,127,0.15); color: #58f27f; font-family: var(--font-mono); font-size: 13px; font-weight: 700; margin-bottom: 16px;">
+                Portal 1 · O Descongelamento
+              </div>
+              <h3 id="result-title" style="font-size: 28px; color: #ffffff; margin-bottom: 16px;">Seu ponto de partida ideal</h3>
+              <p id="result-plan" style="font-size: 15px; color: #a4b3bf; line-height: 1.6; margin-bottom: 32px; max-width: 50ch; margin-left: auto; margin-right: auto;">
+                Plano personalizado aqui...
+              </p>
 
-          <!-- BARREIRAS (MENOR DE IDADE OU C1+) -->
-          <div id="quiz-barrier" style="display: none; text-align: center; padding: 20px 10px;">
-            <div style="display: inline-block; width: 64px; height: 64px; border-radius: 50%; background: rgba(255,196,0,0.1); border: 2px solid #ffc400; line-height: 60px; font-size: 32px; margin-bottom: 16px;">
-              ⚠️
+              <a id="btn-result-whatsapp" href="#" target="_blank" rel="noopener noreferrer" class="button is-primary" style="text-decoration: none; padding: 18px 36px; display: inline-block;">
+                <span class="button_text">Conversar com Gabe no WhatsApp e Garantir Vaga &rarr;</span>
+                <span class="button_circle" style="background-color: #58f27f;"></span>
+              </a>
+              <div style="font-family: var(--font-mono); font-size: 12px; color: #7f8a93; margin-top: 14px;">
+                Mensagem pré-formatada com o seu resultado pronta para envio.
+              </div>
             </div>
-            <h3 id="barrier-title" style="font-size: 24px; color: #ffffff; margin-bottom: 12px;">Aviso Importante</h3>
-            <p id="barrier-desc" style="font-size: 15px; color: #a4b3bf; line-height: 1.6; max-width: 520px; margin: 0 auto 24px auto;">
-              Mensagem de barreira cordial...
-            </p>
-            <a href="https://wa.me/5511967239791" target="_blank" rel="noopener noreferrer" class="button is-secondary" style="text-decoration: none; display: inline-flex;">
-              <div class="button_text">Falar com o Gabe no WhatsApp</div>
-            </a>
+
+            <!-- Barrier C1 Step -->
+            <div id="quiz-step-barrier" style="display: none; text-align: center;">
+              <div style="font-size: 40px; margin-bottom: 12px;">⚠️</div>
+              <h3 id="barrier-title" style="font-size: 24px; color: #ffffff; margin-bottom: 12px;">Você já está no nível C1 / Avançado</h3>
+              <p id="barrier-desc" style="font-size: 15px; color: #a4b3bf; line-height: 1.6; margin-bottom: 24px;">
+                A Turma Alpha é desenhada para destravar a fala entre o A1 e o B2. Seu nível já ultrapassou o escopo desta turma piloto!
+              </p>
+              <a href="https://wa.me/5511967239791?text=Ol%C3%A1%20Gabe!%20Fiz%20o%20quiz%20da%20LexiQuest%20e%20deu%20n%C3%ADvel%20C1.%20Podemos%20conversar?" target="_blank" rel="noopener noreferrer" class="button is-secondary" style="text-decoration: none; padding: 16px 28px;">
+                <span class="button_text">Conversar com Gabe sobre Mentoria Avançada &rarr;</span>
+              </a>
+            </div>
+
           </div>
         </div>
       </div>
     </section>
 
     <!-- 13. FAQ (ACCORDION COM AS 15 PERGUNTAS CANÔNICAS) -->
-    <section id="faq" class="section spacing-top-0">
-      <div class="w-layout-blockcontainer container w-container" style="max-width: 860px;">
-        <div fade-in-200ms="" class="section_header is-bottom-aligned" style="text-align: center; justify-content: center; margin-bottom: 40px;">
-          <div>
-            <div class="display-subtitle" style="color: #58f27f;">Dúvidas Frequentes</div>
-            <h2 class="display-6">Perguntas antes de decidir</h2>
-            <p class="paragraph-small" style="color: #a4b3bf; margin-top: 8px;">
-              Respostas diretas e transparentes sobre a Turma Alpha da LexiQuest.
-            </p>
-          </div>
+    <section id="faq" class="section is-bg-secondary">
+      <div class="w-layout-blockcontainer container w-container">
+        <div fade-in-200ms="" class="inner-container_center max-w-55ch">
+          <div class="display-subtitle" style="color: #58f27f;">Dúvidas Frequentes</div>
+          <h2 class="display-6 mg-bottom-large">Tudo o que você precisa saber antes de entrar</h2>
+          <p class="paragraph-small" style="color: #a4b3bf; margin-top: -16px; margin-bottom: 40px;">
+            Respostas diretas e sem enrolação para as perguntas mais comuns sobre a Turma Alpha.
+          </p>
         </div>
 
-        <div class="faq-list">
+        <div fade-in-200ms="" class="inner-container_center" style="max-width: 760px; margin: 0 auto;">
+          
           <details class="faq-accordion-item">
             <summary class="faq-accordion-summary">
-              <span>1. Posso testar antes de pagar? Como funciona o Portal 0?</span>
+              <span>Posso experimentar o método antes de me inscrever?</span>
               <span class="faq-accordion-icon">+</span>
             </summary>
             <div class="faq-accordion-content">
-              Sim. O Portal 0 é uma degustação gratuita de cerca de 15 minutos, aberta direto no nosso ambiente de estudos, sem cadastro e sem cartão. Ele permite que você sinta o método na prática com três chunks reais, um mini-jogo e um desafio de áudio antes de decidir.
+              Sim! Criamos o <strong>Portal 0, O Prólogo</strong>, exatamente para isso. Ele abre direto no nosso ambiente de estudos no Moodle, sem cadastro, sem login e sem cartão de crédito. São 15 minutos com 5 micro-missões práticas para você ver como a metodologia funciona na prática.
             </div>
           </details>
 
           <details class="faq-accordion-item">
             <summary class="faq-accordion-summary">
-              <span>2. Quanto custa e por que muda para R$ 297?</span>
+              <span>Por que apenas 15 vagas na Turma Alpha?</span>
               <span class="faq-accordion-icon">+</span>
             </summary>
             <div class="faq-accordion-content">
-              A Turma Alpha custa R$ 197 por mês via Pix. É o preço de quem entra primeiro e ajuda a lapidar o método com o seu feedback. Depois de cerca de 6 meses de piloto, o plano passará para R$ 297 por mês para todos os alunos, com aviso prévio de pelo menos 30 dias. A regra está explícita no termo de adesão.
+              Porque o Gabe acompanha pessoalmente cada aluno nas 3 sessões ao vivo semanais. Não usamos monitores ou assistentes genéricos. Se aumentássemos para 50 ou 100 alunos, o tempo individual de fala por sessão despencaria e a qualidade seria comprometida.
             </div>
           </details>
 
           <details class="faq-accordion-item">
             <summary class="faq-accordion-summary">
-              <span>3. Como funciona a garantia de 30 dias?</span>
+              <span>Eu entendo bem quando leio ou ouço, mas travo na hora de falar. A LexiQuest é para mim?</span>
               <span class="faq-accordion-icon">+</span>
             </summary>
             <div class="faq-accordion-content">
-              Se você usar o programa por 30 dias e achar que não valeu, devolvemos 100% da primeira mensalidade via Pix. O único critério é ter usado de verdade: ter feito pelo menos 3 sessões com o Gabe (1h no total), concluído a Seção 0 no Portal e completado pelo menos 2 Speaking Quests com a AIDA. Além disso, você tem os 7 dias de arrependimento do CDC sem perguntas.
+              Você é exatamente o perfil para o qual a LexiQuest foi criada. Você já tem o vocabulário passivo guardado no cérebro. O que falta é a ponte motora para a fala ativa, que você desenvolve treinando diariamente com a AIDA (sem medo de errar) e consolidando nas sessões ao vivo com o Gabe.
             </div>
           </details>
 
           <details class="faq-accordion-item">
             <summary class="faq-accordion-summary">
-              <span>4. Qual é a forma de pagamento e tem fidelidade?</span>
+              <span>Como funcionam as sessões com a AIDA Companion (IA)?</span>
               <span class="faq-accordion-icon">+</span>
             </summary>
             <div class="faq-accordion-content">
-              O pagamento é mensal via Pix, gerado pelo Gabe a cada ciclo de 30 dias. Não há fidelidade nem multa de cancelamento. Você pode interromper quando quiser antes do próximo ciclo.
+              A AIDA é acessada diretamente no celular ou computador. Você conversa por voz em diálogos simulados (como pedir café, fazer check-in ou negociar um prazo). Ela tem voz ultrarrealista, não julga, não cansa e utiliza a técnica de <em>recasting</em> para modelar suas respostas sem punição.
             </div>
           </details>
 
           <details class="faq-accordion-item">
             <summary class="faq-accordion-summary">
-              <span>5. Como sei se meu nível é compatível?</span>
+              <span>Quais são os dias e horários das 3 sessões semanais ao vivo com o Gabe?</span>
               <span class="faq-accordion-icon">+</span>
             </summary>
             <div class="faq-accordion-content">
-              A Turma Alpha atende alunos do A1 (básico travado) ao B2 (intermediário alto que ainda traduz mentalmente). Se você nunca viu inglês na vida (zero absoluto) ou se já é fluente (C1/C2), a turma-piloto não é para você. O quiz diagnóstico gratuito de 8 minutos confirma o seu ponto de partida exato.
+              As sessões acontecem em horários noturnos acessíveis para quem trabalha (geralmente segundas, quartas e quintas às 20h de Brasília). Todas as sessões são gravadas na íntegra e ficam disponíveis na Arena Moodle para você assistir se perder algum dia.
             </div>
           </details>
 
           <details class="faq-accordion-item">
             <summary class="faq-accordion-summary">
-              <span>6. Como funcionam as sessões com o Gabe?</span>
+              <span>E se eu não puder participar ao vivo de alguma sessão?</span>
               <span class="faq-accordion-icon">+</span>
             </summary>
             <div class="faq-accordion-content">
-              São 3 encontros individuais ao vivo por semana pelo Google Meet: duas sessões de 15 minutos (para destravar e simular situações rápidas) e uma sessão de 30 minutos (para consolidar, calibrar fonética e destravar a Boss Raid do Portal).
+              Todas as sessões são gravadas em alta definição com transcrição e postadas na Arena Moodle em menos de 24 horas. Você também tem a prática diária com a AIDA 24 horas por dia, 7 dias por semana.
             </div>
           </details>
 
           <details class="faq-accordion-item">
             <summary class="faq-accordion-summary">
-              <span>7. E se eu precisar remarcar uma sessão com o Gabe?</span>
+              <span>Como funciona a garantia blindada de 30 dias?</span>
               <span class="faq-accordion-icon">+</span>
             </summary>
             <div class="faq-accordion-content">
-              Você pode remarcar avisando com pelo menos 4 horas de antecedência pelo WhatsApp, dentro dos horários disponíveis da semana. Como o limite é de 15 alunos, o Gabe consegue acomodar ajustes razoáveis.
+              A garantia é incondicional. Se durante os primeiros 30 dias você participar das atividades e achar que o método não está funcionando para você, basta mandar uma única mensagem no WhatsApp e devolveremos 100% do seu dinheiro. O risco é todo nosso.
             </div>
           </details>
 
           <details class="faq-accordion-item">
             <summary class="faq-accordion-summary">
-              <span>8. Quanto tempo por dia eu preciso me dedicar?</span>
+              <span>Preciso ter nível básico, intermediário ou avançado?</span>
               <span class="faq-accordion-icon">+</span>
             </summary>
             <div class="faq-accordion-content">
-              Cerca de 15 minutos por dia com a AIDA no celular, mais as 3 sessões da semana com o Gabe (1 hora semanal no total). A rotina foi feita para caber em pausas do dia, sem exigir fins de semana exaustivos.
+              A Turma Alpha atende desde quem está destravando as primeiras frases (A1/A2) até quem já tem autonomia e busca fluência profissional (B1/B2). O quiz de nível inicial direciona você exatamente para o Portal certo (1, 2, 3 ou 4) para você não perder tempo. Alunos já em nível C1 são direcionados para programas de mentoria executiva.
             </div>
           </details>
 
           <details class="faq-accordion-item">
             <summary class="faq-accordion-summary">
-              <span>9. A AIDA é um aplicativo para baixar na App Store?</span>
+              <span>Quanto tempo por dia preciso dedicar?</span>
               <span class="faq-accordion-icon">+</span>
             </summary>
             <div class="faq-accordion-content">
-              Não. A AIDA roda diretamente no navegador do seu celular ou computador através de uma interface web leve e responsiva (PWA), sem ocupar memória pesada do seu aparelho.
+              Apenas 15 minutos por dia de prática de voz com a AIDA, além das 3 sessões semanais de 60 minutos com o Gabe. O método foi desenhado especificamente para a rotina apertada de adultos que trabalham.
             </div>
           </details>
 
           <details class="faq-accordion-item">
             <summary class="faq-accordion-summary">
-              <span>10. Por que usar IA em vez de só ter aula particular?</span>
+              <span>Qual é a forma de pagamento e valor?</span>
               <span class="faq-accordion-icon">+</span>
             </summary>
             <div class="faq-accordion-content">
-              Para falar com fluência, você precisa de volume diário de repetição oral. Ninguém consegue pagar um professor particular para falar 15 minutos todos os dias da semana. A AIDA fornece volume ilimitado e sem vergonha, enquanto o Gabe entra para validar a parte humana: pronúncia, calibração fina e segurança emocional.
+              O investimento da Turma Alpha é de R$ 197/mês no plano trimestral (3x de R$ 197 no cartão de crédito, PIX ou boleto). Menos que o valor de uma pizza por semana para ter acompanhamento humano e IA de ponta.
             </div>
           </details>
 
           <details class="faq-accordion-item">
             <summary class="faq-accordion-summary">
-              <span>11. A IA não comete erros ou alucinações?</span>
+              <span>O que são as Boss Raids dos Portais?</span>
               <span class="faq-accordion-icon">+</span>
             </summary>
             <div class="faq-accordion-content">
-              A AIDA opera em um pipeline estrito de recasting situacional baseado em scripts pedagógicos do Método SPARK. E o mais importante: o Gabe analisa os relatórios de uso de cada aluno e corrige qualquer desvio nas sessões ao vivo.
+              São desafios práticos de encerramento de cada Portal na Arena Moodle. Ao invés de uma prova chata de múltipla escolha, você realiza uma simulação de conversa completa sob pressão realista (ex: imigração no JFK, check-in de hotel, conversa em pub ou pitch executivo).
             </div>
           </details>
 
           <details class="faq-accordion-item">
             <summary class="faq-accordion-summary">
-              <span>12. O que é o SPARK Score?</span>
+              <span>Por que vocês usam o Moodle como LMS?</span>
               <span class="faq-accordion-icon">+</span>
             </summary>
             <div class="faq-accordion-content">
-              É uma medição objetiva de prontidão oral baseada em 4 pilares: velocidade de reação (latência da fala), autonomia de chunks (frases montadas sem português), clareza de pronúncia e sustentação de diálogo. Você faz a medição no início e outra aos 30 dias para enxergar a sua evolução tangível.
+              O Moodle é a plataforma de aprendizagem mais robusta e utilizada pelas maiores universidades do mundo (como Oxford, Cambridge e MIT). Ele permite rastreamento detalhado de competências, áudios integrados, exercícios interativos e métricas transparentes que plataformas fechadas de curso online não entregam.
             </div>
           </details>
 
           <details class="faq-accordion-item">
             <summary class="faq-accordion-summary">
-              <span>13. Menores de 18 anos podem participar?</span>
+              <span>Como é feita a divisão dos alunos nas sessões ao vivo?</span>
               <span class="faq-accordion-icon">+</span>
             </summary>
             <div class="faq-accordion-content">
-              Não. A Turma Alpha é exclusiva para maiores de 18 anos devido aos termos da IA, faturamento Pix direto e situações reais focadas em trabalho, carreira e viagens internacionais adultas.
+              Com apenas 15 alunos na turma toda, o Gabe agrupa os alunos por Portais afins para que todos pratiquem no mesmo nível de desafio, garantindo que ninguém se sinta intimidado ou entediado.
             </div>
           </details>
 
           <details class="faq-accordion-item">
             <summary class="faq-accordion-summary">
-              <span>14. Vocês prometem fluência em quantos meses?</span>
+              <span>Depois dos 3 meses, o que acontece?</span>
               <span class="faq-accordion-icon">+</span>
             </summary>
             <div class="faq-accordion-content">
-              Não fazemos promessas mágicas de tempo. Fluência depende da sua constância diária, do seu ponto de partida e da sua bagagem. O que garantimos é que em 30 dias você sente a quebra da trava motora da fala e para de traduzir mentalmente.
+              Ao final do ciclo trimestral da Turma Alpha, você terá destravado a fala e avançado pelos Portais. Você poderá optar por renovar com condições especiais de membro fundador para os Portais subsequentes ou seguir praticando de forma autônoma com a metodologia internalizada.
             </div>
           </details>
 
           <details class="faq-accordion-item">
             <summary class="faq-accordion-summary">
-              <span>15. O que significa ser da Turma Alpha?</span>
+              <span>Como faço para garantir minha vaga agora?</span>
               <span class="faq-accordion-icon">+</span>
             </summary>
             <div class="faq-accordion-content">
-              Significa ser um dos 15 alunos fundadores que têm acesso direto e semanal ao Gabe, preço reduzido de R$ 197/mês e a oportunidade de moldar a ferramenta com seu feedback antes do lançamento nacional.
+              Basta rolar até a seção do Quiz Diagnóstico, responder às 8 perguntas e enviar a mensagem gerada para o WhatsApp do Gabe. Se o seu perfil for aprovado e ainda houver vagas das 15 disponíveis, você recebe o link de matrícula imediata.
             </div>
           </details>
+
         </div>
       </div>
     </section>
 
     <!-- 14. FOOTER SECTION -->
     <footer class="footer_section">
-      <div class="w-layout-blockcontainer container position_relative-index-1 w-container">
-        <!-- Footer Top / Big Call to Action -->
-        <div fade-in-300ms="" class="footer_top" style="text-align: center; border-bottom: 1px solid var(--_globals---colors--color-600); padding-bottom: 48px; margin-bottom: 48px;">
-          <div class="footer_subtitle" style="color: #58f27f;">Turma Alpha &middot; 15 Vagas</div>
-          <h2 class="display-7 mg-top-xsmall mg-bottom-xmall" style="font-size: 36px; color: #ffffff;">Pronto para destravar a sua fala em inglês?</h2>
-          <p class="paragraph-small mg-bottom-default" style="color: #a4b3bf; max-width: 50ch; margin-left: auto; margin-right: auto;">
-            Descubra o seu ponto de partida em 8 minutos. Depois, converse diretamente com o Gabe pelo WhatsApp e comece sem risco.
-          </p>
-          <div class="button-row" style="justify-content: center; display: flex; gap: 16px; flex-wrap: wrap;">
-            <a href="#diagnostico" class="button is-primary w-inline-block" style="text-decoration: none;">
-              <div class="button_text">Descobrir meu Portal &rarr;</div>
-              <div class="button_circle" style="background-color: #58f27f;"></div>
-            </a>
-            <a href="#portal0" class="button is-secondary w-inline-block" style="text-decoration: none;">
-              <div class="button_text">Testar no Portal 0 (Grátis)</div>
-            </a>
-            <a href="https://wa.me/5511967239791?text=Ol%C3%A1%20Gabe!%20Quero%20conversar%20sobre%20a%20Turma%20Alpha." target="_blank" rel="noopener noreferrer" class="link w-inline-block" style="text-decoration: none; display: flex; align-items: center;">
-              <div class="link_row" style="color: #58f27f; font-family: var(--font-mono); font-size: 14px;">Chame o Gabe no WhatsApp &rarr;</div>
-            </a>
-          </div>
-        </div>
-
-        <!-- Footer Links & Navigation -->
-        <div class="footer_nav-section" style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 32px; padding-bottom: 32px;">
-          <div>
-            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
-              <div style="width: 12px; height: 12px; border-radius: 3px; background: #58f27f; box-shadow: 0 0 8px #58f27f;"></div>
-              <span style="font-family: var(--font-mono); font-weight: 700; font-size: 18px; color: #ffffff;">Lexi<span style="color: #58f27f;">Quest</span></span>
-            </div>
-            <p style="font-size: 13px; color: #7f8a93; max-width: 32ch; line-height: 1.5;">
-              Método SPARK criado por Gabriel Lima para adultos destravarem o reflexo motor oral em inglês.
-            </p>
-          </div>
-
-          <div style="display: flex; gap: 48px; flex-wrap: wrap;">
-            <div>
-              <div style="font-family: var(--font-mono); font-size: 12px; color: #58f27f; margin-bottom: 12px;">ECOSSISTEMA</div>
-              <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; font-size: 14px;">
-                <li><a href="#desafio" style="color: #a4b3bf; text-decoration: none;">O Desafio Real</a></li>
-                <li><a href="#metodo" style="color: #a4b3bf; text-decoration: none;">O Método SPARK</a></li>
-                <li><a href="#portal0" style="color: #58f27f; text-decoration: none;">Portal 0 (Degustação)</a></li>
-                <li><a href="#portais" style="color: #a4b3bf; text-decoration: none;">Os 4 Portais</a></li>
-                <li><a href="#pesquisa" style="color: #a4b3bf; text-decoration: none;">Ciência do Método</a></li>
-              </ul>
+      <div class="w-layout-blockcontainer container w-container">
+        <div class="footer_top-container">
+          <div class="w-layout-grid footer_nav-card-list">
+            <div fade-in-200ms="" class="footer_nav-card" style="border: 1px solid var(--_globals---colors--color-600); border-radius: 8px; background: var(--_globals---colors--color-500); padding: 24px;">
+              <div class="footer_nav-card-dot"></div>
+              <div style="font-family: var(--font-mono); font-size: 16px; font-weight: 700; color: #ffffff; margin-bottom: 8px;">LexiQuest Turma Alpha</div>
+              <p style="font-size: 13px; color: #a4b3bf; line-height: 1.5;">
+                Prática diária de voz com IA + 3 encontros semanais com o Gabe. Método focado em adultos que entendem inglês mas travam na fala.
+              </p>
             </div>
 
-            <div>
-              <div style="font-family: var(--font-mono); font-size: 12px; color: #58f27f; margin-bottom: 12px;">TRANSPARÊNCIA</div>
-              <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; font-size: 14px;">
-                <li><a href="#oferta" style="color: #a4b3bf; text-decoration: none;">Turma Alpha (R$ 197)</a></li>
-                <li><a href="#oferta" style="color: #a4b3bf; text-decoration: none;">Garantia de 30 Dias</a></li>
-                <li><a href="#faq" style="color: #a4b3bf; text-decoration: none;">Dúvidas Frequentes</a></li>
-                <li><a href="https://wa.me/5511967239791" target="_blank" rel="noopener noreferrer" style="color: #58f27f; text-decoration: none;">Contato Direto com Gabe</a></li>
-              </ul>
+            <div fade-in-300ms="" class="footer_nav-card" style="border: 1px solid var(--_globals---colors--color-600); border-radius: 8px; background: var(--_globals---colors--color-500); padding: 24px;">
+              <div class="footer_nav-card-dot"></div>
+              <div style="font-family: var(--font-mono); font-size: 16px; font-weight: 700; color: #ffffff; margin-bottom: 8px;">Degustação Aberta</div>
+              <p style="font-size: 13px; color: #a4b3bf; line-height: 1.5;">
+                Experimente o <strong>Portal 0 (O Prólogo)</strong> por 15 minutos no ambiente real do Moodle, sem cadastro e sem cartão de crédito.
+              </p>
+              <a href="https://lexi-moodle-docker-production.up.railway.app/course/view.php?id=7" target="_blank" rel="noopener noreferrer" style="color: #58f27f; font-family: var(--font-mono); font-size: 12px; text-decoration: none; margin-top: 8px; display: inline-block;">Abrir Portal 0 &rarr;</a>
+            </div>
+
+            <div fade-in-400ms="" class="footer_nav-card" style="border: 1px solid var(--_globals---colors--color-600); border-radius: 8px; background: var(--_globals---colors--color-500); padding: 24px;">
+              <div class="footer_nav-card-dot"></div>
+              <div style="font-family: var(--font-mono); font-size: 16px; font-weight: 700; color: #ffffff; margin-bottom: 8px;">Contato & Suporte</div>
+              <p style="font-size: 13px; color: #a4b3bf; line-height: 1.5;">
+                Fale diretamente com o Gabriel Henrique no WhatsApp para dúvidas sobre vagas e matrícula na Turma Alpha.
+              </p>
+              <a href="https://wa.me/5511967239791" target="_blank" rel="noopener noreferrer" style="color: #58f27f; font-family: var(--font-mono); font-size: 12px; text-decoration: none; margin-top: 8px; display: inline-block;">(11) 96723-9791 &rarr;</a>
             </div>
           </div>
         </div>
 
-        <!-- Footer Bottom Bar -->
-        <div class="footer_bottom" style="border-top: 1px solid rgba(255,255,255,0.06); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+        <div class="footer_bottom-container" style="border-top: 1px solid rgba(255,255,255,0.06); padding-top: 24px; margin-top: 32px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
           <div style="font-family: var(--font-mono); font-size: 12px; color: #7f8a93;">
-            &copy; 2026 LexiQuest. Todos os direitos reservados.
+            &copy; 2026 LexiQuest. Todos os direitos reservados. Feito com excelência para quem quer falar de verdade.
           </div>
-          <div style="font-size: 12px; color: #7f8a93; max-width: 500px; text-align: right; line-height: 1.4;">
-            Aviso Legal: A LexiQuest não promete resultados mágicos ou garantia de fluência em prazo fixo. O resultado depende da dedicação e constância do aluno.
+          <div style="display: flex; gap: 20px; font-family: var(--font-mono); font-size: 12px;">
+            <a href="#portal0" style="color: #58f27f; text-decoration: none;">Portal 0</a>
+            <a href="#quiz" style="color: #a4b3bf; text-decoration: none;">Quiz de Nível</a>
+            <a href="#faq" style="color: #a4b3bf; text-decoration: none;">FAQ</a>
+            <a href="#oferta" style="color: #a4b3bf; text-decoration: none;">Turma Alpha</a>
           </div>
         </div>
       </div>
@@ -1469,11 +1758,12 @@
 
   </div>
 
-  <!-- JQUERY & GSAP ANIMATION ENGINES -->
-  <script is:inline src="/synthetic/files/jquery-3.5.1.min.dc5e7f18c8.js"></script>
-  <script is:inline src="/synthetic/files/gsap.min.js"></script>
-  <script is:inline src="/synthetic/files/ScrollTrigger.min.js"></script>
-  <script is:inline src="/synthetic/files/SplitText.min.js"></script>
+  <!-- VENDOR DEPENDENCIES -->
+  <script src="/synthetic/files/jquery-3.5.1.min.dc5e7f18c8.js" type="text/javascript"></script>
+  <script src="/synthetic/files/webflow.schunk.2b152eb4082729ca.js" type="text/javascript"></script>
+  <script src="/synthetic/files/gsap.min.js" type="text/javascript"></script>
+  <script src="/synthetic/files/ScrollTrigger.min.js" type="text/javascript"></script>
+  <script src="/synthetic/files/SplitText.min.js" type="text/javascript"></script>
 
   <!-- AUTHENTIC BRIX TEMPLATE MOTION ENGINES (MARQUEE & COUNTERS) -->
   <script is:inline>
@@ -2083,103 +2373,83 @@
       },
       {
         block: 'B1 &rarr; B2',
-        title: 'Em uma reunião profissional, alguém discorda de uma ideia sua e pede a sua justificativa.',
-        context: 'Como você expressa seu ponto de vista?',
+        title: 'Em uma reunião de trabalho em inglês, você discorda da ideia apresentada e quer sugerir outro caminho.',
+        context: 'O que você faz?',
         options: [
-          { text: 'Prefiro não contra-argumentar em inglês para não passar vergonha.', score: 0 },
-          { text: 'Explico minha ideia com termos simples, mas perco nuance e autoridade.', score: 1 },
-          { text: 'Argumento com clareza, uso conectivos como "On the other hand" e sustento minha posição.', score: 2 }
+          { text: 'Fico quieto para não me expor ou concordo apenas balançando a cabeça.', score: 0 },
+          { text: 'Falo com dificuldade, perco palavras técnicas e fico com vergonha do meu sotaque.', score: 1 },
+          { text: 'Coloco meu ponto de vista usando frases de transição como "I see your point, but what if we..." com calma.', score: 2 }
         ]
       },
       {
         block: 'B1 &rarr; B2',
-        title: 'Em um bar barulhento ou evento social, várias pessoas conversam com sotaques diferentes e gírias.',
-        context: 'Como você participa?',
+        title: 'Você assiste a um podcast ou filme sem legendas e alguém faz uma piada rápida ou comentário irônico.',
+        context: 'Você consegue acompanhar o tom?',
         options: [
-          { text: 'Fico isolado, entendo quase nada e dou risada fingindo que entendi.', score: 0 },
-          { text: 'Entendo parte, mas tenho receio de intervir na conversa e quebrar o ritmo.', score: 1 },
-          { text: 'Entro na conversa, faço perguntas informais e brinco com naturalidade.', score: 2 }
+          { text: 'Não consigo entender sem legenda em inglês ou dublagem.', score: 0 },
+          { text: 'Entendo a ideia geral, mas perco piadas, gírias e referências culturais rápidas.', score: 1 },
+          { text: 'Entendo a piada no mesmo instante e rio junto sem esforço cognitivo.', score: 2 }
         ]
       },
       {
-        block: 'Barreira C1',
-        title: 'Você precisa negociar termos de um contrato ou liderar uma apresentação de alto impacto com diretoria.',
-        context: 'Qual é a sua prontidão?',
+        block: 'B2 &rarr; C1',
+        title: 'Você precisa liderar uma apresentação importante ou negociar termos com parceiros estrangeiros.',
+        context: 'Qual é o seu nível de domínio?',
         options: [
-          { text: 'Ainda sinto forte barreira linguística e prefiro passar para outro falar.', score: 0 },
-          { text: 'Consigo com preparação prévia detalhada, mas sem improviso espontâneo.', score: 1 },
-          { text: 'Faço apresentações complexas, improviso com elegância e adapto o tom ao público.', score: 2 }
+          { text: 'Não tenho condições de conduzir isso em inglês no momento.', score: 0 },
+          { text: 'Consigo conduzir se ensaiar muito antes, mas sinto insegurança ao ser pego de surpresa.', score: 1 },
+          { text: 'Conduzo com autonomia total, improviso com elegância e ajusto o tom da conversa em tempo real.', score: 2 }
         ]
       },
       {
-        block: 'Barreira C1',
-        title: 'Você assiste a documentários técnicos, filmes sem legenda e lê literatura densa em inglês.',
-        context: 'Com que frequência você precisa consultar dicionário?',
+        block: 'B2 &rarr; C1',
+        title: 'Quando você fala inglês hoje, qual frase melhor resume a sua sensação mental?',
+        context: 'Sinceridade total:',
         options: [
-          { text: 'Com frequência considerável, ainda perco muitas expressões idiomáticas.', score: 0 },
-          { text: 'Raramente para vocabulário comum, apenas para jargões muito específicos.', score: 1 },
-          { text: 'Praticamente nunca. Meu consumo é 100% autônomo e nativo.', score: 2 }
+          { text: '"Eu sei a gramática, mas minha boca não obedece e dá branco."', score: 0 },
+          { text: '"Eu me comunico, mas sinto que pareço um robô limitado a frases simples."', score: 1 },
+          { text: '"Eu falo com naturalidade quase o tempo todo, só buscando refinamento e vocabulário executivo."', score: 2 }
         ]
       }
     ];
 
     let currentQ = 0;
-    let scores = [];
-    let userData = { name: '', phone: '', birth: 0 };
+    const scores = [];
+    let userData = { name: '', email: '', phone: '' };
 
-    const gateEl = document.getElementById('quiz-gate');
-    const questionsEl = document.getElementById('quiz-questions');
-    const resultEl = document.getElementById('quiz-result');
-    const barrierEl = document.getElementById('quiz-barrier');
-    const errorEl = document.getElementById('gate-error');
+    const leadEl = document.getElementById('quiz-step-lead');
+    const questionsEl = document.getElementById('quiz-step-questions');
+    const resultEl = document.getElementById('quiz-step-result');
+    const barrierEl = document.getElementById('quiz-step-barrier');
 
     document.getElementById('btn-start-quiz').addEventListener('click', () => {
-      const name = document.getElementById('user-name').value.trim();
-      const phone = document.getElementById('user-phone').value.trim();
-      const birth = parseInt(document.getElementById('user-birth').value.trim(), 10);
-      const consent = document.getElementById('user-consent').checked;
+      const name = document.getElementById('quiz-name').value.trim();
+      const email = document.getElementById('quiz-email').value.trim();
+      const phone = document.getElementById('quiz-phone').value.trim();
 
-      if (!name || !phone || !birth) {
-        errorEl.textContent = 'Por favor, preencha todos os campos para continuar.';
-        errorEl.style.display = 'block';
+      if (!name || !email || !phone) {
+        alert('Por favor, preencha todos os campos para iniciar o diagnóstico.');
         return;
       }
 
-      if (!consent) {
-        errorEl.textContent = 'É necessário concordar com o contato do Gabe para validação.';
-        errorEl.style.display = 'block';
-        return;
-      }
-
-      const currentYear = new Date().getFullYear();
-      const age = currentYear - birth;
-
-      if (age < 18) {
-        gateEl.style.display = 'none';
-        barrierEl.style.display = 'block';
-        document.getElementById('barrier-title').textContent = 'Piloto Exclusivo para Maiores de 18 Anos';
-        document.getElementById('barrier-desc').textContent = 'A Turma Alpha envolve termos de IA para adultos e cenários corporativos reais. Caso queira conversar com o Gabe para orientações de estudo, chame no WhatsApp.';
-        return;
-      }
-
-      userData = { name, phone, birth };
-      errorEl.style.display = 'none';
-      gateEl.style.display = 'none';
+      userData = { name, email, phone };
+      leadEl.style.display = 'none';
       questionsEl.style.display = 'block';
       renderQuestion();
     });
 
     function renderQuestion() {
       const q = quizData[currentQ];
-      document.getElementById('quiz-progress-text').textContent = 'QUESTÃO ' + (currentQ + 1) + ' DE ' + quizData.length;
-      document.getElementById('quiz-block-badge').innerHTML = q.block;
-      document.getElementById('question-title').textContent = q.title;
-      document.getElementById('question-context').textContent = q.context;
+      document.getElementById('quiz-progress-text').textContent = 'PERGUNTA ' + (currentQ + 1) + ' DE ' + quizData.length;
+      document.getElementById('quiz-block-badge').innerHTML = 'BLOCO ' + q.block;
+      document.getElementById('quiz-progress-bar').style.width = ((currentQ + 1) / quizData.length * 100) + '%';
+      document.getElementById('quiz-question-title').innerHTML = q.title;
+      document.getElementById('quiz-question-context').textContent = q.context;
 
       const container = document.getElementById('quiz-options-container');
       container.innerHTML = '';
-
       const letters = ['A', 'B', 'C'];
+
       q.options.forEach((opt, idx) => {
         const btn = document.createElement('button');
         btn.type = 'button';
